@@ -11,6 +11,7 @@ namespace Stage0
         static partial void Welcome0371()
         {
             Console.WriteLine("tabtab");
+            Console.WriteLine("ma nase?");
         }
     }
 }
