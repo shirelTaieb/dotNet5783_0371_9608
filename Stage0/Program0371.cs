@@ -8,7 +8,7 @@ namespace Stage0
 {
    partial class Program
     {
-        static partial void Welcome0371()
+        static partial void Welcome0371()// shirel
         {
             Console.WriteLine("tabtab");
             Console.WriteLine("ma nase?");
