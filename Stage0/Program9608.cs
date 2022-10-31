@@ -8,7 +8,7 @@ namespace Stage0
         {
             Welcome9608();
             Welcome0371();
-            Console.ReadKey();// hegejg
+            Console.ReadKey();
         }
         static partial void Welcome0371();
         private static void Welcome9608()
