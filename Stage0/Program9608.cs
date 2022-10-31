@@ -8,15 +8,14 @@ namespace Stage0
         {
             Welcome9608();
             Welcome0371();
-            Console.ReadKey();
+            Console.ReadKey();// hegejg
         }
         static partial void Welcome0371();
-          private static void Welcome9608()
+        private static void Welcome9608()
         {
             Console.Write("Enter your name: ");
             string userName = Console.ReadLine();
             Console.Write("{0}, welcome  to my first console application", userName);
         }
     }
-
 }
