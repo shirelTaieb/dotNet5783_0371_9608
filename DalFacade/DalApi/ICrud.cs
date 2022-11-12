@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DalApi;
+namespace DalApi;/// <summary>
+/// מטורףףףףףף
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public interface ICrud<T> where T : struct 
 {
     int Add(T item);
