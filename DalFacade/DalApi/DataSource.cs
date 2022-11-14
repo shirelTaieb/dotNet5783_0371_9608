@@ -2,6 +2,6 @@
 
 namespace DalApi;
 
-internal static class DataSource
+internal static class DataSource 
 {
 }
