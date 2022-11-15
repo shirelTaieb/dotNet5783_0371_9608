@@ -1,6 +1,6 @@
 ﻿
 
-namespace DalApi;
+namespace Dal;
 
 public class DalOrder
 {

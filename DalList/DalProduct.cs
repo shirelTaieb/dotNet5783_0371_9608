@@ -1,5 +1,5 @@
 ﻿
-namespace DalApi;
+namespace Dal;
 
 public class DalProduct
 {

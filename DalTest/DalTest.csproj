@@ -13,4 +13,9 @@
 	<RootNamespace>Dal</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DalFacade\DalFacade.csproj" />
+    <ProjectReference Include="..\DalList\DalList.csproj" />
+  </ItemGroup>
+
 </Project>
