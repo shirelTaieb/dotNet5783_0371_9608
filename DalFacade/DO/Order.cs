@@ -11,6 +11,4 @@ public struct Order
     public DateTime? ShipDate { get; set; }
     public DateTime? DeliveryDate { get; set; }
  
-
-
 }
