@@ -18,10 +18,12 @@ public class DalOrder : IOrder
     }
     public Order GetById(int id)
     {
-        for(int i = 0; i < ds.lstO.Count; i++)
+      foreach (Order temp in ds.lstO)
         {
-            
+            if (temp.ID==id)
+                return temp;
         }
+        throw new Exception("no exist");
     }
     public void Update(Order order)
     {
