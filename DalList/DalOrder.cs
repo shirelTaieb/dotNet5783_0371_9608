@@ -6,10 +6,15 @@ namespace Dal;
 
 public class DalOrder : IOrder
 {
-
+    DataSource ds = DataSource.s_instance;
+    
     public int Add(Order order)
     {
-       lstO.
+        if (ds.lstO.FirstOrDefault() != null)
+            throw new NotImplementedException();
+        order.ID = DataSource.Config.NextOrderNumber;
+        ds.lstO.Add(order);
+        return order.ID;
     }
     public Order GetById(int id)
     {
