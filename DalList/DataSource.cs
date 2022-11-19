@@ -155,15 +155,24 @@ internal class DataSource
                                    "Mexico City","Havanna","Lima","Beer Shaeva","Omer","Tzfat","Nazeret","Tiberiad","Raba",
                                    "Pretoria","Sidny","Givataim","Ariel","Ramat Gan","Ramat Hasharon","Petah Tikva","Yerocham"};
 
-         for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 21; i++)
         {
             Order order = new();
-            Random s_rand = new Random();
-            order.OrderDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
-            order.ID = Config.NextOrderNumber;
             order.CustomerName = names[rand.Next(0, 43)];
             order.CostomerAdress = names[rand.Next(0, 43)];
+            order.CostomerEmail = order.CustomerName + "@gmail.com";
+            order.ID = Config.NextOrderNumber;
+            Random s_rand = new Random();
+            order.OrderDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
+            order.ShipDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
+            order.DeliveryDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
+            lstO.Add(order);
         }
+        //for (int i = 0; i < 17; i++) 80 אחוז
+        //{
+        //    //lstO[i];
+        //}
+        // also the 60
     }
     public void createOrderItem()
     {
