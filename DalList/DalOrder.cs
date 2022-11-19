@@ -18,7 +18,10 @@ public class DalOrder : IOrder
     }
     public Order GetById(int id)
     {
-
+        for(int i = 0; i < ds.lstO.Count; i++)
+        {
+            
+        }
     }
     public void Update(Order order)
     {
