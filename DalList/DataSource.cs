@@ -188,6 +188,7 @@ internal class DataSource
                 orderItem.Amount= rand.Next(10);
                 Product temp = GetById(orderItem.ProductID);
                 orderItem.Price = temp.Price * orderItem.Amount;
+                orderItem.ProductID = rand.Next(1000, 1011);
             }    
             
         }

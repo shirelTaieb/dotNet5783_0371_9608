@@ -12,8 +12,8 @@ public class DalOrder : IOrder
     
     public int Add(Order order)
     {
-        if (ds.lstO.Find(order) != null)??
-            throw new NotImplementedException();
+        //if (ds.lstO.Find(order) != null)??
+        //    throw new NotImplementedException();
         order.ID = DataSource.Config.NextOrderNumber;
         ds.lstO.Add(order);
         return order.ID;
