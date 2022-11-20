@@ -27,9 +27,15 @@ public class DalOrder : IOrder
     }
     public void Update(Order order)
     {
-
-    }
-    public void Delete(int id)
+        foreach (Order temp in ds.lstO)
+        {
+            if (temp.ID == order.ID)
+            {
+                //דפוק לגמרי כי אם זה מעודכן אז יש מזהה חדש איך הוא יבין שזה אותו אובייקט
+                //כאילו זה מה שכתוב במצגת לפי מספר מזהה ההגיון חוגג אני סתומה
+            }
+        }
+        public void Delete(int id)
     {
 
     }
