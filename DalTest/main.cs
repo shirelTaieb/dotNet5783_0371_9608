@@ -15,7 +15,7 @@ class Program
                 c - GET THE ORDERS LIST
                 d - UPDATE ORDER
                 e - DELETE ORDER");
-            string option = Console.ReadLine();
+            string? option = Console.ReadLine();
             switch (option)
             {
                 case "a":
@@ -214,14 +214,14 @@ class Program
                     tmpProduct.Price = pri;
                     Console.WriteLine("enter the new product amount");
                     int.TryParse(Console.ReadLine(), out id);
-                    tmpProduct.InStock = id;
+                    tmpProduct.InStuck = id;
                     product.Add(tmpProduct);
                     break;
                 case "b":
                     Console.WriteLine("enter the product ID");
                     int myId;
                     int.TryParse(Console.ReadLine(), out myId);
-                    Console.WriteLine(product.GetByID(myId));
+                    Console.WriteLine(product.GetById(myId));
                     break;
                 case "c":
                     foreach (Product item in product.GetAll())
@@ -236,7 +236,7 @@ class Program
                     Console.WriteLine("enter the product ID");
                     int.TryParse(Console.ReadLine(), out id);
                     tmpProduct2.ID = id;
-                    Console.WriteLine(product.GetByID(id));
+                    Console.WriteLine(product.GetById(id));
                     Console.WriteLine("enter the new product name");
                     tmpProduct2.Name = Console.ReadLine();
                     Console.WriteLine(@"enter the catgory:
@@ -273,7 +273,7 @@ class Program
                     tmpProduct2.Price = pric;
                     Console.WriteLine("enter the new product amount");
                     int.TryParse(Console.ReadLine(), out id);
-                    tmpProduct2.InStock = id;
+                    tmpProduct2.InStuck = id;
                     product.Update(tmpProduct2);
                     break;
                 case "e":
