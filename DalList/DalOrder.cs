@@ -1,6 +1,8 @@
 ﻿using DalApi;
 using DO;
 using DalList;
+using System;
+
 
 namespace Dal;
 
@@ -10,7 +12,7 @@ public class DalOrder : IOrder
     
     public int Add(Order order)
     {
-        if (ds.lstO.FirstOrDefault() != null)
+        if (ds.lstO.Find(order) != null)??
             throw new NotImplementedException();
         order.ID = DataSource.Config.NextOrderNumber;
         ds.lstO.Add(order);
@@ -35,10 +37,12 @@ public class DalOrder : IOrder
                 //כאילו זה מה שכתוב במצגת לפי מספר מזהה ההגיון חוגג אני סתומה
             }
         }
-        public void Delete(int id)
-    {
-
     }
+        public void Delete(int id)
+        {
+
+        }
+    
 
     //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
     public IEnumerable<Order> GetAll()
