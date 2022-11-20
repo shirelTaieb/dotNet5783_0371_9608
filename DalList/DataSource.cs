@@ -48,7 +48,7 @@ internal class DataSource
 
         Product p5 = new Product();
         p5.Category = "Holy";
-        p5.Name = "rambam";
+        p5.Name = "The Rambam";
         p5.Price = rand.Next(50, 229);
         p5.ID = ConfigProduct.NextProductNumber;
         p5.InStuck = rand.Next(0, 300);
@@ -56,7 +56,7 @@ internal class DataSource
 
         Product p6 = new Product();
         p6.Category = "Theoretical";
-        p6.Name = "all about labor";
+        p6.Name = "All about labor";
         p6.Price = rand.Next(50, 229);
         p6.ID = ConfigProduct.NextProductNumber;
         p6.InStuck = rand.Next(0, 300);
@@ -72,7 +72,7 @@ internal class DataSource
 
         Product p8 = new Product();
         p8.Category = "Theoretical";
-        p8.Name = "loyalty";
+        p8.Name = "Loyalty";
         p8.Price = rand.Next(50, 229);
         p8.ID = ConfigProduct.NextProductNumber;
         p8.InStuck = 0;
@@ -80,7 +80,7 @@ internal class DataSource
 
         Product p9 = new Product();
         p9.Category = "History";
-        p9.Name = "world war 2";
+        p9.Name = "World War 2";
         p9.Price = rand.Next(50, 229);
         p9.ID = ConfigProduct.NextProductNumber;
         p9.InStuck = rand.Next(0, 300);
@@ -88,7 +88,7 @@ internal class DataSource
 
         Product p10 = new Product();
         p10.Category = "History";
-        p10.Name = "the History of Israel";
+        p10.Name = "The History of Israel";
         p10.Price = rand.Next(50, 229);
         p10.ID = ConfigProduct.NextProductNumber;
         p10.InStuck = rand.Next(0, 300);
@@ -156,35 +156,34 @@ internal class DataSource
         for (int i = 0; i < 21; i++)
         {
             Order order = new();
+            order.ID = Config.NextOrderNumber;
             order.CustomerName = names[rand.Next(0, 43)];
             order.CostomerAdress = names[rand.Next(0, 43)];
             order.CostomerEmail = order.CustomerName + "@gmail.com";
-            order.ID = Config.NextOrderNumber;
             Random s_rand = new Random();
             order.OrderDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
             order.ShipDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
             order.DeliveryDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
+            if(i<=16)
+            {
+                order.DeliveryDate= DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 200L));
+            }
+            if(i<=8)
+            {
+                order.DeliveryDate = null;
+            }
             lstO.Add(order);
         }
-        foreach(Order tempOrder in lstO)
-        {
-            if (tempOrder.ID < 1033)// only way i found to stop the foreach to get 80
-            {
-                //tempOrder.DeliveryDate = tempOrder.DeliveryDate + 1;
-            }
-            
-        }
-        //for (int i = 0; i < 17; i++) 80 אחוז
-        //{
-        //   lstO[i];
-        //}
-        // also the 60
     }
     public void createOrderItem()
     {
-        
-    }
+        for (int i = 0; i < 21; i++)
+        {
+            OrderItem orderItem = new();
+            orderItem.ID= Config.NextOrderNumber;
 
+        }
+    }
    private void s_Initialize()
     {
         createProduct();
@@ -204,5 +203,4 @@ internal class DataSource
         private static int s_nextProductNumber = s_startProductNumber;
         internal static int NextProductNumber { get => ++s_nextProductNumber; }
     }
-
 }
