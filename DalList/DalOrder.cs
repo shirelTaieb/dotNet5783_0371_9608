@@ -33,14 +33,15 @@ public class DalOrder : IOrder
         {
             if (temp.ID == order.ID)
             {
-                //דפוק לגמרי כי אם זה מעודכן אז יש מזהה חדש איך הוא יבין שזה אותו אובייקט
-                //כאילו זה מה שכתוב במצגת לפי מספר מזהה ההגיון חוגג אני סתומה
+                Delete(order.ID);
+                Add(order);
             }
         }
     }
         public void Delete(int id)
         {
-
+            if (!ds.lstO.Remove(GetById(id)))
+                throw new Exception("no exist");
         }
     
 
