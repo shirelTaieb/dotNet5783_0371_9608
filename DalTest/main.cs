@@ -15,7 +15,7 @@ class Program
                 c - GET THE ORDERS LIST
                 d - UPDATE ORDER
                 e - DELETE ORDER");
-            string option = Console.ReadLine();
+            string? option = Console.ReadLine();
             switch (option)
             {
                 case "a":
@@ -72,7 +72,6 @@ class Program
             Console.WriteLine(ex);
         }
     }
-
     static void testOrderItem(DalOrderItem item)
     {
         try
