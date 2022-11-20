@@ -179,12 +179,12 @@ class Program
                     tmpProduct.ID = id;
                     Console.WriteLine("enter the new product name");
                     tmpProduct.Name = Console.ReadLine();
-                    Console.WriteLine(@"enter the new product catgory:
-                                        Garden-0,
-                                        Bed_room-1,
-                                        Living_room-2,
-                                        Bath_room-3,
-                                        Kitchen-4");
+                    Console.WriteLine(@"enter the catgory:
+                                        Children-0,
+                                        Holy-1,
+                                        Theoretical-2,
+                                        History-3,
+                                        Romans-4");
                     int.TryParse(Console.ReadLine(), out id);
                     int ctg = id;
                     switch (ctg)
@@ -240,19 +240,19 @@ class Program
                     Console.WriteLine("enter the new product name");
                     tmpProduct2.Name = Console.ReadLine();
                     Console.WriteLine(@"enter the catgory:
-                                        Garden-0,
-                                        Bed_room-1,
-                                        Living_room-2,
-                                        Bath_room-3,
-                                        Kitchen-4");
+                                        Children-0,
+                                        Holy-1,
+                                        Theoretical-2,
+                                        History-3,
+                                        Romans-4");
                     int.TryParse(Console.ReadLine(), out ctg);
                     switch (ctg)
                     {
                         case 0:
-                            tmpProduct2.Category = Category.Garden;
+                            tmpProduct2.Category = "Children";
                             break;
                         case 1:
-                            tmpProduct2.Category = Category.Bed_room;
+                            tmpProduct2.Category = "Holy";
                             break;
                         case 2:
                             tmpProduct2.Category = Category.Living_room;
