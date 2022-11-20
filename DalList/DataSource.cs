@@ -179,9 +179,17 @@ internal class DataSource
     {
         for (int i = 0; i < 21; i++)
         {
-            OrderItem orderItem = new();
-            orderItem.ID= Config.NextOrderNumber;
-
+            int num= ConfigOrderItem1.NextOrderNumber;
+            for (int j = 0; j < rand.Next(4); j++)
+            {
+                OrderItem orderItem = new();
+                orderItem.ID = ConfigOrderItem2.NextOrderNumber;
+                orderItem.OrderID = num;
+                orderItem.Amount= rand.Next(10);
+                Product temp = GetById(orderItem.ProductID);
+                orderItem.Price = temp.Price * orderItem.Amount;
+            }    
+            
         }
     }
    private void s_Initialize()
@@ -189,7 +197,6 @@ internal class DataSource
         createProduct();
         createOrder();
         createOrderItem();
-
     }
     internal static class Config
     {
@@ -202,5 +209,17 @@ internal class DataSource
         internal const int s_startProductNumber = 100000;
         private static int s_nextProductNumber = s_startProductNumber;
         internal static int NextProductNumber { get => ++s_nextProductNumber; }
+    }
+    internal static class ConfigOrderItem1
+    {
+        internal const int s_startOrderNumber = 1000;
+        private static int s_nextOrderNumber = s_startOrderNumber;
+        internal static int NextOrderNumber { get => ++s_nextOrderNumber; }
+    }
+    internal static class ConfigOrderItem2
+    {
+        internal const int s_startOrderNumber = 1000;
+        private static int s_nextOrderNumber = s_startOrderNumber;
+        internal static int NextOrderNumber { get => ++s_nextOrderNumber; }
     }
 }
