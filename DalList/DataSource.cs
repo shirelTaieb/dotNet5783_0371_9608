@@ -12,7 +12,7 @@ internal class DataSource
     internal List<Product> lstP= new List<Product>();
     internal List<Order> lstO= new List<Order>();
     internal List<OrderItem> lstOI= new List<OrderItem>();
-    private void createProduct()
+    private void createProduct()//creating 11 product
     {
         Product p1 = new Product();
         p1.Category = "Children";
@@ -48,7 +48,7 @@ internal class DataSource
 
         Product p5 = new Product();
         p5.Category = "Holy";
-        p5.Name = "rambam";
+        p5.Name = "The Rambam";
         p5.Price = rand.Next(50, 229);
         p5.ID = ConfigProduct.NextProductNumber;
         p5.InStuck = rand.Next(0, 300);
@@ -56,7 +56,7 @@ internal class DataSource
 
         Product p6 = new Product();
         p6.Category = "Theoretical";
-        p6.Name = "all about labor";
+        p6.Name = "All about labor";
         p6.Price = rand.Next(50, 229);
         p6.ID = ConfigProduct.NextProductNumber;
         p6.InStuck = rand.Next(0, 300);
@@ -72,7 +72,7 @@ internal class DataSource
 
         Product p8 = new Product();
         p8.Category = "Theoretical";
-        p8.Name = "loyalty";
+        p8.Name = "Loyalty";
         p8.Price = rand.Next(50, 229);
         p8.ID = ConfigProduct.NextProductNumber;
         p8.InStuck = 0;
@@ -80,7 +80,7 @@ internal class DataSource
 
         Product p9 = new Product();
         p9.Category = "History";
-        p9.Name = "world war 2";
+        p9.Name = "World War 2";
         p9.Price = rand.Next(50, 229);
         p9.ID = ConfigProduct.NextProductNumber;
         p9.InStuck = rand.Next(0, 300);
@@ -88,7 +88,7 @@ internal class DataSource
 
         Product p10 = new Product();
         p10.Category = "History";
-        p10.Name = "the History of Israel";
+        p10.Name = "The History of Israel";
         p10.Price = rand.Next(50, 229);
         p10.ID = ConfigProduct.NextProductNumber;
         p10.InStuck = rand.Next(0, 300);
@@ -108,7 +108,6 @@ internal class DataSource
         //string[] TheoryBook = { "how To grow", "loyalty", "all about labor", "Am I seck?", "How to improve your self-confidance" };
         //string[] HistoryBooks = { "world war 2", "Bibi", "the History of Israel","Natsizem","white book" };
         //string[] AdultBooks = { "Harry Potter 1", "Harry Potter 2", "Harry Potter 3", "Harry Potter 4", "Harry Potter 5" };
-
         //for (int i =0;i<20;i++)
         //{
         //Product p = new Product();
@@ -141,44 +140,50 @@ internal class DataSource
         //p.InStuck = rand.Next(0, 20);
         //lstP.Add(p);
         //}
-
     }
-    public void createOrder()
+    public void createOrder()//creating a new Order
     {
         string[] names= {"Shirel", "Tamar", "Shana","Samuel", "Shely", "David","Golda","Miryam","Maayan",
                                "TehiLa","Hadar","Avraham","Noa","Rebecca","Roni","Noam","Lital","Andi","Tara","Lola",
                                "Tal","Ishay","Sara","Naomie","Nina","Michael","Ari","Refael","Dan","Julia","Shay","Josh",
-                               "Natlie","Boaz","Lea","Avigail","rachel","joe","Shira","Halel","Shlomo","Omer","Aviv","Or"};
+                               "Natlie","Boaz","Lea","Avigail","rachel","joe","Shira","Halel","Shlomo","Omer","Aviv","Or"}; //data source of names
 
         string[] costomerAdress = {"Rananna","Jerusalem","Paris","Madrid","Torento","Avivim","New York","Tel Aviv","Lod",
                                    "Lisbon","Berlin","Metola","Eilat","Netivot","Ashdod","Ashkelon","Natanya","Tokyo",
                                    "Mexico City","Havanna","Lima","Beer Shaeva","Omer","Tzfat","Nazeret","Tiberiad","Raba",
-                                   "Pretoria","Sidny","Givataim","Ariel","Ramat Gan","Ramat Hasharon","Petah Tikva","Yerocham"};
+                                   "Pretoria","Sidny","Givataim","Ariel","Ramat Gan","Ramat Hasharon","Petah Tikva","Yerocham"}; //data source of adress
 
         for (int i = 0; i < 21; i++)
         {
             Order order = new();
+            order.ID = Config.NextOrderNumber;
             order.CustomerName = names[rand.Next(0, 43)];
             order.CostomerAdress = names[rand.Next(0, 43)];
             order.CostomerEmail = order.CustomerName + "@gmail.com";
-            order.ID = Config.NextOrderNumber;
             Random s_rand = new Random();
             order.OrderDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
             order.ShipDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
             order.DeliveryDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
+            if(i<=16)
+            {
+                order.DeliveryDate= DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 200L));
+            }
+            if(i<=8)
+            {
+                order.DeliveryDate = null;
+            }
             lstO.Add(order);
         }
-        //for (int i = 0; i < 17; i++) 80 אחוז
-        //{
-        //   lstO[i];
-        //}
-       // also the 60
     }
     public void createOrderItem()
     {
-        
-    }
+        for (int i = 0; i < 21; i++)
+        {
+            OrderItem orderItem = new();
+            orderItem.ID= Config.NextOrderNumber;
 
+        }
+    }
    private void s_Initialize()
     {
         createProduct();
@@ -198,5 +203,4 @@ internal class DataSource
         private static int s_nextProductNumber = s_startProductNumber;
         internal static int NextProductNumber { get => ++s_nextProductNumber; }
     }
-
 }
