@@ -254,13 +254,13 @@ class Program
                             tmpProduct2.Category = "Holy";
                             break;
                         case 2:
-                            tmpProduct2.Category = Category.Living_room;
+                            tmpProduct2.Category = "Theoretical";
                             break;
                         case 3:
-                            tmpProduct2.Category = Category.Bath_room;
+                            tmpProduct2.Category = "History";
                             break;
                         case 4:
-                            tmpProduct2.Category = Category.Kitchen;
+                            tmpProduct2.Category = "Romans";
                             break;
                         default:
                             Console.WriteLine("ERROR");
