@@ -185,7 +185,7 @@ internal class DataSource
                 OrderItem orderItem = new();
                 orderItem.ID = ConfigOrderItem2.NextOrderNumber;
                 orderItem.OrderID = num;
-                orderItem.Amount= rand.Next(10);
+                orderItem.Amount= rand.Next(10);    
                 Product temp = GetById(orderItem.ProductID);
                 orderItem.Price = temp.Price * orderItem.Amount;
             }    
