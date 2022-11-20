@@ -3,7 +3,7 @@ using DO;
 
 namespace Dal;
 
-public class DalOrderItem
+public class DalOrderItem : IOrderItem
 {
     DataSource? ds = DataSource.s_instance;
     public int Add(OrderItem item)
@@ -42,5 +42,25 @@ public class DalOrderItem
     public IEnumerable<OrderItem> GetAll()
     {
         return ds.lstOI;
+    }
+    public List<OrderItem> GetByOrderID(int ID)
+    {
+        List<OrderItem> tempList= new List<OrderItem>();
+        foreach (OrderItem temp in ds.lstOI)
+        {
+            if (temp.OrderID == ID)
+               tempList.Add(temp);
+        }
+        return tempList;
+    }
+    public OrderItem GetByIDOrder_IDProduct(int IDOrder, int IDProduct)
+    {
+        foreach (OrderItem temp in ds.lstOI)
+        {
+            if (temp.OrderID == IDOrder)
+               if (temp.ProductID == IDProduct)
+                    return temp;
+        }
+        throw new Exception("no exist");
     }
 }

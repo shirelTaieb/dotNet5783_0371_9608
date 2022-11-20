@@ -5,7 +5,7 @@ using System;
 
 namespace Dal;
 
-public class DalProduct
+public class DalProduct : IProduct
 {
     DataSource? ds = DataSource.s_instance;
     public int Add(Product item)
