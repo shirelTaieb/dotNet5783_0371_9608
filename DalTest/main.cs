@@ -72,7 +72,6 @@ class Program
             Console.WriteLine(ex);
         }
     }
-
     static void testOrderItem(DalOrderItem item)
     {
         try
