@@ -189,19 +189,19 @@ class Program
                     switch (ctg)
                     {
                         case 0:
-                            tmpProduct.Category = Category.Garden;
+                            tmpProduct.Category = "Children";
                             break;
                         case 1:
-                            tmpProduct.Category = Category.Bed_room;
+                            tmpProduct.Category = "Holy";
                             break;
                         case 2:
-                            tmpProduct.Category = Category.Living_room;
+                            tmpProduct.Category = "Theoretical";
                             break;
                         case 3:
-                            tmpProduct.Category = Category.Bath_room;
+                            tmpProduct.Category = "History";
                             break;
                         case 4:
-                            tmpProduct.Category = Category.Kitchen;
+                            tmpProduct.Category = "Romans";
                             break;
                         default:
                             Console.WriteLine("ERROR");
