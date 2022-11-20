@@ -43,7 +43,7 @@ class Program
                     {
                         Console.WriteLine(item);
                     }
-                    /// מדפיסים את הכל
+                    /// print all
                     break;
                 case "d":
                     Order tmpOrder2 = new Order();
