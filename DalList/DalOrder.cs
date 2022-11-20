@@ -6,7 +6,7 @@ namespace Dal;
 
 public class DalOrder : IOrder
 {
-    DataSource ds = DataSource.s_instance;
+    DataSource? ds = DataSource.s_instance;
     
     public int Add(Order order)
     {
