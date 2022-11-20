@@ -48,6 +48,6 @@ public class DalOrder : IOrder
     //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
     public IEnumerable<Order> GetAll()
     {
-
+        return ds.lstO;
     }
 }

@@ -1,6 +1,4 @@
-﻿
-
-using DalApi;
+﻿using DalApi;
 using DO;
 
 namespace Dal;
@@ -43,6 +41,6 @@ public class DalOrderItem
     //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
     public IEnumerable<OrderItem> GetAll()
     {
-
+        return ds.lstOI;
     }
 }

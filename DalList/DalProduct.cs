@@ -43,6 +43,6 @@ public class DalProduct
     //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
     public IEnumerable<Product> GetAll()
     {
-
+        return ds.lstP;
     }
 }
