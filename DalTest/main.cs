@@ -83,7 +83,7 @@ class Program
                 c - GET ORDER-ITEMS LIST
                 d - UPDATE ORDER ITEM
                 e - DELETE ORDER ITEM");
-            string option = Console.ReadLine();
+            string? option = Console.ReadLine();
             switch (option)
             {
                 case "a":
@@ -167,7 +167,7 @@ class Program
                 c - GET THE PRODUCTS LIST
                 d - UPDATE PRODUCT
                 e - DELETE PRODUCT");
-            string option = Console.ReadLine();
+            string? option = Console.ReadLine();
             switch (option)
             {
                 case "a":
@@ -289,7 +289,7 @@ class Program
         }
     }
 
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         DalProduct product = new DalProduct();
         DalOrder order = new DalOrder();
@@ -303,7 +303,7 @@ class Program
                 1-test Order
                 2-test OrderItem
                 3-test Product");
-            string option = Console.ReadLine();
+            string? option = Console.ReadLine();
             bool b = int.TryParse(option, out num);
             if (!b)
             {
@@ -324,7 +324,6 @@ class Program
                 default:
                     break;
             }
-
         }
     }
 }

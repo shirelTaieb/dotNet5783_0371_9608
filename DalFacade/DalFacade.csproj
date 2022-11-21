@@ -10,6 +10,7 @@
 	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 	  <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
 	  <RootNamespace />
+	  <OutputType>Exe</OutputType>
   </PropertyGroup>
 
 </Project>
