@@ -2,7 +2,7 @@
 using DalApi;
 using DO;
 namespace Dal;
-class Program
+  class Program
 {
     static void testOrder(DalOrder order)
     {
@@ -289,7 +289,7 @@ class Program
         }
     }
 
-    public static void Main(string[] args)
+      static void Main(string[] args)
     {
         DalProduct product = new DalProduct();
         DalOrder order = new DalOrder();

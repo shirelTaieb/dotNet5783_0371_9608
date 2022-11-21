@@ -11,11 +11,13 @@ public class DalProduct : IProduct
     public int Add(Product item)
     {
         item.ID = DataSource.Config.NextOrderNumber;
-        ds.lstP.Add(item);
+        ds?.lstP.Add(item);
         return item.ID;
     }
     public Product GetById(int id)
     {
+        if(ds == null)
+            throw new Exception("dosen't exist");
         foreach (Product temp in ds.lstP)
         {
             if (temp.ID == id)
@@ -25,6 +27,8 @@ public class DalProduct : IProduct
     }
     public void Update(Product item)
     {
+        if (ds == null)
+            throw new Exception("dosen't exist");
         foreach (Product temp in ds.lstP)
         {
             if (temp.ID == item.ID)
@@ -36,6 +40,8 @@ public class DalProduct : IProduct
     }
     public void Delete(int id)
     {
+        if (ds == null)
+            throw new Exception("dosen't exist");
         if (!ds.lstP.Remove(GetById(id)))
             throw new Exception("no exist");
     }
@@ -43,6 +49,8 @@ public class DalProduct : IProduct
     //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
     public IEnumerable<Product> GetAll()
     {
+        if (ds == null)
+            throw new Exception("dosen't exist");
         return ds.lstP;
     }
 }
