@@ -12,15 +12,17 @@ public class DalOrder : IOrder
     
     public int Add(Order order)
     {
-        //if (ds.lstO.Find(order) != null)??
-        //    throw new NotImplementedException();
+        if (ds == null)
+            throw new Exception("no exist");
         order.ID = DataSource.Config.NextOrderNumber;
         ds.lstO.Add(order);
         return order.ID;
     }
     public Order GetById(int id)
     {
-      foreach (Order temp in ds.lstO)
+        if (ds== null)
+            throw new Exception("no exist");
+        foreach (Order temp in ds.lstO)
         {
             if (temp.ID==id)
                 return temp;
@@ -29,6 +31,8 @@ public class DalOrder : IOrder
     }
     public void Update(Order order)
     {
+        if (ds == null)
+            throw new Exception("no exist");
         foreach (Order temp in ds.lstO)
         {
             if (temp.ID == order.ID)
@@ -40,7 +44,9 @@ public class DalOrder : IOrder
     }
         public void Delete(int id)
         {
-            if (!ds.lstO.Remove(GetById(id)))
+        if (ds == null)
+            throw new Exception("no exist");
+        if (!ds.lstO.Remove(GetById(id)))
                 throw new Exception("no exist");
         }
     
@@ -48,6 +54,8 @@ public class DalOrder : IOrder
     //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
     public IEnumerable<Order> GetAll()
     {
+        if (ds == null)
+            throw new Exception("no exist");
         return ds.lstO;
     }
 }

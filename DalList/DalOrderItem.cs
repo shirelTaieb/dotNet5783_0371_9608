@@ -8,12 +8,16 @@ public class DalOrderItem : IOrderItem
     DataSource? ds = DataSource.s_instance;
     public int Add(OrderItem item)
     {
+        if (ds == null)
+            throw new Exception("no exist");
         item.ID = DataSource.Config.NextOrderNumber;
         ds.lstOI.Add(item);
         return item.ID;
     }
     public OrderItem GetById(int id)
     {
+        if (ds == null)
+            throw new Exception("no exist");
         foreach (OrderItem temp in ds.lstOI)
         {
             if (temp.ID == id)
@@ -23,6 +27,8 @@ public class DalOrderItem : IOrderItem
     }
     public void Update(OrderItem item)
     {
+        if (ds == null)
+            throw new Exception("no exist");
         foreach (OrderItem temp in ds.lstOI)
         {
             if (temp.ID == item.ID)
@@ -34,6 +40,8 @@ public class DalOrderItem : IOrderItem
     }
     public void Delete(int id)
     {
+        if (ds == null)
+            throw new Exception("no exist");
         if (!ds.lstOI.Remove(GetById(id)))
             throw new Exception("no exist");
     }
@@ -41,11 +49,15 @@ public class DalOrderItem : IOrderItem
     //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
     public IEnumerable<OrderItem> GetAll()
     {
+        if (ds == null)
+            throw new Exception("no exist");
         return ds.lstOI;
     }
     public List<OrderItem> GetByOrderID(int ID)
     {
         List<OrderItem> tempList= new List<OrderItem>();
+        if (ds == null)
+            throw new Exception("no exist");
         foreach (OrderItem temp in ds.lstOI)
         {
             if (temp.OrderID == ID)
@@ -55,6 +67,8 @@ public class DalOrderItem : IOrderItem
     }
     public OrderItem GetByIDOrder_IDProduct(int IDOrder, int IDProduct)
     {
+        if (ds == null)
+            throw new Exception("no exist");
         foreach (OrderItem temp in ds.lstOI)
         {
             if (temp.OrderID == IDOrder)
