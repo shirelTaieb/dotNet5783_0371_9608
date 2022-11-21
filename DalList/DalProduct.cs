@@ -21,7 +21,7 @@ public class DalProduct : IProduct
             if (temp.ID == id)
                 return temp;
         }
-        throw new Exception("no exist");
+        throw new Exception("dosen't exist");
     }
     public void Update(Product item)
     {
