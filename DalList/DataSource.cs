@@ -4,7 +4,7 @@ using DalApi;
 using DalList;
 
 namespace Dal;
-internal class DataSource
+internal class DataSource //data 
 {
     public static readonly Random rand= new Random();
     private DataSource() => s_Initialize();
