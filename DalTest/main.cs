@@ -2,7 +2,7 @@
 using DalApi;
 using DO;
 namespace Dal;
-  public class Program
+  public class Program //תכנית ראשית
 {
     private static void testOrder(DalOrder order)
     {
