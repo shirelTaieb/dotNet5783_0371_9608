@@ -1,6 +1,7 @@
 ﻿using System;
 using DO;
 using DalApi;
+using DalList;
 
 namespace Dal;
 internal class DataSource
@@ -182,18 +183,23 @@ internal class DataSource
             int num= ConfigOrderItem1.NextOrderNumber;
             for (int j = 0; j < rand.Next(4); j++)
             {
-                OrderItem orderItem = new();
+                OrderItem orderItem = new OrderItem();
                 orderItem.ID = ConfigOrderItem2.NextOrderNumber;
                 orderItem.OrderID = num;
-                orderItem.Amount= rand.Next(10);    
-                Product temp = GetById(orderItem.ProductID);
-                orderItem.Price = temp.Price * orderItem.Amount;
+                orderItem.Amount= rand.Next(10);
                 orderItem.ProductID = rand.Next(1000, 1011);
+                foreach(Product temp in lstP)
+                {
+                    if (temp.ID == orderItem.ProductID)
+                        orderItem.Price= temp.Price;    
+                }
+            
             }    
             
         }
     }
-   private void s_Initialize()
+
+    private void s_Initialize()
     {
         createProduct();
         createOrder();
