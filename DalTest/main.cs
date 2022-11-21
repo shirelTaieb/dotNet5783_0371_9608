@@ -2,9 +2,9 @@
 using DalApi;
 using DO;
 namespace Dal;
-  class Program
+  public class Program
 {
-    static void testOrder(DalOrder order)
+    private static void testOrder(DalOrder order)
     {
         try
         {
@@ -72,7 +72,7 @@ namespace Dal;
             Console.WriteLine(ex);
         }
     }
-    static void testOrderItem(DalOrderItem item)
+    private static void testOrderItem(DalOrderItem item)
     {
         try
         {
@@ -156,7 +156,7 @@ namespace Dal;
         }
     }
 
-    static void testProduct(DalProduct product)
+    private static void testProduct(DalProduct product)
     {
         try
         {
@@ -289,7 +289,7 @@ namespace Dal;
         }
     }
 
-      static void Main(string[] args)
+      public static void Main(string[] args)
     {
         DalProduct product = new DalProduct();
         DalOrder order = new DalOrder();
