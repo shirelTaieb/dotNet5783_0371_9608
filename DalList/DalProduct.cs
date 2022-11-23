@@ -10,7 +10,7 @@ public class DalProduct : IProduct
     DataSource? ds = DataSource.s_instance;
     public int Add(Product item)
     {
-        item.ID = DataSource.Config.NextOrderNumber;
+       // item.ID = DataSource.Config.NextOrderNumber;
         ds?.lstP.Add(item);
         return item.ID;
     }

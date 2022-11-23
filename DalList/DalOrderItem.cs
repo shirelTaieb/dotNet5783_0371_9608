@@ -10,7 +10,7 @@ public class DalOrderItem : IOrderItem
     {
         if (ds == null)
             throw new Exception("no exist");
-        item.ID = DataSource.Config.NextOrderNumber;
+        //item.ID = DataSource.Config.NextOrderNumber;
         ds.lstOI.Add(item);
         return item.ID;
     }

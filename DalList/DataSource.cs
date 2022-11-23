@@ -188,14 +188,13 @@ internal class DataSource //data
                 orderItem.OrderID = num;
                 orderItem.Amount= rand.Next(10);
                 orderItem.ProductID = rand.Next(1000, 1011);
-                foreach(Product temp in lstP)
+                lstOI.Add(orderItem);
+                foreach (Product temp in lstP)
                 {
                     if (temp.ID == orderItem.ProductID)
                         orderItem.Price= temp.Price;    
                 }
-            
             }    
-            
         }
     }
 
