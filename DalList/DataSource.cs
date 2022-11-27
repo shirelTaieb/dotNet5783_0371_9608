@@ -20,7 +20,7 @@ internal class DataSource //data
         p1.Name = "Kipa aduma";
         p1.Price = rand.Next(50, 229);
         p1.ID = ConfigProduct.NextProductNumber;
-        p1.InStuck= rand.Next(0, 300);
+        p1.InStock= rand.Next(0, 300);
         lstP.Add(p1);
 
         Product p2 = new Product();
@@ -28,7 +28,7 @@ internal class DataSource //data
         p2.Name = "Aladin";
         p2.Price = rand.Next(50, 229);
         p2.ID = ConfigProduct.NextProductNumber;
-        p2.InStuck = rand.Next(0, 300);
+        p2.InStock = rand.Next(0, 300);
         lstP.Add(p2);
 
         Product p3 = new Product();

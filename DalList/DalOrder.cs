@@ -6,14 +6,14 @@ using System;
 //do
 namespace Dal;
 
-public class DalOrder : IOrder
+internal class DalOrder : IOrder
 {
     DataSource? ds = DataSource.s_instance;
     
     public int Add(Order order)
     {
         if (ds == null)
-            throw new Exception("no exist");
+            throw new NotExistException();
         //order.ID = DataSource.Config.NextOrderNumber;
         ds.lstO.Add(order);
         return order.ID;
@@ -21,18 +21,18 @@ public class DalOrder : IOrder
     public Order GetById(int id)
     {
         if (ds== null)
-            throw new Exception("no exist");
+            throw new NotExistException();
         foreach (Order temp in ds.lstO)
         {
             if (temp.ID==id)
                 return temp;
         }
-        throw new Exception("no exist");
+        throw new NotExistException();
     }
     public void Update(Order order)
     {
         if (ds == null)
-            throw new Exception("no exist");
+            throw new NotExistException();
         foreach (Order temp in ds.lstO)
         {
             if (temp.ID == order.ID)
@@ -45,17 +45,17 @@ public class DalOrder : IOrder
         public void Delete(int id)
         {
         if (ds == null)
-            throw new Exception("no exist");
+            throw new NotExistException();
         if (!ds.lstO.Remove(GetById(id)))
-                throw new Exception("no exist");
-        }
+            throw new NotExistException();
+    }
     
 
     //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
     public IEnumerable<Order> GetAll()
     {
         if (ds == null)
-            throw new Exception("no exist");
+            throw new NotExistException();
         return ds.lstO;
     }
 }
