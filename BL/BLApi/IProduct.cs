@@ -9,12 +9,20 @@ namespace BLApi
 {
     public class IProduct
     {
-        public void addNewProduct(BO.Product? pr);//מנהל מוסיף מוצר חדש
-        public void deleteProduct(int IDpr);//מנהל מוחק מוצר 
-        public List<BO.ProductForList?> managerlistOfProduct();//מציג למנהל רשימה של מוצרים כך שלכל מוצר יוצגו: מספר מוצר, שם מוצר מחיר וקטגוריה 
+        public void addNewProduct(BO.Product? pr);
+        /// <summary>
+        /// מנהל מוסיף מוצר חדש
+        /// </summary>
+        /// <param name="IDpr"></param>
+        public void deleteProduct(int IDpr);
+        /// <summary>
+        /// מנהל מוחק מוצר 
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<BO.ProductForList?> managerlistOfProduct();//מציג למנהל רשימה של מוצרים כך שלכל מוצר יוצגו: מספר מוצר, שם מוצר מחיר וקטגוריה 
         public BO.Product getProductByID(int IDpr);// מציג למנהל לפי קוד המוצר את פרטי המוצר הבאים: מספר מוצר, שם מוצר מחיר, קטגוריה וכמות במלאי  
         public void updateProduct(BO.Product? pr); //מנהל מוסיף מעדכן מוצר
-        public List<BO.ProductItem?> getCatalogProduct();// לקוח מבקש קטלוג של המוצרים
+        public IEnumerable<BO.ProductItem?> getCatalogProduct();// לקוח מבקש קטלוג של המוצרים
         public BO.ProductItem getProductInfo(int prID);
     }
 }
