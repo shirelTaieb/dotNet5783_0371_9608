@@ -7,7 +7,8 @@ using System.Threading.Tasks;
     {
         public IEnumerable<BO.OrderForList?> getOrderList();
         /// <summary>
-    /// מחזיר פרטי הזמנה
+    /// להציג למנהל את כל ההזמנות 
+    /// לכל הזמנה נציג: מספר הזמנה, שם לקוח, סטאטוס, כמות פריטים ומחיר כולל 
     /// </summary>
     /// <param name="prID"></param>
     /// <returns></returns>
@@ -29,6 +30,18 @@ using System.Threading.Tasks;
     /// </summary>
     /// <returns></returns>
     /// 
-
+        public BO.OrderTracking orderTracking(int orderID);
+    /// <summary>
+    /// מסך ניהול הזמנה של מנהל
+    /// </summary>
+    /// <param name="prID"></param>
+    /// <returns></returns>
+    public BO.OrderTracking updateAmountOrder(int orderID);
+    /// <summary>
+    /// בונוס עדיכון הזמנה על ידי המנהל: יאפשר הוספה \ הורדה \ שינוי כמות של מוצר בהזמנה ע"י המנהל
+    /// תחזיר אובייקט הזמנה מעודכן
+    /// </summary>
+    /// <param name="prID"></param>
+    /// <returns></returns>
 }
 
