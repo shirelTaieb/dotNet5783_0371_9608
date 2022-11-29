@@ -1,6 +1,5 @@
 ﻿using BLApi;
 using BO;
-using DalApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +11,7 @@ namespace BlImplementation;
 
 internal class Product : IProduct
 {
-    private IDal Dal = new DalList(); //?
+    //private IDal Dal = new DalList(); //?
     public void addNewProduct(BO.Product? pr)
     {
 
