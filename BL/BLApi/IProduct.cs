@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// Don't use BO because we won't see the diffrent beetwen BO and DO so we use BO/DO.the name
+
 
 namespace BLApi
 {
