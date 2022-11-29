@@ -9,6 +9,7 @@ public struct Product
     public string? Category { get; set; }
     public double Price { get; set; }
     public int InStock { get; set; }
+    public string? path { get; set; }  //for image
 
     public override string ToString() => $@"
 	Product ID={ID}: 
