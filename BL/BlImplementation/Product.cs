@@ -11,22 +11,33 @@ namespace BlImplementation;
 
 internal class Product : IProduct
 {
-    public IEnumerable<ProductForList> getCatalogProduct()
+    public void addNewProduct(BO.Product? pr)
     {
-
-        //implementaiton needed
-
-        throw new NotImplementedException();
-
-    }
-    public IEnumerable<ProductItem> GetProducts()
-
-    {
-
-        //implementaiton needed
-
-        throw new NotImplementedException();
 
     }
 
+    public void deleteProduct(int IDpr)
+    {
+
+    }
+    public IEnumerable<BO.ProductForList?> managerlistOfProduct()
+    {
+
+    }
+    public BO.Product getProductByID(int IDpr)
+    {
+
+    }
+    public void updateProduct(BO.Product? pr)
+    {
+
+    }
+    public IEnumerable<BO.ProductItem?> coustomerlistOfProduct()
+    {
+
+    }
+    public BO.ProductItem getProductInfo(int prID)
+    {
+
+    }
 }
