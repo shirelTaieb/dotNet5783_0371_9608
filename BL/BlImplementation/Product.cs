@@ -1,4 +1,5 @@
 ﻿using BLApi;
+
 using BO;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,16 @@ internal class Product : IProduct
     }
     public BO.Product getProductByID(int IDpr)
     {
-
+        if ((IDpr <= 100000) && (IDpr >= 999999))
+            throw new doseNotExistException();
+        try
+        {
+            return GetByID();
+        }
+        catch (Exception ex)    
+        {
+            throw ex;
+        }
     }
     public void updateProduct(BO.Product? pr)
     {

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace BO
 {
-    internal class Exceptions
+    public class doseNotExistException : Exception
     {
+        public doseNotExistException() : base() { }
+        public doseNotExistException(string message) : base(message) { }
+        public doseNotExistException(string message, Exception inner) : base(message, inner) { }
+
+        override public string Message => " this item dosen't exist";
+        override public string ToString() => Message;
     }
 }
+
