@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLApi
 {
-    public class IProduct
+    public interface IProduct
     {
         public void addNewProduct(BO.Product? pr);
         /// <summary>
@@ -19,10 +19,33 @@ namespace BLApi
         /// מנהל מוחק מוצר 
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<BO.ProductForList?> managerlistOfProduct();//מציג למנהל רשימה של מוצרים כך שלכל מוצר יוצגו: מספר מוצר, שם מוצר מחיר וקטגוריה 
-        public BO.Product getProductByID(int IDpr);// מציג למנהל לפי קוד המוצר את פרטי המוצר הבאים: מספר מוצר, שם מוצר מחיר, קטגוריה וכמות במלאי  
-        public void updateProduct(BO.Product? pr); //מנהל מוסיף מעדכן מוצר
-        public IEnumerable<BO.ProductItem?> getCatalogProduct();// לקוח מבקש קטלוג של המוצרים
+        public IEnumerable<BO.ProductForList?> managerlistOfProduct();
+        /// <summary>
+        /// מציג למנהל רשימה של מוצרים כך שלכל מוצר יוצגו: מספר מוצר, שם מוצר מחיר וקטגוריה 
+        /// </summary>
+        /// <param name="IDpr"></param>
+        /// <returns></returns>
+        public BO.Product getProductByID(int IDpr);
+        /// <summary>
+        /// מציג למנהל לפי קוד המוצר את פרטי המוצר הבאים: מספר מוצר, שם מוצר מחיר, קטגוריה וכמות במלאי  
+        /// </summary>
+        /// <param name="pr"></param>
+        public void updateProduct(BO.Product? pr);
+        /// <summary>
+        /// מנהל מוסיף מעדכן מוצר
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<BO.ProductItem?> getCatalogProduct();
+        /// <summary>
+        /// לקוח מבקש קטלוג של המוצרים
+        /// </summary>
+        /// <param name="prID"></param>
+        /// <returns></returns>
         public BO.ProductItem getProductInfo(int prID);
+        /// <summary>
+        /// מחזיר פרטי מוצר
+        /// </summary>
+        /// <param name="prID"></param>
+        /// <returns></returns>
     }
 }
