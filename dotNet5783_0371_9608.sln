@@ -16,13 +16,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalTest", "DalTest\DalTest.
 		{D848A7C6-8404-410D-9895-BE0A768CD7D1} = {D848A7C6-8404-410D-9895-BE0A768CD7D1}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{9F898582-3489-41B2-A9BF-17F0DB8070B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{9F898582-3489-41B2-A9BF-17F0DB8070B9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{AF2F4186-91C8-4BC6-91C6-33E4E64FC7BC} = {AF2F4186-91C8-4BC6-91C6-33E4E64FC7BC}
 		{D848A7C6-8404-410D-9895-BE0A768CD7D1} = {D848A7C6-8404-410D-9895-BE0A768CD7D1}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLTest", "BLTest\BLTest.csproj", "{561967CE-F9D7-48D9-B05A-9E25A3D61EE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLTest", "BLTest\BLTest.csproj", "{561967CE-F9D7-48D9-B05A-9E25A3D61EE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xml", "xml", "{97C627B7-6456-4F11-83AB-1F94B6F89B66}"
+	ProjectSection(SolutionItems) = preProject
+		xml\dal-config.xml = xml\dal-config.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

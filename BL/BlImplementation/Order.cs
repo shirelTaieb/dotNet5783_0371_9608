@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BO;
+using BLApi;
+using DalApi;
 
-namespace BlImplementation
+
+namespace BlImplementation;
+
+internal class Order : IOredr
 {
-    internal class Order
-    {
-    }
+    DalApi.Factory.Get();
 }
