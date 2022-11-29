@@ -14,9 +14,9 @@ internal class DalOrder : IOrder
     {
         if (ds == null)
             throw new NotExistException();
-        //order.ID = DataSource.Config.NextOrderNumber;
+       // order.ID = DataSource.Config.NextOrderNumber;
         ds.lstO.Add(order);
-        return order.ID;
+        return order.ID ;
     }
     public Order GetById(int id)
     {
