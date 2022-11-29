@@ -36,7 +36,7 @@ internal class DataSource //data
         p3.Name = "to the sea";
         p3.Price = rand.Next(50, 229);
         p3.ID = ConfigProduct.NextProductNumber;
-        p3.InStuck = rand.Next(0, 300);
+        p3.InStock = rand.Next(0, 300);
         lstP.Add(p3);
 
         Product p4 = new Product();
@@ -44,7 +44,7 @@ internal class DataSource //data
         p4.Name = "bereshit";
         p4.Price = rand.Next(50, 229);
         p4.ID = ConfigProduct.NextProductNumber;
-        p4.InStuck = rand.Next(0, 300);
+        p4.InStock = rand.Next(0, 300);
         lstP.Add(p4);
 
         Product p5 = new Product();
@@ -52,7 +52,7 @@ internal class DataSource //data
         p5.Name = "The Rambam";
         p5.Price = rand.Next(50, 229);
         p5.ID = ConfigProduct.NextProductNumber;
-        p5.InStuck = rand.Next(0, 300);
+        p5.InStock = rand.Next(0, 300);
         lstP.Add(p5);
 
         Product p6 = new Product();
@@ -60,7 +60,7 @@ internal class DataSource //data
         p6.Name = "All about labor";
         p6.Price = rand.Next(50, 229);
         p6.ID = ConfigProduct.NextProductNumber;
-        p6.InStuck = rand.Next(0, 300);
+        p6.InStock = rand.Next(0, 300);
         lstP.Add(p6);
 
         Product p7 = new Product();
@@ -68,7 +68,7 @@ internal class DataSource //data
         p7.Name = "How to improve your self-confidance";
         p7.Price = rand.Next(50, 229);
         p7.ID = ConfigProduct.NextProductNumber;
-        p7.InStuck = rand.Next(0, 300);
+        p7.InStock = rand.Next(0, 300);
         lstP.Add(p7);
 
         Product p8 = new Product();
@@ -76,7 +76,7 @@ internal class DataSource //data
         p8.Name = "Loyalty";
         p8.Price = rand.Next(50, 229);
         p8.ID = ConfigProduct.NextProductNumber;
-        p8.InStuck = 0;
+        p8.InStock = 0;
         lstP.Add(p8);
 
         Product p9 = new Product();
@@ -84,7 +84,7 @@ internal class DataSource //data
         p9.Name = "World War 2";
         p9.Price = rand.Next(50, 229);
         p9.ID = ConfigProduct.NextProductNumber;
-        p9.InStuck = rand.Next(0, 300);
+        p9.InStock = rand.Next(0, 300);
         lstP.Add(p9);
 
         Product p10 = new Product();
@@ -92,7 +92,7 @@ internal class DataSource //data
         p10.Name = "The History of Israel";
         p10.Price = rand.Next(50, 229);
         p10.ID = ConfigProduct.NextProductNumber;
-        p10.InStuck = rand.Next(0, 300);
+        p10.InStock = rand.Next(0, 300);
         lstP.Add(p10);
 
         Product p11 = new Product();
@@ -100,7 +100,7 @@ internal class DataSource //data
         p11.Name = "Harry Potter 3";
         p11.Price = rand.Next(50, 229);
         p11.ID = ConfigProduct.NextProductNumber;
-        p11.InStuck = rand.Next(0, 300);
+        p11.InStock = rand.Next(0, 300);
         lstP.Add(p11);
 
         //string[] categories = { "Children", "Holy", "Theoretical", "Romans", "History" };
