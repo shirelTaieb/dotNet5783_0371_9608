@@ -6,11 +6,23 @@ using System.Threading.Tasks;
 
 namespace BLApi
 {
-    internal class ICart
+    public interface ICart
     {
-        public BO.Cart addProductToCard(BO.Cart? cart);// מוסיף מוצר  לסל
-        public BO.Cart updatPoductAmount(BO.Cart? cart);// מעדכן כמות פריט בסל
-        public void confirmOrder(BO.Cart? cart);//אישור הזמנה
-
+        public BO.Cart addProductToCard(BO.Cart? cart);
+        /// <summary>
+        /// מוסיף מוצר  לסל
+        /// </summary>
+        /// <param name="cart"></param>
+        /// <returns></returns>
+        public BO.Cart updatPoductAmount(BO.Cart? cart);
+        /// <summary>
+        /// מעדכן כמות פריט בסל
+        /// </summary>
+        /// <param name="cart"></param>
+        public void confirmOrder(BO.Cart? cart);
+        /// <summary>
+        /// פרטי הזמנה
+        /// </summary>
+        /// <param name="cart"></param>
     }
 }
