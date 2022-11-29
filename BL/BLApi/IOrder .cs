@@ -5,6 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
     public interface IOrder
     {
+        public IEnumerable<BO.OrderForList?> getOrderList();
+        /// <summary>
+    /// מחזיר פרטי הזמנה
+    /// </summary>
+    /// <param name="prID"></param>
+    /// <returns></returns>
         public BO.Order getOrderInfo(int orderID);
         /// <summary>
         /// מחזיר פרטי הזמנה
@@ -23,5 +29,6 @@ using System.Threading.Tasks;
     /// </summary>
     /// <returns></returns>
     /// 
+
 }
 

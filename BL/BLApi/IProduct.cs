@@ -35,7 +35,7 @@ namespace BLApi
         /// מנהל מוסיף מעדכן מוצר
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<BO.ProductItem?> getCatalogProduct();
+        public IEnumerable<BO.ProductItem?> coustomerlistOfProduct();
         /// <summary>
         /// לקוח מבקש קטלוג של המוצרים
         /// </summary>
