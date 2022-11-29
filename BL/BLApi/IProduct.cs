@@ -11,7 +11,7 @@ namespace BLApi
     {
         public void addNewProduct(BO.Product? pr);//מנהל מוסיף מוצר חדש
         public void deleteProduct(int IDpr);//מנהל מוחק מוצר 
-        public List<BO.ProductForList?> mangerlistOfProduct();//מציג למנהל רשימה של מוצרים כך שלכל מוצר יוצגו: מספר מוצר, שם מוצר מחיר וקטגוריה 
+        public List<BO.ProductForList?> managerlistOfProduct();//מציג למנהל רשימה של מוצרים כך שלכל מוצר יוצגו: מספר מוצר, שם מוצר מחיר וקטגוריה 
         public BO.Product getProductByID(int IDpr);// מציג למנהל לפי קוד המוצר את פרטי המוצר הבאים: מספר מוצר, שם מוצר מחיר, קטגוריה וכמות במלאי  
         public void updateProduct(BO.Product? pr); //מנהל מוסיף מעדכן מוצר
         public List<BO.ProductItem?> getCatalogProduct();// לקוח מבקש קטלוג של המוצרים
