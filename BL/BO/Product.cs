@@ -13,6 +13,7 @@ namespace BO
         public double? Price { get; set; }
         public Category? Category { get; set; }
         public int InStock { get; set; }
+        public string? path { get; set; } //for image
         public override string ToString() => $@"
 	Product ID={ID}: 
         Product Name {Name}, 

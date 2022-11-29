@@ -9,5 +9,6 @@ namespace BO
     public class Enums
     {
         enum Category { Children, Holy, Theoretical, Romans, History};
+        enum OrderStatus { confirm,sent, deliveried};
     }
 }
