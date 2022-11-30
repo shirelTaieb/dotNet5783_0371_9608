@@ -18,16 +18,16 @@ internal class Product : BLApi.IProduct
         //בדיקת תקינות קלט
         //1. שם לא מחרוזת ריקה:
         if (pr.Name == "")
-            throw new worngDataException();
+            throw new wrongDataException();
         //מחיר - שהוא מספר חיובי
         if(pr.Price<0)
-            throw new worngDataException();
+            throw new wrongDataException();
         //כמות במלאי שאינה שלילית
         if (pr.InStock < 0)
-            throw new worngDataException();
+            throw new wrongDataException();
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))
-            throw new worngDataException();
+            throw new wrongDataException();
         
     }
 
@@ -58,16 +58,16 @@ internal class Product : BLApi.IProduct
         //בדיקת תקינות קלט
         //1. שם לא מחרוזת ריקה:
         if (pr.Name == "")
-            throw new worngDataException();
+            throw new wrongDataException();
         //מחיר - שהוא מספר חיובי
         if (pr.Price < 0)
-            throw new worngDataException();
+            throw new wrongDataException();
         //כמות במלאי שאינה שלילית
         if (pr.InStock < 0)
-            throw new worngDataException();
+            throw new wrongDataException();
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))
-            throw new worngDataException();
+            throw new wrongDataException();
 
     }
     public IEnumerable<BO.ProductItem?> coustomerlistOfProduct()
@@ -78,6 +78,6 @@ internal class Product : BLApi.IProduct
     {
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((prID <= 100000) && (prID >= 999999))
-            throw new worngDataException();
+            throw new wrongDataException();
     }
 }
