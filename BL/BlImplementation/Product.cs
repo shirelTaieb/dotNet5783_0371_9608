@@ -76,6 +76,8 @@ internal class Product : BLApi.IProduct
     }
     public BO.ProductItem getProductInfo(int prID)
     {
-
+        //מזהה- שהוא מספר חיובי בן 6 ספרות
+        if ((prID <= 100000) && (prID >= 999999))
+            throw new worngDataException();
     }
 }
