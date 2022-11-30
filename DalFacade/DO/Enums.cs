@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace DO
 {
-  
+    public enum Category { Children, Holy, Theoretical, Romans, History };
+
 }

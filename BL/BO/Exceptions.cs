@@ -21,7 +21,7 @@ namespace BO
         public wrongDataException(string message) : base(message) { }
         public wrongDataException(string message, Exception inner) : base(message, inner) { }
 
-        override public string Message => "The Data you ender is invalide";
+        override public string Message => "The Data you enter is invalide";
         override public string ToString() => Message;
     }
 }

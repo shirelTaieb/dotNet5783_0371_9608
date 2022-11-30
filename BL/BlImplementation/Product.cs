@@ -28,6 +28,14 @@ internal class Product : BLApi.IProduct
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))
             throw new wrongDataException();
+        DO.Product temp=new DO.Product();
+        temp.ID=pr.ID;
+        temp.Name=pr.Name;
+        temp.Price = pr.Price;
+        temp.InStock=pr.InStock;
+        temp.Category=pr.Category;
+
+        Dal.Product.Add(pr);
         
     }
 
@@ -63,7 +71,7 @@ internal class Product : BLApi.IProduct
         if (pr.Price < 0)
             throw new wrongDataException();
         //כמות במלאי שאינה שלילית
-        if (pr.InStock < 0)
+        if (pr.InStock <= 0)
             throw new wrongDataException();
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))
