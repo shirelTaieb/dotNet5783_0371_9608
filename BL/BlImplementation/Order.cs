@@ -10,7 +10,32 @@ using DalApi;
 
 namespace BlImplementation;
 
-internal class Order : IOredr
+internal class Order : BLApi.IOrder
 {
-    DalApi.Factory.Get();
+    private IDal? Dal = DalApi.Factory.Get();
+
+    public IEnumerable<BO.OrderForList?> getOrderList()
+    {
+
+    }
+    public BO.Order getOrderInfo(int orderID)
+    {
+
+    }
+    public BO.Order updateSentOrder(int orderID)
+    {
+
+    }
+    public BO.Order updateDeliveryOrder(int orderID)
+    {
+
+    }
+    public BO.OrderTracking orderTracking(int orderID)
+    {
+
+    }
+    public BO.OrderTracking updateAmountOrder(int orderID)
+    {
+
+    }
 }

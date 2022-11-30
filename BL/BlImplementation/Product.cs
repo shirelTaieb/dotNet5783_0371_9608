@@ -1,5 +1,5 @@
 ﻿using BLApi;
-
+using DalApi;
 using BO;
 using System;
 using System.Collections.Generic;
@@ -10,12 +10,25 @@ using System.Threading.Tasks;
 
 namespace BlImplementation;
 
-internal class Product : IProduct
+internal class Product : BLApi.IProduct
 {
-    //private IDal Dal = new DalList(); //?
+    private IDal? Dal = DalApi.Factory.Get();
     public void addNewProduct(BO.Product? pr)
     {
-
+        //בדיקת תקינות קלט
+        //1. שם לא מחרוזת ריקה:
+        if (pr.Name == "")
+            throw new worngDataException();
+        //מחיר - שהוא מספר חיובי
+        if(pr.Price<0)
+            throw new worngDataException();
+        //כמות במלאי שאינה שלילית
+        if (pr.InStock < 0)
+            throw new worngDataException();
+        //מזהה- שהוא מספר חיובי בן 6 ספרות
+        if ((pr.ID <= 100000) && (pr.ID >= 999999))
+            throw new worngDataException();
+        
     }
 
     public void deleteProduct(int IDpr)
@@ -32,15 +45,29 @@ internal class Product : IProduct
             throw new doseNotExistException();
         try
         {
-            return GetByID();
+            DO.Product? temp= Dal?.Product.GetById(IDpr); //שיננו את ההרשאה של dalproduct לפובליק ךא בטוח שזה חוקי לבדוק
+            temp.
         }
-        catch (Exception ex)    
+        catch (Exception? ex)    
         {
             throw ex;
         }
     }
     public void updateProduct(BO.Product? pr)
     {
+        //בדיקת תקינות קלט
+        //1. שם לא מחרוזת ריקה:
+        if (pr.Name == "")
+            throw new worngDataException();
+        //מחיר - שהוא מספר חיובי
+        if (pr.Price < 0)
+            throw new worngDataException();
+        //כמות במלאי שאינה שלילית
+        if (pr.InStock < 0)
+            throw new worngDataException();
+        //מזהה- שהוא מספר חיובי בן 6 ספרות
+        if ((pr.ID <= 100000) && (pr.ID >= 999999))
+            throw new worngDataException();
 
     }
     public IEnumerable<BO.ProductItem?> coustomerlistOfProduct()
