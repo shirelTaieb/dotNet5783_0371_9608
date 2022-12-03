@@ -4,14 +4,14 @@ using DalApi;
 using DalList;
 
 namespace Dal;
-internal class DataSource //data 
+public class DataSource 
 {
     public static readonly Random rand= new Random();
     private DataSource() => s_Initialize();
     internal static DataSource? s_instance { get; }=new DataSource();
 
     internal List<Product> lstP= new List<Product>();
-    internal List<Order> lstO= new List<Order>();
+    public List<Order> lstO= new List<Order>();
     internal List<OrderItem> lstOI= new List<OrderItem>();
     private void createProduct()//creating 11 product
     {

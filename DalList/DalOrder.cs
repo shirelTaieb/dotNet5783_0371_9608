@@ -6,7 +6,7 @@ using System;
 //do
 namespace Dal;
 
-internal class DalOrder : IOrder
+public class DalOrder : IOrder //שיננו לפובליק
 {
     DataSource? ds = DataSource.s_instance;
     

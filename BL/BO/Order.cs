@@ -16,7 +16,7 @@ namespace BO
         public DateTime? PaymentDate { get; set; }
         public DateTime? ShipDate { get; set; }
         public DateTime? DeliveryDate { get; set; }
-        public OrderStatus Status { get; set; }
+        public OrderStatus? Status { get=>Status; set => Status = value; }
         public OrderItem Items { get; set; }
         public double TotalPrice { get; set; }
 

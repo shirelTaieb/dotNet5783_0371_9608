@@ -8,6 +8,6 @@ namespace BO
 {
    
        public enum Category { Children, Holy, Theoretical, Romans, History};
-       public enum OrderStatus { confirm,sent, deliveried};
+       public enum OrderStatus {confirm, sent, deliveried};
    
 }
