@@ -14,17 +14,23 @@
         </Grid.RowDefinitions>
         <Grid Name="UpGrid" Height="auto" Grid.Row="0" Width="auto" Grid.RowSpan="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="183*"/>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="200*"/>
             </Grid.ColumnDefinitions >
-            <ComboBox Name="Selector" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <ComboBoxItem Content="Category" />
-                <ComboBoxItem Content="Name" />
-                <ComboBoxItem Content="Price"/>
-                <ComboBoxItem Content="ID"/>
-                <ComboBoxItem Content="InStock"/>
-            </ComboBox>
-            <Label Content="Enter your selection:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="80" Width="364" Grid.Column="0" FontSize="36"/>
+
+
+            <ComboBox Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Height="46"/>
+            <Label Name="label" Content="Enter your selection:" HorizontalAlignment="Center" Margin="0,1,0,0" VerticalAlignment="Top" Height="44" RenderTransformOrigin="0.5,0.5" Width="400" Grid.ColumnSpan="2" BorderBrush="#FF49A078" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" Foreground="#FFDCE1DE" Background="#FF49A078">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
         </Grid>
         <ListView x:Name="ProductsListView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.View>

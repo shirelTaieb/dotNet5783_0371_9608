@@ -6,16 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlImplementation
+namespace BlImplementation;
+
+public class Bl:IBl
 {
-    public class Bl:IBl
-    {
-        public Bl() { }
+    public Bl() { }
 
-        public IOrder Order { get; set; } = new Order();
+    public IOrder Order { get; set; } = new Order();
 
-        public IProduct Product { get; set; } = new Product();
+    public IProduct Product { get; set; } = new Product();
 
-        public ICart Cart { get; set; } = new Cart();
-    }
+    public ICart Cart { get; set; } = new Cart();
 }
