@@ -30,13 +30,15 @@ internal class Product : BLApi.IProduct
             throw new wrongDataException();
         DO.Product temp=new DO.Product();
         temp.ID=pr.ID;
+        if(Dal.Product.GetById(temp.ID)!=null)
+        {
+            throw new alreadyExistException();
+        }
         temp.Name=pr.Name;
         temp.Price = pr.Price;
         temp.InStock=pr.InStock;
-        temp.Category=pr.Category;
-
-        Dal.Product.Add(pr);
-        
+        temp.Category=DO.Category.Holy;///////////Holyyyyyyyyyyyyyyyyyyyyy
+        Dal?.Product.Add(temp);
     }
 
     public void deleteProduct(int IDpr)
@@ -76,6 +78,7 @@ internal class Product : BLApi.IProduct
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))
             throw new wrongDataException();
+
 
     }
     public IEnumerable<BO.ProductItem?> coustomerlistOfProduct()

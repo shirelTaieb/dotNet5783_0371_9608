@@ -16,7 +16,7 @@ public class DataSource
     private void createProduct()//creating 11 product
     {
         Product p1 = new Product();
-        p1.Category = "Children";
+        p1.Category = DO.Category.Children;
         p1.Name = "Kipa aduma";
         p1.Price = rand.Next(50, 229);
         p1.ID = ConfigProduct.NextProductNumber;
@@ -24,7 +24,7 @@ public class DataSource
         lstP.Add(p1);
 
         Product p2 = new Product();
-        p2.Category = "Children";
+        p2.Category = DO.Category.Children;
         p2.Name = "Aladin";
         p2.Price = rand.Next(50, 229);
         p2.ID = ConfigProduct.NextProductNumber;
@@ -32,7 +32,7 @@ public class DataSource
         lstP.Add(p2);
 
         Product p3 = new Product();
-        p3.Category = "Children";
+        p3.Category = DO.Category.Children;
         p3.Name = "to the sea";
         p3.Price = rand.Next(50, 229);
         p3.ID = ConfigProduct.NextProductNumber;
@@ -40,7 +40,7 @@ public class DataSource
         lstP.Add(p3);
 
         Product p4 = new Product();
-        p4.Category = "Holy";
+        p4.Category = DO.Category.Holy;
         p4.Name = "bereshit";
         p4.Price = rand.Next(50, 229);
         p4.ID = ConfigProduct.NextProductNumber;
@@ -48,7 +48,7 @@ public class DataSource
         lstP.Add(p4);
 
         Product p5 = new Product();
-        p5.Category = "Holy";
+        p5.Category = DO.Category.Holy;
         p5.Name = "The Rambam";
         p5.Price = rand.Next(50, 229);
         p5.ID = ConfigProduct.NextProductNumber;
@@ -56,7 +56,7 @@ public class DataSource
         lstP.Add(p5);
 
         Product p6 = new Product();
-        p6.Category = "Theoretical";
+        p6.Category = DO.Category.Theoretical;
         p6.Name = "All about labor";
         p6.Price = rand.Next(50, 229);
         p6.ID = ConfigProduct.NextProductNumber;
@@ -64,7 +64,7 @@ public class DataSource
         lstP.Add(p6);
 
         Product p7 = new Product();
-        p7.Category = "Theoretical";
+        p7.Category = DO.Category.Theoretical;
         p7.Name = "How to improve your self-confidance";
         p7.Price = rand.Next(50, 229);
         p7.ID = ConfigProduct.NextProductNumber;
@@ -72,7 +72,7 @@ public class DataSource
         lstP.Add(p7);
 
         Product p8 = new Product();
-        p8.Category = "Theoretical";
+        p8.Category = DO.Category.Theoretical;
         p8.Name = "Loyalty";
         p8.Price = rand.Next(50, 229);
         p8.ID = ConfigProduct.NextProductNumber;
@@ -80,7 +80,7 @@ public class DataSource
         lstP.Add(p8);
 
         Product p9 = new Product();
-        p9.Category = "History";
+        p9.Category = DO.Category.History;
         p9.Name = "World War 2";
         p9.Price = rand.Next(50, 229);
         p9.ID = ConfigProduct.NextProductNumber;
@@ -88,7 +88,7 @@ public class DataSource
         lstP.Add(p9);
 
         Product p10 = new Product();
-        p10.Category = "History";
+        p10.Category = DO.Category.History;
         p10.Name = "The History of Israel";
         p10.Price = rand.Next(50, 229);
         p10.ID = ConfigProduct.NextProductNumber;
@@ -96,7 +96,7 @@ public class DataSource
         lstP.Add(p10);
 
         Product p11 = new Product();
-        p11.Category = "Romans";
+        p11.Category = DO.Category.Romans;
         p11.Name = "Harry Potter 3";
         p11.Price = rand.Next(50, 229);
         p11.ID = ConfigProduct.NextProductNumber;
