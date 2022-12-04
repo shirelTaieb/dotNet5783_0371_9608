@@ -13,11 +13,10 @@ namespace BO
         public string? CustomerEmail { get; set; }
         public string? CustomerAddress { get; set; }
         public DateTime? OrderDate { get; set; }
-        public DateTime? PaymentDate { get; set; }
         public DateTime? ShipDate { get; set; }
         public DateTime? DeliveryDate { get; set; }
         public OrderStatus? Status { get=>Status; set => Status = value; }
-        public OrderItem Items { get; set; }
+        public BO.OrderItem? Items { get; set; }
         public double TotalPrice { get; set; }
 
         public override string ToString() => $@"
