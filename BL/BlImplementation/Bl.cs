@@ -17,4 +17,5 @@ public class Bl:IBl
     public IProduct Product { get; set; } = new Product();
 
     public ICart Cart { get; set; } = new Cart();
+
 }

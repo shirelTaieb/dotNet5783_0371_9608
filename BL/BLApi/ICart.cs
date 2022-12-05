@@ -8,7 +8,7 @@ namespace BLApi
 {
     public interface ICart
     {
-        public BO.Cart addProductToCard(BO.Cart? cart);
+        public BO.Cart addProductToCart(BO.Cart? cart,int prID);
         /// <summary>
         /// מוסיף מוצר  לסל
         /// </summary>

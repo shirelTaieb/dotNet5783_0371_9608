@@ -20,34 +20,6 @@ internal class Order : BLApi.IOrder
     /// </summary>
     /// <param name="or"></param>
     /// <returns></returns>
-    private OrderStatus getStatus(DO.Order or)
-    {
-        OrderStatus stat=new OrderStatus();
-        if (or.ShipDate != null)
-            if (or.DeliveryDate != null)
-                stat = OrderStatus.deliveried;
-            else
-                stat = OrderStatus.sent;
-        else
-            stat = OrderStatus.confirm;
-        return stat;
-    }
-    private BO.Order? DoOrderToBo(DO.Order o)
-    {
-        BO.Order temp = new BO.Order();
-        temp.ID = o.ID;
-        temp.CustomerName = o.CostumerName;
-        temp.CustomerEmail = o.CostumerEmail;
-        temp.CustomerAddress = o.CostumerAdress;
-        temp.OrderDate = o.OrderDate;
-        temp.ShipDate = o.ShipDate;
-        temp.DeliveryDate= o.DeliveryDate;
-        temp.Status = getStatus(o);
-        temp.Items = null;
-        temp.TotalPrice = 0;
-        return temp;
-
-    }
     private OrderForList BoOrderToOrderForList(BO.Order or)
     {
         OrderForList ofl=new OrderForList();
@@ -59,7 +31,35 @@ internal class Order : BLApi.IOrder
         return ofl;
     }
     private IDal? Dal = DalApi.Factory.Get();
- 
+    internal OrderStatus getStatus(DO.Order or)
+    {
+        OrderStatus stat = new OrderStatus();
+        if (or.ShipDate != null)
+            if (or.DeliveryDate != null)
+                stat = OrderStatus.deliveried;
+            else
+                stat = OrderStatus.sent;
+        else
+            stat = OrderStatus.confirm;
+        return stat;
+    }
+    internal BO.Order? DoOrderToBo(DO.Order o)
+    {
+        BO.Order temp = new BO.Order();
+        temp.ID = o.ID;
+        temp.CustomerName = o.CostumerName;
+        temp.CustomerEmail = o.CostumerEmail;
+        temp.CustomerAddress = o.CostumerAdress;
+        temp.OrderDate = o.OrderDate;
+        temp.ShipDate = o.ShipDate;
+        temp.DeliveryDate = o.DeliveryDate;
+        temp.Status = getStatus(o);
+        temp.Items = null;
+        temp.TotalPrice = 0;
+        return temp;
+
+    }
+
     public IEnumerable<BO.OrderForList?> getOrderList()
     {
         List<DO.Order> temp = Dal.Order.GetAll().ToList(); //take the data from the factory
@@ -118,7 +118,7 @@ internal class Order : BLApi.IOrder
         DO.Order temp = Dal?.Order.GetById(orderID)??throw new doseNotExistException();//get the order from the data according to id
         BO.OrderTracking ot = new BO.OrderTracking();
         ot.ID = orderID;
-        ot.Status = getStatus(temp);
+        ot.Status =getStatus(temp);
         return ot;
 
     }
