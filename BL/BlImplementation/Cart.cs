@@ -40,21 +40,28 @@ namespace BlImplementation
         }
         public BO.Cart updatePoductAmount(BO.Cart? cart,int IDpr, int newAmount)
         {
-            //מזהה- הוא מספר חיובי בן 6 ספרות
-            if ((IDpr <= 100000) && (IDpr >= 999999))
+            //בודק שהתז נכון וקיים
+            BO.OrderItem? temp = new BO.OrderItem();
+            temp = cart?.Items?.FirstOrDefault(ls => ls?.ProductID == IDpr);
+            if (temp == null)
                 throw new BO.doseNotExistException();
-            if(newAmount < 0)//אם הכמות קטנה - תקטין את הכמות בהתאם ןתעדכן מחיר כולל של פריט ושל סל קניות
+            if(cart==null)
+                throw new BO.doseNotExistException();
+            if (newAmount < temp.Amount)//אם הכמות קטנה - תקטין את הכמות בהתאם ןתעדכן מחיר כולל של פריט ושל סל קניות
             {
-
+                // מתעלמת באלגנטיות מהבקשה:תעדכן מחיר כולל של פריט כי לא מובן
+                cart.TotalPrice -= temp.Price * temp.Amount;
+                temp.Amount = newAmount;
+                cart.TotalPrice += temp.Price * temp.Amount;
             }
-            if(newAmount > 0)//אם הכמות גדלה - תפעל בדומה להוספת מוצר לסל קניות שכבר קיים בסל קניות כנ"ל
-
+            if(newAmount > temp.Amount)//אם הכמות גדלה - תפעל בדומה להוספת מוצר לסל קניות שכבר קיים בסל קניות כנ"ל
             {
-
+                
             }
             if(newAmount == 0)//אם הכמות נהייתה 0 - תִּמְחַק את הפריט המתאים מהסל ותעדכן מחיר כולל של סל קניות
             {
-                DO.
+                cart.TotalPrice -= temp.Price * temp.Amount;
+                Dal!.Product.Delete(IDpr);// alredy chack that its not null
             }
         }
         public void confirmOrder(BO.Cart? cart)
