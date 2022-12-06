@@ -43,7 +43,7 @@ internal class Product : BLApi.IProduct
             throw new BO.wrongDataException();
         DO.Product temp=new DO.Product();
         temp.ID=pr.ID;
-        if(Dal.Product.GetById(temp.ID)!=null)
+        if(Dal?.Product.GetById(temp.ID)!=null)
         {
             throw new BO.alreadyExistException();
         }
@@ -52,7 +52,7 @@ internal class Product : BLApi.IProduct
     }
     public void deleteProduct(int IDpr)
     {
-        Dal.Product.Delete(IDpr);
+        Dal?.Product.Delete(IDpr);
     }
     public void updateProduct(BO.Product? pr)
     {

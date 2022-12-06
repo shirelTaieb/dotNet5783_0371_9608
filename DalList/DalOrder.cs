@@ -14,7 +14,7 @@ public class DalOrder : IOrder //שיננו לפובליק
     {
         if (ds == null)
             throw new NotExistException();
-       // order.ID = DataSource.Config.NextOrderNumber;
+        order.ID = DataSource.Config.NextOrderNumber;
         ds.lstO.Add(order);
         return order.ID ;
     }
@@ -42,20 +42,26 @@ public class DalOrder : IOrder //שיננו לפובליק
             }
         }
     }
-        public void Delete(int id)
-        {
-        if (ds == null)
-            throw new NotExistException();
-        if (!ds.lstO.Remove(GetById(id)))
-            throw new NotExistException();
-    }
-    
+   public void Delete(int id)
+   {
+     if (ds == null)
+         throw new NotExistException();
+     if (!ds.lstO.Remove(GetById(id)))
+         throw new NotExistException();
+   }    
 
-    //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
-    public IEnumerable<Order> GetAll()
+    public IEnumerable<Order?> GetAll(Func<Order?, bool>? filter = null)
     {
         if (ds == null)
             throw new NotExistException();
+        if (filter!=null)
+        {
+            var result =
+                from item in ds!.lstO
+                where filter!(item)
+                select item;
+            return result.ToList();
+        }
         return ds.lstO;
     }
 }
