@@ -99,7 +99,15 @@ internal class Product : BLApi.IProduct
         //מזהה- הוא מספר חיובי בן 6 ספרות
         if ((IDpr <= 100000) && (IDpr >= 999999))
             throw new BO.doseNotExistException();
-        DO.Product? temp=Dal.Product.GetById(IDpr)?? throw new BO.doseNotExistException();
+        BO.Product pr = new BO.Product();
+        DO.Product temp =Dal?.Product.GetById(IDpr)?? throw new BO.doseNotExistException();
+        pr.ID = temp.ID;
+        pr.Name = temp.Name;
+        pr.Price = temp.Price;
+        pr.Category = (BO.Category)temp.Category;   
+        pr.InStock = temp.InStock;
+        pr.path = temp.path;
+        return pr;
     }
     public BO.Product getProductInfoCoustomer(int IDpr)
     {
@@ -108,6 +116,6 @@ internal class Product : BLApi.IProduct
             throw new BO.wrongDataException();
 
 
-    }
+    }//cart????????
  
 }
