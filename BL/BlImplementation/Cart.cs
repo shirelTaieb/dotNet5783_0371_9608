@@ -44,7 +44,7 @@ namespace BlImplementation
                     cart.TotalPrice += oi.Price;//uptade the total price of the cart
                     //איך מעדכנים מחיר כולל של פריט? איפה? ת
                 }
-                else throw new doseNotExistException(); //if there is no products in the stock
+                else throw new notInStockException(); //if there is no products in the stock
             }
             return cart;
         }
@@ -60,13 +60,20 @@ namespace BlImplementation
             if (newAmount < temp.Amount)//אם הכמות קטנה - תקטין את הכמות בהתאם ןתעדכן מחיר כולל של פריט ושל סל קניות
             {
                 // מתעלמת באלגנטיות מהבקשה:תעדכן מחיר כולל של פריט כי לא מובן
-                cart.TotalPrice -= temp.Price * temp.Amount;
+                cart.TotalPrice -= temp.Price * (temp.Amount- newAmount);
                 temp.Amount = newAmount;
-                cart.TotalPrice += temp.Price * temp.Amount;
+               // cart.TotalPrice += temp.Price * temp.Amount;
             }
             if(newAmount > temp.Amount)//אם הכמות גדלה - תפעל בדומה להוספת מוצר לסל קניות שכבר קיים בסל קניות כנ"ל
             {
-                
+                // מתעלמת באלגנטיות מהבקשה:תעדכן מחיר כולל של פריט כי לא מובן
+                DO.Product temp2 = new DO.Product();
+                if (temp2.InStock > 0) //there are products in stock.
+                {
+                   temp!.Amount++;   //!- because we check that the product exist in the cart.
+                    cart.TotalPrice += temp.Price;//uptade the total price of the cart
+                }
+                else throw new notInStockException(); //if there is no products in the stock
             }
             if(newAmount == 0)//אם הכמות נהייתה 0 - תִּמְחַק את הפריט המתאים מהסל ותעדכן מחיר כולל של סל קניות
             {

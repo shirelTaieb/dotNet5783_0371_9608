@@ -33,5 +33,14 @@ namespace BO
         override public string Message => "The Data already Exist";
         override public string ToString() => Message;
     }
-}
 
+    public class notInStockException : Exception
+    {
+        public notInStockException() : base() { }
+        public notInStockException(string message) : base(message) { }
+        public notInStockException(string message, Exception inner) : base(message, inner) { }
+
+        override public string Message => "Not In Stock";
+        override public string ToString() => Message;
+    }
+}
