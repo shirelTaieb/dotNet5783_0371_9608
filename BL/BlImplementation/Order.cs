@@ -30,7 +30,7 @@ internal class Order : BLApi.IOrder
         ofl.TotalPrice = or.TotalPrice;
         return ofl;
     }
-    private IDal? Dal = DalApi.Factory.Get();
+    private IDal? Dal = DalApi.Factory.Get() ?? throw new wrongDataException();
     internal OrderStatus getStatus(DO.Order or)
     {
         OrderStatus stat = new OrderStatus();

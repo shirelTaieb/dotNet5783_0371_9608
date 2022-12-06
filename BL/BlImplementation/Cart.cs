@@ -12,31 +12,41 @@ namespace BlImplementation
 {
     internal class Cart : BLApi.ICart
     {
-        private IDal? Dal = DalApi.Factory.Get();
-        public BO.Cart addProductToCart(BO.Cart? cart,int prID)
+        private IDal? Dal = DalApi.Factory.Get()??throw new wrongDataException();//עכשיו ניתן לצאת מנק הנחה שדאל שונה מנאל
+        public BO.Cart addProductToCart(BO.Cart? cart, int prID)
         {
             //מזהה- שהוא מספר חיובי בן 6 ספרות
             if ((prID <= 100000) && (prID >= 999999))
                 throw new wrongDataException();
-            if (cart!=null&&cart.Items!.Exists(or => or.ID == prID ))
+            if (cart == null) //if the cart is null we build a new cart.
+                cart = new BO.Cart();
+            DO.Product temp = new DO.Product();
+            temp = Dal!.Product.GetById(prID);//get the product from Do by id\
+            BO.OrderItem orit = new BO.OrderItem(); //cast from Do to bo.orderitem
+            if (cart!.Items == null)//if the cart is null
             {
-                DO.Product temp=new DO.Product();
-                temp = Dal.Product.GetById(prID);
-                if(temp.InStock>0)
-                { 
-                    BO.OrderItem? oi = cart.Items.FirstOrDefault(or => or.ID == prID); //מה יש לו
+                cart.Items.Add(orit); //מה הבעיה לעזאזלל לקרוא לאדד על רשימה ריקה
+                return cart;
+            }
+            if (!(cart.Items!.Exists(or => or.ID == prID ))) //if the product isnt exist in the cart.
+            {
+                orit.ProductID = temp.ID;
+                orit.Price = temp.Price;
+                orit.Amount = 1;  //this is the first from this type of product
+                cart!.Items.Add(orit); //add the product to the cart
+            }
+            else //if the product is exist 
+            {
+                if (temp.InStock > 0) //there are products in stock.
+                {
+                    BO.OrderItem? oi = cart.Items.FirstOrDefault(or => or.ProductID == prID);
+                    oi!.Amount++;   //!- because we check that the product exist in the cart.
+                    cart.TotalPrice += oi.Price;//uptade the total price of the cart
+                    //איך מעדכנים מחיר כולל של פריט? איפה? ת
                 }
                 else throw new doseNotExistException(); //if there is no products in the stock
             }
-            else
-            {
-                DO.Product dproduct = new DO.Product();
-                dproduct = Dal.Product.GetById(prID);
-                BO.OrderItem orit = new BO.OrderItem();
-                orit.ProductID = dproduct.ID;
-                orit.Price = dproduct.Price;
-                cart.Items.Add(orit);
-            }
+            return cart;
         }
         public BO.Cart updatePoductAmount(BO.Cart? cart,int IDpr, int newAmount)
         {
