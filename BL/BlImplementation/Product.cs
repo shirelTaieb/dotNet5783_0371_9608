@@ -79,11 +79,17 @@ internal class Product : BLApi.IProduct
     public IEnumerable<BO.ProductForList?> getManagerListOfProduct()
     {
        List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
+        BO.ProductForList temp= new BO.ProductForList();
        List<DO.Product> lstp = Dal.Product.GetAll().ToList();
         foreach (DO.Product prop in lstp )
         {
-
+            temp.ID = prop.ID;
+            temp.Name = prop.Name;
+            temp.Price = prop.Price;
+            temp.Category = (BO.Category)prop.Category;
+            listProductForList.Add(temp);
         }
+        return listProductForList;
     }
     public IEnumerable<BO.ProductForList?> getCoustomerlistOfProduct()
     {

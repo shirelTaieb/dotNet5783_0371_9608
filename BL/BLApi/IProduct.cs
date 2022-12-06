@@ -22,6 +22,7 @@ namespace BLApi
         /// <returns></returns>
         public void deleteProduct(int IDpr);
 
+
         /// <summary>
         /// מנהל מוסיף מעדכן מוצר
         /// </summary>
