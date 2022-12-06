@@ -37,12 +37,28 @@ namespace BlImplementation
                 cart.Items.Add(orit);
             }
         }
-        public BO.Cart updatPoductAmount(BO.Cart? cart)
+        public BO.Cart updatePoductAmount(BO.Cart? cart,int IDpr, int newAmount)
         {
-  
+            //מזהה- הוא מספר חיובי בן 6 ספרות
+            if ((IDpr <= 100000) && (IDpr >= 999999))
+                throw new BO.doseNotExistException();
+            if(newAmount < 0)//אם הכמות קטנה - תקטין את הכמות בהתאם ןתעדכן מחיר כולל של פריט ושל סל קניות
+            {
+
+            }
+            if(newAmount > 0)//אם הכמות גדלה - תפעל בדומה להוספת מוצר לסל קניות שכבר קיים בסל קניות כנ"ל
+
+            {
+
+            }
+            if(newAmount == 0)//אם הכמות נהייתה 0 - תִּמְחַק את הפריט המתאים מהסל ותעדכן מחיר כולל של סל קניות
+            {
+                DO.
+            }
         }
         public void confirmOrder(BO.Cart? cart)
         {
+
 
         }
 

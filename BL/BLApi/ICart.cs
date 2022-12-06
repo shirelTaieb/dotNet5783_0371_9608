@@ -8,13 +8,13 @@ namespace BLApi
 {
     public interface ICart
     {
-        public BO.Cart addProductToCart(BO.Cart? cart,int prID);
+        public BO.Cart addProductToCart(BO.Cart? cart,int IDpr);
         /// <summary>
         /// מוסיף מוצר  לסל
         /// </summary>
         /// <param name="cart"></param>
         /// <returns></returns>
-        public BO.Cart updatPoductAmount(BO.Cart? cart);
+        public BO.Cart updatePoductAmount(BO.Cart? cart,int id, int newAmount);
         /// <summary>
         /// מעדכן כמות פריט בסל
         /// </summary>
