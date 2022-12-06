@@ -14,10 +14,13 @@ namespace BlImplementation
         private IDal? Dal = DalApi.Factory.Get();
         public BO.Cart addProductToCart(BO.Cart? cart,int prID)
         {
-            DO.Product? dproduct = Dal.Product.GetById(prID)??null;
-            BO.Product bproduct = DOProductToBO(dproduct);//לממש את ההמרה
+            DO.Product dproduct = new DO.Product();
+            dproduct= Dal.Product.GetById(prID)??throw new doseNotExistException();
+            BO.OrderItem orit = new BO.OrderItem();
+            orit.ProductID = dproduct.ID;
+            orit.Price = dproduct.Price;
             if (cart == null)
-                cart.Items.Add(bproduct);
+                cart.Items.Add(orit);
             if (cart.Items.Exists(or => or.ID == prID ))
             {
 
@@ -25,7 +28,7 @@ namespace BlImplementation
         }
         public BO.Cart updatPoductAmount(BO.Cart? cart)
         {
-
+  
         }
         public void confirmOrder(BO.Cart? cart)
         {

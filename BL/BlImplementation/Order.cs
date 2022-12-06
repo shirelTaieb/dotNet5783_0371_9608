@@ -43,7 +43,7 @@ internal class Order : BLApi.IOrder
             stat = OrderStatus.confirm;
         return stat;
     }
-    internal BO.Order? DoOrderToBo(DO.Order o)
+    internal BO.Order? DoOrderToBo(DO.Order? o)
     {
         BO.Order temp = new BO.Order();
         temp.ID = o.ID;
@@ -78,13 +78,13 @@ internal class Order : BLApi.IOrder
         }
         return orders;
     }
-    public BO.Order getOrderInfo(int orderID)
+    public BO.Order? getOrderInfo(int orderID)
     {
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((orderID <= 100000) && (orderID >= 999999))
             throw new wrongDataException();
         DO.Order? temp = Dal.Order.GetById(orderID);
-        BO.Order boorder = new BO.Order();
+        BO.Order? boorder = new BO.Order();
         boorder = DoOrderToBo(temp);
         return boorder;
     }
@@ -94,7 +94,7 @@ internal class Order : BLApi.IOrder
         if ((orderID <= 100000) && (orderID >= 999999))
             throw new wrongDataException();
         DO.Order? temp = Dal.Order.GetById(orderID);
-        BO.Order cast = DoOrderToBo(temp);//cast from do to bo
+        BO.Order? cast = DoOrderToBo(temp);//cast from do to bo
         cast.Status = BO.OrderStatus.sent;
         return cast;
 
