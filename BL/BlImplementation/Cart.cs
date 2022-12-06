@@ -14,21 +14,23 @@ namespace BlImplementation
         private IDal? Dal = DalApi.Factory.Get();
         public BO.Cart addProductToCart(BO.Cart? cart,int prID)
         {
+
             if (cart.Items.Exists(or => or.ID == prID ))
             {
                 DO.Product? temp=new DO.Product();
-                temp = Dal.Product.GetById(prID);
+                DO.Product
+                temp = Dal?.Product.GetById(prID);
                 if(temp.inStock>0)/////yohoooo
                 {
                     temp.inStock--;
-                    BO.OrderItem? oi = cart.Items.find(or => or.ID == prID); //מה יש לו
+                    BO.OrderItem? oi = cart.Items.FirstOrDefault(or => or.ID == prID); //מה יש לו
                 }
                 else throw new doseNotExistException(); //if there is no products in the stock
             }
             else
             {
                 DO.Product dproduct = new DO.Product();
-                dproduct = Dal.Product.GetById(prID) ?? throw new doseNotExistException();
+                dproduct = Dal.Product.GetById(prID);
                 BO.OrderItem orit = new BO.OrderItem();
                 orit.ProductID = dproduct.ID;
                 orit.Price = dproduct.Price;

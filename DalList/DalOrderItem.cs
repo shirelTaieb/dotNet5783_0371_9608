@@ -10,7 +10,7 @@ internal class DalOrderItem : IOrderItem
     {
         if (ds == null)
             throw new NotExistException();
-        //item.ID = DataSource.Config.NextOrderNumber;
+        item.ID = DataSource.Config.NextOrderNumber;
         ds.lstOI.Add(item);
         return item.ID;
     }
@@ -46,11 +46,18 @@ internal class DalOrderItem : IOrderItem
             throw new NotExistException();
     }
 
-    //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
-    public IEnumerable<OrderItem> GetAll()
+    public IEnumerable<OrderItem?> GetAll(Func<OrderItem?, bool>? filter = null)
     {
         if (ds == null)
             throw new NotExistException();
+        if (filter != null)
+        {
+            var result =
+                from item in ds!.lstOI
+                where filter!(item)
+                select item;
+            return result.ToList();
+        }
         return ds.lstOI;
     }
     public List<OrderItem> GetByOrderID(int ID)

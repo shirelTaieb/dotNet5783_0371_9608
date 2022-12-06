@@ -10,7 +10,7 @@ public class DalProduct : IProduct
     DataSource? ds = DataSource.s_instance;
     public int Add(Product item)
     {
-       // item.ID = DataSource.Config.NextOrderNumber;
+        item.ID = DataSource.Config.NextOrderNumber;
         ds?.lstP.Add(item);
         return item.ID;
     }
@@ -46,11 +46,18 @@ public class DalProduct : IProduct
             throw new NotExistException();
     }
 
-    //IEnumerable<T?> GetAll(Func<T?, bool>? filter = null);
-    public IEnumerable<Product> GetAll()
+    public IEnumerable<Product?> GetAll(Func<Product?, bool>? filter = null)
     {
         if (ds == null)
             throw new NotExistException();
+        if (filter != null)
+        {
+            var result =
+                from item in ds!.lstP
+                where filter!(item)
+                select item;
+            return result.ToList();
+        }
         return ds.lstP;
     }
 }
