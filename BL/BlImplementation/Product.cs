@@ -75,7 +75,7 @@ internal class Product : BLApi.IProduct
         temp = BOproductToDO(pr);
 
     }
-    public IEnumerable<BO.ProductForList?> getManagerListOfProduct()//נו זה גם לקוסטומר
+    public IEnumerable<BO.ProductForList?> getListOfProduct()//נו זה גם לקוסטומר
     {
        List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
        BO.ProductForList temp= new BO.ProductForList();
@@ -90,10 +90,6 @@ internal class Product : BLApi.IProduct
         }
         return listProductForList;
     }
-    //public IEnumerable<BO.ProductForList?> getCoustomerlistOfProduct() זה הרי בול כמו הפונקצייה מעל לפי דן
-    //{
-
-   //}
     public BO.Product getProductInfoManager(int IDpr)
     {
         //מזהה- הוא מספר חיובי בן 6 ספרות
@@ -109,13 +105,13 @@ internal class Product : BLApi.IProduct
         pr.path = temp.path;
         return pr;
     }
-    public BO.Product getProductInfoCoustomer(int IDpr)
+    public BO.Product getProductInfoCoustomer(int IDpr)//cart????????
     {
         //מזהה- הוא מספר חיובי בן 6 ספרות
         if ((IDpr <= 100000) && (IDpr >= 999999))
             throw new BO.wrongDataException();
 
 
-    }//cart????????
+    }
  
 }

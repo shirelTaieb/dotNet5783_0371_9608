@@ -35,14 +35,7 @@ namespace BLApi
         /// </summary>
         /// <param name="IDpr"></param>
         /// <returns></returns>
-        public IEnumerable<BO.ProductForList?> getManagerListOfProduct();
-
-        /// <summary>
-        /// מחזיר למשתמש את הרשימה של המוצרים= יעני לקטלוג
-        /// </summary>
-        /// <param name="prID"></param>
-        /// <returns></returns>
-        public IEnumerable<BO.ProductForList?> getCoustomerlistOfProduct();
+        public IEnumerable<BO.ProductForList?> getListOfProduct();
 
 
         /// <summary>
@@ -57,6 +50,6 @@ namespace BLApi
         /// </summary>
         /// <param name="prID"></param>
         /// <returns></returns>
-        public BO.Product getProductInfoCoustomer(int prID, );
+        public BO.Product getProductInfoCoustomer(int prID,);
     }
 }

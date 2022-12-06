@@ -43,11 +43,13 @@ internal class Order : BLApi.IOrder
             stat = OrderStatus.confirm;
         return stat;
     }
-    internal BO.Order? DoOrderToBo(DO.Order? o)
+    internal BO.Order DoOrderToBo(DO.Order? o)
     {
+        
+       DO.Order ooo=(DO.Order)o!;
         BO.Order temp = new BO.Order();
-        temp.ID = o.ID;
-        temp.CustomerName = o.CostumerName;
+        temp.ID = o?.ID??0;
+        temp.CustomerName = o?.CostumerName??"";
         temp.CustomerEmail = o.CostumerEmail;
         temp.CustomerAddress = o.CostumerAdress;
         temp.OrderDate = o.OrderDate;
