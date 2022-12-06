@@ -13,6 +13,20 @@ namespace BlImplementation;
 internal class Product : BLApi.IProduct
 {
     private IDal? Dal = DalApi.Factory.Get();
+    /// <summary>
+    /// פונקציה שממירה מ BO לDO
+    /// </summary>
+    /// <param name="prod"></param>
+    /// <returns></returns>
+    internal DO.Product BOproductToDO(BO.Product prod)
+    {
+        DO.Product temp = new DO.Product();
+        temp.Name = prod.Name;
+        temp.Price = prod.Price;
+        temp.InStock = prod.InStock;
+        temp.Category = (DO.Category)prod.Category;
+        return temp;
+    }
     public void addNewProduct(BO.Product? pr)
     {
         //בדיקת תקינות קלט
@@ -34,34 +48,12 @@ internal class Product : BLApi.IProduct
         {
             throw new alreadyExistException();
         }
-        temp.Name=pr.Name;
-        temp.Price = pr.Price;
-        temp.InStock=pr.InStock;
-        temp.Category=DO.Category.Holy;///////////Holyyyyyyyyyyyyyyyyyyyyy
+        temp = BOproductToDO(pr);
         Dal?.Product.Add(temp);
     }
-
     public void deleteProduct(int IDpr)
     {
-
-    }
-    public IEnumerable<BO.ProductForList?> managerlistOfProduct()
-    {
-
-    }
-    public BO.Product getProductByID(int IDpr)
-    {
-        if ((IDpr <= 100000) && (IDpr >= 999999))
-            throw new doseNotExistException();
-        try
-        {
-            DO.Product? temp= Dal?.Product.GetById(IDpr); //שיננו את ההרשאה של dalproduct לפובליק ךא בטוח שזה חוקי לבדוק
-            temp.
-        }
-        catch (Exception? ex)    
-        {
-            throw ex;
-        }
+        Dal.Product.Delete(IDpr);
     }
     public void updateProduct(BO.Product? pr)
     {
@@ -78,17 +70,53 @@ internal class Product : BLApi.IProduct
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))
             throw new wrongDataException();
-
+        //הקוד:
+        DO.Product temp = new DO.Product();
+        temp = Dal?.Product.GetById(pr.ID) ?? throw new wrongDataException(); //אם התז הזה כבר קיים
+        temp= BOproductToDO(pr);
 
     }
-    public IEnumerable<BO.ProductItem?> coustomerlistOfProduct()
+    public IEnumerable<BO.ProductForList?> getManagerListOfProduct()
+    {
+       List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
+        BO.ProductForList temp= new BO.ProductForList();
+       List<DO.Product> lstp = Dal.Product.GetAll().ToList();
+        foreach (DO.Product prop in lstp )
+        {
+            temp.ID = prop.ID;
+            temp.Name = prop.Name;
+            temp.Price = prop.Price;
+            temp.Category = (BO.Category)prop.Category;
+            listProductForList.Add(temp);
+        }
+        return listProductForList;
+    }
+    public IEnumerable<BO.ProductForList?> getCoustomerlistOfProduct()
     {
 
     }
-    public BO.ProductItem getProductInfo(int prID)
+    public BO.Product getProductInfoManager(int IDpr)
     {
-        //מזהה- שהוא מספר חיובי בן 6 ספרות
-        if ((prID <= 100000) && (prID >= 999999))
+        //מזהה- הוא מספר חיובי בן 6 ספרות
+        if ((IDpr <= 100000) && (IDpr >= 999999))
+            throw new doseNotExistException();
+        try
+        {
+            DO.Product? temp= Dal?.Product.GetById(IDpr); //שיננו את ההרשאה של dalproduct לפובליק ךא בטוח שזה חוקי לבדוק
+            temp.
+        }
+        catch (Exception? ex)    
+        {
+            throw ex;
+        }
+    }
+    public BO.Product getProductInfoCoustomer(int IDpr)
+    {
+        //מזהה- הוא מספר חיובי בן 6 ספרות
+        if ((IDpr <= 100000) && (IDpr >= 999999))
             throw new wrongDataException();
+
+
     }
+ 
 }
