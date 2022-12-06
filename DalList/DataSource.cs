@@ -10,9 +10,9 @@ public class DataSource
     private DataSource() => s_Initialize();
     internal static DataSource? s_instance { get; }=new DataSource();
 
-    internal List<Product> lstP= new List<Product>();
-    public List<Order> lstO= new List<Order>();
-    internal List<OrderItem> lstOI= new List<OrderItem>();
+    internal List<Product?> lstP= new List<Product?>();
+    public List<Order?> lstO= new List<Order?>();
+    internal List<OrderItem?> lstOI= new List<OrderItem?>();
     private void createProduct()//creating 11 product
     {
         Product p1 = new Product();

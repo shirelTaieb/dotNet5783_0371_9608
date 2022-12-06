@@ -23,7 +23,13 @@ namespace BlImplementation
                 cart.Items.Add(orit);
             if (cart.Items.Exists(or => or.ID == prID ))
             {
-
+                DO.Product? temp=new DO.Product();
+                temp = Dal.Product.GetById(prID);
+                if(temp.inStock>0)/////yohoooo
+                {
+                    temp.inStock--;
+                    BO.OrderItem? oi = cart.Items.find(or => or.ID == prID); //מה יש לו
+                }
             }
         }
         public BO.Cart updatPoductAmount(BO.Cart? cart)
