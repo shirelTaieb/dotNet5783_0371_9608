@@ -33,10 +33,20 @@ VerticalAlignment="Stretch" Width="auto">
                 <ComboBoxItem Content="מספר מזהה" />
             </ComboBox>
             <Label Grid.Column="2" Content=":סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF49A078" Foreground="White" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="46" VerticalContentAlignment="Center" FontSize="18" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="category" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45"/>
-            <ComboBox x:Name="name" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45"/>
-            <ComboBox x:Name="price" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45"/>
-            <ComboBox x:Name="id" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45"/>
+            <ComboBox x:Name="category" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45">
+                <ComboBoxItem Content="קודש" />
+                <ComboBoxItem Content="הסטוריה" />
+                <ComboBoxItem Content="ילדים" />
+                <ComboBoxItem Content="רומנים" />
+                <ComboBoxItem Content="עיוני" />
+            </ComboBox>
+            <ComboBox x:Name="price" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45">
+                <ComboBoxItem Content="₪50 עד" />
+                <ComboBoxItem Content="₪100 עד" />
+                <ComboBoxItem Content="₪150 עד" />
+                <ComboBoxItem Content="₪200 עד" />
+                <ComboBoxItem Content="₪200+" />
+            </ComboBox>
         </Grid>
     </Grid>
 </Window>

@@ -1,6 +1,5 @@
 ﻿using BLApi;
 using DalApi;
-using BO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +11,12 @@ namespace BlImplementation;
 
 internal class Product : BLApi.IProduct
 {
-    private IDal? Dal = DalApi.Factory.Get();
     /// <summary>
     /// פונקציה שממירה מ BO לDO
     /// </summary>
     /// <param name="prod"></param>
     /// <returns></returns>
+    private IDal? Dal = DalApi.Factory.Get();
     internal DO.Product BOproductToDO(BO.Product prod)
     {
         DO.Product temp = new DO.Product();
@@ -32,21 +31,21 @@ internal class Product : BLApi.IProduct
         //בדיקת תקינות קלט
         //1. שם לא מחרוזת ריקה:
         if (pr.Name == "")
-            throw new wrongDataException();
+            throw new BO.wrongDataException();
         //מחיר - שהוא מספר חיובי
         if(pr.Price<0)
-            throw new wrongDataException();
+            throw new BO.wrongDataException(); 
         //כמות במלאי שאינה שלילית
         if (pr.InStock < 0)
-            throw new wrongDataException();
+            throw new BO.wrongDataException();
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))
-            throw new wrongDataException();
+            throw new BO.wrongDataException();
         DO.Product temp=new DO.Product();
         temp.ID=pr.ID;
         if(Dal.Product.GetById(temp.ID)!=null)
         {
-            throw new alreadyExistException();
+            throw new BO.alreadyExistException();
         }
         temp = BOproductToDO(pr);
         Dal?.Product.Add(temp);
@@ -60,26 +59,26 @@ internal class Product : BLApi.IProduct
         //בדיקת תקינות קלט
         //1. שם לא מחרוזת ריקה:
         if (pr.Name == "")
-            throw new wrongDataException();
+            throw new BO.wrongDataException();
         //מחיר - שהוא מספר חיובי
         if (pr.Price < 0)
-            throw new wrongDataException();
+            throw new BO.wrongDataException();
         //כמות במלאי שאינה שלילית
         if (pr.InStock <= 0)
-            throw new wrongDataException();
+            throw new BO.wrongDataException();
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))
-            throw new wrongDataException();
+            throw new BO.wrongDataException();
         //הקוד:
         DO.Product temp = new DO.Product();
-        temp = Dal?.Product.GetById(pr.ID) ?? throw new wrongDataException(); //אם התז הזה כבר קיים
-        temp= BOproductToDO(pr);
+        temp = Dal?.Product.GetById(pr.ID) ?? throw new BO.wrongDataException(); //אם התז הזה כבר קיים
+        temp = BOproductToDO(pr);
 
     }
-    public IEnumerable<BO.ProductForList?> getManagerListOfProduct()
+    public IEnumerable<BO.ProductForList?> getManagerListOfProduct()//נו זה גם לקוסטומר
     {
        List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
-        BO.ProductForList temp= new BO.ProductForList();
+       BO.ProductForList temp= new BO.ProductForList();
        List<DO.Product> lstp = Dal.Product.GetAll().ToList();
         foreach (DO.Product prop in lstp )
         {
@@ -91,30 +90,22 @@ internal class Product : BLApi.IProduct
         }
         return listProductForList;
     }
-    public IEnumerable<BO.ProductForList?> getCoustomerlistOfProduct()
-    {
+    //public IEnumerable<BO.ProductForList?> getCoustomerlistOfProduct() זה הרי בול כמו הפונקצייה מעל לפי דן
+    //{
 
-    }
+   //}
     public BO.Product getProductInfoManager(int IDpr)
     {
         //מזהה- הוא מספר חיובי בן 6 ספרות
         if ((IDpr <= 100000) && (IDpr >= 999999))
-            throw new doseNotExistException();
-        try
-        {
-            DO.Product? temp= Dal?.Product.GetById(IDpr); //שיננו את ההרשאה של dalproduct לפובליק ךא בטוח שזה חוקי לבדוק
-            temp.
-        }
-        catch (Exception? ex)    
-        {
-            throw ex;
-        }
+            throw new BO.doseNotExistException();
+        DO.Product? temp=Dal.Product.GetById(IDpr)?? throw new BO.doseNotExistException();
     }
     public BO.Product getProductInfoCoustomer(int IDpr)
     {
         //מזהה- הוא מספר חיובי בן 6 ספרות
         if ((IDpr <= 100000) && (IDpr >= 999999))
-            throw new wrongDataException();
+            throw new BO.wrongDataException();
 
 
     }
