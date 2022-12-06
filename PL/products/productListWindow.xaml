@@ -6,38 +6,37 @@
         xmlns:local="clr-namespace:PL.products"
         mc:Ignorable="d"
         Title="productListWindow" Height="640" Width="800">
-    <Grid Name="MainGrid">
+    <Grid Name="MainGrid" Background="#FFDEDBD2">
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="500*"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Name="UpGrid" Height="auto" Grid.Row="0" Width="auto" Grid.RowSpan="3">
+        <Grid Name="UpGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="0"
+VerticalAlignment="Stretch" Width="auto">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="183*"/>
-                <ColumnDefinition Width="17*"/>
-                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions >
-
-
-            <ComboBox Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Height="46"/>
-            <Label Name="label" Content="Enter your selection:" HorizontalAlignment="Center" Margin="0,1,0,0" VerticalAlignment="Top" Height="44" RenderTransformOrigin="0.5,0.5" Width="400" Grid.ColumnSpan="2" BorderBrush="#FF49A078" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" Foreground="#FFDCE1DE" Background="#FF49A078">
-                <Label.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="1" ScaleY="1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Label.RenderTransform>
-            </Label>
+            <ComboBox HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Bottom" Width="320" Height="46">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FF49A078" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="הכל" />
+                <ComboBoxItem Content="קטגוריות" />
+                <ComboBoxItem Content="טווח מחירים" />
+                <ComboBoxItem Content="שם הספר" />
+                <ComboBoxItem Content="מספר מזהה" />
+            </ComboBox>
+            <Label Grid.Column="2" Content=":סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF49A078" Foreground="White" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="46" VerticalContentAlignment="Center" FontSize="18" HorizontalContentAlignment="Center"/>
+            <ComboBox x:Name="category" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45"/>
+            <ComboBox x:Name="name" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45"/>
+            <ComboBox x:Name="price" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45"/>
+            <ComboBox x:Name="id" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="320" Height="45"/>
         </Grid>
-        <ListView x:Name="ProductsListView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
     </Grid>
 </Window>
