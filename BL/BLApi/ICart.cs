@@ -14,7 +14,7 @@ namespace BLApi
         /// </summary>
         /// <param name="cart"></param>
         /// <returns></returns>
-        public BO.Cart updatPoductAmount(BO.Cart? cart);
+        public BO.Cart updatePoductAmount(BO.Cart? cart);
         /// <summary>
         /// מעדכן כמות פריט בסל
         /// </summary>

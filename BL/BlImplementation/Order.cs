@@ -82,8 +82,8 @@ internal class Order : BLApi.IOrder
     }
     public BO.Order? getOrderInfo(int orderID)
     {
-        //מזהה- שהוא מספר חיובי בן 6 ספרות
-        if ((orderID <= 100000) && (orderID >= 999999))
+        //מזהה- שהוא מספר חיובי בן 4 ספרות
+        if ((orderID <= 1000) && (orderID >= 9999))
             throw new wrongDataException();
         DO.Order? temp = Dal.Order.GetById(orderID);
         BO.Order? boorder = new BO.Order();
