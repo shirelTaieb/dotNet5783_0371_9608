@@ -80,6 +80,7 @@ namespace BlImplementation
                 cart.TotalPrice -= temp.Price * temp.Amount;
                 Dal!.Product.Delete(IDpr);// alredy chack that its not null
             }
+            return cart;
         }
         public void confirmOrder(BO.Cart? cart)
         {
