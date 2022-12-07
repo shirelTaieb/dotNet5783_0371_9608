@@ -83,6 +83,14 @@ namespace BlImplementation
         }
         public void confirmOrder(BO.Cart? cart)
         {
+            DO.Order order = new DO.Order(); //castint to not nullable order
+            order.ShipDate = DateTime.MinValue;
+            order.OrderDate = DateTime.MinValue;
+            order.OrderDate = DateTime.Now;
+            order.CustomerAddress = cart!.CustomerAddress;
+            order.CustomerName = cart!.CustomerName;
+            order.CustomerEmail=cart!.CustomerEmail;
+            int order_id= Dal!.Order.Add(order);
 
 
         }
