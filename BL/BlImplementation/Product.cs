@@ -79,7 +79,7 @@ internal class Product : BLApi.IProduct
     {
        List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
        BO.ProductForList temp= new BO.ProductForList();
-       List<DO.Product> lstp = Dal.Product.GetAll().ToList();
+       List<DO.Product?> lstp = Dal.Product.GetAll().ToList();
         foreach (DO.Product prop in lstp )
         {
             temp.ID = prop.ID;

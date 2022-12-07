@@ -16,7 +16,7 @@ namespace BO
         public DateTime? ShipDate { get; set; }
         public DateTime? DeliveryDate { get; set; }
         public OrderStatus? Status { get=>Status; set => Status = value; }
-        public BO.OrderItem? Items { get; set; }
+        public BO.OrderItem? Items { get; set; }// לא רשימה?
         public double TotalPrice { get; set; }
 
         public override string ToString() => $@"
