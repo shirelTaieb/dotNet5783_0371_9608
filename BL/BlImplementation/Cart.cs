@@ -92,7 +92,6 @@ namespace BlImplementation
             order.CustomerEmail=cart!.CustomerEmail;
             int order_id= Dal!.Order.Add(order);
 
-
         }
 
     }
