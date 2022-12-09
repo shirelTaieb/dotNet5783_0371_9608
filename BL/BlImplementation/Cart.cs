@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BO;
 using BLApi;
 using DalApi;
 using DO;
@@ -12,12 +11,12 @@ namespace BlImplementation
 {
     internal class Cart : BLApi.ICart
     {
-        private IDal? Dal = DalApi.Factory.Get()??throw new wrongDataException();//עכשיו ניתן לצאת מנק הנחה שדאל שונה מנאל
+        private IDal? Dal = DalApi.Factory.Get()??throw new BO.wrongDataException();//עכשיו ניתן לצאת מנק הנחה שדאל שונה מנאל
         public BO.Cart addProductToCart(BO.Cart? cart, int prID)
         {
             //מזהה- שהוא מספר חיובי בן 6 ספרות
             if ((prID <= 100000) && (prID >= 999999))
-                throw new wrongDataException();
+                throw new BO.wrongDataException();
             if (cart == null) //if the cart is null we build a new cart.
                 cart = new BO.Cart();
             DO.Product temp = new DO.Product();
@@ -44,7 +43,7 @@ namespace BlImplementation
                     cart.TotalPrice += oi.Price;//uptade the total price of the cart
                     //איך מעדכנים מחיר כולל של פריט? איפה? ת
                 }
-                else throw new notInStockException(); //if there is no products in the stock
+                else throw new BO.notInStockException(); //if there is no products in the stock
             }
             return cart;
         }
@@ -73,13 +72,14 @@ namespace BlImplementation
                    temp!.Amount++;   //!- because we check that the product exist in the cart.
                     cart.TotalPrice += temp.Price;//uptade the total price of the cart
                 }
-                else throw new notInStockException(); //if there is no products in the stock
+                else throw new BO.notInStockException(); //if there is no products in the stock
             }
             if(newAmount == 0)//אם הכמות נהייתה 0 - תִּמְחַק את הפריט המתאים מהסל ותעדכן מחיר כולל של סל קניות
             {
                 cart.TotalPrice -= temp.Price * temp.Amount;
                 Dal!.Product.Delete(IDpr);// alredy chack that its not null
             }
+            return cart;
         }
         public void confirmOrder(BO.Cart? cart)
         {
@@ -93,6 +93,19 @@ namespace BlImplementation
             int order_id= Dal!.Order.Add(order);
 
         }
+        public void confirmOrder11(BO.Cart? cart)
+        {
+            if (cart == null)
+                throw  new BO.wrongDataException();
+            // בדיקת נתוני לקוח תקינים
+            if (cart.CustomerName == "")
+                throw new BO.wrongDataException();
+            if (cart.CustomerAddress == "")
+                throw new BO.wrongDataException();
+            if (cart.CustomerEmail == "" || cart.CustomerEmail!.Contains("@"))
+                throw new BO.wrongDataException();
+           //בדיקת נתוני סל קניות
 
+        }
     }
 }
