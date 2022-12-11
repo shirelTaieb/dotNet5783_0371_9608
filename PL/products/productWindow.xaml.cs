@@ -23,5 +23,16 @@ namespace PL.products
         {
             InitializeComponent();
         }
+        private void add_click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(":) המוצר נוסף בהצלחה", "");
+            //קריאה לפונקציה שבאמת תוסיף את הפרודקט
+        }
+        private void update_click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(":) המוצר עודכן בהצלחה", "");
+            //קריאה לפונקציה שבאמת תעדכן את הפרודקט
+        }
+
     }
 }

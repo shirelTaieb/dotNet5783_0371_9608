@@ -18,7 +18,7 @@ internal class DalOrderItem : IOrderItem
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (OrderItem temp in ds.lstOI)
+        foreach (OrderItem temp in ds!.lstOI)
         {
             if (temp.ID == id)
                 return temp;
@@ -65,7 +65,7 @@ internal class DalOrderItem : IOrderItem
         List<OrderItem> tempList= new List<OrderItem>();
         if (ds == null)
             throw new NotExistException();
-        foreach (OrderItem temp in ds.lstOI)
+        foreach (OrderItem temp in ds!.lstOI)
         {
             if (temp.OrderID == ID)
                tempList.Add(temp);
@@ -76,7 +76,7 @@ internal class DalOrderItem : IOrderItem
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (OrderItem temp in ds.lstOI)
+        foreach (OrderItem temp in ds!.lstOI)
         {
             if (temp.OrderID == IDOrder)
                if (temp.ProductID == IDProduct)

@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.products"
         mc:Ignorable="d"
-        Title="productWindow" Height="450" Width="800">
+        Title="productWindow" Height="450" Width="420">
     <Grid>
-        
+        <Label Content="ID:" HorizontalAlignment="Left" Margin="93,90,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="93,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="Price:" HorizontalAlignment="Left" Margin="93,190,0,0" VerticalAlignment="Top"/>
+        <Label Content="Category:" HorizontalAlignment="Left" Margin="93,240,0,0" VerticalAlignment="Top"/>
+        <Label Content="InStock:" HorizontalAlignment="Left" Margin="93,290,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="id" HorizontalAlignment="Left" Margin="190,90,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" Height="30" MaxLength="6" />
+        <TextBox  x:Name="name" HorizontalAlignment="Left" Margin="190,140,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" Height="30"  MaxLength="20"/>
+        <TextBox  x:Name="price" HorizontalAlignment="Left" Margin="190,190,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" Height="30"  MaxLength="5" />
+        <TextBox x:Name="stock" HorizontalAlignment="Left" Margin="190,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="3"/>
+        <ComboBox  x:Name="category" HorizontalAlignment="Left" Margin="190,240,0,0" VerticalAlignment="Top" Width="120" Height="30">
+            <ComboBoxItem Content="קודש" />
+            <ComboBoxItem Content="הסטוריה" />
+            <ComboBoxItem Content="ילדים" />
+            <ComboBoxItem Content="רומנים" />
+            <ComboBoxItem Content="עיוני" />
+        </ComboBox>
+
+        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="100,380,0,0" VerticalAlignment="Top" Width="80" Height="20" Background="#FF49A078" Foreground="White" Click="add_click"/>
+        <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="230,380,0,0" VerticalAlignment="Top" Width="80" Height="20" Foreground="White" Background="#FF49A078" Click="update_click"/>
     </Grid>
 </Window>

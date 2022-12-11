@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Xml;
 using static DalApi.DalConfig;
 
+
 public static class Factory
 {
     public static IDal? Get()
@@ -20,7 +21,7 @@ public static class Factory
 
         try
         {
-            Assembly.Load(dal ?? throw new DalConfigException($"Package {dal} is null"));
+           Assembly.Load(dal ?? throw new DalConfigException($"Package {dal} is null"));
         }
         catch(Exception )
         {

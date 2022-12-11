@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xml", "xml", "{97C627B7-645
 		xml\dal-config.xml = xml\dal-config.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "PL\PL.csproj", "{27054D34-31D6-4F5B-A8BF-6FB9CB3B764C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PL", "PL\PL.csproj", "{27054D34-31D6-4F5B-A8BF-6FB9CB3B764C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "temp", "temp\temp.csproj", "{67A64788-66D1-4B35-A5E7-AB35B21E6F33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{27054D34-31D6-4F5B-A8BF-6FB9CB3B764C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27054D34-31D6-4F5B-A8BF-6FB9CB3B764C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27054D34-31D6-4F5B-A8BF-6FB9CB3B764C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67A64788-66D1-4B35-A5E7-AB35B21E6F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A64788-66D1-4B35-A5E7-AB35B21E6F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A64788-66D1-4B35-A5E7-AB35B21E6F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A64788-66D1-4B35-A5E7-AB35B21E6F33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PL.products
+namespace temp
 {
     /// <summary>
-    /// Interaction logic for productListWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class productListWindow : Window
+    public partial class MainWindow : Window
     {
-        public productListWindow()
+        public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

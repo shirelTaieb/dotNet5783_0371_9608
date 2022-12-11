@@ -16,14 +16,14 @@ internal class Product : BLApi.IProduct
     /// </summary>
     /// <param name="prod"></param>
     /// <returns></returns>
-    private IDal? Dal = DalApi.Factory.Get();
+    private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();
     internal DO.Product BOproductToDO(BO.Product prod)
     {
         DO.Product temp = new DO.Product();
         temp.Name = prod.Name;
         temp.Price = prod.Price;
         temp.InStock = prod.InStock;
-        temp.Category = (DO.Category)prod.Category;
+        temp.Category = (DO.Category?)prod.Category;
         return temp;
     }
     public void addNewProduct(BO.Product? pr)
@@ -79,13 +79,13 @@ internal class Product : BLApi.IProduct
     {
        List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
        BO.ProductForList temp= new BO.ProductForList();
-       List<DO.Product?> lstp = Dal.Product.GetAll().ToList();
+       List<DO.Product?> lstp = Dal!.Product.GetAll().ToList();
         foreach (DO.Product prop in lstp )
         {
             temp.ID = prop.ID;
             temp.Name = prop.Name;
             temp.Price = prop.Price;
-            temp.Category = (BO.Category)prop.Category;
+            temp.Category = (BO.Category?)prop.Category;
             listProductForList.Add(temp);
         }
         return listProductForList;
@@ -100,30 +100,40 @@ internal class Product : BLApi.IProduct
         pr.ID = temp.ID;
         pr.Name = temp.Name;
         pr.Price = temp.Price;
-        pr.Category = (BO.Category)temp.Category;   
+        pr.Category = (BO.Category?)temp.Category;   
         pr.InStock = temp.InStock;
         pr.path = temp.path;
         return pr;
     }
-    public BO.ProductItem getProductInfoCoustomer(int IDpr, Cart cart)
+    public BO.ProductItem getProductInfoCustomer(int IDpr, BO.Cart? cart)
     {
         //מזהה- הוא מספר חיובי בן 6 ספרות
         if ((IDpr <= 100000) && (IDpr >= 999999))
             throw new BO.wrongDataException();
+        if (cart == null)
+            throw new BO.wrongDataException();
         BO.ProductItem pr = new BO.ProductItem();
         DO.Product temp = Dal?.Product.GetById(IDpr) ?? throw new BO.doseNotExistException();
-        pr.ID = cart;
+        pr.ID = IDpr;
         pr.Name = temp.Name;
         pr.Price = temp.Price;
-        pr.Category = (BO.Category)temp.Category;
+        pr.Category = (BO.Category?)temp.Category;
         if (temp.InStock > 0)
             pr.InStock = true;
         else
             pr.InStock = false;
+        BO.OrderItem? orderItem = new BO.OrderItem();
+        if (cart.Items == null)
+            pr.Amount = 0;
+        else
+        {
+            orderItem = cart!.Items.FirstOrDefault(or => or.ProductID == IDpr);
+            if (orderItem == null)
+                pr.Amount = 0;
+            else
+                pr.Amount = orderItem.Amount;
+        }
         return pr;
-        BO.OrderItem orderItem = new BO.OrderItem();
-            if(FirstOrDefault
-
     }
  
 }

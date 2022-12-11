@@ -50,6 +50,6 @@ namespace BLApi
         /// </summary>
         /// <param name="prID"></param>
         /// <returns></returns>
-        public BO.ProductItem getProductInfoCoustomer(int prID,);
+        public BO.ProductItem getProductInfoCustomer(int prID,BO.Cart cart);
     }
 }
