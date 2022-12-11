@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace DalApi;
 using System.Reflection;
-using System.Xml;
 using static DalApi.DalConfig;
 
 
 public static class Factory
 {
-    public static IDal? Get()
+    public static IDal? GetDal()
     {
         string dalType = s_dalName
             ?? throw new DalConfigException($"DAL name is not extracted from the configuration");
-        DalImplementation dal = s_dalPackages[dalType]
-           ?? throw new DalConfigException($"Package for {dalType} is not found in packages list");
+        string dal = s_dalPackages[dalType]
+          ?? throw new DalConfigException($"Package for {dalType} is not found in packages list");
 
         try
         {
-           Assembly.Load(dal ?? throw new DalConfigException($"Package {dal} is null"));
+            Assembly.Load(dal ?? throw new DalConfigException($"Package {dal} is null"));
         }
-        catch(Exception )
+        catch (Exception)
         {
             throw new DalConfigException("Failed to load {dal}.dll package");
         }

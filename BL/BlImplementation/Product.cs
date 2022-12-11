@@ -16,7 +16,7 @@ internal class Product : BLApi.IProduct
     /// </summary>
     /// <param name="prod"></param>
     /// <returns></returns>
-    private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();
+    private IDal? Dal = DalApi.Factory.GetDal() ?? throw new BO.wrongDataException();
     internal DO.Product BOproductToDO(BO.Product prod)
     {
         DO.Product temp = new DO.Product();

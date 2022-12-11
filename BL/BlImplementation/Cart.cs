@@ -11,7 +11,7 @@ namespace BlImplementation
 {
     internal class Cart : BLApi.ICart
     {
-        private IDal? Dal = DalApi.Factory.Get()??throw new BO.wrongDataException();//עכשיו ניתן לצאת מנק הנחה שדאל שונה מנאל
+        private IDal? Dal = DalApi.Factory.GetDal()??throw new BO.wrongDataException();//עכשיו ניתן לצאת מנק הנחה שדאל שונה מנאל
         public BO.Cart addProductToCart(BO.Cart? cart, int prID)
         {
             //מזהה- שהוא מספר חיובי בן 6 ספרות
