@@ -15,7 +15,7 @@ namespace BO
         public string? CustomerAddress { get; set; }
         public List<OrderItem?>? Items { get; set; }
         public double? TotalPrice { get; set; }
-       // public override string ToString() { return this.ToStringProperty<Cart>(); }
+        public override string ToString() => this.ToStringProperty();
 
     }
 }

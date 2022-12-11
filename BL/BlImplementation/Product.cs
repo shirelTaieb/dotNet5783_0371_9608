@@ -20,6 +20,7 @@ internal class Product : BLApi.IProduct
     internal DO.Product BOproductToDO(BO.Product prod)
     {
         DO.Product temp = new DO.Product();
+        temp.ID = prod.ID;  
         temp.Name = prod.Name;
         temp.Price = prod.Price;
         temp.InStock = prod.InStock;
@@ -43,12 +44,16 @@ internal class Product : BLApi.IProduct
             throw new BO.wrongDataException();
         DO.Product temp=new DO.Product();
         temp.ID=pr.ID;
-        if(Dal?.Product.GetById(temp.ID)!=null)
+        try
         {
+            Dal?.Product.GetById(temp.ID);
             throw new BO.alreadyExistException();
         }
-        temp = BOproductToDO(pr);
-        Dal?.Product.Add(temp);
+        catch  //getById say that the product is not exist
+        {
+            temp = BOproductToDO(pr);
+            Dal?.Product.Add(temp);
+        }
     }
     public void deleteProduct(int IDpr)
     {
@@ -71,24 +76,23 @@ internal class Product : BLApi.IProduct
             throw new BO.wrongDataException();
         //הקוד:
         DO.Product temp = new DO.Product();
-        temp = Dal?.Product.GetById(pr.ID) ?? throw new BO.wrongDataException(); //אם התז הזה כבר קיים
+       // temp = Dal?.Product.GetById(pr.ID) ?? throw new BO.wrongDataException(); //אם התז הזה כבר קיים
         temp = BOproductToDO(pr);
-
+        Dal?.Product.Update(temp);
     }
     public IEnumerable<BO.ProductForList?> getListOfProduct()//נו זה גם לקוסטומר
     {
-       List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
-       BO.ProductForList temp= new BO.ProductForList();
-       List<DO.Product?> lstp = Dal!.Product.GetAll().ToList();
-        foreach (DO.Product prop in lstp )
-        {
-            temp.ID = prop.ID;
-            temp.Name = prop.Name;
-            temp.Price = prop.Price;
-            temp.Category = (BO.Category?)prop.Category;
-            listProductForList.Add(temp);
-        }
-        return listProductForList;
+        //List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
+        //BO.ProductForList temp= new BO.ProductForList();
+        List<DO.Product?> lstp = (List<DO.Product?>)Dal!.Product.GetAll();
+       return( from prop in lstp
+           select new BO.ProductForList()
+           {
+               ID = (int)prop?.ID!,
+               Name = prop?.Name,
+               Price = prop?.Price,
+               Category = (BO.Category?)prop?.Category
+           }).ToList();
     }
     public BO.Product getProductInfoManager(int IDpr)
     {

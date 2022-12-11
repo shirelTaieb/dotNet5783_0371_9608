@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,6 @@ namespace BO
         public OrderStatus? Status { get; set; }
         public int AmountOfItems { get; set; }
         public double TotalPrice { get; set; }
-        public override string ToString() => $@"
-///////////////////////////////////
-";
+        public override string ToString() => this.ToStringProperty();
     }
 }

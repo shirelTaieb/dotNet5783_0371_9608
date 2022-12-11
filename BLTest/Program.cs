@@ -32,10 +32,10 @@ namespace BLTest
                             Enter your choice:
                             0- EXIT
                             1 - ADD PRODUCT
-                            2 - UPDATE PRODUCT
-                            3 - DELETE PRODUCT
-                            4 - GET PRODUCT INFORMATION
-                            5 - GET LIST OF ALL THE PRODUCTS");//choose which operation they want to do
+                            2 - DELETE PRODUCT
+                            3 - UPDATE PRODUCT
+                            4 - GET LIST OF ALL THE PRODUCTS
+                            5 - GET PRODUCT INFORMATION");//choose which operation they want to do
                     string? option = Console.ReadLine();
                     bool op = int.TryParse(option, out num);
                     if (!op)
@@ -46,7 +46,7 @@ namespace BLTest
                     switch (num)
                     {
                         case 1:
-                            Console.WriteLine(@"enter product ID:\n");
+                            Console.WriteLine("enter product ID:");
                             temp = Console.ReadLine();
                             b = int.TryParse(temp, out id);
                             if (!b)
@@ -55,10 +55,10 @@ namespace BLTest
                                 break;
                             };
                             pr.ID = id;
-                            Console.WriteLine(@"enter product Name:\n");
+                            Console.WriteLine("enter product Name:");
                             temp = Console.ReadLine();
                             pr.Name = temp;
-                            Console.WriteLine(@"enter product Price:\n");
+                            Console.WriteLine("enter product Price:");
                             temp = Console.ReadLine();
                             b = double.TryParse(temp, out price);
                             pr.Price = price;
@@ -70,7 +70,7 @@ namespace BLTest
                                         Romans-4");
                             temp = Console.ReadLine();
                             pr.Category = (BO.Category)int.Parse(temp!);
-                            Console.WriteLine(@"enter product stock:\n");
+                            Console.WriteLine("enter product stock:");
                             temp = Console.ReadLine();
                             b = int.TryParse(temp, out stock);
                             if (!b)
@@ -79,17 +79,17 @@ namespace BLTest
                                 break;
                             }
                             pr.InStock = stock;
-                            product.addNewProduct(pr);
+                                product.addNewProduct(pr);
                             break;
                         case 2:
-                            Console.WriteLine(@"enter the id of the product you want delete:\n");
+                            Console.WriteLine("enter the id of the product you want delete:");
                             int delID;
                             temp = Console.ReadLine();
                             delID = int.Parse(temp!);
                             product.deleteProduct(delID);
                             break;
                         case 3:
-                            Console.WriteLine(@"enter product ID:\n");
+                            Console.WriteLine("enter product ID:");
                             temp = Console.ReadLine();
                             b = int.TryParse(temp, out id);
                             if (!b)
@@ -98,10 +98,10 @@ namespace BLTest
                                 break;
                             }
                             pr.ID = id;
-                            Console.WriteLine(@"enter product Name:\n");
+                            Console.WriteLine(@"enter product Name:");
                             temp = Console.ReadLine();
                             pr.Name = temp;
-                            Console.WriteLine(@"enter product Price:\n");
+                            Console.WriteLine(@"enter product Price:");
                             temp = Console.ReadLine();
                             b = double.TryParse(temp, out price);
                             pr.Price = price;
@@ -113,7 +113,7 @@ namespace BLTest
                                         Romans-4");
                             temp = Console.ReadLine();
                             pr.Category = (BO.Category)int.Parse(temp!);
-                            Console.WriteLine(@"enter product stock:\n");
+                            Console.WriteLine(@"enter product stock:");
                             temp = Console.ReadLine();
                             b = int.TryParse(temp, out stock);
                             if (!b)
@@ -126,12 +126,12 @@ namespace BLTest
                             break;
                         case 4:
                             List<BO.ProductForList?> products = new List<BO.ProductForList?>();
-                            products = product.getListOfProduct().ToList();
+                            products = (List<BO.ProductForList?>)product.getListOfProduct();
                             foreach (var item in products)
                                 Console.WriteLine(item);
                             break;
                         case 5:
-                            Console.WriteLine(@"Enter 1 to manager, 2 for customer\n");
+                            Console.WriteLine("Enter 1 to manager, 2 for customer\n");
                             temp = Console.ReadLine();
                             b = int.TryParse(temp, out int choose);
                             if (!b)
