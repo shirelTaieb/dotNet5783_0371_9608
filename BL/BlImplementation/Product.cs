@@ -105,12 +105,24 @@ internal class Product : BLApi.IProduct
         pr.path = temp.path;
         return pr;
     }
-    public BO.Product getProductInfoCoustomer(int IDpr)//cart????????
+    public BO.ProductItem getProductInfoCoustomer(int IDpr, Cart cart)
     {
         //מזהה- הוא מספר חיובי בן 6 ספרות
         if ((IDpr <= 100000) && (IDpr >= 999999))
             throw new BO.wrongDataException();
-
+        BO.ProductItem pr = new BO.ProductItem();
+        DO.Product temp = Dal?.Product.GetById(IDpr) ?? throw new BO.doseNotExistException();
+        pr.ID = cart;
+        pr.Name = temp.Name;
+        pr.Price = temp.Price;
+        pr.Category = (BO.Category)temp.Category;
+        if (temp.InStock > 0)
+            pr.InStock = true;
+        else
+            pr.InStock = false;
+        return pr;
+        BO.OrderItem orderItem = new BO.OrderItem();
+            if(FirstOrDefault
 
     }
  
