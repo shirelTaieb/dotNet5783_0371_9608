@@ -158,9 +158,9 @@ public class DataSource
         {
             Order order = new();
             order.ID = Config.NextOrderNumber;
-            order.CostumerName = names[rand.Next(0, 43)];
-            order.CostumerAdress = names[rand.Next(0, 43)];
-            order.CostumerEmail = order.CostumerName + "@gmail.com";
+            order.CustomerName = names[rand.Next(0, 43)];
+            order.CustomerAddress = names[rand.Next(0, 43)];
+            order.CustomerEmail = order.CustomerName + "@gmail.com";
             Random s_rand = new Random();
             order.OrderDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
             order.ShipDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));

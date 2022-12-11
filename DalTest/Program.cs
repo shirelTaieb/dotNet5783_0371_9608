@@ -7,7 +7,7 @@
 //{
 //    public static void Main(string[] args)
 //    {
-//        IDal dalist;    
+//        IDal dalist;
 //        //DalProduct product = new DalProduct();
 //        //DalOrder order = new DalOrder();
 //        //DalOrderItem item = new DalOrderItem();
@@ -64,11 +64,11 @@
 //                    int.TryParse(Console.ReadLine(), out id);
 //                    tmpOrder.ID = id;
 //                    Console.WriteLine("enter the costumer name");// get a new id name
-//                    tmpOrder.CostumerName = Console.ReadLine();
+//                    tmpOrder.CustomerName = Console.ReadLine();
 //                    Console.WriteLine("enter the costumer email");// get a new id email
-//                    tmpOrder.CostumerEmail = Console.ReadLine();
+//                    tmpOrder.CustomerEmail = Console.ReadLine();
 //                    Console.WriteLine("enter the costumer adress");// get a new id adress
-//                    tmpOrder.CostumerAdress = Console.ReadLine();
+//                    tmpOrder.CustomerAddress = Console.ReadLine();
 //                    order.Add(tmpOrder);
 //                    break;
 //                case "b":
@@ -90,11 +90,11 @@
 //                    tmpOrder2.ID = id;
 //                    Console.WriteLine(order.GetById(id));
 //                    Console.WriteLine("enter the new costumer name");
-//                    tmpOrder2.CostumerName = Console.ReadLine();
+//                    tmpOrder2.CustomerName = Console.ReadLine();
 //                    Console.WriteLine("enter the new costumer email");
-//                    tmpOrder2.CostumerEmail = Console.ReadLine();
+//                    tmpOrder2.CustomerEmail = Console.ReadLine();
 //                    Console.WriteLine("enter the new costumer adress");
-//                    tmpOrder2.CostumerAdress = Console.ReadLine();
+//                    tmpOrder2.CustomerAddress = Console.ReadLine();
 //                    order.Update(tmpOrder2);
 //                    break;
 //                case "e":
@@ -326,5 +326,5 @@
 //        }
 //    }
 
-   
+
 //}

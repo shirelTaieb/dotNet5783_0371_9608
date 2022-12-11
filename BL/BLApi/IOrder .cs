@@ -20,7 +20,7 @@ namespace BLApi
         /// </summary>
         /// <param name="prID"></param>
         /// <returns></returns>
-        public BO.Order getOrderInfo(int orderID);
+        public BO.Order? getOrderInfo(int orderID);
         /// <summary>
         /// לאפשר למנהל לעדכן שהזמנה נשלחה ללקוח 
         /// </summary>
@@ -45,7 +45,7 @@ namespace BLApi
         /// </summary>
         /// <param name="prID"></param>
         /// <returns></returns>
-        public BO.OrderTracking updateAmountOrder(int orderID);
+       // public BO.OrderTracking updateAmountOrder(int orderID);//בונוס
 
     }
 }
