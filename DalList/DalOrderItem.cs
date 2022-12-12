@@ -14,13 +14,13 @@ internal class DalOrderItem : IOrderItem
         ds.lstOI.Add(item);
         return item.ID;
     }
-    public OrderItem GetById(int id)
+    public OrderItem? GetById(int id)
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (OrderItem temp in ds!.lstOI)
+        foreach (OrderItem? temp in ds!.lstOI)
         {
-            if (temp.ID == id)
+            if (temp?.ID == id)
                 return temp;
         }
         throw new NotExistException();

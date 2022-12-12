@@ -12,30 +12,32 @@ public class DalOrder : IOrder //שיננו לפובליק
     
     public int Add(Order order)
     {
+        if (GetById(order.ID) != null)
+            throw new doubleException();
         if (ds == null)
             throw new NotExistException();
         order.ID = DataSource.Config.NextOrderNumber;
         ds.lstO.Add(order);
         return order.ID ;
     }
-    public Order GetById(int id)
+    public Order? GetById(int id)
     {
         if (ds== null)
             throw new NotExistException();
-        foreach (Order temp in ds.lstO)
+        foreach (Order? temp in ds.lstO)
         {
-            if (temp.ID==id)
+            if (temp?.ID==id)
                 return temp;
         }
-        throw new NotExistException();
+        return null;
     }
     public void Update(Order order)
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (Order temp in ds.lstO)
+        foreach (Order? temp in ds.lstO)
         {
-            if (temp.ID == order.ID)
+            if (temp?.ID == order.ID)
             {
                 Delete(order.ID);
                 Add(order);
