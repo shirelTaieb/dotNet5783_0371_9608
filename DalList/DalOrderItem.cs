@@ -8,6 +8,8 @@ internal class DalOrderItem : IOrderItem
     DataSource? ds = DataSource.s_instance;
     public int Add(OrderItem item)
     {
+        if (GetById(item.ID) != null)
+            throw new doubleException();
         if (ds == null)
             throw new NotExistException();
         item.ID = DataSource.Config.NextOrderNumber;
@@ -23,7 +25,7 @@ internal class DalOrderItem : IOrderItem
             if (temp?.ID == id)
                 return temp;
         }
-        throw new NotExistException();
+        return null;
     }
     public void Update(OrderItem item)
     {
