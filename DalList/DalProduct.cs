@@ -10,11 +10,12 @@ public class DalProduct : IProduct
     DataSource? ds = DataSource.s_instance;
     public int Add(Product item)
     {
-        item.ID = DataSource.Config.NextOrderNumber;
+        if ()
+        item.ID = DataSource.ConfigProduct.NextProductNumber;
         ds?.lstP.Add(item);
         return item.ID;
     }
-    public Product GetById(int id)
+    public Product? GetById(int id)
     {
         if(ds == null)
             throw new NotExistException();
@@ -23,7 +24,7 @@ public class DalProduct : IProduct
             if (temp.ID == id)
                 return temp;
         }
-        throw new NotExistException();
+        return null;
     }
     public void Update(Product item)
     {
