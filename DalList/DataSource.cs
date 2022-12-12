@@ -200,7 +200,7 @@ public class DataSource
         createOrder();
         createOrderItem();
     }
-    internal static class Config
+    internal static class ConfigOrder
     {
         internal const int s_startOrderNumber = 1000;
         private static int s_nextOrderNumber=s_startOrderNumber;

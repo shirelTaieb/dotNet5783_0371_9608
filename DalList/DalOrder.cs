@@ -16,7 +16,7 @@ public class DalOrder : IOrder //שיננו לפובליק
             throw new doubleException();
         if (ds == null)
             throw new NotExistException();
-        order.ID = DataSource.Config.NextOrderNumber;
+        order.ID = DataSource.ConfigOrder.NextOrderNumber;
         ds.lstO.Add(order);
         return order.ID ;
     }

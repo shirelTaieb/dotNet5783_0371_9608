@@ -10,7 +10,8 @@ public class DalProduct : IProduct
     DataSource? ds = DataSource.s_instance;
     public int Add(Product item)
     {
-        if ()
+        if (GetById(item.ID) != null)
+            throw new doubleException();
         item.ID = DataSource.ConfigProduct.NextProductNumber;
         ds?.lstP.Add(item);
         return item.ID;
@@ -19,9 +20,9 @@ public class DalProduct : IProduct
     {
         if(ds == null)
             throw new NotExistException();
-        foreach (Product temp in ds.lstP)
+        foreach (Product? temp in ds.lstP)
         {
-            if (temp.ID == id)
+            if (temp?.ID == id)
                 return temp;
         }
         return null;
@@ -30,9 +31,9 @@ public class DalProduct : IProduct
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (Product temp in ds.lstP)
+        foreach (Product? temp in ds.lstP)
         {
-            if (temp.ID == item.ID)
+            if (temp?.ID == item.ID)
             {
                 Delete(item.ID);
                 Add(item);
