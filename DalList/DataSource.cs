@@ -157,7 +157,7 @@ public class DataSource
         for (int i = 0; i < 21; i++)
         {
             Order order = new();
-            order.ID = Config.NextOrderNumber;
+            order.ID = ConfigOrder.NextOrderNumber;
             order.CustomerName = names[rand.Next(0, 43)];
             order.CustomerAddress = names[rand.Next(0, 43)];
             order.CustomerEmail = order.CustomerName + "@gmail.com";
