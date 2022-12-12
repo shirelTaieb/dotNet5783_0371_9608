@@ -12,7 +12,7 @@ internal class DalOrderItem : IOrderItem
             throw new doubleException();
         if (ds == null)
             throw new NotExistException();
-        item.ID = DataSource.Config.NextOrderNumber;
+        item.ID = DataSource.ConfigOrder.NextOrderNumber;
         ds.lstOI.Add(item);
         return item.ID;
     }
