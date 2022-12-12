@@ -19,20 +19,22 @@ namespace BlImplementation
                 throw new BO.wrongDataException();
             if (cart == null) //if the cart is null we build a new cart.
                 cart = new BO.Cart();
-            DO.Product temp = new DO.Product();
+            DO.Product? temp = new DO.Product();
             temp = Dal!.Product.GetById(prID);//get the product from Do by id
+            if (temp==null)
+                throw new BO.doseNotExistException();
             BO.OrderItem orit = new BO.OrderItem(); //cast from Do to bo.orderitem
             if (!(cart.Items!.Exists(or => or!.ID == prID ))) //if the product isnt exist in the cart.
             {
-                orit.ProductID = temp.ID;
-                orit.Price = temp.Price;
+                orit.ProductID = (int)temp?.ID;
+                orit.Price = temp?.Price;
                 orit.ID = 0; //זה זמני, אחרי זה בהזמנה הוא מקבל מספר רץ אוטומטי
                 orit.Amount = 1;  //this is the first from this type of product
                 cart.Items?.Add(orit); //add the product to the cart. the cart also can be null
             }
             else //if the product is exist 
             {
-                if (temp.InStock > 0) //there are more products in stock.
+                if (temp?.InStock > 0) //there are more products in stock.
                 {
                     foreach (var item in cart.Items) //we do foreach because we want to change the object in the cart
                     {
@@ -121,9 +123,9 @@ namespace BlImplementation
                 temp.ProductID = item!.ProductID;
                 temp.Amount = item.Amount;
                 Dal.OrderItem.Add(temp); //הוספה לרשימת פריטי ההזמנה
-                DO.Product pr=Dal.Product.GetById(temp.ProductID); //בקשת המוצר משכבת הנתונים
+                DO.Product pr=Dal.Product.GetById(temp.ProductID)??throw new BO.doseNotExistException(); //בקשת המוצר משכבת הנתונים
                 pr.InStock -= temp.Amount;//עדכון המלאי
-                Dal.Product.Update(pr); //עדכון המוצר בשכבת הנתונים
+                Dal.Product.Update((DO.Product)pr); //עדכון המוצר בשכבת הנתונים
             }
 
         }
