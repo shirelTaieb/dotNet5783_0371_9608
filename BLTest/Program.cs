@@ -174,7 +174,7 @@ namespace BLTest
                 {
                     
                     BO.Product pr = new BO.Product();
-                    Console.WriteLine(@"test product:
+                    Console.WriteLine(@"test Order:
                             Enter your choice:
                             0- EXIT
                             1 - GET ORDER LIST

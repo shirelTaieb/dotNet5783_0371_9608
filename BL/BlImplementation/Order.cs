@@ -24,7 +24,7 @@ internal class Order : BLApi.IOrder
         ofl.ID = or.ID;
         ofl.CustomerName = or.CustomerName;
         ofl.Status = or.Status;
-        ofl.AmountOfItems = 1;
+        ofl.AmountOfItems = or.Items.Count();
         ofl.TotalPrice = or.TotalPrice;
         return ofl;
     }
@@ -55,26 +55,42 @@ internal class Order : BLApi.IOrder
         temp.ShipDate = order.ShipDate?? DateTime.MinValue;
         temp.DeliveryDate = order.DeliveryDate??DateTime.MinValue;
         temp.Status = getStatus(order);
-        temp.Items = null;
-        temp.TotalPrice = 0;
+        List<DO.OrderItem> dolst = Dal!.OrderItem.GetByOrderID(order.ID);
+        List<BO.OrderItem> bolst = new List<BO.OrderItem>();
+        foreach (DO.OrderItem doItem in dolst)
+        {
+            BO.OrderItem boItem = new BO.OrderItem();
+            boItem.ID = doItem.ID;
+            boItem.ProductID= doItem.ProductID;
+            boItem.Price = doItem.Price;
+            boItem.Amount= doItem.Amount;
+            boItem.TotalPrice = boItem.Price * boItem.Amount;
+            bolst.Add(boItem);
+        }
+        temp.Items = bolst;
+        foreach(BO.OrderItem templst in bolst)
+        {
+            //temp?.TotalPrice += templst.TotalPrice;
+        }
         return temp;
 
     }
 
     public IEnumerable<BO.OrderForList?> getOrderList()
     {
-        List<DO.Order?> temp = Dal!.Order.GetAll().ToList(); //take the data from the factory
+        List<DO.Order?> temp = (List<DO.Order?>)Dal!.Order.GetAll(); //take the data from the factory
         List<BO.OrderForList> orders = new List<BO.OrderForList>();
         BO.Order? boorder = new BO.Order();
         BO.OrderForList? ofl= new BO.OrderForList();
-        var result =
-            from order in temp
-            select order;  //we want all of the orders
-        result.ToList();
-        foreach (DO.Order? or in result)
+        //var result =
+        //    from order in temp
+        //    select order;  //we want all of the orders
+        //result.ToList();
+        foreach (DO.Order? or in temp)
         {
             boorder = DoOrderToBo(or); //from do to bo
             ofl= BoOrderToOrderForList(boorder!);//from order to orderforlist
+
             orders.Add(ofl);
         }
         return orders;
