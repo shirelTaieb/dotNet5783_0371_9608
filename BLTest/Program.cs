@@ -270,7 +270,7 @@ namespace BLTest
                 while (num != 0)
                 {
                     BO.Product pr = new BO.Product();
-                    Console.WriteLine(@"test product:
+                    Console.WriteLine(@"test cart:
                             Enter your choice:
                             0- EXIT
                             1 - ADD PRODUCT TO CART
@@ -314,7 +314,15 @@ namespace BLTest
                                 Console.WriteLine(@"ERROR");
                                 break;
                             }
-                            cart.updatePoductAmount(myCart, id, amount);
+                            try
+                            {
+                                cart.updatePoductAmount(myCart, id, amount);
+                            }
+                            catch (Exception ex)//when the amount is not valid
+                                                //we dont want to 
+                            {
+                                Console.WriteLine(ex);
+                            }
                             break;
                         case 3:
                             cart.confirmOrder(myCart);
