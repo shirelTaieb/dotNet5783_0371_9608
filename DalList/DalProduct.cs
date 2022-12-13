@@ -20,9 +20,9 @@ public class DalProduct : IProduct
     {
         if(ds == null)
             throw new NotExistException();
-        foreach (Product? temp in ds.lstP)
+        foreach (Product temp in ds.lstP)
         {
-            if (temp?.ID == id)
+            if (temp.ID == id)
                 return temp;
         }
         return null;
@@ -35,8 +35,9 @@ public class DalProduct : IProduct
         {
             if (temp?.ID == item.ID)
             {
-                Delete(item.ID);
-                Add(item);
+                //temp?.Name = item.Name;
+                //Delete(item.ID);
+                //Add(item);
             }
         }
     }
