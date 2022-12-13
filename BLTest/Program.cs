@@ -46,15 +46,6 @@ namespace BLTest
                     switch (num)
                     {
                         case 1:
-                            Console.WriteLine("enter product ID:");
-                            temp = Console.ReadLine();
-                            b = int.TryParse(temp, out id);
-                            if (!b)
-                            {
-                                Console.WriteLine(@"ERROR");
-                                break;
-                            };
-                            pr.ID = id;
                             Console.WriteLine("enter product Name:");
                             temp = Console.ReadLine();
                             pr.Name = temp;
@@ -142,13 +133,17 @@ namespace BLTest
                             Console.WriteLine(@"Enter the id of the wanted product");
                             temp = Console.ReadLine();
                             b = int.TryParse(temp, out id);
-                            if (!b || choose != 1 || choose != 2)
+                            if (!b ||( choose != 1 && choose != 2))
                             {
                                 Console.WriteLine(@"ERROR");
                                 break;
                             }
                             if (choose == 1)
-                                product.getProductInfoManager(id);
+                            {
+                                BO.Product prod=new BO.Product();
+                                prod = product.getProductInfoManager(id);
+                                Console.WriteLine(prod);
+                            }
                             //else
                             //   // product.getProductInfoCustomer(id);
                             break;
