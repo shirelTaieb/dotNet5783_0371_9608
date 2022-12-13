@@ -26,7 +26,7 @@ namespace BlImplementation
             BO.OrderItem orit = new BO.OrderItem(); //cast from Do to bo.orderitem
             if (!(cart.Items!.Exists(or => or!.ID == prID ))) //if the product isnt exist in the cart.
             {
-                orit.ProductID = (int)temp?.ID;
+                orit.ProductID = temp.GetValueOrDefault().ID;
                 orit.Price = temp?.Price;
                 orit.ID = 0; //זה זמני, אחרי זה בהזמנה הוא מקבל מספר רץ אוטומטי
                 orit.Amount = 1;  //this is the first from this type of product

@@ -50,7 +50,7 @@ VerticalAlignment="Stretch" Width="auto">
         </Grid>
         <Grid Name="DownGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="1"
 VerticalAlignment="Stretch" Width="auto">
-            <ListView Grid.Row="1" d:ItemsSource="{Binding }" SelectionChanged="ListView_SelectionChanged">
+            <ListView Grid.Row="1" d:ItemsSource="{Binding  }" SelectionChanged="ListView_SelectionChanged">
              <ListView.View>
                 <GridView>
                         <GridViewColumn Header="ID" Width="150"></GridViewColumn>
