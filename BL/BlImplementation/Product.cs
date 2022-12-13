@@ -57,7 +57,7 @@ internal class Product : BLApi.IProduct
     }
     public void deleteProduct(int IDpr)
     {
-        Dal?.Product.Delete(IDpr);
+        Dal?.Product.Delete(IDpr);// דרוש תיקון!!!1
     }
     public void updateProduct(BO.Product? pr)
     {

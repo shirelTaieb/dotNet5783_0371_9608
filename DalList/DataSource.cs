@@ -149,17 +149,17 @@ public class DataSource
                                "Tal","Ishay","Sara","Naomie","Nina","Michael","Ari","Refael","Dan","Julia","Shay","Josh",
                                "Natlie","Boaz","Lea","Avigail","rachel","joe","Shira","Halel","Shlomo","Omer","Aviv","Or"}; //data source of names
 
-        string[] costomerAdress = {"Rananna","Jerusalem","Paris","Madrid","Torento","Avivim","New York","Tel Aviv","Lod",
+        string[] Adresses = {"Rananna","Jerusalem","Paris","Madrid","Torento","Avivim","New York","Tel Aviv","Lod",
                                    "Lisbon","Berlin","Metola","Eilat","Netivot","Ashdod","Ashkelon","Natanya","Tokyo",
                                    "Mexico City","Havanna","Lima","Beer Shaeva","Omer","Tzfat","Nazeret","Tiberiad","Raba",
                                    "Pretoria","Sidny","Givataim","Ariel","Ramat Gan","Ramat Hasharon","Petah Tikva","Yerocham"}; //data source of adress
 
         for (int i = 0; i < 21; i++)
         {
-            Order order = new();
+            Order order = new Order();
             order.ID = ConfigOrder.NextOrderNumber;
             order.CustomerName = names[rand.Next(0, 43)];
-            order.CustomerAddress = names[rand.Next(0, 43)];
+            order.CustomerAddress = Adresses[rand.Next(0, 34)];
             order.CustomerEmail = order.CustomerName + "@gmail.com";
             Random s_rand = new Random();
             order.OrderDate = DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 100L));
@@ -176,20 +176,20 @@ public class DataSource
     {
         for (int i = 0; i < 21; i++)
         {
-            int num= ConfigOrderItem1.NextOrderNumber;
-            for (int j = 0; j < rand.Next(4); j++)
+            int order_id= ConfigOrderItem1.NextOrderNumber;
+            for (int j = 1; j < rand.Next(1,4); j++)
             {
                 OrderItem orderItem = new OrderItem();
                 orderItem.ID = ConfigOrderItem2.NextOrderNumber;
-                orderItem.OrderID = num;
+                orderItem.OrderID = order_id;
                 orderItem.Amount= rand.Next(10);
-                orderItem.ProductID = rand.Next(1000, 1011);
-                lstOI.Add(orderItem);
+                orderItem.ProductID = rand.Next(100000, 100011);
                 foreach (Product temp in lstP)
                 {
                     if (temp.ID == orderItem.ProductID)
                         orderItem.Price= temp.Price;    
                 }
+                lstOI.Add(orderItem);
             }    
         }
     }

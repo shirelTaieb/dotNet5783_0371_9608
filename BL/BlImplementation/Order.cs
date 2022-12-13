@@ -72,8 +72,7 @@ internal class Order : BLApi.IOrder
         {
             //temp?.TotalPrice += templst.TotalPrice;
         }
-        return temp;
-
+        return temp;    
     }
 
     public IEnumerable<BO.OrderForList?> getOrderList()
