@@ -59,7 +59,7 @@ namespace BlImplementation
                 throw new BO.doseNotExistException();
             if(cart==null)
                 throw new BO.doseNotExistException();
-            if (newAmount < temp.Amount)//אם הכמות קטנה - תקטין את הכמות בהתאם ןתעדכן מחיר כולל של פריט ושל סל קניות
+            if (newAmount < temp.Amount)//אם הכמות קטנה - תקטין את הכמות בהתאם ועדכן מחיר כולל של פריט ושל סל קניות
             {
                 foreach (var item in cart.Items!) //we do foreach because we want to change the object in the cart
                 {
@@ -84,7 +84,8 @@ namespace BlImplementation
                             cart.TotalPrice += temp.Price * (newAmount-temp.Amount);  //uptade the total price of the order item.
                         }
                     }
-                else throw new BO.notInStockException(); //if there is no products in the stock
+                else 
+                    throw new BO.notInStockException(); //if there is no products in the stock
             }
             if(newAmount == 0)//אם הכמות נהייתה 0 - תִּמְחַק את הפריט המתאים מהסל ותעדכן מחיר כולל של סל קניות
             {
