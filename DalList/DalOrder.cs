@@ -12,13 +12,14 @@ public class DalOrder : IOrder //שיננו לפובליק
     
     public int Add(Order order)
     {
-        if (GetById(order.ID) != null)
-            throw new doubleException();
-        if (ds == null)
-            throw new NotExistException();
-        order.ID = DataSource.ConfigOrder.NextOrderNumber;
-        ds.lstO.Add(order);
-        return order.ID ;
+        Order? temp = ds?.lstO.FirstOrDefault(ord => ord.GetValueOrDefault().ID == order.ID);
+        if (temp != null)
+            throw new doubleException();   ///the product is alredy exist
+        else
+             if (order.ID <= 100000 || order.ID >= 999999) //the id isnt valid
+            order.ID = DataSource.ConfigProduct.NextProductNumber;
+        ds?.lstO.Add(order);
+        return order.ID;
     }
     public Order? GetById(int id)
     {

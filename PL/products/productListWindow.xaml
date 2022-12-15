@@ -38,15 +38,10 @@ VerticalAlignment="Stretch" Width="auto">
         </Grid>
         <Grid Name="DownGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="1"
 VerticalAlignment="Stretch" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="96*"/>
-                <ColumnDefinition Width="92*"/>
-                <ColumnDefinition Width="79*"/>
-            </Grid.ColumnDefinitions>
-            <ListView d:ItemsSource="{Binding  }" SelectionChanged="ListView_SelectionChanged" Grid.ColumnSpan="3">
+            <ListView Grid.Row="1" d:ItemsSource="{Binding}" SelectionChanged="ListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="ID" Width="150"></GridViewColumn>
+                        <GridViewColumn Header="ID" Width="150" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
                         <GridViewColumn  Header="Name" Width="150"></GridViewColumn>
                         <GridViewColumn  Header="Category" Width="150"></GridViewColumn>
                         <GridViewColumn  Header="Price" Width="150"></GridViewColumn>

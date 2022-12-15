@@ -1,4 +1,6 @@
-﻿using PL.products;
+﻿using BLApi;
+using BlImplementation;
+using PL.products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,15 +23,18 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
+        IBl? bl = new Bl();
         public MainWindow()
         {
             InitializeComponent();
-            this.OpenProductList.MouseDown += Opl;
-        }
-        private void Opl(object o, MouseEventArgs e)
-        {
-            productListWindow products= new productListWindow();
+            productListWindow products = new productListWindow(bl);
             products.Show();
+            //this.OpenProductList.MouseDown += Opl;
         }
+        //private void Opl(object o, MouseEventArgs e)
+        //{
+        //    productListWindow products= new productListWindow();
+        //    products.Show();
+        //}
     }
 }
