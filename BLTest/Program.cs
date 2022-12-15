@@ -157,7 +157,7 @@ namespace BLTest
                 Console.WriteLine(ex);
             }
         }
-        private static void testOrder(BLApi.IOrder order)
+        private static void testOrder(BLApi.IOrder order)//blapi????
         {
             try
             {
