@@ -29,11 +29,17 @@ internal class Order : BLApi.IOrder
         return ofl;
     }
     private IDal? Dal = DalApi.Factory.GetDal() ?? throw new BO.wrongDataException();
+
+    /// <summary>
+    /// פונקצייה שנותנת מידע על הסטטוס
+    /// </summary>
+    /// <param name="o"></param>
+    /// <returns></returns>
     internal BO.OrderStatus getStatus(DO.Order or)
     {
         BO.OrderStatus stat = new BO.OrderStatus();
-        if (or.ShipDate != null)
-            if (or.DeliveryDate != null)
+        if (or.ShipDate != null&&or.ShipDate!=DateTime.MinValue)
+            if (or.DeliveryDate != null&& or.DeliveryDate != DateTime.MinValue)
                 stat = BO.OrderStatus.deliveried;
             else
                 stat = BO.OrderStatus.sent;
@@ -41,6 +47,13 @@ internal class Order : BLApi.IOrder
             stat = BO.OrderStatus.confirm;
         return stat;
     }
+
+
+    /// <summary>
+    /// פונקצייה שממירה מבו לדו
+    /// </summary>
+    /// <param name="o"></param>
+    /// <returns></returns>
     internal BO.Order? DoOrderToBo(DO.Order? o)
     {
         if (o == null)
@@ -56,24 +69,23 @@ internal class Order : BLApi.IOrder
         temp.DeliveryDate = order.DeliveryDate??DateTime.MinValue;
         temp.Status = getStatus(order);
         List<DO.OrderItem> dolst = Dal!.OrderItem.GetByOrderID(order.ID);
-        List<BO.OrderItem> bolst = new List<BO.OrderItem>();
-        foreach (DO.OrderItem doItem in dolst)
-        {
-            BO.OrderItem boItem = new BO.OrderItem();
-            boItem.ID = doItem.ID;
-            boItem.ProductID= doItem.ProductID;
-            boItem.Price = doItem.Price;
-            boItem.Amount= doItem.Amount;
-            boItem.TotalPrice = boItem.Price * boItem.Amount;
-            bolst.Add(boItem);
-        }
-        temp.Items = bolst;
-        foreach(BO.OrderItem templst in bolst)
-        {
-            //temp?.TotalPrice += templst.TotalPrice;
-        }
+        // List<BO.OrderItem> bolst = new List<BO.OrderItem>();
+        var result =
+            from doItem in dolst
+            select new BO.OrderItem
+            {
+                ID = doItem.ID,
+                ProductID = doItem.ProductID,
+                Price = doItem.Price,
+                Amount = doItem.Amount,
+                TotalPrice = doItem.Price * doItem.Amount
+            };
+            temp.Items = result.ToList();
+        temp.TotalPrice =
+                    temp.Items?.Sum(c => c?.Price * c?.Amount) ?? 0;
         return temp;    
     }
+
 
     public IEnumerable<BO.OrderForList?> getOrderList()
     {
@@ -97,7 +109,7 @@ internal class Order : BLApi.IOrder
     public BO.Order? getOrderInfo(int orderID)
     {
         //מזהה- שהוא מספר חיובי בן 4 ספרות
-        if ((orderID <= 1000) && (orderID >= 9999))
+        if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
         DO.Order? temp = Dal!.Order.GetById(orderID);
         BO.Order? boorder = new BO.Order();
@@ -107,7 +119,7 @@ internal class Order : BLApi.IOrder
     public BO.Order updateSentOrder(int orderID)
     {
         //מזהה- שהוא מספר חיובי בן 6 ספרות
-        if ((orderID <= 100000) && (orderID >= 999999))
+        if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
         DO.Order? temp = Dal!.Order.GetById(orderID);
         if (temp==null)
@@ -120,12 +132,14 @@ internal class Order : BLApi.IOrder
     public BO.Order updateDeliveryOrder(int orderID)
     {
         //מזהה- שהוא מספר חיובי בן 6 ספרות
-        if ((orderID <= 100000) && (orderID >= 999999))
+        if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
-        DO.Order? temp = Dal!.Order.GetById(orderID);
+        DO.Order? temp = new DO.Order();
+        temp= Dal!.Order.GetById(orderID);
         if (temp == null)
             throw new BO.wrongDataException();
-        BO.Order? cast = DoOrderToBo(temp);//cast from do to bo
+        BO.Order? cast = new BO.Order();
+        cast=DoOrderToBo(temp);//cast from do to bo
         cast!.Status = BO.OrderStatus.deliveried; 
         return cast;
 
@@ -133,7 +147,7 @@ internal class Order : BLApi.IOrder
     public BO.OrderTracking orderTracking(int orderID)
     {
         //מזהה- שהוא מספר חיובי בן 6 ספרות
-        if ((orderID <= 100000) && (orderID >= 999999))
+        if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
         DO.Order temp = Dal?.Order.GetById(orderID)??throw new BO.doseNotExistException();//get the order from the data according to id
         BO.OrderTracking ot = new BO.OrderTracking();

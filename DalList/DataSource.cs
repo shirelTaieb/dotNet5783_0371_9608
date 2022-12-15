@@ -103,44 +103,6 @@ public class DataSource
         p11.InStock = rand.Next(0, 300);
         lstP.Add(p11);
 
-        //string[] categories = { "Children", "Holy", "Theoretical", "Romans", "History" };
-        //string[] ChildrenBook = { "Kipa aduma", "Aladin", "to the sea", "Dora", "I love mama" };
-        //string[] HolyBooks = { "bereshit", "shmot", "talmud bavly", "the holydays", "rambam" };
-        //string[] TheoryBook = { "how To grow", "loyalty", "all about labor", "Am I seck?", "How to improve your self-confidance" };
-        //string[] HistoryBooks = { "world war 2", "Bibi", "the History of Israel","Natsizem","white book" };
-        //string[] AdultBooks = { "Harry Potter 1", "Harry Potter 2", "Harry Potter 3", "Harry Potter 4", "Harry Potter 5" };
-        //for (int i =0;i<20;i++)
-        //{
-        //Product p = new Product();
-        // int k =rand.Next(5); 
-        // p.Category= categories[k];
-        //switch (k)
-        //{
-        //case 0:
-        //p.Name = ChildrenBook[rand.Next(5)];
-        //break;
-        //case 1:
-        //p.Name = HolyBooks[rand.Next(5)];
-        //break;
-        //case 2:
-        //p.Name = TheoryBook[rand.Next(5)];
-        //break;
-        //case 3:
-        //p.Name = HistoryBooks[rand.Next(5)];
-        //break;
-        //case 4:
-        //p.Name = AdultBooks[rand.Next(5)];
-        // break;
-        //}
-        //float price = rand.Next(50, 229);   
-        //p.Price = price;
-        //p.ID = Config.NextOrderNumber;
-        //if (p.Name == "Harry Potter 3" || p.Name == "Harry Potter 2")
-        //p.InStuck = 0;
-        //else
-        //p.InStuck = rand.Next(0, 20);
-        //lstP.Add(p);
-        //}
     }
     public void createOrder()//creating a new Order
     {
@@ -177,7 +139,7 @@ public class DataSource
         for (int i = 0; i < 21; i++)
         {
             int order_id= ConfigOrderItem1.NextOrderNumber;
-            for (int j = 1; j < rand.Next(1,4); j++)
+            for (int j = 0; j < rand.Next(1,10); j++)
             {
                 OrderItem orderItem = new OrderItem();
                 orderItem.ID = ConfigOrderItem2.NextOrderNumber;
@@ -207,6 +169,7 @@ public class DataSource
         internal static int NextOrderNumber { get => ++s_nextOrderNumber; }
     }
     internal static class ConfigProduct
+
     {
         internal const int s_startProductNumber = 100000;
         private static int s_nextProductNumber = s_startProductNumber;
