@@ -8,12 +8,15 @@ internal class DalOrderItem : IOrderItem
     DataSource? ds = DataSource.s_instance;
     public int Add(OrderItem item)
     {
-        if (GetById(item.ID) != null)
-            throw new doubleException();
         if (ds == null)
             throw new NotExistException();
-        item.ID = DataSource.ConfigOrder.NextOrderNumber;
-        ds.lstOI.Add(item);
+        OrderItem? temp = ds?.lstOI.FirstOrDefault(oi => oi.GetValueOrDefault().ID == item.ID);
+        if (temp != null)
+            throw new doubleException();   ///the order item is alredy exist
+        else
+             if (item.ID <= 1000 || item.ID >= 9999) //the id isnt valid
+                item.ID = DataSource.ConfigOrder.NextOrderNumber;
+        ds?.lstOI.Add(item);
         return item.ID;
     }
     public OrderItem? GetById(int id)
