@@ -38,8 +38,8 @@ internal class Order : BLApi.IOrder
     internal BO.OrderStatus getStatus(DO.Order or)
     {
         BO.OrderStatus stat = new BO.OrderStatus();
-        if (or.ShipDate != null&&or.ShipDate!=DateTime.MinValue)
-            if (or.DeliveryDate != null&& or.DeliveryDate != DateTime.MinValue)
+        if (or.ShipDate != null)//&&or.ShipDate!=DateTime.MinValue)
+            if (or.DeliveryDate != null)//&& or.DeliveryDate != DateTime.MinValue)
                 stat = BO.OrderStatus.deliveried;
             else
                 stat = BO.OrderStatus.sent;
@@ -64,9 +64,9 @@ internal class Order : BLApi.IOrder
         temp.CustomerName =order.CustomerName??"";
         temp.CustomerEmail = order.CustomerEmail??"";
         temp.CustomerAddress = order.CustomerAddress??"";
-        temp.OrderDate = order.OrderDate??DateTime.MinValue;
-        temp.ShipDate = order.ShipDate?? DateTime.MinValue;
-        temp.DeliveryDate = order.DeliveryDate??DateTime.MinValue;
+        temp.OrderDate = order.OrderDate??null;
+        temp.ShipDate = order.ShipDate??null;
+        temp.DeliveryDate = order.DeliveryDate??null;
         temp.Status = getStatus(order);
         List<DO.OrderItem> dolst = Dal!.OrderItem.GetByOrderID(order.ID);
         // List<BO.OrderItem> bolst = new List<BO.OrderItem>();
@@ -118,30 +118,37 @@ internal class Order : BLApi.IOrder
     }
     public BO.Order updateSentOrder(int orderID)
     {
-        //מזהה- שהוא מספר חיובי בן 6 ספרות
+        //מזהה- שהוא מספר חיובי בן 4 ספרות
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
-        DO.Order? temp = Dal!.Order.GetById(orderID);
-        if (temp==null)
+        DO.Order temp = Dal!.Order.GetById(orderID)??throw new BO.doseNotExistException();
+        if (temp.ShipDate != null)//|| temp.ShipDate !=DateTime.MinValue)
             throw new BO.wrongDataException();
+        temp.ShipDate = DateTime.Now; 
+        try
+        {
+            Dal!.Order.Update(temp);
+        }
+        catch(NotExistException)
+        {
+            throw new BO.doseNotExistException();
+        }
         BO.Order? cast = DoOrderToBo(temp);//cast from do to bo
-        cast!.Status = BO.OrderStatus.sent;
-        return cast;
+        return cast!;
 
     }
     public BO.Order updateDeliveryOrder(int orderID)
     {
-        //מזהה- שהוא מספר חיובי בן 6 ספרות
+        //מזהה- שהוא מספר חיובי בן 4 ספרות
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
-        DO.Order? temp = new DO.Order();
-        temp= Dal!.Order.GetById(orderID);
-        if (temp == null)
-            throw new BO.wrongDataException();
+        DO.Order temp = Dal!.Order.GetById(orderID) ?? throw new BO.doseNotExistException();
+        if (temp.ShipDate == null)
+            throw new Exception();///לשים חריגה מתאימה לזה
+        temp.DeliveryDate = DateTime.Now;
         BO.Order? cast = new BO.Order();
-        cast=DoOrderToBo(temp);//cast from do to bo
-        cast!.Status = BO.OrderStatus.deliveried; 
-        return cast;
+        cast=DoOrderToBo(temp);//cast from do to bo 
+        return cast!;
 
     }
     public BO.OrderTracking orderTracking(int orderID)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLApi;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace PL.products
     /// </summary>
     public partial class productListWindow : Window
     {
-        public productListWindow()
+        public productListWindow(IBl? bl)
         {
             InitializeComponent();
+            var list= bl!.Product!.getListOfProduct();
+            DataContext = list;
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

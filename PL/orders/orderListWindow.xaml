@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.orders"
         mc:Ignorable="d"
         Title="orderListWindow" Height="450" Width="800">
-    <Grid Name="MainGrid" Background="#FFDEDBD2">
+    <!--<Grid Name="MainGrid" Background="#FFDEDBD2">
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="500*"/>
@@ -61,5 +61,5 @@ VerticalAlignment="Stretch" Width="auto">
              </ListView.View>
             </ListView>
         </Grid>
-    </Grid>
+    </Grid>-->
 </Window>

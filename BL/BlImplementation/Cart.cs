@@ -15,7 +15,7 @@ namespace BlImplementation
         public BO.Cart addProductToCart(BO.Cart? cart, int prID)
         {
             //מזהה- שהוא מספר חיובי בן 6 ספרות
-            if ((prID <= 100000) && (prID >= 999999))
+            if ((prID <= 100000) || (prID >= 999999))
                 throw new BO.wrongDataException();
             if (cart == null) //if the cart is null we build a new cart.
                 cart = new BO.Cart();
@@ -73,8 +73,10 @@ namespace BlImplementation
             }
             if(newAmount > temp.Amount)//אם הכמות גדלה - תפעל בדומה להוספת מוצר לסל קניות שכבר קיים בסל קניות כנ"ל
             {
-                DO.Product temp2 = new DO.Product();
-                if (temp2.InStock > 0) //there are more products in stock.
+                DO.Product? newProductToAdd = new DO.Product();
+                newProductToAdd = Dal!.Product.GetById(IDpr);
+                //לבדוק אם חזר נאל מהגטבייאיידי
+                if (newProductToAdd?.InStock > 0) //there are more products in stock.
                     foreach (var item in cart.Items!) //we do foreach because we want to change the object in the cart
                     {
                         if (item!.ID == IDpr)  //this loop will happen just one time
@@ -90,9 +92,9 @@ namespace BlImplementation
             if(newAmount == 0)//אם הכמות נהייתה 0 - תִּמְחַק את הפריט המתאים מהסל ותעדכן מחיר כולל של סל קניות
             {
                 cart.TotalPrice -= temp.Price * temp.Amount;
-                Dal!.Product.Delete(IDpr);// already check that its not null
+                cart?.Items?.Remove(temp);
             }
-            return cart;
+            return cart!;
         }
         public void confirmOrder(BO.Cart? cart)
         {
@@ -109,8 +111,8 @@ namespace BlImplementation
             //..חסרררררררר
             
             DO.Order order = new DO.Order(); //casting to not nullable order
-            order.ShipDate = DateTime.MinValue;
-            order.OrderDate = DateTime.MinValue;
+            order.ShipDate = null;//DateTime.MinValue;
+            order.OrderDate = null;//DateTime.MinValue;
             order.OrderDate = DateTime.Now;
             order.CustomerAddress = cart!.CustomerAddress;
             order.CustomerName = cart!.CustomerName;
