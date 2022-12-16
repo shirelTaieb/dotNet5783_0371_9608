@@ -19,15 +19,18 @@ namespace BL
             foreach (PropertyInfo prop in t!.GetType().GetProperties())
             {
                 var value = prop.GetValue(t, null);
-                if (value is not string && value is IEnumerable)
+                if (value != null)
                 {
-                    str = str + "\n" + prop.Name + ":";
-                    foreach (var item in (IEnumerable)value)
-                        str += item.ToStringProperty("      ");
-                }
+                    if (value is not string && value is IEnumerable)
+                    {
+                        str = str + "\n" + prop.Name + ":";
+                        foreach (var item in (IEnumerable)value)
+                            str += item.ToStringProperty("      ");
+                    }
 
-                else
-                    str += "\n" + suffix + prop.Name + ": " + value;
+                    else
+                        str += "\n" + suffix + prop.Name + ": " + value;
+                }
             }
             str += "\n";
             return str;
