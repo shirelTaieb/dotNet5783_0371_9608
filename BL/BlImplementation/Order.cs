@@ -48,7 +48,6 @@ internal class Order : BLApi.IOrder
         return stat;
     }
 
-
     /// <summary>
     /// פונקצייה שממירה מבו לדו
     /// </summary>
