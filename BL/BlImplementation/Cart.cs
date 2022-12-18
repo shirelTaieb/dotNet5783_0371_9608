@@ -55,7 +55,7 @@ namespace BlImplementation
             //בודק שהתז נכון וקיים
             BO.OrderItem? temp = new BO.OrderItem();
             temp = cart?.Items?.FirstOrDefault(ls => ls?.ProductID == IDpr);
-            if (temp == null)
+            if (temp == null)  //the product is not exist in the cart
                 throw new BO.doseNotExistException();
             if(cart==null)
                 throw new BO.doseNotExistException();
@@ -76,18 +76,18 @@ namespace BlImplementation
                 DO.Product? newProductToAdd = new DO.Product();
                 newProductToAdd = Dal!.Product.GetById(IDpr);
                 //לבדוק אם חזר נאל מהגטבייאיידי
-                if (newProductToAdd?.InStock > 0) //there are more products in stock.
+                if (newProductToAdd?.InStock >= (newAmount-temp.Amount)) //there are enagh products in stock.
                     foreach (var item in cart.Items!) //we do foreach because we want to change the object in the cart
                     {
-                        if (item!.ID == IDpr)  //this loop will happen just one time
+                        if (item!.ProductID == IDpr)  //this loop will happen just one time
                         {
                             cart.TotalPrice += temp.Price * (newAmount - temp.Amount);//uptade the total price of the cart.
                             item!.Amount=newAmount;   //!- because we check that the product exist in the cart.
-                            cart.TotalPrice += temp.Price * (newAmount-temp.Amount);  //uptade the total price of the order item.
+                            item.TotalPrice += temp.Price * (newAmount-temp.Amount);  //uptade the total price of the order item.
                         }
                     }
                 else 
-                    throw new BO.notInStockException(); //if there is no products in the stock
+                    throw new BO.notInStockException(); //if there is no enagh products in the stock
             }
             if(newAmount == 0)//אם הכמות נהייתה 0 - תִּמְחַק את הפריט המתאים מהסל ותעדכן מחיר כולל של סל קניות
             {
@@ -105,7 +105,7 @@ namespace BlImplementation
                 throw new BO.wrongDataException();
             if (cart.CustomerAddress == "")
                 throw new BO.wrongDataException();
-            if (cart.CustomerEmail == "" || cart.CustomerEmail!.Contains("@"))
+            if (cart.CustomerEmail == "" || !cart.CustomerEmail!.Contains("@"))
                 throw new BO.wrongDataException();
             //בדיקת נתוני סל קניות
             //..חסרררררררר
@@ -128,7 +128,7 @@ namespace BlImplementation
                 Dal.OrderItem.Add(temp); //הוספה לרשימת פריטי ההזמנה
                 DO.Product pr=Dal.Product.GetById(temp.ProductID)??throw new BO.doseNotExistException(); //בקשת המוצר משכבת הנתונים
                 pr.InStock -= temp.Amount;//עדכון המלאי
-                Dal.Product.Update((DO.Product)pr); //עדכון המוצר בשכבת הנתונים
+                Dal.Product.Update(pr); //עדכון המוצר בשכבת הנתונים
             }
 
         }

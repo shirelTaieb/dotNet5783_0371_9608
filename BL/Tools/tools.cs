@@ -19,7 +19,7 @@ namespace BL
             foreach (PropertyInfo prop in t!.GetType().GetProperties())
             {
                 var value = prop.GetValue(t, null);
-                if (value != null)
+                if (value != null) //if it is null we dont want that it will be not printed
                 {
                     if (value is not string && value is IEnumerable)
                     {

@@ -316,7 +316,7 @@ namespace BLTest
                             }
                             try
                             {
-                                cart.updatePoductAmount(myCart, id, amount);
+                               myCart=cart?.updatePoductAmount(myCart, id, amount);
                             }
                             catch (Exception ex)//when the amount is not valid
                                                 //we dont want to 
@@ -325,7 +325,7 @@ namespace BLTest
                             }
                             break;
                         case 3:
-                            cart.confirmOrder(myCart);
+                             cart?.confirmOrder(myCart);
                             num = 0; //when we confim the order, we exit from the cart
                             break;
                         default:
@@ -367,7 +367,7 @@ namespace BLTest
                         testOrder(bl.Order!);// they want an operation on the order
                         break;
                     case 3:
-                        BO.Cart myCart = new BO.Cart();
+                        Cart myCart = new Cart();
                         testCart(bl.Cart!,myCart);// they want an operation on the cart
                         break;
                     default:

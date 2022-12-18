@@ -15,7 +15,7 @@ internal class DalOrderItem : IOrderItem
             throw new doubleException();   //the order item is alredy exist
         else
              if (item.ID <= 1000 || item.ID >= 9999) //the id isnt valid
-                item.ID = DataSource.ConfigOrder.NextOrderNumber;
+                item.ID = DataSource.ConfigOrderItem1.NextOrderNumber;
         ds?.lstOI.Add(item);
         return item.ID;
     }

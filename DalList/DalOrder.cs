@@ -16,8 +16,8 @@ public class DalOrder : IOrder //שיננו לפובליק
         if (temp != null)
             throw new doubleException();   ///the product is alredy exist
         else
-             if (order.ID <= 100000 || order.ID >= 999999) //the id isnt valid
-            order.ID = DataSource.ConfigProduct.NextProductNumber;
+             if (order.ID <= 1000 || order.ID >= 9999) //the id isnt valid
+                order.ID = DataSource.ConfigOrder.NextOrderNumber;
         ds?.lstO.Add(order);
         return order.ID;
     }
