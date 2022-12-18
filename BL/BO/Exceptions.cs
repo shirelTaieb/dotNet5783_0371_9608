@@ -43,4 +43,13 @@ namespace BO
         override public string Message => "Not In Stock";
         override public string ToString() => Message;
     }
+    public class doseNotSentYet : Exception
+    {
+        public doseNotSentYet() : base() { }
+        public doseNotSentYet(string message) : base(message) { }
+        public doseNotSentYet(string message, Exception inner) : base(message, inner) { }
+
+        override public string Message => " this item hasn't been sent yet";
+        override public string ToString() => Message;
+    }
 }

@@ -143,7 +143,7 @@ internal class Order : BLApi.IOrder
             throw new BO.wrongDataException();
         DO.Order temp = Dal!.Order.GetById(orderID) ?? throw new BO.doseNotExistException();
         if (temp.ShipDate == null)
-            throw new Exception();///לשים חריגה מתאימה לזה
+            throw new BO.doseNotSentYet(); 
         temp.DeliveryDate = DateTime.Now;
         BO.Order? cast = new BO.Order();
         cast=DoOrderToBo(temp);//cast from do to bo 
