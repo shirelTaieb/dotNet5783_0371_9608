@@ -24,7 +24,7 @@
             <ComboBoxItem Content="עיוני" />
         </ComboBox>
 
-        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="100,380,0,0" VerticalAlignment="Top" Width="80" Height="20" Background="#FF49A078" Foreground="White" Click="add_click"/>
-        <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="230,380,0,0" VerticalAlignment="Top" Width="80" Height="20" Foreground="White" Background="#FF49A078" Click="update_click"/>
+        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="100,380,0,0" VerticalAlignment="Top" Width="80" Height="20" Background="#FF49A078" Foreground="White" Click="add_click" />
+        <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="230,380,0,0" VerticalAlignment="Top" Width="80" Height="20" Foreground="White" Background="#FF49A078" Click="update_click" Visibility="{Binding ElementName=id}"/>
     </Grid>
 </Window>

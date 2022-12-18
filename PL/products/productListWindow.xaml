@@ -8,9 +8,8 @@
         Title="productListWindow" Height="640" Width="800">
     <Grid Name="MainGrid" Background="#FFDEDBD2">
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="500*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="500*"/>
         </Grid.RowDefinitions>
         <Grid Name="UpGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="0"
 VerticalAlignment="Stretch" Width="auto">
@@ -27,8 +26,8 @@ VerticalAlignment="Stretch" Width="auto">
                 <ComboBoxItem Content="רומנים" />
                 <ComboBoxItem Content="עיוני" />
             </ComboBox>
-            <ComboBox x:Name="price" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" Foreground="#FF49A078" OpacityMask="#FF49A078">
-                <ComboBoxItem Content="₪50 עד" />
+            <ComboBox x:Name="price" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" Foreground="{x:Null}" OpacityMask="#FF49A078" SelectionChanged="price_SelectionChanged">
+                <ComboBoxItem Content="₪50 עד" OpacityMask="Black" />
                 <ComboBoxItem Content="₪100 עד" />
                 <ComboBoxItem Content="₪150 עד" />
                 <ComboBoxItem Content="₪200 עד" />
@@ -37,7 +36,11 @@ VerticalAlignment="Stretch" Width="auto">
         </Grid>
         <Grid Name="DownGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="1"
 VerticalAlignment="Stretch" Width="auto">
-            <StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="46*"/>
+                <ColumnDefinition Width="43*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.ColumnSpan="2">
             </StackPanel>
         </Grid>
     </Grid>

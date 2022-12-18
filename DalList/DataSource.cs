@@ -131,6 +131,8 @@ public class DataSource
                 order.DeliveryDate= DateTime.Now - new TimeSpan(s_rand.NextInt64(10L * 1000L * 1000L * 3600L * 24L * 200L));
             if(i<=8)
                 order.DeliveryDate = null;
+            if (i <= 4)
+                order.ShipDate = null;
             lstO.Add(order);
         }
     }

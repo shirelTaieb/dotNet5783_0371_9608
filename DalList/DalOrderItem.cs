@@ -40,6 +40,7 @@ internal class DalOrderItem : IOrderItem
             {
                 Delete(item.ID);
                 Add(item);
+                return;
             }
         }
     }

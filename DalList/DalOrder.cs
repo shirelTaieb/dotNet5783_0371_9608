@@ -14,7 +14,7 @@ public class DalOrder : IOrder //שיננו לפובליק
     {
         Order? temp = ds?.lstO.FirstOrDefault(ord => ord.GetValueOrDefault().ID == order.ID);
         if (temp != null)
-            throw new doubleException();   ///the product is alredy exist
+            throw new doubleException();   //the product is alredy exist
         else
              if (order.ID <= 1000 || order.ID >= 9999) //the id isnt valid
                 order.ID = DataSource.ConfigOrder.NextOrderNumber;
@@ -42,6 +42,7 @@ public class DalOrder : IOrder //שיננו לפובליק
             {
                 Delete(order.ID);
                 Add(order);
+                return;
             }
         }
     }

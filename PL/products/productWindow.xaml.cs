@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLApi;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace PL.products
     /// </summary>
     public partial class productWindow : Window
     {
-        public productWindow()
+        public productWindow(IBl? bl)
         {
             InitializeComponent();
         }
@@ -27,6 +28,9 @@ namespace PL.products
         {
             MessageBox.Show(":) המוצר נוסף בהצלחה", "");
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
+            BO.Product newProduct=new BO.Product();
+            
+
         }
         private void update_click(object sender, RoutedEventArgs e)
         {

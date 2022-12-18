@@ -145,6 +145,14 @@ internal class Order : BLApi.IOrder
         if (temp.ShipDate == null)
             throw new BO.doseNotSentYet(); 
         temp.DeliveryDate = DateTime.Now;
+        try
+        {
+            Dal!.Order.Update(temp);
+        }
+        catch (NotExistException)
+        {
+            throw new BO.doseNotExistException();
+        }
         BO.Order? cast = new BO.Order();
         cast=DoOrderToBo(temp);//cast from do to bo 
         return cast!;

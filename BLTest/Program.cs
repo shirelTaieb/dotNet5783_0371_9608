@@ -1,15 +1,6 @@
-﻿using Dal;
-using DalApi;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BO;
-using BLApi;
+﻿using BLApi;
 using BlImplementation;
-using System.Security.Cryptography;
-using DO;
+using BO;
 
 namespace BLTest
 {
@@ -70,7 +61,7 @@ namespace BLTest
                                 break;
                             }
                             pr.InStock = stock;
-                                product.addNewProduct(pr);
+                            product.addNewProduct(pr);
                             break;
                         case 2:
                             Console.WriteLine("enter the id of the product you want delete:");
@@ -122,30 +113,17 @@ namespace BLTest
                                 Console.WriteLine(item);
                             break;
                         case 5:
-                            Console.WriteLine("Enter 1 to manager, 2 for customer\n");
+                            Console.WriteLine(@"Enter the id of the wanted product");
                             temp = Console.ReadLine();
-                            b = int.TryParse(temp, out int choose);
+                            b = int.TryParse(temp, out id);
                             if (!b)
                             {
                                 Console.WriteLine(@"ERROR");
                                 break;
                             }
-                            Console.WriteLine(@"Enter the id of the wanted product");
-                            temp = Console.ReadLine();
-                            b = int.TryParse(temp, out id);
-                            if (!b ||( choose != 1 && choose != 2))
-                            {
-                                Console.WriteLine(@"ERROR");
-                                break;
-                            }
-                            if (choose == 1)
-                            {
-                                BO.Product prod=new BO.Product();
-                                prod = product.getProductInfoManager(id);
-                                Console.WriteLine(prod);
-                            }
-                            //else
-                            //   // product.getProductInfoCustomer(id);
+                            BO.Product prod = new BO.Product();
+                            prod = product.getProductInfoManager(id);
+                            Console.WriteLine(prod);
                             break;
                         default:
                             break;
@@ -167,7 +145,7 @@ namespace BLTest
                 int num = 1;
                 while (num != 0)
                 {
-                    
+
                     BO.Product pr = new BO.Product();
                     Console.WriteLine(@"test Order:
                             Enter your choice:
@@ -187,7 +165,7 @@ namespace BLTest
                     switch (num)
                     {
                         case 1:
-                            List<BO.OrderForList?> lst=new List<OrderForList?>();
+                            List<BO.OrderForList?> lst = new List<OrderForList?>();
                             lst = order.getOrderList().ToList();
                             foreach (BO.OrderForList? item in lst)
                                 Console.WriteLine(item);
@@ -195,7 +173,7 @@ namespace BLTest
                         case 2:
                             Console.WriteLine(@"enter id of the order:");
                             temp = Console.ReadLine();
-                            b=int.TryParse(temp, out id);
+                            b = int.TryParse(temp, out id);
                             if (!b)
                             {
                                 Console.WriteLine(@"ERROR");
@@ -224,7 +202,7 @@ namespace BLTest
                                 break;
                             }
                             BO.Order? order1 = new BO.Order();
-                            order1= order.getOrderInfo(id);
+                            order1 = order.getOrderInfo(id);
                             Console.WriteLine(order1);
                             break;
                         case 5:
@@ -237,7 +215,7 @@ namespace BLTest
                                 break;
                             }
                             BO.OrderTracking ortrack = new BO.OrderTracking();
-                            ortrack=order.orderTracking(id);
+                            ortrack = order.orderTracking(id);
                             Console.WriteLine(ortrack);
                             break;
                         default:
@@ -250,7 +228,7 @@ namespace BLTest
                 Console.WriteLine(ex);
             }
         }
-        private static void testCart(BLApi.ICart cart,BO.Cart? myCart)
+        private static void testCart(BLApi.ICart cart, BO.Cart? myCart, IProduct product)
         {
             myCart = myCart ?? new BO.Cart();
             Console.WriteLine("Enter your name:");
@@ -258,7 +236,7 @@ namespace BLTest
             Console.WriteLine("Enter your address");
             myCart.CustomerAddress = Console.ReadLine();
             Console.WriteLine("Enter your email");
-            myCart.CustomerEmail= Console.ReadLine();
+            myCart.CustomerEmail = Console.ReadLine();
             myCart.TotalPrice = 0;
             myCart.Items = new List<BO.OrderItem?>();
             try
@@ -275,7 +253,8 @@ namespace BLTest
                             0- EXIT
                             1 - ADD PRODUCT TO CART
                             2 - UPDATE PRODUCT AMOUNT
-                            3 - CONFIRM ORDER");//choose which operation they want to do
+                            3 - GET PRODUCT INFORMATION FOR CUSTOMER
+                            4 - CONFIRM ORDER");//choose which operation they want to do
                     string? option = Console.ReadLine();
                     bool op = int.TryParse(option, out num);
                     if (!op)
@@ -316,7 +295,7 @@ namespace BLTest
                             }
                             try
                             {
-                               myCart=cart?.updatePoductAmount(myCart, id, amount);
+                                myCart = cart?.updatePoductAmount(myCart, id, amount);
                             }
                             catch (Exception ex)//when the amount is not valid
                                                 //we dont want to 
@@ -325,7 +304,20 @@ namespace BLTest
                             }
                             break;
                         case 3:
-                             cart?.confirmOrder(myCart);
+                            Console.WriteLine(@"Enter the id of the wanted product");
+                            temp = Console.ReadLine();
+                            b = int.TryParse(temp, out id);
+                            if (!b)
+                            {
+                                Console.WriteLine(@"ERROR");
+                                break;
+                            }
+                            BO.ProductItem prod = new BO.ProductItem();
+                            prod = product.getProductInfoCustomer(id, myCart);
+                            Console.WriteLine(prod);
+                            break;
+                        case 4:
+                            cart?.confirmOrder(myCart);
                             num = 0; //when we confim the order, we exit from the cart
                             break;
                         default:
@@ -368,7 +360,7 @@ namespace BLTest
                         break;
                     case 3:
                         Cart myCart = new Cart();
-                        testCart(bl.Cart!,myCart);// they want an operation on the cart
+                        testCart(bl.Cart!, myCart,bl.Product!);// they want an operation on the cart
                         break;
                     default:
                         break;

@@ -27,7 +27,12 @@ namespace PL.products
             DataContext = list;
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void price_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show("סיננת לפי מחיר", "");
+        }
+
+        private void category_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

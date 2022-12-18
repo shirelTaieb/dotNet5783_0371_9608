@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,13 +15,7 @@ namespace BO
         public Category? Category { get; set; }
         public int Amount { get; set; }
         public bool InStock { get; set; }
-        public override string ToString() => $@"
-	Product ID={ID}: 
-        Product Name {Name}, 
-    	Price: {Price},
-        Category - {Category},
-    	Amount in stock: {Amount}
-	";
+        public override string ToString() => this.ToStringProperty();
 
     }
 }

@@ -27,8 +27,10 @@ namespace PL
         public MainWindow()
         {
             InitializeComponent();
-            productListWindow products = new productListWindow(bl);
+            productWindow products = new productWindow(bl);
+            productListWindow productList = new productListWindow(bl);
             products.Show();
+            productList.Show();
             //this.OpenProductList.MouseDown += Opl;
         }
         //private void Opl(object o, MouseEventArgs e)
