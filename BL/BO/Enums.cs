@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BO
 {
    
-       public enum Category { Children, Holy, Theoretical, Romans, History};
+       public enum Category { Children, Holy, Theoretical, History, Romans};
        public enum OrderStatus {confirm, sent, deliveried};
    
 }

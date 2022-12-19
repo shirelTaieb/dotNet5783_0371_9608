@@ -144,6 +144,8 @@ internal class Order : BLApi.IOrder
         DO.Order temp = Dal!.Order.GetById(orderID) ?? throw new BO.doseNotExistException();
         if (temp.ShipDate == null)
             throw new BO.doseNotSentYet(); 
+        if (temp.DeliveryDate!= null)
+            throw new BO.wrongDataException();
         temp.DeliveryDate = DateTime.Now;
         try
         {

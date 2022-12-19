@@ -248,7 +248,7 @@ namespace BLTest
                 while (num != 0)
                 {
                     BO.Product pr = new BO.Product();
-                    Console.WriteLine(@"test cart:
+                    Console.WriteLine(@"
                             Enter your choice:
                             0- EXIT
                             1 - ADD PRODUCT TO CART
@@ -273,7 +273,14 @@ namespace BLTest
                                 Console.WriteLine(@"ERROR");
                                 break;
                             }
-                            cart?.addProductToCart(myCart, id);
+                            try
+                            {
+                                cart?.addProductToCart(myCart, id);
+                            }
+                            catch(Exception ex)
+                            {
+                                Console.WriteLine(ex);
+                            }
                             break;
                         case 2:
                             Console.WriteLine(@"enter id of the product:");
