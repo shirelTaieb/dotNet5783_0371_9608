@@ -28,15 +28,13 @@ namespace PL
         {
             InitializeComponent();
             productWindow products = new productWindow(bl);
-            productListWindow productList = new productListWindow(bl);
             products.Show();
-            productList.Show();
-            //this.OpenProductList.MouseDown += Opl;
+            
         }
-        //private void Opl(object o, MouseEventArgs e)
-        //{
-        //    productListWindow products= new productListWindow();
-        //    products.Show();
-        //}
+        public void ViewProduct_Click(object o, RoutedEventArgs e)
+        {
+            productListWindow productList = new productListWindow(bl);
+            productList.Show();
+        }
     }
 }

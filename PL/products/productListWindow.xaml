@@ -40,8 +40,14 @@ VerticalAlignment="Stretch" Width="auto">
                 <ColumnDefinition Width="46*"/>
                 <ColumnDefinition Width="43*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.ColumnSpan="2">
-            </StackPanel>
         </Grid>
+        <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="200"/>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" Width="200"/>
+                <DataGridTextColumn x:Name="categoryColumn" Binding="{Binding Category}" Header="Category" Width="200"/>
+                <DataGridTextColumn x:Name="priceColumn" Binding="{Binding Price}" Header="Price" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

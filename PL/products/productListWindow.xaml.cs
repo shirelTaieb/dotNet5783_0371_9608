@@ -24,15 +24,15 @@ namespace PL.products
         {
             InitializeComponent();
             var list= bl!.Product!.getListOfProduct();
-            DataContext = list;
+            productForListDataGrid.DataContext = list;
         }
 
         private void price_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show("סיננת לפי מחיר", "");
+            MessageBox.Show("סיננת לפי מחיר", "");//just for check
         }
 
-        private void category_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void category_SelectionChanged(object sender, SelectionChangedEventArgs e,ref IBl? bl)
         {
 
         }

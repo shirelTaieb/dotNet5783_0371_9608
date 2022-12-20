@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace temp
 {
-    public struct Order
-    {
+    public enum Category { Children, Holy, Theoretical, History, Romans };
 
+
+    public class ProductForList
+    {
         public int ID { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerEmail { get; set; }
-        public string CustomerAddress { get; set; }
-        public DateTime OrderDate { get; set; }
-        public DateTime ShipDate { get; set; }
-        public DateTime DeliveryDate { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public Category Category { get; set; }
     }
-    }
+}

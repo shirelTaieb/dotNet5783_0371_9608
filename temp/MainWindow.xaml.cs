@@ -25,21 +25,11 @@ namespace temp
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+
+        private void productDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            System.Windows.Data.CollectionViewSource orderViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("orderViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // orderViewSource.Source = [generic data source]
-            System.Windows.Data.CollectionViewSource orderViewSource1 = ((System.Windows.Data.CollectionViewSource)(this.FindResource("orderViewSource1")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // orderViewSource1.Source = [generic data source]
-            System.Windows.Data.CollectionViewSource orderViewSource2 = ((System.Windows.Data.CollectionViewSource)(this.FindResource("orderViewSource2")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // orderViewSource2.Source = [generic data source]
-            System.Windows.Data.CollectionViewSource orderViewSource3 = ((System.Windows.Data.CollectionViewSource)(this.FindResource("orderViewSource3")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // orderViewSource3.Source = [generic data source]
         }
+
     }
 }
