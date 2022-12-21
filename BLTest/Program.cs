@@ -338,6 +338,7 @@ namespace BLTest
             }
         }
 
+
         public static void Main(string[] args)
         {
             BLApi.IBl? bl = BLApi.Factory.Get();
