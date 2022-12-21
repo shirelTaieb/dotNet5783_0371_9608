@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#9CC5A1">
     <Grid>
-        <Button x:Name="OpenProductList" Content="לצפייה בקטלוג" Padding="15" HorizontalAlignment="Center" Margin="0,278,0,0" VerticalAlignment="Top" Click="ViewProduct_Click" MouseEnter="mouseEnter" MouseLeave="mouseLeave" Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="72" FontSize="24" FontWeight="Bold"/>
-
+        <Button x:Name="manager" Content="מנהל" Padding="15" HorizontalAlignment="Left" Margin="480,260,0,0" VerticalAlignment="Top" Click="manager_Click" Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="91" FontSize="38" FontWeight="Bold"/>
+        <Button x:Name="customer" Content="לקוח" Padding="15" HorizontalAlignment="Left" Margin="141,260,0,0" VerticalAlignment="Top" Click="customer_Click" Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="91" FontSize="38" FontWeight="Bold"/>
     </Grid>
 </Window>

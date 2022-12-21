@@ -27,21 +27,27 @@ namespace PL
         {
             InitializeComponent();
             productWindow products = new productWindow(bl);
-            products.Show();
+            //products.Show();
             
         }
-        public void ViewProduct_Click(object o, RoutedEventArgs e)
+       
+        //public void mouseEnter(object o, RoutedEventArgs e)
+        //{
+        //    OpenProductList.Width = 400;
+        //}
+        //public void mouseLeave(object o, RoutedEventArgs e)
+        //{
+        //    OpenProductList.Width = 200;
+        //}
+        public void customer_Click(object o, RoutedEventArgs e)
         {
-            productListWindow productList = new productListWindow(bl);
-            productList.Show();
+            MainCustomer mainCustomer = new MainCustomer();
+            mainCustomer.Show();
+            this.Close();
         }
-        public void mouseEnter(object o, RoutedEventArgs e)
+        public void manager_Click(object o, RoutedEventArgs e)
         {
-            OpenProductList.Width = 400;
-        }
-        public void mouseLeave(object o, RoutedEventArgs e)
-        {
-            OpenProductList.Width = 200;
+
         }
     }
 }
