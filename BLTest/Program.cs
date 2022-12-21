@@ -341,7 +341,7 @@ namespace BLTest
 
         public static void Main(string[] args)
         {
-            IBl? bl = new Bl();
+            BLApi.IBl? bl = BLApi.Factory.Get();
             int num = 1;
             while (num != 0)
             {
