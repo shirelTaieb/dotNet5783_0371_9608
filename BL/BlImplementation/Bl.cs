@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BlImplementation;
 
-sealed public class Bl:IBl
+sealed internal class Bl:IBl
 {
     public Bl() { }
 

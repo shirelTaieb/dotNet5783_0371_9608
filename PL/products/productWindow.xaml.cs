@@ -1,4 +1,5 @@
 ﻿using BLApi;
+using BO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,22 +21,24 @@ namespace PL.products
     /// </summary>
     public partial class productWindow : Window
     {
-        public productWindow(IBl? bl)
+        public productWindow(IBl? bl,BO.Product? updateProduct=null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
+            //categoryComboBox.ItemsSource = Enum.GetValues(typeof(Category));
         }
         private void add_click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(":) המוצר נוסף בהצלחה", "");
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
             BO.Product newProduct=new BO.Product();
-            
-
+            productAddOrUpdate.DataContext = newProduct;
+            //bl.addNewProduct(newProduct); //איך הוא אמור להכיר את bl?
+            MessageBox.Show(":) המוצר נוסף בהצלחה", "");
         }
         private void update_click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(":) המוצר עודכן בהצלחה", "");
             //קריאה לפונקציה שבאמת תעדכן את הפרודקט
+
         }
 
     }

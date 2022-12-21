@@ -7,7 +7,7 @@
 //{
 //    public static void Main(string[] args)
 //    {
-//        IDal dalist;
+//        IDal? dalist;
 //        //DalProduct product = new DalProduct();
 //        //DalOrder order = new DalOrder();
 //        //DalOrderItem item = new DalOrderItem();

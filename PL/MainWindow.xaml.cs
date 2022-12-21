@@ -1,5 +1,4 @@
-﻿using BLApi;
-using BlImplementation;
+﻿using BlImplementation;
 using PL.products;
 using System;
 using System.Collections.Generic;
@@ -23,7 +22,7 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        IBl? bl = new Bl();
+        BLApi.IBl? bl = BLApi.Factory.Get();
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +34,14 @@ namespace PL
         {
             productListWindow productList = new productListWindow(bl);
             productList.Show();
+        }
+        public void mouseEnter(object o, RoutedEventArgs e)
+        {
+            OpenProductList.Width = 400;
+        }
+        public void mouseLeave(object o, RoutedEventArgs e)
+        {
+            OpenProductList.Width = 200;
         }
     }
 }

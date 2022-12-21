@@ -6,12 +6,33 @@
         xmlns:local="clr-namespace:temp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" >
-    <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="326,186,74,48">
-        <DataGrid.Columns>
-            <DataGridTextColumn x:Name="categoryColumn" Binding="{Binding Category}" Header="Category" Width="SizeToHeader"/>
-            <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" Width="SizeToHeader"/>
-            <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
-            <DataGridTextColumn x:Name="priceColumn" Binding="{Binding Price}" Header="Price" Width="SizeToHeader"/>
-        </DataGrid.Columns>
-    </DataGrid>
+    <Grid x:Name="grid1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="69,59,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Content="Category:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+        <ComboBox x:Name="categoryComboBox" Grid.Column="1" DisplayMemberPath="Category" HorizontalAlignment="Left" Height="NaN" SelectedItem="{Binding Category}" Margin="3" Grid.Row="0" VerticalAlignment="Center" Width="120">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <Label Grid.Column="0" Content="ID:" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBox x:Name="iDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="1" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <Label Grid.Column="0" Content="In Stock:" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBox x:Name="inStockTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="2" Text="{Binding InStock, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <Label Grid.Column="0" Content="Name:" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+        <TextBox x:Name="nameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="3" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <Label Grid.Column="0" Content="Price:" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+        <TextBox x:Name="priceTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="4" Text="{Binding Price, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+    </Grid>
 </Window>

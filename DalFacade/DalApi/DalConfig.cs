@@ -9,7 +9,6 @@ using System.Xml.Linq;
 namespace DalApi;
 
 
-
 [Serializable]
 public class DalConfigException : Exception
 {
@@ -35,7 +34,13 @@ static class DalConfig
 }
 
 
-// סתם כי אני מפחדת למחוק
+//[Serializable]
+//public class DalConfigException : Exception
+//{
+//    public DalConfigException(string msg) : base(msg) { }
+//    public DalConfigException(string msg, Exception ex) : base(msg, ex) { }
+//}
+
 //static class DalConfig
 //{
 //    internal static string? s_dalName;
@@ -43,7 +48,7 @@ static class DalConfig
 
 //    static DalConfig()
 //    {
-//        XElement dalConfig = XElement.Load(@"xml\dal-config.xml")
+//        XElement dalConfig = XElement.Load(@"..\xml\dal-config.xml")
 //            ?? throw new DalConfigException("dal-config.xml file is not found");
 //        s_dalName = dalConfig?.Element("dal")?.Value
 //            ?? throw new DalConfigException("<dal> element is missing");
@@ -52,3 +57,4 @@ static class DalConfig
 //        s_dalPackages = packages.ToDictionary(p => "" + p.Name, p => p.Value);
 //    }
 //}
+

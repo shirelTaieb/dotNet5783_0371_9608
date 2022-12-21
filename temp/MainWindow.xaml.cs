@@ -31,5 +31,12 @@ namespace temp
 
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Data.CollectionViewSource productViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("productViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // productViewSource.Source = [generic data source]
+        }
     }
 }
