@@ -5,6 +5,8 @@ using PL.products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,12 +26,10 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        BLApi.IBl? bl = BLApi.Factory.Get();
+        private BLApi.IBl? bl = BLApi.Factory.Get();
         public MainWindow()
         {
             InitializeComponent();
-          
-
         }
        
         //public void mouseEnter(object o, RoutedEventArgs e)
@@ -49,8 +49,7 @@ namespace PL
             password.Visibility = Visibility.Hidden;
             enter_password.Visibility = Visibility.Hidden;
             confirm.Visibility = Visibility.Hidden;
-            addProduct.Visibility = Visibility.Hidden;
-            updateProduct.Visibility = Visibility.Hidden;
+            products.Visibility = Visibility.Hidden;
             orders.Visibility = Visibility.Hidden;
         }
         public void customer_Click(object o, RoutedEventArgs e)
@@ -65,8 +64,10 @@ namespace PL
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
-            productListWindow productList = new productListWindow(bl);
-            productList.Show();
+            productListWindow productListCustomer = new productListWindow();
+            productListCustomer.updateProduct_Button.Visibility = Visibility.Collapsed; //ללקוח אין אופציה לעדכן או להוסיף לרשימה
+            productListCustomer.AddProduct_Button.Visibility = Visibility.Collapsed;
+            productListCustomer.Show();
         }
         public void cart_Click(object o, RoutedEventArgs e)
         {
@@ -90,26 +91,23 @@ namespace PL
         }
         public void check_password(object o, RoutedEventArgs e)
         {
+            //SecureString? Password =null;
             //const string truePassword = "123456";
-            //if ((string)enter_password.DataContext == truePassword)
+            //password.DataContext = Password;
+            //SecureString s = enter_password.SecurePassword;
+            //if (s == truePassword)
             //    MessageBox.Show("סיסמא נכונה", "");
             password.Visibility = Visibility.Hidden;
             enter_password.Visibility = Visibility.Hidden;
             confirm.Visibility = Visibility.Hidden;
-            addProduct.Visibility = Visibility.Visible;
-            updateProduct.Visibility = Visibility.Visible;
+            products.Visibility = Visibility.Visible;
             orders.Visibility = Visibility.Visible;
 
         }
-        public void addProduct_Click(object o, RoutedEventArgs e)
+        public void products_Click(object o, RoutedEventArgs e)
         {
-            productWindow add = new productWindow(bl);
-            add.Show();
-        }
-        public void updateProduct_Click(object o, RoutedEventArgs e)
-        {
-            productWindow update = new productWindow(bl);
-            update.Show();
+            productListWindow productListManager = new productListWindow();
+            productListManager.Show();
         }
         public void orders_Click(object o, RoutedEventArgs e)
         {
