@@ -68,6 +68,17 @@ namespace PL
             productListWindow productList = new productListWindow(bl);
             productList.Show();
         }
+        public void cart_Click(object o, RoutedEventArgs e)
+        {
+            MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
+            MessageBox.Show("?מה, יפול מהשמיים", "");
+            MessageBox.Show(" ככה זה בחיים", "");
+            MessageBox.Show(" צריך לעבוד קשה", "");
+            MessageBox.Show("דברים לא באים בקלות", "");
+            MessageBox.Show("גם למוצלחות כמוך", "");
+
+        }
+
         public void manager_Click(object o, RoutedEventArgs e)
         {
             return_back(o, e);
@@ -102,8 +113,14 @@ namespace PL
         }
         public void orders_Click(object o, RoutedEventArgs e)
         {
-            orderListWindow newOrderList = new orderListWindow(bl);
-            newOrderList.Show();
+            MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
+            MessageBox.Show("?מה, יפול מהשמיים", "");
+            MessageBox.Show(" ככה זה בחיים", "");
+            MessageBox.Show(" צריך לעבוד קשה", "");
+            MessageBox.Show("דברים לא באים בקלות", "");
+            MessageBox.Show("גם למוצלחות כמוך", "");
+            //orderListWindow newOrderList = new orderListWindow(bl);
+            //newOrderList.Show();
         }
     }
 }
