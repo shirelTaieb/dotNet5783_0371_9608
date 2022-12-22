@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLApi;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace PL.orders
     /// </summary>
     public partial class orderListWindow : Window
     {
-        public orderListWindow()
+        public orderListWindow(IBl? bl)
         {
             InitializeComponent();
         }

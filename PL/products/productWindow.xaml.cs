@@ -33,12 +33,13 @@ namespace PL.products
             productAddOrUpdate.DataContext = newProduct;
             //bl.addNewProduct(newProduct); //איך הוא אמור להכיר את bl?
             MessageBox.Show(":) המוצר נוסף בהצלחה", "");
+            this.Close();
         }
         private void update_click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(":) המוצר עודכן בהצלחה", "");
             //קריאה לפונקציה שבאמת תעדכן את הפרודקט
-
+            this.Close();
         }
 
     }
