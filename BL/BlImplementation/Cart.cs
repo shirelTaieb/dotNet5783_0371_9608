@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using BLApi;
@@ -36,15 +37,21 @@ namespace BlImplementation
             {
                 if (temp?.InStock > 0) //there are more products in stock.
                 {
-                    foreach (var item in cart.Items) //we do foreach because we want to change the object in the cart
-                    {
-                        if (item!.ID == prID)  //this loop will happen just one time
-                        {
-                            cart.TotalPrice += item!.Price;//uptade the total price of the cart.
-                            item!.Amount++;   //!- because we check that the product exist in the cart.
-                            item!.TotalPrice += item!.Price; //uptade the total price of the order item.
-                        }
-                    }
+                    var result = cart.Items.FirstOrDefault(item => item?.ID == prID);
+                    cart.TotalPrice += result!.Price;//uptade the total price of the cart.
+                    result!.Amount++;   //!- because we check that the product exist in the cart.
+                    result!.TotalPrice += result!.Price; //uptade the total price of the order item.
+                    //יש בעיה! הוא יוצר 2 אייטמים נפרדים בסל קניות. במקום להישאר עם אייטם אחד ולשנות את האמאוונט שלו ל2.
+
+                    //foreach (var item in cart.Items) //we do foreach because we want to change the object in the cart
+                    //{
+                    //    if (item!.ID == prID)  //this loop will happen just one time
+                    //    {
+                    //        cart.TotalPrice += item!.Price;//uptade the total price of the cart.
+                    //        item!.Amount++;   //!- because we check that the product exist in the cart.
+                    //        item!.TotalPrice += item!.Price; //uptade the total price of the order item.
+                    //    }
+                    //}
                 }
                 else throw new BO.notInStockException(); //if there is no products in the stock
             }
