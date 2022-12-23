@@ -24,20 +24,18 @@ public class DalProduct : IProduct
     {
         if(ds == null)
             throw new NotExistException();
-        foreach (Product temp in ds.lstP)
-        {
-            if (temp.ID == id)
-                return temp;
-        }
-        return null;
+        return ds.lstP.FirstOrDefault(pro=>pro?.ID == id);
     }
     public void Update(Product item)
     {
         if (ds == null)
             throw new NotExistException();
-        Delete(item.ID);
-        Add(item);
-        return;
+        var temp=ds?.lstP.FirstOrDefault(pro=>pro?.ID == item.ID);
+        if (temp != null)
+        {
+            Delete(item.ID);
+            Add(item);
+        }
     }
     public void Delete(int id)
     {
