@@ -88,9 +88,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\Order.datasource" />
-    <None Include="Properties\DataSources\Product.datasource" />
-    <None Include="Properties\DataSources\ProductForList.datasource" />
     <None Include="Properties\DataSources\temp.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\temp.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
