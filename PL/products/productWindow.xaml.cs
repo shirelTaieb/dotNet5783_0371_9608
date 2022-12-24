@@ -21,10 +21,15 @@ namespace PL.products
     /// </summary>
     public partial class productWindow : Window
     {
-        public productWindow(IBl? bl,BO.Product? updateProduct=null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
+        public productWindow(BO.ProductForList? updateProduct=null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
             //categoryComboBox.ItemsSource = Enum.GetValues(typeof(Category));
+            productAddOrUpdate.DataContext = updateProduct; //קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
+            if (updateProduct != null)  //כשרוצים לעדכן
+                Add.Visibility = Visibility.Hidden;
+            else  //כשרוצים להוסיף
+                Update.Visibility = Visibility.Hidden;
         }
         private void add_click(object sender, RoutedEventArgs e)
         {
@@ -42,5 +47,9 @@ namespace PL.products
             this.Close();
         }
 
+        private void stock_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

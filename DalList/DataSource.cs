@@ -148,10 +148,17 @@ public class DataSource
                 orderItem.OrderID = order_id;
                 orderItem.Amount= rand.Next(10);
                 orderItem.ProductID = rand.Next(100000, 100011);
+                //לא עובד הלינקק
+                //var result =
+                //    from temp in lstP
+                //    where temp?.ID == orderItem.ProductID
+                //    select (orderItem.Price = temp?.Price);
+
+
                 foreach (Product temp in lstP)
                 {
                     if (temp.ID == orderItem.ProductID)
-                        orderItem.Price= temp.Price;    
+                        orderItem.Price = temp.Price;
                 }
                 lstOI.Add(orderItem);
             }    

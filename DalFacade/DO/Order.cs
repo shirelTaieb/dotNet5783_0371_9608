@@ -1,6 +1,7 @@
 ﻿
 using System.Linq;
 using System.Data.Common;
+using Do;
 
 namespace DO;
 public struct Order
@@ -13,12 +14,5 @@ public struct Order
     public DateTime? OrderDate { get; set; }
     public DateTime? ShipDate { get; set; }
     public DateTime? DeliveryDate { get; set; }
-    public override string ToString() => $@"Product ID={ID}
-CostumerName- {CustomerName}
-Costumer Email- {CustomerEmail}
-Order Date: {OrderDate}
-Ship Date: {ShipDate}
-Delivery Date: {DeliveryDate}
-	";
-
+    public override string ToString() => this.ToStringProperty();
 }

@@ -25,25 +25,17 @@ public class DalOrder : IOrder //שיננו לפובליק
     {
         if (ds== null)
             throw new NotExistException();
-        foreach (Order? temp in ds.lstO)
-        {
-            if (temp?.ID==id)
-                return temp;
-        }
-        return null;
+     return (ds.lstO.FirstOrDefault(ord => ord?.ID == id));
     }
     public void Update(Order order)
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (Order? temp in ds.lstO)
+        var temp=ds.lstO.FirstOrDefault(ord=>ord?.ID == order.ID);
+        if (temp != null)
         {
-            if (temp?.ID == order.ID)
-            {
-                Delete(order.ID);
-                Add(order);
-                return;
-            }
+            Delete(order.ID);
+            Add(order);
         }
     }
    public void Delete(int id)

@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.products"
         mc:Ignorable="d"
-        Title="productWindow" Height="450" Width="420">
+        Title="productWindow" Height="450" Width="420" Background="#9CC5A1">
     <Grid x:Name="productAddOrUpdate">
-        <Label Content="ID:" HorizontalAlignment="Left" Margin="93,90,0,0" VerticalAlignment="Top"/>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="93,140,0,0" VerticalAlignment="Top"/>
-        <Label Content="Price:" HorizontalAlignment="Left" Margin="93,190,0,0" VerticalAlignment="Top"/>
-        <Label Content="Category:" HorizontalAlignment="Left" Margin="93,240,0,0" VerticalAlignment="Top"/>
-        <Label Content="InStock:" HorizontalAlignment="Left" Margin="93,290,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="id" HorizontalAlignment="Left" Margin="190,90,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" Height="30" MaxLength="6" />
-        <TextBox  x:Name="name" HorizontalAlignment="Left" Margin="190,140,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" Height="30"  MaxLength="20"/>
-        <TextBox  x:Name="price" HorizontalAlignment="Left" Margin="190,190,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" Height="30"  MaxLength="5" />
-        <TextBox x:Name="stock" HorizontalAlignment="Left" Margin="190,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="3"/>
-        <ComboBox  x:Name="category" HorizontalAlignment="Left" Margin="190,240,0,0" VerticalAlignment="Top" Width="120" Height="30">
+        <Label  x:Name="id_lable" Content=":מספר מזהה" HorizontalAlignment="Left" Margin="248,74,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#1F2421" FontSize="18"/>
+        <Label Content=":שם הספר" HorizontalAlignment="Left" Margin="262,132,0,0" VerticalAlignment="Top" Foreground="#1F2421" FontWeight="Bold" FontSize="18"/>
+        <Label Content=":מחיר" HorizontalAlignment="Left" Margin="298,182,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#1F2421" FontWeight="Bold"/>
+        <Label Content=":קטגוריה" HorizontalAlignment="Left" Margin="272,232,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#1F2421" FontWeight="Bold"/>
+        <Label Content=":כמות במלאי" HorizontalAlignment="Left" Margin="248,282,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#1F2421"/>
+        <TextBox x:Name="id"  HorizontalAlignment="Left" Margin="100,78,0,0"  TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Background="#FFDCE1DE" Width="120" Height="30" MaxLength="6" />
+        <TextBox  x:Name="name" HorizontalAlignment="Left" Margin="100,132,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="20" Background="#FFDCE1DE"/>
+        <TextBox  x:Name="price" HorizontalAlignment="Left" Margin="100,182,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="5" Background="#FFDCE1DE" />
+        <TextBox x:Name="stock" HorizontalAlignment="Left" Margin="100,282,0,0" TextWrapping="Wrap" Text="{Binding InStock, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="3" TextChanged="stock_TextChanged" Background="#FFDCE1DE"/>
+        <ComboBox  x:Name="category" HorizontalAlignment="Left" SelectedItem="{Binding Category}" Margin="100,232,0,0" VerticalAlignment="Top" Width="120" Height="30">
             <ComboBoxItem Content="קודש" />
             <ComboBoxItem Content="הסטוריה" />
             <ComboBoxItem Content="ילדים" />
@@ -24,7 +24,7 @@
             <ComboBoxItem Content="עיוני" />
         </ComboBox>
 
-        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="100,380,0,0" VerticalAlignment="Top" Width="80" Height="20" Background="#FF49A078" Foreground="White" Click="add_click" />
-        <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="230,380,0,0" VerticalAlignment="Top" Width="80" Height="20" Foreground="White" Background="#FF49A078" Click="update_click" Visibility="{Binding ElementName=id}"/>
+        <Button x:Name="Add" Content="הוספה" HorizontalAlignment="Left" Margin="150,370,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Background="#FF216869" Foreground="White" Click="add_click" FontWeight="Bold"/>
+        <Button x:Name="Update" Content="עדכון" HorizontalAlignment="Left" Margin="150,370,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Foreground="White" Background="#FF216869" Click="update_click" Visibility="{Binding ElementName=id}" FontWeight="Bold"/>
     </Grid>
 </Window>

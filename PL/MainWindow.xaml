@@ -20,10 +20,9 @@
         <Button x:Name="katelog" Content="לצפיה בקטלוג" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="136,240,0,0" VerticalAlignment="Top" Click="Katelog_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
         <Button x:Name="cart" Content="סל הקניות שלי" Padding="7"  Visibility="Hidden" HorizontalAlignment="Left" Margin="136,300,0,0" VerticalAlignment="Top" Click="cart_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
         <Label x:Name="password" Content="Password" HorizontalAlignment="Left" Margin="461,234,0,0" VerticalAlignment="Top" Foreground="#FF216869" FontSize="18" FontWeight="Bold" Visibility="Hidden"/>
-        <PasswordBox x:Name="enter_password" Background="#FFDCE1DE" HorizontalAlignment="Left" Margin="461,270,0,0" VerticalAlignment="Top" Width="208" Height="39" Visibility="Hidden" />
+        <PasswordBox x:Name="enter_password" Background="#FFDCE1DE" HorizontalAlignment="Left"  Margin="461,270,0,0" VerticalAlignment="Top" Width="208" Height="39" Visibility="Hidden" />
         <Button x:Name="confirm" Content="כניסה" HorizontalAlignment="Left" Margin="461,320,0,0" Width="70" Height="20" VerticalAlignment="Top" Click="check_password" Background="#FF216869" Foreground="#FFDCE1DE" Visibility="Hidden"/>
-        <Button x:Name="addProduct" Content="הוספת מוצר" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="461,240,0,0" VerticalAlignment="Top" Click="addProduct_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-        <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="461,360,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-        <Button x:Name="updateProduct" Content="עדכון מוצר" Padding="7"  Visibility="Hidden" HorizontalAlignment="Left" Margin="461,300,0,0" VerticalAlignment="Top" Click="updateProduct_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+        <Button x:Name="products" Content="ניהול מוצרים" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="461,240,0,0" VerticalAlignment="Top" Click="products_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+        <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="461,300,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
     </Grid>
 </Window>

@@ -1,4 +1,7 @@
 ﻿
+using Do;
+using System.Reflection.Metadata.Ecma335;
+
 namespace DO;
 
 public struct Product
@@ -10,14 +13,8 @@ public struct Product
     public double? Price { get; set; }
     public int InStock { get; set; }
     public string? path { get; set; }  //for image
+    public override string ToString() => this.ToStringProperty();
 
-    public override string ToString() => $@"
-	Product ID={ID}: 
-        Product Name {Name}, 
-	Category - {Category}
-    	Price: {Price}
-    	Amount in stock: {InStock}
-	";
 
 
 }

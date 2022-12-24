@@ -15,7 +15,7 @@ internal class DalOrderItem : IOrderItem
             throw new doubleException();   //the order item is alredy exist
         else
              if (item.ID <= 1000 || item.ID >= 9999) //the id isnt valid
-                item.ID = DataSource.ConfigOrderItem1.NextOrderNumber;
+            item.ID = DataSource.ConfigOrderItem1.NextOrderNumber;
         ds?.lstOI.Add(item);
         return item.ID;
     }
@@ -23,25 +23,18 @@ internal class DalOrderItem : IOrderItem
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (OrderItem? temp in ds!.lstOI)
-        {
-            if (temp?.ID == id)
-                return temp;
-        }
-        return null;
+        return (ds?.lstOI.FirstOrDefault(oi => oi?.ID == id));
+
     }
     public void Update(OrderItem item)
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (OrderItem temp in ds.lstOI)
+        var temp = ds?.lstOI.FirstOrDefault(oi => oi?.ID == item.ID);
+        if (temp != null)
         {
-            if (temp.ID == item.ID)
-            {
-                Delete(item.ID);
-                Add(item);
-                return;
-            }
+            Delete(item.ID);
+            Add(item);
         }
     }
     public void Delete(int id)
@@ -68,13 +61,18 @@ internal class DalOrderItem : IOrderItem
     }
     public List<OrderItem> GetByOrderID(int ID)
     {
-        List<OrderItem> tempList= new List<OrderItem>();
+        List<OrderItem> tempList = new List<OrderItem>();
         if (ds == null)
             throw new NotExistException();
+        //איך עושים סתם פעולה בלינקקק
+        //var result =
+        //    from oi in ds!.lstOI
+        //    where oi?.OrderID == ID
+        //    select (tempList.Add((DO.OrderItem)oi));
         foreach (OrderItem temp in ds!.lstOI)
         {
             if (temp.OrderID == ID)
-               tempList.Add(temp);
+                tempList.Add(temp);
         }
         return tempList;
     }
@@ -82,12 +80,9 @@ internal class DalOrderItem : IOrderItem
     {
         if (ds == null)
             throw new NotExistException();
-        foreach (OrderItem temp in ds!.lstOI)
-        {
-            if (temp.OrderID == IDOrder)
-               if (temp.ProductID == IDProduct)
-                    return temp;
-        }
-        throw new NotExistException();
+        OrderItem? result = ds!.lstOI.FirstOrDefault(item => (item?.OrderID == IDOrder) && (item?.ProductID == IDProduct));
+            return result ?? throw new NotExistException(); 
+
+       
     }
 }
