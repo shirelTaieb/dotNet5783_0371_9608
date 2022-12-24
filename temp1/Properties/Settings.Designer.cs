@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace temp.Properties
+namespace temp1.Properties
 {
 
 
