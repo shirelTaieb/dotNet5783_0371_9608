@@ -1,5 +1,6 @@
 ﻿using BlImplementation;
 using Microsoft.VisualBasic;
+using PL.customer;
 using PL.orders;
 using PL.products;
 using System;
@@ -64,9 +65,7 @@ namespace PL
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
-            productListWindow productListCustomer = new productListWindow();
-            productListCustomer.updateProduct_Button.Visibility = Visibility.Collapsed; //ללקוח אין אופציה לעדכן או להוסיף לרשימה
-            productListCustomer.AddProduct_Button.Visibility = Visibility.Collapsed;
+            customerProductListWindow productListCustomer = new customerProductListWindow();
             productListCustomer.Show();
         }
         public void cart_Click(object o, RoutedEventArgs e)

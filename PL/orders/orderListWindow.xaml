@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.orders"
         mc:Ignorable="d"
         Title="orderListWindow" Height="450" Width="800">
-    <Grid DataContext="{StaticResource orderForListViewSource}">
+    <Grid >
         <ListView x:Name="orderForListListView" ItemsSource="{Binding}" SelectionMode="Single" Margin="63,36,302,198">
             <ListView.ItemContainerStyle>
                 <Style>
