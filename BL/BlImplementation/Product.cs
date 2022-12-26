@@ -85,7 +85,8 @@ internal class Product : BLApi.IProduct
                     ID = (int)prop?.ID!,
                     Name = prop?.Name,
                     Price = prop?.Price,
-                    Category = (BO.Category?)prop?.Category
+                    Category = (BO.Category?)prop?.Category,
+                    path= prop?.path
                 }).ToList();
     }
     public BO.Product getProductInfoManager(int IDpr)

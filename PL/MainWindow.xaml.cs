@@ -1,5 +1,6 @@
 ﻿using BlImplementation;
 using Microsoft.VisualBasic;
+using PL.customer;
 using PL.orders;
 using PL.products;
 using System;
@@ -64,9 +65,7 @@ namespace PL
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
-            productListWindow productListCustomer = new productListWindow();
-            productListCustomer.updateProduct_Button.Visibility = Visibility.Collapsed; //ללקוח אין אופציה לעדכן או להוסיף לרשימה
-            productListCustomer.AddProduct_Button.Visibility = Visibility.Collapsed;
+            customerProductListWindow productListCustomer = new customerProductListWindow();
             productListCustomer.Show();
         }
         public void cart_Click(object o, RoutedEventArgs e)
@@ -111,14 +110,9 @@ namespace PL
         }
         public void orders_Click(object o, RoutedEventArgs e)
         {
-            MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
-            MessageBox.Show("?מה, יפול מהשמיים", "");
-            MessageBox.Show(" ככה זה בחיים", "");
-            MessageBox.Show(" צריך לעבוד קשה", "");
-            MessageBox.Show("דברים לא באים בקלות", "");
-            MessageBox.Show("גם למוצלחות כמוך", "");
-            //orderListWindow newOrderList = new orderListWindow(bl);
-            //newOrderList.Show();
+            orderListWindow orderListManager = new orderListWindow();
+            orderListManager.Show();
+            
         }
     }
 }

@@ -33,13 +33,14 @@
                 <ComboBoxItem Content="₪200 עד" />
                 <ComboBoxItem Content="₪200+" />
             </ComboBox>
-        </Grid>
+        </Grid> 
         <Grid Name="DownGrid" Height="auto" Grid.Row="1" Width="auto">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="46*"/>
                 <ColumnDefinition Width="43*"/>
             </Grid.ColumnDefinitions>
         </Grid>
+
         <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="200"/>
