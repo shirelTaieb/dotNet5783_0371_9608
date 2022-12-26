@@ -24,5 +24,10 @@ namespace PL.orders
         {
             InitializeComponent();
         }
+
+        private void orderForListListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
