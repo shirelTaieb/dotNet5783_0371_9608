@@ -38,7 +38,7 @@
             <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" Height="410"  Background="#9CC5A1" VerticalAlignment="Top" Width="800" Grid.Row="1" SelectionChanged="ListOfProducts_SelectionChanged">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Columns="3" />
+                      <UniformGrid Columns="3" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ListView.ItemTemplate>
