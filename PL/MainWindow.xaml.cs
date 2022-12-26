@@ -110,14 +110,9 @@ namespace PL
         }
         public void orders_Click(object o, RoutedEventArgs e)
         {
-            MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
-            MessageBox.Show("?מה, יפול מהשמיים", "");
-            MessageBox.Show(" ככה זה בחיים", "");
-            MessageBox.Show(" צריך לעבוד קשה", "");
-            MessageBox.Show("דברים לא באים בקלות", "");
-            MessageBox.Show("גם למוצלחות כמוך", "");
-            //orderListWindow newOrderList = new orderListWindow(bl);
-            //newOrderList.Show();
+            orderListWindow orderListManager = new orderListWindow();
+            orderListManager.Show();
+            
         }
     }
 }

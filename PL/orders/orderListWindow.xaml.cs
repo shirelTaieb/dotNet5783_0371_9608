@@ -20,9 +20,19 @@ namespace PL.orders
     /// </summary>
     public partial class orderListWindow : Window
     {
-        public orderListWindow(IBl? bl)
+        private BLApi.IBl? bl = BLApi.Factory.Get();
+        public orderListWindow()
         {
             InitializeComponent();
+            var list = bl!.Order!.getOrderList();
+            orderForListDataGrid.DataContext = list;
+            orderForListDataGrid.IsReadOnly = true;
+
+        }
+
+        private void orderForListListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

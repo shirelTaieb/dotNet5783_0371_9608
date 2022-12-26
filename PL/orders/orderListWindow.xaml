@@ -6,55 +6,45 @@
         xmlns:local="clr-namespace:PL.orders"
         mc:Ignorable="d"
         Title="orderListWindow" Height="450" Width="800">
-    <Grid >
-        <ListView x:Name="orderForListListView" ItemsSource="{Binding}" SelectionMode="Single" Margin="63,36,302,198">
-            <ListView.ItemContainerStyle>
-                <Style>
-                    <Setter Property="Control.HorizontalContentAlignment" Value="Stretch"/>
-                    <Setter Property="Control.VerticalContentAlignment" Value="Stretch"/>
+    <Grid>
+        <DataGrid x:Name="orderForListDataGrid" AutoGenerateColumns="False"  Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="orderForListListView_SelectionChanged">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#B0C4B1"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderThickness" Value="0,2,2,2"/>
+                    <Setter Property="BorderBrush" Value="#1F2421"/>
+                    <Setter Property="HorizontalContentAlignment" Value="center" />
                 </Style>
-            </ListView.ItemContainerStyle>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn x:Name="customerNameColumn" Header="Customer Name" Width="100">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Margin="-6,-1,-6,-1" Text="{Binding CustomerName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn x:Name="iDColumn" Header="ID" Width="70">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Margin="-6,-1,-6,-1" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn x:Name="amountOfItemsColumn" Header="Amount Of Items" Width="100">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Margin="6,-1,-6,-1" Text="{Binding AmountOfItems, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn x:Name="totalPriceColumn" Header="Total Price" Width="80">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Margin="-6,-1,-6,-1" Text="{Binding TotalPrice, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn x:Name="statusColumn" Header="Status" Width="80">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Margin="-6,-1,-6,-1" Text="{Binding Status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    x:Name="nameColumn" 
+                    Binding="{Binding CustomerName}"
+                    Header="Name"
+                    Width="160"/>
+                <DataGridTextColumn
+                    x:Name="idColumn"
+                    Binding="{Binding ID}"
+                    Header="ID" 
+                    Width="160"/>
+                <DataGridTextColumn
+                    x:Name="AmountOfItemsColumn"
+                    Binding="{Binding AmountOfItems}"
+                    Header="Amount Of Items"
+                    Width="160"/>
+                <DataGridTextColumn
+                    x:Name="TotalPriceColumn"
+                    Binding="{Binding TotalPrice}"
+                    Header="Total Price"
+                    Width="160"/>
+                <DataGridTextColumn
+                    x:Name="StatusColumn"
+                    Binding="{Binding Status}"
+                    Header="Status"
+                    Width="160"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
   
 </Window>
