@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BO
+﻿namespace BO
 {
-   
-       public enum Category { Children, Holy, Theoretical, History, Romans};
-       public enum OrderStatus {confirm, sent, deliveried};
-   
+
+    public enum Category { Children, Holy, Theoretical, History, Romans };
+    public enum HebCategory { ילדים, קודש, עיוני, היסטוריה, רומנים };
+    public enum OrderStatus { confirm, sent, deliveried };
+    
+
 }

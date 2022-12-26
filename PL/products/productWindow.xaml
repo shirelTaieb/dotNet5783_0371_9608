@@ -16,15 +16,9 @@
         <TextBox  x:Name="name" HorizontalAlignment="Left" Margin="100,132,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="20" Background="#FFDCE1DE"/>
         <TextBox  x:Name="price" HorizontalAlignment="Left" Margin="100,182,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="5" Background="#FFDCE1DE" />
         <TextBox x:Name="stock" HorizontalAlignment="Left" Margin="100,282,0,0" TextWrapping="Wrap" Text="{Binding InStock, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="3" TextChanged="stock_TextChanged" Background="#FFDCE1DE"/>
-        <ComboBox  x:Name="category" HorizontalAlignment="Left" SelectedItem="{Binding Category}" Margin="100,232,0,0" VerticalAlignment="Top" Width="120" Height="30">
-            <ComboBoxItem Content="קודש" />
-            <ComboBoxItem Content="הסטוריה" />
-            <ComboBoxItem Content="ילדים" />
-            <ComboBoxItem Content="רומנים" />
-            <ComboBoxItem Content="עיוני" />
-        </ComboBox>
+        <ComboBox  x:Name="categoryComboBox" HorizontalAlignment="Left" SelectedItem="{Binding Category}" Margin="100,232,0,0" VerticalAlignment="Top" Width="120" Height="30" SelectionChanged="categoryComboBox_SelectionChanged" />
 
         <Button x:Name="Add" Content="הוספה" HorizontalAlignment="Left" Margin="150,370,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Background="#FF216869" Foreground="White" Click="add_click" FontWeight="Bold"/>
-        <Button x:Name="Update" Content="עדכון" HorizontalAlignment="Left" Margin="150,370,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Foreground="White" Background="#FF216869" Click="update_click" Visibility="{Binding ElementName=id}" FontWeight="Bold"/>
+        <Button x:Name="Update" Content="עדכון" HorizontalAlignment="Left" Margin="150,370,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Foreground="White" Background="#FF216869" Click="update_click"  FontWeight="Bold"/>
     </Grid>
 </Window>
