@@ -63,11 +63,11 @@ namespace PL
         }
         public void cart_Click(object o, RoutedEventArgs e)
         {
-            //MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
-            //MessageBox.Show("?מה, יפול מהשמיים", "");
-            //MessageBox.Show(" ככה זה בחיים", "");
-            //MessageBox.Show(" צריך לעבוד קשה", "");
-            //MessageBox.Show("דברים לא באים בקלות", "");
+            MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
+            MessageBox.Show("?מה, יפול מהשמיים", "");
+            MessageBox.Show(" ככה זה בחיים", "");
+            MessageBox.Show(" צריך לעבוד קשה", "");
+            MessageBox.Show("דברים לא באים בקלות", "");
             //MessageBox.Show("גם למוצלחות כמוך", "");
 
         }

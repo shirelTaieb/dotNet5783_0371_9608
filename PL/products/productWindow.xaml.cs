@@ -22,31 +22,37 @@ namespace PL.products
     public partial class productWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-
+        private BO.Product UpdateOrNewProduct=new BO.Product();
         public productWindow(BO.ProductForList? updateProduct=null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
             categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory));
-            productAddOrUpdate.DataContext = updateProduct; //קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
+            
+           
             if (updateProduct != null)  //כשרוצים לעדכן
+            {
                 Add.Visibility = Visibility.Hidden;
+                UpdateOrNewProduct = bl!.Product!.getProductInfoManager(updateProduct.ID)!;
+                productAddOrUpdate.DataContext = UpdateOrNewProduct;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
+                //קישור חלון ההוספה למוצר חדש שנוסיף לרשימה
+            }
             else  //כשרוצים להוסיף
+            {
                 Update.Visibility = Visibility.Hidden;
+                productAddOrUpdate.DataContext = UpdateOrNewProduct; 
+            }
         }
         private void add_click(object sender, RoutedEventArgs e) //לא באמת מוסיףף
         {
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
-            //BO.Product newProduct=new BO.Product();
-            //Add.DataContext = newProduct;
-            //bl!.Product!.addNewProduct(newProduct); 
+            bl!.Product!.addNewProduct(UpdateOrNewProduct);
             MessageBox.Show(":) המוצר נוסף בהצלחה", "");
             this.Close();
         }
         private void update_click(object sender, RoutedEventArgs e)//לא באמת מעדכןןן
         {
-            //BO.Product newProduct = new BO.Product();
-            //Update.DataContext = newProduct;
-            //bl!.Product!.updateProduct(newProduct);
+            
+            bl!.Product!.updateProduct(UpdateOrNewProduct);
             MessageBox.Show(":) המוצר עודכן בהצלחה", "");
             //קריאה לפונקציה שבאמת תעדכן את הפרודקט
             this.Close();
@@ -59,7 +65,12 @@ namespace PL.products
 
         private void categoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+            UpdateOrNewProduct.Category= (BO.Category)categoryComboBox.SelectedItem;
+
         }
+        //private BO.Product castForListToRegular(BO.ProductForList pfl)
+        //{
+        //    return(new BO.Product { ID=pfl.ID, Category=pfl.Category, Name=pfl.Name, InStock=pfl.In} )
+        //}
     }
 }

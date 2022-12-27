@@ -51,7 +51,7 @@ internal class Product : BLApi.IProduct
             Dal?.Product.GetById(temp.ID);
             throw new BO.alreadyExistException();
         }
-        catch  //getById say that the product is not exist
+        catch  //if getById say that the product is not exist
         {
             temp = BOproductToDO(pr);
             Dal?.Product.Add(temp);
