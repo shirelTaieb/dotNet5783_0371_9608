@@ -8,24 +8,24 @@
         Title="MainWindow" Height="450" Width="800" Background="#B0C4B1" MouseDown="return_back">
     <Grid>
         <Frame x:Name="Main" />
-        <Button x:Name="manager" Content="מנהל"  Padding="15" HorizontalAlignment="Left" Margin="461,240,0,0" VerticalAlignment="Top" Click="manager_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="80" FontSize="35" FontWeight="Bold">
+        <Button x:Name="manager" Content="מנהל"  Padding="15" HorizontalAlignment="Left" Margin="496,153,0,0" VerticalAlignment="Top" Click="manager_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="136" Height="64" FontSize="20" FontWeight="Bold">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="customer" Content="לקוח" Padding="15" HorizontalAlignment="Left" Margin="136,240,0,0" VerticalAlignment="Top" Click="customer_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="80" FontSize="35" FontWeight="Bold" FontStyle="Normal">
+        <Button x:Name="customer" Content="לקוח" Padding="15" HorizontalAlignment="Left" Margin="172,153,0,0" VerticalAlignment="Top" Click="customer_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="137" Height="64" FontSize="20" FontWeight="Bold" FontStyle="Normal">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="katelog" Content="לצפיה בקטלוג" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="136,240,0,0" VerticalAlignment="Top" Click="Katelog_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-        <Button x:Name="cart" Content="סל הקניות שלי" Padding="7"  Visibility="Hidden" HorizontalAlignment="Left" Margin="136,300,0,0" VerticalAlignment="Top" Click="cart_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-        <Label x:Name="password" Content="Password" HorizontalAlignment="Left" Margin="461,234,0,0" VerticalAlignment="Top" Foreground="#FF216869" FontSize="18" FontWeight="Bold" Visibility="Hidden"/>
-        <PasswordBox x:Name="enter_password" Background="#FFDCE1DE" HorizontalAlignment="Left"  Margin="461,270,0,0" VerticalAlignment="Top" Width="208" Height="39" Visibility="Hidden" />
-        <Button x:Name="confirm" Content="כניסה" HorizontalAlignment="Left" Margin="461,320,0,0" Width="70" Height="20" VerticalAlignment="Top" Click="check_password" Background="#FF216869" Foreground="#FFDCE1DE" Visibility="Hidden"/>
-        <Button x:Name="products" Content="ניהול מוצרים" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="461,240,0,0" VerticalAlignment="Top" Click="products_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-        <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="461,300,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-        <Image HorizontalAlignment="Left" Height="162" Margin="484,41,0,0" VerticalAlignment="Top" Width="194" Source="/pngegg.png"/>
-        <Image HorizontalAlignment="Left" Height="202" Margin="87,41,0,0" VerticalAlignment="Top" Width="272" Source="/W_960_sell-online.png"/>
+        <Button x:Name="katelog" Content="לצפיה בקטלוג" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="136,253,0,0" VerticalAlignment="Top" Click="Katelog_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+        <Button x:Name="cart" Content="סל הקניות שלי" Padding="7"  Visibility="Hidden" HorizontalAlignment="Left" Margin="136,300,0,0" VerticalAlignment="Top" Click="cart_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+        <Label x:Name="password" Content="Password" HorizontalAlignment="Left" Margin="388,222,0,0" VerticalAlignment="Top" Foreground="#FF1F2421" FontSize="18" FontWeight="Bold" Visibility="Hidden" Height="29" Width="90"/>
+        <PasswordBox x:Name="enter_password" Background="#FFDCE1DE" HorizontalAlignment="Left"  Margin="483,226,0,0" VerticalAlignment="Top" Width="164" Height="25" Visibility="Hidden" />
+        <Button x:Name="confirm" Content="כניסה" HorizontalAlignment="Left" Margin="530,256,0,0" Width="70" Height="20" VerticalAlignment="Top" Click="check_password" Background="#FF1F2421" Foreground="#FFDCE1DE" Visibility="Hidden"/>
+        <Button x:Name="products" Content="ניהול מוצרים" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="460,330,0,0" VerticalAlignment="Top" Click="products_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+        <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="460,266,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+        <Image HorizontalAlignment="Left" Height="97" Margin="516,43,0,0" VerticalAlignment="Top" Width="136" Source="/pngegg.png"/>
+        <Image HorizontalAlignment="Left" Height="123" Margin="148,30,0,0" VerticalAlignment="Top" Width="216" Source="/W_960_sell-online.png"/>
     </Grid>
 </Window>
