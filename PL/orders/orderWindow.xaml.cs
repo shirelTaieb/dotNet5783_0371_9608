@@ -20,10 +20,13 @@ namespace PL.orders
     public partial class orderWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        public orderWindow(BO.OrderForList? updateOrder = null)
+        public orderWindow(BO.Order order)
         {
             InitializeComponent();
-            
+            orderUpdate.DataContext = order;
+        }
+        private void statusComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
 

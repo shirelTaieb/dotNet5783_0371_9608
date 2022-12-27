@@ -6,32 +6,33 @@
         xmlns:local="clr-namespace:PL.orders"
         mc:Ignorable="d"
         Title="orderWindow" Height="450" Width="454" Background="#B0C4B1">
-    <!--<Grid x:Name="orderAddOrUpdate" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Label  x:Name="id_lable" Content=":מספר מזהה" HorizontalAlignment="Left" Margin="255,70,0,0" VerticalAlignment="Top" FontWeight="UltraBold" Foreground="#FF384648" FontSize="19" Background="Transparent" FontFamily="Cascadia Mono"/>
-        <Label Content=":שם הספר" HorizontalAlignment="Left" Margin="255,130,0,0" VerticalAlignment="Top" Foreground="#FF384648" FontWeight="UltraBold" FontSize="19" FontFamily="Cascadia Mono"/>
-        <Label Content=":מחיר" HorizontalAlignment="Left" Margin="255,180,0,0" VerticalAlignment="Top" FontSize="19" Foreground="#FF384648" FontWeight="UltraBold" FontFamily="Cascadia Mono"/>
-        <Label Content=":קטגוריה" HorizontalAlignment="Left" Margin="255,232,0,0" VerticalAlignment="Top" FontSize="19" Foreground="#FF384648" FontWeight="UltraBold" FontFamily="Cascadia Mono"/>
-        <Label Content=":כמות במלאי" HorizontalAlignment="Left" Margin="255,280,0,0" VerticalAlignment="Top" FontSize="19" FontWeight="Bold" Foreground="#FF384648" FontFamily="Cascadia Mono" FontStyle="Normal"/>
-        <TextBox x:Name="id"  HorizontalAlignment="Left" Margin="130,81,0,0"  TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Background="#FFDCE1DE" Width="120" Height="30" MaxLength="6" FontFamily="Aharoni" TextAlignment="Right" BorderBrush="#FF384648" BorderThickness="2,2,2,2" />
-        <TextBox  x:Name="name" HorizontalAlignment="Left" Margin="130,132,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="20" Background="#FFDCE1DE" BorderBrush="#FF384648" BorderThickness="2,2,2,2"/>
-        <TextBox  x:Name="price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="5" Background="#FFDCE1DE" BorderBrush="#FF384648" BorderThickness="2,2,2,2" Margin="130,181,0,0" />
-        <TextBox x:Name="stock" HorizontalAlignment="Left" Margin="130,282,0,0" TextWrapping="Wrap" Text="{Binding InStock, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="3" TextChanged="stock_TextChanged" Background="#FFDCE1DE" BorderBrush="#FF384648" BorderThickness="2,2,2,2"/>
-        <ComboBox  x:Name="category" HorizontalAlignment="Left" SelectedItem="{Binding Category}" Margin="130,232,0,0" VerticalAlignment="Top" Width="120" Height="30" FontFamily="Cascadia Mono" BorderBrush="#FF384648" BorderThickness="2,2,2,2">
-            <ComboBoxItem Content="קודש" />
-            <ComboBoxItem Content="הסטוריה" />
-            <ComboBoxItem Content="ילדים" />
-            <ComboBoxItem Content="רומנים" />
-            <ComboBoxItem Content="עיוני" />
-        </ComboBox>
-        <Button x:Name="Add" Content="הוספה" HorizontalAlignment="Center" Margin="0,340,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Background="#FF4A5759" Foreground="FFDCE1DE" Click="add_click" FontWeight="Bold" FontFamily="Cascadia Mono"/>
-        <Button x:Name="Update" Content="עדכון" HorizontalAlignment="Left" Margin="148,340,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Foreground="#FFDCE1DE" Background="#FF4A5759" Click="update_click" Visibility="{Binding ElementName=id}" FontWeight="Bold" FontFamily="Cascadia Mono"/>
-        <Image HorizontalAlignment="Left" Height="99" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.509,0.476" Source="/orders/download.png" Margin="-11,-10,0,0">
-            <Image.OpacityMask>
-                <ImageBrush ImageSource="/orders/download.png"/>
-            </Image.OpacityMask>
-        </Image>
-        <TextBox HorizontalAlignment="Left" Margin="161,11,0,0" TextWrapping="Wrap" Text="הרשאת מנהל בלבד" VerticalAlignment="Top" Width="229" Height="22" Background="#FFB0C4B1" TextAlignment="Center" BorderBrush="#FFB0C4B1" FontFamily="Bahnschrift Light Condensed" Foreground="#FF2B3233" FontSize="22" FontStyle="Normal" FontWeight="Normal"/>
-        <TextBox HorizontalAlignment="Left" Margin="-11,78,0,0" TextWrapping="Wrap" Text="מנהל" VerticalAlignment="Top" Width="86" Background="#FFB0C4B1" TextAlignment="Center" FontSize="16" FontWeight="Bold" BorderBrush="#FFB0C4B1"/>
-    </Grid>-->
+    <Grid x:Name="orderUpdate" Width="400" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="400" Margin="0,0,0,0" >
+        <TextBlock x:Name="ID_order" Text="{Binding ID}" Margin="113,24,77,318" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="20" FontWeight="Bold" TextAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Width="300" Height="300" VerticalAlignment="Bottom">
+            <StackPanel Width="150" Height="300" VerticalAlignment="Bottom">
+                <TextBlock x:Name="CustomerName_order"  Text="{Binding CustomerName}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="16" FontWeight="Bold" VerticalAlignment="Bottom" />
+                <TextBlock x:Name="CustomerEmail_order"  Text="{Binding CustomerEmail}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom" />
+                <TextBlock x:Name="CustomerAddress_order"  Text="{Binding CustomerAddress}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="16" FontWeight="Bold" />
+                <TextBlock x:Name="Items_order"  Text="{Binding Items.Count}" Width="150" Height="30" TextAlignment="Right" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="16" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="price_order"  Text="{Binding TotalPrice}" Width="150" Height="30" TextAlignment="Right" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="16" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
+                <ComboBox  x:Name="statusComboBox" Text="{Binding Status}" SelectedItem="{Binding Status}" Background="#FFB0C4B1" Width="150" Height="30" SelectionChanged="statusComboBox_SelectionChanged"/>
+                <TextBlock x:Name="OrderDate_order"  Text="{Binding OrderDate}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="ShipDate_order"  Text="{Binding ShipDate}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="DeliveryDate_order"  Text="{Binding DeliveryDate}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
+            </StackPanel>
+            <StackPanel Width="150" Height="300" VerticalAlignment="Bottom">
+                <TextBlock x:Name="name"  Text=":שם לקוח" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+                <TextBlock x:Name="email"  Text=":דואר אלקטרוני" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Left" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+                <TextBlock x:Name="CustomerAddress"  Text=":כתובת מגורים" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+                <TextBlock x:Name="Items"  Text=":מספר מוצרים" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+                <TextBlock x:Name="price"  Text=":סהכ לתשלום" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+                <TextBlock x:Name="Status"  Text=":סטטוס הזמנה" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+                <TextBlock x:Name="OrderDate"  Text=":תאריך הזמנה" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+                <TextBlock x:Name="ShipDate"  Text=":תאריך שליחה" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+                <TextBlock x:Name="DeliveryDate"  Text=":תאריך מסירה" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
+            </StackPanel>
+        </StackPanel>
+        <Image HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="100" Source="/orders/download.png"/>
+    </Grid>
 
 </Window>
