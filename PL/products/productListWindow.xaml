@@ -51,19 +51,19 @@
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="nameColumn"
                                     Binding="{Binding Name}" 
-                                    Header="Name"
+                                    Header="שם הספר"
                                     Width="200"/>
                 <DataGridTextColumn x:Name="idColumn"
                                     Binding="{Binding ID}"
-                                    Header="ID"
+                                    Header="תעודת זהות"
                                     Width="200"/>
                 <DataGridTextColumn x:Name="categoryColumn"
                                     Binding="{Binding Category}"
-                                    Header="Category"
+                                    Header="קטגוריה"
                                     Width="200"/>
                 <DataGridTextColumn x:Name="priceColumn"
                                     Binding="{Binding Price}"
-                                    Header="Price"
+                                    Header="מחיר"
                                     Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
