@@ -25,6 +25,10 @@ namespace PL.orders
             InitializeComponent();
             orderUpdate.DataContext = order;
         }
+        private void statusComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
 
     }
 }

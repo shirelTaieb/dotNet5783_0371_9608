@@ -15,7 +15,7 @@
                 <TextBlock x:Name="CustomerAddress_order"  Text="{Binding CustomerAddress}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="16" FontWeight="Bold" />
                 <TextBlock x:Name="Items_order"  Text="{Binding Items.Count}" Width="150" Height="30" TextAlignment="Right" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="16" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
                 <TextBlock x:Name="price_order"  Text="{Binding TotalPrice}" Width="150" Height="30" TextAlignment="Right" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="16" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
-                <ComboBox  x:Name="statusComboBox" Text="{Binding Status}" SelectedItem="{Binding Status}" Background="#FFB0C4B1" Width="150" Height="30"/>
+                <ComboBox  x:Name="statusComboBox" Text="{Binding Status}" SelectedItem="{Binding Status}" Background="#FFB0C4B1" Width="150" Height="30" SelectionChanged="statusComboBox_SelectionChanged"/>
                 <TextBlock x:Name="OrderDate_order"  Text="{Binding OrderDate}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
                 <TextBlock x:Name="ShipDate_order"  Text="{Binding ShipDate}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
                 <TextBlock x:Name="DeliveryDate_order"  Text="{Binding DeliveryDate}" Width="150" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
@@ -32,6 +32,7 @@
                 <TextBlock x:Name="DeliveryDate"  Text=":תאריך מסירה" Width="150" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="16" FontFamily="Cascadia Mono" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"/>
             </StackPanel>
         </StackPanel>
+        <Image HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="100" Source="/orders/download.png"/>
     </Grid>
 
 </Window>
