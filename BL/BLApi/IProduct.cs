@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace BLApi
 {
     public interface IProduct
     {
+        public ObservableCollection<BO.ProductForList> IEnumerableToObserval(IEnumerable<BO.ProductForList> listToCast);
         /// <summary>
         /// מנהל מוסיף מוצר חדש
         /// </summary>
@@ -35,9 +37,9 @@ namespace BLApi
         /// </summary>
         /// <param name="IDpr"></param>
         /// <returns></returns>
+        public IEnumerable<BO.ProductForList?> getPartOfProduct(Func<BO.ProductForList?, bool>? filter = null);
+
         public IEnumerable<BO.ProductForList?> getListOfProduct();
-
-
         /// <summary>
         /// מציג למנהל לפי קוד המוצר את פרטי המוצר הבאים: מספר מוצר, שם מוצר מחיר, קטגוריה וכמות במלאי  
         /// </summary>

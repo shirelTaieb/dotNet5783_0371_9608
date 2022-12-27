@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using BO;
+using System;
+using System.Windows;
 
 namespace PL.customer
 {
@@ -12,8 +14,10 @@ namespace PL.customer
         public customerProductListWindow()
         {
             InitializeComponent();
-            var list = bl!.Product!.getListOfProduct();
+            var list = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);
             ListOfProducts.ItemsSource = list;
+            categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
+
         }
         public void ListOfProducts_SelectionChanged(object sender, RoutedEventArgs e)
         {
@@ -31,7 +35,11 @@ namespace PL.customer
 
         private void categorySelector_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            
+            var item = categorySelector.SelectedItem;
+            if ((int)item == 5)
+                ListOfProducts.ItemsSource = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);
+            else
+                ListOfProducts.ItemsSource = bl!.Product!.IEnumerableToObserval(bl!.Product!.getPartOfProduct(pro => pro!.Category == (BO.Category)item)!);
         }
     }
 

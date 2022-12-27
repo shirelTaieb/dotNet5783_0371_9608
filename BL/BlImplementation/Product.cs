@@ -1,4 +1,5 @@
 ﻿using DalApi;
+using System.Collections.ObjectModel;
 
 namespace BlImplementation;
 
@@ -11,6 +12,13 @@ internal class Product : BLApi.IProduct
     /// <param name="prod"></param>
     /// <returns></returns>
     private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();
+    public ObservableCollection<BO.ProductForList> IEnumerableToObserval(IEnumerable<BO.ProductForList> listToCast)
+    {
+        ObservableCollection<BO.ProductForList> result=new ObservableCollection<BO.ProductForList>();
+        foreach (BO.ProductForList item in listToCast)
+            result.Add(item);
+        return result;
+    }
     internal DO.Product BOproductToDO(BO.Product prod)
     {
         DO.Product temp = new DO.Product();
@@ -74,10 +82,20 @@ internal class Product : BLApi.IProduct
         temp = BOproductToDO(pr);
         Dal?.Product.Update(temp);
     }
+    public IEnumerable<BO.ProductForList?> getPartOfProduct(Func<BO.ProductForList?, bool>? filter)
+    {
+        if (filter == null)
+            return getListOfProduct();
+        IEnumerable<BO.ProductForList?> partList=new List<BO.ProductForList?>();
+        partList=
+            from item in getListOfProduct()
+            where filter!(item)
+            select item;
+        return partList;
+    }
     public IEnumerable<BO.ProductForList?> getListOfProduct()//נו זה גם לקוסטומר
     {
-        //List<BO.ProductForList?> listProductForList = new List<BO.ProductForList?>();
-        //BO.ProductForList temp= new BO.ProductForList();
+        
         List<DO.Product?> lstp = (List<DO.Product?>)Dal!.Product.GetAll();
         return (from prop in lstp
                 select new BO.ProductForList()

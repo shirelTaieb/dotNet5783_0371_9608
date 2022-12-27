@@ -33,14 +33,7 @@ namespace PL
             InitializeComponent();
         }
        
-        //public void mouseEnter(object o, RoutedEventArgs e)
-        //{
-        //    OpenProductList.Width = 400;
-        //}
-        //public void mouseLeave(object o, RoutedEventArgs e)
-        //{
-        //    OpenProductList.Width = 200;
-        //}
+   
         public void return_back(object o, RoutedEventArgs e)
         {
             customer.IsEnabled = true;
@@ -70,12 +63,12 @@ namespace PL
         }
         public void cart_Click(object o, RoutedEventArgs e)
         {
-            MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
-            MessageBox.Show("?מה, יפול מהשמיים", "");
-            MessageBox.Show(" ככה זה בחיים", "");
-            MessageBox.Show(" צריך לעבוד קשה", "");
-            MessageBox.Show("דברים לא באים בקלות", "");
-            MessageBox.Show("גם למוצלחות כמוך", "");
+            //MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
+            //MessageBox.Show("?מה, יפול מהשמיים", "");
+            //MessageBox.Show(" ככה זה בחיים", "");
+            //MessageBox.Show(" צריך לעבוד קשה", "");
+            //MessageBox.Show("דברים לא באים בקלות", "");
+            //MessageBox.Show("גם למוצלחות כמוך", "");
 
         }
 

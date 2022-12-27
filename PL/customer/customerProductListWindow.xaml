@@ -20,13 +20,13 @@
             </Grid.ColumnDefinitions >
             <Label Grid.Column="2" Content=":סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF49A078" Foreground= "White" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="46" VerticalContentAlignment="Center" FontSize="18" HorizontalContentAlignment="Center"/>
             <ComboBox x:Name="categorySelector" HorizontalAlignment="Center" Grid.Column="0" SelectedItem="{Binding HebCategory}" VerticalAlignment="Center" Width="320" Height="45" SelectionChanged="categorySelector_SelectionChanged"/>
-            <ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
+            <!--<ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
                     <ComboBoxItem Content="₪50 עד" />
                     <ComboBoxItem Content="₪100 עד" />
                     <ComboBoxItem Content="₪150 עד" />
                     <ComboBoxItem Content="₪200 עד" />
                     <ComboBoxItem Content="₪200+" />
-                </ComboBox>
+                </ComboBox>-->
         </Grid>
         <Grid x:Name="TVGrid" Grid.Row="1">
             <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" Height="410"  Background="#9CC5A1" VerticalAlignment="Top" Width="800" Grid.Row="1" SelectionChanged="ListOfProducts_SelectionChanged">

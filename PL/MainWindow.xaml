@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#9CC5A1" MouseDown="return_back">
     <Grid>
-     
+        <Frame x:Name="Main" />
         <Button x:Name="manager" Content="מנהל"  Padding="15" HorizontalAlignment="Left" Margin="461,126,0,0" VerticalAlignment="Top" Click="manager_Click" Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="91" FontSize="38" FontWeight="Bold">
             <Button.Effect>
                 <DropShadowEffect/>
@@ -18,7 +18,6 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <!--<Image Source="C:\Users\97258\source\repos\shirelTaieb\dotNet5783_0371_9608\images\heapBooks.png"/>-->
         <Button x:Name="katelog" Content="לצפיה בקטלוג" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="136,240,0,0" VerticalAlignment="Top" Click="Katelog_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
         <Button x:Name="cart" Content="סל הקניות שלי" Padding="7"  Visibility="Hidden" HorizontalAlignment="Left" Margin="136,300,0,0" VerticalAlignment="Top" Click="cart_Click"  Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
         <Label x:Name="password" Content="Password" HorizontalAlignment="Left" Margin="461,234,0,0" VerticalAlignment="Top" Foreground="#FF216869" FontSize="18" FontWeight="Bold" Visibility="Hidden"/>

@@ -1,4 +1,5 @@
 ﻿using BO;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,12 +14,11 @@ namespace PL.products
         public productListWindow()
         {
             InitializeComponent();
-            var list = bl!.Product!.getListOfProduct();
+            var list = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);
             productForListDataGrid.DataContext = list;
             productForListDataGrid.IsReadOnly = true;
+            categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
-
-            // categorySelector.ItemsSource = Enum.GetValues(typeof(BO.Category));
         }
 
         private void priceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -29,6 +29,12 @@ namespace PL.products
         private void categorySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = categorySelector.SelectedItem;
+            if ((int)item == 5)
+                productForListDataGrid.DataContext = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);
+            else
+                productForListDataGrid.DataContext= bl!.Product!.IEnumerableToObserval(bl!.Product!.getPartOfProduct(pro=>pro!.Category==(BO.Category)item)!);
+
+
 
         }
         public void Add_Click(object sender, RoutedEventArgs e) 
