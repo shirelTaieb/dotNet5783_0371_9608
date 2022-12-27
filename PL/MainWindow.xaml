@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#9CC5A1" MouseDown="return_back">
     <Grid>
+     
         <Button x:Name="manager" Content="מנהל"  Padding="15" HorizontalAlignment="Left" Margin="461,126,0,0" VerticalAlignment="Top" Click="manager_Click" Background="#FF216869" Foreground="#FFDCE1DE" Width="208" Height="91" FontSize="38" FontWeight="Bold">
             <Button.Effect>
                 <DropShadowEffect/>

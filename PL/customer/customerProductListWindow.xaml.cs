@@ -23,6 +23,16 @@ namespace PL.customer
         {
 
         }
+
+        private void priceSelector_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void categorySelector_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 
 }
