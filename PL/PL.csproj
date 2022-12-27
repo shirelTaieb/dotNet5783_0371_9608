@@ -14,11 +14,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="orders\download.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BL\BL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="cart\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="orders\download.png" />
   </ItemGroup>
 
 </Project>
