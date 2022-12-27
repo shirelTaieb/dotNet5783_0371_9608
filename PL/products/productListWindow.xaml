@@ -12,14 +12,17 @@
             <RowDefinition Height="210*"/>
             <RowDefinition Height="79*"/>
         </Grid.RowDefinitions>
-        <Grid Name="UpGrid" Height="auto" Grid.Row="0" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions >
-            <Label Grid.Column="2" Content=":סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF49A078" Foreground= "White" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="46" VerticalContentAlignment="Center" FontSize="18" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="categorySelector" HorizontalAlignment="Center" Grid.Column="1" SelectedItem="{Binding Category}" VerticalAlignment="Center" Width="320" Height="45" SelectionChanged="categorySelector_SelectionChanged"/>
+        <Grid Name="UpGrid" Height="auto" Grid.Row="0" Width="auto" Background="#FFF0F0F0" RenderTransformOrigin="-0.056,2.389">
+
+            <Label Content=":סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFB0C4B1" Foreground= "#FF465153" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="51" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="640,0,0,0"/>
+            <ComboBox x:Name="categorySelector" HorizontalAlignment="Left" SelectedItem="{Binding Category}" VerticalAlignment="Center" Width="266" Height="51" SelectionChanged="categorySelector_SelectionChanged" Margin="374,0,0,0">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FFB0C4B1" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
             <!--<ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
                 <ComboBoxItem Content="₪50 עד" />
                 <ComboBoxItem Content="₪100 עד" />
@@ -35,12 +38,33 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2">
+        <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="productForListDataGrid_SelectionChanged">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#B0C4B1"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderThickness" Value="0,2,2,2"/>
+                    <Setter Property="BorderBrush" Value="#1F2421"/>
+                    <Setter Property="HorizontalContentAlignment" Value="center" />
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="200"/>
-                <DataGridTextColumn x:Name="idColumn" Binding="{Binding ID}" Header="ID" Width="200"/>
-                <DataGridTextColumn x:Name="categoryColumn" Binding="{Binding Category}" Header="Category" Width="200"/>
-                <DataGridTextColumn x:Name="priceColumn" Binding="{Binding Price}" Header="Price" Width="200"/>
+                <DataGridTextColumn x:Name="nameColumn"
+                                    Binding="{Binding Name}" 
+                                    Header="Name"
+                                    Width="200"/>
+                <DataGridTextColumn x:Name="idColumn"
+                                    Binding="{Binding ID}"
+                                    Header="ID"
+                                    Width="200"/>
+                <DataGridTextColumn x:Name="categoryColumn"
+                                    Binding="{Binding Category}"
+                                    Header="Category"
+                                    Width="200"/>
+                <DataGridTextColumn x:Name="priceColumn"
+                                    Binding="{Binding Price}"
+                                    Header="Price"
+                                    Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="updateProduct_Button" Grid.Row="2" Content="עדכון מוצר" HorizontalAlignment="Left" Margin="500,0,0,0" VerticalAlignment="Top" Click="update_Click" Padding="1" Background="#FF216869" Foreground="#FFDCE1DE" Width="200" Height="36" FontSize="18"/>
