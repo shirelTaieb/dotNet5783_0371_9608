@@ -14,7 +14,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="download.png" />
     <None Remove="orders\download.png" />
+    <None Remove="pngegg.png" />
+    <None Remove="W_960_sell-online.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,7 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="download.png" />
     <Resource Include="orders\download.png" />
+    <Resource Include="pngegg.png" />
+    <Resource Include="W_960_sell-online.png" />
   </ItemGroup>
 
 </Project>

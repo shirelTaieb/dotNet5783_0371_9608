@@ -60,5 +60,9 @@ namespace PL.products
             }
         }
 
+        private void productForListDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
