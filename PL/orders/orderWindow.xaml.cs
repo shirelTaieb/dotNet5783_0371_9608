@@ -19,9 +19,12 @@ namespace PL.orders
     /// </summary>
     public partial class orderWindow : Window
     {
-        public orderWindow()
+        private BLApi.IBl? bl = BLApi.Factory.Get();
+        public orderWindow(BO.OrderForList? updateOrder = null)
         {
             InitializeComponent();
+            
+
         }
     }
 }
