@@ -19,7 +19,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions >
             <Label Grid.Column="2" Content=":סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF49A078" Foreground= "White" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="46" VerticalContentAlignment="Center" FontSize="18" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="categorySelector" HorizontalAlignment="Center" Grid.Column="0" SelectedItem="{Binding Category}" VerticalAlignment="Center" Width="320" Height="45" SelectionChanged="categorySelector_SelectionChanged"/>
+            <ComboBox x:Name="categorySelector" HorizontalAlignment="Center" Grid.Column="1" SelectedItem="{Binding Category}" VerticalAlignment="Center" Width="320" Height="45" SelectionChanged="categorySelector_SelectionChanged"/>
             <!--<ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
                 <ComboBoxItem Content="₪50 עד" />
                 <ComboBoxItem Content="₪100 עד" />
@@ -27,7 +27,7 @@
                 <ComboBoxItem Content="₪200 עד" />
                 <ComboBoxItem Content="₪200+" />
             </ComboBox>-->
-        </Grid> 
+        </Grid>
         <Grid Name="DownGrid" Height="auto" Grid.Row="1" Width="auto">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="46*"/>
