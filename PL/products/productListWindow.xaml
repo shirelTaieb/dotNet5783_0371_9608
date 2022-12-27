@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Grid Name="UpGrid" Height="auto" Grid.Row="0" Width="auto" Background="#FFF0F0F0" RenderTransformOrigin="-0.056,2.389">
 
-            <Label Content=":סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFB0C4B1" Foreground= "#FF465153" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="51" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="640,0,0,0"/>
+            <Label Content=":סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFB0C4B1" Foreground= "#FF1F2421" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="51" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="640,0,0,0"/>
             <ComboBox x:Name="categorySelector" HorizontalAlignment="Left" SelectedItem="{Binding Category}" VerticalAlignment="Center" Width="266" Height="51" SelectionChanged="categorySelector_SelectionChanged" Margin="374,0,0,0">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1">
