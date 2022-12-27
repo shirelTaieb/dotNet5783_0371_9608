@@ -36,17 +36,17 @@ namespace PL.products
         private void add_click(object sender, RoutedEventArgs e) //לא באמת מוסיףף
         {
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
-            BO.Product newProduct=new BO.Product();
-            Add.DataContext = newProduct;
-            bl!.Product!.addNewProduct(newProduct); 
+            //BO.Product newProduct=new BO.Product();
+            //Add.DataContext = newProduct;
+            //bl!.Product!.addNewProduct(newProduct); 
             MessageBox.Show(":) המוצר נוסף בהצלחה", "");
             this.Close();
         }
         private void update_click(object sender, RoutedEventArgs e)//לא באמת מעדכןןן
         {
-            BO.Product newProduct = new BO.Product();
-            Update.DataContext = newProduct;
-            bl!.Product!.updateProduct(newProduct);
+            //BO.Product newProduct = new BO.Product();
+            //Update.DataContext = newProduct;
+            //bl!.Product!.updateProduct(newProduct);
             MessageBox.Show(":) המוצר עודכן בהצלחה", "");
             //קריאה לפונקציה שבאמת תעדכן את הפרודקט
             this.Close();

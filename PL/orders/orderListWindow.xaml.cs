@@ -27,12 +27,19 @@ namespace PL.orders
             var list = bl!.Order!.getOrderList();
             orderForListDataGrid.DataContext = list;
             orderForListDataGrid.IsReadOnly = true;
-
         }
 
         private void orderForListListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
+        }
+        private void orderUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            BO.OrderForList ofl = (BO.OrderForList)orderForListDataGrid.SelectedItem;
+            BO.Order or = new BO.Order();
+            or = bl!.Order!.getOrderInfo(ofl.ID)!;
+            orderWindow data = new orderWindow(or);
+            data.Show();
         }
     }
 }

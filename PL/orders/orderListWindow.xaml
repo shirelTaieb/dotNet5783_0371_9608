@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="orderListWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="orderForListDataGrid" AutoGenerateColumns="False"  Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="orderForListListView_SelectionChanged">
+        <DataGrid x:Name="orderForListDataGrid" AutoGenerateColumns="False" MouseDoubleClick="orderUpdate_Click" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="orderForListListView_SelectionChanged">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#B0C4B1"/>
