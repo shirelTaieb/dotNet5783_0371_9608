@@ -5,6 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.orders"
         mc:Ignorable="d"
-        Title="orderWindow" Height="450" Width="800">
-   
+        Title="orderWindow" Height="450" Width="454" Background="#B0C4B1">
+    <Grid x:Name="orderAddOrUpdate" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Label  x:Name="id_lable" Content=":מספר מזהה" HorizontalAlignment="Left" Margin="255,70,0,0" VerticalAlignment="Top" FontWeight="UltraBold" Foreground="#FF384648" FontSize="19" Background="Transparent" FontFamily="Cascadia Mono"/>
+        <Label Content=":שם הספר" HorizontalAlignment="Left" Margin="255,130,0,0" VerticalAlignment="Top" Foreground="#FF384648" FontWeight="UltraBold" FontSize="19" FontFamily="Cascadia Mono"/>
+        <Label Content=":מחיר" HorizontalAlignment="Left" Margin="255,180,0,0" VerticalAlignment="Top" FontSize="19" Foreground="#FF384648" FontWeight="UltraBold" FontFamily="Cascadia Mono"/>
+        <Label Content=":קטגוריה" HorizontalAlignment="Left" Margin="255,232,0,0" VerticalAlignment="Top" FontSize="19" Foreground="#FF384648" FontWeight="UltraBold" FontFamily="Cascadia Mono"/>
+        <Label Content=":כמות במלאי" HorizontalAlignment="Left" Margin="255,280,0,0" VerticalAlignment="Top" FontSize="19" FontWeight="Bold" Foreground="#FF384648" FontFamily="Cascadia Mono" FontStyle="Normal"/>
+        <TextBox x:Name="id"  HorizontalAlignment="Left" Margin="130,81,0,0"  TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Background="#FFDCE1DE" Width="120" Height="30" MaxLength="6" FontFamily="Aharoni" TextAlignment="Right" BorderBrush="#FF384648" BorderThickness="2,2,2,2" />
+        <TextBox  x:Name="name" HorizontalAlignment="Left" Margin="130,132,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="20" Background="#FFDCE1DE" BorderBrush="#FF384648" BorderThickness="2,2,2,2"/>
+        <TextBox  x:Name="price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="5" Background="#FFDCE1DE" BorderBrush="#FF384648" BorderThickness="2,2,2,2" Margin="130,181,0,0" />
+        <TextBox x:Name="stock" HorizontalAlignment="Left" Margin="130,282,0,0" TextWrapping="Wrap" Text="{Binding InStock, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="3" TextChanged="stock_TextChanged" Background="#FFDCE1DE" BorderBrush="#FF384648" BorderThickness="2,2,2,2"/>
+        <ComboBox  x:Name="category" HorizontalAlignment="Left" SelectedItem="{Binding Category}" Margin="130,232,0,0" VerticalAlignment="Top" Width="120" Height="30" FontFamily="Cascadia Mono" BorderBrush="#FF384648" BorderThickness="2,2,2,2">
+            <ComboBoxItem Content="קודש" />
+            <ComboBoxItem Content="הסטוריה" />
+            <ComboBoxItem Content="ילדים" />
+            <ComboBoxItem Content="רומנים" />
+            <ComboBoxItem Content="עיוני" />
+        </ComboBox>
+        <Button x:Name="Add" Content="הוספה" HorizontalAlignment="Center" Margin="0,340,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Background="#FF4A5759" Foreground="FFDCE1DE" Click="add_click" FontWeight="Bold" FontFamily="Cascadia Mono"/>
+        <Button x:Name="Update" Content="עדכון" HorizontalAlignment="Left" Margin="140,340,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Foreground="#FFDCE1DE" Background="#FF4A5759" Click="update_click" Visibility="{Binding ElementName=id}" FontWeight="Bold" FontFamily="Cascadia Mono"/>
+        <Image HorizontalAlignment="Left" Height="99" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.509,0.476" Source="/orders/download.png" Margin="-11,-10,0,0">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/orders/download.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <TextBox HorizontalAlignment="Left" Margin="161,11,0,0" TextWrapping="Wrap" Text="הרשאת מנהל בלבד" VerticalAlignment="Top" Width="229" Height="22" Background="#FFB0C4B1" TextAlignment="Center" BorderBrush="#FFB0C4B1" FontFamily="Bahnschrift Light Condensed" Foreground="#FF2B3233" FontSize="22" FontStyle="Normal" FontWeight="Normal"/>
+        <TextBox HorizontalAlignment="Left" Margin="-11,78,0,0" TextWrapping="Wrap" Text="מנהל" VerticalAlignment="Top" Width="86" Background="#FFB0C4B1" TextAlignment="Center" FontSize="16" FontWeight="Bold" BorderBrush="#FFB0C4B1"/>
+    </Grid>
+
 </Window>
