@@ -24,7 +24,7 @@ namespace PL.orders
         {
             InitializeComponent();
             orderUpdate.DataContext = order;
-            statusComboBox.ItemsSource = Enum.GetValues(typeof(BO.OrderStatus));
+            statusComboBox.ItemsSource = Enum.GetValues(typeof(BO.HebOrderStatus));
         }
 
     }
