@@ -32,6 +32,8 @@ internal class Product : BLApi.IProduct
     public void addNewProduct(BO.Product? pr)
     {
         //בדיקת תקינות קלט
+        if (pr==null)
+            throw new BO.wrongDataException();
         //1. שם לא מחרוזת ריקה:
         if (pr.Name == "")
             throw new BO.wrongDataException();
@@ -64,6 +66,8 @@ internal class Product : BLApi.IProduct
     public void updateProduct(BO.Product? pr)
     {
         //בדיקת תקינות קלט
+        if (pr == null)
+            throw new BO.wrongDataException();
         //1. שם לא מחרוזת ריקה:
         if (pr.Name == "")
             throw new BO.wrongDataException();
@@ -113,7 +117,9 @@ internal class Product : BLApi.IProduct
         if ((IDpr <= 100000) && (IDpr >= 999999))
             throw new BO.doseNotExistException();
         BO.Product pr = new BO.Product();
-        DO.Product temp = Dal?.Product.GetById(IDpr) ?? throw new BO.doseNotExistException();
+        DO.Product temp;
+        try { temp = Dal!.Product.GetById(IDpr); }
+        catch { throw new BO.doseNotExistException(); }
         pr.ID = temp.ID;
         pr.Name = temp.Name;
         pr.Price = temp.Price;
@@ -130,7 +136,9 @@ internal class Product : BLApi.IProduct
         if (cart == null)
             throw new BO.wrongDataException();
         BO.ProductItem pr = new BO.ProductItem();
-        DO.Product temp = Dal?.Product.GetById(IDpr) ?? throw new BO.doseNotExistException();
+        DO.Product temp;
+        try { temp = Dal!.Product.GetById(IDpr); } 
+        catch { throw new BO.doseNotExistException(); }
         pr.ID = IDpr;
         pr.Name = temp.Name;
         pr.Price = temp.Price;
@@ -144,7 +152,7 @@ internal class Product : BLApi.IProduct
             pr.Amount = 0;
         else
         {
-            orderItem = cart!.Items.FirstOrDefault(or => or.ProductID == IDpr);
+            orderItem = cart!.Items.FirstOrDefault(or => or?.ProductID == IDpr);
             if (orderItem == null)
                 pr.Amount = 0;
             else

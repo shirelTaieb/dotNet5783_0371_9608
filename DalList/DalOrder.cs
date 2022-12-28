@@ -21,11 +21,14 @@ public class DalOrder : IOrder //שיננו לפובליק
         ds?.lstO.Add(order);
         return order.ID;
     }
-    public Order? GetById(int id)
+    public Order GetById(int id)
     {
         if (ds== null)
             throw new NotExistException();
-     return (ds.lstO.FirstOrDefault(ord => ord?.ID == id));
+        Order? or = ds.lstO.FirstOrDefault(ord => ord?.ID == id);
+        if (or == null)
+            throw new NotExistException(); //there in no order matched in the database
+        return (Order)or;
     }
     public void Update(Order order)
     {
@@ -42,8 +45,8 @@ public class DalOrder : IOrder //שיננו לפובליק
    {
      if (ds == null)
          throw new NotExistException();
-     if (!ds.lstO.Remove(GetById(id)))
-         throw new NotExistException();
+        try { ds.lstO.Remove(GetById(id)); }
+        catch { throw new NotExistException(); }
    }    
 
     public IEnumerable<Order?> GetAll(Func<Order?, bool>? filter = null)

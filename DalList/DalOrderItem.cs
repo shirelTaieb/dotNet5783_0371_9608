@@ -19,11 +19,14 @@ internal class DalOrderItem : IOrderItem
         ds?.lstOI.Add(item);
         return item.ID;
     }
-    public OrderItem? GetById(int id)
+    public OrderItem GetById(int id)
     {
         if (ds == null)
             throw new NotExistException();
-        return (ds?.lstOI.FirstOrDefault(oi => oi?.ID == id));
+        OrderItem? oi = ds?.lstOI.FirstOrDefault(oi => oi?.ID == id);
+        if (oi == null)//there in no order item matched in the database
+            throw new NotExistException();
+        return (OrderItem)oi;
 
     }
     public void Update(OrderItem item)
@@ -41,8 +44,12 @@ internal class DalOrderItem : IOrderItem
     {
         if (ds == null)
             throw new NotExistException();
-        if (!ds.lstOI.Remove(GetById(id)))
-            throw new NotExistException();
+        try
+        {
+            ds.lstOI.Remove(GetById(id));
+        }
+        catch  //if the orderitem is not exist
+        { throw new NotExistException(); }
     }
 
     public IEnumerable<OrderItem?> GetAll(Func<OrderItem?, bool>? filter = null)
