@@ -19,6 +19,11 @@ namespace PL.orders
             UpdateOrder = order;
         }
 
+        private void toSent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //private void statusComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         //{
         //    if ((int)statusComboBox.SelectedItem == 1)
