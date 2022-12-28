@@ -121,7 +121,7 @@ internal class Order : BLApi.IOrder
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
         DO.Order temp = Dal!.Order.GetById(orderID)??throw new BO.doseNotExistException();
-        if (temp.ShipDate != null)//|| temp.ShipDate !=DateTime.MinValue)
+        if (temp.ShipDate != null)
             throw new BO.wrongDataException();
         temp.ShipDate = DateTime.Now; 
         try
