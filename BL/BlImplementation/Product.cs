@@ -71,7 +71,7 @@ internal class Product : BLApi.IProduct
         if (pr.Price < 0)
             throw new BO.wrongDataException();
         //כמות במלאי שאינה שלילית
-        if (pr.InStock <= 0)
+        if (pr.InStock < 0)
             throw new BO.wrongDataException();
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((pr.ID <= 100000) && (pr.ID >= 999999))

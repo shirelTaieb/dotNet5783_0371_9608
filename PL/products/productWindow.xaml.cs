@@ -42,14 +42,14 @@ namespace PL.products
                 productAddOrUpdate.DataContext = UpdateOrNewProduct; 
             }
         }
-        private void add_click(object sender, RoutedEventArgs e) //לא באמת מוסיףף
+        private void add_click(object sender, RoutedEventArgs e)
         {
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
             bl!.Product!.addNewProduct(UpdateOrNewProduct);
             MessageBox.Show(":) המוצר נוסף בהצלחה", "");
             this.Close();
         }
-        private void update_click(object sender, RoutedEventArgs e)//לא באמת מעדכןןן
+        private void update_click(object sender, RoutedEventArgs e)
         {
             
             bl!.Product!.updateProduct(UpdateOrNewProduct);
