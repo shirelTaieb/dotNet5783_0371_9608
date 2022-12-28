@@ -15,18 +15,18 @@ namespace PL.orders
         {
             InitializeComponent();
             orderUpdate.DataContext = order;
-            or = order;
-            statusComboBox.ItemsSource = Enum.GetValues(typeof(BO.HebOrderStatus));
+            UpdateOrder = order;
+            //statusComboBox.ItemsSource = Enum.GetValues(typeof(BO.HebOrderStatus));
         }
 
-        private void statusComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if ((int)statusComboBox.SelectedItem == 1)
-                bl!.Order!.updateSentOrder(or.ID);
+        //private void statusComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if ((int)statusComboBox.SelectedItem == 1)
+        //        bl!.Order!.updateSentOrder(UpdateOrder.ID);
 
-            if ((int)statusComboBox.SelectedItem == 2)
-                bl!.Order!.updateDeliveryOrder(or.ID);
+        //    if ((int)statusComboBox.SelectedItem == 2)
+        //        bl!.Order!.updateDeliveryOrder(UpdateOrder.ID);
 
-        }
+        //}
     }
 }

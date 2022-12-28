@@ -33,7 +33,7 @@ namespace PL.orders
         {
             
         }
-        private void orderUpdate_Click(object sender, RoutedEventArgs e)
+        private void orderUpdate_DoubleClick(object sender, RoutedEventArgs e)
         {
             BO.OrderForList ofl = (BO.OrderForList)orderForListDataGrid.SelectedItem;
             BO.Order or = new BO.Order();
