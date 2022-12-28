@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PL.orders
 {
@@ -20,12 +10,23 @@ namespace PL.orders
     public partial class orderWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
+        BO.Order or = new BO.Order();
         public orderWindow(BO.Order order)
         {
             InitializeComponent();
             orderUpdate.DataContext = order;
+            or = order;
             statusComboBox.ItemsSource = Enum.GetValues(typeof(BO.HebOrderStatus));
         }
 
+        private void statusComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((int)statusComboBox.SelectedItem == 1)
+                bl!.Order!.updateSentOrder(or.ID);
+
+            if ((int)statusComboBox.SelectedItem == 2)
+                bl!.Order!.updateDeliveryOrder(or.ID);
+
+        }
     }
 }
