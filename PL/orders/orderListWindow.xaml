@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="orderListWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="orderForListDataGrid" AutoGenerateColumns="False" MouseDoubleClick="orderUpdate_Click" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="orderForListListView_SelectionChanged">
+        <DataGrid x:Name="orderForListDataGrid" AutoGenerateColumns="False" MouseDoubleClick="orderUpdate_Click" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="orderForListListView_SelectionChanged" AlternatingRowBackground="#B0C4B1" AlternationCount="2">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="#B0C4B1"/>
+                    <Setter Property="Background" Value="#9CC5A1"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="BorderThickness" Value="0,2,2,2"/>
                     <Setter Property="BorderBrush" Value="#1F2421"/>
@@ -21,27 +21,27 @@
                 <DataGridTextColumn 
                     x:Name="nameColumn" 
                     Binding="{Binding CustomerName}"
-                    Header="Name"
+                    Header="שם הלקוח"
                     Width="160"/>
                 <DataGridTextColumn
                     x:Name="idColumn"
                     Binding="{Binding ID}"
-                    Header="ID" 
+                    Header="מספר הזמנה" 
                     Width="160"/>
                 <DataGridTextColumn
                     x:Name="AmountOfItemsColumn"
                     Binding="{Binding AmountOfItems}"
-                    Header="Amount Of Items"
+                    Header="מספר סוגי הפרטים"
                     Width="160"/>
                 <DataGridTextColumn
                     x:Name="TotalPriceColumn"
                     Binding="{Binding TotalPrice}"
-                    Header="Total Price"
+                    Header="סהכ לתשלום"
                     Width="160"/>
                 <DataGridTextColumn
                     x:Name="StatusColumn"
                     Binding="{Binding Status}"
-                    Header="Status"
+                    Header="סטטוס ההזמנה"
                     Width="160"/>
             </DataGrid.Columns>
         </DataGrid>

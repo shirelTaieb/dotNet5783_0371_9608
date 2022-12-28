@@ -39,7 +39,7 @@ namespace PL.orders
             BO.Order or = new BO.Order();
             or = bl!.Order!.getOrderInfo(ofl.ID)!;
             orderWindow data = new orderWindow(or);
-            data.Show();
+            data.Show();    
         }
     }
 }

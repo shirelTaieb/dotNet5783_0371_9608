@@ -20,12 +20,14 @@ namespace PL.orders
     public partial class orderWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
+        private BO.Order UpdateOrder = new BO.Order();
         public orderWindow(BO.Order order)
         {
             InitializeComponent();
             orderUpdate.DataContext = order;
             statusComboBox.ItemsSource = Enum.GetValues(typeof(BO.HebOrderStatus));
         }
+
 
     }
 }
