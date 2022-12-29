@@ -24,7 +24,7 @@ namespace PL.orders
         public orderListWindow()
         {
             InitializeComponent();
-            var list = bl!.Order!.getOrderList();
+            var list = bl!.Order!.getOrderList();  
             orderForListDataGrid.DataContext = list;
             orderForListDataGrid.IsReadOnly = true;
         }

@@ -100,7 +100,6 @@ internal class Order : BLApi.IOrder
         {
             boorder = DoOrderToBo(or); //from do to bo
             ofl= BoOrderToOrderForList(boorder!);//from order to orderforlist
-
             orders.Add(ofl);
         }
         return orders;

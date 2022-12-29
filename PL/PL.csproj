@@ -24,10 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="cart\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="download.png" />
     <Resource Include="pngegg.png" />
     <Resource Include="W_960_sell-online.png" />

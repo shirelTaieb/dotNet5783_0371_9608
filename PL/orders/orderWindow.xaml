@@ -39,8 +39,8 @@
             </StackPanel>
         </StackPanel>
         <Image HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="100" Source="/orders/download.png" Margin="10,10,0,0"/>
-        <Button x:Name="toSent" Content="&quot;עדכן סטטוס ל&quot;נשלח" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Center" Width="108" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Click="toSent_Click" Grid.Row="1"/>
-        <Button x:Name="toDeliverd" Content="&quot;עדכן סטטוס ל&quot;נמסר" Margin="75,0,217,0" VerticalAlignment="Top" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" BorderThickness="1" Grid.RowSpan="2" Grid.Row="1" />
+        <Button x:Name="toSent" Content="&quot;עדכן סטטוס ל&quot;נשלח" Margin="75,0,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.RowSpan="2" Grid.Row="1" Click="toSent_Click"/>
+        <Button x:Name="toDelivery" Content="&quot;עדכן סטטוס ל&quot;נמסר" Margin="75,0,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.RowSpan="2" Grid.Row="1" Click="toDelivery_Click"/>
     </Grid>
 
 </Window>

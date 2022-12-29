@@ -11,7 +11,7 @@ namespace PL.customer
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
 
-        public customerProductListWindow()
+        public customerProductListWindow(BO.Cart my_cart)
         {
             InitializeComponent();
             var list = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);

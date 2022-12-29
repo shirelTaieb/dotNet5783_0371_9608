@@ -1,5 +1,6 @@
 ﻿using BlImplementation;
 using Microsoft.VisualBasic;
+using PL.cart;
 using PL.customer;
 using PL.orders;
 using PL.products;
@@ -28,9 +29,11 @@ namespace PL
     public partial class MainWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
+        BO.Cart my_cart = new BO.Cart();
         public MainWindow()
         {
             InitializeComponent();
+            
         }
        
    
@@ -55,20 +58,24 @@ namespace PL
             customer.IsEnabled =false;
             katelog.Visibility = Visibility.Visible;
             cart.Visibility = Visibility.Visible;
+           
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
-            customerProductListWindow productListCustomer = new customerProductListWindow();
+            customerProductListWindow productListCustomer = new customerProductListWindow(my_cart);
             productListCustomer.Show();
         }
         public void cart_Click(object o, RoutedEventArgs e)
         {
-            MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
-            MessageBox.Show("?מה, יפול מהשמיים", "");
-            MessageBox.Show(" ככה זה בחיים", "");
-            MessageBox.Show(" צריך לעבוד קשה", "");
-            MessageBox.Show("דברים לא באים בקלות", "");
+            //MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
+            //MessageBox.Show("?מה, יפול מהשמיים", "");
+            //MessageBox.Show(" ככה זה בחיים", "");
+            //MessageBox.Show(" צריך לעבוד קשה", "");
+            //MessageBox.Show("דברים לא באים בקלות", "");
             //MessageBox.Show("גם למוצלחות כמוך", "");
+            cartWindow myCart = new cartWindow(my_cart);
+            myCart.Show();
+
 
         }
 
