@@ -14,9 +14,9 @@ namespace BlImplementation
             if (cart == null) //if the cart is null we build a new cart.
                 cart = new BO.Cart();
             DO.Product? temp = new DO.Product();
-            temp = Dal!.Product.GetById(prID);//get the product from Do by id
-            if (temp == null)
-                throw new BO.doseNotExistException();
+            try { temp = Dal!.Product.GetById(prID); }//get the product from Do by id
+            catch
+            { throw new BO.doseNotExistException(); }
             BO.OrderItem orit = new BO.OrderItem(); //cast from Do to bo.orderitem
             if (!(cart.Items!.Exists(or => or!.ProductID == prID))) //if the product isnt exist in the cart.
             {
@@ -65,11 +65,11 @@ namespace BlImplementation
             }
             if (newAmount > temp.Amount)//אם הכמות גדלה - תפעל בדומה להוספת מוצר לסל קניות שכבר קיים בסל קניות כנ"ל
             {
-                DO.Product? newProductToAdd = new DO.Product();
-                newProductToAdd = Dal!.Product.GetById(IDpr);
-                if (newProductToAdd == null)
-                    throw new BO.doseNotExistException();
-                if (newProductToAdd?.InStock >= (newAmount - temp.Amount)) //there are enagh products in stock.
+                DO.Product newProductToAdd = new DO.Product();
+                try { newProductToAdd = Dal!.Product.GetById(IDpr); }
+                catch
+                { throw new BO.doseNotExistException(); }
+                if (newProductToAdd.InStock >= (newAmount - temp.Amount)) //there are enagh products in stock.
                     foreach (var item in cart!.Items!) //we do foreach because we want to change the object in the cart
                     {
                         if (item!.ProductID == IDpr)  //this loop will happen just one time
@@ -131,7 +131,9 @@ namespace BlImplementation
             foreach (var item in castListToDo)  
             {
                 Dal.OrderItem.Add(item); //הוספה לרשימת פריטי ההזמנה
-                DO.Product pr = Dal.Product.GetById(item.ProductID) ?? throw new BO.doseNotExistException(); //בקשת המוצר משכבת הנתונים
+                DO.Product pr;
+                try { pr = Dal.Product.GetById(item.ProductID); }
+                catch { throw new BO.doseNotExistException(); } //בקשת המוצר משכבת הנתונים
                 pr.InStock -= item.Amount;//עדכון המלאי
                 Dal.Product.Update(pr); //עדכון המוצר בשכבת הנתונים
             }

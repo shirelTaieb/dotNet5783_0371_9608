@@ -14,9 +14,14 @@ namespace PL.orders
         public orderWindow(BO.Order order)
         {
             InitializeComponent();
-            orderUpdate.DataContext = order;
+            Status_order.DataContext = (BO.HebOrderStatus)order.Status!; //we want that the status will be wrriten in Hebrew.
+            orderUpdate.DataContext = order; //connect the order to the window
             UpdateOrder = order;
-            //statusComboBox.ItemsSource = Enum.GetValues(typeof(BO.HebOrderStatus));
+        }
+
+        private void toSent_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         //private void statusComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

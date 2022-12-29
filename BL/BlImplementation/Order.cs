@@ -24,7 +24,7 @@ internal class Order : BLApi.IOrder
         ofl.ID = or.ID;
         ofl.CustomerName = or.CustomerName;
         ofl.Status = or.Status;
-        ofl.AmountOfItems = or.Items.Count();
+        ofl.AmountOfItems = or.Items!.Count();
         ofl.TotalPrice = or.TotalPrice;
         return ofl;
     }
@@ -96,7 +96,7 @@ internal class Order : BLApi.IOrder
         //    from order in temp
         //    select order;  //we want all of the orders
         //result.ToList();
-        foreach (DO.Order? or in temp)
+        foreach (DO.Order or in temp)
         {
             boorder = DoOrderToBo(or); //from do to bo
             ofl= BoOrderToOrderForList(boorder!);//from order to orderforlist
@@ -110,7 +110,9 @@ internal class Order : BLApi.IOrder
         //מזהה- שהוא מספר חיובי בן 4 ספרות
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
-        DO.Order? temp = Dal!.Order.GetById(orderID);
+        DO.Order temp;
+        try { temp = Dal!.Order.GetById(orderID); }
+        catch { throw new BO.doseNotExistException(); }
         BO.Order? boorder = new BO.Order();
         boorder = DoOrderToBo(temp);
         return boorder;
@@ -120,8 +122,9 @@ internal class Order : BLApi.IOrder
         //מזהה- שהוא מספר חיובי בן 4 ספרות
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
-        DO.Order temp = Dal!.Order.GetById(orderID)??throw new BO.doseNotExistException();
-        if (temp.ShipDate != null)//|| temp.ShipDate !=DateTime.MinValue)
+        DO.Order temp;
+        try{ temp = Dal!.Order.GetById(orderID); }catch { throw new BO.doseNotExistException(); }
+        if (temp.ShipDate != null)
             throw new BO.wrongDataException();
         temp.ShipDate = DateTime.Now; 
         try
@@ -141,7 +144,8 @@ internal class Order : BLApi.IOrder
         //מזהה- שהוא מספר חיובי בן 4 ספרות
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
-        DO.Order temp = Dal!.Order.GetById(orderID) ?? throw new BO.doseNotExistException();
+        DO.Order temp;
+        try {temp = Dal!.Order.GetById(orderID); } catch { throw new BO.doseNotExistException(); }
         if (temp.ShipDate == null)
             throw new BO.doseNotSentYet(); 
         if (temp.DeliveryDate!= null)
@@ -165,7 +169,8 @@ internal class Order : BLApi.IOrder
         //מזהה- שהוא מספר חיובי בן 6 ספרות
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
-        DO.Order temp = Dal?.Order.GetById(orderID)??throw new BO.doseNotExistException();//get the order from the data according to id
+        DO.Order temp;
+        try { temp = Dal!.Order.GetById(orderID); } catch { throw new BO.doseNotExistException(); }//get the order from the data according to id
         BO.OrderTracking ot = new BO.OrderTracking();
         ot.ID = orderID;
         ot.Status =getStatus(temp);
