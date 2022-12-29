@@ -6,20 +6,22 @@
         xmlns:local="clr-namespace:PL.customer"
         mc:Ignorable="d"
         Title="customerProductListWindow" Height="450" Width="800">
-    <Grid Name="MainGrid" Background="#FFDEDBD2">
+    <Grid Name="MainGrid" Background="#DCE1DE">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Grid Name="UpGrid" Height="auto" Grid.Row="0" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions >
-            <Label Grid.Column="2" Content=":סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF49A078" Foreground= "White" FontFamily="Segoe UI Variable Display Semibold" Width="160" Height="46" VerticalContentAlignment="Center" FontSize="18" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="categorySelector" HorizontalAlignment="Center" Grid.Column="0" SelectedItem="{Binding HebCategory}" VerticalAlignment="Center" Width="320" Height="45" SelectionChanged="categorySelector_SelectionChanged"/>
+        <Grid>
+            <Label Content=" :סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#DCE1DE" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="756" Height="56" VerticalContentAlignment="Center" FontSize="25" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <ComboBox x:Name="categorySelector" SelectedItem="{Binding HebCategory}" VerticalAlignment="Center" Height="34" SelectionChanged="categorySelector_SelectionChanged" Margin="448,0,127,0" FontWeight="Bold" FontFamily="Arial" FontSize="16">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#DCE1DE"/>
+                        <GradientStop Color="#FFB0C4B1" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
             <!--<ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
                     <ComboBoxItem Content="₪50 עד" />
                     <ComboBoxItem Content="₪100 עד" />
@@ -29,10 +31,10 @@
                 </ComboBox>-->
         </Grid>
         <Grid x:Name="TVGrid" Grid.Row="1">
-            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" Height="410"  Background="#9CC5A1" VerticalAlignment="Top" Width="800" Grid.Row="1" SelectionChanged="ListOfProducts_SelectionChanged">
+            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" Height="410"  Background="#FFB0C4B1" VerticalAlignment="Top" Width="800" Grid.Row="1" SelectionChanged="ListOfProducts_SelectionChanged">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                      <UniformGrid Columns="3" />
+                        <UniformGrid Columns="3" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ListView.ItemTemplate>

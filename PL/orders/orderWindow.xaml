@@ -18,8 +18,8 @@
                 <TextBlock x:Name="CustomerName_order"  Text="{Binding CustomerName}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" VerticalAlignment="Bottom" />
                 <TextBlock x:Name="CustomerEmail_order"  Text="{Binding CustomerEmail}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" VerticalAlignment="Bottom" />
                 <TextBlock x:Name="CustomerAddress_order"  Text="{Binding CustomerAddress}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" />
-                <TextBlock x:Name="Items_order"  Text="{Binding Items.Count}" Width="130" Height="30" TextAlignment="Right" Foreground="#FF465153"  FontSize="18" FontFamily="Calibri" FontWeight="Bold" TextDecorations="{x:Null}" />
-                <TextBlock x:Name="price_order"  Text="{Binding TotalPrice}" Width="130" Height="30" TextAlignment="Right" Foreground="#FF465153"  FontSize="18" FontFamily="Calibri" FontWeight="Bold" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="Items_order"  Text="{Binding Items.Count}" Width="130" Height="30" TextAlignment="Right" Foreground="#FF465153"  FontSize="18" FontFamily="Calibri" FontWeight="Normal" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="price_order"  Text="{Binding TotalPrice}" Width="130" Height="40" TextAlignment="Right" Foreground="#FF465153"  FontSize="18" FontFamily="Calibri" FontWeight="Normal" TextDecorations="{x:Null}" />
                 <!--<ComboBox  x:Name="statusComboBox" SelectedItem="{Binding Status}" Background="#FFB0C4B1" Width="150" Height="30" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="#FF465153" BorderBrush="#FFB0C4B1"/>-->
                 <TextBlock x:Name="Status_order"  Text="{Binding}" Width="130" Height="50" TextAlignment="Center" Foreground="#FF465153"  FontSize="18" FontFamily="Narkisim" FontWeight="Bold" TextDecorations="{x:Null}"  HorizontalAlignment="Center" />
                 <TextBlock x:Name="OrderDate_order"  Text="{Binding OrderDate}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Calibri" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" FontSize="13" />
@@ -31,7 +31,7 @@
                 <TextBlock x:Name="email"  Text=":דואר אלקטרוני" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Left" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
                 <TextBlock x:Name="CustomerAddress"  Text=":כתובת מגורים" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
                 <TextBlock x:Name="Items"  Text=":מספר מוצרים" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="price"  Text=":סהכ לתשלום" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="price"  Text=":סהכ לתשלום" Width="140" TextAlignment="Right" Height="40" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
                 <TextBlock x:Name="status"  Text=":סטטוס הזמנה" Width="140" TextAlignment="Right" Height="50" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
                 <TextBlock x:Name="OrderDate"  Text=":תאריך הזמנה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
                 <TextBlock x:Name="ShipDate"  Text=":תאריך שליחה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
@@ -39,8 +39,10 @@
             </StackPanel>
         </StackPanel>
         <Image HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="100" Source="/orders/download.png" Margin="10,10,0,0"/>
-        <Button x:Name="toSent" Content="&quot;עדכן סטטוס ל&quot;נשלח" Margin="75,0,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.RowSpan="2" Grid.Row="1" Click="toSent_Click"/>
-        <Button x:Name="toDelivery" Content="&quot;עדכן סטטוס ל&quot;נמסר" Margin="75,0,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.RowSpan="2" Grid.Row="1" Click="toDelivery_Click"/>
+        <Button x:Name="toSent" Content="&quot;עדכן סטטוס ל&quot;נשלח" Margin="75,10,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.Row="1" Click="toSent_Click" Grid.RowSpan="2"/>
+        <Button x:Name="toDelivery" Content="&quot;עדכן סטטוס ל&quot;נמסר" Margin="75,10,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.Row="1" Click="toDelivery_Click" Grid.RowSpan="2"/>
+        <TextBlock x:Name="shekalim"  TextAlignment="Right" HorizontalAlignment="Left" Margin="50,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontFamily="Narkisim" FontSize="16" Foreground="#FF465153"><Run FlowDirection="RightToLeft" Text="ש&quot;ח"/></TextBlock>
+        <TextBlock x:Name="sougim" HorizontalAlignment="Left" Margin="62,197,0,0" TextWrapping="Wrap" Text="סוגי מוצרים" VerticalAlignment="Top" Width="116" TextAlignment="Right" FontFamily="Narkisim" FontSize="14" Foreground="#FF465153"/>
     </Grid>
 
 </Window>
