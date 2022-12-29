@@ -27,6 +27,7 @@ internal class Product : BLApi.IProduct
         temp.Price = prod.Price;
         temp.InStock = prod.InStock;
         temp.Category = (DO.Category?)prod.Category;
+        temp.path = prod.path;
         return temp;
     }
     public void addNewProduct(BO.Product? pr)

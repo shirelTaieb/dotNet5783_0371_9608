@@ -55,7 +55,6 @@ namespace PL.products
             if (upPro != null)
             { 
                 productWindow updateProduct = new productWindow(upPro);
-                updateProduct.id.IsReadOnly = true;
                 updateProduct.ShowDialog();
             }
         }

@@ -1,25 +1,10 @@
-﻿using BlImplementation;
-using Microsoft.VisualBasic;
-using PL.cart;
+﻿using PL.cart;
 using PL.customer;
 using PL.orders;
 using PL.products;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Media.Media3D;
 
 namespace PL
 {
@@ -33,10 +18,10 @@ namespace PL
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
-       
-   
+
+
         public void return_back(object o, RoutedEventArgs e)
         {
             customer.IsEnabled = true;
@@ -51,14 +36,12 @@ namespace PL
         }
         public void customer_Click(object o, RoutedEventArgs e)
         {
-            //MainCustomer mainCustomer = new MainCustomer();
-            //mainCustomer.Show();
-            //this.Close();
-            return_back(o,e);
-            customer.IsEnabled =false;
+
+            return_back(o, e);
+            customer.IsEnabled = false;
             katelog.Visibility = Visibility.Visible;
             cart.Visibility = Visibility.Visible;
-           
+
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
@@ -107,12 +90,24 @@ namespace PL
         {
             productListWindow productListManager = new productListWindow();
             productListManager.Show();
+            //Main.NavigationService.Navigate(new ProductListPage(this));
+            //return_back(o, e);
+            //customer.Visibility = Visibility.Hidden;
+            //manager.Visibility = Visibility.Hidden;
+            //managerImage.Visibility = Visibility.Hidden;
+            //cartImage.Visibility = Visibility.Hidden;
+
+
         }
         public void orders_Click(object o, RoutedEventArgs e)
         {
             orderListWindow orderListManager = new orderListWindow();
             orderListManager.Show();
-            
+
         }
+        //public void GoBackToStartPage()
+        //{
+        //    Main.Content = this.Content;
+        //}
     }
 }
