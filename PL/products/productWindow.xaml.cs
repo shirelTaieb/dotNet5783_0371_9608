@@ -24,7 +24,7 @@ namespace PL.products
         private BLApi.IBl? bl = BLApi.Factory.Get();
         private PO.Product pl=new PO.Product();
         private BO.Product UpdateOrNewProduct=new BO.Product();
-        public productWindow(BO.ProductForList? updateProduct=null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
+        public productWindow(PO.ProductForList? updateProduct=null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
             categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory));
@@ -34,14 +34,14 @@ namespace PL.products
             {
                 Add.Visibility = Visibility.Hidden;
                 UpdateOrNewProduct = bl!.Product!.getProductInfoManager(updateProduct.ID)!;
-                pl = BoToPo(UpdateOrNewProduct);
+                pl = BoToPo(UpdateOrNewProduct);  //casting to po
                 productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
                 
             }
             else  //כשרוצים להוסיף
             {
                 Update.Visibility = Visibility.Hidden;
-                productAddOrUpdate.DataContext = UpdateOrNewProduct;  //קישור חלון ההוספה למוצר חדש שנוסיף לרשימה
+                productAddOrUpdate.DataContext = pl;  //קישור חלון ההוספה למוצר חדש שנוסיף לרשימה
 
             }
         }
@@ -51,7 +51,7 @@ namespace PL.products
             p.ID = Bopro.ID;
             p.Name = Bopro.Name;
             p.path = Bopro.path;
-            p.InStock= Bopro.InStock;
+            p.InStock = Bopro.InStock;
             p.Category =(BO.HebCategory?)Bopro.Category;
             p.Price = Bopro.Price;
             return p;
@@ -74,7 +74,6 @@ namespace PL.products
             UpdateOrNewProduct = PoToBo(pl);
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
             bl!.Product!.addNewProduct(UpdateOrNewProduct);
-
             MessageBox.Show(":) המוצר נוסף בהצלחה", "");
             this.Close();
         }
@@ -94,7 +93,7 @@ namespace PL.products
 
         private void categoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            UpdateOrNewProduct.Category= (BO.Category)categoryComboBox.SelectedItem;
+            pl.Category= (BO.HebCategory)categoryComboBox.SelectedItem;
 
         }
         //private BO.Product castForListToRegular(BO.ProductForList pfl)

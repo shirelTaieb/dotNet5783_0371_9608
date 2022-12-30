@@ -1,5 +1,8 @@
 ﻿using BO;
+using PL.products;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace PL.customer
@@ -14,8 +17,20 @@ namespace PL.customer
         public customerProductListWindow(BO.Cart my_cart)
         {
             InitializeComponent();
-            var list = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);
-            ListOfProducts.ItemsSource = list;
+            var list = bl!.Product!.getListOfProduct()!;
+            var poList =
+            from pro in list
+            select new PO.ProductForList
+            {
+                ID = pro.ID,
+              Name = pro.Name,
+              Price = pro.Price,
+              Category = (BO.HebCategory?)pro.Category,
+             path = pro.path
+            };
+            //  ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval(poList);
+              ListOfProducts.ItemsSource = poList;
+
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
         }
@@ -36,10 +51,23 @@ namespace PL.customer
         private void categorySelector_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var item = categorySelector.SelectedItem;
+            IEnumerable<BO.ProductForList?> boList = new List<BO.ProductForList?>();
             if ((int)item == 5)
-                ListOfProducts.ItemsSource = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);
+                boList = bl!.Product!.getListOfProduct()!;
             else
-                ListOfProducts.ItemsSource = bl!.Product!.IEnumerableToObserval(bl!.Product!.getPartOfProduct(pro => pro!.Category == (BO.Category)item)!);
+                boList = bl!.Product!.getPartOfProduct(pro => pro!.Category == (BO.Category)item)!;
+            var poList =
+         from pro in boList
+         select new PO.ProductForList
+         {
+             ID = pro.ID,
+             Name = pro.Name,
+             Price = pro.Price,
+             Category = (BO.HebCategory?)pro.Category,
+             path = pro.path
+         };
+            // ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval((IEnumerable<PO.ProductForList>)poList);
+            ListOfProducts.ItemsSource = poList;
         }
     }
 

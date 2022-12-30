@@ -43,19 +43,19 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="nameColumn"
-                                    Binding="{Binding Name}" 
+                                    Binding="{Binding Name, Mode=TwoWay}" 
                                     Header="שם הספר"
                                     Width="200"/>
                 <DataGridTextColumn x:Name="idColumn"
-                                    Binding="{Binding ID}"
+                                    Binding="{Binding ID, Mode=TwoWay}"
                                     Header="תעודת זהות"
                                     Width="200"/>
                 <DataGridTextColumn x:Name="categoryColumn"
-                                    Binding="{Binding Category}"
+                                    Binding="{Binding Category, Mode=TwoWay}"
                                     Header="קטגוריה"
                                     Width="200"/>
                 <DataGridTextColumn x:Name="priceColumn"
-                                    Binding="{Binding Price}"
+                                    Binding="{Binding Price, Mode=TwoWay}"
                                     Header="מחיר"
                                     Width="200"/>
             </DataGrid.Columns>

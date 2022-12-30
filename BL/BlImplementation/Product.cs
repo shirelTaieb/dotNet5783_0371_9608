@@ -12,13 +12,7 @@ internal class Product : BLApi.IProduct
     /// <param name="prod"></param>
     /// <returns></returns>
     private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();
-    public ObservableCollection<BO.ProductForList> IEnumerableToObserval(IEnumerable<BO.ProductForList> listToCast)
-    {
-        ObservableCollection<BO.ProductForList> result=new ObservableCollection<BO.ProductForList>();
-        foreach (BO.ProductForList item in listToCast)
-            result.Add(item);
-        return result;
-    }
+
     internal DO.Product BOproductToDO(BO.Product prod)
     {
         DO.Product temp = new DO.Product();

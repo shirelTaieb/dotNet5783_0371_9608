@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Windows;
-
 
 namespace PL.PO
 {
-    public class Product : INotifyPropertyChanged
+    public class ProductForList : INotifyPropertyChanged
     {
 
         /// <summary>
@@ -45,19 +43,7 @@ namespace PL.PO
                 }
             }
         }
-        private int _InStock;
-        public int InStock
-        {
-            get { return _InStock; }
-            set
-            {
-                _InStock = value;
-                if (PropertyChanged != null)
-                {
-                    PropertyChanged(this, new PropertyChangedEventArgs("InStock"));
-                }
-            }
-        }
+  
         private BO.HebCategory? _Category;
         public BO.HebCategory? Category
         {
@@ -100,5 +86,3 @@ namespace PL.PO
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }
- 
-

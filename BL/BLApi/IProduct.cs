@@ -10,7 +10,6 @@ namespace BLApi
 {
     public interface IProduct
     {
-        public ObservableCollection<BO.ProductForList> IEnumerableToObserval(IEnumerable<BO.ProductForList> listToCast);
         /// <summary>
         /// מנהל מוסיף מוצר חדש
         /// </summary>
