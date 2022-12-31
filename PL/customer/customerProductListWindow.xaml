@@ -31,7 +31,7 @@
                 </ComboBox>-->
         </Grid>
         <Grid x:Name="TVGrid" Grid.Row="1">
-            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" Height="410"  Background="#FFB0C4B1" VerticalAlignment="Top" Width="800" Grid.Row="1" SelectionChanged="ListOfProducts_SelectionChanged">
+            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" Height="378"  Background="#FFB0C4B1" VerticalAlignment="Center" Width="800" SelectionChanged="ListOfProducts_SelectionChanged">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Columns="4" />

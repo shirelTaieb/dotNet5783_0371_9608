@@ -39,7 +39,6 @@
                 <TextBlock x:Name="DeliveryDate"  Text=":תאריך מסירה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
             </StackPanel>
         </StackPanel>
-        <Image HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="100" Source="/orders/download.png" Margin="10,10,0,0"/>
         <Button x:Name="toSent" Content="&quot;עדכן סטטוס ל&quot;נשלח" Margin="75,10,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.Row="1" Click="toSent_Click" Grid.RowSpan="2"/>
         <Button x:Name="toDelivery" Content="&quot;עדכן סטטוס ל&quot;נמסר" Margin="75,10,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.Row="1" Click="toDelivery_Click" Grid.RowSpan="2"/>
         <TextBlock x:Name="shekalim"  TextAlignment="Right" HorizontalAlignment="Left" Margin="50,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontFamily="Narkisim" FontSize="16" Foreground="#FF465153"><Run FlowDirection="RightToLeft" Text="ש&quot;ח"/></TextBlock>

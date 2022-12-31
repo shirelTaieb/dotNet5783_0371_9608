@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800" Background="#B0C4B1" MouseDown="return_back">
     <Grid>
         <Border Height="50" Margin="0,-400,0,0" >
-            
+
         </Border>
         <Border Height="350" Margin="0,50,0,0" BorderBrush="Black"  >
             <Frame x:Name="Main"  />
@@ -30,7 +30,9 @@
         <Button x:Name="confirm" Content="כניסה" HorizontalAlignment="Left" Margin="530,311,0,0" Width="70" Height="20" VerticalAlignment="Top" Click="check_password" Background="#FF1F2421" Foreground="#FFDCE1DE" Visibility="Hidden"/>
         <Button x:Name="products" Content="ניהול מוצרים" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="460,337,0,0" VerticalAlignment="Top" Click="products_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
         <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="460,290,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-        <Image  x:Name="managerImage" HorizontalAlignment="Left" Height="97" Margin="516,93,0,0" VerticalAlignment="Top" Width="136" Source="/pngegg.png"/>
-        <Image  x:Name="cartImage" HorizontalAlignment="Left" Height="123" Margin="148,80,0,0" VerticalAlignment="Top" Width="216" Source="/W_960_sell-online.png"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="136,67,0,0" VerticalAlignment="Top" Width="200" />
+        <Image HorizontalAlignment="Left" Height="106" Margin="511,81,0,0" VerticalAlignment="Top" Width="118" Source="..\PL\images\manager.png" />
+
+
     </Grid>
 </Window>
