@@ -24,8 +24,18 @@ namespace PL.orders
         public orderListWindow()
         {
             InitializeComponent();
-            var list = bl!.Order!.getOrderList();  
-            orderForListDataGrid.DataContext = list;
+            var list = bl!.Order!.getOrderList();
+            var poList =
+                from or in list
+                select new PO.OrderForList
+                {
+                    ID = or.ID,
+                    CustomerName = or.CustomerName,
+                    AmountOfItems = or.AmountOfItems,
+                    Status = (BO.HebOrderStatus?)or.Status,
+                    TotalPrice = or.TotalPrice
+                };
+            orderForListDataGrid.DataContext = poList;
             orderForListDataGrid.IsReadOnly = true;
         }
 
@@ -35,7 +45,7 @@ namespace PL.orders
         }
         private void orderUpdate_DoubleClick(object sender, RoutedEventArgs e)
         {
-            BO.OrderForList ofl = (BO.OrderForList)orderForListDataGrid.SelectedItem;
+            PO.OrderForList ofl = (PO.OrderForList)orderForListDataGrid.SelectedItem;
             BO.Order or = new BO.Order();
             or = bl!.Order!.getOrderInfo(ofl.ID)!;
             orderWindow data = new orderWindow(or);
