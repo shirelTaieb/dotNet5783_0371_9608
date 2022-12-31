@@ -48,7 +48,7 @@
                                     Width="200"/>
                 <DataGridTextColumn x:Name="idColumn"
                                     Binding="{Binding ID}"
-                                    Header="תעודת זהות"
+                                    Header="מספר מזהה ספר"
                                     Width="200"/>
                 <DataGridTextColumn x:Name="categoryColumn"
                                     Binding="{Binding Category}"
