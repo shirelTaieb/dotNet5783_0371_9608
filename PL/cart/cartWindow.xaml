@@ -7,7 +7,14 @@
         mc:Ignorable="d"
         Title="cartWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="בווווו" HorizontalAlignment="Left" FontSize="40" Margin="149,242,0,0" VerticalAlignment="Top" Height="72" Width="362"/>
+        <ListView  x:Name="listOfItemInCart"  Background="#FFB0C4B1"  d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
 
     </Grid>
 </Window>

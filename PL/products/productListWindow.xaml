@@ -49,6 +49,8 @@
                 <DataGridTextColumn x:Name="idColumn"
                                     Binding="{Binding ID, Mode=TwoWay}"
                                     Header="תעודת זהות"
+                                    Binding="{Binding ID}"
+                                    Header="מספר מזהה ספר"
                                     Width="200"/>
                 <DataGridTextColumn x:Name="categoryColumn"
                                     Binding="{Binding Category, Mode=TwoWay}"

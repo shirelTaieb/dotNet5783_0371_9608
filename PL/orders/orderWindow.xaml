@@ -16,27 +16,45 @@
         <TextBlock x:Name="ID_order" Text="{Binding ID}" Margin="140,37,50,178" Foreground="#FF465153" FontFamily="Calibri" FontSize="30" FontWeight="Bold" TextAlignment="Center"/>
         <StackPanel Orientation="Horizontal" Width="300" Height="300" VerticalAlignment="Top" Margin="50,100,50,0" Grid.RowSpan="3">
             <StackPanel Width="160" Height="300" VerticalAlignment="Bottom">
-                <TextBlock x:Name="CustomerName_order"  Text="{Binding CustomerName}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" VerticalAlignment="Bottom" />
-                <TextBlock x:Name="CustomerEmail_order"  Text="{Binding CustomerEmail}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" VerticalAlignment="Bottom" />
-                <TextBlock x:Name="CustomerAddress_order"  Text="{Binding CustomerAddress}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" />
-                <TextBlock x:Name="Items_order"  Text="{Binding Items.Count}" Width="130" Height="30" TextAlignment="Right" Foreground="#FF465153"  FontSize="18" FontFamily="Calibri" FontWeight="Normal" TextDecorations="{x:Null}" />
-                <TextBlock x:Name="price_order"  Text="{Binding TotalPrice}" Width="130" Height="40" TextAlignment="Right" Foreground="#FF465153"  FontSize="18" FontFamily="Calibri" FontWeight="Normal" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="CustomerName_order"  Text="{Binding CustomerName}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153"
+                           FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" VerticalAlignment="Bottom" />
+                <TextBlock x:Name="CustomerEmail_order"  Text="{Binding CustomerEmail}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153"
+                           FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" VerticalAlignment="Bottom" />
+                <TextBlock x:Name="CustomerAddress_order"  Text="{Binding CustomerAddress}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153"
+                           FontSize="18" FontFamily="Sitka Banner" FontWeight="Bold" />
+                <TextBlock x:Name="Items_order"  Text="{Binding Items.Count}" Width="130" Height="30" TextAlignment="Right" Foreground="#FF465153"
+                           FontSize="18" FontFamily="Calibri" FontWeight="Normal" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="price_order"  Text="{Binding TotalPrice}" Width="130" Height="40" TextAlignment="Right" Foreground="#FF465153"
+                           FontSize="18" FontFamily="Calibri" FontWeight="Normal" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="Status_order"  Text="{Binding}" Width="130" Height="50" TextAlignment="Center" Foreground="#FF465153"
+                           FontSize="18" FontFamily="Narkisim" FontWeight="Bold" TextDecorations="{x:Null}"  HorizontalAlignment="Center" />
+                <TextBlock x:Name="OrderDate_order"  Text="{Binding OrderDate}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Calibri" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" FontSize="13" />
+                <TextBlock x:Name="ShipDate_order"  Text="{Binding ShipDate}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
+                <TextBlock x:Name="DeliveryDate_order"  Text="{Binding DeliveryDate}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
                 <!--<ComboBox  x:Name="statusComboBox" SelectedItem="{Binding Status}" Background="#FFB0C4B1" Width="150" Height="30" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="#FF465153" BorderBrush="#FFB0C4B1"/>-->
-                <TextBlock x:Name="Status_order"  Text="{Binding}" Width="130" Height="50" TextAlignment="Center" Foreground="#FF465153"  FontSize="18" FontFamily="Narkisim" FontWeight="Bold" TextDecorations="{x:Null}"  HorizontalAlignment="Center" />
-                <TextBlock x:Name="OrderDate_order"  Text="{Binding OrderDate}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Calibri" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" FontSize="13" />
-                <TextBlock x:Name="ShipDate_order"  Text="{Binding ShipDate}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
-                <TextBlock x:Name="DeliveryDate_order"  Text="{Binding DeliveryDate}" Width="160" Height="30" TextAlignment="Center" Foreground="#FF465153" FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
             </StackPanel>
             <StackPanel Width="140" Height="300" VerticalAlignment="Bottom">
-                <TextBlock x:Name="name"  Text=":שם לקוח" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="email"  Text=":דואר אלקטרוני" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Left" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="CustomerAddress"  Text=":כתובת מגורים" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="Items"  Text=":מספר מוצרים" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="price"  Text=":סהכ לתשלום" Width="140" TextAlignment="Right" Height="40" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="status"  Text=":סטטוס הזמנה" Width="140" TextAlignment="Right" Height="50" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="OrderDate"  Text=":תאריך הזמנה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="ShipDate"  Text=":תאריך שליחה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-                <TextBlock x:Name="DeliveryDate"  Text=":תאריך מסירה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch" FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="name"  Text=":שם לקוח" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="email"  Text=":דואר אלקטרוני" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Left"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="CustomerAddress"  Text=":כתובת מגורים" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="Items"  Text=":מספר מוצרים" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="price"  Text=":סהכ לתשלום" Width="140" TextAlignment="Right" Height="40" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="status"  Text=":סטטוס הזמנה" Width="140" TextAlignment="Right" Height="50" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="OrderDate"  Text=":תאריך הזמנה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="ShipDate"  Text=":תאריך שליחה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
+                <TextBlock x:Name="DeliveryDate"  Text=":תאריך מסירה" Width="140" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
             </StackPanel>
         </StackPanel>
         <Button x:Name="toSent" Content="&quot;עדכן סטטוס ל&quot;נשלח" Margin="75,10,217,0" VerticalAlignment="Top" Visibility="Collapsed" Background="#FF465153" Foreground="White" BorderBrush="Black" FontSize="11" Grid.Row="1" Click="toSent_Click" Grid.RowSpan="2"/>
