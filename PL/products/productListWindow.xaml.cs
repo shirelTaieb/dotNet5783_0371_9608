@@ -73,8 +73,6 @@ namespace PL.products
                  };
                 productForListDataGrid.DataContext = IEnumerableToObserval(poList);
             }
-
-
         }
         public void Add_Click(object sender, RoutedEventArgs e)
         {

@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows;
 
-namespace PL.convertModels
+namespace PL.Convert
 {
-    //public class ConvertToVisibility : IValueConverter
-    //{
-    //    public object NullToVisibilityConverter(object value, Type targetType, object parameter, CultureInfo culture)
-    //    {
-    //        if (value == null)  //we dont want it will be apear
-    //            return Visibility.Collapsed;
-    //        return Visibility.Visible;
-    //    }
+    public class NotIsEnableToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((bool)value == false)
+                return Visibility.Visible;
+            return Visibility.Collapsed;
+          
+        }
 
-    //    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    //    {
-    //        throw new NotImplementedException();
-    //    }
-    //}
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((Visibility)value == Visibility.Visible)
+                return false;
+            return true;
+        }
+    }
 }

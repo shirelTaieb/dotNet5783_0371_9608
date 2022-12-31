@@ -28,9 +28,6 @@ namespace PL
             manager.IsEnabled = true;
             katelog.Visibility = Visibility.Hidden;
             cart.Visibility = Visibility.Hidden;
-            password.Visibility = Visibility.Hidden;
-            enter_password.Visibility = Visibility.Hidden;
-            confirm.Visibility = Visibility.Hidden;
             products.Visibility = Visibility.Hidden;
             orders.Visibility = Visibility.Hidden;
         }
@@ -73,15 +70,8 @@ namespace PL
         }
         public void check_password(object o, RoutedEventArgs e)
         {
-            //SecureString? Password =null;
-            //const string truePassword = "123456";
-            //password.DataContext = Password;
-            //SecureString s = enter_password.SecurePassword;
-            //if (s == truePassword)
-            //    MessageBox.Show("סיסמא נכונה", "");
+            
             password.Visibility = Visibility.Hidden;
-            enter_password.Visibility = Visibility.Hidden;
-            confirm.Visibility = Visibility.Hidden;
             products.Visibility = Visibility.Visible;
             orders.Visibility = Visibility.Visible;
 
