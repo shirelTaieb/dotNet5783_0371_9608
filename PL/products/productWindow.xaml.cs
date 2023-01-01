@@ -36,10 +36,16 @@ namespace PL.products
             if (updateProduct != null)  //כשרוצים לעדכן
             {
                 Add.Visibility = Visibility.Hidden;
-                UpdateOrNewProduct = bl!.Product!.getProductInfoManager(updateProduct.ID)!;
-                pl = BoToPo(UpdateOrNewProduct);  //casting to po
-                productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
-                
+                try
+                {
+                    UpdateOrNewProduct = bl!.Product!.getProductInfoManager(updateProduct.ID)!;
+                    pl = BoToPo(UpdateOrNewProduct);  //casting to po
+                    productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else  //כשרוצים להוסיף
             {
@@ -88,15 +94,27 @@ namespace PL.products
             });
             MessageBox.Show(":) המוצר נוסף בהצלחה", "");
             this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private void update_click(object sender, RoutedEventArgs e)
         {
-            UpdateOrNewProduct = PoToBo(pl);
+            try
+            {
+                UpdateOrNewProduct = PoToBo(pl);
             bl!.Product!.updateProduct(UpdateOrNewProduct);
            
             MessageBox.Show(":) המוצר עודכן בהצלחה", "");
             //קריאה לפונקציה שבאמת תעדכן את הפרודקט
             this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void stock_TextChanged(object sender, TextChangedEventArgs e)

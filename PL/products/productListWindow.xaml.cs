@@ -33,7 +33,6 @@ namespace PL.products
             productForListDataGrid.DataContext = productCollection;
             productForListDataGrid.IsReadOnly = true;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
-
         }
 
         private void priceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -22,17 +22,29 @@ namespace PL.orders
             if  ((int)order.Status == 1)
                 toDelivery.Visibility = Visibility.Visible;
         }
-
         private void toSent_Click(object sender, RoutedEventArgs e)
         {
-            bl!.Order!.updateSentOrder(or.ID);
-            MessageBox.Show("סטטוס עודכן לנשלח", "");
+            try
+            {
+                bl!.Order!.updateSentOrder(or.ID);
+                MessageBox.Show("סטטוס עודכן לנשלח", "");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private void toDelivery_Click(object sender, RoutedEventArgs e)
         {
-            bl!.Order!.updateDeliveryOrder(or.ID);
-            MessageBox.Show("סטטוס עודכן לנמסר", "");
+            try
+            {
+                bl!.Order!.updateDeliveryOrder(or.ID);
+                MessageBox.Show("סטטוס עודכן לנמסר", "");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
-
     }
 }

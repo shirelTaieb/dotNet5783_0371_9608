@@ -37,10 +37,15 @@ namespace BLApi
         /// <param name="IDpr"></param>
         /// <returns></returns>
         public IEnumerable<BO.ProductForList?> getPartOfProduct(Func<BO.ProductForList?, bool>? filter = null);
+        /// <summary>
+        /// Exception: No Exception
+        /// </summary>
+        /// <returns></returns>
 
         public IEnumerable<BO.ProductForList?> getListOfProduct();
         /// <summary>
         /// מציג למנהל לפי קוד המוצר את פרטי המוצר הבאים: מספר מוצר, שם מוצר מחיר, קטגוריה וכמות במלאי  
+        /// Exception: No Exception
         /// </summary>
         /// <param name="pr"></param>
         public BO.Product getProductInfoManager(int IDpr);
