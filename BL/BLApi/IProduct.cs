@@ -14,7 +14,7 @@ namespace BLApi
         /// מנהל מוסיף מוצר חדש
         /// </summary>
         /// <param name="IDpr"></param>
-        public void addNewProduct(BO.Product? pr);
+        public int addNewProduct(BO.Product? pr);
 
 
         /// <summary>

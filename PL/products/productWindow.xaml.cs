@@ -1,4 +1,5 @@
-﻿using BLApi;
+﻿//בס"ד
+using BLApi;
 using BO;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,14 @@ namespace PL.products
         private BLApi.IBl? bl = BLApi.Factory.Get();
         private PO.Product pl=new PO.Product();
         private BO.Product UpdateOrNewProduct=new BO.Product();
-        public productWindow(PO.ProductForList? updateProduct=null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
+        Action<PO.ProductForList> action;
+        public productWindow( Action<PO.ProductForList> addToObservalCollection, PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
             categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory));
-           
-           
+            action = addToObservalCollection;
+
+
             if (updateProduct != null)  //כשרוצים לעדכן
             {
                 Add.Visibility = Visibility.Hidden;
@@ -72,8 +75,17 @@ namespace PL.products
         private void add_click(object sender, RoutedEventArgs e)
         {
             UpdateOrNewProduct = PoToBo(pl);
+       
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
-            bl!.Product!.addNewProduct(UpdateOrNewProduct);
+            int id=bl!.Product!.addNewProduct(UpdateOrNewProduct);
+
+            action(new PO.ProductForList()
+            {
+                ID = id,
+                Name = UpdateOrNewProduct.Name,
+                Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
+                Price = UpdateOrNewProduct.Price,
+            });
             MessageBox.Show(":) המוצר נוסף בהצלחה", "");
             this.Close();
         }
@@ -81,6 +93,7 @@ namespace PL.products
         {
             UpdateOrNewProduct = PoToBo(pl);
             bl!.Product!.updateProduct(UpdateOrNewProduct);
+           
             MessageBox.Show(":) המוצר עודכן בהצלחה", "");
             //קריאה לפונקציה שבאמת תעדכן את הפרודקט
             this.Close();

@@ -14,7 +14,7 @@ namespace PL.products
     public partial class productListWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-
+        public ObservableCollection<PO.ProductForList>? productCollection { get; set; }
         public productListWindow()
         {
             InitializeComponent();
@@ -29,7 +29,8 @@ namespace PL.products
                     Category = (BO.HebCategory?)item.Category,
                     path = item.path
                 };
-            productForListDataGrid.DataContext = IEnumerableToObserval(poList);
+            productCollection=IEnumerableToObserval(poList);
+            productForListDataGrid.DataContext = productCollection;
             productForListDataGrid.IsReadOnly = true;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
@@ -77,11 +78,12 @@ namespace PL.products
         public void Add_Click(object sender, RoutedEventArgs e)
         {
 
-            productWindow AddProduct = new productWindow();
+            productWindow AddProduct = new productWindow(addProduct);
             AddProduct.id.Visibility = Visibility.Collapsed;
             AddProduct.id_lable.Visibility = Visibility.Collapsed;
             AddProduct.ShowDialog();
             //צריך להוסיף בפועל את המוצרר
+
 
         }
 
@@ -91,8 +93,20 @@ namespace PL.products
             PO.ProductForList? poUpPro = (PO.ProductForList)productForListDataGrid.SelectedItem;
             if (poUpPro != null)
             {
-                productWindow updateProduct = new productWindow(poUpPro);
+                productWindow updateProduct = new productWindow(addProduct,poUpPro);
                 updateProduct.ShowDialog();
+                var boList = bl!.Product!.getListOfProduct()!;
+                var poList =
+                    from pro in boList
+                    select new PO.ProductForList
+                    {
+                        ID = pro.ID,
+                        Name = pro.Name,
+                        Category = (BO.HebCategory?)pro.Category,
+                        Price = pro.Price,
+                        path = pro.path
+                    };
+                productForListDataGrid.DataContext = IEnumerableToObserval(poList);
             }
             
         }
@@ -103,12 +117,14 @@ namespace PL.products
         }
         public ObservableCollection<PO.ProductForList> IEnumerableToObserval(IEnumerable<PO.ProductForList> listToCast)
         {
-            ObservableCollection<PO.ProductForList> result = new ObservableCollection<PO.ProductForList>();
+            productCollection = new ObservableCollection<PO.ProductForList>();
             foreach (PO.ProductForList item in listToCast)
-                result.Add(item);
-            return result;
+                productCollection.Add(item);
+            return productCollection;
 
         }
+        public void addProduct(PO.ProductForList productToAdd) => productCollection?.Add(productToAdd);
+
 
     }
 }

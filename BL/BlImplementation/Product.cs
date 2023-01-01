@@ -24,7 +24,7 @@ internal class Product : BLApi.IProduct
         temp.path = prod.path;
         return temp;
     }
-    public void addNewProduct(BO.Product? pr)
+    public int addNewProduct(BO.Product? pr)
     {
         //בדיקת תקינות קלט
         if (pr==null)
@@ -51,7 +51,7 @@ internal class Product : BLApi.IProduct
         catch  //if getById say that the product is not exist
         {
             temp = BOproductToDO(pr);
-            Dal?.Product.Add(temp);
+            return Dal!.Product.Add(temp);
         }
     }
     public void deleteProduct(int IDpr)
