@@ -47,9 +47,16 @@ namespace PL.orders
         {
             PO.OrderForList ofl = (PO.OrderForList)orderForListDataGrid.SelectedItem;
             BO.Order or = new BO.Order();
+            try
+            { 
             or = bl!.Order!.getOrderInfo(ofl.ID)!;
             orderWindow data = new orderWindow(or);
-            data.Show();    
+            data.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message,"",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
         }
     }
 }

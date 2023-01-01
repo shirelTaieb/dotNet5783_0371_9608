@@ -95,7 +95,7 @@ internal class Order : BLApi.IOrder
         //var result =
         //    from order in temp
         //    select order;  //we want all of the orders
-        //result.ToList();
+        //result.ToList();//ניסיון להמיר פוראיצ ללינק ללא הצלחה
         foreach (DO.Order or in temp)
         {
             boorder = DoOrderToBo(or); //from do to bo
@@ -174,7 +174,6 @@ internal class Order : BLApi.IOrder
         ot.ID = orderID;
         ot.Status =getStatus(temp);
         return ot;
-
     }
     //בונוס.. צריך לעשות אם רוצים.
     //public BO.OrderTracking updateAmountOrder(int orderID)

@@ -17,6 +17,7 @@ namespace BLApi
         public IEnumerable<BO.OrderForList?> getOrderList();
         /// <summary>
         /// מחזיר פרטי הזמנה
+        /// Exception: No Exception
         /// </summary>
         /// <param name="prID"></param>
         /// <returns></returns>

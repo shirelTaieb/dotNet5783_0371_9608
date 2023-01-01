@@ -18,21 +18,21 @@ namespace PL.products
         public productListWindow()
         {
             InitializeComponent();
-            var list = bl!.Product!.getListOfProduct()!;
-            var poList =
-                from item in list
-                select new PO.ProductForList
-                {
-                    ID = item.ID,
-                    Name = item.Name,
-                    Price = item.Price,
-                    Category = (BO.HebCategory?)item.Category,
-                    path = item.path
-                };
-            productForListDataGrid.DataContext = IEnumerableToObserval(poList);
-            productForListDataGrid.IsReadOnly = true;
+                var list = bl!.Product!.getListOfProduct()!;
+                var poList =
+                    from item in list
+                    select new PO.ProductForList
+                    {
+                        ID = item.ID,
+                        Name = item.Name,
+                        Price = item.Price,
+                        Category = (BO.HebCategory?)item.Category,
+                        path = item.path
+                    };
+                productForListDataGrid.DataContext = IEnumerableToObserval(poList);
+                productForListDataGrid.IsReadOnly = true;
+            
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
-
         }
 
         private void priceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
