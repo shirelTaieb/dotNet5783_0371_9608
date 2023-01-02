@@ -17,8 +17,8 @@ namespace PL.customer
         private BO.Cart cart= new BO.Cart();
         public customerProductListWindow(BO.Cart my_cart)
         {
-            cart = my_cart;
             InitializeComponent();
+            cart = my_cart;
             var list = bl!.Product!.getListOfProduct()!;
             var poList =
             from pro in list
@@ -44,7 +44,7 @@ namespace PL.customer
         }
         public void addToCart_Click(object sender, RoutedEventArgs e)
         {
-            BO.ProductItem selectPro = (BO.ProductItem)ListOfProducts.SelectedItem; //להחזיר לPO
+            PO.ProductItem selectPro = (PO.ProductItem)ListOfProducts.SelectedItem; 
             cartWindow newProductToCart = new cartWindow(cart,selectPro);
             newProductToCart.ShowDialog(); //לפתוח חלונית הוספה
         }

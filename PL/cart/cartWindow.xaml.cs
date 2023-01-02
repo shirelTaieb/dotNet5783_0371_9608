@@ -23,8 +23,8 @@ namespace PL.cart
         private BLApi.IBl? bl = BLApi.Factory.Get();
         int counter = 1;
         double? total = 0;
-        BO.ProductItem productitem = new BO.ProductItem(); //להחזיר לPOOOOO
-        public cartWindow(BO.Cart? my_cart,BO.ProductItem proToAdd) //כנללל
+        PO.ProductItem productitem = new PO.ProductItem(); 
+        public cartWindow(BO.Cart? my_cart,PO.ProductItem proToAdd) 
         {
             InitializeComponent();
             amount.DataContext = counter;
