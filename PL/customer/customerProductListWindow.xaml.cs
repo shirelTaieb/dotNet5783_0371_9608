@@ -1,4 +1,5 @@
 ﻿using BO;
+using PL.cart;
 using PL.products;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace PL.customer
     public partial class customerProductListWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-
+        public BO.Cart? cart=new BO.Cart();
         public customerProductListWindow(BO.Cart my_cart)
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace PL.customer
             };
             //  ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval(poList);
               ListOfProducts.ItemsSource = poList;
-
+            cart=my_cart;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
         }
@@ -40,6 +41,9 @@ namespace PL.customer
         }
         public void addToCart_Click(object sender, RoutedEventArgs e)
         {
+            cartWindow newProductToCart = new cartWindow(cart);
+            newProductToCart.ShowDialog(); //לפתוח חלונית הוספה
+
 
         }
 

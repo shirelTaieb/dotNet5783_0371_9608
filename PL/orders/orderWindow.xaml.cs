@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BO;
+using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -11,6 +13,7 @@ namespace PL.orders
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
         private BO.Order or=new BO.Order();
+        ObservableCollection<PO.OrderForList> orderCollection = new ObservableCollection<PO.OrderForList>();
         public orderWindow(BO.Order order)
         {
             InitializeComponent();
@@ -26,8 +29,21 @@ namespace PL.orders
         {
             try
             {
-                bl!.Order!.updateSentOrder(or.ID);
+               // BO.Order notUpdateOrder = bl!.Order!.getOrderInfo(or.ID)!; //קבלת הפרטים של ההזמנה לפני העדכון סטטוס
+              
+               /* BO.Order upOrder=*/bl!.Order!.updateSentOrder(or.ID);
+                //PO.OrderForList poUpOrder = new PO.OrderForList()
+                //{
+                //    ID = upOrder.ID,
+                //    TotalPrice = upOrder.TotalPrice,
+                //    Status = (HebOrderStatus?)upOrder.Status,
+                //    CustomerName = upOrder.CustomerName,
+                //    AmountOfItems = upOrder.Items!.Count
+                //};
+              
+                
                 MessageBox.Show("סטטוס עודכן לנשלח", "");
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -40,6 +56,7 @@ namespace PL.orders
             {
                 bl!.Order!.updateDeliveryOrder(or.ID);
                 MessageBox.Show("סטטוס עודכן לנמסר", "");
+                this.Close();
             }
             catch (Exception ex)
             {

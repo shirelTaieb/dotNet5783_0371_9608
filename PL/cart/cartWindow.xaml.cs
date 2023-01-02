@@ -22,6 +22,11 @@ namespace PL.cart
         public cartWindow(BO.Cart my_cart)
         {
             InitializeComponent();
+            if(my_cart != null)
+                 cartListView.DataContext = my_cart;
+        }
+        public void productListView_MouseDoubleClick(object o,RoutedEventArgs e)
+        {
 
         }
     }

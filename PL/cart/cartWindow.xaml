@@ -7,14 +7,23 @@
         mc:Ignorable="d"
         Title="cartWindow" Height="450" Width="800">
     <Grid>
-        <ListView  x:Name="listOfItemInCart"  Background="#FFB0C4B1"  d:ItemsSource="{d:SampleData ItemCount=5}">
+        <ListView x:Name="cartListView" Grid.Row="1"
+                  ItemsSource="{Binding}"
+                  Margin="2,7,3,5" Grid.ColumnSpan="2"
+                 MouseDoubleClick="productListView_MouseDoubleClick" >
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.136"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListView.RenderTransform>
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-
-
-    </Grid>
+      </Grid>
 </Window>

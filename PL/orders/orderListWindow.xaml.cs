@@ -1,6 +1,7 @@
 ﻿using BLApi;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace PL.orders
     public partial class orderListWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
+        ObservableCollection<PO.OrderForList>? orderCollection=new ObservableCollection<PO.OrderForList>();
         public orderListWindow()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace PL.orders
                     Status = (BO.HebOrderStatus?)or.Status,
                     TotalPrice = or.TotalPrice
                 };
-            orderForListDataGrid.DataContext = poList;
+            orderForListDataGrid.DataContext = IEnumerableToObserval(poList);
             orderForListDataGrid.IsReadOnly = true;
         }
 
@@ -51,12 +53,32 @@ namespace PL.orders
             { 
             or = bl!.Order!.getOrderInfo(ofl.ID)!;
             orderWindow data = new orderWindow(or);
-            data.Show();
+            data.ShowDialog();
+                var list = bl!.Order!.getOrderList();
+                var poList =
+                    from order in list
+                    select new PO.OrderForList
+                    {
+                        ID = order.ID,
+                        CustomerName = order.CustomerName,
+                        AmountOfItems = order.AmountOfItems,
+                        Status = (BO.HebOrderStatus?)order.Status,
+                        TotalPrice = order.TotalPrice
+                    };
+                orderForListDataGrid.DataContext = IEnumerableToObserval(poList);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message,"",MessageBoxButton.OK,MessageBoxImage.Error);
             }
+        }
+        public ObservableCollection<PO.OrderForList> IEnumerableToObserval(IEnumerable<PO.OrderForList> listToCast)
+        {
+            orderCollection = new ObservableCollection<PO.OrderForList>();
+            foreach (PO.OrderForList item in listToCast)
+                orderCollection.Add(item);
+            return orderCollection;
+
         }
     }
 }
