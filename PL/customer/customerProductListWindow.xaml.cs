@@ -41,10 +41,9 @@ namespace PL.customer
         }
         public void addToCart_Click(object sender, RoutedEventArgs e)
         {
-            cartWindow newProductToCart = new cartWindow(cart);
+            BO.ProductItem selectPro = (BO.ProductItem)ListOfProducts.SelectedItem; //להחזיר לPO
+            cartWindow newProductToCart = new cartWindow(cart,selectPro);
             newProductToCart.ShowDialog(); //לפתוח חלונית הוספה
-
-
         }
 
         private void priceSelector_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -72,6 +71,10 @@ namespace PL.customer
          };
             // ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval((IEnumerable<PO.ProductForList>)poList);
             ListOfProducts.ItemsSource = poList;
+        }
+        private void mouseOnTheBottun(object sender,RoutedEventArgs e)
+        {
+            //addToCart.IsEnabled = false;
         }
     }
 

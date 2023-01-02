@@ -5,25 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.cart"
         mc:Ignorable="d"
-        Title="cartWindow" Height="450" Width="800">
-    <Grid>
-        <ListView x:Name="cartListView" Grid.Row="1"
-                  ItemsSource="{Binding}"
-                  Margin="2,7,3,5" Grid.ColumnSpan="2"
-                 MouseDoubleClick="productListView_MouseDoubleClick" >
-            <ListView.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.136"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ListView.RenderTransform>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        Title="cartWindow" Height="200" Width="344" Background="#FF8FA590" >
+    <Grid Margin="0,0,344,0">
+        <StackPanel Margin="78,15,-260,2">
+            <TextBlock Text="הוספה לעגלה" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
+            <Image MaxHeight="30" MaxWidth="30" Source="{Binding path}"/>
+            <TextBlock x:Name="name" Text="{Binding Name}"/>
+            <TextBlock x:Name="totalPrice" Text="{Binding}"/>
+            <StackPanel Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Button FontFamily="Segoe UI Symbol" Content="&#xE110;" Click="up_Click" />
+                <TextBox x:Name="amount" Text="{Binding Path=counter}" />
+                <Button FontFamily="Segoe UI Symbol" Content="&#xE1FD;"/>
+            </StackPanel>
+            
+        </StackPanel>
       </Grid>
 </Window>

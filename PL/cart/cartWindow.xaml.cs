@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +20,41 @@ namespace PL.cart
     /// </summary>
     public partial class cartWindow : Window
     {
-        public cartWindow(BO.Cart my_cart)
+        private BLApi.IBl? bl = BLApi.Factory.Get();
+        int counter = 1;
+        double? total = 0;
+        BO.ProductItem productitem = new BO.ProductItem(); //להחזיר לPOOOOO
+        public cartWindow(BO.Cart? my_cart,BO.ProductItem proToAdd) //כנללל
         {
             InitializeComponent();
-            if(my_cart != null)
-                 cartListView.DataContext = my_cart;
+            amount.DataContext = counter;
+            total =  proToAdd.Price;//in the first time the price is for one product
+            productitem=proToAdd;
+            totalPrice.DataContext = total;
         }
-        public void productListView_MouseDoubleClick(object o,RoutedEventArgs e)
-        {
 
+        private void up_Click(object sender, RoutedEventArgs e)
+        {
+            if (counter < bl!.Product!.getProductInfoManager(productitem.ID).InStock)
+            {
+                total += productitem.Price;
+                counter++;
+            }
+            else
+            {
+                MessageBox.Show("במלאי יש {counter} מוצרים בלבד", "");
+            }
+
+        }
+        private void down_Click(object sender, RoutedEventArgs e)
+        {
+            if (counter != 1)
+            {
+                total -= productitem.Price;
+                counter--;
+            }
+            else
+                MessageBox.Show("אין אפשרות להוסיף פחות ממוצר אחד", "");
         }
     }
 }
