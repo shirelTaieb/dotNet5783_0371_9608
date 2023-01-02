@@ -1,4 +1,5 @@
 ﻿using BO;
+using PL.cart;
 using PL.products;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace PL.customer
             };
             //  ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval(poList);
               ListOfProducts.ItemsSource = poList;
-
+            cart=my_cart;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
         }
@@ -43,6 +44,9 @@ namespace PL.customer
         }
         public void addToCart_Click(object sender, RoutedEventArgs e)
         {
+            cartWindow newProductToCart = new cartWindow(cart);
+            newProductToCart.ShowDialog(); //לפתוח חלונית הוספה
+
 
         }
 

@@ -85,18 +85,18 @@ namespace PL.products
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
             int id=bl!.Product!.addNewProduct(UpdateOrNewProduct);
             try
-            { 
-            action(new PO.ProductForList()
             {
-                ID = id,
-                Name = UpdateOrNewProduct.Name,
-                Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
-                Price = UpdateOrNewProduct.Price,
-            });
-            MessageBox.Show(":) המוצר נוסף בהצלחה", "");
-            this.Close();
+                action(new PO.ProductForList()
+                {
+                    ID = id,
+                    Name = UpdateOrNewProduct.Name,
+                    Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
+                    Price = UpdateOrNewProduct.Price,
+                });
+                MessageBox.Show(":) המוצר נוסף בהצלחה", "");
+                this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
