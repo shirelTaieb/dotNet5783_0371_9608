@@ -53,7 +53,7 @@ namespace PL
             //MessageBox.Show(" צריך לעבוד קשה", "");
             //MessageBox.Show("דברים לא באים בקלות", "");
             //MessageBox.Show("גם למוצלחות כמוך", "");
-            cartWindow myCart = new cartWindow(my_cart);
+            CartListWindow myCart = new CartListWindow(my_cart);
             myCart.Show();
 
 
@@ -80,7 +80,8 @@ namespace PL
         {
             productListWindow productListManager = new productListWindow();
             productListManager.Show();
-            //Main.NavigationService.Navigate(new ProductListPage(this));
+            //frame.NavigationService.Navigate(new ProductListPage(this));
+            //frame.Content = new ProductListPage();
             //return_back(o, e);
             //customer.Visibility = Visibility.Hidden;
             //manager.Visibility = Visibility.Hidden;
@@ -95,6 +96,11 @@ namespace PL
             orderListManager.Show();
 
         }
+        //public void returnToTheMainWindow_Click(object o, RoutedEventArgs e)
+        //{
+            
+        //}
+
         //public void GoBackToStartPage()
         //{
         //    Main.Content = this.Content;

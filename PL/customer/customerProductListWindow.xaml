@@ -35,11 +35,23 @@
                     <ComboBoxItem Content="₪200+" />
                 </ComboBox>-->
         </Grid>
-        <Grid x:Name="TVGrid" Grid.Row="1" Grid.ColumnSpan="3">
-            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" Height="378"  Background="#FFB0C4B1" VerticalAlignment="Center" Width="800" SelectionChanged="ListOfProducts_SelectionChanged">
+        <Grid x:Name="TVGrid" Grid.Row="1">
+            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" Height="378"  Background="#FFB0C4B1" Width="800" SelectionChanged="ListOfProducts_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Center" HorizontalContentAlignment="Center"   >
+                
+                <ListView.ItemTemplateSelector>
+                    <DataTemplateSelector/>
+                </ListView.ItemTemplateSelector>
+                <ListView.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListView.RenderTransform>
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Columns="4" />
+                        <UniformGrid Columns="4"  />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ListView.ItemTemplate>
@@ -48,9 +60,7 @@
                             <Image Source="{Binding path}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="80" />
                             <TextBlock x:Name="Name" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontStyle="Italic" />
                             <TextBlock x:Name="Price" Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
-                            <TextBlock x:Name="AmountInCart" Text="{Binding AmountInCart}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
-                            <TextBlock x:Name="InStock" Text="{Binding InStock}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
-                            <Button x:Name="addToCart" Content="הוסף לסל" Foreground="#FFDCE1DE"  Click="addToCart_Click" Background="#216869" Width="100" Height="30" Margin="0,0,0,0" />
+                            <Button x:Name="addToCart" Content="הוסף לסל" MouseEnter="mouseOnTheBottun" Foreground="#FFDCE1DE" IsEnabled="True" Click="addToCart_Click" Background="#216869" Width="100" Height="30" Margin="0,0,0,0" />
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

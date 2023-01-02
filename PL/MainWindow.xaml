@@ -11,12 +11,13 @@
         <PL.Convert:NotIsEnableToVisibilityConverter x:Key="myConverter"></PL.Convert:NotIsEnableToVisibilityConverter>
     </Window.Resources>
     <Grid>
-        <Border Height="50" Margin="0,-400,0,0" >
-
+        <Border Margin="0,-8,0,372">
+            <Button Width="80" Margin="0,5,720,0" >
+                <Image  Source="/images/Logo.jpg" Stretch="Fill"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="80"/>
+            </Button>
         </Border>
-        <Border Height="350" Margin="0,50,0,0" BorderBrush="Black"  >
-            <Frame x:Name="Main"  />
-        </Border>
+        <Frame x:Name="frame" Height="350" Margin="0,50,0,0"></Frame>
+        <Border Height="350" Margin="0,50,0,0" BorderBrush="Black"  />
         <Button x:Name="manager" Content="מנהל"  Padding="15" HorizontalAlignment="Left" Margin="496,203,0,0" VerticalAlignment="Top" Click="manager_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="136" Height="64" FontSize="20" FontWeight="Bold">
             <Button.Effect>
                 <DropShadowEffect/>

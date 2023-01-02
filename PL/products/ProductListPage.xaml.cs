@@ -1,5 +1,8 @@
 ﻿//using BO;
 //using System;
+//using System.Collections.Generic;
+//using System.Collections.ObjectModel;
+//using System.Linq;
 //using System.Windows;
 //using System.Windows.Controls;
 
@@ -10,16 +13,27 @@
 //    /// </summary>
 //    public partial class ProductListPage : Page
 //    {
+
 //        private BLApi.IBl? bl = BLApi.Factory.Get();
-//        MainWindow main=new MainWindow();
-//        public ProductListPage(MainWindow main_window)
+//        public ObservableCollection<PO.ProductForList>? productCollection { get; set; }
+//        public ProductListPage()
 //        {
 //            InitializeComponent();
-//            var list = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);
-//            productForListDataGrid.DataContext = list;
+//            var list = bl!.Product!.getListOfProduct()!;
+//            var poList =
+//                from item in list
+//                select new PO.ProductForList
+//                {
+//                    ID = item.ID,
+//                    Name = item.Name,
+//                    Price = item.Price,
+//                    Category = (BO.HebCategory?)item.Category,
+//                    path = item.path
+//                };
+//            productCollection = IEnumerableToObserval(poList);
+//            productForListDataGrid.DataContext = productCollection;
 //            productForListDataGrid.IsReadOnly = true;
 //            categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
-//            main = main_window;
 //        }
 
 //        private void priceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -31,43 +45,88 @@
 //        {
 //            var item = categorySelector.SelectedItem;
 //            if ((int)item == 5)
-//                productForListDataGrid.DataContext = bl!.Product!.IEnumerableToObserval(bl!.Product!.getListOfProduct()!);
+//            {
+//                var boList = bl!.Product!.getListOfProduct()!;
+//                var poList =
+//                    from pro in boList
+//                    select new PO.ProductForList
+//                    {
+//                        ID = pro.ID,
+//                        Name = pro.Name,
+//                        Category = (BO.HebCategory?)pro.Category,
+//                        Price = pro.Price,
+//                        path = pro.path
+//                    };
+//                productForListDataGrid.DataContext = IEnumerableToObserval(poList);
+//            }
 //            else
-//                productForListDataGrid.DataContext = bl!.Product!.IEnumerableToObserval(bl!.Product!.getPartOfProduct(pro => pro!.Category == (BO.Category)item)!);
-
-
-
+//            {
+//                var boList = bl!.Product!.getPartOfProduct(pro => pro!.Category == (BO.Category)item)!;
+//                var poList =
+//                 from pro in boList
+//                 select new PO.ProductForList
+//                 {
+//                     ID = pro.ID,
+//                     Name = pro.Name,
+//                     Category = (BO.HebCategory?)pro.Category,
+//                     Price = pro.Price,
+//                     path = pro.path
+//                 };
+//                productForListDataGrid.DataContext = IEnumerableToObserval(poList);
+//            }
 //        }
 //        public void Add_Click(object sender, RoutedEventArgs e)
 //        {
 
-//            productWindow AddProduct = new productWindow();
+//            productWindow AddProduct = new productWindow(addProduct);
 //            AddProduct.id.Visibility = Visibility.Collapsed;
 //            AddProduct.id_lable.Visibility = Visibility.Collapsed;
 //            AddProduct.ShowDialog();
 //            //צריך להוסיף בפועל את המוצרר
+
 
 //        }
 
 
 //        public void update_Click(object sender, RoutedEventArgs e)
 //        {
-//            BO.ProductForList? upPro = (ProductForList)productForListDataGrid.SelectedItem;
-//            if (upPro != null)
+//            PO.ProductForList? poUpPro = (PO.ProductForList)productForListDataGrid.SelectedItem;
+//            if (poUpPro != null)
 //            {
-//                productWindow updateProduct = new productWindow(upPro);
+//                productWindow updateProduct = new productWindow(addProduct, poUpPro);
 //                updateProduct.ShowDialog();
+//                var boList = bl!.Product!.getListOfProduct()!;
+//                var poList =
+//                    from pro in boList
+//                    select new PO.ProductForList
+//                    {
+//                        ID = pro.ID,
+//                        Name = pro.Name,
+//                        Category = (BO.HebCategory?)pro.Category,
+//                        Price = pro.Price,
+//                        path = pro.path
+//                    };
+//                productForListDataGrid.DataContext = IEnumerableToObserval(poList);
 //            }
+
 //        }
 
 //        private void productForListDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
 //        {
 
 //        }
+//        public ObservableCollection<PO.ProductForList> IEnumerableToObserval(IEnumerable<PO.ProductForList> listToCast)
+//        {
+//            productCollection = new ObservableCollection<PO.ProductForList>();
+//            foreach (PO.ProductForList item in listToCast)
+//                productCollection.Add(item);
+//            return productCollection;
 
+//        }
+//        public void addProduct(PO.ProductForList productToAdd) => productCollection?.Add(productToAdd);
 //        private void Button_Click(object sender, RoutedEventArgs e)
 //        {
-//           // main.GoBackToStartPage();
+//            // main.GoBackToStartPage();
 //        }
 //    }
 //}
