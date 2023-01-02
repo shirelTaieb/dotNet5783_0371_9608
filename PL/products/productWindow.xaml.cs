@@ -84,7 +84,8 @@ namespace PL.products
        
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
             int id=bl!.Product!.addNewProduct(UpdateOrNewProduct);
-
+            try
+            { 
             action(new PO.ProductForList()
             {
                 ID = id,

@@ -13,19 +13,22 @@ namespace PL.customer
     public partial class customerProductListWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-
+        private BO.Cart cart= new BO.Cart();
         public customerProductListWindow(BO.Cart my_cart)
         {
+            cart = my_cart;
             InitializeComponent();
             var list = bl!.Product!.getListOfProduct()!;
             var poList =
             from pro in list
-            select new PO.ProductForList
+            select new PO.ProductItem
             {
                 ID = pro.ID,
-              Name = pro.Name,
-              Price = pro.Price,
-              Category = (BO.HebCategory?)pro.Category,
+                Name = pro.Name,
+                Price = pro.Price,
+                Category = (BO.HebCategory?)pro.Category,
+                AmountInCart = bl.Product.getProductInfoCustomer(pro.ID, my_cart).Amount,
+                InStock = bl.Product.getProductInfoCustomer(pro.ID, my_cart).InStock,
              path = pro.path
             };
             //  ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval(poList);
@@ -53,17 +56,21 @@ namespace PL.customer
             var item = categorySelector.SelectedItem;
             IEnumerable<BO.ProductForList?> boList = new List<BO.ProductForList?>();
             if ((int)item == 5)
-                boList = bl!.Product!.getListOfProduct()!;
+            {
+                boList = bl!.Product!.getListOfProduct()!; 
+            }
             else
                 boList = bl!.Product!.getPartOfProduct(pro => pro!.Category == (BO.Category)item)!;
             var poList =
          from pro in boList
-         select new PO.ProductForList
+         select new PO.ProductItem
          {
              ID = pro.ID,
              Name = pro.Name,
              Price = pro.Price,
              Category = (BO.HebCategory?)pro.Category,
+             AmountInCart = bl.Product.getProductInfoCustomer(pro.ID, cart).Amount,
+             InStock = bl.Product.getProductInfoCustomer(pro.ID, cart).InStock,
              path = pro.path
          };
             // ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval((IEnumerable<PO.ProductForList>)poList);

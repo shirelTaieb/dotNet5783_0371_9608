@@ -13,8 +13,9 @@ namespace BO
         public string? Name { get; set; }
         public double ? Price { get; set; }
         public Category? Category { get; set; }
-        public int Amount { get; set; }
+        public int Amount { get; set; } //in cart
         public bool InStock { get; set; }
+        public string? path{ get; set; }// הוספרתי אבל זה בטח יצא טעויות
         public override string ToString() => this.ToStringProperty();
 
     }
