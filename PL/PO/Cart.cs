@@ -61,8 +61,8 @@ namespace PL.PO
                 }
             }
         }
-        private  List<BO.OrderItem?>? _Items;
-        public  List<BO.OrderItem?>? Items
+        private  List<PO.OrderItem?>? _Items;
+        public  List<PO.OrderItem?>? Items
         {
             get { return _Items; }
             set
