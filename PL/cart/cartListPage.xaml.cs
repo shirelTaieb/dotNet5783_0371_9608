@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,13 @@ namespace PL.cart
     /// </summary>
     public partial class cartListPage : Page
     {
+        private BLApi.IBl? bl = BLApi.Factory.Get();
+        private BO.Cart cart = new BO.Cart();
         public cartListPage(BO.Cart my_cart)
         {
             InitializeComponent();
-            if (my_cart != null)
-                cartListView.DataContext = my_cart;
+            cart = my_cart;
+
         }
     }
 }
