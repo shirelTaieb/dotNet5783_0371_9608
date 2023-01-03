@@ -30,11 +30,11 @@
                     <ComboBoxItem Content="₪200+" />
                 </ComboBox>-->
         </Grid>
-        <Grid x:Name="TVGrid" Grid.Row="1" Margin="0,0,0,0">
-            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" MouseDoubleClick="productData_Click"   Background="#FFB0C4B1" VerticalAlignment="Center" Width="800" SelectionChanged="ListOfProducts_SelectionChanged" >
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="4"  VerticalAlignment="Center"/>
+        <Grid x:Name="TVGrid" Grid.Row="1" >
+            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" MouseDoubleClick="productData_Click"  Background="#FFB0C4B1" VerticalAlignment="Center" Width="800" SelectionChanged="ListOfProducts_SelectionChanged" Height="409" IsSynchronizedWithCurrentItem="True" RenderTransformOrigin="0.5,0.5" Margin="0,0,-2,0" HorizontalContentAlignment="Center" >
+                <ItemsControl.ItemsPanel >
+                    <ItemsPanelTemplate >
+                        <UniformGrid Columns="3"  />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ListView.ItemTemplate>
