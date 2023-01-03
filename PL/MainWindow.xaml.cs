@@ -24,6 +24,8 @@ namespace PL
 
         public void return_back(object o, RoutedEventArgs e)
         {
+            customer.Visibility = Visibility.Visible;
+            manager.Visibility = Visibility.Visible;
             customer.IsEnabled = true;
             manager.IsEnabled = true;
             katelog.Visibility = Visibility.Hidden;
@@ -42,20 +44,19 @@ namespace PL
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
-            customerProductListWindow productListCustomer = new customerProductListWindow(my_cart);
-            productListCustomer.Show();
+            frame.Content = new customerListPage(my_cart);
+            return_back(o, e);
+            customer.Visibility = Visibility.Hidden;
+            manager.Visibility = Visibility.Hidden;
+
         }
         public void cart_Click(object o, RoutedEventArgs e)
         {
-            //MessageBox.Show("?עוד לא עשינו, איך יהיה", "");
-            //MessageBox.Show("?מה, יפול מהשמיים", "");
-            //MessageBox.Show(" ככה זה בחיים", "");
-            //MessageBox.Show(" צריך לעבוד קשה", "");
-            //MessageBox.Show("דברים לא באים בקלות", "");
-            //MessageBox.Show("גם למוצלחות כמוך", "");
-            CartListWindow myCart = new CartListWindow(my_cart);
-            myCart.Show();
-
+     
+            frame.Content = frame.Content = new cartListPage(my_cart);
+            return_back(o, e);
+            customer.Visibility = Visibility.Hidden;
+            manager.Visibility = Visibility.Hidden;
 
         }
 
@@ -78,32 +79,31 @@ namespace PL
         }
         public void products_Click(object o, RoutedEventArgs e)
         {
-            productListWindow productListManager = new productListWindow();
-            productListManager.Show();
-            //frame.NavigationService.Navigate(new ProductListPage(this));
-            //frame.Content = new ProductListPage();
-            //return_back(o, e);
-            //customer.Visibility = Visibility.Hidden;
-            //manager.Visibility = Visibility.Hidden;
+         
+            frame.Content = new ProductListPage();
+            return_back(o, e);
+            customer.Visibility = Visibility.Hidden;
+            manager.Visibility = Visibility.Hidden;
             //managerImage.Visibility = Visibility.Hidden;
             //cartImage.Visibility = Visibility.Hidden;
-
 
         }
         public void orders_Click(object o, RoutedEventArgs e)
         {
-            orderListWindow orderListManager = new orderListWindow();
-            orderListManager.Show();
-
+         
+            frame.Content = new orderListPage();
+            return_back(o, e);
+            customer.Visibility = Visibility.Hidden;
+            manager.Visibility = Visibility.Hidden;
+            //managerImage.Visibility = Visibility.Hidden;
+            //cartImage.Visibility = Visibility.Hidden;
         }
-        //public void returnToTheMainWindow_Click(object o, RoutedEventArgs e)
-        //{
-            
-        //}
+        public void returnToTheMainWindow_Click(object o, RoutedEventArgs e)
+        {
+            frame.Content = null;
+            return_back(o, e);
+        }
 
-        //public void GoBackToStartPage()
-        //{
-        //    Main.Content = this.Content;
-        //}
+        
     }
 }

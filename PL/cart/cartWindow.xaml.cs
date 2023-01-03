@@ -1,17 +1,4 @@
-﻿using BO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace PL.cart
 {
@@ -23,13 +10,13 @@ namespace PL.cart
         private BLApi.IBl? bl = BLApi.Factory.Get();
         int counter = 1;
         double? total = 0;
-        PO.ProductItem productitem = new PO.ProductItem(); 
-        public cartWindow(BO.Cart? my_cart,PO.ProductItem proToAdd) 
+        PO.ProductItem productitem = new PO.ProductItem();
+        public cartWindow(BO.Cart? my_cart, PO.ProductItem proToAdd)
         {
             InitializeComponent();
             amount.DataContext = counter;
-            total =  proToAdd.Price;//in the first time the price is for one product
-            productitem=proToAdd;
+            total = proToAdd.Price;//in the first time the price is for one product
+            productitem = proToAdd;
             totalPrice.DataContext = total;
         }
 

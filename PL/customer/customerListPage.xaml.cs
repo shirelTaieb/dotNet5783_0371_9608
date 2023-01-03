@@ -1,22 +1,33 @@
 ﻿using BO;
 using PL.cart;
-using PL.products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace PL.customer
 {
     /// <summary>
-    /// Interaction logic for customerProductListWindow.xaml
+    /// Interaction logic for customerListPage.xaml
     /// </summary>
-    public partial class customerProductListWindow : Window
+    public partial class customerListPage : Page
     {
+
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        private BO.Cart cart= new BO.Cart();
-        public customerProductListWindow(BO.Cart my_cart)
+        private BO.Cart cart = new BO.Cart();
+        public customerListPage(BO.Cart my_cart)
         {
+
             InitializeComponent();
             cart = my_cart;
             var list = bl!.Product!.getListOfProduct()!;
@@ -30,11 +41,11 @@ namespace PL.customer
                 Category = (BO.HebCategory?)pro.Category,
                 AmountInCart = bl.Product.getProductInfoCustomer(pro.ID, my_cart).Amount,
                 InStock = bl.Product.getProductInfoCustomer(pro.ID, my_cart).InStock,
-             path = pro.path
+                path = pro.path
             };
             //  ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval(poList);
-              ListOfProducts.ItemsSource = poList;
-            cart=my_cart;
+            ListOfProducts.ItemsSource = poList;
+            cart = my_cart;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
         }
@@ -44,8 +55,8 @@ namespace PL.customer
         }
         public void addToCart_Click(object sender, RoutedEventArgs e)
         {
-            PO.ProductItem selectPro = (PO.ProductItem)ListOfProducts.SelectedItem; 
-            cartWindow newProductToCart = new cartWindow(cart,selectPro);
+            PO.ProductItem selectPro = (PO.ProductItem)ListOfProducts.SelectedItem;
+            cartWindow newProductToCart = new cartWindow(cart, selectPro);
             newProductToCart.ShowDialog(); //לפתוח חלונית הוספה
         }
 
@@ -60,7 +71,7 @@ namespace PL.customer
             IEnumerable<BO.ProductForList?> boList = new List<BO.ProductForList?>();
             if ((int)item == 5)
             {
-                boList = bl!.Product!.getListOfProduct()!; 
+                boList = bl!.Product!.getListOfProduct()!;
             }
             else
                 boList = bl!.Product!.getPartOfProduct(pro => pro!.Category == (BO.Category)item)!;
@@ -79,7 +90,5 @@ namespace PL.customer
             // ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval((IEnumerable<PO.ProductForList>)poList);
             ListOfProducts.ItemsSource = poList;
         }
-    
     }
-
 }

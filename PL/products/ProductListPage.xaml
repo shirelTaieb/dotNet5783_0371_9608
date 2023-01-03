@@ -7,61 +7,60 @@
       mc:Ignorable="d" 
       Height="450" Width="800" 
       Title="ProductListPage" >
-    <!--<Grid Name="MainGrid" Background="#DCE1DE">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="27*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Margin="0,0,-45,0" Grid.ColumnSpan="2">
-
-                <Label Content=":סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#DCE1DE" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="760" Height="46" VerticalContentAlignment="Center" FontSize="25" HorizontalContentAlignment="Right" FontWeight="Bold" Margin="31,10,0,0" />
-                <ComboBox x:Name="categorySelector" HorizontalAlignment="Left" SelectedItem="{Binding Category}" VerticalAlignment="Top" Width="238" Height="34" SelectionChanged="categorySelector_SelectionChanged" Margin="454,16,0,0" FontWeight="Bold" FontFamily="Arial" FontSize="16">
-                    <ComboBox.Background>
-                        <LinearGradientBrush EndPoint="0,1">
-                            <GradientStop Color="#DCE1DE"/>
-                            <GradientStop Color="#FFB0C4B1" Offset="1"/>
-                        </LinearGradientBrush>
-                    </ComboBox.Background>
-                </ComboBox>
-                --><!--<ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
+    <Grid Name="MainGrid" Background="#DCE1DE">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="27*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0,0,-45,0" Grid.ColumnSpan="2">
+            <Label Content=":סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#DCE1DE" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="762" Height="43" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Right" FontWeight="Bold" Margin="29,0,0,0" />
+            <ComboBox x:Name="categorySelector" HorizontalAlignment="Left" SelectedItem="{Binding Category}" VerticalAlignment="Top" Width="200" Height="30" SelectionChanged="categorySelector_SelectionChanged" Margin="508,7,0,0" FontWeight="Bold" FontFamily="Arial" FontSize="16">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#DCE1DE"/>
+                        <GradientStop Color="#FFB0C4B1" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
                 <ComboBoxItem Content="₪50 עד" />
                 <ComboBoxItem Content="₪100 עד" />
                 <ComboBoxItem Content="₪150 עד" />
                 <ComboBoxItem Content="₪200 עד" />
                 <ComboBoxItem Content="₪200+" />
-            </ComboBox>--><!--
-            </Grid>
+            </ComboBox>
+        </Grid>
 
-            <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" SelectionChanged="productForListDataGrid_SelectionChanged"  Margin="0,82,0,103" Grid.ColumnSpan="2">
-                <DataGrid.Resources>
-                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="#B0C4B1"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="BorderThickness" Value="0,2,2,2"/>
-                        <Setter Property="BorderBrush" Value="#1F2421"/>
-                        <Setter Property="HorizontalContentAlignment" Value="center" />
-                    </Style>
-                </DataGrid.Resources>
-                <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="nameColumn"
+        <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" SelectionChanged="productForListDataGrid_SelectionChanged"  Margin="0,42,0,168" Grid.ColumnSpan="2">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#B0C4B1"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderThickness" Value="0,2,2,2"/>
+                    <Setter Property="BorderBrush" Value="#1F2421"/>
+                    <Setter Property="HorizontalContentAlignment" Value="center" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="nameColumn"
                                     Binding="{Binding Name, Mode=TwoWay}" 
                                     Header="שם הספר"
                                     Width="200"/>
-                    <DataGridTextColumn x:Name="idColumn"
+                <DataGridTextColumn x:Name="idColumn"
                                     Binding="{Binding ID, Mode=TwoWay}"
                                     Header="מספר מזהה ספר"
                                     Width="200"/>
-                    <DataGridTextColumn x:Name="categoryColumn"
+                <DataGridTextColumn x:Name="categoryColumn"
                                     Binding="{Binding Category, Mode=TwoWay}"
                                     Header="קטגוריה"
                                     Width="200"/>
-                    <DataGridTextColumn x:Name="priceColumn"
+                <DataGridTextColumn x:Name="priceColumn"
                                     Binding="{Binding Price, Mode=TwoWay}"
                                     Header="מחיר"
                                     Width="200"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button x:Name="updateProduct_Button" Content="עדכון מוצר" HorizontalAlignment="Left" Margin="415,350,0,0" VerticalAlignment="Top" Click="update_Click" Padding="1" Background="#FFB0C4B1" Foreground="#1F2421" Width="200" Height="36" FontSize="18" FontFamily="Lucida Sans Unicode" FontWeight="Bold" BorderBrush="#FF1F2421" Cursor="AppStarting" Grid.Column="1"/>
-            <Button x:Name="AddProduct_Button" Content="הוספת מוצר חדש" HorizontalAlignment="Left"  Margin="96,350,0,0" VerticalAlignment="Top" Click="Add_Click" Padding="1" Background="#FFB0C4B1" Foreground="#1F2421" Width="200" Height="36" FontSize="18" FontFamily="Lucida Sans Unicode" FontWeight="Bold" BorderBrush="#FF1F2421" Grid.ColumnSpan="2"/>
-        </Grid>-->
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="updateProduct_Button" Content="עדכון מוצר" HorizontalAlignment="Left" Margin="415,300,0,0" VerticalAlignment="Top" Click="update_Click" Padding="1" Background="#FFB0C4B1" Foreground="#1F2421" Width="200" Height="36" FontSize="18" FontFamily="Lucida Sans Unicode" FontWeight="Bold" BorderBrush="#FF1F2421" Cursor="AppStarting" Grid.Column="1"/>
+        <Button x:Name="AddProduct_Button" Content="הוספת מוצר חדש" HorizontalAlignment="Left"  Margin="96,300,0,0" VerticalAlignment="Top" Click="Add_Click" Padding="1" Background="#FFB0C4B1" Foreground="#1F2421" Width="200" Height="36" FontSize="18" FontFamily="Lucida Sans Unicode" FontWeight="Bold" BorderBrush="#FF1F2421" Grid.ColumnSpan="2"/>
+    </Grid>
 </Page>

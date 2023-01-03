@@ -45,7 +45,7 @@
                                 <TextBlock x:Name="Price" Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                                 <TextBlock x:Name="AmountInCart" Text="{Binding AmountInCart}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                                 <TextBlock x:Name="InStock" Text="{Binding InStock}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
-                                <Button x:Name="addToCart" Content="הוסף לסל" Foreground="#FFDCE1DE"  Click="addToCart_Click" Background="#216869" Width="100" Height="30" Margin="0,0,0,0" />
+                            <Button x:Name="addToCart" Content="הוסף לסל"  Foreground="#FFDCE1DE" Click="addToCart_Click" Background="#216869" Width="100" Height="30" Margin="0,0,0,0" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
