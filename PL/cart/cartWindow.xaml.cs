@@ -1,4 +1,5 @@
 ﻿using BO;
+using System.Security.Principal;
 using System.Windows;
 
 namespace PL.cart
@@ -36,12 +37,15 @@ namespace PL.cart
             }
             else
             {
-                MessageBox.Show("במלאי יש {counter} מוצרים בלבד", "");
+                NaxCount.Visibility = Visibility.Visible;
+               // showInStock.Visibility = Visibility.Visible;
             }
 
         }
         private void down_Click(object sender, RoutedEventArgs e)
         {
+            //showInStock.Visibility = Visibility.Hidden;
+            NaxCount.Visibility = Visibility.Hidden;
             if (counter != 1)
             {
                 total -= productitem.Price;

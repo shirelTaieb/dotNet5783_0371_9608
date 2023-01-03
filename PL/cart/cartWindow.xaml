@@ -9,7 +9,6 @@
     <Grid Margin="0,0,344,0">
 
         <StackPanel x:Name="stack" Margin="68,15,-260,2">
-            <!--<TextBlock Text="הוספה לעגלה" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />-->
             <TextBlock x:Name="name" FontSize="25" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sitka Subheading" TextAlignment="Center"/>
             <Image MaxHeight="100" Margin="0,20,0,0" MaxWidth="100" Source="{Binding path}"/>
             <StackPanel Orientation="Horizontal" Margin="0,30,0,0" >
@@ -26,6 +25,8 @@
                 <TextBlock Text="בחר כמות" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,0,0,0"/>
             </StackPanel>
             <TextBlock x:Name="NinCount" Text="!אין אפשרות להוסיף פחות ממוצר אחד" Visibility="Hidden" Margin= "0,8,0,0" Foreground="#FFBD1111" FontSize="10" TextAlignment="Center" />
+            <TextBlock x:Name="NaxCount" Text="אין כמות גדולה יותר במלאי" Visibility="Hidden" Margin= "0,0,0,15" Foreground="#FFBD1111" FontSize="10" TextAlignment="Center" />
+            <!--<TextBlock x:Name="showInStock" Text="{Binding}" Visibility="Visible" Width="10" Margin= "0,30,0,0" Foreground="#FFBD1111" FontSize="10" TextAlignment="Center" />-->
             <Button x:Name="addToCart" Content="הוסף לסל" Background="#FF465153" Foreground="White" Height="30" Click="addToCart_Click"/>
         </StackPanel>
 
