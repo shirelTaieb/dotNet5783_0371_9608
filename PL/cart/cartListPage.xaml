@@ -8,8 +8,15 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="cartListPage">
     <Grid>
-        <ListView x:Name="cartListView" ItemsSource="{Binding}">
-            
+        <ListView x:Name="cartListView" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text ="{Binding ProductID}"/>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Page>

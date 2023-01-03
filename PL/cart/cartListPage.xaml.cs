@@ -25,15 +25,16 @@ namespace PL.cart
         public cartListPage(BO.Cart my_cart)
         {
             InitializeComponent();
-            PO.Cart cart = new PO.Cart();
-             cart = new PO.Cart();
+            PO.Cart cart = new PO.Cart()
             {
                 CustomerName = my_cart.CustomerName,
-
-
-            }
-
-
+                CustomerEmail = my_cart.CustomerEmail,
+                CustomerAddress = my_cart.CustomerAddress,
+                Items = my_cart.Items,
+                TotalPrice = my_cart.TotalPrice
+            };
+            cartListView.DataContext = cart.Items;
+             
         }
     }
 }
