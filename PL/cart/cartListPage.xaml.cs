@@ -22,11 +22,17 @@ namespace PL.cart
     public partial class cartListPage : Page
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        private BO.Cart cart = new BO.Cart();
         public cartListPage(BO.Cart my_cart)
         {
             InitializeComponent();
-            cart = my_cart;
+            PO.Cart cart = new PO.Cart();
+             cart = new PO.Cart();
+            {
+                CustomerName = my_cart.CustomerName,
+
+
+            }
+
 
         }
     }
