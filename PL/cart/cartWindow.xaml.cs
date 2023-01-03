@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using BO;
+using System.Windows;
 
 namespace PL.cart
 {
@@ -11,21 +12,27 @@ namespace PL.cart
         int counter = 1;
         double? total = 0;
         PO.ProductItem productitem = new PO.ProductItem();
+        BO.Cart? cart=new BO.Cart();
         public cartWindow(BO.Cart? my_cart, PO.ProductItem proToAdd)
         {
             InitializeComponent();
+            stack.DataContext=proToAdd;
             amount.DataContext = counter;
             total = proToAdd.Price;//in the first time the price is for one product
             productitem = proToAdd;
             totalPrice.DataContext = total;
+            cart = my_cart;
         }
 
         private void up_Click(object sender, RoutedEventArgs e)
         {
+            NinCount.Visibility = Visibility.Hidden;
             if (counter < bl!.Product!.getProductInfoManager(productitem.ID).InStock)
             {
                 total += productitem.Price;
                 counter++;
+                amount.DataContext = counter;
+                totalPrice.DataContext = total;
             }
             else
             {
@@ -39,9 +46,17 @@ namespace PL.cart
             {
                 total -= productitem.Price;
                 counter--;
+                amount.DataContext = counter;
+                totalPrice.DataContext = total;
             }
             else
-                MessageBox.Show("אין אפשרות להוסיף פחות ממוצר אחד", "");
+                NinCount.Visibility=Visibility.Visible;
+        }
+         private void addToCart_Click(object sender, RoutedEventArgs e)
+        {
+            bl!.Cart!.addProductToCart(cart, productitem.ID);
+            bl!.Cart!.updatePoductAmount(cart, productitem.ID, counter);
+            this.Close();
         }
     }
 }

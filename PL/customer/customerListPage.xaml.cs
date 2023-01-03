@@ -90,5 +90,15 @@ namespace PL.customer
             // ListOfProducts.ItemsSource = productListWindow.IEnumerableToObserval((IEnumerable<PO.ProductForList>)poList);
             ListOfProducts.ItemsSource = poList;
         }
+        public void productData_Click(object sender, RoutedEventArgs e)
+        {
+            PO.ProductItem? item= ListOfProducts.SelectedItem as PO.ProductItem;
+            if (item != null)
+            {
+                cartWindow data = new cartWindow(cart, item);
+                data.ShowDialog();
+            }
+
+        }
     }
 }
