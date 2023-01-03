@@ -5,19 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.cart"
         mc:Ignorable="d"
-        Title="cartWindow" Height="200" Width="344" Background="#FF8FA590" >
+        Title="cartWindow" Height="447" Width="344" Background="#FF8FA590" >
     <Grid Margin="0,0,344,0">
-        <StackPanel Margin="78,15,-260,2">
-            <TextBlock Text="הוספה לעגלה" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
-            <Image MaxHeight="30" MaxWidth="30" Source="{Binding path}"/>
-            <TextBlock x:Name="name" Text="{Binding Name}"/>
-            <TextBlock x:Name="totalPrice" Text="{Binding}"/>
-            <StackPanel Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                <Button FontFamily="Segoe UI Symbol" Content="&#xE110;" Click="up_Click" />
-                <TextBox x:Name="amount" Text="{Binding Path=counter}" />
-                <Button FontFamily="Segoe UI Symbol" Content="&#xE1FD;"/>
+
+        <StackPanel x:Name="stack" Margin="68,15,-260,2">
+            <!--<TextBlock Text="הוספה לעגלה" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />-->
+            <TextBlock x:Name="name" FontSize="25" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sitka Subheading" TextAlignment="Center"/>
+            <Image MaxHeight="100" Margin="0,20,0,0" MaxWidth="100" Source="{Binding path}"/>
+            <StackPanel Orientation="Horizontal" Margin="0,30,0,0" >
+                <TextBlock  Text="ש&quot;ח" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="40,0,0,0"/>
+                <TextBlock x:Name="totalPrice" FontSize="30" Margin="10,0,0,0" Text="{Binding}" FontFamily="Sitka Banner" VerticalAlignment="Top" FontWeight="Bold" TextAlignment="Center" Height="37"/>
+                <TextBlock Text=":מחיר" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,0,0,0"/>
             </StackPanel>
-            
+            <StackPanel Width="200" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal"  >
+                <TextBlock x:Name="amount"  Text="{Binding}" Width="30" Margin="60,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="25" FontFamily="Sitka Banner" />
+                <StackPanel >
+                    <Button FontFamily="Segoe UI Symbol" Content="&#xE110;" Click="up_Click" />
+                    <Button FontFamily="Segoe UI Symbol" Content="&#xE1FD;" Click="down_Click" />
+                </StackPanel>
+                <TextBlock Text="בחר כמות" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </StackPanel>
+            <TextBlock x:Name="NinCount" Text="!אין אפשרות להוסיף פחות ממוצר אחד" Visibility="Hidden" Margin= "0,8,0,0" Foreground="#FFBD1111" FontSize="10" TextAlignment="Center" />
+            <Button x:Name="addToCart" Content="הוסף לסל" Background="#FF465153" Foreground="White" Height="30" Click="addToCart_Click"/>
         </StackPanel>
-      </Grid>
+
+    </Grid>
 </Window>

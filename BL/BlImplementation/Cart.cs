@@ -13,6 +13,8 @@ namespace BlImplementation
                 throw new BO.wrongDataException();
             if (cart == null) //if the cart is null we build a new cart.
                 cart = new BO.Cart();
+            if (cart.Items == null)
+                cart.Items = new List<BO.OrderItem?>();
             DO.Product? temp = new DO.Product();
             try { temp = Dal!.Product.GetById(prID); }//get the product from Do by id
             catch
