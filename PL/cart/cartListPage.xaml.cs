@@ -30,8 +30,16 @@ namespace PL.cart
                 CustomerName = my_cart.CustomerName,
                 CustomerEmail = my_cart.CustomerEmail,
                 CustomerAddress = my_cart.CustomerAddress,
-                Items = my_cart.Items,
-                TotalPrice = my_cart.TotalPrice
+                TotalPrice = my_cart.TotalPrice,
+                Items = (from orItem in my_cart.Items
+                         select new PO.OrderItem()
+                         {
+                             ID = orItem.ID,
+                             Price = orItem.Price,
+                             ProductID = orItem.ProductID,
+                             Amount = orItem.Amount,
+                             TotalPrice = orItem.TotalPrice
+                         }).ToList()
             };
             cartListView.ItemsSource = cart.Items;
              
