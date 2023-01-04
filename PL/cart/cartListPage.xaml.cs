@@ -33,7 +33,7 @@ namespace PL.cart
                 Items = my_cart.Items,
                 TotalPrice = my_cart.TotalPrice
             };
-            cartListView.DataContext = cart.Items;
+            cartListView.ItemsSource = cart.Items;
              
         }
     }
