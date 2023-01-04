@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Label Content=" :סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#DCE1DE" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="104" Height="34" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="685,0,0,0"/>
-            <ComboBox x:Name="categorySelector" SelectedItem="{Binding HebCategory}" VerticalAlignment="Center" Height="34" SelectionChanged="categorySelector_SelectionChanged" Margin="492,0,116,0" FontWeight="Bold" FontFamily="Arial" FontSize="16">
+            <ComboBox x:Name="categorySelector" SelectedItem="{Binding HebCategory}" VerticalAlignment="Top" Height="34" SelectionChanged="categorySelector_SelectionChanged" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="328" Margin="357,2,0,0">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#DCE1DE"/>

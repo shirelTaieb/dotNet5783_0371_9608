@@ -1,0 +1,42 @@
+﻿<Page x:Class="PL.orders.orderListProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PL.orders"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="orderListProductPage">
+
+    <Grid>
+        <DataGrid x:Name="productListOfOrder" AutoGenerateColumns="False"  Background="#B0C4B1" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2"  AlternatingRowBackground="#DCE1DE" AlternationCount="2">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#9CC5A1"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderThickness" Value="0,1,1,0.5"/>
+                        <Setter Property="BorderBrush" Value="#1F2421"/>
+                        <Setter Property="HorizontalContentAlignment" Value="center" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                    x:Name="idColumn"
+                    Binding="{Binding Name}"
+                    Header="שם המוצר" 
+                    Width="150"/>
+                    <DataGridTextColumn
+                    x:Name="AmountOfItemsColumn"
+                    Binding="{Binding Amount}"
+                    Header="כמות"
+                    Width="120"/>
+                    <DataGridTextColumn
+                    x:Name="TotalPriceColumn"
+                    Binding="{Binding TotalPrice}"
+                    Header="סהכ לתשלום"
+                    Width="130"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+    </Grid>
+</Page>

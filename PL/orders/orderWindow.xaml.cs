@@ -63,5 +63,9 @@ namespace PL.orders
                 MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+         private void seeAllProduct_Click(object sender, RoutedEventArgs e)
+        {
+            orderFrame.Content = new orderListProductPage(or);
+        }
     }
 }
