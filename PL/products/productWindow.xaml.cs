@@ -26,7 +26,7 @@ namespace PL.products
         private PO.Product pl=new PO.Product();
         private BO.Product UpdateOrNewProduct=new BO.Product();
         Action<PO.ProductForList> action;
-        public productWindow( Action<PO.ProductForList> addToObservalCollection, PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
+        public productWindow(int ShowDetails, Action<PO.ProductForList> addToObservalCollection, PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
             categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory));
@@ -40,7 +40,10 @@ namespace PL.products
                 {
                     UpdateOrNewProduct = bl!.Product!.getProductInfoManager(updateProduct.ID)!;
                     pl = BoToPo(UpdateOrNewProduct);  //casting to po
-                    productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
+                    if (ShowDetails == 1) //לפתוח קובץ לקריאה בלבד
+                        productFrame.Content = new productDetailsPage(pl);
+                     productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
+                  
                 }
                 catch (Exception ex)
                 {
@@ -128,9 +131,17 @@ namespace PL.products
             pl.Category= (BO.HebCategory)categoryComboBox.SelectedItem;
 
         }
+
+        private void toEdit_Click(object sender, RoutedEventArgs e)
+        {
+            productFrame.Content = null;//העברה לחלון הרגיל של עדכון
+        }
+
+       
         //private BO.Product castForListToRegular(BO.ProductForList pfl)
         //{
         //    return(new BO.Product { ID=pfl.ID, Category=pfl.Category, Name=pfl.Name, InStock=pfl.In} )
         //}
+
     }
 }

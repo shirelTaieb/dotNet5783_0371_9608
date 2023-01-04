@@ -36,9 +36,10 @@ namespace PL.products
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
         }
 
-        private void priceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void showProductDetails_doubleClick(object sender, RoutedEventArgs e)
         {
-
+            productWindow proWin = new productWindow(1,addProduct, (PO.ProductForList)productForListDataGrid.SelectedItem);
+            proWin.Show();
         }
 
         private void categorySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -78,7 +79,7 @@ namespace PL.products
         public void Add_Click(object sender, RoutedEventArgs e)
         {
 
-            productWindow AddProduct = new productWindow(addProduct);
+            productWindow AddProduct = new productWindow(0,addProduct);
             AddProduct.id.Visibility = Visibility.Collapsed;
             AddProduct.id_lable.Visibility = Visibility.Collapsed;
             AddProduct.ShowDialog();
@@ -93,7 +94,7 @@ namespace PL.products
             PO.ProductForList? poUpPro = (PO.ProductForList)productForListDataGrid.SelectedItem;
             if (poUpPro != null)
             {
-                productWindow updateProduct = new productWindow(addProduct, poUpPro);
+                productWindow updateProduct = new productWindow(0,addProduct, poUpPro);
                 updateProduct.ShowDialog();
                 var boList = bl!.Product!.getListOfProduct()!;
                 var poList =

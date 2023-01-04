@@ -22,16 +22,16 @@
                     </LinearGradientBrush>
                 </ComboBox.Background>
             </ComboBox>
-            <ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
+            <!--<ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45"  Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
                 <ComboBoxItem Content="₪50 עד" />
                 <ComboBoxItem Content="₪100 עד" />
                 <ComboBoxItem Content="₪150 עד" />
                 <ComboBoxItem Content="₪200 עד" />
                 <ComboBoxItem Content="₪200+" />
-            </ComboBox>
+            </ComboBox>-->
         </Grid>
 
-        <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" SelectionChanged="productForListDataGrid_SelectionChanged"  Margin="0,42,0,168" Grid.ColumnSpan="2">
+        <DataGrid x:Name="productForListDataGrid" AutoGenerateColumns="False" Background="#DCE1DE" EnableRowVirtualization="True" MouseDoubleClick="showProductDetails_doubleClick" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" SelectionChanged="productForListDataGrid_SelectionChanged"  Margin="0,42,0,168" Grid.ColumnSpan="2">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#B0C4B1"/>

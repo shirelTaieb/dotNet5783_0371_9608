@@ -66,6 +66,13 @@ namespace PL.orders
          private void seeAllProduct_Click(object sender, RoutedEventArgs e)
         {
             orderFrame.Content = new orderListProductPage(or);
+            Return.Visibility = Visibility.Visible;
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            orderFrame.Content = null;
+            Return.Visibility = Visibility.Collapsed;
         }
     }
 }
