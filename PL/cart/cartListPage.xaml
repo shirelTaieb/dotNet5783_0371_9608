@@ -11,14 +11,18 @@
         <ListView x:Name="cartListView" ItemsSource="{Binding}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text ="{Binding TotalPrice}" Width="50"/>
-                        <TextBlock Text ="{Binding Price}" Width="50"/>
-                        <TextBlock Text ="{Binding Amount}" Width="50"/>
-                        <TextBlock Text ="{Binding ProductID}" Width="50"/>
-                    </StackPanel>
+                    <Grid>
+                        <Border BorderBrush="#FF465153" BorderThickness="0,0,0,1">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text ="{Binding Price}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
+                                <TextBlock Text ="{Binding Amount}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
+                                <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock x:Name="nonDetail"/>
     </Grid>
 </Page>
