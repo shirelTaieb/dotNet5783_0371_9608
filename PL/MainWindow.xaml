@@ -38,7 +38,7 @@
             <Button x:Name="products" Content="ניהול מוצרים" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="460,302,0,0" VerticalAlignment="Top" Click="products_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
             <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="460,255,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
             <Image HorizontalAlignment="Left" Height="150" Margin="136,32,0,0" VerticalAlignment="Top" Width="200" />
-            <Image HorizontalAlignment="Left" Height="106" Margin="511,46,0,0" VerticalAlignment="Top" Width="118" Source="..\PL\images\manager.png" />
+            <Image HorizontalAlignment="Left" Height="106" Margin="511,46,0,0" VerticalAlignment="Top" Width="118" Source="manager.png" />
         </Grid>
 
     </Grid>
