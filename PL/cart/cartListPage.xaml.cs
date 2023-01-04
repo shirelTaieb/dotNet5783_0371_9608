@@ -22,26 +22,35 @@ namespace PL.cart
     public partial class cartListPage : Page
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        public cartListPage(BO.Cart my_cart)
+        public cartListPage(BO.Cart? my_cart)
         {
             InitializeComponent();
-            PO.Cart cart = new PO.Cart()
+            if (my_cart == null)
             {
-                CustomerName = my_cart.CustomerName,
-                CustomerEmail = my_cart.CustomerEmail,
-                CustomerAddress = my_cart.CustomerAddress,
-                TotalPrice = my_cart.TotalPrice,
-                Items = (from orItem in my_cart.Items
-                         select new PO.OrderItem()
-                         {
-                             ID = orItem.ID,
-                             Price = orItem.Price,
-                             ProductID = orItem.ProductID,
-                             Amount = orItem.Amount,
-                             TotalPrice = orItem.TotalPrice
-                         }).ToList()
-            };
-            cartListView.ItemsSource = cart.Items;
+                PO.Cart cart = new PO.Cart()
+                {
+                    CustomerName = my_cart.CustomerName,
+                    CustomerEmail = my_cart.CustomerEmail,
+                    CustomerAddress = my_cart.CustomerAddress,
+                    TotalPrice = my_cart.TotalPrice,
+                    Items = (from orItem in my_cart.Items
+                             select new PO.OrderItem()
+                             {
+                                 ID = orItem.ID,
+                                 Price = orItem.Price,
+                                 ProductID = orItem.ProductID,
+                                 Amount = orItem.Amount,
+                                 TotalPrice = orItem.TotalPrice
+                             }).ToList()
+                };
+                cartListView.ItemsSource = cart.Items;
+            }
+            else
+            {
+                cartListView.ItemsSource = null;
+                nonDetail.Visibility = Visibility.Visible;
+            }
+
              
         }
     }

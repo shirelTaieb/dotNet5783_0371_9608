@@ -20,5 +20,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock x:Name="nonDetail"/>
     </Grid>
 </Page>
