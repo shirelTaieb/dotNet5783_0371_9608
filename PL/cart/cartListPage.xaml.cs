@@ -25,7 +25,7 @@ namespace PL.cart
         public cartListPage(BO.Cart? my_cart)
         {
             InitializeComponent();
-            if (my_cart == null)
+            if (my_cart!.Items != null)
             {
                 PO.Cart cart = new PO.Cart()
                 {
@@ -47,11 +47,9 @@ namespace PL.cart
             }
             else
             {
-                cartListView.ItemsSource = null;
-                nonDetail.Visibility = Visibility.Visible;
+                    cartListView.ItemsSource = null;
+                    nonDetail.Visibility = Visibility.Visible;
             }
-
-             
         }
     }
 }

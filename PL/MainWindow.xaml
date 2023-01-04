@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL"
         xmlns:PL.Convert="clr-namespace:PL.Convert"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#B0C4B1" MouseDown="return_back">
+        Title="MainWindow" Height="450" Width="800" Background="#B0C4B1" >
     <Window.Resources>
         <PL.Convert:NotIsEnableToVisibilityConverter x:Key="myConverter"></PL.Convert:NotIsEnableToVisibilityConverter>
     </Window.Resources>

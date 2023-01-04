@@ -320,7 +320,7 @@ namespace BLTest
                                 break;
                             }
                             BO.ProductItem prod = new BO.ProductItem();
-                            prod = product.getProductInfoCustomer(id, myCart);
+                            prod = product.getProductInfoCustomer(id, myCart!);
                             Console.WriteLine(prod);
                             break;
                         case 4:
