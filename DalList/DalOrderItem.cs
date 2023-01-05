@@ -66,21 +66,15 @@ internal class DalOrderItem : IOrderItem
         }
         return ds.lstOI;
     }
-    public List<OrderItem> GetByOrderID(int ID)
+    public List<OrderItem?> GetByOrderID(int ID)
     {
-        List<OrderItem> tempList = new List<OrderItem>();
+        //List<OrderItem> tempList = new List<OrderItem>();
         if (ds == null)
             throw new NotExistException();
-        //איך עושים סתם פעולה בלינקקק
-        //var result =
-        //    from oi in ds!.lstOI
-        //    where oi?.OrderID == ID
-        //    select (tempList.Add((DO.OrderItem)oi));
-        foreach (OrderItem temp in ds!.lstOI)
-        {
-            if (temp.OrderID == ID)
-                tempList.Add(temp);
-        }
+        List<OrderItem?> tempList=
+            (from item in ds!.lstOI
+            where item?.OrderID == ID
+            select item).ToList();
         return tempList;
     }
     public OrderItem GetByIDOrder_IDProduct(int IDOrder, int IDProduct)
@@ -88,8 +82,6 @@ internal class DalOrderItem : IOrderItem
         if (ds == null)
             throw new NotExistException();
         OrderItem? result = ds!.lstOI.FirstOrDefault(item => (item?.OrderID == IDOrder) && (item?.ProductID == IDProduct));
-            return result ?? throw new NotExistException(); 
-
-       
+            return result ?? throw new NotExistException();    
     }
 }

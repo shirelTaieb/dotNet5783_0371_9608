@@ -22,7 +22,7 @@ namespace PL.orders
     public partial class orderListPage : Page
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        ObservableCollection<PO.OrderForList>? orderCollection = new ObservableCollection<PO.OrderForList>();
+        //ObservableCollection<PO.OrderForList>? orderCollection = new ObservableCollection<PO.OrderForList>();
         public orderListPage()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace PL.orders
                     Status = (BO.HebOrderStatus?)or.Status,
                     TotalPrice = or.TotalPrice
                 };
-            orderForListDataGrid.DataContext = IEnumerableToObserval(poList);
+            orderForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
             orderForListDataGrid.IsReadOnly = true;
         }
 
@@ -65,20 +65,13 @@ namespace PL.orders
                         Status = (BO.HebOrderStatus?)order.Status,
                         TotalPrice = order.TotalPrice
                     };
-                orderForListDataGrid.DataContext = IEnumerableToObserval(poList);
+                orderForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        public ObservableCollection<PO.OrderForList> IEnumerableToObserval(IEnumerable<PO.OrderForList> listToCast)
-        {
-            orderCollection = new ObservableCollection<PO.OrderForList>();
-            foreach (PO.OrderForList item in listToCast)
-                orderCollection.Add(item);
-            return orderCollection;
 
-        }
     }
 }

@@ -67,17 +67,17 @@ internal class Order : BLApi.IOrder
         temp.ShipDate = order.ShipDate??null;
         temp.DeliveryDate = order.DeliveryDate??null;
         temp.Status = getStatus(order);
-        List<DO.OrderItem> dolst = Dal!.OrderItem.GetByOrderID(order.ID);
+        List<DO.OrderItem?> dolst = Dal!.OrderItem.GetByOrderID(order.ID);
         // List<BO.OrderItem> bolst = new List<BO.OrderItem>();
         var result =
             from doItem in dolst
             select new BO.OrderItem
             {
-                ID = doItem.ID,
-                ProductID = doItem.ProductID,
-                Price = doItem.Price,
-                Amount = doItem.Amount,
-                TotalPrice = doItem.Price * doItem.Amount
+                ID = (int)doItem?.ID!,
+                ProductID = (int)doItem?.ProductID!,
+                Price = doItem?.Price,
+                Amount = (int)doItem?.Amount!,
+                TotalPrice = doItem?.Price * doItem?.Amount
             };
             temp.Items = result.ToList();
         temp.TotalPrice =
@@ -89,19 +89,12 @@ internal class Order : BLApi.IOrder
     public IEnumerable<BO.OrderForList?> getOrderList()
     {
         List<DO.Order?> temp = (List<DO.Order?>)Dal!.Order.GetAll(); //take the data from the factory
-        List<BO.OrderForList> orders = new List<BO.OrderForList>();
+        //List<BO.OrderForList> orders = new List<BO.OrderForList>();
         BO.Order? boorder = new BO.Order();
         BO.OrderForList? ofl= new BO.OrderForList();
-        //var result =
-        //    from order in temp
-        //    select order;  //we want all of the orders
-        //result.ToList();//ניסיון להמיר פוראיצ ללינק ללא הצלחה
-        foreach (DO.Order or in temp)
-        {
-            boorder = DoOrderToBo(or); //from do to bo
-            ofl= BoOrderToOrderForList(boorder!);//from order to orderforlist
-            orders.Add(ofl);
-        }
+       List<BO.OrderForList> orders =
+           ( from ord in temp
+            select (BoOrderToOrderForList(DoOrderToBo(ord)!))).ToList();
         return orders;
     }
     public BO.Order? getOrderInfo(int orderID)

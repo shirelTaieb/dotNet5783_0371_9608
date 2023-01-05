@@ -10,7 +10,7 @@ namespace PL.cart
     public partial class cartWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        int counter = 1;
+        int counter;
         double? total = 0;
         PO.ProductItem productitem = new PO.ProductItem();
         BO.Cart? cart=new BO.Cart();
@@ -18,6 +18,7 @@ namespace PL.cart
         {
             InitializeComponent();
             stack.DataContext=proToAdd;
+            counter=proToAdd.AmountInCart;
             amount.DataContext = counter;
             total = proToAdd.Price;//in the first time the price is for one product
             productitem = proToAdd;
@@ -36,15 +37,12 @@ namespace PL.cart
                 totalPrice.DataContext = total;
             }
             else
-            {
                 NaxCount.Visibility = Visibility.Visible;
-               // showInStock.Visibility = Visibility.Visible;
-            }
+
 
         }
         private void down_Click(object sender, RoutedEventArgs e)
         {
-            //showInStock.Visibility = Visibility.Hidden;
             NaxCount.Visibility = Visibility.Hidden;
             if (counter != 1)
             {

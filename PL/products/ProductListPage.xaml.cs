@@ -30,7 +30,7 @@ namespace PL.products
                     Category = (BO.HebCategory?)item.Category,
                     path = item.path
                 };
-            productCollection = IEnumerableToObserval(poList);
+            productCollection = tools.IEnumerableToObserval(poList);
             productForListDataGrid.DataContext = productCollection;
             productForListDataGrid.IsReadOnly = true;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
@@ -58,7 +58,7 @@ namespace PL.products
                         Price = pro.Price,
                         path = pro.path
                     };
-                productForListDataGrid.DataContext = IEnumerableToObserval(poList);
+                productForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
             }
             else
             {
@@ -73,7 +73,7 @@ namespace PL.products
                      Price = pro.Price,
                      path = pro.path
                  };
-                productForListDataGrid.DataContext = IEnumerableToObserval(poList);
+                productForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
             }
         }
         public void Add_Click(object sender, RoutedEventArgs e)
@@ -107,7 +107,7 @@ namespace PL.products
                         Price = pro.Price,
                         path = pro.path
                     };
-                productForListDataGrid.DataContext = IEnumerableToObserval(poList);
+                productForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
             }
 
         }
@@ -116,19 +116,9 @@ namespace PL.products
         {
 
         }
-        public ObservableCollection<PO.ProductForList> IEnumerableToObserval(IEnumerable<PO.ProductForList> listToCast)
-        {
-            productCollection = new ObservableCollection<PO.ProductForList>();
-            foreach (PO.ProductForList item in listToCast)
-                productCollection.Add(item);
-            return productCollection;
 
-        }
         public void addProduct(PO.ProductForList productToAdd) => productCollection?.Add(productToAdd);
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-           
-        //}
+      
     }
 }
 
