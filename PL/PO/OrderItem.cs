@@ -30,6 +30,19 @@ namespace PL.PO
                 }
             }
         }
+        private string? _ProductName;
+        public string? ProductName
+        {
+            get { return _ProductName; }
+            set
+            {
+                _ProductName = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("ProductID"));
+                }
+            }
+        }
         private double? _Price;
         public double? Price
         {

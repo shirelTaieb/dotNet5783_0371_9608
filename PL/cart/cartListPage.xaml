@@ -14,9 +14,10 @@
                     <Grid>
                         <Border BorderBrush="#FF465153" BorderThickness="0,0,0,1">
                             <StackPanel Orientation="Horizontal">
+                                <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"   />
+                                <TextBlock Text ="{Binding ProductName}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
                                 <TextBlock Text ="{Binding Price}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
                                 <TextBlock Text ="{Binding Amount}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
-                                <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
                             </StackPanel>
                         </Border>
                     </Grid>
