@@ -29,7 +29,7 @@ namespace PL.products
         public productWindow(int ShowDetails, Action<PO.ProductForList> addToObservalCollection, PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
-            categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory));
+            categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory)); //קישור הקטגוריות לכומבו בוקס
             action = addToObservalCollection;
 
 
