@@ -65,8 +65,7 @@ namespace PL
             return_back(o, e);
             manager.IsEnabled = false;
             password.Visibility = Visibility.Visible;
-            enter_password.Visibility = Visibility.Visible;
-            confirm.Visibility = Visibility.Visible;
+          
 
         }
         public void check_password(object o, RoutedEventArgs e)
