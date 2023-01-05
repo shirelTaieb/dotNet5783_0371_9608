@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PL.customer;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,9 +23,13 @@ namespace PL.cart
     public partial class cartListPage : Page
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        public cartListPage(BO.Cart? my_cart)
+        MainWindow mainWindow;
+        BO.Cart? cart;
+        public cartListPage(BO.Cart? my_cart,MainWindow _mainWindow)
         {
             InitializeComponent();
+            mainWindow = _mainWindow;
+            cart=my_cart;
             if (my_cart!.Items != null)
             {
                 PO.Cart cart = new PO.Cart()
@@ -51,6 +56,12 @@ namespace PL.cart
                     cartListView.ItemsSource = null;
                     nonDetail.Visibility = Visibility.Visible;
             }
+        }
+
+        private void moveToCatelog_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.frame.Content = new customerListPage(cart!); //מעבר לקטלוג
+
         }
     }
 }

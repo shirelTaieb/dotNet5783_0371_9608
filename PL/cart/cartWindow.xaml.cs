@@ -44,7 +44,7 @@ namespace PL.cart
         private void down_Click(object sender, RoutedEventArgs e)
         {
             NaxCount.Visibility = Visibility.Hidden;
-            if (counter != 1)
+            if (counter > 1)
             {
                 total -= productitem.Price;
                 counter--;

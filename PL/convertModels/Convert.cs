@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace PL.Convert
 {
-    public class NotIsEnableToVisibilityConverter : IValueConverter
+    public class FalseToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -46,7 +46,9 @@ namespace PL.Convert
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
-                return Visibility.Collapsed;
+                return Visibility.Hidden;         
+          if(value.GetType() == typeof(int)&&(int)value==0)
+                return Visibility.Hidden;
             return Visibility.Visible;
 
         }
@@ -56,4 +58,6 @@ namespace PL.Convert
             throw new NotImplementedException();
         }
     }
+
+
 }
