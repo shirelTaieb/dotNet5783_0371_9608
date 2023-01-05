@@ -20,7 +20,7 @@ namespace PL.cart
             stack.DataContext=proToAdd;
             counter=proToAdd.AmountInCart;
             amount.DataContext = counter;
-            total = proToAdd.Price;//in the first time the price is for one product
+            total = counter * (proToAdd.Price);
             productitem = proToAdd;
             totalPrice.DataContext = total;
             cart = my_cart;

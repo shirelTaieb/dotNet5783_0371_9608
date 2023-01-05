@@ -137,7 +137,12 @@ namespace PL.products
             productFrame.Content = null;//העברה לחלון הרגיל של עדכון
         }
 
-       
+        private void productFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
+
+
         //private BO.Product castForListToRegular(BO.ProductForList pfl)
         //{
         //    return(new BO.Product { ID=pfl.ID, Category=pfl.Category, Name=pfl.Name, InStock=pfl.In} )

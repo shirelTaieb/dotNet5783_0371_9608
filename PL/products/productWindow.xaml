@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.products"
+        xmlns:PL.Convert="clr-namespace:PL.Convert"
         mc:Ignorable="d"
         Title="productWindow" Height="450" Width="420" Background="#B0C4B1">
-    <Grid x:Name="productAddOrUpdate">
+    <Window.Resources>
+        <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
+    </Window.Resources>
+            <Grid x:Name="productAddOrUpdate">
 
         <Label  x:Name="id_lable" Content=":מספר מזהה" HorizontalAlignment="Left" Margin="248,74,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF465153" FontSize="18" FontFamily="Cascadia Mono"/>
         <Label Content=":שם הספר" HorizontalAlignment="Left" Margin="262,132,0,0" VerticalAlignment="Top" Foreground="#FF465153" FontWeight="Bold" FontSize="18" FontFamily="Cascadia Mono"/>
@@ -22,7 +26,7 @@
         <Button x:Name="Add" Content="הוספה" HorizontalAlignment="Left" Margin="150,340,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Background="#4A5759" Foreground="White" Click="add_click" FontWeight="Bold"/>
         <Button x:Name="Update" Content="עדכון" HorizontalAlignment="Left" Margin="150,340,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Foreground="White" Background="#4A5759" Click="update_click"  FontWeight="Bold"/>
         <Image  x:Name="product_image" Source="{Binding path}" HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="עריכת פרטי מוצר" Background="{x:Null}" BorderBrush="#4A5759" Foreground="#4A5759" Click="toEdit_Click" Margin="0,380,0,0" />
-        <Frame x:Name="productFrame" Width="420" Height="415" NavigationUIVisibility="Hidden" Margin="0,0,0,35"/>
+        <Button Content="עריכת פרטי מוצר" Background="{x:Null}" BorderBrush="#4A5759" Visibility="{Binding ElementName=productFrame, Path=Content, Converter={StaticResource nullToNotVisi}}" Foreground="#4A5759" Click="toEdit_Click" Margin="0,380,0,0" />
+        <Frame x:Name="productFrame" Width="420" Height="415" NavigationUIVisibility="Hidden" Margin="0,0,0,35" Navigated="productFrame_Navigated"/>
     </Grid>
 </Window>
