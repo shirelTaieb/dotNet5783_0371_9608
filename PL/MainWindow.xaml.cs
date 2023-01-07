@@ -70,10 +70,14 @@ namespace PL
         }
         public void check_password(object o, RoutedEventArgs e)
         {
-            
-            password.Visibility = Visibility.Hidden;
-            products.Visibility = Visibility.Visible;
-            orders.Visibility = Visibility.Visible;
+            if (password.Password == "1234")
+            {
+                password.Visibility = Visibility.Hidden;
+                products.Visibility = Visibility.Visible;
+                orders.Visibility = Visibility.Visible;
+                password.Password = "";
+                managerTrack.Visibility= Visibility.Visible;
+            }
 
         }
         public void products_Click(object o, RoutedEventArgs e)
@@ -108,5 +112,11 @@ namespace PL
             EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(0);
             enterID.Show();
         }
+        private void CustomerTrack_Click(object sender, RoutedEventArgs e)
+        {
+            EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(1);
+            enterID.Show();
+        }
+        
     }
 }
