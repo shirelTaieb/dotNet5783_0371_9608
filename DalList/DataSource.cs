@@ -157,8 +157,8 @@ public class DataSource
                 OrderItem orderItem = new OrderItem();
                 orderItem.ID = ConfigOrderItem2.NextOrderNumber;
                 orderItem.OrderID = order_id;
-                orderItem.Amount= rand.Next(10);
-                orderItem.ProductID = rand.Next(100000, 100011);
+                orderItem.Amount= rand.Next(1,11);
+                orderItem.ProductID = rand.Next(100001, 100012);
                 //לא עובד הלינקק
                 //var result =
                 //    from temp in lstP

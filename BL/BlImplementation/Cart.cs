@@ -24,7 +24,7 @@ namespace BlImplementation
             {
                 orit.ProductID = temp.GetValueOrDefault().ID;
                 orit.Price = temp?.Price;
-                orit.ProductName = temp?.Name;
+                //orit.ProductName = temp?.Name;
                 orit.ID = 0; //זה זמני, אחרי זה בהזמנה הוא מקבל מספר רץ אוטומטי
                 orit.Amount = 1;  //this is the first from this type of product
                 cart.Items?.Add(orit); //add the product to the cart. the cart also can be null

@@ -7,7 +7,7 @@
         xmlns:PL.Convert="clr-namespace:PL.Convert"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="PL.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#B0C4B1" >
+        Title="MainWindow" Height="500" Width="800" Background="#B0C4B1" >
     <Window.Resources>
         <PL.Convert:FalseToVisibilityConverter x:Key="myConverter"/>
         <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
@@ -33,12 +33,13 @@
             </Button>
             <Button x:Name="katelog" Content="לצפיה בקטלוג" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="136,255,0,0" VerticalAlignment="Top" Click="Katelog_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
             <Button x:Name="cart" Content="סל הקניות שלי" Padding="7"  Visibility="Hidden" HorizontalAlignment="Left" Margin="136,303,0,0" VerticalAlignment="Top" Click="cart_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-            <PasswordBox  x:Name="password" materialDesign:HintAssist.Hint="Password"
+            <PasswordBox  x:Name="password" materialDesign:HintAssist.Hint="Password" 
                                   Width="200" Height="70"
                                   materialDesign:HintAssist.Foreground="#FF1F2421" 
                                   materialDesign:TextFieldAssist.UnderlineBrush="#FF1F2421"
-                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  FontSize="20"  Margin="500,241,100,84" Visibility="{Binding IsEnabled, Converter={StaticResource myConverter}, ElementName=manager, Mode=TwoWay}"/>
-            <Button x:Name="confirm" Content="כניסה" HorizontalAlignment="Left" Margin="530,320,0,0" Width="70" Height="20" FontSize="9" VerticalAlignment="Top" Click="check_password" Background="#FF1F2421" Foreground="#FFDCE1DE" Visibility="{Binding Visibility, ElementName=password, Mode=TwoWay}" />
+                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" KeyDown="pressEnter" FontSize="20"  Margin="500,220,100,84" Visibility="{Binding IsEnabled, Converter={StaticResource myConverter}, ElementName=manager, Mode=TwoWay}"/>
+            <Button x:Name="confirm" Content="כניסה" HorizontalAlignment="Left" Margin="530,330,0,0" Width="70" Height="20" FontSize="9" VerticalAlignment="Top" Click="check_password" Background="#FF1F2421" Foreground="#FFDCE1DE" Visibility="{Binding Visibility, ElementName=password, Mode=TwoWay}" />
+            <TextBlock x:Name="worngPassword" Text="סיסמה שגויה" Foreground="DarkRed" Margin="530,355,0,0" Visibility="Hidden"/>
             <Button x:Name="products" Content="ניהול מוצרים" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="460,302,0,0" VerticalAlignment="Top" Click="products_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
             <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="460,255,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
 

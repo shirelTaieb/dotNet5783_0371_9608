@@ -44,7 +44,7 @@ namespace PL.cart
                                  ID = orItem.ID,
                                  Price = orItem.Price,
                                  ProductID = orItem.ProductID,
-                                 ProductName=orItem.ProductName,
+                                 ProductName=bl!.Product!.getProductInfoManager(orItem.ProductID).Name,
                                  Amount = orItem.Amount,
                                  TotalPrice = orItem.TotalPrice
                              }).ToList()
