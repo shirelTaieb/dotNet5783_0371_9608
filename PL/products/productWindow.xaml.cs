@@ -42,8 +42,10 @@ namespace PL.products
                     pl = BoToPo(UpdateOrNewProduct);  //casting to po
                     if (ShowDetails == 1) //לפתוח קובץ לקריאה בלבד
                         productFrame.Content = new productDetailsPage(pl);
-                     productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
-                  
+                     else
+                        productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
+
+
                 }
                 catch (Exception ex)
                 {
@@ -135,9 +137,15 @@ namespace PL.products
         private void toEdit_Click(object sender, RoutedEventArgs e)
         {
             productFrame.Content = null;//העברה לחלון הרגיל של עדכון
+            productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
         }
 
-       
+        private void productFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
+
+
         //private BO.Product castForListToRegular(BO.ProductForList pfl)
         //{
         //    return(new BO.Product { ID=pfl.ID, Category=pfl.Category, Name=pfl.Name, InStock=pfl.In} )

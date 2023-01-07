@@ -56,15 +56,14 @@ namespace BlImplementation
             }
             if (newAmount < temp.Amount)//אם הכמות קטנה - תקטין את הכמות בהתאם ועדכן מחיר כולל של פריט ושל סל קניות
             {
-                foreach (var item in cart!.Items!) //we do foreach because we want to change the object in the cart
+                int ind = cart!.Items!.FindIndex(item => item!.ProductID == IDpr);
+                if (ind != -1) //when we found
                 {
-                    if (item!.ID == IDpr) //this loop will happen just one time
-                    {
-                        cart.TotalPrice -= temp.Price * (temp.Amount - newAmount);
-                        temp.Amount = newAmount;
-                        item.TotalPrice -= temp.Price * (temp.Amount - newAmount);//uptade the total price of the order item.
-                    }
+                    cart.TotalPrice -= temp.Price * (temp.Amount - newAmount);
+                    cart!.Items![ind]!.Amount = newAmount;
+                    cart!.Items![ind]!.TotalPrice -= temp.Price * (temp.Amount - newAmount);
                 }
+
             }
             if (newAmount > temp.Amount)//אם הכמות גדלה - תפעל בדומה להוספת מוצר לסל קניות שכבר קיים בסל קניות כנ"ל
             {
@@ -73,15 +72,15 @@ namespace BlImplementation
                 catch
                 { throw new BO.doseNotExistException(); }
                 if (newProductToAdd.InStock >= (newAmount - temp.Amount)) //there are enagh products in stock.
-                    foreach (var item in cart!.Items!) //we do foreach because we want to change the object in the cart
+                {
+                    int ind = cart!.Items!.FindIndex(item => item!.ProductID == IDpr);
+                    if (ind != -1) //when we found
                     {
-                        if (item!.ProductID == IDpr)  //this loop will happen just one time
-                        {
-                            cart.TotalPrice += temp.Price * (newAmount - temp.Amount);//uptade the total price of the cart.
-                            item!.Amount = newAmount;   //!- because we check that the product exist in the cart.
-                            item.TotalPrice += temp.Price * (newAmount - temp.Amount);  //uptade the total price of the order item.
-                        }
+                        cart.TotalPrice += temp.Price * (newAmount - temp.Amount);//uptade the total price of the cart.
+                        cart!.Items![ind]!.Amount = newAmount;   //!- because we check that the product exist in the cart.
+                        cart!.Items![ind]!.TotalPrice += temp.Price * (newAmount - temp.Amount);  //uptade the total price of the order item.
                     }
+                }
                 else
                     throw new BO.notInStockException(); //if there is no enagh products in the stock
             }

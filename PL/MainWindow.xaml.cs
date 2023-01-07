@@ -53,7 +53,7 @@ namespace PL
         public void cart_Click(object o, RoutedEventArgs e)
         {
      
-            frame.Content = frame.Content = new cartListPage(my_cart);
+            frame.Content = frame.Content = new cartListPage(my_cart,this);
             return_back(o, e);
             customer.Visibility = Visibility.Hidden;
             manager.Visibility = Visibility.Hidden;
@@ -65,8 +65,7 @@ namespace PL
             return_back(o, e);
             manager.IsEnabled = false;
             password.Visibility = Visibility.Visible;
-            enter_password.Visibility = Visibility.Visible;
-            confirm.Visibility = Visibility.Visible;
+          
 
         }
         public void check_password(object o, RoutedEventArgs e)
@@ -104,6 +103,10 @@ namespace PL
             return_back(o, e);
         }
 
-        
+        private void ManagerTrack_Click(object sender, RoutedEventArgs e)
+        {
+            EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(0);
+            enterID.Show();
+        }
     }
 }

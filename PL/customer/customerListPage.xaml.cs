@@ -48,7 +48,7 @@ namespace PL.customer
                 InStock = bl.Product.getProductInfoCustomer(pro.ID, my_cart).InStock,
                 path = pro.path
             };
-            ListOfProducts.ItemsSource =IEnumerableToObserval(poList);
+            ListOfProducts.ItemsSource =tools.IEnumerableToObserval(poList);
             cart = my_cart;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
@@ -64,7 +64,7 @@ namespace PL.customer
             }
             else
                 boList = bl!.Product!.getPartOfProduct(pro => pro!.Category == (BO.Category)item)!;
-            ListOfProducts.ItemsSource = IEnumerableToObserval(
+            ListOfProducts.ItemsSource = tools.IEnumerableToObserval(
             from pro in boList
          select new PO.ProductItem
          {
@@ -85,7 +85,7 @@ namespace PL.customer
             {
                 cartWindow data = new cartWindow(cart, item);
                 data.ShowDialog();
-                ListOfProducts.ItemsSource = IEnumerableToObserval(
+                ListOfProducts.ItemsSource = tools.IEnumerableToObserval(
                     from pro in bl!.Product!.getListOfProduct()!
                     select new PO.ProductItem
                     {
@@ -101,13 +101,6 @@ namespace PL.customer
       
             }
 
-        }
-        public ObservableCollection<PO.ProductItem?> IEnumerableToObserval(IEnumerable<PO.ProductItem> listToCast)
-        {
-            ObservableCollection<PO.ProductItem?> ProductsColllection = new ObservableCollection<PO.ProductItem?>();
-            foreach (PO.ProductItem item in listToCast)
-                ProductsColllection.Add(item);
-            return ProductsColllection;
         }
 
         private void ListOfProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
