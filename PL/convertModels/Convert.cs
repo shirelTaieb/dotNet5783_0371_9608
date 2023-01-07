@@ -47,7 +47,7 @@ namespace PL.Convert
         {
             if (value == null)
                 return Visibility.Hidden;         
-          if(value.GetType() == typeof(int)&&(int)value==0)
+          if(value.GetType() == typeof(int) && (int)value==0)
                 return Visibility.Hidden;
             return Visibility.Visible;
 

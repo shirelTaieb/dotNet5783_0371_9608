@@ -9,7 +9,8 @@
       Title="orderListProductPage">
 
     <Grid>
-        <DataGrid x:Name="productListOfOrder" AutoGenerateColumns="False"  Background="#B0C4B1" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2"  AlternatingRowBackground="#DCE1DE" AlternationCount="2">
+        <DataGrid x:Name="productListOfOrder" AutoGenerateColumns="False"  Background="#B0C4B1" EnableRowVirtualization="True"
+                  RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2"  AlternatingRowBackground="#DCE1DE" AlternationCount="2" IsReadOnly="True">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="#9CC5A1"/>
@@ -21,8 +22,8 @@
                 </DataGrid.Resources>
                 <DataGrid.Columns>
                     <DataGridTextColumn
-                    x:Name="idColumn"
-                    Binding="{Binding Name}"
+                    x:Name="NameColumn"
+                    Binding="{Binding ProductName}"
                     Header="שם המוצר" 
                     Width="150"/>
                     <DataGridTextColumn

@@ -24,7 +24,19 @@ namespace PL.orders
         public orderListProductPage(BO.Order order)
         {
             InitializeComponent();
-            productListOfOrder.DataContext=order.Items;
+            List<PO.OrderItem> POitems = new List<PO.OrderItem>();
+            POitems =
+               (from boItem in order.Items
+                select new PO.OrderItem()
+                {
+                    ID = boItem.ID,
+                    ProductID = boItem.ProductID,
+                    ProductName = boItem.ProductName,
+                    Price = boItem.Price,
+                    Amount = boItem.Amount,
+                    TotalPrice = boItem.TotalPrice
+                }).ToList();
+            productListOfOrder.DataContext = tools.IEnumerableToObserval(POitems);
         }
 
     }

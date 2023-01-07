@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -29,6 +30,13 @@ namespace PL
             foreach (PO.ProductForList item in listToCast)
                 productCollection.Add(item);
             return productCollection;
+        }
+        public static ObservableCollection<PO.OrderItem> IEnumerableToObserval(IEnumerable<PO.OrderItem> listToCast)
+        {
+            ObservableCollection<PO.OrderItem> orderCollection = new ObservableCollection<PO.OrderItem>();
+            foreach (PO.OrderItem item in listToCast)
+                orderCollection.Add(item);
+            return orderCollection;
         }
     }
 }
