@@ -17,9 +17,12 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <DataGridRowHeader Grid.Row="0" >
-            <TextBlock Text="שם">
-                
-            </TextBlock>
+            
+            <TextBlock Text="מספר מוצר"/>
+            <TextBlock Text="שם מוצר"/>
+            <TextBlock Text="מחיר ליחידה"/>
+            <TextBlock Text="כמות"/>
+            <TextBlock Text="סהכ"/>
         </DataGridRowHeader>
         <ListView x:Name="cartListView" ItemsSource="{Binding}" Grid.Row="1" >
             <ListView.ItemTemplate>
