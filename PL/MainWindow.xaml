@@ -47,7 +47,8 @@
 
 
         </Grid>
-        <Button Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="140,0,0,0"  VerticalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}" Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="ManagerTrack_Click"/>
+        <Button x:Name="managerTrack" Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="140,0,0,0"  VerticalAlignment="Center" Visibility="Collapsed"  Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="ManagerTrack_Click"/>
+        <Button x:Name="customarTrack" Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}" Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="CustomerTrack_Click"/>
 
     </Grid>
 </Window>

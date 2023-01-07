@@ -63,6 +63,7 @@ namespace PL.orders
                 MessageBox.Show("לא קיימת הזמנה עם מספר זה", "");
                 ID.Clear();
             }
+            catch { };
 
        
         }
