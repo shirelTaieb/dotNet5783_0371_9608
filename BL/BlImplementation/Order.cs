@@ -96,7 +96,7 @@ internal class Order : BLApi.IOrder
         //    from order in temp
         //    select order;  //we want all of the orders
         //result.ToList();//ניסיון להמיר פוראיצ ללינק ללא הצלחה
-        foreach (DO.Order or in temp)
+        foreach (DO.Order? or in temp)
         {
             boorder = DoOrderToBo(or); //from do to bo
             ofl= BoOrderToOrderForList(boorder!);//from order to orderforlist
