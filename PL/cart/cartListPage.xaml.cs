@@ -63,5 +63,12 @@ namespace PL.cart
             mainWindow.frame.Content = new customerListPage(cart!); //מעבר לקטלוג
 
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (cartListView.SelectedItems == null);
+            PO.OrderItem tempOrder = (PO.OrderItem)cartListView.SelectedItem;
+            bl!.Cart!.updatePoductAmount(cart, tempOrder.ProductID ,0);
+        }
     }
 }

@@ -15,25 +15,25 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <DataGridRowHeader Grid.Row="0" >
-            
-            <TextBlock Text="מספר מוצר"/>
-            <TextBlock Text="שם מוצר"/>
-            <TextBlock Text="מחיר ליחידה"/>
-            <TextBlock Text="כמות"/>
-            <TextBlock Text="סהכ"/>
-        </DataGridRowHeader>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="מספר מוצר" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="10,0,0,0"/>
+            <TextBlock Text="שם מוצר" Width="150" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="10,0,0,0"/>
+            <TextBlock Text="מחיר ליחידה" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,0"/>
+            <TextBlock Text="כמות" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="0,0,5,0"/>
+            <TextBlock Text="סהכ" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
         <ListView x:Name="cartListView" ItemsSource="{Binding}" Grid.Row="1" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="10">
                         <Border BorderBrush="#FF465153" BorderThickness="0,0,0,1">
                             <StackPanel Orientation="Horizontal" >
-                                <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Normal" FontStyle="Italic"/>
-                                <TextBlock Text ="{Binding ProductName}" Width="150" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
-                                <TextBlock Text ="{Binding Price}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
-                                <TextBlock Text ="{Binding Amount}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
+                                <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Normal" FontStyle="Italic" TextAlignment="Center"/>
+                                <TextBlock Text ="{Binding ProductName}" Width="150" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
+                                <TextBlock Text ="{Binding Price}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
+                                <TextBlock Text ="{Binding Amount}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
                             </StackPanel>
                         </Border>
                     </Grid>
@@ -44,5 +44,6 @@
             <TextBlock x:Name="nonDetail" Width="800" TextAlignment="Center" Background="{x:Null}" Foreground="#FF465153" FontFamily="Calibri" FontSize="30" Margin="0,60,0,50" Visibility="{Binding ElementName=cartListView, Converter={StaticResource nullToVisi}}" Height="130"><Run Text=" ..אוישש"/><LineBreak/><Run Text="הסל שלך עוד ריק"/></TextBlock>
             <Button Width="300" Height="50" Content="למעבר מהיר לקטלוג המוצרים" FontSize="20" BorderBrush="#FF465153" Background="{x:Null}" Foreground="#FF465153" Margin="0,0,0,0" Click="moveToCatelog_Click" Visibility="{Binding ElementName=nonDetail, Path=Visibility}"/>
         </StackPanel>
+        <Button Content="מחיקת מוצר" HorizontalAlignment="Left" Margin="658,0,0,0" Grid.Row="2" VerticalAlignment="Center" Background="#FF2E4F2E" BorderBrush="{x:Null}" FontWeight="Bold" Click="Delete_Click"/>
     </Grid>
 </Page>
