@@ -1,0 +1,22 @@
+﻿<Window x:Class="PL.orders.EnterIdForTrackingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.orders"
+        mc:Ignorable="d"
+        Title="EnterIdForTrackingWindow" Height="220" Width="300" Background="#FF465153">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text=":הכנס מספר הזמנה" FontSize="20" Margin="0,30,0,0" TextAlignment="Center" Foreground="#DCE1DE"/>
+            <TextBox  x:Name="ID" Margin="0,10,0,0" Foreground="#DCE1DE" PreviewTextInput="PreviewTextInput" Width="100" BorderBrush="#DCE1DE" />
+            <TextBlock x:Name="notValid" Text="מס' הזמנה צריך להיות בן 4 ספרות" Margin="0,10,0,0" Foreground="#DCE1DE" FontSize="10" TextAlignment="Center" Visibility="Collapsed"/>
+            <Button  Margin="0,15,0,0" Width="150" Content="בדיקת מצב הזמנה" BorderBrush="#DCE1DE" Foreground="#DCE1DE" Background="{x:Null}" Click="trackOrder_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

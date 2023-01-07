@@ -103,6 +103,10 @@ namespace PL
             return_back(o, e);
         }
 
-        
+        private void ManagerTrack_Click(object sender, RoutedEventArgs e)
+        {
+            EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(0);
+            enterID.Show();
+        }
     }
 }
