@@ -1,6 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System;
+//using System.Windows.UI.Xaml;
+
 
 namespace PL.orders
 {
@@ -26,6 +29,11 @@ namespace PL.orders
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+        private void keyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Enter)
+                trackOrder_Click(sender, e);
+        }
 
         private void trackOrder_Click(object sender, RoutedEventArgs e)
         {
@@ -43,6 +51,7 @@ namespace PL.orders
                 {
 
                 }
+                Close();
             }
             catch (BO.wrongDataException)// ID לא חוקי
             {

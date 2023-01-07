@@ -47,7 +47,7 @@
 
 
         </Grid>
-        <Button Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Center" Click="ManagerTrack_Click"/>
+        <Button Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="140,0,0,0"  VerticalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}" Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="ManagerTrack_Click"/>
 
     </Grid>
 </Window>
