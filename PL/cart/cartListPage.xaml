@@ -12,14 +12,26 @@
         <PL.Convert:NullToVisibilityConverter x:Key="nullToVisi"/>
     </Page.Resources>
     <Grid>
-        <ListView x:Name="cartListView" ItemsSource="{Binding}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <DataGridRowHeader Grid.Row="0" >
+            
+            <TextBlock Text="מספר מוצר"/>
+            <TextBlock Text="שם מוצר"/>
+            <TextBlock Text="מחיר ליחידה"/>
+            <TextBlock Text="כמות"/>
+            <TextBlock Text="סהכ"/>
+        </DataGridRowHeader>
+        <ListView x:Name="cartListView" ItemsSource="{Binding}" Grid.Row="1" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid Margin="10">
                         <Border BorderBrush="#FF465153" BorderThickness="0,0,0,1">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"   />
-                                <TextBlock Text ="{Binding ProductName}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Normal" FontStyle="Italic"/>
+                                <TextBlock Text ="{Binding ProductName}" Width="150" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
                                 <TextBlock Text ="{Binding Price}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
                                 <TextBlock Text ="{Binding Amount}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold"  />
                             </StackPanel>
