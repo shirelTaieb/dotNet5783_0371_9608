@@ -60,7 +60,7 @@ namespace PL.cart
 
         private void moveToCatelog_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new customerListPage(cart!); //מעבר לקטלוג
+            mainWindow.frame.Content = new customerListPage(cart!); // מעבר לקטלוג המוצרים
 
         }
 
