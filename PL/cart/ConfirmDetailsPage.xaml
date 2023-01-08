@@ -9,17 +9,19 @@
       Title="ConfirmDetailsPage" Background="#FF8FA590">
 
     <Grid>
-        <StackPanel Margin="190,10,10,90">
-             <StackPanel>
-                <TextBlock Text=":שם" TextAlignment="right" Margin="0,0,30,0" />
-                <TextBlock Text=":כתובת" TextAlignment="right" Margin="0,0,30,0" />
-                <TextBlock Text=":כתובת מייל" TextAlignment="right" Margin="0,0,30,0" />
-            </StackPanel>
-             <StackPanel>
+        <StackPanel Margin="100,52,100,253" Orientation="Horizontal">
+            <StackPanel Width="300">
                 <TextBlock Text="{Binding CustomerName}" />
                 <TextBlock Text="{Binding CustomerAddress}" />
                 <TextBlock Text="{Binding CustomerEmail}" />
             </StackPanel>
+            <StackPanel x:Name="customerData" Margin="0,0,0,0" Width="300">
+                <TextBlock Text=":שם" TextAlignment="Center" Margin="0,0,30,0" FontSize="30"/>
+                <TextBlock Text=":כתובת" TextAlignment="Center" Margin="0,0,30,0" FontSize="30"/>
+                <TextBlock Text=":כתובת מייל" TextAlignment="Center" Margin="0,0,30,0" FontSize="30"/>
+            </StackPanel>
+         
+
         </StackPanel>
     </Grid>
 </Page>

@@ -74,6 +74,11 @@ namespace PL.cart
 
         private void confirmOrder_Click(object sender, RoutedEventArgs e)
         {
+            if (POcart!.CustomerName == null || POcart.CustomerEmail == null || POcart.CustomerAddress == null)
+            {
+                EnterDetailsWindow data = new EnterDetailsWindow(POcart);
+                data.ShowDialog();
+            }
             mainWindow.frame.Content = new ConfirmDetailsPage(POcart!);
         }
         private void Personal_Data(object sender, RoutedEventArgs e)

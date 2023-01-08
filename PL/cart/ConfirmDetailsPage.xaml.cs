@@ -23,6 +23,7 @@ namespace PL.cart
         public ConfirmDetailsPage(PO.Cart poCart)
         {
             InitializeComponent();
+            customerData.DataContext = poCart;  
 
         }
     }
