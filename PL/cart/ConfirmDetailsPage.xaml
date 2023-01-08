@@ -6,9 +6,20 @@
       xmlns:local="clr-namespace:PL.cart"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ConfirmDetailsPage">
+      Title="ConfirmDetailsPage" Background="#FF8FA590">
 
     <Grid>
-        
+        <StackPanel Margin="190,10,10,90">
+             <StackPanel>
+                <TextBlock Text=":שם" TextAlignment="right" Margin="0,0,30,0" />
+                <TextBlock Text=":כתובת" TextAlignment="right" Margin="0,0,30,0" />
+                <TextBlock Text=":כתובת מייל" TextAlignment="right" Margin="0,0,30,0" />
+            </StackPanel>
+             <StackPanel>
+                <TextBlock Text="{Binding CustomerName}" />
+                <TextBlock Text="{Binding CustomerAddress}" />
+                <TextBlock Text="{Binding CustomerEmail}" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
