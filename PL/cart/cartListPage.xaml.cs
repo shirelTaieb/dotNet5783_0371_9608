@@ -74,11 +74,12 @@ namespace PL.cart
 
         private void confirmOrder_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new ConfirmDetailsPage(POcart);
+            mainWindow.frame.Content = new ConfirmDetailsPage(POcart!);
         }
         private void Personal_Data(object sender, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new EnterDetailsWindow(POcart!); // מעבר חלונית פרטיים אישיים
+            EnterDetailsWindow detailsWindow  = new EnterDetailsWindow(POcart!); // מעבר חלונית פרטיים אישיים
+            detailsWindow.Show();
         }
     }
 
