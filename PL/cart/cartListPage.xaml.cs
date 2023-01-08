@@ -79,7 +79,8 @@ namespace PL.cart
                 EnterDetailsWindow data = new EnterDetailsWindow(POcart);
                 data.ShowDialog();
             }
-            mainWindow.frame.Content = new ConfirmDetailsPage(POcart!);
+            else
+                mainWindow.frame.Content = new ConfirmDetailsPage(POcart!);
         }
         private void Personal_Data(object sender, RoutedEventArgs e)
         {

@@ -26,5 +26,10 @@ namespace PL.cart
             customerData.DataContext = poCart;  
 
         }
+
+        private void finalConfirmOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
