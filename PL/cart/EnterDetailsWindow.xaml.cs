@@ -24,11 +24,11 @@ namespace PL.cart
         public EnterDetailsWindow(PO.Cart finalCart)
         {
             InitializeComponent();
-
-            finalCart.CustomerName= Name.Text;
-            finalCart.CustomerAddress = CustomerAddress.Text;
-            finalCart.CustomerEmail = Email.Text;
-            cart = finalCart;
+            Data.DataContext = finalCart;
+            //finalCart.CustomerName= Name.Text;
+            //finalCart.CustomerAddress = CustomerAddress.Text;
+           // finalCart.CustomerEmail = Email.Text;
+            //cart = finalCart;
 
                 //tempCart.CustomerName = finalCart.CustomerName;
                 //tempCart.CustomerAddress = finalCart.CustomerAddress;
@@ -39,17 +39,13 @@ namespace PL.cart
         }
         private void Confirm_Data(object sender, RoutedEventArgs e)
         {
-
-            Close();
-
-        }
-
-        private void Email_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (cart.CustomerAddress != null && !cart.CustomerAddress.Contains("@"))
-                ERROR.Visibility = Visibility.Visible;
-        
+            if (cart.CustomerEmail != null && !cart.CustomerEmail.Contains("@"))
+                    ERROR.Visibility = Visibility.Visible;
+            else
+                Close();
 
         }
+
+     
     }
 }

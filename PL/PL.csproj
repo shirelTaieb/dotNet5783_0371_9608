@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <None Remove="download.png" />
+    <None Remove="images\book.png" />
     <None Remove="images\Logo.jpg" />
     <None Remove="images\man.png" />
     <None Remove="images\manager.png" />
@@ -22,6 +23,10 @@
     <None Remove="pngegg.png" />
     <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="W_960_sell-online.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\book.png" />
   </ItemGroup>
 
   <ItemGroup>

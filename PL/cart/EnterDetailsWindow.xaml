@@ -31,7 +31,7 @@
                        Text="{Binding CustomerName}" />
             <TextBox x:Name="Email" Width="151" TextAlignment="Center" Height="28" HorizontalAlignment="Left"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
-                       Text="{Binding CustomerEmail}" TextChanged="Email_TextChanged"/>
+                       Text="{Binding CustomerEmail}" />
             <TextBox x:Name="CustomerAddress" Width="158" TextAlignment="Center" Height="30" HorizontalAlignment="Stretch"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
                        Text="{Binding CustomerAddress}"/>
