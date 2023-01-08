@@ -20,17 +20,45 @@ namespace PL.cart
     /// </summary>
     public partial class ConfirmDetailsPage : Page
     {
+        private BLApi.IBl? bl = BLApi.Factory.Get();
+        PO.Cart cart= new PO.Cart();
         public ConfirmDetailsPage(PO.Cart poCart)
         {
             InitializeComponent();
             customerData.DataContext = poCart;
             final_cartDetails.DataContext = poCart.Items;
+            cart = poCart;
 
         }
 
         private void finalConfirmOrder_Click(object sender, RoutedEventArgs e)
         {
+            BO.Cart boCart = new BO.Cart()
+            {
+                CustomerAddress = cart.CustomerAddress,
+                CustomerEmail = cart.CustomerEmail,
+                CustomerName = cart.CustomerName,
+                Items =
+                (from item in cart.Items
+                select new BO.OrderItem()
+                {
+                    ID = item.ID,
+                    Price = item.Price,
+                    ProductID = item.ProductID,
+                    Amount = item.Amount,
+                    TotalPrice = item.TotalPrice
+                }).ToList()
+               
+            };
+            try
+            {
+                bl!.Cart!.confirmOrder(boCart);
+            }
+            catch
+            {
 
+            }
+            
         }
     }
 }

@@ -39,7 +39,6 @@ namespace PL.cart
         }
         private void Confirm_Data(object sender, RoutedEventArgs e)
         {
-
             Close();
 
         }
