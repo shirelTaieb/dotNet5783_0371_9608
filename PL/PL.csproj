@@ -18,7 +18,9 @@
     <None Remove="images\Logo.jpg" />
     <None Remove="images\man.png" />
     <None Remove="images\manager.png" />
+    <None Remove="images\sell.png" />
     <None Remove="pngegg.png" />
+    <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="W_960_sell-online.png" />
   </ItemGroup>
 
@@ -35,6 +37,8 @@
     <Resource Include="images\Logo.jpg" />
     <Resource Include="images\man.png" />
     <Resource Include="images\manager.png" />
+    <Resource Include="images\sell.png" />
+    <Resource Include="WIN_20230101_22_53_59_Pro.jpg" />
   </ItemGroup>
 
 </Project>
