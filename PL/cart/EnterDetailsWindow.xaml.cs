@@ -28,9 +28,9 @@ namespace PL.cart
             }
             catch(BO.wrongDataException)
             {
-                ERROR.Visibility = Visibility.Visible;// לא עובד בעליל
+                ERROR.Visibility = Visibility.Visible;// לא עובד בעליל גאונות
+                
             }
-
         }
         private void Confirm_Data(object sender, RoutedEventArgs e)
         {
