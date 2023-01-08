@@ -22,7 +22,7 @@ namespace PL.cart
         public EnterDetailsWindow(PO.Cart finalCart)
         {
             InitializeComponent();
-
+             Data.DataContext=finalCart;
         }
     }
 }

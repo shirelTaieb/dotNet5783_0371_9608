@@ -15,6 +15,9 @@
 
   <ItemGroup>
     <None Remove="download.png" />
+    <None Remove="images\Logo.jpg" />
+    <None Remove="images\man.png" />
+    <None Remove="images\manager.png" />
     <None Remove="pngegg.png" />
     <None Remove="W_960_sell-online.png" />
   </ItemGroup>
@@ -26,6 +29,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BL\BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\Logo.jpg" />
+    <Resource Include="images\man.png" />
+    <Resource Include="images\manager.png" />
   </ItemGroup>
 
 </Project>

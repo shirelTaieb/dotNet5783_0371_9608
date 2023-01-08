@@ -70,5 +70,10 @@ namespace PL.cart
             PO.OrderItem tempOrder = (PO.OrderItem)cartListView.SelectedItem;
             bl!.Cart!.updatePoductAmount(cart, tempOrder.ProductID ,0);
         }
+        private void Personal_Data(object sender, RoutedEventArgs e)
+        {
+            mainWindow.frame.Content = new EnterDetailsWindow(); // מעבר חלונית פרטיים אישיים
+        }
     }
+
 }
