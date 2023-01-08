@@ -4,6 +4,7 @@ using PL.orders;
 using PL.products;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Media3D;
 
 namespace PL
@@ -68,16 +69,29 @@ namespace PL
           
 
         }
+        private void pressEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                check_password(sender, e);
+        }
+        
         public void check_password(object o, RoutedEventArgs e)
         {
+            worngPassword.Visibility = Visibility.Hidden;
             if (password.Password == "1234")
             {
                 password.Visibility = Visibility.Hidden;
                 products.Visibility = Visibility.Visible;
                 orders.Visibility = Visibility.Visible;
                 password.Password = "";
-                managerTrack.Visibility= Visibility.Visible;
+                managerTrack.Visibility = Visibility.Visible;
             }
+            else
+            {
+                worngPassword.Visibility = Visibility.Visible;
+                password.Clear();
+            }
+
 
         }
         public void products_Click(object o, RoutedEventArgs e)
