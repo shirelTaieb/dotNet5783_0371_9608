@@ -26,23 +26,24 @@
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" HorizontalAlignment="Left" />
         </StackPanel>
         <StackPanel x:Name="Data" Width="160" Height="309" VerticalAlignment="Bottom" Margin="186,0,327,10">
-            <TextBlock x:Name="Name" Width="171" TextAlignment="Right" Height="27" HorizontalAlignment="Right"
-                       FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3" />
-            <TextBlock x:Name="Email" Width="151" TextAlignment="Right" Height="28" HorizontalAlignment="Left"
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"/>
-            <TextBlock x:Name="CustomerAddress" Width="158" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"/>
-            <TextBlock x:Name="Space"  Text="" Width="156" TextAlignment="Right" Height="34" HorizontalAlignment="Stretch"
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-            <TextBlock x:Name="Payment" Width="60" TextAlignment="Center" Height="23" 
-                           FontSize="20" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Italic" Foreground="#FF465153"/>
-            <TextBlock x:Name="Number" Width="117" TextAlignment="Right" Height="33" 
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" HorizontalAlignment="Left" Margin="3,3,3,3" />
-            <TextBlock x:Name="Date" Width="117" TextAlignment="Right" Height="36"
+            <TextBox x:Name="Name" Width="171" TextAlignment="Right" Height="27" HorizontalAlignment="Right"
+                       FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3" 
+                       Text="{Binding CustomerName}" />
+            <TextBox x:Name="Email" Width="151" TextAlignment="Right" Height="28" HorizontalAlignment="Left"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
+                       Text="{Binding CustomerEmail}"/>
+            <TextBox x:Name="CustomerAddress" Width="158" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
+                       Text="{Binding CustomerAddress}"/>
+            <TextBox x:Name="Number" Width="117" TextAlignment="Right" Height="33"  
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" HorizontalAlignment="Left" Margin="3,57,3,3" />
+            <TextBox x:Name="Date" Width="117" TextAlignment="Right" Height="36"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" Margin="3,3,3,3" HorizontalAlignment="Left" />
-            <TextBlock x:Name="Cvv" Width="115" TextAlignment="Right" Height="34"
+            <TextBox x:Name="Cvv" Width="115" TextAlignment="Right" Height="34"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" Margin="3,3,3,3" HorizontalAlignment="Left" />
         </StackPanel>
         <TextBlock HorizontalAlignment="Left" Margin="222,39,0,0" TextWrapping="Wrap" Text="פרטים אישיים" VerticalAlignment="Top" Width="322" Height="54" Background="#FF9AA586" TextAlignment="Center" FontSize="45" FontFamily="Tempus Sans ITC" FontStyle="Italic" Foreground="#FF465153"/>
+        <Button Content="אישור פרטים" HorizontalAlignment="Left" Margin="44,402,0,0" VerticalAlignment="Top" Width="116" BorderBrush="White" Background="#FF365437" Foreground="#DDFFFFFF" Click="Confirm_Data"/>
+        <TextBlock x:FieldModifier="יERROR" HorizontalAlignment="Left" Margin="44,238,0,0" TextWrapping="Wrap" Text="@כתובת אמייל חייבת להכיל " VerticalAlignment="Top" Width="149" FontStyle="Italic" Foreground="#FFD72424" FontSize="11" FontWeight="Bold"/>
     </Grid>
 </Window>
