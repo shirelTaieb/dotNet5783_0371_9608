@@ -9,19 +9,64 @@
       Title="ConfirmDetailsPage" Background="#FF8FA590">
 
     <Grid>
-        <StackPanel Margin="100,52,100,253" Orientation="Horizontal">
-            <StackPanel Width="300">
-                <TextBlock Text="{Binding CustomerName}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="484,170,9,178" Orientation="Horizontal">
+            <StackPanel Width="158">
+                <TextBlock Text="{Binding CustomerName, Mode=TwoWay}" />
                 <TextBlock Text="{Binding CustomerAddress}" />
                 <TextBlock Text="{Binding CustomerEmail}" />
             </StackPanel>
-            <StackPanel x:Name="customerData" Margin="0,0,0,0" Width="300">
-                <TextBlock Text=":שם" TextAlignment="Center" Margin="0,0,30,0" FontSize="30"/>
-                <TextBlock Text=":כתובת" TextAlignment="Center" Margin="0,0,30,0" FontSize="30"/>
-                <TextBlock Text=":כתובת מייל" TextAlignment="Center" Margin="0,0,30,0" FontSize="30"/>
+            <StackPanel x:Name="customerData" Margin="0,0,0,0" Width="152">
+                <TextBlock Text=":שם" TextAlignment="Center"  FontSize="20"/>
+                <TextBlock Text=":כתובת" TextAlignment="Center"  FontSize="20"/>
+                <TextBlock Text=":כתובת מייל" TextAlignment="Center" FontSize="20"/>
             </StackPanel>
-         
-
         </StackPanel>
+        <DataGrid x:Name="final_cartDetails" AutoGenerateColumns="False"  Background="#B0C4B1" EnableRowVirtualization="True"
+                  RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="0"  AlternatingRowBackground="#DCE1DE" AlternationCount="2" IsReadOnly="True">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#9CC5A1"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderThickness" Value="0,1,1,0.5"/>
+                    <Setter Property="BorderBrush" Value="#1F2421"/>
+                    <Setter Property="HorizontalContentAlignment" Value="center" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    x:Name="proID"
+                    Binding="{Binding ProductID, Mode=TwoWay}"
+                    Header="מס' מזהה"
+                    Width="120"/>
+                <DataGridTextColumn
+                    x:Name="NameColumn"
+                    Binding="{Binding ProductName}"
+                    Header="שם המוצר" 
+                    Width="150"/>           
+                <DataGridTextColumn
+                    x:Name="AmountOfItemsColumn"
+                    Binding="{Binding Amount}"
+                    Header="כמות"
+                    Width="120"/>
+                <DataGridTextColumn
+                    x:Name="PriceColumn"
+                    Binding="{Binding Price}"
+                    Header="מחיר ליחידה"
+                    Width="130"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="אישור הזמנה" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" Background="#FF2E4F2E" BorderBrush="{x:Null}" Click="finalConfirmOrder_Click" Margin="40,3,0,0"/>
+
+
     </Grid>
 </Page>

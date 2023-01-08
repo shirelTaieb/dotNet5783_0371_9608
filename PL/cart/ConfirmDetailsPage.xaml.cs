@@ -23,7 +23,13 @@ namespace PL.cart
         public ConfirmDetailsPage(PO.Cart poCart)
         {
             InitializeComponent();
-            customerData.DataContext = poCart;  
+            customerData.DataContext = poCart;
+            final_cartDetails.DataContext = poCart.Items;
+
+        }
+
+        private void finalConfirmOrder_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
