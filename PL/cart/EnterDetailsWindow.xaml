@@ -31,7 +31,7 @@
                        Text="{Binding CustomerName}" />
             <TextBox x:Name="Email" Width="151" TextAlignment="Center" Height="28" HorizontalAlignment="Left"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
-                       Text="{Binding CustomerEmail}"/>
+                       Text="{Binding CustomerEmail}" TextChanged="Email_TextChanged"/>
             <TextBox x:Name="CustomerAddress" Width="158" TextAlignment="Center" Height="30" HorizontalAlignment="Stretch"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
                        Text="{Binding CustomerAddress}"/>
@@ -44,6 +44,6 @@
         </StackPanel>
         <TextBlock HorizontalAlignment="Left" Margin="222,39,0,0" TextWrapping="Wrap" Text="פרטים אישיים" VerticalAlignment="Top" Width="322" Height="54" Background="#FF9AA586" TextAlignment="Center" FontSize="45" FontFamily="Tempus Sans ITC" FontStyle="Italic" Foreground="#FF465153"/>
         <Button Content="אישור פרטים" HorizontalAlignment="Left" Margin="44,402,0,0" VerticalAlignment="Top" Width="116" BorderBrush="White" Background="#FF365437" Foreground="#DDFFFFFF" Click="Confirm_Data"/>
-        <TextBlock x:Name="ERROR" HorizontalAlignment="Left" Margin="37,202,0,0" TextWrapping="Wrap" Text="@ כתובת אמייל חייבת להכיל " VerticalAlignment="Top" Width="149" FontStyle="Italic" Foreground="#FFD72424" FontSize="11" FontWeight="Bold" Visibility="Hidden" />
+        <TextBlock x:Name="ERROR" HorizontalAlignment="Left" Margin="37,202,0,0" TextWrapping="Wrap" Text=" כתובת מייל לא תקינה " VerticalAlignment="Top" Width="149" FontStyle="Italic" Foreground="#FFD72424" FontSize="11" FontWeight="Bold" Visibility="Hidden" />
     </Grid>
 </Window>
