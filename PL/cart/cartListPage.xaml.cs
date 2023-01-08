@@ -24,16 +24,17 @@ namespace PL.cart
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
         MainWindow mainWindow;
-        BO.Cart? cart;
+        PO.Cart? POcart;
+        BO.Cart? boCart;
         public cartListPage(BO.Cart? my_cart,MainWindow _mainWindow)
         {
             InitializeComponent();
             mainWindow = _mainWindow;
-            cart=my_cart;
+            boCart = my_cart;
             if (my_cart!.Items != null)
             {
-                PO.Cart cart = new PO.Cart()
-                {
+                 POcart = new PO.Cart()
+                 {
                     CustomerName = my_cart.CustomerName,
                     CustomerEmail = my_cart.CustomerEmail,
                     CustomerAddress = my_cart.CustomerAddress,
@@ -49,7 +50,7 @@ namespace PL.cart
                                  TotalPrice = orItem.TotalPrice
                              }).ToList()
                 };
-                cartListView.ItemsSource = cart.Items;
+                cartListView.ItemsSource = POcart.Items;
             }
             else
             {
@@ -60,7 +61,7 @@ namespace PL.cart
 
         private void moveToCatelog_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new customerListPage(cart!); // מעבר לקטלוג המוצרים
+            mainWindow.frame.Content = new customerListPage(boCart!); // מעבר לקטלוג המוצרים
 
         }
 
@@ -68,7 +69,12 @@ namespace PL.cart
         {
             if (cartListView.SelectedItems == null);
             PO.OrderItem tempOrder = (PO.OrderItem)cartListView.SelectedItem;
-            bl!.Cart!.updatePoductAmount(cart, tempOrder.ProductID ,0);
+            bl!.Cart!.updatePoductAmount(boCart, tempOrder.ProductID ,0);
+        }
+
+        private void confirmOrder_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.frame.Content = new ConfirmDetailsPage(POcart);
         }
     }
 }
