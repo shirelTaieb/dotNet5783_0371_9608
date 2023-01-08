@@ -21,7 +21,7 @@
 
         <StackPanel Margin="484,170,9,178" Orientation="Horizontal">
             <StackPanel Width="158">
-                <TextBlock Text="{Binding CustomerName}" />
+                <TextBlock Text="{Binding CustomerName, Mode=TwoWay}" />
                 <TextBlock Text="{Binding CustomerAddress}" />
                 <TextBlock Text="{Binding CustomerEmail}" />
             </StackPanel>
@@ -31,7 +31,7 @@
                 <TextBlock Text=":כתובת מייל" TextAlignment="Center" FontSize="20"/>
             </StackPanel>
         </StackPanel>
-        <DataGrid x:Name="productListOfOrder" AutoGenerateColumns="False"  Background="#B0C4B1" EnableRowVirtualization="True"
+        <DataGrid x:Name="final_cartDetails" AutoGenerateColumns="False"  Background="#B0C4B1" EnableRowVirtualization="True"
                   RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="0"  AlternatingRowBackground="#DCE1DE" AlternationCount="2" IsReadOnly="True">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -45,7 +45,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     x:Name="proID"
-                    Binding="{Binding ProductID}"
+                    Binding="{Binding ProductID, Mode=TwoWay}"
                     Header="מס' מזהה"
                     Width="120"/>
                 <DataGridTextColumn
