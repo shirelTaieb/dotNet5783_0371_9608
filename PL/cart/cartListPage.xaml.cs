@@ -24,8 +24,8 @@ namespace PL.cart
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
         MainWindow mainWindow;
-        PO.Cart? POcart;
-        BO.Cart? boCart;
+        PO.Cart? POcart=new PO.Cart();
+        BO.Cart? boCart=new BO.Cart();
         public cartListPage(BO.Cart? my_cart,MainWindow _mainWindow)
         {
             InitializeComponent();

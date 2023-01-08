@@ -22,7 +22,20 @@ namespace PL.cart
         public EnterDetailsWindow(PO.Cart finalCart)
         {
             InitializeComponent();
-            Data.DataContext=finalCart;
+            try
+            {
+                Data.DataContext = finalCart;
+            }
+            catch(BO.wrongDataException)
+            {
+
+            }
+
+        }
+        private void Confirm_Data(object sender, RoutedEventArgs e)
+        {
+            Close();
+
         }
     }
 }
