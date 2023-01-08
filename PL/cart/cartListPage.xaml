@@ -46,7 +46,7 @@
             <Button Width="300" Height="50" Content="למעבר מהיר לקטלוג המוצרים" FontSize="20" BorderBrush="#FF465153" Background="{x:Null}" Foreground="#FF465153" Margin="0,0,0,0" Click="moveToCatelog_Click" Visibility="{Binding ElementName=nonDetail, Path=Visibility}"/>
         </StackPanel>
         <Button Content="מחיקת מוצר" HorizontalAlignment="Left" Margin="658,0,0,0" Grid.Row="2" VerticalAlignment="Center" Background="#FF2E4F2E" BorderBrush="{x:Null}" FontWeight="Bold" Click="Delete_Click" Visibility="{Binding ElementName=cartListView, Converter={StaticResource nullToNotVisi}}" />
-        <Button Content="אישור הזמנה" HorizontalAlignment="Left" Margin="66,0,0,0" Grid.Row="2" VerticalAlignment="Center" Background="#FF2E4F2E" BorderBrush="{x:Null}"/>
+        <Button Content="אישור הזמנה" HorizontalAlignment="Left" Margin="66,0,0,0" Grid.Row="2" VerticalAlignment="Center" Background="#FF2E4F2E" BorderBrush="{x:Null}" Click="confirmOrder_Click"/>
         <Button Content="פרטים אישיים" HorizontalAlignment="Left" Margin="658,0,0,0" VerticalAlignment="Top" Height="25" Width="130" Background="#FF2E4F2E" BorderBrush="{x:Null}" Click="Personal_Data" />
     </Grid>
 </Page>
