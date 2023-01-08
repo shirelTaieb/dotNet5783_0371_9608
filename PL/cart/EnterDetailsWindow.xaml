@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="EnterDetailsWindow" Height="450" Width="800">
     <Grid  Background="#FFB0C4B1">
-        <StackPanel Width="160" Height="300" VerticalAlignment="Bottom" Margin="592,0,48,45">
+        <StackPanel Width="160" Height="300" VerticalAlignment="Bottom" Margin="516,0,124,20">
             <TextBlock x:Name="name"  Text=":שם פרטי" Width="158" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
                            FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
             <TextBlock x:Name="email"  Text=":דואר אלקטרוני" Width="159" TextAlignment="Right" Height="34" HorizontalAlignment="Left"
@@ -16,16 +16,16 @@
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
             <TextBlock x:Name="space"  Text="" Width="156" TextAlignment="Right" Height="22" HorizontalAlignment="Stretch"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
-            <TextBlock x:Name="payment"  Text=":פרטי תשלום" Width="160" TextAlignment="Center" Height="36" 
-                           FontSize="20" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Italic" Foreground="#FF465153" Background="#FF9AA586"/>
-            <TextBlock x:Name="number"  Text=":מספר כרטיס אשראי" Width="156" TextAlignment="Right" Height="46" 
+            <TextBlock x:Name="payment"  Text=":פרטי תשלום" Width="128" TextAlignment="Center" Height="36" 
+                           FontSize="20" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Italic" Foreground="#FF465153" Background="#FF9AA586" HorizontalAlignment="Right"/>
+            <TextBlock x:Name="number"  Text=":מספר כרטיס אשראי" Width="156" TextAlignment="Right" Height="42" 
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" />
             <TextBlock x:Name="date"  Text=":תוקף" Width="59" TextAlignment="Right" Height="40"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" HorizontalAlignment="Left" />
             <TextBlock x:Name="cvv"  Text=":cvv" Width="50" TextAlignment="Right" Height="48"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" HorizontalAlignment="Left" />
         </StackPanel>
-        <StackPanel Width="160" Height="309" VerticalAlignment="Bottom" Margin="484,0,156,45">
+        <StackPanel Width="160" Height="309" VerticalAlignment="Bottom" Margin="400,0,240,27">
             <TextBlock x:Name="Name" Width="171" TextAlignment="Right" Height="27" HorizontalAlignment="Right"
                            FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"/>
             <TextBlock x:Name="Email" Width="151" TextAlignment="Right" Height="28" HorizontalAlignment="Left"
@@ -44,5 +44,6 @@
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" Margin="3,3,3,3" HorizontalAlignment="Left" />
 
         </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="459,34,0,0" TextWrapping="Wrap" Text="פרטים אישיים" VerticalAlignment="Top" Width="322" Height="54" Background="#FF9AA586" TextAlignment="Center" FontSize="45" FontFamily="Tempus Sans ITC" FontStyle="Italic" Foreground="#FF465153"/>
     </Grid>
 </Window>
