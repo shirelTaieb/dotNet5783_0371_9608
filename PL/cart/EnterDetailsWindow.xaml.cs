@@ -28,7 +28,7 @@ namespace PL.cart
             }
             catch(BO.wrongDataException)
             {
-
+               ERROR.Visibility= Visibility.VI;
             }
 
         }
