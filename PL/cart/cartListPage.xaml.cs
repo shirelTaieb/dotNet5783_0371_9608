@@ -78,7 +78,7 @@ namespace PL.cart
         }
         private void Personal_Data(object sender, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new EnterDetailsWindow(); // מעבר חלונית פרטיים אישיים
+            mainWindow.frame.Content = new EnterDetailsWindow(POcart!); // מעבר חלונית פרטיים אישיים
         }
     }
 
