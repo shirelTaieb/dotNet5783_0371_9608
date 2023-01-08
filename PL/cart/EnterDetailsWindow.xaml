@@ -27,11 +27,14 @@
         </StackPanel>
         <StackPanel x:Name="Data" Width="160" Height="309" VerticalAlignment="Bottom" Margin="186,0,327,10">
             <TextBlock x:Name="Name" Width="171" TextAlignment="Right" Height="27" HorizontalAlignment="Right"
-                       FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3" />
+                       FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3" 
+                       Text="{Binding CustomerName}" />
             <TextBlock x:Name="Email" Width="151" TextAlignment="Right" Height="28" HorizontalAlignment="Left"
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"/>
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
+                       Text="{Binding CustomerEmail}"/>
             <TextBlock x:Name="CustomerAddress" Width="158" TextAlignment="Right" Height="30" HorizontalAlignment="Stretch"
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"/>
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
+                       Text="{Binding CustomerAddress}"/>
             <TextBlock x:Name="Space"  Text="" Width="156" TextAlignment="Right" Height="34" HorizontalAlignment="Stretch"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline"/>
             <TextBlock x:Name="Payment" Width="60" TextAlignment="Center" Height="23" 
