@@ -84,8 +84,6 @@ namespace PL.products
             AddProduct.id_lable.Visibility = Visibility.Collapsed;
             AddProduct.ShowDialog();
             //צריך להוסיף בפועל את המוצרר
-
-
         }
 
 
