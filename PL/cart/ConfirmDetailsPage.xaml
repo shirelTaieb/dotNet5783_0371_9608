@@ -15,11 +15,11 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="207*"/>
+            <ColumnDefinition Width="193*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="484,170,9,178" Orientation="Horizontal">
+        <StackPanel Margin="15,96,7,178" Orientation="Horizontal" Grid.Column="1">
             <StackPanel Width="158">
                 <TextBlock Text="{Binding CustomerName, Mode=TwoWay}" />
                 <TextBlock Text="{Binding CustomerAddress}" />
@@ -47,12 +47,12 @@
                     x:Name="proID"
                     Binding="{Binding ProductID, Mode=TwoWay}"
                     Header="מס' מזהה"
-                    Width="120"/>
+                    Width="40"/>
                 <DataGridTextColumn
                     x:Name="NameColumn"
                     Binding="{Binding ProductName}"
                     Header="שם המוצר" 
-                    Width="150"/>           
+                    Width="150"/>
                 <DataGridTextColumn
                     x:Name="AmountOfItemsColumn"
                     Binding="{Binding Amount}"
@@ -65,7 +65,7 @@
                     Width="130"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="אישור הזמנה" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" Background="#FF2E4F2E" BorderBrush="{x:Null}" Click="finalConfirmOrder_Click" Margin="40,3,0,0"/>
+        <Button Content="אישור הזמנה" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" Background="#FF2E4F2E" BorderBrush="{x:Null}" Click="finalConfirmOrder_Click" Margin="40,3,0,0" Height="32" Width="110"/>
 
 
     </Grid>
