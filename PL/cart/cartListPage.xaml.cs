@@ -72,6 +72,10 @@ namespace PL.cart
             if (cartListView.SelectedItems == null);
             PO.OrderItem tempOrder = (PO.OrderItem)cartListView.SelectedItem;
             bl!.Cart!.updatePoductAmount(boCart, tempOrder.ProductID ,0);
+            cartListView.ItemsSource=null;
+            POcart!.Items!.RemoveAll(ca => ca!.ProductID == tempOrder.ProductID); //עדכון הסל במחיקת מוצר
+            cartListView.ItemsSource = POcart.Items;
+
         }
 
         private void confirmOrder_Click(object sender, RoutedEventArgs e)

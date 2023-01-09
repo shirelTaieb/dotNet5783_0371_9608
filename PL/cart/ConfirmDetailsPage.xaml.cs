@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PL.customer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,13 +56,15 @@ namespace PL.cart
             try   
             {
                 bl!.Cart!.confirmOrder(boCart);
-                _mainWindow.frame.NavigationService.GoBack();//חזרה לתפריט הראשי צריך למחוק את הכארט
+              
+
             }
             catch
             {
-
+                return;
             }
-            
+            _mainWindow.frame.Content = new customerListPage(boCart);//חזרה לתפריט הראשי צריך למחוק את הכארט
+
         }
     }
 }

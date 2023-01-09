@@ -24,11 +24,11 @@ namespace PL.cart
         public EnterDetailsWindow(PO.Cart finalCart)
         {
             InitializeComponent();
-            Data.DataContext = finalCart;
-            //finalCart.CustomerName= Name.Text;
+           Data.DataContext = finalCart;
+            //finalCart.CustomerName = Name.Text;
             //finalCart.CustomerAddress = CustomerAddress.Text;
-           // finalCart.CustomerEmail = Email.Text;
-            //cart = finalCart;
+            //finalCart.CustomerEmail = Email.Text;
+            cart = finalCart;
 
                 //tempCart.CustomerName = finalCart.CustomerName;
                 //tempCart.CustomerAddress = finalCart.CustomerAddress;
@@ -40,7 +40,10 @@ namespace PL.cart
         private void Confirm_Data(object sender, RoutedEventArgs e)
         {
             if (cart.CustomerEmail != null && !cart.CustomerEmail.Contains("@"))
-                    ERROR.Visibility = Visibility.Visible;
+            {
+                ERROR.Visibility = Visibility.Visible;
+                Email.Clear();
+            }
             else
                 Close();
 
