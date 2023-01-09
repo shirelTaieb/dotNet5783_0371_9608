@@ -27,9 +27,11 @@ namespace BlImplementation
                 //orit.ProductName = temp?.Name;
                 orit.ID = 0; //זה זמני, אחרי זה בהזמנה הוא מקבל מספר רץ אוטומטי
                 orit.Amount = 1;  //this is the first from this type of product
+                orit.TotalPrice = temp?.Price; //הוספנו
                 cart.Items?.Add(orit); //add the product to the cart. the cart also can be null
+                cart.TotalPrice=temp?.Price;
             }
-            else //if the product is exist 
+            else //if the product exist 
             {
                 if (temp?.InStock > 0) //there are more products in stock.
                 {
@@ -60,8 +62,9 @@ namespace BlImplementation
                 if (ind != -1) //when we found
                 {
                     cart.TotalPrice -= temp.Price * (temp.Amount - newAmount);
-                    cart!.Items![ind]!.Amount = newAmount;
                     cart!.Items![ind]!.TotalPrice -= temp.Price * (temp.Amount - newAmount);
+                    cart!.Items![ind]!.Amount = newAmount;
+                    
                 }
 
             }
@@ -77,8 +80,8 @@ namespace BlImplementation
                     if (ind != -1) //when we found
                     {
                         cart.TotalPrice += temp.Price * (newAmount - temp.Amount);//uptade the total price of the cart.
-                        cart!.Items![ind]!.Amount = newAmount;   //!- because we check that the product exist in the cart.
                         cart!.Items![ind]!.TotalPrice += temp.Price * (newAmount - temp.Amount);  //uptade the total price of the order item.
+                        cart!.Items![ind]!.Amount = newAmount;   //!- because we check that the product exist in the cart.
                     }
                 }
                 else
