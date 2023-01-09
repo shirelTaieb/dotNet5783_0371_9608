@@ -72,6 +72,10 @@ namespace PL.cart
             if (cartListView.SelectedItems == null);
             PO.OrderItem tempOrder = (PO.OrderItem)cartListView.SelectedItem;
             bl!.Cart!.updatePoductAmount(boCart, tempOrder.ProductID ,0);
+            cartListView.ItemsSource=null;
+            POcart!.Items!.RemoveAll(ca => ca!.ProductID == tempOrder.ProductID); //עדכון הסל במחיקת מוצר
+            cartListView.ItemsSource = POcart.Items;
+
         }
 
         private void confirmOrder_Click(object sender, RoutedEventArgs e)
@@ -82,7 +86,8 @@ namespace PL.cart
                 data.ShowDialog();
             }
             else
-                mainWindow.frame.Content = new ConfirmDetailsPage(POcart!);
+                mainWindow.frame.Content = new ConfirmDetailsPage(POcart!, mainWindow);
+
         }
         private void Personal_Data(object sender, RoutedEventArgs e)
         {
