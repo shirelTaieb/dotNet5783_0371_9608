@@ -53,7 +53,7 @@ namespace PL.cart
                 cartListView.ItemsSource = POcart.Items;
             }
             else
-            {
+            { 
                     cartListView.ItemsSource = null;
                     nonDetail.Visibility = Visibility.Visible;
             }
