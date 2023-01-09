@@ -13,10 +13,7 @@
         <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
     </Window.Resources>
 
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/WIN_20230101_22_53_59_Pro.jpg"/>
-        </Grid.Background>
+    <Grid Background="#B0C4B1">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10*"/>
@@ -49,6 +46,7 @@
             <Frame x:Name="frame"  Margin="0,0,0,0"  NavigationUIVisibility="Hidden"/>
             <Image HorizontalAlignment="Left" Height="100" Margin="518,44,0,0" VerticalAlignment="Top" Width="100" Source="/images/manager.png" Visibility="{Binding ElementName=manager, Path=Visibility}"/>
             <Image Margin="136,23,474,272" Source="/images/sell.png" Stretch="Fill"/>
+            <Image HorizontalAlignment="Center" Height="130" Margin="0,14,0,0" VerticalAlignment="Top" Width="170" Source="/WIN_20230101_22_53_59_Pro.jpg"/>
 
 
         </Grid>

@@ -20,6 +20,7 @@
     <None Remove="images\man.png" />
     <None Remove="images\manager.png" />
     <None Remove="images\sell.png" />
+    <None Remove="images\WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="pngegg.png" />
     <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="W_960_sell-online.png" />
@@ -43,6 +44,7 @@
     <Resource Include="images\man.png" />
     <Resource Include="images\manager.png" />
     <Resource Include="images\sell.png" />
+    <Resource Include="images\WIN_20230101_22_53_59_Pro.jpg" />
     <Resource Include="WIN_20230101_22_53_59_Pro.jpg" />
   </ItemGroup>
 
