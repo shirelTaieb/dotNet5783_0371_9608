@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/cart/ציור.jpg"/>
         </Grid.Background>
-        <StackPanel Height="300" VerticalAlignment="Bottom" Margin="468,0,22,110">
+        <StackPanel Height="300" VerticalAlignment="Bottom" Margin="389,0,101,114">
             <TextBlock x:Name="name"  Text=":שם פרטי" Width="107" TextAlignment="Left" Height="30"
                            FontSize="18" FontFamily="Guttman Frank" FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" />
             <TextBlock x:Name="email"  Text=":דואר אלקטרוני" Width="133" TextAlignment="Right" Height="34" HorizontalAlignment="Left"
@@ -19,8 +19,8 @@
                            FontSize="18" FontFamily="Guttman Frank"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" />
             <TextBlock x:Name="space"  Text="" Width="156" TextAlignment="Right" Height="22" HorizontalAlignment="Stretch"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" />
-            <TextBlock x:Name="payment"  Text=":פרטי תשלום" Width="188" TextAlignment="Center" Height="46" 
-                           FontSize="20" FontFamily="Guttman Frank"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" />
+            <TextBlock x:Name="payment"  Text=":פרטי תשלום" Width="149" TextAlignment="Center" Height="46" 
+                           FontSize="20" FontFamily="Guttman Frank"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" TextDecorations="Underline" />
             <TextBlock x:Name="number"  Text=":מספר כרטיס אשראי" Width="143" TextAlignment="Right" Height="36" 
                            FontSize="18" FontFamily="Guttman Frank"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" />
             <TextBlock x:Name="date"  Text=":תוקף" Width="50" TextAlignment="Right" Height="40"
@@ -28,7 +28,7 @@
             <TextBlock x:Name="cvv"  Text=":cvv" Width="41" TextAlignment="Right" Height="48"
                            FontSize="18" FontFamily="Guttman Frank"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" HorizontalAlignment="Left" />
         </StackPanel>
-        <StackPanel x:Name="Data" Width="160" Height="309" VerticalAlignment="Bottom" Margin="322,0,162,110">
+        <StackPanel x:Name="Data" Width="160" Height="309" VerticalAlignment="Top" Margin="242,121,242,0">
             <TextBox x:Name="Name" Width="154" TextAlignment="Center" Height="30" HorizontalAlignment="Right"
                        FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3" 
                        Text="{Binding CustomerName}" />
@@ -45,8 +45,8 @@
             <TextBox x:Name="Cvv" Width="145" TextAlignment="Left" Height="30"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" Margin="3,3,3,3" HorizontalAlignment="Left" />
         </StackPanel>
-        <TextBlock HorizontalAlignment="Left" Margin="273,34,0,0" TextWrapping="Wrap" Text="פרטים אישיים" VerticalAlignment="Top" Width="322" Height="54" TextAlignment="Center" FontSize="45" FontFamily="Guttman Frank" FontStyle="Normal" Foreground="#FF2B0D0D" FontWeight="Bold"/>
-        <Button Content="אישור פרטים" HorizontalAlignment="Left" Margin="286,473,0,0" VerticalAlignment="Top" Width="116" BorderBrush="#FF2B0D0D" Background="#FF4C1B1B" Foreground="#DDFFFFFF" Click="Confirm_Data"/>
+        <TextBlock HorizontalAlignment="Left" Margin="183,32,0,0" TextWrapping="Wrap" Text="פרטים אישיים" VerticalAlignment="Top" Width="322" Height="54" TextAlignment="Center" FontSize="48" FontFamily="Guttman Frank" FontStyle="Normal" Foreground="#FF2B0D0D" FontWeight="Bold"/>
+        <Button Content="אישור פרטים" HorizontalAlignment="Left" Margin="286,453,0,0" VerticalAlignment="Top" Width="116" BorderBrush="#FF2B0D0D" Background="#FF4C1B1B" Foreground="#DDFFFFFF" Click="Confirm_Data"/>
         <TextBlock x:Name="ERROR" HorizontalAlignment="Left" Margin="37,202,0,0" TextWrapping="Wrap" Text=" כתובת מייל לא תקינה " VerticalAlignment="Top" Width="149" FontStyle="Italic" Foreground="#FFD72424" FontSize="11" FontWeight="Bold" Visibility="Hidden" />
     </Grid>
 </Window>

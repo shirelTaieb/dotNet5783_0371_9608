@@ -72,7 +72,6 @@
     <Resource Include="images\WIN_20230101_22_53_59_Pro.jpg" />
     <Resource Include="images\ציור.jpg" />
     <Resource Include="images\📚☕️.jpeg" />
-    <Resource Include="orders\ציור.jpg" />
   </ItemGroup>
 
 </Project>
