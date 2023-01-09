@@ -18,7 +18,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <Button Content="לחזרה לתפריט הראשי" Padding="0" Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}"  Margin="575,4,18,3" Foreground="#FF1F2421" Click="returnToTheMainWindow_Click" Grid.Row="0" Background="{x:Null}" BorderBrush="#FF1F2421"  >
+        <Button x:Name="shortToCart" Margin="0,0,710,0" VerticalAlignment="Center" Click="shortToCart_Click" Height="44" Visibility="Collapsed">
+            <Button.Background>
+                <ImageBrush ImageSource="/cart/sell.png"/>
+            </Button.Background>
+        </Button>
+        <Button Content="לחזרה לתפריט הראשי" Padding="0" Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}"  Margin="575,4,18,3" Foreground="#FF1F2421" Click="returnToTheMainWindow_Click" Grid.Row="0" Background="{x:Null}" BorderBrush="#FF1F2421" >
         </Button>
         <Grid x:Name="under" Grid.Row="1">
             <Button x:Name="manager" Content="מנהל"  Padding="15" HorizontalAlignment="Left" Margin="496,168,0,0" VerticalAlignment="Top" Click="manager_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="136" Height="64" FontSize="20" FontWeight="Bold" Visibility="{Binding ElementName=customer, Path=Visibility}">
@@ -43,14 +48,14 @@
             <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="{Binding ElementName=products, Path=Visibility}" HorizontalAlignment="Left" Margin="460,255,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
             <Button x:Name="products" Content="ניהול מוצרים" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="460,302,0,0" VerticalAlignment="Top" Click="products_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
 
-            <Frame x:Name="frame"  Margin="0,0,0,0"  NavigationUIVisibility="Hidden"/>
+            <Frame x:Name="frame" Margin="0,0,0,0"  NavigationUIVisibility="Hidden"/>
             <Image HorizontalAlignment="Left" Height="100" Margin="518,44,0,0" VerticalAlignment="Top" Width="100" Source="/images/manager.png" Visibility="{Binding ElementName=customer, Path=Visibility}"/>
             <Image Margin="136,23,474,272" Source="/images/sell.png" Stretch="Fill" Visibility="{Binding ElementName=customer, Path=Visibility}"/>
 
 
         </Grid>
         <Button x:Name="managerTrack" Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="140,0,0,0"  VerticalAlignment="Center" Visibility="Collapsed"  Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="ManagerTrack_Click"/>
-        <Button x:Name="customarTrack" Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}" Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="CustomerTrack_Click"/>
+        <Button x:Name="customarTrack" Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="140,0,0,0"  VerticalAlignment="Center" Visibility="Collapsed"  Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="CustomerTrack_Click"/>
 
     </Grid>
 </Window>

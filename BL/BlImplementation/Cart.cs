@@ -148,7 +148,9 @@ namespace BlImplementation
                 catch { throw new BO.doseNotExistException(); } //בקשת המוצר משכבת הנתונים
                 pr.InStock -= item.Amount;//עדכון המלאי
                 Dal.Product.Update(pr); //עדכון המוצר בשכבת הנתונים
+            
             }
+            
 
         }
     }

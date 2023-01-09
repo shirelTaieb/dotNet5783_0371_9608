@@ -20,15 +20,17 @@ namespace PL.cart
     /// </summary>
     public partial class ConfirmDetailsPage : Page
     {
+        MainWindow _mainWindow;
         private BLApi.IBl? bl = BLApi.Factory.Get();
         PO.Cart cart= new PO.Cart();
-        public ConfirmDetailsPage(PO.Cart poCart)
+        public ConfirmDetailsPage(PO.Cart poCart, MainWindow mainWindow)
         {
             InitializeComponent();
             customerData.DataContext = poCart;
             final_cartDetails.DataContext = poCart.Items;
+            cartTotalPrice.DataContext = poCart.TotalPrice;
             cart = poCart;
-
+            _mainWindow = mainWindow;
         }
 
         private void finalConfirmOrder_Click(object sender, RoutedEventArgs e)
@@ -50,9 +52,10 @@ namespace PL.cart
                 }).ToList()
                
             };
-            try
+            try   
             {
                 bl!.Cart!.confirmOrder(boCart);
+                _mainWindow.frame.NavigationService.GoBack();//חזרה לתפריט הראשי צריך למחוק את הכארט
             }
             catch
             {

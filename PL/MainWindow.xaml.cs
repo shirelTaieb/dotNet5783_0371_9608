@@ -31,7 +31,10 @@ namespace PL
             katelog.Visibility = Visibility.Hidden;
             cart.Visibility = Visibility.Hidden;
             products.Visibility = Visibility.Hidden;
-         
+            managerTrack.Visibility = Visibility.Hidden;
+            customarTrack.Visibility = Visibility.Hidden;
+            shortToCart.Visibility = Visibility.Collapsed;
+
         }
         public void customer_Click(object o, RoutedEventArgs e)
         {
@@ -40,6 +43,7 @@ namespace PL
             customer.IsEnabled = false;
             katelog.Visibility = Visibility.Visible;
             cart.Visibility = Visibility.Visible;
+            customarTrack.Visibility = Visibility.Visible;
 
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
@@ -47,7 +51,10 @@ namespace PL
             frame.Content = new customerListPage(my_cart);
             return_back(o, e);
             customer.Visibility = Visibility.Hidden;
-         
+            shortToCart.Visibility = Visibility.Visible;
+
+
+
 
         }
         public void cart_Click(object o, RoutedEventArgs e)
@@ -125,6 +132,12 @@ namespace PL
             EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(1);
             enterID.Show();
         }
-        
+
+        private void shortToCart_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new cartListPage(my_cart, this);
+            return_back(sender, e);
+            customer.Visibility = Visibility.Hidden;
+        }
     }
 }
