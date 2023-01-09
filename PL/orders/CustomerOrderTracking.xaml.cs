@@ -19,9 +19,14 @@ namespace PL.orders
     /// </summary>
     public partial class CustomerOrderTracking : Window
     {
-        public CustomerOrderTracking()
+        private BLApi.IBl? bl = BLApi.Factory.Get();
+        private BO.Order or = new BO.Order();
+        public CustomerOrderTracking(BO.Order order)
         {
             InitializeComponent();
+            Status_order.DataContext = (BO.HebOrderStatus)order.Status!; //we want that the status will be wrriten in Hebrew.
+            orderTracking.DataContext = order; //connect the order to the window
+            or = order;
         }
     }
 }

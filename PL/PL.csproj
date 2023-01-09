@@ -14,19 +14,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="books2.jpeg" />
     <None Remove="download.png" />
+    <None Remove="images\baackround order.jpeg" />
     <None Remove="images\book.png" />
     <None Remove="images\Logo.jpg" />
     <None Remove="images\man.png" />
     <None Remove="images\manager.png" />
+    <None Remove="images\orderbook.jpeg" />
     <None Remove="images\sell.png" />
     <None Remove="images\WIN_20230101_22_53_59_Pro.jpg" />
+    <None Remove="orders\baackround order.jpeg" />
+    <None Remove="orders\Created by%40flowerydreamer5.jpeg" />
+    <None Remove="orders\download %282%29.jpeg" />
+    <None Remove="orders\Green %281%29.jpeg" />
+    <None Remove="orders\Green.jpeg" />
+    <None Remove="orders\orderbook.jpeg" />
     <None Remove="pngegg.png" />
     <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="W_960_sell-online.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="books2.jpeg" />
+    <Resource Include="images\baackround order.jpeg" />
     <Resource Include="images\book.png" />
   </ItemGroup>
 
@@ -43,8 +54,15 @@
     <Resource Include="images\Logo.jpg" />
     <Resource Include="images\man.png" />
     <Resource Include="images\manager.png" />
+    <Resource Include="images\orderbook.jpeg" />
     <Resource Include="images\sell.png" />
     <Resource Include="images\WIN_20230101_22_53_59_Pro.jpg" />
+    <Resource Include="orders\baackround order.jpeg" />
+    <Resource Include="orders\Created by@flowerydreamer5.jpeg" />
+    <Resource Include="orders\download (2).jpeg" />
+    <Resource Include="orders\Green (1).jpeg" />
+    <Resource Include="orders\Green.jpeg" />
+    <Resource Include="orders\orderbook.jpeg" />
     <Resource Include="WIN_20230101_22_53_59_Pro.jpg" />
   </ItemGroup>
 

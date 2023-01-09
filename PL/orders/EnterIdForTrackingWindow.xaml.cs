@@ -49,7 +49,8 @@ namespace PL.orders
                 }
                 if (num == 1)//for customer
                 {
-
+                    CustomerOrderTracking ord = new CustomerOrderTracking(orderToShow);
+                    ord.Show();
                 }
                 Close();
             }
