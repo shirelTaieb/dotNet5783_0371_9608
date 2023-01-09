@@ -15,27 +15,40 @@
 
   <ItemGroup>
     <None Remove="books2.jpeg" />
+    <None Remove="cart\elka_graphics.jpg" />
+    <None Remove="cart\manager.png" />
+    <None Remove="cart\sell.png" />
+    <None Remove="cart\ציור.jpg" />
+    <None Remove="cart\📚☕️.jpeg" />
     <None Remove="download.png" />
     <None Remove="images\baackround order.jpeg" />
     <None Remove="images\book.png" />
+    <None Remove="images\elka_graphics.jpg" />
     <None Remove="images\Logo.jpg" />
     <None Remove="images\man.png" />
     <None Remove="images\manager.png" />
     <None Remove="images\orderbook.jpeg" />
     <None Remove="images\sell.png" />
     <None Remove="images\WIN_20230101_22_53_59_Pro.jpg" />
+    <None Remove="images\ציור.jpg" />
+    <None Remove="images\📚☕️.jpeg" />
     <None Remove="orders\baackround order.jpeg" />
     <None Remove="orders\Created by%40flowerydreamer5.jpeg" />
-    <None Remove="orders\download %282%29.jpeg" />
     <None Remove="orders\Green %281%29.jpeg" />
     <None Remove="orders\Green.jpeg" />
     <None Remove="orders\orderbook.jpeg" />
+    <None Remove="orders\ציור.jpg" />
     <None Remove="pngegg.png" />
     <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="W_960_sell-online.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="cart\elka_graphics.jpg" />
+    <Resource Include="cart\manager.png" />
+    <Resource Include="cart\sell.png" />
+    <Resource Include="cart\ציור.jpg" />
+    <Resource Include="cart\📚☕️.jpeg" />
     <Resource Include="images\baackround order.jpeg" />
     <Resource Include="images\book.png" />
   </ItemGroup>
@@ -50,13 +63,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\elka_graphics.jpg" />
     <Resource Include="images\Logo.jpg" />
     <Resource Include="images\man.png" />
     <Resource Include="images\manager.png" />
     <Resource Include="images\orderbook.jpeg" />
     <Resource Include="images\sell.png" />
     <Resource Include="images\WIN_20230101_22_53_59_Pro.jpg" />
-    <Resource Include="orders\download (2).jpeg" />
+    <Resource Include="images\ציור.jpg" />
+    <Resource Include="images\📚☕️.jpeg" />
+    <Resource Include="orders\ציור.jpg" />
   </ItemGroup>
 
 </Project>
