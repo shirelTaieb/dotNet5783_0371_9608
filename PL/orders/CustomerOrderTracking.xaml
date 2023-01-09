@@ -12,9 +12,6 @@
             <ColumnDefinition Width="116*"/>
             <ColumnDefinition Width="285*"/>
         </Grid.ColumnDefinitions>
-        <Grid.Background>
-            <ImageBrush ImageSource="/orders/download (2).jpeg"/>
-        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="273*"/>
             <RowDefinition Height="11*"/>

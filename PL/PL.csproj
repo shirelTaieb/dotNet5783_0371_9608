@@ -36,7 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="books2.jpeg" />
     <Resource Include="images\baackround order.jpeg" />
     <Resource Include="images\book.png" />
   </ItemGroup>
@@ -57,13 +56,7 @@
     <Resource Include="images\orderbook.jpeg" />
     <Resource Include="images\sell.png" />
     <Resource Include="images\WIN_20230101_22_53_59_Pro.jpg" />
-    <Resource Include="orders\baackround order.jpeg" />
-    <Resource Include="orders\Created by@flowerydreamer5.jpeg" />
     <Resource Include="orders\download (2).jpeg" />
-    <Resource Include="orders\Green (1).jpeg" />
-    <Resource Include="orders\Green.jpeg" />
-    <Resource Include="orders\orderbook.jpeg" />
-    <Resource Include="WIN_20230101_22_53_59_Pro.jpg" />
   </ItemGroup>
 
 </Project>
