@@ -59,7 +59,7 @@
             </StackPanel>
         </StackPanel>
         <Button x:Name="toSent" Content="&quot;עדכן סטטוס ל&quot;נשלח" Margin="70,284,208,0" VerticalAlignment="Top" Visibility="Collapsed" BorderBrush="#FF465153" Foreground="#FF465153"  FontSize="9" Click="toSent_Click" Height="20" Background="{x:Null}"/>
-        <Button x:Name="toDelivery" Content="&quot;עדכן סטטוס ל&quot;נמסר"  Margin="70,284,208,0" VerticalAlignment="Top" Visibility="Collapsed" BorderBrush="#FF465153" Foreground="#FF465153"  FontSize="9" Click="toSent_Click" Height="20" Background="{x:Null}" />
+        <Button x:Name="toDelivery" Content="&quot;עדכן סטטוס ל&quot;נמסר"  Margin="70,284,208,0" VerticalAlignment="Top" Visibility="Collapsed" BorderBrush="#FF465153" Foreground="#FF465153"  FontSize="9" Click="toDelivery_Click" Height="20" Background="{x:Null}" />
         <TextBlock x:Name="shekalim"  TextAlignment="Right" HorizontalAlignment="Left" Margin="50,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontFamily="Narkisim" FontSize="16" Foreground="#FF465153"><Run FlowDirection="RightToLeft" Text="ש&quot;ח"/></TextBlock>
         <TextBlock x:Name="sougim" HorizontalAlignment="Left" Margin="62,197,0,0" TextWrapping="Wrap" Text="סוגי מוצרים" VerticalAlignment="Top" Width="116" TextAlignment="Right" FontFamily="Narkisim" FontSize="14" Foreground="#FF465153"/>
         <Button Content="לצפיה בכל מוצרי ההזמנה" HorizontalAlignment="Center" Margin="0,70,0,0" Grid.Row="2" Click="seeAllProduct_Click" VerticalAlignment="Top" Background="#FF465153"/>
