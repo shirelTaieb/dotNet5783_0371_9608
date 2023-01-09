@@ -12,7 +12,9 @@ namespace BlImplementation
             if ((prID <= 100000) || (prID >= 999999))
                 throw new BO.wrongDataException();
             if (cart == null) //if the cart is null we build a new cart.
+            {
                 cart = new BO.Cart();
+            }
             if (cart.Items == null)
                 cart.Items = new List<BO.OrderItem?>();
             DO.Product? temp = new DO.Product();
@@ -29,7 +31,12 @@ namespace BlImplementation
                 orit.Amount = 1;  //this is the first from this type of product
                 orit.TotalPrice = temp?.Price; //הוספנו
                 cart.Items?.Add(orit); //add the product to the cart. the cart also can be null
-                cart.TotalPrice=temp?.Price;
+                if(cart.TotalPrice==null)   //in the first time
+                    cart.TotalPrice=temp?.Price;
+                else
+                    cart.TotalPrice += temp?.Price;
+
+
             }
             else //if the product exist 
             {

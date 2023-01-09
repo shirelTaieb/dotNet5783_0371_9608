@@ -51,6 +51,8 @@ namespace PL.cart
                              }).ToList()
                 };
                 cartListView.ItemsSource = POcart.Items;
+                cartTotalPrice.DataContext = my_cart.TotalPrice;
+
             }
             else
             { 
