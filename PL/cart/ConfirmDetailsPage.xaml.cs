@@ -63,6 +63,7 @@ namespace PL.cart
             {
                 return;
             }
+            MessageBox.Show("ההזמנה אושרה בהצלחה", "");
             _mainWindow.frame.Content = new customerListPage(boCart);//חזרה לתפריט הראשי צריך למחוק את הכארט
 
         }
