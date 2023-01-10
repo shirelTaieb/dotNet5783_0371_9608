@@ -55,7 +55,7 @@ namespace PL.cart
             };
             try   
             {
-                bl!.Cart!.confirmOrder(boCart);
+                bl!.Cart!.confirmOrder(boCart); //אישור הזמנה
               
 
             }
