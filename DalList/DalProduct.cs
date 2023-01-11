@@ -8,7 +8,6 @@ public class DalProduct : IProduct
     DataSource? ds = DataSource.s_instance;
     public int Add(Product item)
     {
-
         Product? temp = ds?.lstP.FirstOrDefault(pro => pro.GetValueOrDefault().ID == item.ID);
         if (temp != null)
             throw new doubleException();   ///the product is alredy exist

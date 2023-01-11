@@ -9,5 +9,6 @@ namespace Dal
 {
     internal class DalProduct:IProduct
     {
+        const string s_product = "products"; 
     }
 }
