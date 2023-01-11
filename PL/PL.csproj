@@ -30,6 +30,7 @@
     <None Remove="images\orderbook.jpeg" />
     <None Remove="images\sell.png" />
     <None Remove="images\WIN_20230101_22_53_59_Pro.jpg" />
+    <None Remove="images\פרחים רקע.jpg" />
     <None Remove="images\ציור.jpg" />
     <None Remove="images\📚☕️.jpeg" />
     <None Remove="orders\baackround order.jpeg" />
@@ -37,6 +38,7 @@
     <None Remove="orders\Green %281%29.jpeg" />
     <None Remove="orders\Green.jpeg" />
     <None Remove="orders\orderbook.jpeg" />
+    <None Remove="orders\פרחים רקע.jpg" />
     <None Remove="orders\ציור.jpg" />
     <None Remove="pngegg.png" />
     <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
@@ -70,8 +72,10 @@
     <Resource Include="images\orderbook.jpeg" />
     <Resource Include="images\sell.png" />
     <Resource Include="images\WIN_20230101_22_53_59_Pro.jpg" />
+    <Resource Include="images\פרחים רקע.jpg" />
     <Resource Include="images\ציור.jpg" />
     <Resource Include="images\📚☕️.jpeg" />
+    <Resource Include="orders\פרחים רקע.jpg" />
   </ItemGroup>
 
 </Project>

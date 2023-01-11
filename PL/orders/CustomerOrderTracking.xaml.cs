@@ -28,5 +28,7 @@ namespace PL.orders
             orderTracking.DataContext = order; //connect the order to the window
             or = order;
         }
+
+
     }
 }
