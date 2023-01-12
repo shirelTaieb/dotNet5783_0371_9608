@@ -13,8 +13,8 @@ public class DalOrder : IOrder //שיננו לפובליק
     public int Add(Order order)
     {
         Order? temp = ds?.lstO.FirstOrDefault(ord => ord.GetValueOrDefault().ID == order.ID);
-        if (temp != null)
-            throw new doubleException();   //the product is alredy exist
+        if (temp != null) //the product is alredy exist
+            throw new doubleException();   
         else
              if (order.ID <= 1000 || order.ID >= 9999) //the id isnt valid
                 order.ID = DataSource.ConfigOrder.NextOrderNumber;

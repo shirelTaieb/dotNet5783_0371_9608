@@ -1,7 +1,4 @@
-﻿
-
-using System.Xml;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using System.Xml.Serialization;
 namespace Dal;
 
@@ -102,4 +99,44 @@ static class XMLTools
         }
     }
     #endregion
+    public class ConfigOrder
+    {
+        public static int getNumber()
+        {
+            XElement root = LoadListFromXMLElement("RunningNumbers");
+            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
+            root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
+            return (nextNumber + 1);
+        }
+    }
+    public class ConfigProduct
+    {
+        public static int getNumber()
+        {
+            XElement root = LoadListFromXMLElement("RunningNumbers");
+            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
+            root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
+            return (nextNumber + 1);
+        }
+    }
+    public class ConfigOrderItem1
+    {
+        public static int getNumber()
+        {
+            XElement root = LoadListFromXMLElement("RunningNumbers");
+            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
+            root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
+            return (nextNumber + 1);
+        }
+    }
+    public class ConfigOrderItem2
+    {
+        public static int getNumber()
+        {
+            XElement root = LoadListFromXMLElement("RunningNumbers");
+            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
+            root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
+            return (nextNumber + 1);
+        }
+    }
 }
