@@ -115,7 +115,8 @@ namespace PL.products
 
         }
 
-        public void addProduct(PO.ProductForList productToAdd) => productCollection?.Add(productToAdd);
+        public void addProduct(PO.ProductForList productToAdd) =>
+            productCollection?.Add(productToAdd);
       
     }
 }

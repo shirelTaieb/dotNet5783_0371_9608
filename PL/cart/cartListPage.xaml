@@ -13,8 +13,6 @@
         <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
         <PL.Convert:NullToFalseConverter x:Key="NullToFalse"/>
         <PL.Convert:VisibleToHiddenConverter x:Key="visiToNotVisi"/>
-
-
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
