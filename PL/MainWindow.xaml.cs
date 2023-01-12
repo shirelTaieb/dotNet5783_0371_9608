@@ -23,23 +23,23 @@ namespace PL
         }
 
 
-        public void return_back(object o, RoutedEventArgs e)
-        {
-            customer.Visibility = Visibility.Visible;
-            customer.IsEnabled = true;
-            manager.IsEnabled = true;
-            katelog.Visibility = Visibility.Hidden;
-            cart.Visibility = Visibility.Hidden;
-            products.Visibility = Visibility.Hidden;
-            managerTrack.Visibility = Visibility.Hidden;
-            customarTrack.Visibility = Visibility.Hidden;
-            shortToCart.Visibility = Visibility.Collapsed;
+        //public void return_back(object o, RoutedEventArgs e)
+        //{
+        //    customer.Visibility = Visibility.Visible;
+        //    customer.IsEnabled = true;
+        //    manager.IsEnabled = true;
+        //    katelog.Visibility = Visibility.Hidden;
+        //    cart.Visibility = Visibility.Hidden;
+        //    //products.Visibility = Visibility.Hidden;
+        //    //managerTrack.Visibility = Visibility.Hidden;
+        //    customarTrack.Visibility = Visibility.Hidden;
+        //    shortToCart.Visibility = Visibility.Collapsed;
 
-        }
+        //}
         public void customer_Click(object o, RoutedEventArgs e)
         {
 
-            return_back(o, e);
+           // return_back(o, e);
             customer.IsEnabled = false;
             katelog.Visibility = Visibility.Visible;
             cart.Visibility = Visibility.Visible;
@@ -49,7 +49,7 @@ namespace PL
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
             frame.Content = new customerListPage(my_cart);
-            return_back(o, e);
+           // return_back(o, e);
             customer.Visibility = Visibility.Hidden;
             shortToCart.Visibility = Visibility.Visible;
 
@@ -60,8 +60,8 @@ namespace PL
         public void cart_Click(object o, RoutedEventArgs e)
         {
      
-            frame.Content = frame.Content = new cartListPage(my_cart,this);
-            return_back(o, e);
+            this.Content = frame.Content = new cartListPage(my_cart,this);
+            //return_back(o, e);
             customer.Visibility = Visibility.Hidden;
             
 
@@ -69,9 +69,10 @@ namespace PL
 
         public void manager_Click(object o, RoutedEventArgs e)
         {
-            return_back(o, e);
-            manager.IsEnabled = false;
-            password.Visibility = Visibility.Visible;
+          
+           // return_back(o, e);
+            startManager.Visibility=Visibility.Hidden;
+            //password.Visibility = Visibility.Visible;
           
 
         }
@@ -86,10 +87,10 @@ namespace PL
             worngPassword.Visibility = Visibility.Hidden;
             if (password.Password == "1234")
             {
-                password.Visibility = Visibility.Hidden;
-                products.Visibility = Visibility.Visible;
+                managerLogin.Visibility = Visibility.Hidden;
+                optionManager.Visibility = Visibility.Visible;
                 password.Password = "";
-                managerTrack.Visibility = Visibility.Visible;
+                //managerTrack.Visibility = Visibility.Visible;
             }
             else
             {
@@ -103,7 +104,7 @@ namespace PL
         {
          
             frame.Content = new ProductListPage();
-            return_back(o, e);
+           // return_back(o, e);
             customer.Visibility = Visibility.Hidden;
 
 
@@ -112,14 +113,14 @@ namespace PL
         {
          
             frame.Content = new orderListPage();
-            return_back(o, e);
+            //return_back(o, e);
             customer.Visibility = Visibility.Hidden;
        
         }
         public void returnToTheMainWindow_Click(object o, RoutedEventArgs e)
         {
             frame.Content = null;
-            return_back(o, e);
+           // return_back(o, e);
         }
 
         private void ManagerTrack_Click(object sender, RoutedEventArgs e)
@@ -136,8 +137,14 @@ namespace PL
         private void shortToCart_Click(object sender, RoutedEventArgs e)
         {
             frame.Content = new cartListPage(my_cart, this);
-            return_back(sender, e);
+            //return_back(sender, e);
             customer.Visibility = Visibility.Hidden;
+        }
+
+        private void closeOptions_Click(object sender, RoutedEventArgs e)
+        {
+            startManager.Visibility=Visibility.Visible;
+            optionManager.Visibility = Visibility.Hidden;
         }
     }
 }

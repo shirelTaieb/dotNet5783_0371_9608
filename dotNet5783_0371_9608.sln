@@ -26,11 +26,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLTest", "BLTest\BLTest.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xml", "xml", "{97C627B7-6456-4F11-83AB-1F94B6F89B66}"
 	ProjectSection(SolutionItems) = preProject
+		config.xml = config.xml
 		xml\dal-config.xml = xml\dal-config.xml
-		Order.xml = Order.xml
-		OrderItem.xml = OrderItem.xml
-		Product.xml = Product.xml
-		RunningNumbers.xml = RunningNumbers.xml
+		OrderItems.xml = OrderItems.xml
+		Orders.xml = Orders.xml
+		Products.xml = Products.xml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PL", "PL\PL.csproj", "{27054D34-31D6-4F5B-A8BF-6FB9CB3B764C}"

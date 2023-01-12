@@ -6,11 +6,19 @@
         xmlns:local="clr-namespace:PL"
         xmlns:PL.Convert="clr-namespace:PL.Convert"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="PL.MainWindow"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800" Background="#B0C4B1" >
+        Title="MainWindow" Height="500" Width="800"  >
     <Window.Resources>
-        <PL.Convert:FalseToVisibilityConverter x:Key="myConverter"/>
         <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
+        <PL.Convert:FalseToVisibilityConverter x:Key="falseToVisi"/>
+        <PL.Convert:VisibleToHiddenConverter x:Key="visiToNotVisi"/>
     </Window.Resources>
 
     <Grid Background="#B0C4B1">
@@ -18,43 +26,153 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="shortToCart" Margin="0,0,710,0" VerticalAlignment="Center" Click="shortToCart_Click" Height="44" Visibility="Collapsed">
+
+
+        <Button x:Name="shortToCart"
+                Margin="0,0,710,0" VerticalAlignment="Center" Click="shortToCart_Click" Height="44" Visibility="Collapsed">
             <Button.Background>
                 <ImageBrush ImageSource="/cart/sell.png"/>
             </Button.Background>
         </Button>
-        <Button Content="לחזרה לתפריט הראשי" Padding="0" Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}"  Margin="575,4,18,3" Foreground="#FF1F2421" Click="returnToTheMainWindow_Click" Grid.Row="0" Background="{x:Null}" BorderBrush="#FF1F2421" >
-        </Button>
+        <Button Content="לחזרה לתפריט הראשי" Padding="0" Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}"  Margin="575,4,18,3" Foreground="#FF1F2421" Click="returnToTheMainWindow_Click" Grid.Row="0" Background="{x:Null}" BorderBrush="#FF1F2421" />
         <Grid x:Name="under" Grid.Row="1">
-            <Button x:Name="manager" Content="מנהל"  Padding="15" HorizontalAlignment="Left" Margin="496,168,0,0" VerticalAlignment="Top" Click="manager_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="136" Height="64" FontSize="20" FontWeight="Bold" Visibility="{Binding ElementName=customer, Path=Visibility}">
+            <materialDesign:Card
+                materialDesign:ShadowAssist.ShadowDepth="Depth5"
+                Padding="32"
+                Background="#26E8E5E5"
+                Width="350" Height="400" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" Margin="401,10,0,0" Grid.RowSpan="2">
+
+                <StackPanel Name="managerLogin"  
+                            Orientation="Vertical" 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top" Grid.Row="1"
+                            Visibility="{Binding ElementName=startManager, Path=Visibility, Converter={StaticResource visiToNotVisi}}" Margin="-8,10,0,0" Height="300">
+
+                    <Button
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top" Margin="0,0,0,0">
+
+                        <materialDesign:PackIcon Kind="ArrowLeftThin"
+                                                 Height="30" Width="30"/>
+
+                    </Button>
+                    <TextBlock x:Name="Manager" 
+                               Text="כניסת מנהל" 
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center" 
+                               Foreground="#FF2B331F"
+                               FontSize="30" 
+                               Margin="0,70,0,15"/>
+                    <PasswordBox  x:Name="password"
+                                  materialDesign:HintAssist.Hint="הכנס סיסמא" 
+                                  Width="300" Height="70"
+                                  materialDesign:HintAssist.Foreground="Black"
+                                  materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                                  KeyDown="pressEnter"
+                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontSize="20"  />
+                    <TextBlock x:Name="worngPassword" Text="סיסמה שגויה" TextAlignment="Center" Foreground="DarkRed" Visibility="Collapsed" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0"/>
+                    <Button  x:Name="confirm" Content="כניסה"
+                            Grid.Column="1"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Width="150" Height="35"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                             Background="#FF2B331F" 
+                            FontFamily="Bahnschrift" 
+                            FontSize="25" Margin="10,10,20,0"
+                             Foreground="#DCE1DE"
+                            BorderBrush="Transparent"
+                             Click="check_password"/>
+                </StackPanel>
+            </materialDesign:Card>
+            <StackPanel x:Name="optionManager"
+                        Orientation="Vertical" 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center"
+                    Visibility="Hidden" Width="350" Height="400" Margin="430,0,0,0" OpacityMask="#FF323C2E">
+
+                <Button
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        HorizontalAlignment="Right" Margin="0,0,0,0" Click="closeOptions_Click">
+                    <materialDesign:PackIcon Kind="WindowClose"
+                     Height="20" Width="20" Visibility="Visible"/>
+
+                </Button>
+                
+                <Button x:Name="products" Content="ניהול מוצרים" Padding="7" 
+                     HorizontalAlignment="Center" Margin="0,65,0,0" 
+                    VerticalAlignment="Center" Click="products_Click"  Background="{x:Null}" Foreground="#FF1F2421" BorderBrush="#FF1F2421"
+                    Width="208" Height="70" FontSize="18" Visibility="Visible">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="2.5" BlurRadius="5" Color="#FF395724" Direction="300" Opacity="0.6" />
+                    </Button.Effect>
+                </Button>
+
+                <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" 
+                    HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Center" 
+                    Click="orders_Click"  Background="{x:Null}" Foreground="#FF1F2421" BorderBrush="#FF1F2421" 
+                    Width="208" Height="70" FontSize="18" Visibility="Visible">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="2.5" BlurRadius="5" Color="#FF395724" Direction="300" Opacity="0.6" />
+                    </Button.Effect>
+                </Button>
+
+                <Button x:Name="ManagerTrack" Content="למעקב הזמנה" Padding="7" 
+                    HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Center" 
+                    Click="ManagerTrack_Click"  Background="{x:Null}" Foreground="#FF1F2421" BorderBrush="#FF1F2421"
+                    Width="208" Height="70" FontSize="18" Visibility="Visible">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="2.5" BlurRadius="5" Color="#FF395724" Direction="300" Opacity="0.6" />
+                    </Button.Effect>
+                </Button>
+            </StackPanel>
+
+            <StackPanel x:Name="startManager" Margin="380,-8,0,28" Width="300" Height="403"  
+                        HorizontalAlignment="Center" VerticalAlignment="Center" >
+                 <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/images/manager.png" Visibility="{Binding ElementName=optionManager, Path=Visibility, Converter={StaticResource visiToNotVisi}}" Margin="0,50,0,0"/>
+                 <Button x:Name="manager"
+                    Content="מנהל"  Padding="15" HorizontalAlignment="Center" Margin="0,20,0,0"
+                    VerticalAlignment="Center" Click="manager_Click" Background="#FF1F2421"
+                    Foreground="#FFDCE1DE" Width="136" Height="64" FontSize="20"
+                    FontWeight="Bold" >
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="customer" Content="לקוח" Padding="15" HorizontalAlignment="Left" Margin="172,168,0,0" VerticalAlignment="Top" Click="customer_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="137" Height="64" FontSize="20" FontWeight="Bold" FontStyle="Normal">
+            </StackPanel>
+            <StackPanel x:Name="startCustomer" Margin="40,9,460,28" Width="300" Height="403" Visibility="{Binding ElementName=optionManager, Path=Visibility, Converter={StaticResource visiToNotVisi}}">
+                <Image Margin="0,10,0,0" Source="/images/sell.png" Stretch="Fill" Visibility="{Binding ElementName=customer, Path=Visibility}" Width="230" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="customer" 
+                    Content="לקוח" Padding="15" HorizontalAlignment="Center" Margin="28,0,0,0"  VerticalAlignment="Center" Click="customer_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="137" Height="64" FontSize="20" FontWeight="Bold" FontStyle="Normal">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="katelog" Content="לצפיה בקטלוג" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="136,255,0,0" VerticalAlignment="Top" Click="Katelog_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-            <Button x:Name="cart" Content="סל הקניות שלי" Padding="7"  Visibility="Hidden" HorizontalAlignment="Left" Margin="136,303,0,0" VerticalAlignment="Top" Click="cart_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-            <PasswordBox  x:Name="password" materialDesign:HintAssist.Hint="Password" 
+            </StackPanel>
+           
+            <Button x:Name="katelog"
+                    Content="לצפיה בקטלוג" Padding="7" Visibility="Hidden" HorizontalAlignment="Left" Margin="136,255,0,0" VerticalAlignment="Top" Click="Katelog_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+           
+            <Button x:Name="cart"
+                    Content="סל הקניות שלי" Padding="7"  Visibility="Hidden" HorizontalAlignment="Left" Margin="136,303,0,0" VerticalAlignment="Top" Click="cart_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+            <!--<PasswordBox  materialDesign:HintAssist.Hint="Password" 
                                   Width="200" Height="70"
                                   materialDesign:HintAssist.Foreground="#FF1F2421" 
                                   materialDesign:TextFieldAssist.UnderlineBrush="#FF1F2421"
-                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" KeyDown="pressEnter" FontSize="20"  Margin="500,220,100,84" Visibility="{Binding IsEnabled, Converter={StaticResource myConverter}, ElementName=manager, Mode=TwoWay}"/>
-            <Button x:Name="confirm" Content="כניסה" HorizontalAlignment="Left" Margin="530,330,0,0" Width="70" Height="20" FontSize="9" VerticalAlignment="Top" Click="check_password" Background="#FF1F2421" Foreground="#FFDCE1DE" Visibility="{Binding Visibility, ElementName=password, Mode=TwoWay}" />
-            <TextBlock x:Name="worngPassword" Text="סיסמה שגויה" Foreground="DarkRed" Margin="530,355,0,0" Visibility="Hidden"/>
-            <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" Visibility="{Binding ElementName=products, Path=Visibility}" HorizontalAlignment="Left" Margin="460,255,0,0" VerticalAlignment="Top" Click="orders_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
-            <Button x:Name="products" Content="ניהול מוצרים" Padding="7" Visibility="Hidden"  HorizontalAlignment="Left" Margin="460,302,0,0" VerticalAlignment="Top" Click="products_Click"  Background="#FF1F2421" Foreground="#FFDCE1DE" Width="208" Height="39" FontSize="18"/>
+                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  FontSize="20"  Margin="500,220,100,84" Visibility="{Binding IsEnabled, Converter={StaticResource myConverter}, ElementName=manager, Mode=TwoWay}"/>-->
+            <!--<Button  Content="כניסה" HorizontalAlignment="Left" Margin="530,330,0,0" 
+            Width="70" Height="20" FontSize="9" VerticalAlignment="Top" Click="check_password" Background="#FF1F2421" Foreground="#FFDCE1DE" Visibility="{Binding Visibility, ElementName=password, Mode=TwoWay}" />-->
 
-            <Frame x:Name="frame" Margin="0,0,0,0"  NavigationUIVisibility="Hidden"/>
-            <Image HorizontalAlignment="Left" Height="100" Margin="518,44,0,0" VerticalAlignment="Top" Width="100" Source="/images/manager.png" Visibility="{Binding ElementName=customer, Path=Visibility}"/>
-            <Image Margin="136,23,474,272" Source="/images/sell.png" Stretch="Fill" Visibility="{Binding ElementName=customer, Path=Visibility}"/>
+
+            <Frame x:Name="frame" Margin="0,0,0,0"  NavigationUIVisibility="Hidden" />
 
 
         </Grid>
-        <Button x:Name="managerTrack" Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="140,0,0,0"  VerticalAlignment="Center" Visibility="Collapsed"  Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="ManagerTrack_Click"/>
         <Button x:Name="customarTrack" Content="למעקב אחר הזמנה" HorizontalAlignment="Left" Margin="140,0,0,0"  VerticalAlignment="Center" Visibility="Collapsed"  Foreground="#FF1F2421" Background="{x:Null}" BorderBrush="#FF1F2421"  Click="CustomerTrack_Click"/>
 
     </Grid>

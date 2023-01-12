@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+
+	<ConfigOrder>
+		<value>1000</value>
+	</ConfigOrder>
+
+	<ConfigProduct>
+		<value>100000</value>
+	</ConfigProduct>
+
+	<ConfigOrderItem>
+		<value>1000</value>
+	</ConfigOrderItem>
+
+</Config>

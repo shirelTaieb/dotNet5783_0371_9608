@@ -103,9 +103,9 @@ static class XMLTools
     {
         public static int getNumber()
         {
-            XElement root = LoadListFromXMLElement("RunningNumbers");
+            XElement root = LoadListFromXMLElement("config");
             int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
-            root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
+            root!.Element("ConfigProduct")!.Element("value")!.Value = (nextNumber + 1).ToString();
             return (nextNumber + 1);
         }
     }
@@ -113,30 +113,21 @@ static class XMLTools
     {
         public static int getNumber()
         {
-            XElement root = LoadListFromXMLElement("RunningNumbers");
+            XElement root = LoadListFromXMLElement("config");
             int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
             root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
             return (nextNumber + 1);
         }
     }
-    public class ConfigOrderItem1
+    public class ConfigOrderItem
     {
         public static int getNumber()
         {
-            XElement root = LoadListFromXMLElement("RunningNumbers");
+            XElement root = LoadListFromXMLElement("config");
             int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
-            root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
+            root!.Element("ConfigOrderItem")!.Element("value")!.Value = (nextNumber + 1).ToString();
             return (nextNumber + 1);
         }
     }
-    public class ConfigOrderItem2
-    {
-        public static int getNumber()
-        {
-            XElement root = LoadListFromXMLElement("RunningNumbers");
-            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
-            root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
-            return (nextNumber + 1);
-        }
-    }
+
 }

@@ -41,6 +41,7 @@ namespace PL.Convert
             throw new NotImplementedException();
         }
     }
+
     public class NullToNotVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -59,6 +60,7 @@ namespace PL.Convert
         }
 
     }
+
     public class NullToFalseConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -73,6 +75,7 @@ namespace PL.Convert
             throw new NotImplementedException();
         }
     }
+
     public class VisibleToHiddenConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
