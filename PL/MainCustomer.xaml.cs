@@ -30,10 +30,12 @@ namespace PL
             InitializeComponent();
             my_cart = cart;
             mainWindow = window;
+            window.returnCustomer.Visibility = Visibility.Collapsed;
+
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new customerListPage(my_cart);
+            mainWindow.frame.Content = new customerListPage(my_cart,mainWindow);
            
             //customer.Visibility = Visibility.Hidden;
             //shortToCart.Visibility = Visibility.Visible;

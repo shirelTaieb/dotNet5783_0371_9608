@@ -34,7 +34,7 @@
     <None Remove="images\פרחים רקע.jpg" />
     <None Remove="images\ציור.jpg" />
     <None Remove="images\📚☕️.jpeg" />
-    <None Remove="library.jpg" />
+    <None Remove="library1.jpg" />
     <None Remove="orders\baackround order.jpeg" />
     <None Remove="orders\Created by%40flowerydreamer5.jpeg" />
     <None Remove="orders\Green %281%29.jpeg" />
@@ -79,7 +79,7 @@
     <Resource Include="images\פרחים רקע.jpg" />
     <Resource Include="images\ציור.jpg" />
     <Resource Include="images\📚☕️.jpeg" />
-    <Resource Include="library.jpg" />
+    <Resource Include="library1.jpg" />
     <Resource Include="orders\פרחים רקע.jpg" />
   </ItemGroup>
 

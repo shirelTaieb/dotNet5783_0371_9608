@@ -104,5 +104,15 @@ namespace PL
            // customer.Visibility = Visibility.Hidden;
         }
 
+        private void returnToCustomerPage_Click(object sender, RoutedEventArgs e)
+        {
+           frame.Content=new MainCustomer(this,my_cart);
+        }
+
+        private void returnToManagerPage_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new MainManager(this);
+
+        }
     }
 }

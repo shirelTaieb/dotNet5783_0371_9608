@@ -23,9 +23,11 @@ namespace PL.orders
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
         //ObservableCollection<PO.OrderForList>? orderCollection = new ObservableCollection<PO.OrderForList>();
-        public orderListPage()
+        public orderListPage(MainWindow mainWindow)
         {
             InitializeComponent();
+
+            mainWindow.returnManager.Visibility = Visibility.Visible;
             var list = bl!.Order!.getOrderList();
             var poList =
                 from or in list

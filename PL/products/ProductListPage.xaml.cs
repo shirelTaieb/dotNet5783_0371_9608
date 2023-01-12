@@ -16,9 +16,10 @@ namespace PL.products
 
         private BLApi.IBl? bl = BLApi.Factory.Get();
         public ObservableCollection<PO.ProductForList>? productCollection { get; set; }
-        public ProductListPage()
+        public ProductListPage(MainWindow mainWindow)
         {
             InitializeComponent();
+            mainWindow.returnManager.Visibility = Visibility.Visible;
             var list = bl!.Product!.getListOfProduct()!;
             var poList =
                 from item in list

@@ -27,18 +27,19 @@ namespace PL
         {
             InitializeComponent();
             mainWindow = Window;
+            Window.returnManager.Visibility = Visibility.Collapsed;
         }
         public void products_Click(object o, RoutedEventArgs e)
         {
 
-            mainWindow.frame.Content = new ProductListPage();
+            mainWindow.frame.Content = new ProductListPage(mainWindow);
 
 
         }
         public void orders_Click(object o, RoutedEventArgs e)
         {
 
-           mainWindow.frame.Content = new orderListPage();
+           mainWindow.frame.Content = new orderListPage(mainWindow);
 
         }
         private void ManagerTrack_Click(object sender, RoutedEventArgs e)

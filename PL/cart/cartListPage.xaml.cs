@@ -30,6 +30,7 @@ namespace PL.cart
         {
             InitializeComponent();
             mainWindow = _mainWindow;
+            mainWindow.returnCustomer.Visibility = Visibility.Visible;
             boCart = my_cart;
             if (my_cart!.Items != null)
             {
@@ -63,7 +64,7 @@ namespace PL.cart
 
         private void moveToCatelog_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new customerListPage(boCart!); // מעבר לקטלוג המוצרים
+            mainWindow.frame.Content = new customerListPage(boCart!,mainWindow); // מעבר לקטלוג המוצרים
 
         }
 

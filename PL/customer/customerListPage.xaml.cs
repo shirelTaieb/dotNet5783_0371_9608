@@ -30,10 +30,11 @@ namespace PL.customer
         private BLApi.IBl? bl = BLApi.Factory.Get();
         private BO.Cart cart = new BO.Cart();
         ObservableCollection<PO.ProductItem?> observalProducts=new ObservableCollection<PO.ProductItem?>();
-        public customerListPage(BO.Cart my_cart)
+        public customerListPage(BO.Cart my_cart,MainWindow mainWindow)
         {
 
             InitializeComponent();
+            mainWindow.returnCustomer.Visibility = Visibility.Visible;
             cart = my_cart;
             var list = bl!.Product!.getListOfProduct()!;
             var poList =
