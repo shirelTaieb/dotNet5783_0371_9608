@@ -19,7 +19,7 @@
             <Button x:Name="products" Content="ניהול מוצרים" Padding="7" 
                      HorizontalAlignment="Center" Margin="15,20,0,0" 
                     VerticalAlignment="Center" Click="products_Click"  Background="#FF1F2421" Foreground="#dce1de"
-                    Width="208" Height="70" FontSize="18" Visibility="Visible">
+                    Width="208" Height="70" FontSize="18" Visibility="Visible" Opacity="0.8">
                 <Button.Effect>
                     <DropShadowEffect ShadowDepth="2.5" BlurRadius="5" Color="#FF395724" Direction="300" Opacity="0.6" />
                 </Button.Effect>
@@ -27,8 +27,8 @@
 
             <Button x:Name="orders" Content="ניהול הזמנות" Padding="7" 
                     HorizontalAlignment="Center" Margin="15,20,0,0" VerticalAlignment="Center" 
-                    Click="orders_Click"  Background="#FF1F2421" Foreground="#dce1de" BorderBrush="#dce1de"
-                    Width="208" Height="70" FontSize="18" Visibility="Visible">
+                    Click="orders_Click"  Background="#FF1F2421" Foreground="#dce1de"
+                    Width="208" Height="70" FontSize="18" Visibility="Visible" Opacity="0.8">
                 <Button.Effect>
                     <DropShadowEffect ShadowDepth="2.5" BlurRadius="5" Color="#FF395724" Direction="300" Opacity="0.6" />
                 </Button.Effect>
@@ -36,8 +36,8 @@
 
             <Button x:Name="ManagerTrack" Content="למעקב הזמנה" Padding="7" 
                     HorizontalAlignment="Center" Margin="15,20,0,0" VerticalAlignment="Center" 
-                    Click="ManagerTrack_Click"  Background="{x:Null}" Foreground="#FF1F2421" BorderBrush="#FF1F2421"
-                    Width="208" Height="70" FontSize="18" Visibility="Visible">
+                    Click="ManagerTrack_Click" Background="#FF1F2421" Foreground="#dce1de"
+                    Width="208" Height="70" FontSize="18" Visibility="Visible" Opacity="0.8">
                 <Button.Effect>
                     <DropShadowEffect ShadowDepth="2.5" BlurRadius="5" Color="#FF395724" Direction="300" Opacity="0.6" />
                 </Button.Effect>
