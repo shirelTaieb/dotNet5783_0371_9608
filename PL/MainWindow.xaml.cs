@@ -23,19 +23,22 @@ namespace PL
         }
 
 
-        //public void return_back(object o, RoutedEventArgs e)
-        //{
-        //    customer.Visibility = Visibility.Visible;
-        //    customer.IsEnabled = true;
-        //    manager.IsEnabled = true;
-        //    katelog.Visibility = Visibility.Hidden;
-        //    cart.Visibility = Visibility.Hidden;
-        //    //products.Visibility = Visibility.Hidden;
-        //    //managerTrack.Visibility = Visibility.Hidden;
-        //    customarTrack.Visibility = Visibility.Hidden;
-        //    shortToCart.Visibility = Visibility.Collapsed;
+        public void return_back(object o, RoutedEventArgs e)
+        {
+            startManager.Visibility = Visibility.Visible;
+            startCustomer.Visibility = Visibility.Visible;
+            managerLogin.Visibility = Visibility.Collapsed;
+            //customer.Visibility = Visibility.Visible;
+            //customer.IsEnabled = true;
+            //manager.IsEnabled = true;
+            //katelog.Visibility = Visibility.Hidden;
+            //cart.Visibility = Visibility.Hidden;
+            //products.Visibility = Visibility.Hidden;
+            //managerTrack.Visibility = Visibility.Hidden;
+            customarTrack.Visibility = Visibility.Hidden;
+            shortToCart.Visibility = Visibility.Collapsed;
 
-        //}
+        }
         public void customer_Click(object o, RoutedEventArgs e)
         {
 
@@ -61,7 +64,7 @@ namespace PL
         {
      
             this.Content = frame.Content = new cartListPage(my_cart,this);
-            //return_back(o, e);
+            return_back(o, e);
             customer.Visibility = Visibility.Hidden;
             
 
@@ -72,6 +75,8 @@ namespace PL
           
            // return_back(o, e);
             startManager.Visibility=Visibility.Hidden;
+            startCustomer.Visibility = Visibility.Hidden;
+            managerLogin.Visibility=Visibility.Visible;
             //password.Visibility = Visibility.Visible;
           
 
@@ -88,7 +93,8 @@ namespace PL
             if (password.Password == "1234")
             {
                 managerLogin.Visibility = Visibility.Hidden;
-                optionManager.Visibility = Visibility.Visible;
+                frame.Content = new MainManager(this);
+               // optionManager.Visibility = Visibility.Visible;
                 password.Password = "";
                 //managerTrack.Visibility = Visibility.Visible;
             }
@@ -100,34 +106,14 @@ namespace PL
 
 
         }
-        public void products_Click(object o, RoutedEventArgs e)
-        {
-         
-            frame.Content = new ProductListPage();
-           // return_back(o, e);
-            customer.Visibility = Visibility.Hidden;
-
-
-        }
-        public void orders_Click(object o, RoutedEventArgs e)
-        {
-         
-            frame.Content = new orderListPage();
-            //return_back(o, e);
-            customer.Visibility = Visibility.Hidden;
-       
-        }
+   
         public void returnToTheMainWindow_Click(object o, RoutedEventArgs e)
         {
             frame.Content = null;
-           // return_back(o, e);
+            return_back(o, e);
         }
 
-        private void ManagerTrack_Click(object sender, RoutedEventArgs e)
-        {
-            EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(0);
-            enterID.Show();
-        }
+    
         private void CustomerTrack_Click(object sender, RoutedEventArgs e)
         {
             EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(1);
@@ -137,14 +123,9 @@ namespace PL
         private void shortToCart_Click(object sender, RoutedEventArgs e)
         {
             frame.Content = new cartListPage(my_cart, this);
-            //return_back(sender, e);
+            return_back(sender, e);
             customer.Visibility = Visibility.Hidden;
         }
 
-        private void closeOptions_Click(object sender, RoutedEventArgs e)
-        {
-            startManager.Visibility=Visibility.Visible;
-            optionManager.Visibility = Visibility.Hidden;
-        }
     }
 }

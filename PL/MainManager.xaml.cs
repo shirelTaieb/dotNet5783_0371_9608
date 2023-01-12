@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PL.orders;
+using PL.products;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,37 @@ namespace PL
     /// </summary>
     public partial class MainManager : Page
     {
-        public MainManager()
+        MainWindow mainWindow;
+        public MainManager(MainWindow Window)
         {
             InitializeComponent();
+            mainWindow = Window;
+        }
+        public void products_Click(object o, RoutedEventArgs e)
+        {
+
+            mainWindow.frame.Content = new ProductListPage();
+
+
+        }
+        public void orders_Click(object o, RoutedEventArgs e)
+        {
+
+           mainWindow.frame.Content = new orderListPage();
+
+        }
+        private void ManagerTrack_Click(object sender, RoutedEventArgs e)
+        {
+            EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(0);
+            enterID.Show();
+        }
+
+        private void closeOptions_Click(object sender, RoutedEventArgs e) //אין לו עניין
+        {
+            mainWindow.frame.Content = null;
+            
+            //startManager.Visibility = Visibility.Visible;
+            //optionManager.Visibility = Visibility.Hidden;
         }
     }
 }

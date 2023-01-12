@@ -20,6 +20,7 @@
     <None Remove="cart\sell.png" />
     <None Remove="cart\ציור.jpg" />
     <None Remove="cart\📚☕️.jpeg" />
+    <None Remove="download %282%29.jpeg" />
     <None Remove="download.png" />
     <None Remove="images\baackround order.jpeg" />
     <None Remove="images\book.png" />
@@ -33,6 +34,7 @@
     <None Remove="images\פרחים רקע.jpg" />
     <None Remove="images\ציור.jpg" />
     <None Remove="images\📚☕️.jpeg" />
+    <None Remove="library.jpg" />
     <None Remove="orders\baackround order.jpeg" />
     <None Remove="orders\Created by%40flowerydreamer5.jpeg" />
     <None Remove="orders\Green %281%29.jpeg" />
@@ -46,11 +48,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="books2.jpeg" />
     <Resource Include="cart\elka_graphics.jpg" />
     <Resource Include="cart\manager.png" />
     <Resource Include="cart\sell.png" />
     <Resource Include="cart\ציור.jpg" />
     <Resource Include="cart\📚☕️.jpeg" />
+    <Resource Include="download (2).jpeg" />
     <Resource Include="images\baackround order.jpeg" />
     <Resource Include="images\book.png" />
   </ItemGroup>
@@ -75,6 +79,7 @@
     <Resource Include="images\פרחים רקע.jpg" />
     <Resource Include="images\ציור.jpg" />
     <Resource Include="images\📚☕️.jpeg" />
+    <Resource Include="library.jpg" />
     <Resource Include="orders\פרחים רקע.jpg" />
   </ItemGroup>
 
