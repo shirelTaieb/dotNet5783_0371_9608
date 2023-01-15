@@ -6,23 +6,42 @@ namespace Dal
     internal class DalOrder : IOrder
     {
         const string s_orders = "Orders"; //the name of the file
+        #region
         static IEnumerable<XElement> createOrderElement(DO.Order order)
         {
             yield return new XElement("ID", order.ID);
             if (order.CustomerName is not null)
-                yield return new XElement("FirstName", order.CustomerName);
+                yield return new XElement("CustomerName", order.CustomerName);
             if (order.CustomerEmail is not null)
-                yield return new XElement("LastName", order.CustomerEmail);
+                yield return new XElement("CustomerEmail", order.CustomerEmail);
             if (order.CustomerAddress is not null)
-                yield return new XElement("StudentStatus", order.CustomerAddress);
+                yield return new XElement("CustomerAddress", order.CustomerAddress);
             if (order.OrderDate is not null)
-                yield return new XElement("BirthDate", order.OrderDate);
+                yield return new XElement("OrderDate", order.OrderDate);
             if (order.ShipDate is not null)
-                yield return new XElement("Grade", order.ShipDate);
+                yield return new XElement("ShipDate", order.ShipDate);
             if (order.DeliveryDate is not null)
-                yield return new XElement("Grade", order.DeliveryDate);
-
+                yield return new XElement("DeliveryDate", order.DeliveryDate);
         }
+        #endregion
+        #region get order item מקבל אלמנט וממיר לאורדר אייטם
+        static DO.Order? getOrder(XElement or)
+        {
+            if (or.ToIntNullable("ID") == null)
+                return null;
+            else
+                return new DO.Order()
+                {
+                    ID = (int)or.Element("ID")!,
+                    CustomerName = (string)or.Element("CustomerName")!,
+                    CustomerEmail = (string)or.Element("CustomerEmail")!,
+                    CustomerAddress = (string?)or.Element("CustomerAddress"),
+                    OrderDate = (DateTime)or.Element("OrderDate")!,
+                    ShipDate = (DateTime)or.Element("ShipDate")!,
+                    DeliveryDate = (DateTime)or.Element("DeliveryDate")!
+                };
+        }
+        #endregion
         public int Add(DO.Order order)
         {
             XElement ordersRoot = XMLTools.LoadListFromXMLElement(s_orders);
@@ -35,50 +54,40 @@ namespace Dal
                      order.ID = XMLTools.ConfigOrder.getNumber(); //get a run number
             ordersRoot.Add(new XElement("Order", createOrderElement(order)));
             XMLTools.SaveListToXMLElement(ordersRoot, s_orders); //to return to the xml
-
             return order.ID; 
         }
-    //    public Order GetById(int id)
-    //    {
-    //        if (ds == null)
-    //            throw new NotExistException();
-    //        Order? or = ds.lstO.FirstOrDefault(ord => ord?.ID == id);
-    //        if (or == null)
-    //            throw new NotExistException(); //there in no order matched in the database
-    //        return (Order)or;
-    //    }
-    //    public void Update(Order order)
-    //    {
-    //        if (ds == null)
-    //            throw new NotExistException();
-    //        var temp = ds.lstO.FirstOrDefault(ord => ord?.ID == order.ID);
-    //        if (temp != null)
-    //        {
-    //            Delete(order.ID);
-    //            Add(order);
-    //        }
-    //    }
-    //    public void Delete(int id)
-    //    {
-    //        if (ds == null)
-    //            throw new NotExistException();
-    //        try { ds.lstO.Remove(GetById(id)); }
-    //        catch { throw new NotExistException(); }
-    //    }
+        public DO.Order GetById(int id)
+        {
+            XElement? orderElement = XMLTools.LoadListFromXMLElement(s_orders)?.Elements()
+            .FirstOrDefault(pro => pro.ToIntNullable("ID") == id);
+            if (orderElement == null)
+                throw new NotExistException();
+            else
+                return (DO.Order)getOrder(orderElement!)!;
+        }
 
-    //    public IEnumerable<Order?> GetAll(Func<Order?, bool>? filter = null)
-    //    {
-    //        if (ds == null)
-    //            throw new NotExistException();
-    //        if (filter != null)
-    //        {
-    //            var result =
-    //                from item in ds!.lstO
-    //                where filter!(item)
-    //                select item;
-    //            return result.ToList();
-    //        }
-    //        return ds.lstO;
-    //    }
-    //}
+
+        public void Update(DO.Order order)
+        {
+                Delete(order.ID);
+                Add(order);
+        }
+
+        public void Delete(int id)
+        {
+            XElement orderItemsRoot = XMLTools.LoadListFromXMLElement(s_orders);  //get the root element of the file
+
+            try { createOrderElement(GetById(id)).Remove(); } //try to remove, but if the id not exist the "getbyId" will throw
+            catch { throw new NotExistException(); }
+            XMLTools.SaveListToXMLElement(orderItemsRoot, s_orders);
+        }
+
+        public IEnumerable<DO.Order?> GetAll(Func<DO.Order?, bool>? filter = null)
+        {
+            if (filter == null)
+                return XMLTools.LoadListFromXMLElement(s_orders).Elements().Select(o => getOrder(o));
+            else
+                return XMLTools.LoadListFromXMLElement(s_orders).Elements().Select(o => getOrder(o)).Where(filter);
+        }
+    }
 }
