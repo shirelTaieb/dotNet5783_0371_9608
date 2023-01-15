@@ -76,7 +76,7 @@ namespace PL.cart
             cartListView.ItemsSource=null;
             POcart!.Items!.RemoveAll(ca => ca!.ProductID == tempOrder.ProductID); //עדכון הסל במחיקת מוצר
             cartListView.ItemsSource = POcart.Items;
-            cartTotalPrice.DataContext = POcart.TotalPrice;
+            cartTotalPrice.DataContext = boCart!.TotalPrice;
 
         }
 
