@@ -1,19 +1,8 @@
 ﻿//בס"ד
-using BLApi;
 using BO;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PL.products
 {
@@ -23,15 +12,16 @@ namespace PL.products
     public partial class productWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        private PO.Product pl=new PO.Product();
-        private BO.Product UpdateOrNewProduct=new BO.Product();
-        Action<PO.ProductForList> action;
-        public productWindow(int ShowDetails, Action<PO.ProductForList> addToObservalCollection, PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
+        private PO.Product pl = new PO.Product();
+        private BO.Product UpdateOrNewProduct = new BO.Product();
+        Action<PO.ProductForList> addAction;
+        Action<PO.ProductForList> removeAction;
+        public productWindow(int ShowDetails, Action<PO.ProductForList> addToObservalCollection, /*Action<PO.ProductForList> removeFromObserval,*/ PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
             categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory)); //קישור הקטגוריות לכומבו בוקס
-            action = addToObservalCollection;
-
+            addAction = addToObservalCollection;
+           // removeAction=removeFromObserval;
 
             if (updateProduct != null)  //כשרוצים לעדכן
             {
@@ -42,7 +32,7 @@ namespace PL.products
                     pl = BoToPo(UpdateOrNewProduct);  //casting to po
                     if (ShowDetails == 1) //לפתוח קובץ לקריאה בלבד
                         productFrame.Content = new productDetailsPage(pl);
-                     else
+                    else
                         productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
 
 
@@ -66,7 +56,7 @@ namespace PL.products
             p.Name = Bopro.Name;
             p.path = Bopro.path;
             p.InStock = Bopro.InStock;
-            p.Category =(BO.HebCategory?)Bopro.Category;
+            p.Category = (BO.HebCategory?)Bopro.Category;
             p.Price = Bopro.Price;
             return p;
 
@@ -82,16 +72,16 @@ namespace PL.products
             po.Price = popro.Price;
             return po;
         }
-            
+
         private void add_click(object sender, RoutedEventArgs e)
         {
             UpdateOrNewProduct = PoToBo(pl);
-       
+
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
-            int id=bl!.Product!.addNewProduct(UpdateOrNewProduct);
+            int id = bl!.Product!.addNewProduct(UpdateOrNewProduct);
             try
             {
-                action(new PO.ProductForList()
+                addAction(new PO.ProductForList()
                 {
                     ID = id,
                     Name = UpdateOrNewProduct.Name,
@@ -111,11 +101,20 @@ namespace PL.products
             try
             {
                 UpdateOrNewProduct = PoToBo(pl);
-            bl!.Product!.updateProduct(UpdateOrNewProduct);
-           
-            MessageBox.Show(":) המוצר עודכן בהצלחה", "");
-            //קריאה לפונקציה שבאמת תעדכן את הפרודקט
-            this.Close();
+                bl!.Product!.updateProduct(UpdateOrNewProduct);
+                PO.ProductForList popro=new PO.ProductForList()
+                {
+                    ID = UpdateOrNewProduct.ID,
+                    Name = UpdateOrNewProduct.Name,
+                    Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
+                    Price = UpdateOrNewProduct.Price,
+                };
+                
+               // removeAction(popro);
+                addAction(popro);
+                MessageBox.Show(":) המוצר עודכן בהצלחה", "");
+                //קריאה לפונקציה שבאמת תעדכן את הפרודקט
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -130,7 +129,7 @@ namespace PL.products
 
         private void categoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            pl.Category= (BO.HebCategory)categoryComboBox.SelectedItem;
+            pl.Category = (BO.HebCategory)categoryComboBox.SelectedItem;
 
         }
 

@@ -1,6 +1,5 @@
 ﻿using BO;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -39,7 +38,7 @@ namespace PL.products
 
         private void showProductDetails_doubleClick(object sender, RoutedEventArgs e)
         {
-            productWindow proWin = new productWindow(1,addProduct, (PO.ProductForList)productForListDataGrid.SelectedItem);
+            productWindow proWin = new productWindow(1, addProduct /*deleteProduct,*/,(PO.ProductForList)productForListDataGrid.SelectedItem);
             proWin.Show();
         }
 
@@ -80,11 +79,11 @@ namespace PL.products
         public void Add_Click(object sender, RoutedEventArgs e)
         {
 
-            productWindow AddProduct = new productWindow(0,addProduct);
+            productWindow AddProduct = new productWindow(0, addProduct/*, deleteproduct*/);
             AddProduct.id.Visibility = Visibility.Collapsed;
             AddProduct.id_lable.Visibility = Visibility.Collapsed;
             AddProduct.ShowDialog();
-            //צריך להוסיף בפועל את המוצרר
+            
         }
 
 
@@ -93,7 +92,7 @@ namespace PL.products
             PO.ProductForList? poUpPro = (PO.ProductForList)productForListDataGrid.SelectedItem;
             if (poUpPro != null)
             {
-                productWindow updateProduct = new productWindow(0,addProduct, poUpPro);
+                productWindow updateProduct = new productWindow(0, addProduct/*, deleteProduct*/, poUpPro);
                 updateProduct.ShowDialog();
                 var boList = bl!.Product!.getListOfProduct()!;
                 var poList =
@@ -118,7 +117,20 @@ namespace PL.products
 
         public void addProduct(PO.ProductForList productToAdd) =>
             productCollection?.Add(productToAdd);
-      
+        public void deleteProduct(PO.ProductForList productToRemove)
+        {
+            productCollection?.Remove(productToRemove);
+        }
+        public void delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("?האם אתה בטוח שברצונך למחוק את המוצר", "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                PO.ProductForList proToDel = (PO.ProductForList)productForListDataGrid.SelectedItem;
+                bl!.Product!.deleteProduct(proToDel.ID); //מחיקת המוצר מהנתונים
+                deleteProduct(proToDel); //מחיקה מהאובסרבל
+            }
+        }
+        
     }
 }
 

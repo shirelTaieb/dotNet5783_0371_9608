@@ -97,7 +97,7 @@ namespace BlImplementation
 
             return cart!;
         }
-        public void confirmOrder(BO.Cart? cart)
+        public int confirmOrder(BO.Cart? cart)
         {
             if (cart == null)
                 throw new BO.wrongDataException();
@@ -150,7 +150,7 @@ namespace BlImplementation
                 Dal.Product.Update(pr); //עדכון המוצר בשכבת הנתונים
             
             }
-            
+            return order_id;
 
         }
     }

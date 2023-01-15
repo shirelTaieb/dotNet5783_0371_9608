@@ -76,6 +76,7 @@ namespace PL.cart
             cartListView.ItemsSource=null;
             POcart!.Items!.RemoveAll(ca => ca!.ProductID == tempOrder.ProductID); //עדכון הסל במחיקת מוצר
             cartListView.ItemsSource = POcart.Items;
+            cartTotalPrice.DataContext = boCart!.TotalPrice;
 
         }
 
@@ -83,6 +84,7 @@ namespace PL.cart
         {
             if (POcart!.CustomerName == null || POcart.CustomerEmail == null || POcart.CustomerAddress == null)
             {
+                MessageBox.Show(":)נשמח שתמלא פרטים אישיים לפני ביצוע ההזמנה שלך","חסרים פרטים",MessageBoxButton.OK,MessageBoxImage.Information);
                 EnterDetailsWindow data = new EnterDetailsWindow(POcart);
                 data.ShowDialog();
             }
