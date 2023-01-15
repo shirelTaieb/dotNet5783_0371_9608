@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Config>
+<config>
 
 	<ConfigOrder>
 		<value>1000</value>
@@ -13,4 +13,4 @@
 		<value>1000</value>
 	</ConfigOrderItem>
 
-</Config>
+</config>

@@ -5,7 +5,7 @@ namespace Dal
 {
     internal class DalProduct : IProduct
     {
-        const string s_products = "Products";//the name of the file;
+        const string s_products = "Product";//the name of the file;
 
         #region createProductElement מקבל פרודקט ומחזיר אלמנט
         static IEnumerable<XElement> createProductElement(DO.Product product)

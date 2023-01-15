@@ -95,7 +95,7 @@ internal class Product : BLApi.IProduct
     public IEnumerable<BO.ProductForList?> getListOfProduct()//נו זה גם לקוסטומר
     {
         
-        List<DO.Product?> lstp = (List<DO.Product?>)Dal!.Product.GetAll();
+        IEnumerable<DO.Product?> lstp = Dal!.Product.GetAll();
         return (from prop in lstp
                 select new BO.ProductForList()
                 {

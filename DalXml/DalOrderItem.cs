@@ -10,7 +10,7 @@ namespace Dal
 {
     internal class DalOrderItem:IOrderItem
     {
-        const string s_orderItems = "OrderItems"; //the name of the file
+        const string s_orderItems = "OrderItem"; //the name of the file
 
         #region createOrderItemElement מקבל אורדר אייטם ומחזיר אלמנט
         static IEnumerable<XElement> createOrderItemElement(DO.OrderItem orit)

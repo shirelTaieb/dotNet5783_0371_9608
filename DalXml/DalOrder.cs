@@ -5,7 +5,7 @@ namespace Dal
 {
     internal class DalOrder : IOrder
     {
-        const string s_orders = "Orders"; //the name of the file
+        const string s_orders = "Order"; //the name of the file
         #region
         static IEnumerable<XElement> createOrderElement(DO.Order order)
         {
