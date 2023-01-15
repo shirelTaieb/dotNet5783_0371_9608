@@ -88,10 +88,9 @@ internal class Order : BLApi.IOrder
 
     public IEnumerable<BO.OrderForList?> getOrderList()
     {
-        List<DO.Order?> temp = (List<DO.Order?>)Dal!.Order.GetAll(); //take the data from the factory
+        List<DO.Order?> temp =Dal!.Order.GetAll().ToList(); //take the data from the factory
         //List<BO.OrderForList> orders = new List<BO.OrderForList>();
-        BO.Order? boorder = new BO.Order();
-        BO.OrderForList? ofl= new BO.OrderForList();
+       
        List<BO.OrderForList> orders =
            ( from ord in temp
             select (BoOrderToOrderForList(DoOrderToBo(ord)!))).ToList();
