@@ -9,16 +9,19 @@ namespace Dal
         static IEnumerable<XElement> createOrderElement(DO.Order order)
         {
             yield return new XElement("ID", order.ID);
-            if (order.FirstName is not null)
-                yield return new XElement("FirstName", student.FirstName);
-            if (student.LastName is not null)
-                yield return new XElement("LastName", student.LastName);
-            if (student.StudentStatus is not null)
-                yield return new XElement("StudentStatus", student.StudentStatus);
-            if (student.BirthDate is not null)
-                yield return new XElement("BirthDate", student.BirthDate);
-            if (student.LastName is not null)
-                yield return new XElement("Grade", student.Grade);
+            if (order.CustomerName is not null)
+                yield return new XElement("FirstName", order.CustomerName);
+            if (order.CustomerEmail is not null)
+                yield return new XElement("LastName", order.CustomerEmail);
+            if (order.CustomerAddress is not null)
+                yield return new XElement("StudentStatus", order.CustomerAddress);
+            if (order.OrderDate is not null)
+                yield return new XElement("BirthDate", order.OrderDate);
+            if (order.ShipDate is not null)
+                yield return new XElement("Grade", order.ShipDate);
+            if (order.DeliveryDate is not null)
+                yield return new XElement("Grade", order.DeliveryDate);
+
         }
         public int Add(DO.Order order)
         {
@@ -35,5 +38,47 @@ namespace Dal
 
             return order.ID; 
         }
-    }
+    //    public Order GetById(int id)
+    //    {
+    //        if (ds == null)
+    //            throw new NotExistException();
+    //        Order? or = ds.lstO.FirstOrDefault(ord => ord?.ID == id);
+    //        if (or == null)
+    //            throw new NotExistException(); //there in no order matched in the database
+    //        return (Order)or;
+    //    }
+    //    public void Update(Order order)
+    //    {
+    //        if (ds == null)
+    //            throw new NotExistException();
+    //        var temp = ds.lstO.FirstOrDefault(ord => ord?.ID == order.ID);
+    //        if (temp != null)
+    //        {
+    //            Delete(order.ID);
+    //            Add(order);
+    //        }
+    //    }
+    //    public void Delete(int id)
+    //    {
+    //        if (ds == null)
+    //            throw new NotExistException();
+    //        try { ds.lstO.Remove(GetById(id)); }
+    //        catch { throw new NotExistException(); }
+    //    }
+
+    //    public IEnumerable<Order?> GetAll(Func<Order?, bool>? filter = null)
+    //    {
+    //        if (ds == null)
+    //            throw new NotExistException();
+    //        if (filter != null)
+    //        {
+    //            var result =
+    //                from item in ds!.lstO
+    //                where filter!(item)
+    //                select item;
+    //            return result.ToList();
+    //        }
+    //        return ds.lstO;
+    //    }
+    //}
 }

@@ -47,8 +47,9 @@ namespace Dal
             XElement? temp = XMLTools.LoadListFromXMLElement(s_orderItems)?.Elements().FirstOrDefault(or => or.ToIntNullable("ID") == oi.ID);
             if (temp != null)
                 throw new doubleException();
-            else if (oi.ID <= 1000 || oi.ID >= 9999) //the id isnt valid
-                oi.ID = XMLTools.ConfigOrderItem.getNumber(); //get a run number
+            else
+                if (oi.ID <= 1000 || oi.ID >= 9999) //the id isnt valid
+                     oi.ID = XMLTools.ConfigOrderItem.getNumber(); //get a run number
             orderItemsRoot.Add(new XElement("OredrItem", createOrderItemElement(oi)));
             XMLTools.SaveListToXMLElement(orderItemsRoot, s_orderItems); // return to the xml
             return oi.ID;
