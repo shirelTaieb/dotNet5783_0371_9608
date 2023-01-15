@@ -4,11 +4,18 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PL.cart"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ConfirmDetailsPage" Background="#FF8FA590">
+      Title="ConfirmDetailsPage" Background="{x:Null}">
 
-    <Grid>
+    <Grid Margin="10,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="*"/>
@@ -18,25 +25,39 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-
-        <StackPanel Margin="0,96,0,178" Orientation="Horizontal" Grid.Column="1">
-            <StackPanel x:Name="customerData" Margin="0,0,0,0"  Width="158">
-                <TextBlock Text="{Binding CustomerName}"  TextAlignment="Center"  FontSize="20" />
-                <TextBlock Text="{Binding CustomerAddress}" TextAlignment="Center"  FontSize="20" />
-                <TextBlock Text="{Binding CustomerEmail}"  TextAlignment="Center"  FontSize="20"/>
+        <materialDesign:Card
+                
+                materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                Padding="32"
+                Width="300" Height="400" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" Grid.Column="1" Visibility="Visible" Margin="0,20,0,0">
+            <materialDesign:Card.Background>
+                <SolidColorBrush Color="#dce1de" Opacity="0.8"/>
+            </materialDesign:Card.Background>
+            <StackPanel>
+                <TextBlock Text="אישור פרטי הזמנה" FontSize="30" Foreground="#FF2E4F2E" TextAlignment="Center" Height="50"/>
+                <TextBlock Text="וודא שפרטיך נכונים לפני אישור סופי של ההזמנה" Foreground="#FF2E4F2E" FontSize="10" TextAlignment="Center" Height="20"/>
+                <StackPanel Margin="-28,0,-20,0" Orientation="Horizontal" >
+                    <StackPanel x:Name="customerData" Margin="0,0,0,0"  Width="158">
+                        <TextBlock Text="{Binding CustomerName}"  Foreground="#FF2E4F2E" TextAlignment="Center" Margin="0,30,0,0" FontSize="20" />
+                        <TextBlock Text="{Binding CustomerAddress}" Foreground="#FF2E4F2E" TextAlignment="Center" Margin="0,30,0,0" FontSize="20" />
+                        <TextBlock Text="{Binding CustomerEmail}" Foreground="#FF2E4F2E" TextAlignment="Center" Margin="0,30,0,0" FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,0,0,0" Width="152">
+                        <TextBlock Text=":שם" Foreground="#FF2E4F2E" TextAlignment="Center" Margin="0,30,0,0" FontSize="20"/>
+                        <TextBlock Text=":כתובת"  Foreground="#FF2E4F2E" TextAlignment="Center"  FontSize="20" Margin="0,30,0,0"/>
+                        <TextBlock Text=":כתובת מייל" Foreground="#FF2E4F2E" TextAlignment="Center" FontSize="20" Margin="0,30,0,0"/>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Margin="25,0,0,0" Width="152">
-                <TextBlock Text=":שם" TextAlignment="Center"  FontSize="20"/>
-                <TextBlock Text=":כתובת" TextAlignment="Center"  FontSize="20"/>
-                <TextBlock Text=":כתובת מייל" TextAlignment="Center" FontSize="20"/>
-            </StackPanel>
-        </StackPanel>
-        <DataGrid x:Name="final_cartDetails" AutoGenerateColumns="False"  Background="#B0C4B1" EnableRowVirtualization="True"
-                  RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="0"  AlternatingRowBackground="#DCE1DE" AlternationCount="2" IsReadOnly="True">
+        </materialDesign:Card>
+        <DataGrid x:Name="final_cartDetails" AutoGenerateColumns="False"  Background="#dce1de" Opacity="0.8" Height="400" EnableRowVirtualization="True"
+                  RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="0"  AlternatingRowBackground="#DCE1DE" AlternationCount="2" IsReadOnly="True" Margin="0,20,0,0">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#9CC5A1"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontWeight" Value="Thin"/>
                     <Setter Property="BorderThickness" Value="0,1,1,0.5"/>
                     <Setter Property="BorderBrush" Value="#1F2421"/>
                     <Setter Property="HorizontalContentAlignment" Value="center" />
@@ -47,7 +68,7 @@
                     x:Name="proID"
                     Binding="{Binding ProductID, Mode=TwoWay}"
                     Header="מס' מזהה"
-                    Width="110"/>
+                    Width="110" />
                 <DataGridTextColumn
                     x:Name="NameColumn"
                     Binding="{Binding ProductName}"
@@ -65,10 +86,18 @@
                     Width="130"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock x:Name="cartTotalPrice" FontWeight="Bold" Text="{Binding}" Width="60" Margin="278,5,0,0" Foreground="#FF2E4F2E" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="{Binding ElementName=confirm, Path=Visibility}" Grid.Row="1" />
-        <TextBlock Foreground="#FF2E4F2E" FontWeight="Bold" Text=":לתשלום" Grid.Row="2" Width="62" TextAlignment="Center" Margin="317,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="31"  Visibility="{Binding ElementName=confirm, Path=Visibility}"/>
-        <Button Content="אישור הזמנה" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" Background="#FF2E4F2E" BorderBrush="{x:Null}" Click="finalConfirmOrder_Click" Margin="40,3,0,0" Height="32" Width="110"/>
-
+        <materialDesign:Card
+            materialDesign:ShadowAssist.ShadowDepth="Depth3"
+            Grid.Column="0" Height="35" Grid.Row="1" Margin="2,2,61,4">
+            <materialDesign:Card.Background>
+                <SolidColorBrush Color="#dce1de" Opacity="0.4"/>
+            </materialDesign:Card.Background>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="אישור סופי של ההזמנה"  Grid.Row="1" VerticalAlignment="Top" BorderBrush="#FF2E4F2E" Foreground="#FF2E4F2E" Background="{x:Null}"  Click="finalConfirmOrder_Click" Margin="40,2,0,0" Height="28" Width="200"/>
+                <TextBlock x:Name="cartTotalPrice" FontWeight="Bold" Text="{Binding}" TextAlignment="Center" Width="40" Margin="50,9,0,0" Foreground="#FF2E4F2E" VerticalAlignment="Top"  Visibility="{Binding ElementName=confirm, Path=Visibility}" Grid.Row="1" />
+                <TextBlock Foreground="#FF2E4F2E" FontWeight="Bold" Text=":לתשלום" Grid.Row="1" Width="65" TextAlignment="Right" Margin="0,3,0,0" VerticalAlignment="Center" Height="22"  Visibility="{Binding ElementName=confirm, Path=Visibility}"/>
+            </StackPanel>
+        </materialDesign:Card>
 
     </Grid>
 </Page>

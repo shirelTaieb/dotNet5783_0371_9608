@@ -19,7 +19,7 @@ namespace BLApi
         /// מעדכן כמות פריט בסל
         /// </summary>
         /// <param name="cart"></param>
-        public void confirmOrder(BO.Cart? cart);
+        public int confirmOrder(BO.Cart? cart);
         /// <summary>
         /// פרטי הזמנה
         /// </summary>

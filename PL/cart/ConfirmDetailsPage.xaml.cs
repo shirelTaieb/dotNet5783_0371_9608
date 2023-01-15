@@ -53,18 +53,20 @@ namespace PL.cart
                 }).ToList()
                
             };
+            int newOrderID = 0;
             try   
             {
-                bl!.Cart!.confirmOrder(boCart); //אישור הזמנה
-              
-
+                newOrderID = bl!.Cart!.confirmOrder(boCart); //אישור הזמנה
+                boCart.Items=null; //מחיקת הסל
+                
+ 
             }
             catch
             {
                 return;
             }
-            MessageBox.Show("ההזמנה אושרה בהצלחה", "");
-            _mainWindow.frame.Content = new customerListPage(boCart,_mainWindow);//חזרה לתפריט הראשי צריך למחוק את הכארט
+            MessageBox.Show(":)ההזמנה אושרה בהצלחה", newOrderID.ToString());
+            _mainWindow.frame.Content = new MainCustomer(_mainWindow,boCart);//חזרה לתפריט הראשי צריך למחוק את הכארט
 
         }
     }
