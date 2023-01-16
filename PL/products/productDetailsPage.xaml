@@ -20,14 +20,13 @@
                            FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" />
                 <TextBlock  Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
                            FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Left" FlowDirection="RightToLeft" >
-                    <Run Text=" "/>
                     <Run Text="{Binding Price }"/>
                     <Run Text="₪"/>
                 </TextBlock>
                 <TextBlock   Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
                            FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Left" FlowDirection="RightToLeft" >
-                    <Run Text="יחידות"/>
                     <Run Text="{Binding InStock}"/>
+                    <Run Text="יחידות"/>
                 </TextBlock>
                 <TextBlock x:Name="category" Text="{Binding}" Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
                            FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" />

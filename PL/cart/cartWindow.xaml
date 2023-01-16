@@ -9,7 +9,7 @@
     <Grid Margin="0,0,344,0">
 
         <StackPanel x:Name="stack" Margin="0,0,-344,0">
-            <TextBlock x:Name="name" FontSize="25" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sitka Subheading" TextAlignment="Center"/>
+            <TextBlock x:Name="name" FontSize="25" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Narkisim" TextAlignment="Center"/>
             <Image MaxHeight="100" Margin="0,20,0,0" MaxWidth="100" Source="{Binding path}"/>
             <StackPanel Orientation="Horizontal" Margin="70,30,0,0" >
                 <TextBlock  Text="ש&quot;ח" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="20" FontFamily="Sitka Banner"  Margin="40,0,0,0"/>
