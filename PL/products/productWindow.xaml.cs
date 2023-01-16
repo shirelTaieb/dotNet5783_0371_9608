@@ -1,21 +1,28 @@
 ﻿//בס"ד
 using BO;
 using System;
+using System.Net.NetworkInformation;
 using System.Windows;
 using System.Windows.Controls;
+using BLApi;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows.Media.Imaging;
 
 namespace PL.products
 {
     /// <summary>
     /// Interaction logic for productWindow.xaml
     /// </summary>
+    
     public partial class productWindow : Window
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
         private PO.Product pl = new PO.Product();
         private BO.Product UpdateOrNewProduct = new BO.Product();
         Action<PO.ProductForList> addAction;
-        Action<PO.ProductForList> removeAction;
+        string? path;
+        //Action<PO.ProductForList> removeAction;
         public productWindow(int ShowDetails, Action<PO.ProductForList> addToObservalCollection, /*Action<PO.ProductForList> removeFromObserval,*/ PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
@@ -75,12 +82,14 @@ namespace PL.products
 
         private void add_click(object sender, RoutedEventArgs e)
         {
+            pl.path = path;
             UpdateOrNewProduct = PoToBo(pl);
 
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
             int id = bl!.Product!.addNewProduct(UpdateOrNewProduct);
             try
             {
+
                 addAction(new PO.ProductForList()
                 {
                     ID = id,
@@ -100,6 +109,7 @@ namespace PL.products
         {
             try
             {
+                pl.path = path;
                 UpdateOrNewProduct = PoToBo(pl);
                 bl!.Product!.updateProduct(UpdateOrNewProduct);
                 PO.ProductForList popro=new PO.ProductForList()
@@ -139,50 +149,48 @@ namespace PL.products
             productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה
         }
 
-        private void productFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-
-        }
 
         //private BO.Product castForListToRegular(BO.ProductForList pfl)
         //{
-        //    return(new BO.Product { ID=pfl.ID, Category=pfl.Category, Name=pfl.Name, InStock=pfl.In} )
+        //    return (new BO.Product { ID = pfl.ID, Category = pfl.Category, Name = pfl.Name, InStock = pfl.In })
         //}
+        private void AddImage_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
+            //f.Filter = "All Files| *.*";
+            f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
+                "|PNG Portable Network Graphics (*.png)|*.png" +
+                "|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
+                "|BMP Windows Bitmap (*.bmp)|*.bmp" +
+                "|TIF Tagged Imaged File Format (*.tif *.tiff)|*.tif;*.tiff" +
+                "|GIF Graphics Interchange Format (*.gif)|*.gif";
+            if (f.ShowDialog() == true)
+            {
+                product_image.Source = new BitmapImage(new Uri(f.FileName));
+                path = (product_image.Source).ToString();
+            }
+        }
+        private void updateImage_Button(object sender, RoutedEventArgs e)// עדכון
+        {
+            Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
+            //f.Filter = "All Files| *.*";
+            f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
+           "|PNG Portable Network Graphics (*.png)|*.png" +
+           "|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
+           "|BMP Windows Bitmap (*.bmp)|*.bmp" +
+           "|TIF Tagged Imaged File Format (*.tif *.tiff)|*.tif;*.tiff" +
+           "|GIF Graphics Interchange Format (*.gif)|*.gif";
+            if (f.ShowDialog() == true)
+            {
+                product_image.Source = new BitmapImage(new Uri(f.FileName));
+                path = (product_image.Source).ToString();
+            }
 
+        }
     }
-    //private void ChangeImageButton_Click(object sender, RoutedEventArgs e)\\ עדכון
-    //{
-    //    Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
-    //    //f.Filter = "All Files| *.*";
-    //    f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
-    //    "|PNG Portable Network Graphics (*.png)|*.png" +
-    //    "|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
-    //    "|BMP Windows Bitmap (*.bmp)|*.bmp" +
-    //    "|TIF Tagged Imaged File Format (*.tif *.tiff)|*.tif;*.tiff" +
-    //    "|GIF Graphics Interchange Format (*.gif)|*.gif";
-    //    if (f.ShowDialog() == true)
-    //    {
-    //        ProductImage.Source = new BitmapImage(new Uri(f.FileName));
-    //        path = (ProductImage.Source).ToString();
-    //    }
-    //}
+ 
 
-    //private void changeImageButton_Click(object sender, RoutedEventArgs e) \\ הוספה
-    //{
-    //    Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
-    //    //f.Filter = "All Files| *.*";
-    //    f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
-    //    "|PNG Portable Network Graphics (*.png)|*.png" +
-    //    "|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
-    //    "|BMP Windows Bitmap (*.bmp)|*.bmp" +
-    //    "|TIF Tagged Imaged File Format (*.tif *.tiff)|*.tif;*.tiff" +
-    //    "|GIF Graphics Interchange Format (*.gif)|*.gif";
-    //    if (f.ShowDialog() == true)
-    //    {
-    //        ProductImage.Source = new BitmapImage(new Uri(f.FileName));
-    //        path = (ProductImage.Source).ToString();
-    //    }
-    //}
+ 
 
 
 }
