@@ -33,12 +33,12 @@ namespace Dal
                 return new DO.Order()
                 {
                     ID = (int)or.Element("ID")!,
-                    CustomerName = (string)or.Element("CustomerName")!,
-                    CustomerEmail = (string)or.Element("CustomerEmail")!,
+                    CustomerName = (string?)or.Element("CustomerName")!,
+                    CustomerEmail = (string?)or.Element("CustomerEmail")!,
                     CustomerAddress = (string?)or.Element("CustomerAddress"),
-                    OrderDate = (DateTime)or.Element("OrderDate")!,
-                    ShipDate = (DateTime)or.Element("ShipDate")!,
-                    DeliveryDate = (DateTime)or.Element("DeliveryDate")!
+                    OrderDate = (DateTime?)or.Element("OrderDate")!,
+                    ShipDate = (DateTime?)or.Element("ShipDate")!,
+                    DeliveryDate = (DateTime?)or.Element("DeliveryDate")!
                 };
         }
         #endregion

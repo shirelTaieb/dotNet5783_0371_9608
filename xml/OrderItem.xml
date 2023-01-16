@@ -7,4 +7,11 @@
     <Price>105.99</Price>
     <Amount>2</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1002</ID>
+    <ProductID>100034</ProductID>
+    <OrderID>1002</OrderID>
+    <Price>23</Price>
+    <Amount>3</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>

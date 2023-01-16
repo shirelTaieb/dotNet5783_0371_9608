@@ -81,7 +81,7 @@ namespace PL.orders
         //    groupings = groupings.OrderBy(p => p.Key);
         //    foreach (var group in groupings)
         //        StatusComboBox.Items.Add(group.Key);
-        }
+        //}
 
     }
 }
