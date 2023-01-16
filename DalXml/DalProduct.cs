@@ -85,6 +85,7 @@ namespace Dal
         }
         public IEnumerable<DO.Product?> GetAll(Func<DO.Product?, bool>? filter = null)
         {
+
             if (filter == null)
                 return XMLTools.LoadListFromXMLElement(s_products).Elements().Select(s => getProduct(s));
             else
