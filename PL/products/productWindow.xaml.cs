@@ -154,22 +154,7 @@ namespace PL.products
         //{
         //    return (new BO.Product { ID = pfl.ID, Category = pfl.Category, Name = pfl.Name, InStock = pfl.In })
         //}
-        private void AddImage_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
-            //f.Filter = "All Files| *.*";
-            f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
-                "|PNG Portable Network Graphics (*.png)|*.png" +
-                "|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
-                "|BMP Windows Bitmap (*.bmp)|*.bmp" +
-                "|TIF Tagged Imaged File Format (*.tif *.tiff)|*.tif;*.tiff" +
-                "|GIF Graphics Interchange Format (*.gif)|*.gif";
-            if (f.ShowDialog() == true)
-            {
-                product_image.Source = new BitmapImage(new Uri(f.FileName));
-                path = (product_image.Source).ToString();
-            }
-        }
+
         private void updateImage_Button(object sender, RoutedEventArgs e)// עדכון
         {
             Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
@@ -182,8 +167,16 @@ namespace PL.products
            "|GIF Graphics Interchange Format (*.gif)|*.gif";
             if (f.ShowDialog() == true)
             {
+              
                 product_image.Source = new BitmapImage(new Uri(f.FileName));
-                path = (product_image.Source).ToString();
+                String[] spearator = { "PL" };
+                Int32 count = 2;
+                // using the method
+                String[] strlist = product_image.Source.ToString().Split(spearator, count,
+                       StringSplitOptions.RemoveEmptyEntries);
+                path = strlist[1];
+               
+                
             }
 
         }
