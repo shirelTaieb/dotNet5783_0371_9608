@@ -67,7 +67,12 @@ namespace Dal
         {
             XElement orderItemsRoot = XMLTools.LoadListFromXMLElement(s_orderItems);  //get the root element of the file
 
-            try { createOrderItemElement(GetById(id)).Remove(); } //try to remove, but if the id not exist the "getbyId" will throw
+            try
+            {
+                (orderItemsRoot.Elements()
+            .FirstOrDefault(or => (int?)or.Element("ID") == id) ?? throw new NotExistException())
+            .Remove();
+            } //try to remove
             catch { throw new NotExistException(); }
             XMLTools.SaveListToXMLElement(orderItemsRoot, s_orderItems); //save the orderItems after the deleting
         }

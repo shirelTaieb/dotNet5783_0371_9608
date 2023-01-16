@@ -75,11 +75,16 @@ namespace Dal
 
         public void Delete(int id)
         {
-            XElement orderItemsRoot = XMLTools.LoadListFromXMLElement(s_orders);  //get the root element of the file
+            XElement ordersRoot = XMLTools.LoadListFromXMLElement(s_orders);  //get the root element of the file
 
-            try { createOrderElement(GetById(id)).Remove(); } //try to remove, but if the id not exist the "getbyId" will throw
+            try
+            {
+                (ordersRoot.Elements()
+            .FirstOrDefault(oi => (int?)oi.Element("ID") == id) ?? throw new NotExistException())
+            .Remove();
+            } //try to remove
             catch { throw new NotExistException(); }
-            XMLTools.SaveListToXMLElement(orderItemsRoot, s_orders);
+            XMLTools.SaveListToXMLElement(ordersRoot, s_orders);
         }
 
         public IEnumerable<DO.Order?> GetAll(Func<DO.Order?, bool>? filter = null)

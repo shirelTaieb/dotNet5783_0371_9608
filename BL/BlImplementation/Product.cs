@@ -85,12 +85,10 @@ internal class Product : BLApi.IProduct
     {
         if (filter == null)
             return getListOfProduct();
-        IEnumerable<BO.ProductForList?> partList=new List<BO.ProductForList?>();
-        partList=
-            from item in getListOfProduct()
-            where filter!(item)
-            select item;
-        return partList;
+       
+        return from item in getListOfProduct()
+               where filter!(item)
+               select item; ;
     }
     public IEnumerable<BO.ProductForList?> getListOfProduct()//נו זה גם לקוסטומר
     {

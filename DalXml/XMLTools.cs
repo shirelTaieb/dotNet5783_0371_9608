@@ -9,6 +9,11 @@ static class XMLTools
     {
         if (!Directory.Exists(s_dir))
             Directory.CreateDirectory(s_dir);
+
+        ////SaveListToXMLSerializer(new List<Product?> { }, "Product");
+        ////SaveListToXMLSerializer(new List<Order?> { }, "Order");
+        ////SaveListToXMLSerializer(new List<OrderItem?> { }, "OrderItem");
+        ////SaveListToXMLSerializer(new List<OrderItem?> { }, "Config");
     }
 
     #region Extension Fuctions
@@ -99,24 +104,37 @@ static class XMLTools
         }
     }
     #endregion
+    //public static int getNumber()
+    //{
+    //    XElement root = LoadListFromXMLElement("Config");
+
+    //    int nextNumber = Convert.ToInt32(root!.Element("ConfigProduct").Value);
+    //    root!.Element("ConfigProduct")!.Value = (nextNumber + 1).ToString();
+    //    SaveListToXMLElement(root, "Config");
+    //    return nextNumber + 1;
+    //}
     public class ConfigOrder
     {
         public static int getNumber()
         {
             XElement root = LoadListFromXMLElement("Config");
-            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Element("value")!.Value);
-            root!.Element("ConfigOrder")!.Element("value")!.Value = (nextNumber + 1).ToString();
-            return (nextNumber + 1);
+
+            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrder")!.Value);
+            root!.Element("ConfigOrder")!.Value = (nextNumber + 1).ToString();
+            SaveListToXMLElement(root, "Config");
+            return nextNumber + 1;
         }
     }
     public class ConfigProduct
     {
         public static int getNumber()
         {
-            XElement root = LoadListFromXMLElement("config");
-            int nextNumber = Convert.ToInt32(root!.Element("ConfigProduct")!.Element("value")!.Value);
-            root!.Element("ConfigProduct")!.Element("value")!.Value = (nextNumber + 1).ToString();
-            return (nextNumber + 1);
+            XElement root = LoadListFromXMLElement("Config");
+
+            int nextNumber = Convert.ToInt32(root!.Element("ConfigProduct")!.Value);
+            root!.Element("ConfigProduct")!.Value = (nextNumber + 1).ToString();
+            SaveListToXMLElement(root, "Config");
+            return nextNumber + 1;
         }
     }
     public class ConfigOrderItem
@@ -124,9 +142,11 @@ static class XMLTools
         public static int getNumber()
         {
             XElement root = LoadListFromXMLElement("Config");
-            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrderItem")!.Element("value")!.Value);
-            root!.Element("ConfigOrderItem")!.Element("value")!.Value = (nextNumber + 1).ToString();
-            return (nextNumber + 1);
+
+            int nextNumber = Convert.ToInt32(root!.Element("ConfigOrderItem")!.Value);
+            root!.Element("ConfigOrderItem")!.Value = (nextNumber + 1).ToString();
+            SaveListToXMLElement(root, "Config");
+            return nextNumber + 1;
         }
     }
 

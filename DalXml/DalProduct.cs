@@ -17,7 +17,7 @@ namespace Dal
                 yield return new XElement("Category", product.Category);
             if (product.Price != null)
                 yield return new XElement("Price", product.Price);
-            yield return new XElement("InStock", product.Name);
+            yield return new XElement("InStock", product.InStock);
             if (product.path != null)
                 yield return new XElement("path", product.path);
         }
@@ -32,11 +32,11 @@ namespace Dal
                 return new DO.Product()
                 {
                     ID = (int)p.Element("ID")!,
-                    Name = (string?)p.Element("Name"),
-                    Price = (double?)p.Element("Price"),
-                    Category = p.ToEnumNullable<DO.Category>("Category"),
+                    Name = (string?)p.Element("Name")??null,
+                    Price = (double?)p.Element("Price")??null,
+                    Category = p.ToEnumNullable<DO.Category>("Category")??null,
                     InStock = (int)p.Element("InStock")!,
-                    path = (string?)p.Element("path")
+                    path = (string?)p.Element("path") ?? null
                 };
         }
         #endregion
@@ -67,7 +67,14 @@ namespace Dal
         {
             XElement productsRoot = XMLTools.LoadListFromXMLElement(s_products);  //get the root element of the file
 
-            try { createProductElement(GetById(id)).Remove(); } //try to remove, but if the id not exist the "getbyId" will throw
+            try
+            {
+                (productsRoot.Elements()
+            
+            .FirstOrDefault(pro => (int?)pro.Element("ID") == id) ?? throw new NotExistException())
+            .Remove();
+                        
+            } //try to remove
             catch { throw new NotExistException(); }
             XMLTools.SaveListToXMLElement(productsRoot, s_products); //save the products after the deleting
         }
