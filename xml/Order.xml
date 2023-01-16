@@ -7,4 +7,18 @@
     <CustomerAddress>ק</CustomerAddress>
     <OrderDate>2023-01-16T13:24:38.1383737+02:00</OrderDate>
   </Order>
+  <Order>
+    <ID>1002</ID>
+    <CustomerName>shir</CustomerName>
+    <CustomerEmail>shi@</CustomerEmail>
+    <CustomerAddress>fdsx</CustomerAddress>
+    <OrderDate>2023-01-16T18:27:04.6609057+02:00</OrderDate>
+  </Order>
+  <Order>
+    <ID>1003</ID>
+    <CustomerName>tame</CustomerName>
+    <CustomerEmail>tane@</CustomerEmail>
+    <CustomerAddress>sdf</CustomerAddress>
+    <OrderDate>2023-01-16T18:27:35.7432699+02:00</OrderDate>
+  </Order>
 </ArrayOfOrder>
