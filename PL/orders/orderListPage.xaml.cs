@@ -74,14 +74,16 @@ namespace PL.orders
                 MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        //private void Status_DropDownOpened(object sender, EventArgs e)
-        //{
-        //    IEnumerable<IGrouping<ParcelStatuse, ParcelToList>> groupings = groupByStatus(BL.GetParcelList());
-        //    IEnumerable<IGrouping<Status, orderToLIist>> groupings = groupByStatus(BL.GetParcelList());
-        //    groupings = groupings.OrderBy(p => p.Key);
-        //    foreach (var group in groupings)
-        //        StatusComboBox.Items.Add(group.Key);
-        //}
-
+      //  private void Status_DropDownOpened(object sender, EventArgs e)
+      //  {
+      //      IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
+      //      groupings = groupings.OrderBy(p => p.Key);
+      //      foreach (var group in groupings)
+      //          StatusComboBox.Items.Add(group.Key);
+      //  }
+      //  IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> GroupByStatus(IEnumerable<BO.OrderForList> listToGroup)
+      //=> (from order in listToGroup
+      //    group order by order.Status into orderinfo
+      //    select orderinfo).ToList();
     }
 }

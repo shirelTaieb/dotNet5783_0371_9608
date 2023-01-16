@@ -9,9 +9,16 @@
   </OredrItem>
   <OredrItem>
     <ID>1002</ID>
-    <ProductID>100034</ProductID>
+    <ProductID>100013</ProductID>
     <OrderID>1002</OrderID>
-    <Price>23</Price>
-    <Amount>3</Amount>
+    <Price>34</Price>
+    <Amount>2</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1003</ID>
+    <ProductID>100013</ProductID>
+    <OrderID>1003</OrderID>
+    <Price>34</Price>
+    <Amount>2</Amount>
   </OredrItem>
 </ArrayOfOrderItem>
