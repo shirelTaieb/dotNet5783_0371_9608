@@ -2,15 +2,8 @@
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
     <ID>100007</ID>
-    <Name>עעע</Name>
-    <Price>6666</Price>
+    <Name>fdghjk</Name>
+    <Price>45</Price>
     <InStock>2</InStock>
-  </Product>
-  <Product>
-    <ID>100006</ID>
-    <Name>בראשית</Name>
-    <Category>Holy</Category>
-    <Price>105.99</Price>
-    <InStock>78</InStock>
   </Product>
 </ArrayOfProduct>
