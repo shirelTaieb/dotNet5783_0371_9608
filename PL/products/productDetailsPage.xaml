@@ -9,30 +9,40 @@
       Title="productDetailsPage">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" Width="300" Height="300" VerticalAlignment="Top" Margin="50,50,50,0" Grid.RowSpan="3">
-            <StackPanel x:Name="Details" Width="160" Height="300" VerticalAlignment="Bottom">
-                <TextBlock  Text="{Binding ID}" Width="160" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
-                <TextBlock   Text="{Binding Name}" Width="160" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
-                <TextBlock  Text="{Binding Price}" Width="160" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
-                <TextBlock  Text="{Binding InStock}" Width="160" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
-                <TextBlock x:Name="category" Text="{Binding}" Width="160" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Calibri" FontSize="13" FontWeight="Bold" VerticalAlignment="Bottom" TextDecorations="{x:Null}" />
+        <Grid.Background>
+            <ImageBrush ImageSource="/products/Green (1).jpeg"/>
+        </Grid.Background>
+        <StackPanel Orientation="Horizontal" Height="300" VerticalAlignment="Top" Margin="90,70,90,0">
+            <StackPanel x:Name="Details" Width="130" Height="300" VerticalAlignment="Bottom">
+                <TextBlock  Text="{Binding ID}" Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" />
+                <TextBlock   Text="{Binding Name}" Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" />
+                <TextBlock  Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Left" FlowDirection="RightToLeft" >
+                    <Run Text=" "/>
+                    <Run Text="{Binding Price }"/>
+                    <Run Text="₪"/>
+                </TextBlock>
+                <TextBlock   Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Left" FlowDirection="RightToLeft" >
+                    <Run Text="יחידות"/>
+                    <Run Text="{Binding InStock}"/>
+                </TextBlock>
+                <TextBlock x:Name="category" Text="{Binding}" Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" />
             </StackPanel>
-            <StackPanel Width="140" Height="300" VerticalAlignment="Bottom">
-                <TextBlock  Text=":מספר מזהה" Width="140" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
-                           FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" />
-                <TextBlock  Text=":שם הספר" Width="140" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
-                           FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" />
-                <TextBlock  Text=":מחיר" Width="140" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
-                           FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0"/>
-                <TextBlock  Text=":כמות במלאי" Width="140" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
-                           FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" />
-                <TextBlock  Text=":קטגוריה" Width="140" TextAlignment="Center" Height="47" HorizontalAlignment="Center"
-                           FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" />
+            <StackPanel Width="108" Height="300" VerticalAlignment="Bottom">
+                <TextBlock  Text=":מספר מזהה" Width="108" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
+                           FontSize="20" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" TextDecorations="Underline" />
+                <TextBlock  Text=":שם הספר" Width="108" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
+                           FontSize="20" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" TextDecorations="Underline"/>
+                <TextBlock  Text=":מחיר" Width="108" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
+                           FontSize="20" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" TextDecorations="Underline"/>
+                <TextBlock  Text=":כמות במלאי" Width="108" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
+                           FontSize="20" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" TextDecorations="Underline"/>
+                <TextBlock  Text=":קטגוריה" Width="108" TextAlignment="Center" Height="47" HorizontalAlignment="Center"
+                           FontSize="20" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" TextDecorations="Underline" />
 
             </StackPanel>
         </StackPanel>

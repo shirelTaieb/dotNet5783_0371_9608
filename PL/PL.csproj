@@ -25,6 +25,7 @@
     <None Remove="images\baackround order.jpeg" />
     <None Remove="images\book.png" />
     <None Remove="images\elka_graphics.jpg" />
+    <None Remove="images\Green %281%29.jpeg" />
     <None Remove="images\Logo.jpg" />
     <None Remove="images\man.png" />
     <None Remove="images\manager.png" />
@@ -43,6 +44,7 @@
     <None Remove="orders\פרחים רקע.jpg" />
     <None Remove="orders\ציור.jpg" />
     <None Remove="pngegg.png" />
+    <None Remove="products\Green %281%29.jpeg" />
     <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="W_960_sell-online.png" />
   </ItemGroup>
@@ -70,6 +72,7 @@
 
   <ItemGroup>
     <Resource Include="images\elka_graphics.jpg" />
+    <Resource Include="images\Green (1).jpeg" />
     <Resource Include="images\Logo.jpg" />
     <Resource Include="images\man.png" />
     <Resource Include="images\manager.png" />
@@ -81,6 +84,7 @@
     <Resource Include="images\📚☕️.jpeg" />
     <Resource Include="library1.jpg" />
     <Resource Include="orders\פרחים רקע.jpg" />
+    <Resource Include="products\Green (1).jpeg" />
   </ItemGroup>
 
 </Project>

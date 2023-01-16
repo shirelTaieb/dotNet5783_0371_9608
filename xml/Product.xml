@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <ID>100001</ID>
-    <Name>הארי פוטר</Name>
-    <InStock>0</InStock>
+    <ID>100007</ID>
+    <Name>עעע</Name>
+    <Price>6666</Price>
+    <InStock>2</InStock>
+  </Product>
+  <Product>
+    <ID>100006</ID>
+    <Name>בראשית</Name>
+    <Category>Holy</Category>
+    <Price>105.99</Price>
+    <InStock>78</InStock>
   </Product>
 </ArrayOfProduct>

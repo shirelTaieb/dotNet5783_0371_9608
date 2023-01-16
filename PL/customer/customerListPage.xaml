@@ -49,7 +49,9 @@
                             <TextBlock x:Name="Name" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" />
                             <TextBlock x:Name="Price" Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <TextBlock x:Name="AmountInCart"  Visibility="{Binding AmountInCart, Converter={StaticResource nullToNotVisi}}" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                            <Run Text="{Binding AmountInCart}"/><Run Text=" :כבר הוספת לסל"/></TextBlock>
+                                <Run Text="{Binding AmountInCart}"/>
+                                <Run Text=" :כבר הוספת לסל"/>
+                            </TextBlock>
                             <TextBlock x:Name="InStock" Text= "!אזל במלאי" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="15" Width="200" FontStyle="Italic" Background="DarkRed" Foreground="#DCE1DE" Visibility="{Binding InStock, Converter={StaticResource falseToVisi}}" TextAlignment="Center"  />
                         </StackPanel>
                     </DataTemplate>

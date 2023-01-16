@@ -89,9 +89,6 @@ namespace Dal
             if (filter == null)
             {
                 return XMLTools.LoadListFromXMLElement(s_products).Elements().Select(s => getProduct(s));
-                //XElement root= XMLTools.LoadListFromXMLElement(s_products);
-                //var result= from pro in root.Elements()
-                //       select new DO.Product?()
             }
             else
                 return XMLTools.LoadListFromXMLElement(s_products).Elements().Select(s => getProduct(s)).Where(filter);
