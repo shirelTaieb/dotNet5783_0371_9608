@@ -37,7 +37,7 @@
         <Button Height="150" Margin="-20,-15,270,279" Width="150" Click="updateImage_Button">
             <Image  x:Name="product_image" Source="{Binding path}" HorizontalAlignment="Center"  VerticalAlignment="Stretch"  Width="130" Height="130" />
         </Button>
-        <materialDesign:PackIcon Kind="CameraPlus" Height="70" Width="70" Margin="25,12,0,0" Visibility="{Binding ElementName=product_image, Path=Source, Converter={StaticResource nullToVisi}}"/>
+        <materialDesign:PackIcon Kind="CameraPlusOutline" Height="70" Width="70" Margin="25,12,0,0" Visibility="{Binding ElementName=product_image, Path=Source, Converter={StaticResource nullToVisi}}"/>
         <Button Content="עריכת פרטי מוצר" Background="{x:Null}" BorderBrush="#4A5759" Visibility="{Binding ElementName=productFrame, Path=Content, Converter={StaticResource nullToNotVisi}}" Foreground="#4A5759" Click="toEdit_Click" Margin="0,380,0,0" />
         <Frame x:Name="productFrame" Width="420" Height="415" NavigationUIVisibility="Hidden" Margin="0,0,0,35" />
     </Grid>

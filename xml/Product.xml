@@ -1,4 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
+  <Product>
+    <ID>100062</ID>
+    <Name>הארי פוטר 2</Name>
+    <Category>Romans</Category>
+    <Price>89</Price>
+    <InStock>130</InStock>
+    <path>/images/bookImages/HarryPotter2.jpg</path>
+  </Product>
+	
 </ArrayOfProduct>
