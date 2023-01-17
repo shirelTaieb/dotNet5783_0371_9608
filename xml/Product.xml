@@ -107,4 +107,38 @@
     <InStock>31</InStock>
     <path>/images/man.png</path>
   </Product>
+  <Product>
+    <ID>100049</ID>
+    <Name>jpg</Name>
+    <Price>345</Price>
+    <InStock>0</InStock>
+    <path>/images/heapBooks.jpg</path>
+  </Product>
+  <Product>
+    <ID>100050</ID>
+    <Name>jpg2</Name>
+    <InStock>0</InStock>
+    <path>/images/heapBooks.jpg</path>
+  </Product>
+  <Product>
+    <ID>100051</ID>
+    <InStock>0</InStock>
+    <path>/images/arrow.png</path>
+  </Product>
+  <Product>
+    <ID>100052</ID>
+    <InStock>0</InStock>
+    <path>/images/book.png</path>
+  </Product>
+  <Product>
+    <ID>100053</ID>
+    <Name>debug</Name>
+    <InStock>0</InStock>
+    <path>/images/books1.jpeg</path>
+  </Product>
+  <Product>
+    <ID>100054</ID>
+    <InStock>0</InStock>
+    <path>/images/book.png</path>
+  </Product>
 </ArrayOfProduct>

@@ -155,7 +155,7 @@ namespace PL.products
         private void updateImage_Button(object sender, RoutedEventArgs e)// עדכון
         {
             Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
-            f.Filter = "Image Files(*.jpeg; *.jpg; *.png; *.gif; *.bmp)|*.jpeg; *.jpg; *.png; *.gif; *.bmp"; 
+          f.Filter = "Image Files(*.jpeg; *.jpg; *.png; *.gif; *.bmp)|*.jpeg; *.jpg; *.png; *.gif; *.bmp"; 
            // f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
            //"|PNG Portable Network Graphics (*.png)|*.png" +
            //"|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
