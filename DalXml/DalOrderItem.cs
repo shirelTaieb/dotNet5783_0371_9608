@@ -17,6 +17,7 @@ namespace Dal
         {
             yield return new XElement("ID", orit.ID);
             yield return new XElement("ProductID", orit.ProductID);
+            yield return new XElement("ProductName", orit.ProductName);
             yield return new XElement("OrderID", orit.OrderID);
             if (orit.Price != null)
                 yield return new XElement("Price", orit.Price);
@@ -34,6 +35,7 @@ namespace Dal
                 {
                     ID = (int)oi.Element("ID")!,
                     ProductID = (int)oi.Element("ProductID")!,
+                    ProductName = (string?)oi.Element("ProductName"),
                     OrderID = (int)oi.Element("OrderID")!,
                     Price = (double?)oi.Element("Price"),
                     Amount = (int)oi.Element("Amount")!
@@ -61,7 +63,7 @@ namespace Dal
             if (orderItemElement == null) //there is no match product
                 throw new NotExistException();
             else
-                return (DO.OrderItem)getOrderItem(orderItemElement!)!; //return the product
+                return (DO.OrderItem)getOrderItem(orderItemElement!)!; //return the orderItem
         }
         public void Delete(int id)
         {

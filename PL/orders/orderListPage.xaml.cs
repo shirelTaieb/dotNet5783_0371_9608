@@ -38,9 +38,12 @@ namespace PL.orders
                     AmountOfItems = or.AmountOfItems,
                     Status = (BO.HebOrderStatus?)or.Status,
                     TotalPrice = or.TotalPrice
+
                 };
             orderForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
-            orderForListDataGrid.IsReadOnly = true;
+            statusSelector.ItemsSource = Enum.GetValues(typeof(BO.HebOrderStatus));
+          // IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
+            //groupings = groupings.OrderBy(p => p.Key);
         }
 
         private void orderForListListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,6 +71,7 @@ namespace PL.orders
                         TotalPrice = order.TotalPrice
                     };
                 orderForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
+                
             }
             catch (Exception ex)
             {
@@ -76,6 +80,7 @@ namespace PL.orders
         }
         private void Status_ComboBox(object sender, EventArgs e)
         {
+            //statusSelector.Items.Add("");
             IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
             groupings = groupings.OrderBy(p => p.Key);
             foreach (var group in groupings)

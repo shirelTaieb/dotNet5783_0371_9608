@@ -31,7 +31,7 @@ namespace PL.orders
                 {
                     ID = boItem.ID,
                     ProductID = boItem.ProductID,
-                    ProductName = bl!.Product!.getProductInfoManager(boItem.ProductID).Name,
+                    ProductName = boItem.ProductName,
                     Price = boItem.Price,
                     Amount = boItem.Amount,
                     TotalPrice = boItem.TotalPrice

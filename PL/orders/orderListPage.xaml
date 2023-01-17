@@ -15,9 +15,9 @@
         </Grid.RowDefinitions>
         <Grid x:Name="groupingOrder"  Grid.Row="0" Background="#DCE1DE">
             <Label Content=" :סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#DCE1DE" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="104" Height="34" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="685,0,0,0"/>
-            <ComboBox x:Name="statusSelector"  BorderBrush="#4A5759" VerticalAlignment="Center" Height="34" SelectionChanged="Status_ComboBox" Background="#DCE1DE" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="205" Margin="487,0,0,0"/>
+            <ComboBox x:Name="statusSelector" SelectedItem="{Binding HebOrderStatus}" BorderBrush="#4A5759" VerticalAlignment="Center" Height="34" SelectionChanged="Status_ComboBox" Background="#DCE1DE" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="205" Margin="487,0,0,0"/>
         </Grid>
-        <DataGrid x:Name="orderForListDataGrid" AutoGenerateColumns="False" MouseDoubleClick="orderUpdate_DoubleClick" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="orderForListListView_SelectionChanged" AlternatingRowBackground="#B0C4B1" AlternationCount="2" >
+        <DataGrid x:Name="orderForListDataGrid" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="orderUpdate_DoubleClick" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="orderForListListView_SelectionChanged" AlternatingRowBackground="#B0C4B1" AlternationCount="2" >
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#9CC5A1"/>

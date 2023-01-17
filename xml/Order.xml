@@ -1,25 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
- 
-  <Order>
-    <ID>1002</ID>
-    <CustomerName>תמר חייט</CustomerName>
-    <CustomerEmail>אדאגכטעי@</CustomerEmail>
-    <CustomerAddress>עטכארג</CustomerAddress>
-    <OrderDate>2023-01-17T00:54:22.6322657+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1002</ID>
-    <CustomerName>shir</CustomerName>
-    <CustomerEmail>shi@</CustomerEmail>
-    <CustomerAddress>fdsx</CustomerAddress>
-    <OrderDate>2023-01-16T18:27:04.6609057+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1003</ID>
-    <CustomerName>tame</CustomerName>
-    <CustomerEmail>tane@</CustomerEmail>
-    <CustomerAddress>sdf</CustomerAddress>
-    <OrderDate>2023-01-16T18:27:35.7432699+02:00</OrderDate>
-  </Order>
+  
 </ArrayOfOrder>

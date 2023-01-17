@@ -18,9 +18,12 @@ internal class Order : BLApi.IOrder
     /// </summary>
     /// <param name="or"></param>
     /// <returns></returns>
+
+    private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();
+
     private BO.OrderForList BoOrderToOrderForList(BO.Order or)
     {
-        BO.OrderForList ofl=new BO.OrderForList();
+        BO.OrderForList ofl = new BO.OrderForList();
         ofl.ID = or.ID;
         ofl.CustomerName = or.CustomerName;
         ofl.Status = or.Status;
@@ -28,8 +31,6 @@ internal class Order : BLApi.IOrder
         ofl.TotalPrice = or.TotalPrice;
         return ofl;
     }
-    private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();
-
     /// <summary>
     /// פונקצייה שנותנת מידע על הסטטוס
     /// </summary>
@@ -75,6 +76,7 @@ internal class Order : BLApi.IOrder
             {
                 ID = (int)doItem?.ID!,
                 ProductID = (int)doItem?.ProductID!,
+                ProductName=(string?)doItem?.ProductName,
                 Price = doItem?.Price,
                 Amount = (int)doItem?.Amount!,
                 TotalPrice = doItem?.Price * doItem?.Amount

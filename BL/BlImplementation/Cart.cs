@@ -26,7 +26,7 @@ namespace BlImplementation
             {
                 orit.ProductID = temp.GetValueOrDefault().ID;
                 orit.Price = temp?.Price;
-                //orit.ProductName = temp?.Name;
+                orit.ProductName = temp?.Name;
                 orit.ID = 0; //זה זמני, אחרי זה בהזמנה הוא מקבל מספר רץ אוטומטי
                 orit.Amount = 1;  //this is the first from this type of product
                 orit.TotalPrice = temp?.Price; //הוספנו
@@ -126,6 +126,7 @@ namespace BlImplementation
                 {
                     OrderID = order_id,
                     ProductID = item.ProductID,
+                    ProductName = item.ProductName,
                     Price = item.Price,
                     Amount = item.Amount,
                 };

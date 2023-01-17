@@ -39,7 +39,7 @@ namespace PL.PO
                 _ProductName = value;
                 if (PropertyChanged != null)
                 {
-                    PropertyChanged(this, new PropertyChangedEventArgs("ProductID"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("ProductName"));
                 }
             }
         }
