@@ -31,6 +31,17 @@
     <None Remove="download.png" />
     <None Remove="images\baackround order.jpeg" />
     <None Remove="images\book.png" />
+    <None Remove="images\bookImages\67WORE.jpg" />
+    <None Remove="images\bookImages\alifhim.jpg" />
+    <None Remove="images\bookImages\ANTEBE.jpg" />
+    <None Remove="images\bookImages\AYELETTRIPING.jpg" />
+    <None Remove="images\bookImages\besherutHamosad.jpg" />
+    <None Remove="images\bookImages\BORINGBOOK.jpg" />
+    <None Remove="images\bookImages\CASPION.jpg" />
+    <None Remove="images\bookImages\CoAsuHachmeynu.jpg" />
+    <None Remove="images\bookImages\cuzari.jpg" />
+    <None Remove="images\bookImages\DEPRESION.jpg" />
+    <None Remove="images\bookImages\FIVEBALON.jpg" />
     <None Remove="images\bookImages\HarryPotter2.jpg" />
     <None Remove="images\books2.jpeg" />
     <None Remove="images\download %282%29.jpeg" />
@@ -61,6 +72,39 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="images\bookImages\67WORE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\alifhim.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\ANTEBE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\AYELETTRIPING.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\besherutHamosad.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\BORINGBOOK.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\CASPION.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\CoAsuHachmeynu.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\cuzari.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\DEPRESION.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\FIVEBALON.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\bookImages\HarryPotter2.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
