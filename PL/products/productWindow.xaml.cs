@@ -1,4 +1,4 @@
-﻿//בס"ד
+﻿ //בס"ד
 using BO;
 using System;
 using System.Net.NetworkInformation;
