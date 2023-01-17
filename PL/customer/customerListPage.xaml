@@ -19,21 +19,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Label Content=" :סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#DCE1DE" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="104" Height="34" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="685,0,0,0"/>
-            <ComboBox x:Name="categorySelector" SelectedItem="{Binding HebCategory}"  BorderBrush="#4A5759" VerticalAlignment="Center" Height="34" SelectionChanged="categorySelector_SelectionChanged" Background="#DCE1DE" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="205" Margin="487,0,0,0">
-                <!--<ComboBox.Background>
-                    <LinearGradientBrush EndPoint="0,1">
-                        <GradientStop Color="#DCE1DE"/>
-                        <GradientStop Color="#FFB0C4B1" Offset="1"/>
-                    </LinearGradientBrush>
-                </ComboBox.Background>-->
-            </ComboBox>
-            <!--<ComboBox x:Name="priceSelector" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="320" Height="45" Background="#FF49A078" BorderBrush="#FF49A078" OpacityMask="#FF49A078" SelectionChanged="priceSelector_SelectionChanged" >
-                    <ComboBoxItem Content="₪50 עד" />
-                    <ComboBoxItem Content="₪100 עד" />
-                    <ComboBoxItem Content="₪150 עד" />
-                    <ComboBoxItem Content="₪200 עד" />
-                    <ComboBoxItem Content="₪200+" />
-                </ComboBox>-->
+            <ComboBox x:Name="categorySelector" SelectedItem="{Binding HebCategory}"  BorderBrush="#4A5759" VerticalAlignment="Center" Height="34" SelectionChanged="categorySelector_SelectionChanged" Background="#DCE1DE" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="205" Margin="487,0,0,0"/>
         </Grid>
         <Grid x:Name="TVGrid" Grid.Row="1" >
             <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" MouseDoubleClick="productData_Click"  Background="#FFB0C4B1" VerticalAlignment="Center" Width="800" SelectionChanged="ListOfProducts_SelectionChanged" Height="350" IsSynchronizedWithCurrentItem="True" RenderTransformOrigin="0.5,0.5" Margin="0,0,-2,0" HorizontalContentAlignment="Center" >
