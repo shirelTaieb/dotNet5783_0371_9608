@@ -14,6 +14,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bookImages\**" />
+    <EmbeddedResource Remove="bookImages\**" />
+    <None Remove="bookImages\**" />
+    <Page Remove="bookImages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="books2.jpeg" />
     <None Remove="cart\elka_graphics.jpg" />
     <None Remove="cart\manager.png" />
@@ -24,9 +31,8 @@
     <None Remove="download.png" />
     <None Remove="images\baackround order.jpeg" />
     <None Remove="images\book.png" />
+    <None Remove="images\bookImages\HarryPotter2.jpg" />
     <None Remove="images\books2.jpeg" />
-    <None Remove="images\booksImage\הארי פוטר 2.png" />
-    <None Remove="images\booksImage\הארי פוטר 3.jpg" />
     <None Remove="images\download %282%29.jpeg" />
     <None Remove="images\download.jpeg" />
     <None Remove="images\elka_graphics.jpg" />
@@ -55,13 +61,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="images\bookImages\HarryPotter2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\books2.jpeg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\booksImage\הארי פוטר 2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\booksImage\הארי פוטר 3.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\download (2).jpeg">

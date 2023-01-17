@@ -1,37 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
   <Product>
-    <ID>100056</ID>
-    <Name>סט חומשים</Name>
-    <Category>Holy</Category>
-    <Price>299</Price>
-    <InStock>8</InStock>
-  </Product>
-  <Product>
-    <ID>100057</ID>
-    <Name>חיעכג</Name>
-    <Price>3456</Price>
-    <InStock>0</InStock>
-    <path>/images/books2.jpeg</path>
-  </Product>
-  <Product>
-    <ID>100055</ID>
-    <Name>הארי פוטר</Name>
+    <ID>100062</ID>
+    <Name>הארי פוטר 2</Name>
     <Category>Romans</Category>
-    <Price>99</Price>
-    <InStock>5</InStock>
-    <path>/images/booksImage/הארי פוטר 2.png</path>
+    <Price>89</Price>
+    <InStock>130</InStock>
+    <path>/images/bookImages/HarryPotter2.jpg</path>
   </Product>
-  <Product>
-    <ID>100058</ID>
-    <Name>הארי פוטר</Name>
-    <InStock>0</InStock>
-    <path>/images/booksImage/הארי פוטר 3.jpg</path>
-  </Product>
-  <Product>
-    <ID>100059</ID>
-    <Name>מיע</Name>
-    <InStock>0</InStock>
-    <path>/images/download.jpeg</path>
-  </Product>
+	
 </ArrayOfProduct>
