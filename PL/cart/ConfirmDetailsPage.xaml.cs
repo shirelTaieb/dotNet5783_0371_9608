@@ -62,9 +62,9 @@ namespace PL.cart
             }
             catch
             {
-                return;
+                return; 
             }
-            MessageBox.Show(":)ההזמנה אושרה בהצלחה", newOrderID.ToString());
+            MessageBox.Show(string.Format(" {0}  :ההזמנה שלך אושרה בהצלחה:)  מספר ההזמנה שלך הוא", newOrderID.ToString()));
             _mainWindow.frame.Content = new MainCustomer(_mainWindow,boCart);//חזרה לתפריט הראשי צריך למחוק את הכארט
 
         }

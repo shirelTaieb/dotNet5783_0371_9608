@@ -49,5 +49,6 @@
                                                  Height="92" Width="112" Margin="332,95,0,0"/>
         <materialDesign:PackIcon Kind="Bookshelf"
                                                  Height="92" Width="112" Margin="110,95,0,0"/>
+        <Button Content="לסימולטור ההזמנות" Background="{x:Null}" Foreground="#FF1F2421" BorderBrush="#FF1F2421" Margin="0,300,0,0" Width="300" Click="simulator_Click"/>
     </Grid>
 </Page>
