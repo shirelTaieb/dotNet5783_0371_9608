@@ -28,7 +28,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-
+        <Grid x:Name="upGrid" Background="#FFF4EDE5">
 
         <Button Grid.Row="0"
                         Background="Transparent"
@@ -67,6 +67,7 @@
                 <ImageBrush ImageSource="/cart/sell.png"/>
             </Button.Background>
         </Button>
+        </Grid>
         <Grid x:Name="under" Grid.Row="1">
 
             <materialDesign:Card
@@ -145,7 +146,7 @@
             </StackPanel>
 
             <StackPanel x:Name="startCustomer" 
-                            Width="300" Height="404" Visibility="{Binding ElementName=startManager, Path=Visibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="66,11,0,0">
+                            Width="300" Height="404" Visibility="{Binding ElementName=startManager, Path=Visibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="66,3,0,0">
                 <Image Margin="0,50,0,0" Source="/images/sell.png" Stretch="Fill"  Width="230" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button x:Name="customer" 
                     Content="לקוח" Padding="15" HorizontalAlignment="Center" Margin="28,0,0,0"  VerticalAlignment="Center" Click="customer_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="137" Height="64" FontSize="20" FontWeight="Bold" FontStyle="Normal">

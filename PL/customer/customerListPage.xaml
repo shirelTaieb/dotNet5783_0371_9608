@@ -12,28 +12,28 @@
         <PL.Convert:FalseToVisibilityConverter x:Key="falseToVisi"/>
         <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
     </Page.Resources>
-    <Grid Name="MainGrid" Background="#DCE1DE">
+    <Grid Name="MainGrid" Background="#FF828E7D">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Label Content=" :סנן לפי" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#DCE1DE" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="104" Height="34" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="685,0,0,0"/>
-            <ComboBox x:Name="categorySelector" SelectedItem="{Binding HebCategory}"  BorderBrush="#4A5759" VerticalAlignment="Center" Height="34" SelectionChanged="categorySelector_SelectionChanged" Background="#DCE1DE" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="205" Margin="487,0,0,0"/>
+            <Label Content=" :סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFF4EDE5" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="779" Height="34" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Right"  FontWeight="Bold"/>
+            <ComboBox x:Name="categorySelector" SelectedItem="{Binding HebCategory}"  BorderBrush="#4A5759" VerticalAlignment="Center" Height="34" SelectionChanged="categorySelector_SelectionChanged" Background="#FFF4EDE5" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="205" Margin="498,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Grid>
         <Grid x:Name="TVGrid" Grid.Row="1" >
-            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" MouseDoubleClick="productData_Click"  Background="#FFB0C4B1" VerticalAlignment="Center" Width="800" SelectionChanged="ListOfProducts_SelectionChanged" Height="350" IsSynchronizedWithCurrentItem="True" RenderTransformOrigin="0.5,0.5" Margin="0,0,-2,0" HorizontalContentAlignment="Center" >
+            <ListView x:Name="ListOfProducts" HorizontalAlignment="Center" MouseDoubleClick="productData_Click"  Background="#FF4A5759" VerticalAlignment="Center" Width="800" SelectionChanged="ListOfProducts_SelectionChanged" Height="350" IsSynchronizedWithCurrentItem="True" RenderTransformOrigin="0.5,0.5" Margin="0,0,-2,0" HorizontalContentAlignment="Center" >
                 <ItemsControl.ItemsPanel >
                     <ItemsPanelTemplate >
-                        <UniformGrid Columns="3"  />
+                        <UniformGrid Columns="4"  />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
-                <ListView.ItemTemplate>
+                <ListView.ItemTemplate >
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                            <Image Source="{Binding path}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" />
-                            <TextBlock x:Name="Name" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" />
-                            <TextBlock x:Name="Price" Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <StackPanel Orientation="Vertical"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" >
+                            <Image Source="{Binding path}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="180" Width="130" Stretch="Uniform"/>
+                            <TextBlock x:Name="Name" Text="{Binding Name}" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Center" FontStyle="Italic" Margin="0,10,0,0" />
+                            <TextBlock x:Name="Price" Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0" />
                             <TextBlock x:Name="AmountInCart"  Visibility="{Binding AmountInCart, Converter={StaticResource nullToNotVisi}}" HorizontalAlignment="Center" VerticalAlignment="Center" >
                                 <Run Text="{Binding AmountInCart}"/>
                                 <Run Text=" :כבר הוספת לסל"/>

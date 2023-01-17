@@ -49,14 +49,6 @@
     <path>/images/bookImages/besherutHamosad.jpg</path>
   </Product>
   <Product>
-    <ID>100068</ID>
-    <Name>הספר הכי משעמם</Name>
-    <Category>Theoretical</Category>
-    <Price>76.9</Price>
-    <InStock>97</InStock>
-    <path>/images/bookImages/BORINGBOOK.jpg</path>
-  </Product>
-  <Product>
     <ID>100069</ID>
     <Name>כספיון</Name>
     <Category>Children</Category>
@@ -95,5 +87,13 @@
     <Price>55.9</Price>
     <InStock>567</InStock>
     <path>/images/bookImages/FIVEBALON.jpg</path>
+  </Product>
+  <Product>
+    <ID>100068</ID>
+    <Name>הספר הכי משעמם</Name>
+    <Category>Theoretical</Category>
+    <Price>76.9</Price>
+    <InStock>0</InStock>
+    <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
 </ArrayOfProduct>
