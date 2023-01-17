@@ -1,35 +1,144 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
+    <ID>100033</ID>
+    <Name>ניחמל</Name>
+    <Category>Children</Category>
+    <Price>45</Price>
+    <InStock>4</InStock>
+    <path>/images/manager.png</path>
+  </Product>
+  <Product>
+    <ID>100037</ID>
+    <Name>נניניני</Name>
+    <Price>56</Price>
+    <InStock>0</InStock>
+    <path>/images/man.png</path>
+  </Product>
+  <Product>
+    <ID>100036</ID>
+    <Name>update</Name>
+    <InStock>0</InStock>
+  </Product>
+  <Product>
+    <ID>100035</ID>
+    <Name>לוגו uutu</Name>
+    <InStock>0</InStock>
+  </Product>
+  <Product>
     <ID>100024</ID>
-    <Name>חינהב</Name>
+    <Name>ygfd</Name>
     <Category>Holy</Category>
     <Price>456</Price>
     <InStock>67</InStock>
     <path>/images/book.png</path>
   </Product>
   <Product>
-    <ID>100025</ID>
-    <Name>בלה</Name>
-    <Category>Theoretical</Category>
-    <Price>34</Price>
-    <InStock>89</InStock>
+    <ID>100038</ID>
+    <Name>ניסיון</Name>
+    <Category>Holy</Category>
+    <Price>45</Price>
+    <InStock>5</InStock>
+    <path>/images/Logo.jpg</path>
+  </Product>
+  <Product>
+    <ID>100039</ID>
+    <Name>ניכ</Name>
+    <Category>Holy</Category>
+    <Price>546</Price>
+    <InStock>56</InStock>
     <path>/images/download.jpeg</path>
   </Product>
   <Product>
-    <ID>100026</ID>
-    <Name>הארי 2</Name>
-    <Category>Romans</Category>
-    <Price>56</Price>
-    <InStock>34</InStock>
-    <path>/images/booksImage/הארי פוטר 2.png</path>
+    <ID>100040</ID>
+    <Name>יעכ</Name>
+    <InStock>0</InStock>
+    <path>/images/download (2).jpeg</path>
   </Product>
   <Product>
-    <ID>100027</ID>
-    <Name>נבע</Name>
-    <Category>Holy</Category>
-    <Price>123</Price>
-    <InStock>23</InStock>
-    <path>/images/manager.png</path>
+    <ID>100041</ID>
+    <Name>יעכג</Name>
+    <InStock>0</InStock>
+    <path>/images/book.png</path>
+  </Product>
+  <Product>
+    <ID>100042</ID>
+    <InStock>0</InStock>
+    <path>/images/Logo.jpg</path>
+  </Product>
+  <Product>
+    <ID>100043</ID>
+    <Name>יעכ</Name>
+    <InStock>0</InStock>
+    <path>/images/elka_graphics.jpg</path>
+  </Product>
+  <Product>
+    <ID>100044</ID>
+    <InStock>0</InStock>
+    <path>/images/books1.jpeg</path>
+  </Product>
+  <Product>
+    <ID>100045</ID>
+    <Name>אלקה</Name>
+    <InStock>0</InStock>
+    <path>/images/elka_graphics.jpg</path>
+  </Product>
+  <Product>
+    <ID>100046</ID>
+    <InStock>0</InStock>
+    <path>/images/books1.jpeg</path>
+  </Product>
+  <Product>
+    <ID>100048</ID>
+    <InStock>0</InStock>
+    <path>/images/elka_graphics.jpg</path>
+  </Product>
+  <Product>
+    <ID>100047</ID>
+    <Name>hgfdjpeg</Name>
+    <InStock>0</InStock>
+    <path>/images/Green.jpeg</path>
+  </Product>
+  <Product>
+    <ID>100034</ID>
+    <Name>מה עכשיו?</Name>
+    <Category>Theoretical</Category>
+    <Price>23</Price>
+    <InStock>31</InStock>
+    <path>/images/man.png</path>
+  </Product>
+  <Product>
+    <ID>100049</ID>
+    <Name>jpg</Name>
+    <Price>345</Price>
+    <InStock>0</InStock>
+    <path>/images/heapBooks.jpg</path>
+  </Product>
+  <Product>
+    <ID>100050</ID>
+    <Name>jpg2</Name>
+    <InStock>0</InStock>
+    <path>/images/heapBooks.jpg</path>
+  </Product>
+  <Product>
+    <ID>100051</ID>
+    <InStock>0</InStock>
+    <path>/images/arrow.png</path>
+  </Product>
+  <Product>
+    <ID>100052</ID>
+    <InStock>0</InStock>
+    <path>/images/book.png</path>
+  </Product>
+  <Product>
+    <ID>100053</ID>
+    <Name>debug</Name>
+    <InStock>0</InStock>
+    <path>/images/books1.jpeg</path>
+  </Product>
+  <Product>
+    <ID>100054</ID>
+    <InStock>0</InStock>
+    <path>/images/book.png</path>
   </Product>
 </ArrayOfProduct>

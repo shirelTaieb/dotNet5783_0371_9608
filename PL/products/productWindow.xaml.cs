@@ -109,19 +109,20 @@ namespace PL.products
         {
             try
             {
-                pl.path = path;
+                if (path!=null)
+                    pl.path = path;
                 UpdateOrNewProduct = PoToBo(pl);
                 bl!.Product!.updateProduct(UpdateOrNewProduct);
-                PO.ProductForList popro=new PO.ProductForList()
-                {
-                    ID = UpdateOrNewProduct.ID,
-                    Name = UpdateOrNewProduct.Name,
-                    Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
-                    Price = UpdateOrNewProduct.Price,
-                };
+                //PO.ProductForList popro=new PO.ProductForList()
+                //{
+                //    ID = UpdateOrNewProduct.ID,
+                //    Name = UpdateOrNewProduct.Name,
+                //    Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
+                //    Price = UpdateOrNewProduct.Price,
+                //};
                 
                // removeAction(popro);
-                addAction(popro);
+               // addAction(popro);
                 MessageBox.Show(":) המוצר עודכן בהצלחה", "");
                 //קריאה לפונקציה שבאמת תעדכן את הפרודקט
                 this.Close();
@@ -150,21 +151,17 @@ namespace PL.products
         }
 
 
-        //private BO.Product castForListToRegular(BO.ProductForList pfl)
-        //{
-        //    return (new BO.Product { ID = pfl.ID, Category = pfl.Category, Name = pfl.Name, InStock = pfl.In })
-        //}
 
         private void updateImage_Button(object sender, RoutedEventArgs e)// עדכון
         {
             Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
-            //f.Filter = "All Files| *.*";
-            f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
-           "|PNG Portable Network Graphics (*.png)|*.png" +
-           "|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
-           "|BMP Windows Bitmap (*.bmp)|*.bmp" +
-           "|TIF Tagged Imaged File Format (*.tif *.tiff)|*.tif;*.tiff" +
-           "|GIF Graphics Interchange Format (*.gif)|*.gif";
+          f.Filter = "Image Files(*.jpeg; *.jpg; *.png; *.gif; *.bmp)|*.jpeg; *.jpg; *.png; *.gif; *.bmp"; 
+           // f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
+           //"|PNG Portable Network Graphics (*.png)|*.png" +
+           //"|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
+           //"|BMP Windows Bitmap (*.bmp)|*.bmp" +
+           //"|TIF Tagged Imaged File Format (*.tif *.tiff)|*.tif;*.tiff" +
+           //"|GIF Graphics Interchange Format (*.gif)|*.gif";
             if (f.ShowDialog() == true)
             {
               

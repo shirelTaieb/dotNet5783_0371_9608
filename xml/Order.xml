@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
   <Order>
-    <ID>1001</ID>
-    <CustomerName>ק</CustomerName>
-    <CustomerEmail>shi@gm,com</CustomerEmail>
-    <CustomerAddress>ק</CustomerAddress>
-    <OrderDate>2023-01-16T13:24:38.1383737+02:00</OrderDate>
+    <ID>1002</ID>
+    <CustomerName>תמר חייט</CustomerName>
+    <CustomerEmail>אדאגכטעי@</CustomerEmail>
+    <CustomerAddress>עטכארג</CustomerAddress>
+    <OrderDate>2023-01-17T00:54:22.6322657+02:00</OrderDate>
   </Order>
   <Order>
     <ID>1002</ID>
