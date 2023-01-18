@@ -132,11 +132,6 @@
 
             <StackPanel x:Name="startCustomer" 
                             Width="252" Height="278" Visibility="{Binding ElementName=startManager, Path=Visibility}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="110,0,0,0">
-                <StackPanel.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" Opacity="0.5" StartPoint="0.1,0">
-                        <GradientStop Color="#FF828E7D" Offset="0.09"/>
-                    </LinearGradientBrush>
-                </StackPanel.Background>
                 <TextBlock>
                 <Image Source="/images/sell.png" Stretch="Fill"  Width="236" Height="190" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.511,0.744"/>
                 </TextBlock>
@@ -150,11 +145,7 @@
 
             <StackPanel x:Name="startManager" 
                             Width="254" Height="278" Visibility="{Binding ElementName=startManager, Path=Visibility}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="438,0,0,0">
-                <StackPanel.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" Opacity="0.5" StartPoint="0.1,0">
-                        <GradientStop Color="#FF828E7D" Offset="0.09"/>
-                    </LinearGradientBrush>
-                </StackPanel.Background>
+
                 <TextBlock Height="33">
 
                 </TextBlock>
@@ -169,13 +160,11 @@
                 <TextBlock/>
             </StackPanel>
             <TextBlock HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="748" Height="38" FontStyle="Italic" TextAlignment="Center" FontSize="30" FontFamily="FrankRuehl" FontWeight="Bold" Foreground="#FF5C6957"><Run FlowDirection="RightToLeft" Language="he-il" Text="... "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="26,396,0,0" TextWrapping="Wrap" Text="כל הזכויות שמורות לתמר חייט וישראל טייב" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
-            <TextBlock HorizontalAlignment="Left" Margin="584,396,0,0" TextWrapping="Wrap" Text="נתקלתם בבעיה? לא אפכת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
+            <!--<TextBlock HorizontalAlignment="Left" Margin="26,396,0,0" TextWrapping="Wrap" Text="כל הזכויות שמורות לתמר חייט ושיראל טייב" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>-->
+            <materialDesign:PackIcon Kind="QuestionMarkCircle" Margin="768,405,0,0"
+                                                 Height="19" Width="34"/>
+            <TextBlock HorizontalAlignment="Left" Margin="584,406,0,0" TextWrapping="Wrap" Text="נתקלתם בבעיה? לא אכפת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
             <Frame x:Name="frame" Margin="0,0,0,0"  NavigationUIVisibility="Hidden" />
-
-
         </Grid>
-        <TextBox HorizontalAlignment="Left" Height="0" Margin="130,477,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
     </Grid>
 </Window>
