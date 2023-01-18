@@ -201,14 +201,6 @@
     <path>/images/bookImages/monkyHaveProblem.jpg</path>
   </Product>
   <Product>
-    <ID>100096</ID>
-    <Name>נרניה</Name>
-    <Category>Romans</Category>
-    <Price>102</Price>
-    <InStock>59</InStock>
-    <path>/images/bookImages/narnia.jpg</path>
-  </Product>
-  <Product>
     <ID>100097</ID>
     <Name>נפילת ברלין</Name>
     <Category>History</Category>
@@ -471,5 +463,13 @@
     <Price>53</Price>
     <InStock>62</InStock>
     <path>/images/bookImages/LionStrobery.jpg</path>
+  </Product>
+  <Product>
+    <ID>100096</ID>
+    <Name>נרניה</Name>
+    <Category>Romans</Category>
+    <Price>102</Price>
+    <InStock>59</InStock>
+    <path>/images/bookImages/NARNIA.PNG</path>
   </Product>
 </ArrayOfProduct>
