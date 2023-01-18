@@ -15,6 +15,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800"  >
     <Window.Resources>
+        <PL.Convert:NullToVisibilityConverter x:Key="nullToVisi"/>
         <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
         <PL.Convert:FalseToVisibilityConverter x:Key="falseToVisi"/>
         <PL.Convert:VisibleToHiddenConverter x:Key="visiToNotVisi"/>
@@ -159,11 +160,11 @@
                 </Button>
                 <TextBlock/>
             </StackPanel>
-            <TextBlock HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="748" Height="38" FontStyle="Italic" TextAlignment="Center" FontSize="30" FontFamily="FrankRuehl" FontWeight="Bold" Foreground="#FF5C6957"><Run FlowDirection="RightToLeft" Language="he-il" Text="... "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל"/></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content, Converter={StaticResource nullToVisi}}" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="748" Height="38" FontStyle="Italic" TextAlignment="Center" FontSize="30" FontFamily="FrankRuehl" FontWeight="Bold" Foreground="#FF5C6957"><Run FlowDirection="RightToLeft" Language="he-il" Text="... "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל" /></TextBlock>
             <!--<TextBlock HorizontalAlignment="Left" Margin="26,396,0,0" TextWrapping="Wrap" Text="כל הזכויות שמורות לתמר חייט ושיראל טייב" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>-->
-            <materialDesign:PackIcon Kind="QuestionMarkCircle" Margin="768,405,0,0"
+            <materialDesign:PackIcon Kind="QuestionMarkCircle" Margin="756,405,0,0"
                                                  Height="19" Width="34"/>
-            <TextBlock HorizontalAlignment="Left" Margin="584,406,0,0" TextWrapping="Wrap" Text="נתקלתם בבעיה? לא אכפת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Left" Margin="573,406,0,0" TextWrapping="Wrap" Text="נתקלתם בבעיה? לא אכפת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
             <Frame x:Name="frame" Margin="0,0,0,0"  NavigationUIVisibility="Hidden" />
         </Grid>
     </Grid>
