@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  
+  <Order>
+    <ID>1005</ID>
+    <CustomerName>שיראל</CustomerName>
+    <CustomerEmail>shirelt@gmail.com</CustomerEmail>
+    <CustomerAddress>rananna</CustomerAddress>
+    <OrderDate>2023-01-18T10:30:50.7985417+02:00</OrderDate>
+  </Order>
 </ArrayOfOrder>

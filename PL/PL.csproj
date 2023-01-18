@@ -42,7 +42,48 @@
     <None Remove="images\bookImages\cuzari.jpg" />
     <None Remove="images\bookImages\DEPRESION.jpg" />
     <None Remove="images\bookImages\FIVEBALON.jpg" />
+    <None Remove="images\bookImages\haapala.jpg" />
+    <None Remove="images\bookImages\hachmenuLeyameno.jpg" />
+    <None Remove="images\bookImages\hacivshanVeacur.jpg" />
+    <None Remove="images\bookImages\HANANHAGANAN.jpg" />
+    <None Remove="images\bookImages\hapanimShpartzuMeadaf.jpg" />
+    <None Remove="images\bookImages\Harenesans.jpg" />
     <None Remove="images\bookImages\HarryPotter2.jpg" />
+    <None Remove="images\bookImages\humashim.jpg" />
+    <None Remove="images\bookImages\infinity.jpg" />
+    <None Remove="images\bookImages\inteligent.jpg" />
+    <None Remove="images\bookImages\ISRAEL.jpg" />
+    <None Remove="images\bookImages\LionStrobery.jpg" />
+    <None Remove="images\bookImages\littelPrince.jpg" />
+    <None Remove="images\bookImages\liveOnThisPlanet.jpg" />
+    <None Remove="images\bookImages\MagicParent.jpg" />
+    <None Remove="images\bookImages\MATH.jpg" />
+    <None Remove="images\bookImages\MIND.jpg" />
+    <None Remove="images\bookImages\mischakeyHarav.png" />
+    <None Remove="images\bookImages\mishneTora.jpg" />
+    <None Remove="images\bookImages\misnayotBrachot.jpg" />
+    <None Remove="images\bookImages\monkyHaveProblem.jpg" />
+    <None Remove="images\bookImages\MONY.jpg" />
+    <None Remove="images\bookImages\narnia.jpg" />
+    <None Remove="images\bookImages\negilatberlin.jpg" />
+    <None Remove="images\bookImages\ntivotShalom.jpg" />
+    <None Remove="images\bookImages\orotHatchiya.jpg" />
+    <None Remove="images\bookImages\pele.png" />
+    <None Remove="images\bookImages\persiJecson.jpg" />
+    <None Remove="images\bookImages\PoorDad.jpg" />
+    <None Remove="images\bookImages\RENT.jpg" />
+    <None Remove="images\bookImages\shmiratHalashon.jpg" />
+    <None Remove="images\bookImages\shneyemMetim.jpg" />
+    <None Remove="images\bookImages\Software.jpg" />
+    <None Remove="images\bookImages\Somke.jpg" />
+    <None Remove="images\bookImages\Start.jpg" />
+    <None Remove="images\bookImages\tanachSimanim.jpg" />
+    <None Remove="images\bookImages\taniya.jpg" />
+    <None Remove="images\bookImages\tehilim.jpg" />
+    <None Remove="images\bookImages\trofoti.jpg" />
+    <None Remove="images\bookImages\uri.jpg" />
+    <None Remove="images\bookImages\Web.jpg" />
+    <None Remove="images\bookImages\WHEREPLOTO.jpg" />
     <None Remove="images\books2.jpeg" />
     <None Remove="images\download %282%29.jpeg" />
     <None Remove="images\download.jpeg" />
@@ -105,7 +146,127 @@
     <Content Include="images\bookImages\FIVEBALON.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\bookImages\haapala.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\hachmenuLeyameno.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\hacivshanVeacur.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\HANANHAGANAN.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\hapanimShpartzuMeadaf.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Harenesans.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\bookImages\HarryPotter2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\humashim.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\infinity.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\inteligent.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\ISRAEL.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\LionStrobery.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\littelPrince.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\liveOnThisPlanet.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\MagicParent.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\MATH.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\MIND.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\mischakeyHarav.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\mishneTora.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\misnayotBrachot.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\monkyHaveProblem.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\MONY.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\narnia.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\negilatberlin.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\ntivotShalom.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\orotHatchiya.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\pele.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\persiJecson.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\PoorDad.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\RENT.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\shmiratHalashon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\shneyemMetim.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Software.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Somke.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Start.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\taniya.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\tehilim.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\trofoti.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\uri.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Web.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\WHEREPLOTO.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\books2.jpeg">
@@ -155,6 +316,12 @@
     <Resource Include="library1.jpg" />
     <Resource Include="orders\פרחים רקע.jpg" />
     <Resource Include="products\Green (1).jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\bookImages\tanachSimanim.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
