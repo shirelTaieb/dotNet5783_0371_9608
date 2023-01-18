@@ -30,43 +30,43 @@
         </Grid.RowDefinitions>
         <Grid x:Name="upGrid" Background="#FFF4EDE5">
 
-        <Button Grid.Row="0"
+            <Button Grid.Row="0"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         HorizontalAlignment="Right" 
                         VerticalAlignment="Top" Margin="0,0,720,0" Height="44" 
                 Visibility="{Binding ElementName=frame, Path=Content,Converter={StaticResource nullToNotVisi},Mode=TwoWay}"
                 Click="returnToTheMainWindow_Click">
-            <materialDesign:PackIcon Kind="HomeCircle" Height="40" Width="40" HorizontalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="HomeCircle" Height="40" Width="40" HorizontalAlignment="Center"/>
 
-        </Button>
+            </Button>
 
-        <Button x:Name="returnManager" Grid.Row="0"
+            <Button x:Name="returnManager" Grid.Row="0"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         HorizontalAlignment="Right" 
                         VerticalAlignment="Top" Margin="0,0,0,0" Height="44"
                 Visibility="Collapsed"
         Click="returnToManagerPage_Click" >
-            <materialDesign:PackIcon Kind="ArrowRightCircle" Height="40" Width="40" HorizontalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="ArrowRightCircle" Height="40" Width="40" HorizontalAlignment="Center"/>
 
-        </Button>
-        <Button Grid.Row="0" x:Name="returnCustomer"
+            </Button>
+            <Button Grid.Row="0" x:Name="returnCustomer"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         HorizontalAlignment="Right" 
                         VerticalAlignment="Top" Margin="0,0,0,0" Height="44" 
                              Click="returnToCustomerPage_Click" Visibility="Collapsed">
-            <materialDesign:PackIcon Kind="ArrowRightCircle" Height="40" Width="40" HorizontalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="ArrowRightCircle" Height="40" Width="40" HorizontalAlignment="Center"/>
 
-        </Button>
+            </Button>
 
-        <Button x:Name="shortToCart"
+            <Button x:Name="shortToCart"
                 Margin="0,0,710,0" VerticalAlignment="Center" Click="shortToCart_Click" Height="44" Visibility="Collapsed">
-            <Button.Background>
-                <ImageBrush ImageSource="/cart/sell.png"/>
-            </Button.Background>
-        </Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="/cart/sell.png"/>
+                </Button.Background>
+            </Button>
         </Grid>
         <Grid x:Name="under" Grid.Row="1">
 
@@ -87,7 +87,7 @@
                             HorizontalAlignment="Left" 
                             VerticalAlignment="Top" Grid.Row="1"
                                                 Visibility="{Binding ElementName=startManager, Path=Visibility, Converter={StaticResource visiToNotVisi} }" Margin="-8,10,0,0" Height="300">
-              
+
                     <Button
                         Background="Transparent"
                         BorderBrush="Transparent"
@@ -130,35 +130,52 @@
                 </StackPanel>
             </materialDesign:Card>
 
-            <StackPanel x:Name="startManager" Margin="380,-8,0,28" Width="300" Height="403"  
-                        HorizontalAlignment="Center" VerticalAlignment="Center"
-                         Visibility="Visible">
-                <Image HorizontalAlignment="Center"  Height="100" VerticalAlignment="Center" Width="100" Source="/images/manager.png" Visibility="{Binding ElementName=optionManager, Path=Visibility, Converter={StaticResource visiToNotVisi}}" Margin="0,90,0,0"/>
-                <Button x:Name="manager"
-                    Content="מנהל"  Padding="15" HorizontalAlignment="Center" Margin="0,20,0,0"
-                    VerticalAlignment="Center" Click="manager_Click" Background="#FF1F2421"
-                    Foreground="#FFDCE1DE" Width="136" Height="64" FontSize="20" IsEnabled="True"
-                    FontWeight="Bold" >
+            <StackPanel x:Name="startCustomer" 
+                            Width="252" Height="278" Visibility="{Binding ElementName=startManager, Path=Visibility}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="110,0,0,0">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" Opacity="0.5" StartPoint="0.1,0">
+                        <GradientStop Color="#FF828E7D" Offset="0.09"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock>
+                <Image Source="/images/sell.png" Stretch="Fill"  Width="236" Height="190" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.511,0.744"/>
+                </TextBlock>
+                <Button x:Name="customer" 
+                            Content="לקוח" Padding="15" Click="customer_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="136" Height="64" FontSize="20" FontWeight="Bold" FontStyle="Normal">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
                 </Button>
             </StackPanel>
 
-            <StackPanel x:Name="startCustomer" 
-                            Width="300" Height="404" Visibility="{Binding ElementName=startManager, Path=Visibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="66,3,0,0">
-                <Image Margin="0,50,0,0" Source="/images/sell.png" Stretch="Fill"  Width="230" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button x:Name="customer" 
-                    Content="לקוח" Padding="15" HorizontalAlignment="Center" Margin="28,0,0,0"  VerticalAlignment="Center" Click="customer_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="137" Height="64" FontSize="20" FontWeight="Bold" FontStyle="Normal">
+            <StackPanel x:Name="startManager" 
+                            Width="254" Height="278" Visibility="{Binding ElementName=startManager, Path=Visibility}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="438,0,0,0">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" Opacity="0.5" StartPoint="0.1,0">
+                        <GradientStop Color="#FF828E7D" Offset="0.09"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock Height="33">
+
+                </TextBlock>
+                <TextBlock TextAlignment="Center" Height="158">
+                <Image Source="/manager.png" Stretch="Fill"  Width="142" Height="126" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.511,0.744"/>
+                </TextBlock>
+                <Button x:Name="manager" Content="מנהל"  Padding="15" Click="manager_Click" Background="#FF1F2421" Foreground="#FFDCE1DE" Width="136" Height="64" FontSize="20" IsEnabled="True" FontWeight="Bold" BorderThickness="0,0,0,0" >
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
                 </Button>
+                <TextBlock/>
             </StackPanel>
+            <TextBlock HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="748" Height="38" FontStyle="Italic" TextAlignment="Center" FontSize="30" FontFamily="FrankRuehl" FontWeight="Bold" Foreground="#FF5C6957"><Run FlowDirection="RightToLeft" Language="he-il" Text="... "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="26,396,0,0" TextWrapping="Wrap" Text="כל הזכויות שמורות לתמר חייט וישראל טייב" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Left" Margin="584,396,0,0" TextWrapping="Wrap" Text="נתקלתם בבעיה? לא אפכת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
             <Frame x:Name="frame" Margin="0,0,0,0"  NavigationUIVisibility="Hidden" />
 
 
         </Grid>
+        <TextBox HorizontalAlignment="Left" Height="0" Margin="130,477,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

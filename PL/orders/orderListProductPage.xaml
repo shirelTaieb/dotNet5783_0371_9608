@@ -13,7 +13,7 @@
                   RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2"  AlternatingRowBackground="#DCE1DE" AlternationCount="2" IsReadOnly="True">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="#9CC5A1"/>
+                    <Setter Property="Background" Value="#C3DAC3"/>
                         <Setter Property="FontWeight" Value="Bold"/>
                         <Setter Property="BorderThickness" Value="0,1,1,0.5"/>
                         <Setter Property="BorderBrush" Value="#1F2421"/>

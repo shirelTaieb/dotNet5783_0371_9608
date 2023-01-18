@@ -57,14 +57,6 @@
     <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
   <Product>
-    <ID>100064</ID>
-    <Name>אליפים</Name>
-    <Category>Romans</Category>
-    <Price>99.9</Price>
-    <InStock>63</InStock>
-    <path>/images/bookImages/alifhim.jpg</path>
-  </Product>
-  <Product>
     <ID>100072</ID>
     <Name>חרדה ודיכאון</Name>
     <Category>Theoretical</Category>
@@ -423,5 +415,13 @@
     <Price>89</Price>
     <InStock>55</InStock>
     <path>/images/bookImages/MIND.jpg</path>
+  </Product>
+  <Product>
+    <ID>100064</ID>
+    <Name>אליפים</Name>
+    <Category>Romans</Category>
+    <Price>99</Price>
+    <InStock>63</InStock>
+    <path>/images/bookImages/alifhim.jpg</path>
   </Product>
 </ArrayOfProduct>

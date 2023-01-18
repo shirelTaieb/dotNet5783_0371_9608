@@ -99,6 +99,7 @@
     <None Remove="images\ציור.jpg" />
     <None Remove="images\📚☕️.jpeg" />
     <None Remove="library1.jpg" />
+    <None Remove="manager.png" />
     <None Remove="orders\baackround order.jpeg" />
     <None Remove="orders\Created by%40flowerydreamer5.jpeg" />
     <None Remove="orders\Green %281%29.jpeg" />
@@ -314,6 +315,7 @@
     <Resource Include="images\ציור.jpg" />
     <Resource Include="images\📚☕️.jpeg" />
     <Resource Include="library1.jpg" />
+    <Resource Include="manager.png" />
     <Resource Include="orders\פרחים רקע.jpg" />
     <Resource Include="products\Green (1).jpeg" />
   </ItemGroup>
