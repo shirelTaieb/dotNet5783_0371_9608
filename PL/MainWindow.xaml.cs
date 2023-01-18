@@ -2,6 +2,7 @@
 using PL.customer;
 using PL.orders;
 using PL.products;
+using PL.Simulator;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -99,6 +100,10 @@ namespace PL
         {
             frame.Content = new MainManager(this);
 
+        }
+        private void simulator_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

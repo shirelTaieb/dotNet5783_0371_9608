@@ -1,5 +1,6 @@
 ﻿using PL.orders;
 using PL.products;
+using PL.Simulator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,11 @@ namespace PL
             
             //startManager.Visibility = Visibility.Visible;
             //optionManager.Visibility = Visibility.Hidden;
+        }
+        private void simulator_Click(object sender, RoutedEventArgs e)
+        {
+            SimulatorWindow simuWindow = new SimulatorWindow();
+            simuWindow.Show();
         }
     }
 }

@@ -1,30 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <ID>100063</ID>
-    <Name>ירושלים מלחמה 67  </Name>
-    <Category>History</Category>
-    <Price>105.9</Price>
-    <InStock>34</InStock>
-    <path>/images/bookImages/67WORE.jpg</path>
-  </Product>
-  <Product>
-    <ID>100064</ID>
-    <Name>אליפים</Name>
-    <Category>Romans</Category>
-    <Price>99.9</Price>
-    <InStock>67</InStock>
-    <path>/images/bookImages/alifhim.jpg</path>
-  </Product>
-  <Product>
-    <ID>100065</ID>
-    <Name>מבצע אנטבה</Name>
-    <Category>History</Category>
-    <Price>87.99</Price>
-    <InStock>30</InStock>
-    <path>/images/bookImages/ANTEBE.jpg</path>
-  </Product>
-  <Product>
     <ID>100066</ID>
     <Name>אילת מטילת</Name>
     <Category>Children</Category>
@@ -33,28 +9,12 @@
     <path>/images/bookImages/AYELETTRIPING.jpg</path>
   </Product>
   <Product>
-    <ID>100062</ID>
-    <Name>הארי פוטר 2</Name>
-    <Category>Romans</Category>
-    <Price>89.9</Price>
-    <InStock>130</InStock>
-    <path>/images/bookImages/HarryPotter2.jpg</path>
-  </Product>
-  <Product>
     <ID>100067</ID>
     <Name>בשירות המוסד</Name>
     <Category>Romans</Category>
     <Price>90.99</Price>
     <InStock>90</InStock>
     <path>/images/bookImages/besherutHamosad.jpg</path>
-  </Product>
-  <Product>
-    <ID>100068</ID>
-    <Name>הספר הכי משעמם</Name>
-    <Category>Theoretical</Category>
-    <Price>76.9</Price>
-    <InStock>97</InStock>
-    <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
   <Product>
     <ID>100069</ID>
@@ -81,20 +41,60 @@
     <path>/images/bookImages/cuzari.jpg</path>
   </Product>
   <Product>
-    <ID>100072</ID>
-    <Name>חרדה ודיכאון</Name>
-    <Category>Theoretical</Category>
-    <Price>99.9</Price>
-    <InStock>898</InStock>
-    <path>/images/bookImages/DEPRESION.jpg</path>
-  </Product>
-  <Product>
     <ID>100073</ID>
     <Name>מעשה בחמישה בלונים</Name>
     <Category>Children</Category>
     <Price>55.9</Price>
     <InStock>567</InStock>
     <path>/images/bookImages/FIVEBALON.jpg</path>
+  </Product>
+  <Product>
+    <ID>100068</ID>
+    <Name>הספר הכי משעמם</Name>
+    <Category>Theoretical</Category>
+    <Price>76.9</Price>
+    <InStock>0</InStock>
+    <path>/images/bookImages/BORINGBOOK.jpg</path>
+  </Product>
+  <Product>
+    <ID>100064</ID>
+    <Name>אליפים</Name>
+    <Category>Romans</Category>
+    <Price>99.9</Price>
+    <InStock>63</InStock>
+    <path>/images/bookImages/alifhim.jpg</path>
+  </Product>
+  <Product>
+    <ID>100072</ID>
+    <Name>חרדה ודיכאון</Name>
+    <Category>Theoretical</Category>
+    <Price>99.9</Price>
+    <InStock>894</InStock>
+    <path>/images/bookImages/DEPRESION.jpg</path>
+  </Product>
+  <Product>
+    <ID>100065</ID>
+    <Name>מבצע אנטבה</Name>
+    <Category>History</Category>
+    <Price>87.99</Price>
+    <InStock>27</InStock>
+    <path>/images/bookImages/ANTEBE.jpg</path>
+  </Product>
+  <Product>
+    <ID>100063</ID>
+    <Name>ירושלים מלחמה 67  </Name>
+    <Category>History</Category>
+    <Price>105.9</Price>
+    <InStock>32</InStock>
+    <path>/images/bookImages/67WORE.jpg</path>
+  </Product>
+  <Product>
+    <ID>100062</ID>
+    <Name>הארי פוטר 2</Name>
+    <Category>Romans</Category>
+    <Price>89.9</Price>
+    <InStock>128</InStock>
+    <path>/images/bookImages/HarryPotter2.jpg</path>
   </Product>
   <Product>
     <ID>100074</ID>

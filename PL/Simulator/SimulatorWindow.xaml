@@ -1,0 +1,54 @@
+﻿<Window x:Class="PL.Simulator.SimulatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Simulator"
+        mc:Ignorable="d"
+        Title="SimulatorWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="orderSimulationList" AutoGenerateColumns="False" IsReadOnly="True"  Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1"  AlternatingRowBackground="#B0C4B1" AlternationCount="2" >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#9CC5A1"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderThickness" Value="0,2,2,2"/>
+                    <Setter Property="BorderBrush" Value="#1F2421"/>
+                    <Setter Property="HorizontalContentAlignment" Value="center" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    x:Name="AmountOfItemsColumn"
+                    Binding="{Binding AmountOfItems}"
+                    Header="מצב ההזמנה"
+                    Width="160"/>
+                <DataGridTextColumn
+                    x:Name="TotalPriceColumn"
+                    Binding="{Binding TotalPrice}"
+                    Header="סהכ לתשלום"
+                    Width="160"/>
+                <DataGridTextColumn
+                    x:Name="StatusColumn"
+                    Binding="{Binding Status}"
+                    Header="סטטוס ההזמנה"
+                    Width="160"/>
+                <DataGridTextColumn
+                    x:Name="idColumn"
+                    Binding="{Binding ID}"
+                    Header="מספר הזמנה" 
+                    Width="160"/>
+                <DataGridTextColumn 
+                    x:Name="nameColumn" 
+                    Binding="{Binding CustomerName}"
+                    Header="שם הלקוח"
+                    Width="160"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
