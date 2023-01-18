@@ -49,6 +49,7 @@
     <None Remove="images\bookImages\hapanimShpartzuMeadaf.jpg" />
     <None Remove="images\bookImages\Harenesans.jpg" />
     <None Remove="images\bookImages\HarryPotter2.jpg" />
+    <None Remove="images\bookImages\HarryPotterAll.jpg" />
     <None Remove="images\bookImages\humashim.jpg" />
     <None Remove="images\bookImages\infinity.jpg" />
     <None Remove="images\bookImages\inteligent.jpg" />
@@ -84,6 +85,11 @@
     <None Remove="images\bookImages\uri.jpg" />
     <None Remove="images\bookImages\Web.jpg" />
     <None Remove="images\bookImages\WHEREPLOTO.jpg" />
+    <None Remove="images\bookImages\Z1.jpg" />
+    <None Remove="images\bookImages\Z2.jpg" />
+    <None Remove="images\bookImages\Z3.jpg" />
+    <None Remove="images\bookImages\Z4.jpg" />
+    <None Remove="images\bookImages\Z5.jpg" />
     <None Remove="images\books2.jpeg" />
     <None Remove="images\download %282%29.jpeg" />
     <None Remove="images\download.jpeg" />
@@ -166,6 +172,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\bookImages\HarryPotter2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\HarryPotterAll.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\bookImages\humashim.jpg">
@@ -268,6 +277,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\bookImages\WHEREPLOTO.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Z1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Z2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Z3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Z4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bookImages\Z5.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\books2.jpeg">
