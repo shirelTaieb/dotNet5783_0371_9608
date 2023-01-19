@@ -30,7 +30,7 @@ namespace PL.customer
         private BLApi.IBl? bl = BLApi.Factory.Get();
         private BO.Cart cart = new BO.Cart();
         ObservableCollection<PO.ProductItem?> observalProducts=new ObservableCollection<PO.ProductItem?>();
-        public customerListPage(BO.Cart my_cart,MainWindow mainWindow)
+        public customerListPage(ref BO.Cart my_cart,MainWindow mainWindow)
         {
 
             InitializeComponent();
@@ -45,8 +45,8 @@ namespace PL.customer
                 Name = pro.Name,
                 Price = pro.Price,
                 Category = (BO.HebCategory?)pro.Category,
-                AmountInCart = bl.Product.getProductInfoCustomer(pro.ID, my_cart).Amount,
-                InStock = bl.Product.getProductInfoCustomer(pro.ID, my_cart).InStock,
+                AmountInCart = bl.Product.getProductInfoCustomer(pro.ID, cart).Amount,
+                InStock = bl.Product.getProductInfoCustomer(pro.ID, cart).InStock,
                 path = pro.path
             };
             ListOfProducts.ItemsSource =tools.IEnumerableToObserval(poList);
@@ -84,7 +84,7 @@ namespace PL.customer
             PO.ProductItem? item= ListOfProducts.SelectedItem as PO.ProductItem;
             if (item != null)
             {
-                cartWindow data = new cartWindow(cart, item);
+                cartWindow data = new cartWindow(ref cart, item);
                 data.ShowDialog();
                 ListOfProducts.ItemsSource = tools.IEnumerableToObserval(
                     from pro in bl!.Product!.getListOfProduct()!

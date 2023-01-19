@@ -23,51 +23,50 @@ namespace PL.cart
     {
         MainWindow _mainWindow;
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        PO.Cart cart= new PO.Cart();
-        public ConfirmDetailsPage(PO.Cart poCart, MainWindow mainWindow)
+        PO.Cart POcart= new PO.Cart();
+        BO.Cart BOcart=new BO.Cart();
+        public ConfirmDetailsPage(ref PO.Cart poCart,ref BO.Cart boCart, MainWindow mainWindow)
         {
             InitializeComponent();
             customerData.DataContext = poCart;
             final_cartDetails.DataContext = poCart.Items;
             cartTotalPrice.DataContext = poCart.TotalPrice;
-            cart = poCart;
+            POcart = poCart;
+            BOcart = boCart;
             _mainWindow = mainWindow;
         }
 
         private void finalConfirmOrder_Click(object sender, RoutedEventArgs e)
         {
-            BO.Cart boCart = new BO.Cart()
-            {
-                CustomerAddress = cart.CustomerAddress,
-                CustomerEmail = cart.CustomerEmail,
-                CustomerName = cart.CustomerName,
-                Items =
-                (from item in cart.Items
-                select new BO.OrderItem()
-                {
-                    ID = item.ID,
-                    Price = item.Price,
-                    ProductID = item.ProductID,
-                    Amount = item.Amount,
-                    TotalPrice = item.TotalPrice
-                }).ToList()
-               
-            };
+
+            BOcart.CustomerAddress = POcart.CustomerAddress;
+            BOcart.CustomerEmail = POcart.CustomerEmail;
+            BOcart.CustomerName = POcart.CustomerName;
+            BOcart.Items =
+                (from item in POcart.Items
+                 select new BO.OrderItem()
+                 {
+                     ID = item.ID,
+                     Price = item.Price,
+                     ProductID = item.ProductID,
+                     ProductName = item.ProductName,
+                     Amount = item.Amount,
+                     TotalPrice = item.TotalPrice
+                 }).ToList();
+
             int newOrderID = 0;
             try   
             {
-                newOrderID = bl!.Cart!.confirmOrder(boCart); //אישור הזמנה
-                boCart.Items=null; //מחיקת הסל
-                cart.Items = null;
-
-
+                newOrderID = bl!.Cart!.confirmOrder(BOcart); //אישור הזמנה
+                BOcart.Items = null; //מחיקת הסל
+               
             }
             catch
             {
                 return; 
             }
             MessageBox.Show(string.Format(" {0}  :ההזמנה שלך אושרה בהצלחה:)  מספר ההזמנה שלך הוא", newOrderID.ToString()));
-            _mainWindow.frame.Content = new MainCustomer(_mainWindow,boCart);//חזרה לתפריט הראשי צריך למחוק את הכארט
+            _mainWindow.frame.Content = new MainCustomer(_mainWindow,ref BOcart);//חזרה לתפריט הראשי צריך למחוק את הכארט
 
         }
     }

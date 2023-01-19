@@ -39,7 +39,7 @@ namespace PL
             startManager.Visibility = Visibility.Hidden;
             startCustomer.Visibility = Visibility.Hidden;
             managerLogin.Visibility = Visibility.Hidden;
-            frame.Content = new MainCustomer(this, my_cart);
+            frame.Content = new MainCustomer(this, ref my_cart);
 
         }
   
@@ -87,13 +87,13 @@ namespace PL
 
         private void shortToCart_Click(object sender, RoutedEventArgs e)
         {
-            frame.Content = new cartListPage(my_cart, this);
+            frame.Content = new cartListPage(ref my_cart, this);
             return_back(sender, e);
         }
 
         private void returnToCustomerPage_Click(object sender, RoutedEventArgs e)
         {
-           frame.Content=new MainCustomer(this,my_cart);
+           frame.Content=new MainCustomer(this,ref my_cart);
         }
 
         private void returnToManagerPage_Click(object sender, RoutedEventArgs e)
