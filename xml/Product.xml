@@ -161,14 +161,6 @@
     <path>/images/bookImages/alifhim.jpg</path>
   </Product>
   <Product>
-    <ID>100116</ID>
-    <Name>משהו אחר</Name>
-    <Category>Children</Category>
-    <Price>57</Price>
-    <InStock>46</InStock>
-    <path>/images/bookImages/Z1.jpg</path>
-  </Product>
-  <Product>
     <ID>100117</ID>
     <Name>האריה שבפנים</Name>
     <Category>Children</Category>
@@ -399,14 +391,6 @@
     <Price>89</Price>
     <InStock>11</InStock>
     <path>/images/bookImages/Z3.jpg</path>
-  </Product>
-  <Product>
-    <ID>100125</ID>
-    <Name>מי ישמור על העוגיות</Name>
-    <Category>Children</Category>
-    <Price>54</Price>
-    <InStock>33</InStock>
-    <path>/images/bookImages/Z4.jpg</path>
   </Product>
   <Product>
     <ID>100126</ID>
