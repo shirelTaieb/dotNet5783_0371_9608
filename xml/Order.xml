@@ -23,19 +23,18 @@
     <ShipDate>2023-01-18T12:55:12.8233028+02:00</ShipDate>
   </Order>
   <Order>
-    <ID>1005</ID>
-    <CustomerName>שיראל</CustomerName>
-    <CustomerEmail>shirelt@gmail.com</CustomerEmail>
-    <CustomerAddress>rananna</CustomerAddress>
-    <OrderDate>2023-01-18T10:30:50.7985417+02:00</OrderDate>
-    <ShipDate>2023-01-18T16:41:27.6739388+02:00</ShipDate>
+    <ID>1009</ID>
+    <CustomerName>שירה</CustomerName>
+    <CustomerEmail>shira@</CustomerEmail>
+    <CustomerAddress>ירושלים</CustomerAddress>
+    <OrderDate>2023-01-18T16:56:37.6027074+02:00</OrderDate>
   </Order>
   <Order>
-    <ID>1009</ID>
-    <CustomerName>shira tal</CustomerName>
-    <CustomerEmail>shital@gmail.com</CustomerEmail>
-    <CustomerAddress>Odim</CustomerAddress>
-    <OrderDate>2023-01-18T16:41:11.0546343+02:00</OrderDate>
-    <ShipDate>2023-01-18T21:39:38.4124972+02:00</ShipDate>
+    <ID>1010</ID>
+    <CustomerName>רעות</CustomerName>
+    <CustomerEmail>reut@</CustomerEmail>
+    <CustomerAddress>קטלב 11</CustomerAddress>
+    <OrderDate>2023-01-18T17:22:53.0341378+02:00</OrderDate>
+    <ShipDate>2023-01-18T17:23:54.9122026+02:00</ShipDate>
   </Order>
 </ArrayOfOrder>

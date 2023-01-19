@@ -58,7 +58,9 @@ namespace PL.cart
             {
                 newOrderID = bl!.Cart!.confirmOrder(boCart); //אישור הזמנה
                 boCart.Items=null; //מחיקת הסל
-           
+                cart.Items = null;
+
+
             }
             catch
             {
