@@ -41,7 +41,6 @@ namespace PL.orders
 
                 };
             orderForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
-            statusSelector.ItemsSource = Enum.GetValues(typeof(BO.HebOrderStatus));
           // IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
             //groupings = groupings.OrderBy(p => p.Key);
         }
@@ -83,12 +82,13 @@ namespace PL.orders
             //statusSelector.Items.Add("");
             IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
             groupings = groupings.OrderBy(p => p.Key);
-            foreach (var group in groupings)
-                statusSelector.Items.Add(group.Key);
+            //foreach (var group in groupings)
+            //     statusSelector.Items.Add(group.Key);
         }
         IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> GroupByStatus(IEnumerable<BO.OrderForList> listToGroup)
       => (from order in listToGroup
           group order by order.Status into orderinfo
           select orderinfo).ToList();
+
     }
 }
