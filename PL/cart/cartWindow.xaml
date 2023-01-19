@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.cart"
         mc:Ignorable="d"
-        Title="cartWindow" Height="447" Width="344" Background="#FF8FA590" >
-    <Grid Margin="0,0,344,0">
-
-        <StackPanel x:Name="stack" Margin="0,0,-344,0">
-            <TextBlock x:Name="name" FontSize="25" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Narkisim" TextAlignment="Center"/>
-            <Image MaxHeight="100" Margin="0,20,0,0" MaxWidth="100" Source="{Binding path}"/>
-            <StackPanel Orientation="Horizontal" Margin="70,30,0,0" >
-                <TextBlock  Text="ש&quot;ח" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="20" FontFamily="Sitka Banner"  Margin="40,0,0,0"/>
-                <TextBlock x:Name="totalPrice" FontSize="30" Margin="10,0,0,0" Width="77"  Text="{Binding}" FontFamily="Sitka Banner" VerticalAlignment="Top" FontWeight="Bold" TextAlignment="Center" Height="37"/>
-                <TextBlock Text=":מחיר" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20" FontFamily="Sitka Banner" />
-            </StackPanel>
+        Title="cartWindow" Height="450" Width="344">
+    <Grid Margin="0,0,0,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="/cart/Created by@flowerydreamer5.jpeg"/>
+        </Grid.Background>
+        <StackPanel x:Name="stack" Margin="0,0,0,0">
+            <Image MaxHeight="120" Margin="0,20,0,0" MaxWidth="120" Source="{Binding path}"/>
+            <TextBlock x:Name="name" Margin="0,10,0,0" FontSize="30" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Narkisim" TextAlignment="Center"/>
+            <TextBlock x:Name="priceForOne" Margin="0,5,0,0" FontSize="14" TextAlignment="Center" >
+                <Run Text="מחיר ליחידה     "/><Run Text="{Binding Price}"/>  <Run Text=" ש&quot;ח" />
+            </TextBlock>
             <StackPanel Width="300" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal"  >
                 <TextBlock x:Name="amount"  Text="{Binding}" Width="30" Margin="100,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="25" FontFamily="Sitka Banner" />
                 <StackPanel >
@@ -24,8 +24,13 @@
                 </StackPanel>
                 <TextBlock Text=":בחר כמות" FontFamily="Sitka Banner" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,0,0,0"/>
             </StackPanel>
-            <TextBlock x:Name="NinCount" Text="!אין אפשרות להוסיף פחות ממוצר אחד" Visibility="Hidden" Margin= "0,8,0,0" Foreground="#FFBD1111" FontSize="10" TextAlignment="Center" />
-            <TextBlock x:Name="NaxCount" Text="אין כמות גדולה יותר במלאי" Visibility="Hidden" Margin= "0,0,0,15" Foreground="#FFBD1111" FontSize="10" TextAlignment="Center" />
+            <TextBlock x:Name="NinCount" Text="!אין אפשרות להוסיף פחות ממוצר אחד" Visibility="Hidden" Margin= "0,4,0,0" Foreground="#FFBD1111" FontSize="10" TextAlignment="Center" Height="15"/>
+            <TextBlock x:Name="NaxCount" Text="אין כמות גדולה יותר במלאי" Visibility="Hidden" Margin= "0,0,0,0" Foreground="#FFBD1111" FontSize="10" TextAlignment="Center" Height="15" />
+            <StackPanel Orientation="Horizontal" Margin="70,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <TextBlock  Text="ש&quot;ח" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="16" FontFamily="Sitka Banner"  Margin="40,0,0,0"/>
+                <TextBlock x:Name="totalPrice" FontSize="20" Margin="10,0,0,0" Width="90"  Text="{Binding}" FontFamily="Sitka Banner" VerticalAlignment="Top" FontWeight="Bold" TextAlignment="Center" Height="37"/>
+                <TextBlock Text=":לתשלום" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,0,90,0" FontSize="16" FontFamily="Sitka Banner" />
+            </StackPanel>
             <Button x:Name="addToCart" Content="הוסף לסל" Width="150" Background="#FF465153" Foreground="White" Height="30" Click="addToCart_Click"/>
         </StackPanel>
 

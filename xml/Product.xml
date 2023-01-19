@@ -9,14 +9,6 @@
     <path>/images/bookImages/besherutHamosad.jpg</path>
   </Product>
   <Product>
-    <ID>100070</ID>
-    <Name>כה עשו חכמנו- הסט </Name>
-    <Category>Holy</Category>
-    <Price>499.9</Price>
-    <InStock>75</InStock>
-    <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
-  </Product>
-  <Product>
     <ID>100072</ID>
     <Name>חרדה ודיכאון</Name>
     <Category>Theoretical</Category>
@@ -241,14 +233,6 @@
     <path>/images/bookImages/Z4.jpg</path>
   </Product>
   <Product>
-    <ID>100120</ID>
-    <Name>הארי פוטר- הסט השלם</Name>
-    <Category>Romans</Category>
-    <Price>599.9</Price>
-    <InStock>35</InStock>
-    <path>/images/bookImages/HarryPotterAll.jpg</path>
-  </Product>
-  <Product>
     <ID>100121</ID>
     <Name>לרוץ מהלב</Name>
     <Category>Theoretical</Category>
@@ -343,14 +327,6 @@
     <Price>103.99</Price>
     <InStock>55</InStock>
     <path>/images/bookImages/shneyemMetim.jpg</path>
-  </Product>
-  <Product>
-    <ID>100070</ID>
-    <Name>כה עשו חכמנו- הסט </Name>
-    <Category>Holy</Category>
-    <Price>499.9</Price>
-    <InStock>73</InStock>
-    <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
   </Product>
   <Product>
     <ID>100065</ID>
@@ -521,14 +497,6 @@
     <path>/images/bookImages/Z5.jpg</path>
   </Product>
   <Product>
-    <ID>100127</ID>
-    <Name>הארי פוטר- הסט המלא</Name>
-    <Category>Romans</Category>
-    <Price>499</Price>
-    <InStock>80</InStock>
-    <path>/images/bookImages/HarryPotterAll.jpg</path>
-  </Product>
-  <Product>
     <ID>100073</ID>
     <Name>מעשה בחמישה בלונים</Name>
     <Category>Children</Category>
@@ -575,5 +543,29 @@
     <Price>60</Price>
     <InStock>82</InStock>
     <path>/images/bookImages/littelPrince.jpg</path>
+  </Product>
+  <Product>
+    <ID>100070</ID>
+    <Name>כה עשו חכמינו- הסט </Name>
+    <Category>Holy</Category>
+    <Price>499.9</Price>
+    <InStock>75</InStock>
+    <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
+  </Product>
+  <Product>
+    <ID>100120</ID>
+    <Name>הארי פוטר- הסט השלם</Name>
+    <Category>Romans</Category>
+    <Price>600</Price>
+    <InStock>35</InStock>
+    <path>/images/bookImages/HarryPotterAll.jpg</path>
+  </Product>
+  <Product>
+    <ID>100127</ID>
+    <Name>הארי פוטר- הסט המלא</Name>
+    <Category>Romans</Category>
+    <Price>499</Price>
+    <InStock>80</InStock>
+    <path>/images/bookImages/HarryPotterAll.jpg</path>
   </Product>
 </ArrayOfProduct>
