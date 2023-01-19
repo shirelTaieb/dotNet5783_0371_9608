@@ -48,7 +48,8 @@ namespace PL.cart
                                  ProductID = orItem.ProductID,
                                  ProductName=orItem.ProductName,
                                  Amount = orItem.Amount,
-                                 TotalPrice = orItem.TotalPrice
+                                 TotalPrice = orItem.TotalPrice,
+                                 path=bl!.Product!.getProductInfoManager(orItem.ProductID).path
                              }).ToList()
                 };
                 cartListView.ItemsSource = POcart.Items;
@@ -70,7 +71,6 @@ namespace PL.cart
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            if (cartListView.SelectedItems == null);
             PO.OrderItem tempOrder = (PO.OrderItem)cartListView.SelectedItem;
             bl!.Cart!.updatePoductAmount(boCart, tempOrder.ProductID ,0);
             cartListView.ItemsSource=null;

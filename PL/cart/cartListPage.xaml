@@ -21,43 +21,59 @@
             <RowDefinition Height="346.154"/>
             <RowDefinition Height="69*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Visibility="{Binding ElementName=nonDetail,Path=Visibility, Converter={StaticResource visiToNotVisi}}" Background="#FF1F2421">
-            <TextBlock Text="מספר מוצר" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="10,0,0,0" Foreground="#FFD2DBD2"/>
-            <TextBlock Text="שם מוצר" Width="150" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="10,0,0,0" Foreground="#FFD2DBD2"/>
-            <TextBlock Text="מחיר ליחידה" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,0" Foreground="#FFD2DBD2"/>
-            <TextBlock Text="כמות" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="0,0,5,0" Foreground="#FFD2DBD2"/>
-            <TextBlock Text="סהכ" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="10,0,0,0" Foreground="#FFD2DBD2"/>
-        </StackPanel>
 
-        <ListView x:Name="cartListView" ItemsSource="{Binding}" Grid.Row="1" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="10">
-                        <Border BorderBrush="#FF465153" BorderThickness="0,0,0,1">
-                            <StackPanel Orientation="Horizontal" >
-                                <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Normal" FontStyle="Italic" TextAlignment="Center"/>
-                                <TextBlock Text ="{Binding ProductName}" Width="150" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
-                                <TextBlock Text ="{Binding Price}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
-                                <TextBlock Text ="{Binding Amount}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
-                                <TextBlock Text ="{Binding TotalPrice}" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
-                            </StackPanel>
-                        </Border>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <StackPanel Grid.Row="1">
-            <TextBlock x:Name="nonDetail" Width="800" TextAlignment="Center" Background="{x:Null}" Foreground="#FF465153" FontFamily="Calibri" FontSize="30" Margin="0,60,0,50"  Visibility="{Binding ElementName=cartListView, Converter={StaticResource nullToVisi}}" Height="130"><Run Text=" ..אוישש"/><LineBreak/><Run Text="הסל שלך עוד ריק"/></TextBlock>
-            <Button Width="300" Height="50" Content="למעבר מהיר לקטלוג המוצרים" FontSize="20" BorderBrush="#FF465153" Background="#dce1de" Opacity="0.8" Foreground="#FF465153" Margin="0,0,0,0" Click="moveToCatelog_Click" Visibility="{Binding ElementName=nonDetail, Path=Visibility}"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Visibility="{Binding ElementName=nonDetail,Path=Visibility, Converter={StaticResource visiToNotVisi}}" Background="#FF1F2421">
+            <TextBlock Text="סהכ" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="150,7,5,0" Foreground="#FFD2DBD2"/>
+            <TextBlock Text="כמות" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="5,7,5,0" Foreground="#FFD2DBD2"/>
+            <TextBlock Text="מחיר ליחידה" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="5,7,5,0" Foreground="#FFD2DBD2"/>
+            <TextBlock Text="מספר מוצר" Width="100" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="5,7,5,0" Foreground="#FFD2DBD2"/>
+            <TextBlock Text="שם מוצר" Width="150" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" Margin="5,7,5,0" Foreground="#FFD2DBD2"/>
         </StackPanel>
-        <Button x:Name="confirm" Content="אישור הזמנה" Foreground="#dce1de"  HorizontalAlignment="Left" Margin="639,293,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF1F2421" BorderBrush="{x:Null}" Visibility="{Binding ElementName=nonDetail, Path=Visibility, Converter={StaticResource visiToNotVisi}}" Click="confirmOrder_Click" Width="120" FontWeight="Bold" Height="29"/>
-        <materialDesign:PackIcon Kind="CheckBox"  Grid.Row="1" Height="50" Width="120" RenderTransformOrigin="0.296,0.547" Margin="639,238,0,0" />
-        <Button Content="מחיקת מוצר" Foreground="#dce1de"  HorizontalAlignment="Left" Margin="639,168,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF1F2421" Visibility="{Binding ElementName=confirm, Path=Visibility}" BorderBrush="{x:Null}" FontWeight="Bold" Click="Delete_Click"  IsEnabled="{Binding ElementName= cartListView ,Path= SelectedItem, Converter={StaticResource NullToFalse}}" Width="120" Height="29"/>
-        <materialDesign:PackIcon Kind="Trash"  Grid.Row="1" Height="51" Width="120" RenderTransformOrigin="0.296,0.547" Margin="639,112,0,0" />
-        <TextBlock x:Name="cartTotalPrice" FontWeight="Bold" Text="{Binding}" Grid.Row="2" Width="121" Margin="211,9,0,0" Foreground="#FF1F2421" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="{Binding ElementName=confirm, Path=Visibility}" Height="24" FontSize="14" />
-        <TextBlock Foreground="#FF1F2421" FontWeight="Bold" Text=":לתשלום" Grid.Row="2" Width="62" TextAlignment="Center" Margin="337,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31"  Visibility="{Binding ElementName=confirm, Path=Visibility}" FontSize="16"/>
-        <Button Content="פרטים אישיים" HorizontalAlignment="Left" Foreground="#dce1de" Margin="639,61,0,0" VerticalAlignment="Top" Height="29" Width="120"  Visibility="{Binding ElementName=confirm, Path=Visibility}" Background="#FF1F2421" BorderBrush="{x:Null}" Click="Personal_Data" Grid.Row="1" FontWeight="Bold"/>
-        <materialDesign:PackIcon Kind="IdCardOutline" Margin="639,10,0,0" Grid.Row="1" Height="51" Width="120" RenderTransformOrigin="0.296,0.547"/>
-        <Rectangle HorizontalAlignment="Left" Height="42" Margin="173,346,0,0" Grid.Row="1" Stroke="#FF1F2421" VerticalAlignment="Top" Width="218" Visibility="{Binding ElementName=confirm, Path=Visibility}" Grid.RowSpan="2"/>
+        <Grid x:Name="downGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <ListView x:Name="cartListView" ItemsSource="{Binding}" Grid.Column="1"  Grid.Row="1" Margin="0,0,0,0">
+                <ListView.Background>
+                    <SolidColorBrush Color="#dce1de" Opacity="0.3"/>
+                </ListView.Background>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10">
+                            <Border BorderBrush="#FF465153" BorderThickness="0,0,0,1" Background="#dce1de">
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Text ="{Binding TotalPrice}" Margin="35,0,40,0" Width="100" MaxWidth="50" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
+                                    <TextBlock Text ="{Binding Amount}" Width="100" Margin="0,0,0,0" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
+                                    <TextBlock Text ="{Binding Price}" Width="100" MaxWidth="60" Margin="20,0,0,0" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
+                                    <TextBlock Text ="{Binding ProductID}" Width="100" FontSize="16" FontFamily="Calibri" Margin="30,0,0,0" FontWeight="Normal" FontStyle="Italic" TextAlignment="Center"/>
+                                    <TextBlock Text ="{Binding ProductName}" Width="150" FontSize="16" FontFamily="Calibri" FontWeight="Bold" TextAlignment="Center" />
+                                    <Image Source="{Binding path}" Width="50" Height="50"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock x:Name="nonDetail" Width="800" TextAlignment="Center" Background="{x:Null}" Foreground="#FF465153" FontFamily="Calibri" FontSize="30" Margin="-135,100,0,50"  Visibility="{Binding ElementName=cartListView, Converter={StaticResource nullToVisi}}" Height="130"><Run Text=" ..אוישש"/><LineBreak/><Run Text="הסל שלך עוד ריק"/></TextBlock>
+                <Button Width="300" Height="50" Content="למעבר מהיר לקטלוג המוצרים" FontSize="20" BorderBrush="#FF465153" Background="#dce1de" Opacity="0.8" Foreground="#FF465153" Margin="-100,-60,0,0" Click="moveToCatelog_Click" Visibility="{Binding ElementName=nonDetail, Path=Visibility}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="5,0,0,0">
+                <materialDesign:PackIcon Kind="IdCardOutline" Visibility="{Binding ElementName=confirm, Path=Visibility}" Margin="0,20,0,0" Grid.Row="1" Height="51" Width="120" RenderTransformOrigin="0.0,0.0"/>
+                <Button Content="פרטים אישיים" HorizontalAlignment="Left" Foreground="#dce1de" Margin="0,5,0,0" VerticalAlignment="Top" Height="29" Width="120"  Visibility="{Binding ElementName=confirm, Path=Visibility}" Background="#FF1F2421" BorderBrush="{x:Null}" Click="Personal_Data" Grid.Row="1" FontWeight="Bold"/>
+                <materialDesign:PackIcon Kind="Trash" Visibility="{Binding ElementName=confirm, Path=Visibility}"  Grid.Row="1" Height="51" Width="120" RenderTransformOrigin="0.296,0.547" Margin="0,30,0,0" />
+                <Button Content="מחיקת מוצר" Foreground="#dce1de"  HorizontalAlignment="Left" Margin="0,5,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF1F2421" Visibility="{Binding ElementName=confirm, Path=Visibility}" BorderBrush="{x:Null}" FontWeight="Bold" Click="Delete_Click"  IsEnabled="{Binding ElementName= cartListView ,Path= SelectedItem, Converter={StaticResource NullToFalse}}" Width="120" Height="29"/>
+                <materialDesign:PackIcon Kind="CheckBox"  Grid.Row="1" Height="51" Width="120" Visibility="{Binding ElementName=confirm, Path=Visibility}" RenderTransformOrigin="0.511,0.474" Margin="0,30,0,0" />
+                <Button x:Name="confirm" Content="אישור הזמנה" Foreground="#dce1de"  HorizontalAlignment="Left" Margin="0,5,0,0"
+                        Grid.Row="1" VerticalAlignment="Top" Background="#FF1F2421" BorderBrush="{x:Null}"
+                        Visibility="{Binding ElementName=nonDetail, Path=Visibility, Converter={StaticResource visiToNotVisi}}" 
+                        Click="confirmOrder_Click" Width="120" FontWeight="Bold" Height="29"/>
+            </StackPanel>
+            <Grid x:Name="lineDownGrid" Grid.Row="2" Grid.Column="1">
+                <TextBlock  Foreground="#FF1F2421" FontWeight="Bold" Text=":לתשלום" Margin="247,353,315,-38" Visibility="{Binding ElementName=confirm, Path=Visibility}" FontSize="18"/>
+                <TextBlock  x:Name="cartTotalPrice" Width="57"  Foreground="#FF1F2421" FontWeight="Bold" Text="{Binding}" Height="35" FontSize="18" Margin="170,355,425,-40" Visibility="{Binding ElementName=confirm, Path=Visibility}"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
