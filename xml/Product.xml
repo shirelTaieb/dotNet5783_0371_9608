@@ -416,4 +416,52 @@
     <InStock>0</InStock>
     <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
+  <Product>
+    <ID>100122</ID>
+    <Name>משהו אחר</Name>
+    <Category>Children</Category>
+    <Price>55.9</Price>
+    <InStock>78</InStock>
+    <path>/images/bookImages/Z1.jpg</path>
+  </Product>
+  <Product>
+    <ID>100123</ID>
+    <Name>האריה שבפנים</Name>
+    <Category>Children</Category>
+    <Price>70</Price>
+    <InStock>6</InStock>
+    <path>/images/bookImages/Z2.jpg</path>
+  </Product>
+  <Product>
+    <ID>100124</ID>
+    <Name>נאן- לא תם המסע</Name>
+    <Category>Romans</Category>
+    <Price>89</Price>
+    <InStock>11</InStock>
+    <path>/images/bookImages/Z3.jpg</path>
+  </Product>
+  <Product>
+    <ID>100125</ID>
+    <Name>מי ישמור על העוגיות</Name>
+    <Category>Children</Category>
+    <Price>54</Price>
+    <InStock>33</InStock>
+    <path>/images/bookImages/Z4.jpg</path>
+  </Product>
+  <Product>
+    <ID>100126</ID>
+    <Name>לרוץ מהלב</Name>
+    <Category>Theoretical</Category>
+    <Price>67</Price>
+    <InStock>90</InStock>
+    <path>/images/bookImages/Z5.jpg</path>
+  </Product>
+  <Product>
+    <ID>100127</ID>
+    <Name>הארי פוטר- הסט המלא</Name>
+    <Category>Romans</Category>
+    <Price>499</Price>
+    <InStock>80</InStock>
+    <path>/images/bookImages/HarryPotterAll.jpg</path>
+  </Product>
 </ArrayOfProduct>
