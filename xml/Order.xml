@@ -276,13 +276,6 @@
     <OrderDate>2023-01-19T11:45:04.7108961+02:00</OrderDate>
   </Order>
   <Order>
-    <ID>1045</ID>
-    <CustomerName>נדב לוי</CustomerName>
-    <CustomerEmail>nadav@gmail.com</CustomerEmail>
-    <CustomerAddress>טלמון</CustomerAddress>
-    <OrderDate>2023-01-19T11:47:36.4588407+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1046</ID>
     <CustomerName>תמר</CustomerName>
     <CustomerEmail>tamar@</CustomerEmail>
@@ -295,5 +288,34 @@
     <CustomerEmail>tamar@</CustomerEmail>
     <CustomerAddress>ירושלים</CustomerAddress>
     <OrderDate>2023-01-19T11:54:01.6826695+02:00</OrderDate>
+  </Order>
+  <Order>
+    <ID>1048</ID>
+    <CustomerName>שיראל</CustomerName>
+    <CustomerEmail>shir@</CustomerEmail>
+    <CustomerAddress>רעננה</CustomerAddress>
+    <OrderDate>2023-01-19T16:33:52.0659859+02:00</OrderDate>
+  </Order>
+  <Order>
+    <ID>1049</ID>
+    <CustomerName>גדעון</CustomerName>
+    <CustomerEmail>gidi@</CustomerEmail>
+    <CustomerAddress>מטולה</CustomerAddress>
+    <OrderDate>2023-01-19T16:36:54.4543379+02:00</OrderDate>
+  </Order>
+  <Order>
+    <ID>1050</ID>
+    <CustomerName>גדעון</CustomerName>
+    <CustomerEmail>gidi@</CustomerEmail>
+    <CustomerAddress>מטולה</CustomerAddress>
+    <OrderDate>2023-01-19T16:36:57.1713752+02:00</OrderDate>
+  </Order>
+  <Order>
+    <ID>1045</ID>
+    <CustomerName>נדב לוי</CustomerName>
+    <CustomerEmail>nadav@gmail.com</CustomerEmail>
+    <CustomerAddress>טלמון</CustomerAddress>
+    <OrderDate>2023-01-19T11:47:36.4588407+02:00</OrderDate>
+    <ShipDate>2023-01-19T17:26:03.5413335+02:00</ShipDate>
   </Order>
 </ArrayOfOrder>

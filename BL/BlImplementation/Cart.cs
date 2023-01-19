@@ -109,7 +109,7 @@ namespace BlImplementation
             if (cart.CustomerEmail == "" || !cart.CustomerEmail!.Contains("@"))
                 throw new BO.wrongDataException();
             //בדיקת נתוני סל קניות
-            //..חסרררררררר
+
 
             DO.Order order = new DO.Order(); //casting to not nullable order
             order.ShipDate = null;//DateTime.MinValue;
@@ -150,7 +150,6 @@ namespace BlImplementation
                 pr.InStock -= item.Amount;//עדכון המלאי
                 Dal.Product.Update(pr); //עדכון המוצר בשכבת הנתונים
             }
-            cart!.Items?.Clear();
             return order_id;
 
         }

@@ -536,4 +536,60 @@
     <Price>55.9</Price>
     <Amount>2</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1072</ID>
+    <ProductID>100107</ProductID>
+    <ProductName>להפסיק לעשן</ProductName>
+    <OrderID>1048</OrderID>
+    <Price>87.9</Price>
+    <Amount>3</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1073</ID>
+    <ProductID>100110</ProductID>
+    <ProductName>ספר התניא</ProductName>
+    <OrderID>1048</OrderID>
+    <Price>25</Price>
+    <Amount>4</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1074</ID>
+    <ProductID>100106</ProductID>
+    <ProductName>מדריך תוכנה</ProductName>
+    <OrderID>1048</OrderID>
+    <Price>75.9</Price>
+    <Amount>2</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1075</ID>
+    <ProductID>100118</ProductID>
+    <ProductName>נאן- לא תם המסע</ProductName>
+    <OrderID>1049</OrderID>
+    <Price>98.9</Price>
+    <Amount>3</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1076</ID>
+    <ProductID>100086</ProductID>
+    <ProductName>הנסיך הקטן</ProductName>
+    <OrderID>1049</OrderID>
+    <Price>60</Price>
+    <Amount>2</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1077</ID>
+    <ProductID>100118</ProductID>
+    <ProductName>נאן- לא תם המסע</ProductName>
+    <OrderID>1050</OrderID>
+    <Price>98.9</Price>
+    <Amount>3</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1078</ID>
+    <ProductID>100086</ProductID>
+    <ProductName>הנסיך הקטן</ProductName>
+    <OrderID>1050</OrderID>
+    <Price>60</Price>
+    <Amount>2</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>
