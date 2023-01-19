@@ -29,4 +29,19 @@
     <OrderDate>2023-01-18T12:54:31.0832438+02:00</OrderDate>
     <ShipDate>2023-01-18T12:55:12.8233028+02:00</ShipDate>
   </Order>
+  <Order>
+    <ID>1009</ID>
+    <CustomerName>שירה</CustomerName>
+    <CustomerEmail>shira@</CustomerEmail>
+    <CustomerAddress>ירושלים</CustomerAddress>
+    <OrderDate>2023-01-18T16:56:37.6027074+02:00</OrderDate>
+  </Order>
+  <Order>
+    <ID>1010</ID>
+    <CustomerName>רעות</CustomerName>
+    <CustomerEmail>reut@</CustomerEmail>
+    <CustomerAddress>קטלב 11</CustomerAddress>
+    <OrderDate>2023-01-18T17:22:53.0341378+02:00</OrderDate>
+    <ShipDate>2023-01-18T17:23:54.9122026+02:00</ShipDate>
+  </Order>
 </ArrayOfOrder>

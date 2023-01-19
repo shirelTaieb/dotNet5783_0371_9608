@@ -160,11 +160,11 @@
                 </Button>
                 <TextBlock/>
             </StackPanel>
-            <TextBlock HorizontalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content, Converter={StaticResource nullToVisi}}" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="748" Height="38" FontStyle="Italic" TextAlignment="Center" FontSize="30" FontFamily="FrankRuehl" FontWeight="Bold" Foreground="#FF5C6957"><Run FlowDirection="RightToLeft" Language="he-il" Text="... "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל" /></TextBlock>
-            <!--<TextBlock HorizontalAlignment="Left" Margin="26,396,0,0" TextWrapping="Wrap" Text="כל הזכויות שמורות לתמר חייט ושיראל טייב" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>-->
+            <TextBlock HorizontalAlignment="Center" 
+                       Visibility="{ Binding ElementName=frame, Path=Content, Converter={StaticResource nullToVisi}}" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="748" Height="38" FontStyle="Italic" TextAlignment="Center" FontSize="26"  FontWeight="Bold" Foreground="#FF5C6957" FontFamily="Footlight MT Light"><Run FlowDirection="RightToLeft" Language="he-il" Text="... "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל" /></TextBlock>
             <materialDesign:PackIcon Kind="QuestionMarkCircle" Margin="756,405,0,0"
-                                                 Height="19" Width="34"/>
-            <TextBlock HorizontalAlignment="Left" Margin="573,406,0,0" TextWrapping="Wrap" Text="נתקלתם בבעיה? לא אכפת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
+                                                 Height="19" Width="34" Visibility="{Binding ElementName=problem, Path=Visibility}"/>
+            <TextBlock x:Name="problem" HorizontalAlignment="Left" Margin="573,406,0,0" Visibility="{Binding ElementName=frame, Path=Content, Converter={StaticResource nullToNotVisi}}" TextWrapping="Wrap" Text="נתקלתם בבעיה? לא אכפת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>
             <Frame x:Name="frame" Margin="0,0,0,0"  NavigationUIVisibility="Hidden" />
         </Grid>
     </Grid>

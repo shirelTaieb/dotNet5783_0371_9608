@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <ID>100066</ID>
-    <Name>אילת מטילת</Name>
-    <Category>Children</Category>
-    <Price>70.95</Price>
-    <InStock>100</InStock>
-    <path>/images/bookImages/AYELETTRIPING.jpg</path>
-  </Product>
-  <Product>
     <ID>100067</ID>
     <Name>בשירות המוסד</Name>
     <Category>Romans</Category>
@@ -81,14 +73,6 @@
     <path>/images/bookImages/hachmenuLeyameno.jpg</path>
   </Product>
   <Product>
-    <ID>100076</ID>
-    <Name>הכבשן והכור</Name>
-    <Category>History</Category>
-    <Price>79.99</Price>
-    <InStock>12</InStock>
-    <path>/images/bookImages/hacivshanVeacur.jpg</path>
-  </Product>
-  <Product>
     <ID>100079</ID>
     <Name>הפנים שפרצו מהדף</Name>
     <Category>Romans</Category>
@@ -103,14 +87,6 @@
     <Price>65.9</Price>
     <InStock>67</InStock>
     <path>/images/bookImages/Harenesans.jpg</path>
-  </Product>
-  <Product>
-    <ID>100081</ID>
-    <Name>חמישה חומשי תורה</Name>
-    <Category>Holy</Category>
-    <Price>450.9</Price>
-    <InStock>70</InStock>
-    <path>/images/bookImages/humashim.jpg</path>
   </Product>
   <Product>
     <ID>100082</ID>
@@ -169,14 +145,6 @@
     <path>/images/bookImages/MATH.jpg</path>
   </Product>
   <Product>
-    <ID>100091</ID>
-    <Name>משחקי הרעב</Name>
-    <Category>Romans</Category>
-    <Price>99</Price>
-    <InStock>123</InStock>
-    <path>/images/bookImages/mischakeyHarav.png</path>
-  </Product>
-  <Product>
     <ID>100092</ID>
     <Name>משנה תורה השלם</Name>
     <Category>Holy</Category>
@@ -209,28 +177,12 @@
     <path>/images/bookImages/negilatberlin.jpg</path>
   </Product>
   <Product>
-    <ID>100098</ID>
-    <Name>נתיבות שלום</Name>
-    <Category>Holy</Category>
-    <Price>80</Price>
-    <InStock>421</InStock>
-    <path>/images/bookImages/ntivotShalom.jpg</path>
-  </Product>
-  <Product>
     <ID>100099</ID>
     <Name>אורות</Name>
     <Category>Holy</Category>
     <Price>65</Price>
     <InStock>10</InStock>
     <path>/images/bookImages/orotHatchiya.jpg</path>
-  </Product>
-  <Product>
-    <ID>100100</ID>
-    <Name>פלא</Name>
-    <Category>Romans</Category>
-    <Price>68.9</Price>
-    <InStock>78</InStock>
-    <path>/images/bookImages/pele.png</path>
   </Product>
   <Product>
     <ID>100101</ID>
@@ -257,14 +209,6 @@
     <path>/images/bookImages/RENT.jpg</path>
   </Product>
   <Product>
-    <ID>100104</ID>
-    <Name>שמירת הלשון</Name>
-    <Category>Holy</Category>
-    <Price>35</Price>
-    <InStock>65</InStock>
-    <path>/images/bookImages/shmiratHalashon.jpg</path>
-  </Product>
-  <Product>
     <ID>100105</ID>
     <Name>שניהם מתים בסוף</Name>
     <Category>Romans</Category>
@@ -289,14 +233,6 @@
     <path>/images/bookImages/Somke.jpg</path>
   </Product>
   <Product>
-    <ID>100108</ID>
-    <Name>העיקר להתחיל בעיקר</Name>
-    <Category>Theoretical</Category>
-    <Price>98.99</Price>
-    <InStock>345</InStock>
-    <path>/images/bookImages/Start.jpg</path>
-  </Product>
-  <Product>
     <ID>100109</ID>
     <Name>תנ"ך שלם</Name>
     <Category>Holy</Category>
@@ -311,14 +247,6 @@
     <Price>25</Price>
     <InStock>80</InStock>
     <path>/images/bookImages/taniya.jpg</path>
-  </Product>
-  <Product>
-    <ID>100111</ID>
-    <Name>תהילים</Name>
-    <Category>Holy</Category>
-    <Price>37</Price>
-    <InStock>90</InStock>
-    <path>/images/bookImages/tehilim.jpg</path>
   </Product>
   <Product>
     <ID>100113</ID>
@@ -471,5 +399,77 @@
     <Price>102</Price>
     <InStock>59</InStock>
     <path>/images/bookImages/NARNIA.PNG</path>
+  </Product>
+  <Product>
+    <ID>100091</ID>
+    <Name>משחקי הרעב</Name>
+    <Category>Romans</Category>
+    <Price>99</Price>
+    <InStock>120</InStock>
+    <path>/images/bookImages/mischakeyHarav.png</path>
+  </Product>
+  <Product>
+    <ID>100076</ID>
+    <Name>הכבשן והכור</Name>
+    <Category>History</Category>
+    <Price>79.99</Price>
+    <InStock>9</InStock>
+    <path>/images/bookImages/hacivshanVeacur.jpg</path>
+  </Product>
+  <Product>
+    <ID>100108</ID>
+    <Name>העיקר להתחיל בעיקר</Name>
+    <Category>Theoretical</Category>
+    <Price>98.99</Price>
+    <InStock>344</InStock>
+    <path>/images/bookImages/Start.jpg</path>
+  </Product>
+  <Product>
+    <ID>100066</ID>
+    <Name>אילת מטילת</Name>
+    <Category>Children</Category>
+    <Price>70.95</Price>
+    <InStock>99</InStock>
+    <path>/images/bookImages/AYELETTRIPING.jpg</path>
+  </Product>
+  <Product>
+    <ID>100081</ID>
+    <Name>חמישה חומשי תורה</Name>
+    <Category>Holy</Category>
+    <Price>450.9</Price>
+    <InStock>69</InStock>
+    <path>/images/bookImages/humashim.jpg</path>
+  </Product>
+  <Product>
+    <ID>100100</ID>
+    <Name>פלא</Name>
+    <Category>Romans</Category>
+    <Price>68.9</Price>
+    <InStock>77</InStock>
+    <path>/images/bookImages/pele.png</path>
+  </Product>
+  <Product>
+    <ID>100098</ID>
+    <Name>נתיבות שלום</Name>
+    <Category>Holy</Category>
+    <Price>80</Price>
+    <InStock>420</InStock>
+    <path>/images/bookImages/ntivotShalom.jpg</path>
+  </Product>
+  <Product>
+    <ID>100104</ID>
+    <Name>שמירת הלשון</Name>
+    <Category>Holy</Category>
+    <Price>35</Price>
+    <InStock>64</InStock>
+    <path>/images/bookImages/shmiratHalashon.jpg</path>
+  </Product>
+  <Product>
+    <ID>100111</ID>
+    <Name>תהילים</Name>
+    <Category>Holy</Category>
+    <Price>37</Price>
+    <InStock>89</InStock>
+    <path>/images/bookImages/tehilim.jpg</path>
   </Product>
 </ArrayOfProduct>
