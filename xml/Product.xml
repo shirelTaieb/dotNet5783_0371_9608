@@ -17,14 +17,6 @@
     <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
   </Product>
   <Product>
-    <ID>100073</ID>
-    <Name>מעשה בחמישה בלונים</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>567</InStock>
-    <path>/images/bookImages/FIVEBALON.jpg</path>
-  </Product>
-  <Product>
     <ID>100072</ID>
     <Name>חרדה ודיכאון</Name>
     <Category>Theoretical</Category>
@@ -401,14 +393,6 @@
     <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
   </Product>
   <Product>
-    <ID>100073</ID>
-    <Name>מעשה בחמישה בלונים</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>565</InStock>
-    <path>/images/bookImages/FIVEBALON.jpg</path>
-  </Product>
-  <Product>
     <ID>100065</ID>
     <Name>מבצע אנטבה</Name>
     <Category>History</Category>
@@ -575,5 +559,13 @@
     <Price>35</Price>
     <InStock>62</InStock>
     <path>/images/bookImages/shmiratHalashon.jpg</path>
+  </Product>
+  <Product>
+    <ID>100073</ID>
+    <Name>מעשה בחמישה בלונים</Name>
+    <Category>Children</Category>
+    <Price>55.9</Price>
+    <InStock>563</InStock>
+    <path>/images/bookImages/FIVEBALON.jpg</path>
   </Product>
 </ArrayOfProduct>

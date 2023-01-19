@@ -520,4 +520,20 @@
     <Price>35</Price>
     <Amount>2</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1070</ID>
+    <ProductID>100073</ProductID>
+    <ProductName>מעשה בחמישה בלונים</ProductName>
+    <OrderID>1046</OrderID>
+    <Price>55.9</Price>
+    <Amount>2</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1071</ID>
+    <ProductID>100073</ProductID>
+    <ProductName>מעשה בחמישה בלונים</ProductName>
+    <OrderID>1047</OrderID>
+    <Price>55.9</Price>
+    <Amount>2</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>

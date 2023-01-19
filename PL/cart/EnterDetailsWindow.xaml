@@ -36,8 +36,6 @@
                            FontSize="18" FontFamily="Guttman Frank"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" Margin="3,3,3,3" />
                 <TextBlock x:Name="customerAddress"  Text=":כתובת משלוח" Width="111" TextAlignment="Left" Height="30" HorizontalAlignment="Stretch"
                            FontSize="18" FontFamily="Guttman Frank"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" Margin="3,3,3,3"/>
-                <!--<TextBlock x:Name="space"  Text="" Width="156" TextAlignment="Right" Height="22" HorizontalAlignment="Stretch"
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" Margin="3,3,3,3"/>-->
                 <TextBlock x:Name="payment"  Text=":פרטי תשלום" Width="149" TextAlignment="Center" Height="30" 
                            FontSize="20" FontFamily="Guttman Frank"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF2B0D0D" TextDecorations="Underline" Margin="3,10,3,0" />
                 <TextBlock x:Name="number"  Text=":מספר כרטיס אשראי" Width="143" TextAlignment="Right" Height="36" 
