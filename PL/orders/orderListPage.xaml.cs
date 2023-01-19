@@ -77,18 +77,30 @@ namespace PL.orders
                 MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        private void Status_ComboBox(object sender, EventArgs e)
+        private void groupStatus_Click(object sender, RoutedEventArgs e)
         {
             //statusSelector.Items.Add("");
-            IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
+            IEnumerable<IGrouping<BO.HebOrderStatus?, PO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
             groupings = groupings.OrderBy(p => p.Key);
-            //foreach (var group in groupings)
-            //     statusSelector.Items.Add(group.Key);
+            orderForListDataGrid.DataContext = (from gru in groupings from o in gru select o).ToList();
+           
         }
-        IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> GroupByStatus(IEnumerable<BO.OrderForList> listToGroup)
-      => (from order in listToGroup
-          group order by order.Status into orderinfo
-          select orderinfo).ToList();
+        IEnumerable<IGrouping<BO.HebOrderStatus?, PO.OrderForList>> GroupByStatus(IEnumerable<BO.OrderForList> listToGroup)
+        {
+            List<PO.OrderForList> POlist = (from or in listToGroup
+                                            select new PO.OrderForList()
+                                            {
+                                                ID = or.ID,
+                                                CustomerName = or.CustomerName,
+                                                AmountOfItems = or.AmountOfItems,
+                                                Status = (BO.HebOrderStatus?)or.Status,
+                                                TotalPrice = or.TotalPrice
+                                            }).ToList();
+
+            return (from order in POlist
+             group order by order.Status into orderinfo
+             select orderinfo).ToList();
+        }
 
     }
 }

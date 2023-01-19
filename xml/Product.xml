@@ -65,12 +65,12 @@
     <path>/images/bookImages/inteligent.jpg</path>
   </Product>
   <Product>
-    <ID>100086</ID>
-    <Name>הנסיך הקטן</Name>
-    <Category>Children</Category>
-    <Price>60</Price>
-    <InStock>87</InStock>
-    <path>/images/bookImages/littelPrince.jpg</path>
+    <ID>100084</ID>
+    <Name>מלחמת העצמאות</Name>
+    <Category>History</Category>
+    <Price>93</Price>
+    <InStock>67</InStock>
+    <path>/images/bookImages/ISRAEL.jpg</path>
   </Product>
   <Product>
     <ID>100087</ID>
@@ -161,36 +161,12 @@
     <path>/images/bookImages/shmiratHalashon.jpg</path>
   </Product>
   <Product>
-    <ID>100106</ID>
-    <Name>מדריך תוכנה</Name>
-    <Category>Theoretical</Category>
-    <Price>75.9</Price>
-    <InStock>654</InStock>
-    <path>/images/bookImages/Software.jpg</path>
-  </Product>
-  <Product>
-    <ID>100107</ID>
-    <Name>להפסיק לעשן</Name>
-    <Category>Theoretical</Category>
-    <Price>87.9</Price>
-    <InStock>79</InStock>
-    <path>/images/bookImages/Somke.jpg</path>
-  </Product>
-  <Product>
     <ID>100109</ID>
     <Name>תנ"ך שלם</Name>
     <Category>Holy</Category>
     <Price>50</Price>
     <InStock>100</InStock>
     <path>/images/bookImages/tanachSimanim.jpg</path>
-  </Product>
-  <Product>
-    <ID>100110</ID>
-    <Name>ספר התניא</Name>
-    <Category>Holy</Category>
-    <Price>25</Price>
-    <InStock>80</InStock>
-    <path>/images/bookImages/taniya.jpg</path>
   </Product>
   <Product>
     <ID>100114</ID>
@@ -223,14 +199,6 @@
     <Price>54</Price>
     <InStock>124</InStock>
     <path>/images/bookImages/Z2.jpg</path>
-  </Product>
-  <Product>
-    <ID>100118</ID>
-    <Name>נאן- לא תם המסע</Name>
-    <Category>Romans</Category>
-    <Price>98.9</Price>
-    <InStock>76</InStock>
-    <path>/images/bookImages/Z3.jpg</path>
   </Product>
   <Product>
     <ID>100119</ID>
@@ -409,12 +377,12 @@
     <path>/images/bookImages/inteligent.jpg</path>
   </Product>
   <Product>
-    <ID>100086</ID>
-    <Name>הנסיך הקטן</Name>
-    <Category>Children</Category>
-    <Price>60</Price>
-    <InStock>84</InStock>
-    <path>/images/bookImages/littelPrince.jpg</path>
+    <ID>100084</ID>
+    <Name>מלחמת העצמאות</Name>
+    <Category>History</Category>
+    <Price>93</Price>
+    <InStock>65</InStock>
+    <path>/images/bookImages/ISRAEL.jpg</path>
   </Product>
   <Product>
     <ID>100088</ID>
@@ -513,51 +481,43 @@
     <path>/images/bookImages/FIVEBALON.jpg</path>
   </Product>
   <Product>
-    <ID>100084</ID>
-    <Name>מלחמת העצמאות</Name>
-    <Category>History</Category>
-    <Price>93</Price>
-    <InStock>63</InStock>
-    <path>/images/bookImages/ISRAEL.jpg</path>
+    <ID>100107</ID>
+    <Name>להפסיק לעשן</Name>
+    <Category>Theoretical</Category>
+    <Price>87.9</Price>
+    <InStock>76</InStock>
+    <path>/images/bookImages/Somke.jpg</path>
   </Product>
   <Product>
-    <ID>100080</ID>
-    <Name>הרנסנס</Name>
-    <Category>History</Category>
-    <Price>65.9</Price>
-    <InStock>64</InStock>
-    <path>/images/bookImages/Harenesans.jpg</path>
+    <ID>100110</ID>
+    <Name>ספר התניא</Name>
+    <Category>Holy</Category>
+    <Price>25</Price>
+    <InStock>76</InStock>
+    <path>/images/bookImages/taniya.jpg</path>
   </Product>
   <Product>
-    <ID>100125</ID>
-    <Name>מי ישמור על העוגיות</Name>
-    <Category>Children</Category>
-    <Price>54</Price>
-    <InStock>32</InStock>
-    <path>/images/bookImages/Z4.jpg</path>
+    <ID>100106</ID>
+    <Name>מדריך תוכנה</Name>
+    <Category>Theoretical</Category>
+    <Price>75.9</Price>
+    <InStock>652</InStock>
+    <path>/images/bookImages/Software.jpg</path>
   </Product>
   <Product>
-    <ID>100062</ID>
-    <Name>הארי פוטר 2</Name>
+    <ID>100118</ID>
+    <Name>נאן- לא תם המסע</Name>
     <Category>Romans</Category>
-    <Price>89.9</Price>
-    <InStock>123</InStock>
-    <path>/images/bookImages/HarryPotter2.jpg</path>
+    <Price>98.9</Price>
+    <InStock>70</InStock>
+    <path>/images/bookImages/Z3.jpg</path>
   </Product>
   <Product>
-    <ID>100067</ID>
-    <Name>בשירות המוסד</Name>
-    <Category>Romans</Category>
-    <Price>90.99</Price>
-    <InStock>89</InStock>
-    <path>/images/bookImages/besherutHamosad.jpg</path>
-  </Product>
-  <Product>
-    <ID>100116</ID>
-    <Name>משהו אחר</Name>
+    <ID>100086</ID>
+    <Name>הנסיך הקטן</Name>
     <Category>Children</Category>
-    <Price>57</Price>
-    <InStock>45</InStock>
-    <path>/images/bookImages/Z1.jpg</path>
+    <Price>60</Price>
+    <InStock>82</InStock>
+    <path>/images/bookImages/littelPrince.jpg</path>
   </Product>
 </ArrayOfProduct>

@@ -167,6 +167,8 @@ internal class Order : BLApi.IOrder
         BO.OrderTracking ot = new BO.OrderTracking();
         ot.ID = orderID;
         ot.Status =getStatus(temp);
+        ot.Tracking = new List<Tuple<DateTime?, string>?>();//???????????????
+
         return ot;
     }
     //בונוס.. צריך לעשות אם רוצים.
