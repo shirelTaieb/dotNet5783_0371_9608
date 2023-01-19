@@ -9,20 +9,140 @@
     <path>/images/bookImages/besherutHamosad.jpg</path>
   </Product>
   <Product>
-    <ID>100092</ID>
-    <Name>משנה תורה השלם</Name>
+    <ID>100070</ID>
+    <Name>כה עשו חכמנו- הסט </Name>
     <Category>Holy</Category>
-    <Price>60</Price>
-    <InStock>85</InStock>
-    <path>/images/bookImages/mishneTora.jpg</path>
+    <Price>499.9</Price>
+    <InStock>75</InStock>
+    <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
   </Product>
   <Product>
-    <ID>100093</ID>
-    <Name>משניות</Name>
+    <ID>100073</ID>
+    <Name>מעשה בחמישה בלונים</Name>
+    <Category>Children</Category>
+    <Price>55.9</Price>
+    <InStock>567</InStock>
+    <path>/images/bookImages/FIVEBALON.jpg</path>
+  </Product>
+  <Product>
+    <ID>100072</ID>
+    <Name>חרדה ודיכאון</Name>
+    <Category>Theoretical</Category>
+    <Price>99.9</Price>
+    <InStock>894</InStock>
+    <path>/images/bookImages/DEPRESION.jpg</path>
+  </Product>
+  <Product>
+    <ID>100065</ID>
+    <Name>מבצע אנטבה</Name>
+    <Category>History</Category>
+    <Price>87.99</Price>
+    <InStock>27</InStock>
+    <path>/images/bookImages/ANTEBE.jpg</path>
+  </Product>
+  <Product>
+    <ID>100062</ID>
+    <Name>הארי פוטר 2</Name>
+    <Category>Romans</Category>
+    <Price>89.9</Price>
+    <InStock>128</InStock>
+    <path>/images/bookImages/HarryPotter2.jpg</path>
+  </Product>
+  <Product>
+    <ID>100074</ID>
+    <Name>ההעפלה</Name>
+    <Category>History</Category>
+    <Price>86.9</Price>
+    <InStock>560</InStock>
+    <path>/images/bookImages/haapala.jpg</path>
+  </Product>
+  <Product>
+    <ID>100075</ID>
+    <Name>חכמינו לימינו</Name>
     <Category>Holy</Category>
-    <Price>90</Price>
-    <InStock>3</InStock>
-    <path>/images/bookImages/misnayotBrachot.jpg</path>
+    <Price>50.9</Price>
+    <InStock>123</InStock>
+    <path>/images/bookImages/hachmenuLeyameno.jpg</path>
+  </Product>
+  <Product>
+    <ID>100079</ID>
+    <Name>הפנים שפרצו מהדף</Name>
+    <Category>Romans</Category>
+    <Price>79.9</Price>
+    <InStock>98</InStock>
+    <path>/images/bookImages/hapanimShpartzuMeadaf.jpg</path>
+  </Product>
+  <Product>
+    <ID>100080</ID>
+    <Name>הרנסנס</Name>
+    <Category>History</Category>
+    <Price>65.9</Price>
+    <InStock>67</InStock>
+    <path>/images/bookImages/Harenesans.jpg</path>
+  </Product>
+  <Product>
+    <ID>100082</ID>
+    <Name>אינסוף</Name>
+    <Category>Theoretical</Category>
+    <Price>99.9</Price>
+    <InStock>456</InStock>
+    <path>/images/bookImages/infinity.jpg</path>
+  </Product>
+  <Product>
+    <ID>100083</ID>
+    <Name>אינטלגנציה חברתית</Name>
+    <Category>Theoretical</Category>
+    <Price>89.9</Price>
+    <InStock>23</InStock>
+    <path>/images/bookImages/inteligent.jpg</path>
+  </Product>
+  <Product>
+    <ID>100084</ID>
+    <Name>מלחמת העצמאות</Name>
+    <Category>History</Category>
+    <Price>93</Price>
+    <InStock>67</InStock>
+    <path>/images/bookImages/ISRAEL.jpg</path>
+  </Product>
+  <Product>
+    <ID>100086</ID>
+    <Name>הנסיך הקטן</Name>
+    <Category>Children</Category>
+    <Price>60</Price>
+    <InStock>87</InStock>
+    <path>/images/bookImages/littelPrince.jpg</path>
+  </Product>
+  <Product>
+    <ID>100087</ID>
+    <Name>המדריך לחיים</Name>
+    <Category>Theoretical</Category>
+    <Price>100</Price>
+    <InStock>45</InStock>
+    <path>/images/bookImages/liveOnThisPlanet.jpg</path>
+  </Product>
+  <Product>
+    <ID>100088</ID>
+    <Name>קסם של הורות</Name>
+    <Category>Theoretical</Category>
+    <Price>102</Price>
+    <InStock>6</InStock>
+    <path>/images/bookImages/MagicParent.jpg</path>
+  </Product>
+  <Product>
+    <ID>100089</ID>
+    <Name>פלוסים ומינוסים</Name>
+    <Category>Theoretical</Category>
+    <Price>99</Price>
+    <InStock>745</InStock>
+    <path>/images/bookImages/MATH.jpg</path>
+  </Product>
+  <Product>
+    <ID>100091</ID>
+    <Name>משחקי הרעב</Name>
+    <Category>Romans</Category>
+    <Price>99</Price>
+    <InStock>123</InStock>
+    <path>/images/bookImages/mischakeyHarav.png</path>
   </Product>
   <Product>
     <ID>100094</ID>
@@ -71,6 +191,14 @@
     <Price>60</Price>
     <InStock>213</InStock>
     <path>/images/bookImages/RENT.jpg</path>
+  </Product>
+  <Product>
+    <ID>100104</ID>
+    <Name>שמירת הלשון</Name>
+    <Category>Holy</Category>
+    <Price>35</Price>
+    <InStock>65</InStock>
+    <path>/images/bookImages/shmiratHalashon.jpg</path>
   </Product>
   <Product>
     <ID>100106</ID>
@@ -233,52 +361,28 @@
     <path>/images/bookImages/NARNIA.PNG</path>
   </Product>
   <Product>
-    <ID>100076</ID>
-    <Name>הכבשן והכור</Name>
-    <Category>History</Category>
-    <Price>79.99</Price>
-    <InStock>9</InStock>
-    <path>/images/bookImages/hacivshanVeacur.jpg</path>
-  </Product>
-  <Product>
-    <ID>100108</ID>
-    <Name>העיקר להתחיל בעיקר</Name>
-    <Category>Theoretical</Category>
-    <Price>98.99</Price>
-    <InStock>344</InStock>
-    <path>/images/bookImages/Start.jpg</path>
-  </Product>
-  <Product>
-    <ID>100066</ID>
-    <Name>אילת מטילת</Name>
-    <Category>Children</Category>
-    <Price>70.95</Price>
-    <InStock>99</InStock>
-    <path>/images/bookImages/AYELETTRIPING.jpg</path>
-  </Product>
-  <Product>
-    <ID>100081</ID>
-    <Name>חמישה חומשי תורה</Name>
+    <ID>100092</ID>
+    <Name>משנה תורה השלם</Name>
     <Category>Holy</Category>
-    <Price>450.9</Price>
-    <InStock>69</InStock>
-    <path>/images/bookImages/humashim.jpg</path>
+    <Price>60</Price>
+    <InStock>84</InStock>
+    <path>/images/bookImages/mishneTora.jpg</path>
   </Product>
   <Product>
-    <ID>100098</ID>
-    <Name>נתיבות שלום</Name>
+    <ID>100093</ID>
+    <Name>משניות</Name>
     <Category>Holy</Category>
-    <Price>80</Price>
-    <InStock>420</InStock>
-    <path>/images/bookImages/ntivotShalom.jpg</path>
+    <Price>90</Price>
+    <InStock>2</InStock>
+    <path>/images/bookImages/misnayotBrachot.jpg</path>
   </Product>
   <Product>
-    <ID>100111</ID>
-    <Name>תהילים</Name>
-    <Category>Holy</Category>
-    <Price>37</Price>
-    <InStock>89</InStock>
-    <path>/images/bookImages/tehilim.jpg</path>
+    <ID>100105</ID>
+    <Name>שניהם מתים בסוף</Name>
+    <Category>Romans</Category>
+    <Price>103.99</Price>
+    <InStock>56</InStock>
+    <path>/images/bookImages/shneyemMetim.jpg</path>
   </Product>
   <Product>
     <ID>100105</ID>
@@ -436,8 +540,8 @@
     <ID>100068</ID>
     <Name>הספר הכי משעמם</Name>
     <Category>Theoretical</Category>
-    <Price>76.9</Price>
-    <InStock>22</InStock>
+    <Price>75</Price>
+    <InStock>0</InStock>
     <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
   <Product>
