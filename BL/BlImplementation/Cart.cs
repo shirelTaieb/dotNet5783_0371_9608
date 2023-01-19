@@ -113,7 +113,7 @@ namespace BlImplementation
 
             DO.Order order = new DO.Order(); //casting to not nullable order
             order.ShipDate = null;//DateTime.MinValue;
-            order.OrderDate = null;//DateTime.MinValue;
+            order.DeliveryDate = null;//DateTime.MinValue;
             order.OrderDate = DateTime.Now;
             order.CustomerAddress = cart!.CustomerAddress;
             order.CustomerName = cart!.CustomerName;
@@ -149,8 +149,8 @@ namespace BlImplementation
                 catch { throw new BO.doseNotExistException(); } //בקשת המוצר משכבת הנתונים
                 pr.InStock -= item.Amount;//עדכון המלאי
                 Dal.Product.Update(pr); //עדכון המוצר בשכבת הנתונים
-            
             }
+            cart!.Items?.Clear();
             return order_id;
 
         }

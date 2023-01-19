@@ -14,7 +14,7 @@ namespace PL.cart
         double? total = 0;
         PO.ProductItem productitem = new PO.ProductItem();
         BO.Cart? cart=new BO.Cart();
-        public cartWindow(BO.Cart? my_cart, PO.ProductItem proToAdd)
+        public cartWindow(ref BO.Cart? my_cart, PO.ProductItem proToAdd)
         {
             InitializeComponent();
             stack.DataContext=proToAdd;

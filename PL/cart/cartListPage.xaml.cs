@@ -26,7 +26,7 @@ namespace PL.cart
         MainWindow mainWindow;
         PO.Cart? POcart=new PO.Cart();
         BO.Cart? boCart=new BO.Cart();
-        public cartListPage(BO.Cart? my_cart,MainWindow _mainWindow)
+        public cartListPage(ref BO.Cart? my_cart,MainWindow _mainWindow)
         {
             InitializeComponent();
             mainWindow = _mainWindow;
@@ -46,7 +46,7 @@ namespace PL.cart
                                  ID = orItem.ID,
                                  Price = orItem.Price,
                                  ProductID = orItem.ProductID,
-                                 ProductName=bl!.Product!.getProductInfoManager(orItem.ProductID).Name,
+                                 ProductName=orItem.ProductName,
                                  Amount = orItem.Amount,
                                  TotalPrice = orItem.TotalPrice
                              }).ToList()
@@ -64,7 +64,7 @@ namespace PL.cart
 
         private void moveToCatelog_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new customerListPage(boCart!,mainWindow); // מעבר לקטלוג המוצרים
+            mainWindow.frame.Content = new customerListPage(ref boCart!,mainWindow); // מעבר לקטלוג המוצרים
 
         }
 
@@ -84,12 +84,15 @@ namespace PL.cart
         {
             if (POcart!.CustomerName == null || POcart.CustomerEmail == null || POcart.CustomerAddress == null)
             {
-                MessageBox.Show(":)נשמח שתמלא פרטים אישיים לפני ביצוע ההזמנה שלך","חסרים פרטים",MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show(":)נשמח שתמלא פרטים אישיים לפני ביצוע ההזמנה שלך", "חסרים פרטים", MessageBoxButton.OK, MessageBoxImage.Information);
                 EnterDetailsWindow data = new EnterDetailsWindow(POcart);
                 data.ShowDialog();
             }
             else
-                mainWindow.frame.Content = new ConfirmDetailsPage(POcart!, mainWindow);
+            {
+                mainWindow.frame.Content = new ConfirmDetailsPage(ref POcart!,ref boCart, mainWindow);
+                
+            }
 
         }
         private void Personal_Data(object sender, RoutedEventArgs e)

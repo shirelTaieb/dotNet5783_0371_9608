@@ -25,7 +25,7 @@ namespace PL
     {
         MainWindow mainWindow;
         BO.Cart my_cart = new BO.Cart();
-        public MainCustomer(MainWindow window,BO.Cart cart)
+        public MainCustomer(MainWindow window,ref BO.Cart cart)
         {
             InitializeComponent();
             my_cart = cart;
@@ -35,7 +35,7 @@ namespace PL
         }
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
-            mainWindow.frame.Content = new customerListPage(my_cart,mainWindow);
+            mainWindow.frame.Content = new customerListPage(ref my_cart,mainWindow);
            
             //customer.Visibility = Visibility.Hidden;
             //shortToCart.Visibility = Visibility.Visible;
@@ -43,7 +43,7 @@ namespace PL
         public void cart_Click(object o, RoutedEventArgs e)
         {
 
-            mainWindow.frame.Content  = new cartListPage(my_cart, mainWindow);
+            mainWindow.frame.Content  = new cartListPage(ref my_cart, mainWindow);
             
             //customer.Visibility = Visibility.Hidden;
 
