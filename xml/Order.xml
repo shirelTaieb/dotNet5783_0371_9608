@@ -1,13 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Order>
-    <ID>1005</ID>
-    <CustomerName>שיראל</CustomerName>
-    <CustomerEmail>shirelt@gmail.com</CustomerEmail>
-    <CustomerAddress>rananna</CustomerAddress>
-    <OrderDate>2023-01-18T10:30:50.7985417+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1006</ID>
     <CustomerName>תמר</CustomerName>
     <CustomerEmail>tamar@gmail.com</CustomerEmail>
@@ -28,5 +21,21 @@
     <CustomerAddress>73 hanassi vaisnan</CustomerAddress>
     <OrderDate>2023-01-18T12:54:31.0832438+02:00</OrderDate>
     <ShipDate>2023-01-18T12:55:12.8233028+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1005</ID>
+    <CustomerName>שיראל</CustomerName>
+    <CustomerEmail>shirelt@gmail.com</CustomerEmail>
+    <CustomerAddress>rananna</CustomerAddress>
+    <OrderDate>2023-01-18T10:30:50.7985417+02:00</OrderDate>
+    <ShipDate>2023-01-18T16:41:27.6739388+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1009</ID>
+    <CustomerName>shira tal</CustomerName>
+    <CustomerEmail>shital@gmail.com</CustomerEmail>
+    <CustomerAddress>Odim</CustomerAddress>
+    <OrderDate>2023-01-18T16:41:11.0546343+02:00</OrderDate>
+    <ShipDate>2023-01-18T21:39:38.4124972+02:00</ShipDate>
   </Order>
 </ArrayOfOrder>

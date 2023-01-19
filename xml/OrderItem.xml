@@ -96,4 +96,28 @@
     <Price>80</Price>
     <Amount>50</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1017</ID>
+    <ProductID>100092</ProductID>
+    <ProductName />
+    <OrderID>1009</OrderID>
+    <Price>60</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1018</ID>
+    <ProductID>100093</ProductID>
+    <ProductName />
+    <OrderID>1009</OrderID>
+    <Price>90</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1019</ID>
+    <ProductID>100105</ProductID>
+    <ProductName />
+    <OrderID>1009</OrderID>
+    <Price>103.99</Price>
+    <Amount>1</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>

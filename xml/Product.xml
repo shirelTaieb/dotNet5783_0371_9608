@@ -33,14 +33,6 @@
     <path>/images/bookImages/FIVEBALON.jpg</path>
   </Product>
   <Product>
-    <ID>100068</ID>
-    <Name>הספר הכי משעמם</Name>
-    <Category>Theoretical</Category>
-    <Price>76.9</Price>
-    <InStock>0</InStock>
-    <path>/images/bookImages/BORINGBOOK.jpg</path>
-  </Product>
-  <Product>
     <ID>100072</ID>
     <Name>חרדה ודיכאון</Name>
     <Category>Theoretical</Category>
@@ -177,22 +169,6 @@
     <path>/images/bookImages/mischakeyHarav.png</path>
   </Product>
   <Product>
-    <ID>100092</ID>
-    <Name>משנה תורה השלם</Name>
-    <Category>Holy</Category>
-    <Price>60</Price>
-    <InStock>85</InStock>
-    <path>/images/bookImages/mishneTora.jpg</path>
-  </Product>
-  <Product>
-    <ID>100093</ID>
-    <Name>משניות</Name>
-    <Category>Holy</Category>
-    <Price>90</Price>
-    <InStock>3</InStock>
-    <path>/images/bookImages/misnayotBrachot.jpg</path>
-  </Product>
-  <Product>
     <ID>100094</ID>
     <Name>לקוף יש בעיה</Name>
     <Category>Children</Category>
@@ -263,14 +239,6 @@
     <Price>35</Price>
     <InStock>65</InStock>
     <path>/images/bookImages/shmiratHalashon.jpg</path>
-  </Product>
-  <Product>
-    <ID>100105</ID>
-    <Name>שניהם מתים בסוף</Name>
-    <Category>Romans</Category>
-    <Price>103.99</Price>
-    <InStock>57</InStock>
-    <path>/images/bookImages/shneyemMetim.jpg</path>
   </Product>
   <Product>
     <ID>100106</ID>
@@ -471,5 +439,37 @@
     <Price>102</Price>
     <InStock>59</InStock>
     <path>/images/bookImages/NARNIA.PNG</path>
+  </Product>
+  <Product>
+    <ID>100092</ID>
+    <Name>משנה תורה השלם</Name>
+    <Category>Holy</Category>
+    <Price>60</Price>
+    <InStock>84</InStock>
+    <path>/images/bookImages/mishneTora.jpg</path>
+  </Product>
+  <Product>
+    <ID>100093</ID>
+    <Name>משניות</Name>
+    <Category>Holy</Category>
+    <Price>90</Price>
+    <InStock>2</InStock>
+    <path>/images/bookImages/misnayotBrachot.jpg</path>
+  </Product>
+  <Product>
+    <ID>100105</ID>
+    <Name>שניהם מתים בסוף</Name>
+    <Category>Romans</Category>
+    <Price>103.99</Price>
+    <InStock>56</InStock>
+    <path>/images/bookImages/shneyemMetim.jpg</path>
+  </Product>
+  <Product>
+    <ID>100068</ID>
+    <Name>הספר הכי משעמם</Name>
+    <Category>Theoretical</Category>
+    <Price>75</Price>
+    <InStock>0</InStock>
+    <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
 </ArrayOfProduct>
