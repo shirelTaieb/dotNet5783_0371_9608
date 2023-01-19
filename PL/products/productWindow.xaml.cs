@@ -22,21 +22,24 @@ namespace PL.products
         private BO.Product UpdateOrNewProduct = new BO.Product();
         Action<PO.ProductForList> addAction;
         string? path;
-        //Action<PO.ProductForList> removeAction;
-        public productWindow(int ShowDetails, Action<PO.ProductForList> addToObservalCollection, /*Action<PO.ProductForList> removeFromObserval,*/ PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
+        PO.ProductForList toDell=new PO.ProductForList();
+        Action<PO.ProductForList> removeAction;
+        public productWindow(int ShowDetails, Action<PO.ProductForList> addToObservalCollection, Action<PO.ProductForList> removeFromObserval, PO.ProductForList? updateProduct = null) //עשינו ברירת מחדל כי תלוי אם רוצים לעדכן או להוסיף
         {
             InitializeComponent();
             categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory)); //קישור הקטגוריות לכומבו בוקס
             addAction = addToObservalCollection;
-           // removeAction=removeFromObserval;
+            removeAction=removeFromObserval;
 
             if (updateProduct != null)  //כשרוצים לעדכן
             {
                 Add.Visibility = Visibility.Hidden;
                 try
                 {
+
                     UpdateOrNewProduct = bl!.Product!.getProductInfoManager(updateProduct.ID)!;
                     pl = BoToPo(UpdateOrNewProduct);  //casting to po
+                    toDell = poProTpPoProForList(pl);  //for update
                     if (ShowDetails == 1) //לפתוח קובץ לקריאה בלבד
                         productFrame.Content = new productDetailsPage(pl);
                     else
@@ -79,6 +82,16 @@ namespace PL.products
             po.Price = popro.Price;
             return po;
         }
+        private PO.ProductForList poProTpPoProForList(PO.Product pro)
+        {
+            PO.ProductForList p = new PO.ProductForList();  
+            p.ID=pro.ID;
+            p.path=pro.path;    
+            p.Price=pro.Price;  
+            p.Category=pro.Category;    
+            p.Name=pro.Name;
+            return p;
+        }
 
         private void add_click(object sender, RoutedEventArgs e)
         {
@@ -113,16 +126,16 @@ namespace PL.products
                     pl.path = path;
                 UpdateOrNewProduct = PoToBo(pl);
                 bl!.Product!.updateProduct(UpdateOrNewProduct);
-                //PO.ProductForList popro=new PO.ProductForList()
-                //{
-                //    ID = UpdateOrNewProduct.ID,
-                //    Name = UpdateOrNewProduct.Name,
-                //    Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
-                //    Price = UpdateOrNewProduct.Price,
-                //};
-                
-               // removeAction(popro);
-               // addAction(popro);
+                PO.ProductForList popro = new PO.ProductForList()
+                {
+                    ID = UpdateOrNewProduct.ID,
+                    Name = UpdateOrNewProduct.Name,
+                    Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
+                    Price = UpdateOrNewProduct.Price
+                };
+
+                removeAction(toDell);
+                addAction(popro);
                 MessageBox.Show(":) המוצר עודכן בהצלחה", "");
                 //קריאה לפונקציה שבאמת תעדכן את הפרודקט
                 this.Close();

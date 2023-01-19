@@ -33,54 +33,6 @@
     <path>/images/bookImages/HarryPotter2.jpg</path>
   </Product>
   <Product>
-    <ID>100074</ID>
-    <Name>ההעפלה</Name>
-    <Category>History</Category>
-    <Price>86.9</Price>
-    <InStock>560</InStock>
-    <path>/images/bookImages/haapala.jpg</path>
-  </Product>
-  <Product>
-    <ID>100075</ID>
-    <Name>חכמינו לימינו</Name>
-    <Category>Holy</Category>
-    <Price>50.9</Price>
-    <InStock>123</InStock>
-    <path>/images/bookImages/hachmenuLeyameno.jpg</path>
-  </Product>
-  <Product>
-    <ID>100079</ID>
-    <Name>הפנים שפרצו מהדף</Name>
-    <Category>Romans</Category>
-    <Price>79.9</Price>
-    <InStock>98</InStock>
-    <path>/images/bookImages/hapanimShpartzuMeadaf.jpg</path>
-  </Product>
-  <Product>
-    <ID>100080</ID>
-    <Name>הרנסנס</Name>
-    <Category>History</Category>
-    <Price>65.9</Price>
-    <InStock>67</InStock>
-    <path>/images/bookImages/Harenesans.jpg</path>
-  </Product>
-  <Product>
-    <ID>100082</ID>
-    <Name>אינסוף</Name>
-    <Category>Theoretical</Category>
-    <Price>99.9</Price>
-    <InStock>456</InStock>
-    <path>/images/bookImages/infinity.jpg</path>
-  </Product>
-  <Product>
-    <ID>100083</ID>
-    <Name>אינטלגנציה חברתית</Name>
-    <Category>Theoretical</Category>
-    <Price>89.9</Price>
-    <InStock>23</InStock>
-    <path>/images/bookImages/inteligent.jpg</path>
-  </Product>
-  <Product>
     <ID>100084</ID>
     <Name>מלחמת העצמאות</Name>
     <Category>History</Category>
@@ -317,14 +269,6 @@
     <Name>שניהם מתים בסוף</Name>
     <Category>Romans</Category>
     <Price>103.99</Price>
-    <InStock>56</InStock>
-    <path>/images/bookImages/shneyemMetim.jpg</path>
-  </Product>
-  <Product>
-    <ID>100105</ID>
-    <Name>שניהם מתים בסוף</Name>
-    <Category>Romans</Category>
-    <Price>103.99</Price>
     <InStock>55</InStock>
     <path>/images/bookImages/shneyemMetim.jpg</path>
   </Product>
@@ -335,14 +279,6 @@
     <Price>87.99</Price>
     <InStock>24</InStock>
     <path>/images/bookImages/ANTEBE.jpg</path>
-  </Product>
-  <Product>
-    <ID>100082</ID>
-    <Name>אינסוף</Name>
-    <Category>Theoretical</Category>
-    <Price>99.9</Price>
-    <InStock>454</InStock>
-    <path>/images/bookImages/infinity.jpg</path>
   </Product>
   <Product>
     <ID>100062</ID>
@@ -361,28 +297,12 @@
     <path>/images/bookImages/DEPRESION.jpg</path>
   </Product>
   <Product>
-    <ID>100074</ID>
-    <Name>ההעפלה</Name>
-    <Category>History</Category>
-    <Price>86.9</Price>
-    <InStock>559</InStock>
-    <path>/images/bookImages/haapala.jpg</path>
-  </Product>
-  <Product>
     <ID>100075</ID>
     <Name>חכמינו לימינו</Name>
     <Category>Holy</Category>
     <Price>50.9</Price>
     <InStock>121</InStock>
     <path>/images/bookImages/hachmenuLeyameno.jpg</path>
-  </Product>
-  <Product>
-    <ID>100080</ID>
-    <Name>הרנסנס</Name>
-    <Category>History</Category>
-    <Price>65.9</Price>
-    <InStock>65</InStock>
-    <path>/images/bookImages/Harenesans.jpg</path>
   </Product>
   <Product>
     <ID>100079</ID>
@@ -553,19 +473,27 @@
     <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
   </Product>
   <Product>
-    <ID>100120</ID>
-    <Name>הארי פוטר- הסט השלם</Name>
-    <Category>Romans</Category>
-    <Price>600</Price>
-    <InStock>35</InStock>
-    <path>/images/bookImages/HarryPotterAll.jpg</path>
-  </Product>
-  <Product>
     <ID>100127</ID>
-    <Name>הארי פוטר- הסט המלא</Name>
+    <Name>הארי פוטר- הסט השלם</Name>
     <Category>Romans</Category>
     <Price>499</Price>
     <InStock>80</InStock>
     <path>/images/bookImages/HarryPotterAll.jpg</path>
+  </Product>
+  <Product>
+    <ID>100080</ID>
+    <Name>הרנסנס</Name>
+    <Category>History</Category>
+    <Price>79</Price>
+    <InStock>67</InStock>
+    <path>/images/bookImages/Harenesans.jpg</path>
+  </Product>
+  <Product>
+    <ID>100122</ID>
+    <Name>אינסוף</Name>
+    <Category>Theoretical</Category>
+    <Price>100</Price>
+    <InStock>13</InStock>
+    <path>/images/bookImages/infinity.jpg</path>
   </Product>
 </ArrayOfProduct>
