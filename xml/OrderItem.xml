@@ -536,4 +536,84 @@
     <Price>55.9</Price>
     <Amount>2</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1072</ID>
+    <ProductID>100084</ProductID>
+    <ProductName>מלחמת העצמאות</ProductName>
+    <OrderID>1048</OrderID>
+    <Price>93</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1073</ID>
+    <ProductID>100084</ProductID>
+    <ProductName>מלחמת העצמאות</ProductName>
+    <OrderID>1049</OrderID>
+    <Price>93</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1074</ID>
+    <ProductID>100080</ProductID>
+    <ProductName>הרנסנס</ProductName>
+    <OrderID>1049</OrderID>
+    <Price>65.9</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1075</ID>
+    <ProductID>100084</ProductID>
+    <ProductName>מלחמת העצמאות</ProductName>
+    <OrderID>1050</OrderID>
+    <Price>93</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1076</ID>
+    <ProductID>100080</ProductID>
+    <ProductName>הרנסנס</ProductName>
+    <OrderID>1050</OrderID>
+    <Price>65.9</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1077</ID>
+    <ProductID>100125</ProductID>
+    <ProductName>מי ישמור על העוגיות</ProductName>
+    <OrderID>1050</OrderID>
+    <Price>54</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1078</ID>
+    <ProductID>100062</ProductID>
+    <ProductName>הארי פוטר 2</ProductName>
+    <OrderID>1051</OrderID>
+    <Price>89.9</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1079</ID>
+    <ProductID>100062</ProductID>
+    <ProductName>הארי פוטר 2</ProductName>
+    <OrderID>1052</OrderID>
+    <Price>89.9</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1080</ID>
+    <ProductID>100067</ProductID>
+    <ProductName>בשירות המוסד</ProductName>
+    <OrderID>1052</OrderID>
+    <Price>90.99</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1081</ID>
+    <ProductID>100116</ProductID>
+    <ProductName>משהו אחר</ProductName>
+    <OrderID>1052</OrderID>
+    <Price>57</Price>
+    <Amount>1</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>
