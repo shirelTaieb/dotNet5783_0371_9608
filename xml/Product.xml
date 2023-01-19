@@ -25,14 +25,6 @@
     <path>/images/bookImages/FIVEBALON.jpg</path>
   </Product>
   <Product>
-    <ID>100068</ID>
-    <Name>הספר הכי משעמם</Name>
-    <Category>Theoretical</Category>
-    <Price>76.9</Price>
-    <InStock>0</InStock>
-    <path>/images/bookImages/BORINGBOOK.jpg</path>
-  </Product>
-  <Product>
     <ID>100072</ID>
     <Name>חרדה ודיכאון</Name>
     <Category>Theoretical</Category>
@@ -471,5 +463,13 @@
     <Price>37</Price>
     <InStock>89</InStock>
     <path>/images/bookImages/tehilim.jpg</path>
+  </Product>
+  <Product>
+    <ID>100068</ID>
+    <Name>הספר הכי משעמם</Name>
+    <Category>Theoretical</Category>
+    <Price>76.9</Price>
+    <InStock>24</InStock>
+    <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
 </ArrayOfProduct>
