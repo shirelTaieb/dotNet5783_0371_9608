@@ -33,22 +33,6 @@
     <path>/images/bookImages/Web.jpg</path>
   </Product>
   <Product>
-    <ID>100090</ID>
-    <Name>מוח בריא</Name>
-    <Category>Theoretical</Category>
-    <Price>89</Price>
-    <InStock>55</InStock>
-    <path>/images/bookImages/MIND.jpg</path>
-  </Product>
-  <Product>
-    <ID>100117</ID>
-    <Name>האריה שבפנים</Name>
-    <Category>Children</Category>
-    <Price>54</Price>
-    <InStock>124</InStock>
-    <path>/images/bookImages/Z2.jpg</path>
-  </Product>
-  <Product>
     <ID>100121</ID>
     <Name>לרוץ מהלב</Name>
     <Category>Theoretical</Category>
@@ -345,14 +329,6 @@
     <path>/images/bookImages/negilatberlin.jpg</path>
   </Product>
   <Product>
-    <ID>100101</ID>
-    <Name>פרסי גקסון</Name>
-    <Category>Romans</Category>
-    <Price>78.9</Price>
-    <InStock>129</InStock>
-    <path>/images/bookImages/persiJecson.jpg</path>
-  </Product>
-  <Product>
     <ID>100099</ID>
     <Name>אורות</Name>
     <Category>Holy</Category>
@@ -415,5 +391,29 @@
     <Price>97</Price>
     <InStock>31</InStock>
     <path>/images/bookImages/MONY.jpg</path>
+  </Product>
+  <Product>
+    <ID>100090</ID>
+    <Name>מוח בריא</Name>
+    <Category>Theoretical</Category>
+    <Price>88</Price>
+    <InStock>55</InStock>
+    <path>/images/bookImages/MIND.jpg</path>
+  </Product>
+  <Product>
+    <ID>100117</ID>
+    <Name>האריה שבפנים</Name>
+    <Category>Children</Category>
+    <Price>55</Price>
+    <InStock>124</InStock>
+    <path>/images/bookImages/Z2.jpg</path>
+  </Product>
+  <Product>
+    <ID>100101</ID>
+    <Name>פרסי גקסון</Name>
+    <Category>Romans</Category>
+    <Price>79</Price>
+    <InStock>129</InStock>
+    <path>/images/bookImages/persiJecson.jpg</path>
   </Product>
 </ArrayOfProduct>

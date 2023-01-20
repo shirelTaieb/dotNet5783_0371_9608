@@ -119,7 +119,8 @@ namespace PL.products
             productCollection?.Add(productToAdd);
         public void deleteProduct(PO.ProductForList productToRemove)
         {
-            productCollection?.Remove(productToRemove);
+            if(productCollection!.Contains(productToRemove))
+                productCollection?.Remove(productToRemove);
         }
         public void delete_Click(object sender, RoutedEventArgs e)
         {

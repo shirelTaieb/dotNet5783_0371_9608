@@ -134,8 +134,9 @@ namespace PL.products
                     Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
                     Price = UpdateOrNewProduct.Price
                 };
-                removeAction(toDell);
-                addAction(popro);
+                
+               // removeAction(toDell);
+                //addAction(popro);
                 MessageBox.Show(":) המוצר עודכן בהצלחה", "");
                 //קריאה לפונקציה שבאמת תעדכן את הפרודקט
                 this.Close();
