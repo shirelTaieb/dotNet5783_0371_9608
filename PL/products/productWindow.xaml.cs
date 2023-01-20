@@ -124,6 +124,7 @@ namespace PL.products
             {
                 if (path!=null)
                     pl.path = path;
+              
                 UpdateOrNewProduct = PoToBo(pl);
                 bl!.Product!.updateProduct(UpdateOrNewProduct);
                 PO.ProductForList popro = new PO.ProductForList()
@@ -133,7 +134,6 @@ namespace PL.products
                     Category = (BO.HebCategory?)UpdateOrNewProduct.Category,
                     Price = UpdateOrNewProduct.Price
                 };
-
                 removeAction(toDell);
                 addAction(popro);
                 MessageBox.Show(":) המוצר עודכן בהצלחה", "");

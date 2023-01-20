@@ -69,14 +69,23 @@ namespace Dal
 
             try
             {
-                (productsRoot.Elements()
-            
-            .FirstOrDefault(pro => (int?)pro.Element("ID") == id) ?? throw new NotExistException())
-            .Remove();
-                        
+                //var list = productsRoot.Elements();
+                var one = (from p in productsRoot.Elements()
+                           where Convert.ToInt32(p.Element("ID")!.Value) == id
+                           select p).FirstOrDefault();//list.FirstOrDefault(pro => pro.Element("ID")!.Value == id.ToString()) ?? throw new NotExistException();
+                if (one != null)
+                    one.Remove();
+                else
+                    throw new NotExistException();
+                XMLTools.SaveListToXMLElement(productsRoot, s_products); //save the products after the deleting
+
+                //    (productsRoot.Elements()
+
+                //.FirstOrDefault(pro => (int?)pro.Element("ID") == id) ?? throw new NotExistException())
+                //.Remove();
+
             } //try to remove
             catch { throw new NotExistException(); }
-            XMLTools.SaveListToXMLElement(productsRoot, s_products); //save the products after the deleting
         }
         public void Update(DO.Product product)
         {
