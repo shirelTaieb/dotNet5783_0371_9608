@@ -87,7 +87,7 @@
                             Orientation="Vertical" 
                             HorizontalAlignment="Left" 
                             VerticalAlignment="Top" Grid.Row="1"
-                                                Visibility="{Binding ElementName=startManager, Path=Visibility, Converter={StaticResource visiToNotVisi} }" Margin="-8,10,0,0" Height="300">
+                                                Visibility="{Binding ElementName=startManager, Path=Visibility, Converter={StaticResource visiToNotVisi} }" Margin="-8,10,0,0" Height="320">
 
                     <Button
                         Background="Transparent"
@@ -116,6 +116,7 @@
                                   KeyDown="pressEnter"
                                   Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontSize="20"  />
                     <TextBlock x:Name="worngPassword" Text="סיסמה שגויה" TextAlignment="Center" Foreground="DarkRed" Visibility="Collapsed" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0"/>
+                    <Button Height="20" Content="?שכחת סיסמא" Click="forgetPassword" Background="{x:Null}" FontSize="10" Visibility="{Binding ElementName=worngPassword, Path=Visibility}"/>
                     <Button  x:Name="confirm" Content="כניסה"
                             Grid.Column="1"
                             Style="{StaticResource MaterialDesignRaisedDarkButton}"
@@ -124,7 +125,7 @@
                             VerticalAlignment="Center"
                              Background="#FF2B331F" 
                             FontFamily="Bahnschrift" 
-                            FontSize="25" Margin="10,10,20,0"
+                            FontSize="25" Margin="10,7,20,0"
                              Foreground="#DCE1DE"
                             BorderBrush="Transparent"
                              Click="check_password"/>
@@ -161,10 +162,17 @@
                 <TextBlock/>
             </StackPanel>
             <TextBlock HorizontalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content, Converter={StaticResource nullToVisi}}" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="770" Height="38" TextAlignment="Center" FontSize="25" FontFamily="Candara Light" Foreground="#FF1F2421" FontWeight="Bold" FontStyle="Italic"><Run FlowDirection="RightToLeft" Language="he-il" Text=".. "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל" /></TextBlock>
-            <!--<TextBlock HorizontalAlignment="Left" Margin="26,396,0,0" TextWrapping="Wrap" Text="כל הזכויות שמורות לתמר חייט ושיראל טייב" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Bold" FontSize="14"/>-->
-            <materialDesign:PackIcon Kind="QuestionMarkCircle" Margin="762,403,0,0"
-                                                 Height="19" Width="34" Visibility="{Binding ElementName=problem, Path=Visibility}"/>
-            <TextBlock x:Name="problem" HorizontalAlignment="Left" Margin="574,400,0,0" TextWrapping="Wrap" Visibility="{Binding ElementName=frame, Path=Content, Converter={StaticResource nullToNotVisi}}" Text="נתקלתם בבעיה? לא אכפת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Normal" FontSize="14"/>
+            <Button x:Name="question" Margin="749,384,2,8" Click="seeProblem_Click"
+                    Visibility="Visible" Padding="2">
+            <materialDesign:PackIcon Kind="QuestionMarkCircle" 
+                                                 Height="19" Width="34"  />
+            </Button>
+            <Button  Margin="749,384,2,8" Click="NotSeeProblem_Click"
+                    Visibility="{Binding ElementName=question, Path=Visibility, Converter={StaticResource visiToNotVisi}}" Padding="2">
+                <materialDesign:PackIcon Kind="QuestionMarkCircle" 
+                                                 Height="19" Width="34"  />
+            </Button>
+            <TextBlock x:Name="problem" HorizontalAlignment="Left" Margin="576,391,0,0" Visibility="Hidden" TextWrapping="Wrap" Text="נתקלתם בבעיה? לא אכפת לנו" VerticalAlignment="Top" TextAlignment="Right" FontWeight="Normal" FontSize="14"/>
             <Frame x:Name="frame" Margin="0,0,0,0"  NavigationUIVisibility="Hidden" />
         </Grid>
     </Grid>

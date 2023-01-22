@@ -118,6 +118,7 @@
     <None Remove="orders\ציור.jpg" />
     <None Remove="pngegg.png" />
     <None Remove="products\Green %281%29.jpeg" />
+    <None Remove="products\manager.png" />
     <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="W_960_sell-online.png" />
   </ItemGroup>
@@ -352,6 +353,7 @@
     <Resource Include="manager.png" />
     <Resource Include="orders\פרחים רקע.jpg" />
     <Resource Include="products\Green (1).jpeg" />
+    <Resource Include="products\manager.png" />
   </ItemGroup>
 
   <ItemGroup>

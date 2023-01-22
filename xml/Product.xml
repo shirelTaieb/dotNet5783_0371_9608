@@ -9,44 +9,12 @@
     <path>/images/bookImages/MagicParent.jpg</path>
   </Product>
   <Product>
-    <ID>100103</ID>
-    <Name>דירה להשכיר</Name>
-    <Category>Children</Category>
-    <Price>60</Price>
-    <InStock>213</InStock>
-    <path>/images/bookImages/RENT.jpg</path>
-  </Product>
-  <Product>
-    <ID>100104</ID>
-    <Name>שמירת הלשון</Name>
-    <Category>Holy</Category>
-    <Price>35</Price>
-    <InStock>65</InStock>
-    <path>/images/bookImages/shmiratHalashon.jpg</path>
-  </Product>
-  <Product>
     <ID>100114</ID>
     <Name>עיצוב ממשק באינטרנט</Name>
     <Category>Theoretical</Category>
     <Price>87.9</Price>
     <InStock>5</InStock>
     <path>/images/bookImages/Web.jpg</path>
-  </Product>
-  <Product>
-    <ID>100121</ID>
-    <Name>לרוץ מהלב</Name>
-    <Category>Theoretical</Category>
-    <Price>78.9</Price>
-    <InStock>22</InStock>
-    <path>/images/bookImages/Z5.jpg</path>
-  </Product>
-  <Product>
-    <ID>100077</ID>
-    <Name>חנן הגנן</Name>
-    <Category>Children</Category>
-    <Price>66.9</Price>
-    <InStock>8</InStock>
-    <path>/images/bookImages/HANANHAGANAN.jpg</path>
   </Product>
   <Product>
     <ID>100112</ID>
@@ -193,22 +161,6 @@
     <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
   <Product>
-    <ID>100122</ID>
-    <Name>משהו אחר</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>78</InStock>
-    <path>/images/bookImages/Z1.jpg</path>
-  </Product>
-  <Product>
-    <ID>100123</ID>
-    <Name>האריה שבפנים</Name>
-    <Category>Children</Category>
-    <Price>70</Price>
-    <InStock>6</InStock>
-    <path>/images/bookImages/Z2.jpg</path>
-  </Product>
-  <Product>
     <ID>100124</ID>
     <Name>נאן- לא תם המסע</Name>
     <Category>Romans</Category>
@@ -287,14 +239,6 @@
     <Price>79</Price>
     <InStock>67</InStock>
     <path>/images/bookImages/Harenesans.jpg</path>
-  </Product>
-  <Product>
-    <ID>100122</ID>
-    <Name>אינסוף</Name>
-    <Category>Theoretical</Category>
-    <Price>100</Price>
-    <InStock>13</InStock>
-    <path>/images/bookImages/infinity.jpg</path>
   </Product>
   <Product>
     <ID>100087</ID>
@@ -415,5 +359,29 @@
     <Price>79</Price>
     <InStock>129</InStock>
     <path>/images/bookImages/persiJecson.jpg</path>
+  </Product>
+  <Product>
+    <ID>100104</ID>
+    <Name>שמירת הלשון</Name>
+    <Category>Holy</Category>
+    <Price>39</Price>
+    <InStock>65</InStock>
+    <path>/images/bookImages/shmiratHalashon.jpg</path>
+  </Product>
+  <Product>
+    <ID>100123</ID>
+    <Name>חנן הגנן</Name>
+    <Category>Children</Category>
+    <Price>69</Price>
+    <InStock>24</InStock>
+    <path>/images/bookImages/HANANHAGANAN.jpg</path>
+  </Product>
+  <Product>
+    <ID>100103</ID>
+    <Name>דירה להשכיר</Name>
+    <Category>Children</Category>
+    <Price>60</Price>
+    <InStock>213</InStock>
+    <path>/images/bookImages/RENT.jpg</path>
   </Product>
 </ArrayOfProduct>

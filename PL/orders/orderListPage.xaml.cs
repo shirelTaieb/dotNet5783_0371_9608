@@ -45,14 +45,12 @@ namespace PL.orders
             //groupings = groupings.OrderBy(p => p.Key);
         }
 
-        private void orderForListListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
         private void orderUpdate_DoubleClick(object sender, RoutedEventArgs e)
         {
             PO.OrderForList ofl = (PO.OrderForList)orderForListDataGrid.SelectedItem;
             BO.Order or = new BO.Order();
+            if (ofl == null)
+                return;
             try
             {
                 or = bl!.Order!.getOrderInfo(ofl.ID)!;

@@ -32,14 +32,7 @@ namespace PL.products
                 };
             productCollection = tools.IEnumerableToObserval(poList);
             productForListDataGrid.DataContext = productCollection;
-            productForListDataGrid.IsReadOnly = true;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
-        }
-
-        private void showProductDetails_doubleClick(object sender, RoutedEventArgs e)
-        {
-            productWindow proWin = new productWindow(1, addProduct ,deleteProduct, (PO.ProductForList)productForListDataGrid.SelectedItem);
-            proWin.Show();
         }
 
         private void categorySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -78,8 +71,8 @@ namespace PL.products
         }
         public void Add_Click(object sender, RoutedEventArgs e)
         {
-
-            productWindow AddProduct = new productWindow(0, addProduct, deleteProduct);
+            seeDetails.Visibility = Visibility.Hidden;
+            productWindow AddProduct = new productWindow(addProduct);
             AddProduct.id.Visibility = Visibility.Collapsed;
             AddProduct.id_lable.Visibility = Visibility.Collapsed;
             AddProduct.ShowDialog();
@@ -89,10 +82,11 @@ namespace PL.products
 
         public void update_Click(object sender, RoutedEventArgs e)
         {
+            seeDetails.Visibility = Visibility.Hidden;
             PO.ProductForList? poUpPro = (PO.ProductForList)productForListDataGrid.SelectedItem;
             if (poUpPro != null)
             {
-                productWindow updateProduct = new productWindow(0, addProduct, deleteProduct, poUpPro);
+                productWindow updateProduct = new productWindow(addProduct, poUpPro);
                 updateProduct.ShowDialog();
                 var boList = bl!.Product!.getListOfProduct()!;
                 var poList =
@@ -105,13 +99,8 @@ namespace PL.products
                         Price = pro.Price,
                         path = pro.path
                     };
-                productForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
+                productForListDataGrid.DataContext = tools.IEnumerableToObserval(poList); //קישור הרשימה מחדש
             }
-
-        }
-
-        private void productForListDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
         }
 
@@ -126,12 +115,43 @@ namespace PL.products
         {
             if (MessageBox.Show("?האם אתה בטוח שברצונך למחוק את המוצר", "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
+                seeDetails.Visibility = Visibility.Hidden;
                 PO.ProductForList proToDel = (PO.ProductForList)productForListDataGrid.SelectedItem;
                 bl!.Product!.deleteProduct(proToDel.ID); //מחיקת המוצר מהנתונים
-                deleteProduct(proToDel); //מחיקה מהאובסרבל
+                var boList = bl!.Product!.getListOfProduct()!;
+                var poList =
+                    from pro in boList
+                    select new PO.ProductForList
+                    {
+                        ID = pro.ID,
+                        Name = pro.Name,
+                        Category = (BO.HebCategory?)pro.Category,
+                        Price = pro.Price,
+                        path = pro.path
+                    };
+                productForListDataGrid.DataContext = tools.IEnumerableToObserval(poList); //קישור הרשימה מחדש
             }
         }
-        
+        private void seeDetails_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            PO.ProductForList choose  = (PO.ProductForList)productForListDataGrid.SelectedItem;
+           BO.Product Bopro =  bl!.Product!.getProductInfoManager(choose.ID)!;
+            PO.Product POpro = new PO.Product()
+            {
+                ID = Bopro.ID,
+                Name = Bopro.Name,
+                path = Bopro.path,
+                InStock = Bopro.InStock,
+                Category = (BO.HebCategory?)Bopro.Category,
+                Price = Bopro.Price
+            }; //cast to po     
+            seeDetails.Content=new productDetailsPage(POpro);
+        }
+
+        private void Page_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            seeDetails.Content = null;
+        }
     }
 }
 
