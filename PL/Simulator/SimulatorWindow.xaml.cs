@@ -64,7 +64,7 @@ namespace PL.Simulator
                         Tali.ReportProgress(5);
                         
                     }
-                    Thread.Sleep(2000);
+                    Thread.Sleep(5000);
                 }
             }
 
