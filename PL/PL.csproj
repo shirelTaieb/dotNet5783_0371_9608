@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <None Remove="books2.jpeg" />
+    <None Remove="cart\Created by%40flowerydreamer5.jpeg" />
     <None Remove="cart\elka_graphics.jpg" />
     <None Remove="cart\manager.png" />
     <None Remove="cart\sell.png" />
@@ -92,6 +93,7 @@
     <None Remove="images\bookImages\Z4.jpg" />
     <None Remove="images\bookImages\Z5.jpg" />
     <None Remove="images\books2.jpeg" />
+    <None Remove="images\Created by%40flowerydreamer5.jpeg" />
     <None Remove="images\download %282%29.jpeg" />
     <None Remove="images\download.jpeg" />
     <None Remove="images\elka_graphics.jpg" />
@@ -116,6 +118,7 @@
     <None Remove="orders\ציור.jpg" />
     <None Remove="pngegg.png" />
     <None Remove="products\Green %281%29.jpeg" />
+    <None Remove="products\manager.png" />
     <None Remove="WIN_20230101_22_53_59_Pro.jpg" />
     <None Remove="W_960_sell-online.png" />
   </ItemGroup>
@@ -301,6 +304,9 @@
     <Content Include="images\books2.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\Created by@flowerydreamer5.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\download (2).jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -311,6 +317,7 @@
 
   <ItemGroup>
     <Resource Include="books2.jpeg" />
+    <Resource Include="cart\Created by@flowerydreamer5.jpeg" />
     <Resource Include="cart\elka_graphics.jpg" />
     <Resource Include="cart\manager.png" />
     <Resource Include="cart\sell.png" />
@@ -346,6 +353,7 @@
     <Resource Include="manager.png" />
     <Resource Include="orders\פרחים רקע.jpg" />
     <Resource Include="products\Green (1).jpeg" />
+    <Resource Include="products\manager.png" />
   </ItemGroup>
 
   <ItemGroup>

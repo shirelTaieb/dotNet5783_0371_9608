@@ -13,14 +13,14 @@
         TextOptions.TextRenderingMode="Auto"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="productWindow" Height="450" Width="420" Background="#B0C4B1">
+        Title="productWindow" Height="450" Width="500" Background="#B0C4B1">
     <Window.Resources>
         <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
         <PL.Convert:NullToVisibilityConverter x:Key="nullToVisi"/>
         <PL.Convert:VisibleToHiddenConverter x:Key="visiToNotVisi"/>
       
     </Window.Resources>
-    <Grid x:Name="productAddOrUpdate">
+    <Grid x:Name="productAddOrUpdate" Margin="0,0,0,0">
 
         <Label  x:Name="id_lable" Content=":מספר מזהה"  HorizontalAlignment="Left" Margin="248,74,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF465153" FontSize="18" FontFamily="Cascadia Mono"/>
         <Label Content=":שם הספר" HorizontalAlignment="Left" Margin="262,132,0,0" VerticalAlignment="Top" Foreground="#FF465153" FontWeight="Bold" FontSize="18" FontFamily="Cascadia Mono"/>
@@ -30,15 +30,14 @@
         <TextBox x:Name="id" IsReadOnly="{Binding ElementName=Update, Path=IsVisible}"  HorizontalAlignment="Left" Margin="100,78,0,0"  TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Background="#FFDCE1DE" Width="120" Height="30" MaxLength="6" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
         <TextBox  x:Name="name" HorizontalAlignment="Left" Margin="100,132,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="20" Background="#FFDCE1DE" FontFamily="Arial Narrow" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
         <TextBox  x:Name="price" HorizontalAlignment="Left" Margin="100,182,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="6" Background="#FFDCE1DE" FontFamily="Arial" FontSize="14" FontWeight="Bold" TextAlignment="Center" />
-        <TextBox x:Name="stock" HorizontalAlignment="Left" Margin="100,234,0,0" TextWrapping="Wrap" Text="{Binding InStock}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="3" TextChanged="stock_TextChanged" Background="#FFDCE1DE" FontFamily="Arial" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBox x:Name="stock" HorizontalAlignment="Left" Margin="100,234,0,0" TextWrapping="Wrap" Text="{Binding InStock}" VerticalAlignment="Top" Width="120" Height="30"  MaxLength="3"  Background="#FFDCE1DE" FontFamily="Arial" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
         <ComboBox  x:Name="categoryComboBox"  Text="{Binding Category}" SelectedItem="{Binding Category}" Margin="100,280,0,0"  Background="#dce1de" Width="120" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="#FF465153" BorderBrush="#FFB0C4B1" VerticalAlignment="Top" SelectionChanged="categoryComboBox_SelectionChanged" Height="30" HorizontalAlignment="Left" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalContentAlignment="Center"  />
         <Button x:Name="Add" Content="הוספה" HorizontalAlignment="Left" Margin="150,340,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Background="#4A5759" Foreground="White" Click="add_click" FontWeight="Bold"/>
         <Button x:Name="Update" Content="עדכון" HorizontalAlignment="Left" Margin="150,340,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="20" Foreground="White" Background="#4A5759" Click="update_click"  FontWeight="Bold"/>
-        <Button Height="150" Margin="-20,-15,270,279" Width="150" Click="updateImage_Button">
+        <Button Height="150" Margin="-40,-15,270,279" Width="150" Click="updateImage_Button">
             <Image  x:Name="product_image" Source="{Binding path}" HorizontalAlignment="Center"  VerticalAlignment="Stretch"  Width="130" Height="130" />
         </Button>
-        <materialDesign:PackIcon Kind="CameraPlusOutline" Height="70" Width="70" Margin="25,12,0,0" Visibility="{Binding ElementName=product_image, Path=Source, Converter={StaticResource nullToVisi}}"/>
-        <Button Content="עריכת פרטי מוצר" Background="{x:Null}" BorderBrush="#4A5759" Visibility="{Binding ElementName=productFrame, Path=Content, Converter={StaticResource nullToNotVisi}}" Foreground="#4A5759" Click="toEdit_Click" Margin="0,380,0,0" />
-        <Frame x:Name="productFrame" Width="420" Height="415" NavigationUIVisibility="Hidden" Margin="0,0,0,35" />
+        <materialDesign:PackIcon Kind="CameraPlusOutline" Height="70" Width="70" Margin="0,12,0,0" Visibility="{Binding ElementName=product_image, Path=Source, Converter={StaticResource nullToVisi}}"/>
+        
     </Grid>
 </Window>

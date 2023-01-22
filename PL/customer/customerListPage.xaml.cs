@@ -30,6 +30,7 @@ namespace PL.customer
         private BLApi.IBl? bl = BLApi.Factory.Get();
         private BO.Cart cart = new BO.Cart();
         ObservableCollection<PO.ProductItem?> observalProducts=new ObservableCollection<PO.ProductItem?>();
+        MainWindow _mainWindow;
         public customerListPage(ref BO.Cart my_cart,MainWindow mainWindow)
         {
 
@@ -50,7 +51,8 @@ namespace PL.customer
                 path = pro.path
             };
             ListOfProducts.ItemsSource =tools.IEnumerableToObserval(poList);
-            cart = my_cart;
+            //cart = my_cart;
+            _mainWindow = mainWindow;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
         }
@@ -102,6 +104,10 @@ namespace PL.customer
       
             }
 
+        }
+        public void shortToCart_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.frame.Content = new cartListPage(ref cart, _mainWindow);
         }
 
         private void ListOfProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)

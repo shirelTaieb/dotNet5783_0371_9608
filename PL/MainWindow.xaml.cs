@@ -1,12 +1,6 @@
 ﻿using PL.cart;
-using PL.customer;
-using PL.orders;
-using PL.products;
-using PL.Simulator;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media.Media3D;
 
 namespace PL
 {
@@ -20,7 +14,7 @@ namespace PL
         public MainWindow()
         {
             InitializeComponent();
-   
+
         }
 
 
@@ -42,23 +36,23 @@ namespace PL
             frame.Content = new MainCustomer(this, ref my_cart);
 
         }
-  
+
 
         public void manager_Click(object o, RoutedEventArgs e)
         {
-          
 
-            startManager.Visibility=Visibility.Hidden;
+
+            startManager.Visibility = Visibility.Hidden;
             startCustomer.Visibility = Visibility.Hidden;
-            managerLogin.Visibility=Visibility.Visible;
-          
+            managerLogin.Visibility = Visibility.Visible;
+
         }
         private void pressEnter(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
                 check_password(sender, e);
         }
-        
+
         public void check_password(object o, RoutedEventArgs e)
         {
             worngPassword.Visibility = Visibility.Hidden;
@@ -76,7 +70,7 @@ namespace PL
 
 
         }
-   
+
         public void returnToTheMainWindow_Click(object o, RoutedEventArgs e)
         {
             frame.Content = null;
@@ -93,7 +87,7 @@ namespace PL
 
         private void returnToCustomerPage_Click(object sender, RoutedEventArgs e)
         {
-           frame.Content=new MainCustomer(this,ref my_cart);
+            frame.Content = new MainCustomer(this, ref my_cart);
         }
 
         private void returnToManagerPage_Click(object sender, RoutedEventArgs e)
@@ -101,9 +95,23 @@ namespace PL
             frame.Content = new MainManager(this);
 
         }
-        private void simulator_Click(object sender, RoutedEventArgs e)
+        private void seeProblem_Click(object sender, RoutedEventArgs e)
         {
-            
+            problem.Visibility = Visibility.Visible;
+            question.Visibility = Visibility.Collapsed;
         }
+        private void NotSeeProblem_Click(object sender, RoutedEventArgs e)
+        {
+            problem.Visibility = Visibility.Collapsed;
+            question.Visibility = Visibility.Visible;
+
+        }
+
+        private void forgetPassword(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("...אין לנו באמת איך לעזור לך, קצת אחריות", "שכחת סיסמא");
+        }
+
+
     }
 }

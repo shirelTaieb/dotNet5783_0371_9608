@@ -52,7 +52,7 @@ namespace PL
         private void CustomerTrack_Click(object sender, RoutedEventArgs e)
         {
             EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(1);
-            enterID.Show();
+            enterID.ShowDialog();
         }
     }
 }

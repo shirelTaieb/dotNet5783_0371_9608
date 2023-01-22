@@ -46,7 +46,7 @@ namespace PL
         private void ManagerTrack_Click(object sender, RoutedEventArgs e)
         {
             EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(0);
-            enterID.Show();
+            enterID.ShowDialog();
         }
 
         private void closeOptions_Click(object sender, RoutedEventArgs e) //אין לו עניין

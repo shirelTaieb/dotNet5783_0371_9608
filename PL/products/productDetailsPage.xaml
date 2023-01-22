@@ -4,34 +4,44 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PL.products"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
-      d:DesignHeight="405" d:DesignWidth="420" Background="#B0C4B1"
+      d:DesignHeight="300" d:DesignWidth="300" Background="#B0C4B1"
       Title="productDetailsPage">
 
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/products/Green (1).jpeg"/>
         </Grid.Background>
-        <StackPanel Orientation="Horizontal" Height="300" VerticalAlignment="Top" Margin="90,70,90,0">
-            <StackPanel x:Name="Details" Width="130" Height="300" VerticalAlignment="Bottom">
-                <TextBlock  Text="{Binding ID}" Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" />
-                <TextBlock   Text="{Binding Name}" Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" />
-                <TextBlock  Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Left" FlowDirection="RightToLeft" >
-                    <Run Text="{Binding Price }"/>
+        <materialDesign:PackIcon Kind="Close" Height="30" Width="30" HorizontalAlignment="Right" Margin="0,5,8,0"/>
+        <StackPanel x:Name="Details" Width="300" Height="300" Margin="0,0,0,0" Orientation="Horizontal">
+        <Image Source="{Binding path}" Margin="5,90,0,0" VerticalAlignment="Top" Width="134" Height="150" />
+        <StackPanel  VerticalAlignment="Top" Height="334" Margin="5,0,0,0">
+            <TextBlock  Text="{Binding ID}" Width="128" Height="35" TextAlignment="Center" Foreground="#FF465153" Margin="0,70,0,0"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock   Text="{Binding Name}" Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+            <TextBlock  Width="128" Height="31" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}"  HorizontalAlignment="Center" FlowDirection="RightToLeft" VerticalAlignment="Center" >
+                    <Run Text="{Binding Price}"/>
                     <Run Text="₪"/>
-                </TextBlock>
-                <TextBlock   Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Left" FlowDirection="RightToLeft" >
+            </TextBlock>
+            <TextBlock   Width="128" Height="29" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Center" FlowDirection="RightToLeft" VerticalAlignment="Center" >
                     <Run Text="{Binding InStock}"/>
-                    <Run Text="יחידות"/>
-                </TextBlock>
-                <TextBlock x:Name="category" Text="{Binding}" Width="128" Height="50" TextAlignment="Center" Foreground="#FF465153"
-                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" />
-            </StackPanel>
-            <StackPanel Width="108" Height="300" VerticalAlignment="Bottom">
+                    <Run Text="יחידות במלאי"/>
+            </TextBlock>
+            <TextBlock x:Name="category" Text="{Binding}" Width="128" Height="30" TextAlignment="Center" Foreground="#FF465153"
+                           FontFamily="Narkisim" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+        </StackPanel>
+        <!--<StackPanel Width="108" Height="300" VerticalAlignment="Bottom">
                 <TextBlock  Text=":מספר מזהה" Width="108" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
                            FontSize="20" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" TextDecorations="Underline" />
                 <TextBlock  Text=":שם הספר" Width="108" TextAlignment="Center" Height="50" HorizontalAlignment="Center"
@@ -43,7 +53,8 @@
                 <TextBlock  Text=":קטגוריה" Width="108" TextAlignment="Center" Height="47" HorizontalAlignment="Center"
                            FontSize="20" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Margin="0,0,0,0" TextDecorations="Underline" />
 
-            </StackPanel>
-        </StackPanel>
+            </StackPanel>-->
+
+
     </Grid>
 </Page>

@@ -1,78 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <ID>100070</ID>
-    <Name>כה עשו חכמנו- הסט </Name>
-    <Category>Holy</Category>
-    <Price>499.9</Price>
-    <InStock>75</InStock>
-    <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
-  </Product>
-  <Product>
-    <ID>100072</ID>
-    <Name>חרדה ודיכאון</Name>
-    <Category>Theoretical</Category>
-    <Price>99.9</Price>
-    <InStock>894</InStock>
-    <path>/images/bookImages/DEPRESION.jpg</path>
-  </Product>
-  <Product>
-    <ID>100074</ID>
-    <Name>ההעפלה</Name>
-    <Category>History</Category>
-    <Price>86.9</Price>
-    <InStock>560</InStock>
-    <path>/images/bookImages/haapala.jpg</path>
-  </Product>
-  <Product>
-    <ID>100075</ID>
-    <Name>חכמינו לימינו</Name>
-    <Category>Holy</Category>
-    <Price>50.9</Price>
-    <InStock>123</InStock>
-    <path>/images/bookImages/hachmenuLeyameno.jpg</path>
-  </Product>
-  <Product>
-    <ID>100079</ID>
-    <Name>הפנים שפרצו מהדף</Name>
-    <Category>Romans</Category>
-    <Price>79.9</Price>
-    <InStock>98</InStock>
-    <path>/images/bookImages/hapanimShpartzuMeadaf.jpg</path>
-  </Product>
-  <Product>
-    <ID>100082</ID>
-    <Name>אינסוף</Name>
-    <Category>Theoretical</Category>
-    <Price>99.9</Price>
-    <InStock>456</InStock>
-    <path>/images/bookImages/infinity.jpg</path>
-  </Product>
-  <Product>
-    <ID>100083</ID>
-    <Name>אינטלגנציה חברתית</Name>
-    <Category>Theoretical</Category>
-    <Price>89.9</Price>
-    <InStock>23</InStock>
-    <path>/images/bookImages/inteligent.jpg</path>
-  </Product>
-  <Product>
-    <ID>100084</ID>
-    <Name>מלחמת העצמאות</Name>
-    <Category>History</Category>
-    <Price>93</Price>
-    <InStock>67</InStock>
-    <path>/images/bookImages/ISRAEL.jpg</path>
-  </Product>
-  <Product>
-    <ID>100087</ID>
-    <Name>המדריך לחיים</Name>
-    <Category>Theoretical</Category>
-    <Price>100</Price>
-    <InStock>45</InStock>
-    <path>/images/bookImages/liveOnThisPlanet.jpg</path>
-  </Product>
-  <Product>
     <ID>100088</ID>
     <Name>קסם של הורות</Name>
     <Category>Theoretical</Category>
@@ -81,156 +9,12 @@
     <path>/images/bookImages/MagicParent.jpg</path>
   </Product>
   <Product>
-    <ID>100089</ID>
-    <Name>פלוסים ומינוסים</Name>
-    <Category>Theoretical</Category>
-    <Price>99</Price>
-    <InStock>745</InStock>
-    <path>/images/bookImages/MATH.jpg</path>
-  </Product>
-  <Product>
-    <ID>100091</ID>
-    <Name>משחקי הרעב</Name>
-    <Category>Romans</Category>
-    <Price>99</Price>
-    <InStock>123</InStock>
-    <path>/images/bookImages/mischakeyHarav.png</path>
-  </Product>
-  <Product>
-    <ID>100094</ID>
-    <Name>לקוף יש בעיה</Name>
-    <Category>Children</Category>
-    <Price>55</Price>
-    <InStock>100</InStock>
-    <path>/images/bookImages/monkyHaveProblem.jpg</path>
-  </Product>
-  <Product>
-    <ID>100097</ID>
-    <Name>נפילת ברלין</Name>
-    <Category>History</Category>
-    <Price>98.9</Price>
-    <InStock>46</InStock>
-    <path>/images/bookImages/negilatberlin.jpg</path>
-  </Product>
-  <Product>
-    <ID>100099</ID>
-    <Name>אורות</Name>
-    <Category>Holy</Category>
-    <Price>65</Price>
-    <InStock>10</InStock>
-    <path>/images/bookImages/orotHatchiya.jpg</path>
-  </Product>
-  <Product>
-    <ID>100101</ID>
-    <Name>פרסי גקסון</Name>
-    <Category>Romans</Category>
-    <Price>78.9</Price>
-    <InStock>129</InStock>
-    <path>/images/bookImages/persiJecson.jpg</path>
-  </Product>
-  <Product>
-    <ID>100102</ID>
-    <Name>אבא עשיר אבא עני</Name>
-    <Category>Theoretical</Category>
-    <Price>99.9</Price>
-    <InStock>34</InStock>
-    <path>/images/bookImages/PoorDad.jpg</path>
-  </Product>
-  <Product>
-    <ID>100103</ID>
-    <Name>דירה להשכיר</Name>
-    <Category>Children</Category>
-    <Price>60</Price>
-    <InStock>213</InStock>
-    <path>/images/bookImages/RENT.jpg</path>
-  </Product>
-  <Product>
-    <ID>100104</ID>
-    <Name>שמירת הלשון</Name>
-    <Category>Holy</Category>
-    <Price>35</Price>
-    <InStock>65</InStock>
-    <path>/images/bookImages/shmiratHalashon.jpg</path>
-  </Product>
-  <Product>
-    <ID>100109</ID>
-    <Name>תנ"ך שלם</Name>
-    <Category>Holy</Category>
-    <Price>50</Price>
-    <InStock>100</InStock>
-    <path>/images/bookImages/tanachSimanim.jpg</path>
-  </Product>
-  <Product>
     <ID>100114</ID>
     <Name>עיצוב ממשק באינטרנט</Name>
     <Category>Theoretical</Category>
     <Price>87.9</Price>
     <InStock>5</InStock>
     <path>/images/bookImages/Web.jpg</path>
-  </Product>
-  <Product>
-    <ID>100090</ID>
-    <Name>מוח בריא</Name>
-    <Category>Theoretical</Category>
-    <Price>89</Price>
-    <InStock>55</InStock>
-    <path>/images/bookImages/MIND.jpg</path>
-  </Product>
-  <Product>
-    <ID>100064</ID>
-    <Name>אליפים</Name>
-    <Category>Romans</Category>
-    <Price>99</Price>
-    <InStock>63</InStock>
-    <path>/images/bookImages/alifhim.jpg</path>
-  </Product>
-  <Product>
-    <ID>100117</ID>
-    <Name>האריה שבפנים</Name>
-    <Category>Children</Category>
-    <Price>54</Price>
-    <InStock>124</InStock>
-    <path>/images/bookImages/Z2.jpg</path>
-  </Product>
-  <Product>
-    <ID>100119</ID>
-    <Name>מי ישמור על העוגיות </Name>
-    <Category>Children</Category>
-    <Price>45</Price>
-    <InStock>2</InStock>
-    <path>/images/bookImages/Z4.jpg</path>
-  </Product>
-  <Product>
-    <ID>100120</ID>
-    <Name>הארי פוטר- הסט השלם</Name>
-    <Category>Romans</Category>
-    <Price>599.9</Price>
-    <InStock>35</InStock>
-    <path>/images/bookImages/HarryPotterAll.jpg</path>
-  </Product>
-  <Product>
-    <ID>100121</ID>
-    <Name>לרוץ מהלב</Name>
-    <Category>Theoretical</Category>
-    <Price>78.9</Price>
-    <InStock>22</InStock>
-    <path>/images/bookImages/Z5.jpg</path>
-  </Product>
-  <Product>
-    <ID>100069</ID>
-    <Name>כספיון</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>231</InStock>
-    <path>/images/bookImages/CASPION.jpg</path>
-  </Product>
-  <Product>
-    <ID>100077</ID>
-    <Name>חנן הגנן</Name>
-    <Category>Children</Category>
-    <Price>66.9</Price>
-    <InStock>8</InStock>
-    <path>/images/bookImages/HANANHAGANAN.jpg</path>
   </Product>
   <Product>
     <ID>100112</ID>
@@ -289,28 +73,20 @@
     <path>/images/bookImages/misnayotBrachot.jpg</path>
   </Product>
   <Product>
-    <ID>100070</ID>
-    <Name>כה עשו חכמנו- הסט </Name>
-    <Category>Holy</Category>
-    <Price>499.9</Price>
-    <InStock>73</InStock>
-    <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
+    <ID>100105</ID>
+    <Name>שניהם מתים בסוף</Name>
+    <Category>Romans</Category>
+    <Price>103.99</Price>
+    <InStock>55</InStock>
+    <path>/images/bookImages/shneyemMetim.jpg</path>
   </Product>
   <Product>
-    <ID>100065</ID>
-    <Name>מבצע אנטבה</Name>
-    <Category>History</Category>
-    <Price>87.99</Price>
-    <InStock>24</InStock>
-    <path>/images/bookImages/ANTEBE.jpg</path>
-  </Product>
-  <Product>
-    <ID>100082</ID>
-    <Name>אינסוף</Name>
-    <Category>Theoretical</Category>
-    <Price>99.9</Price>
-    <InStock>454</InStock>
-    <path>/images/bookImages/infinity.jpg</path>
+    <ID>100062</ID>
+    <Name>הארי פוטר 2</Name>
+    <Category>Romans</Category>
+    <Price>89.9</Price>
+    <InStock>124</InStock>
+    <path>/images/bookImages/HarryPotter2.jpg</path>
   </Product>
   <Product>
     <ID>100072</ID>
@@ -319,14 +95,6 @@
     <Price>99.9</Price>
     <InStock>891</InStock>
     <path>/images/bookImages/DEPRESION.jpg</path>
-  </Product>
-  <Product>
-    <ID>100074</ID>
-    <Name>ההעפלה</Name>
-    <Category>History</Category>
-    <Price>86.9</Price>
-    <InStock>559</InStock>
-    <path>/images/bookImages/haapala.jpg</path>
   </Product>
   <Product>
     <ID>100075</ID>
@@ -369,22 +137,6 @@
     <path>/images/bookImages/MagicParent.jpg</path>
   </Product>
   <Product>
-    <ID>100095</ID>
-    <Name>השקעות לעצלנים</Name>
-    <Category>Theoretical</Category>
-    <Price>97</Price>
-    <InStock>31</InStock>
-    <path>/images/bookImages/MONY.jpg</path>
-  </Product>
-  <Product>
-    <ID>100087</ID>
-    <Name>המדריך לחיים</Name>
-    <Category>Theoretical</Category>
-    <Price>100</Price>
-    <InStock>42</InStock>
-    <path>/images/bookImages/liveOnThisPlanet.jpg</path>
-  </Product>
-  <Product>
     <ID>100089</ID>
     <Name>פלוסים ומינוסים</Name>
     <Category>Theoretical</Category>
@@ -409,22 +161,6 @@
     <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
   <Product>
-    <ID>100122</ID>
-    <Name>משהו אחר</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>78</InStock>
-    <path>/images/bookImages/Z1.jpg</path>
-  </Product>
-  <Product>
-    <ID>100123</ID>
-    <Name>האריה שבפנים</Name>
-    <Category>Children</Category>
-    <Price>70</Price>
-    <InStock>6</InStock>
-    <path>/images/bookImages/Z2.jpg</path>
-  </Product>
-  <Product>
     <ID>100124</ID>
     <Name>נאן- לא תם המסע</Name>
     <Category>Romans</Category>
@@ -439,14 +175,6 @@
     <Price>67</Price>
     <InStock>90</InStock>
     <path>/images/bookImages/Z5.jpg</path>
-  </Product>
-  <Product>
-    <ID>100127</ID>
-    <Name>הארי פוטר- הסט המלא</Name>
-    <Category>Romans</Category>
-    <Price>499</Price>
-    <InStock>80</InStock>
-    <path>/images/bookImages/HarryPotterAll.jpg</path>
   </Product>
   <Product>
     <ID>100073</ID>
@@ -497,11 +225,163 @@
     <path>/images/bookImages/littelPrince.jpg</path>
   </Product>
   <Product>
-    <ID>100122</ID>
-    <Name>שניהם מתים בסוף</Name>
+    <ID>100127</ID>
+    <Name>הארי פוטר- הסט השלם</Name>
+    <Category>Romans</Category>
+    <Price>499</Price>
+    <InStock>80</InStock>
+    <path>/images/bookImages/HarryPotterAll.jpg</path>
+  </Product>
+  <Product>
+    <ID>100080</ID>
+    <Name>הרנסנס</Name>
+    <Category>History</Category>
+    <Price>79</Price>
+    <InStock>67</InStock>
+    <path>/images/bookImages/Harenesans.jpg</path>
+  </Product>
+  <Product>
+    <ID>100087</ID>
+    <Name>המדריך לחיים</Name>
+    <Category>Theoretical</Category>
+    <Price>100</Price>
+    <InStock>45</InStock>
+    <path>/images/bookImages/liveOnThisPlanet.jpg</path>
+  </Product>
+  <Product>
+    <ID>100069</ID>
+    <Name>כספיון</Name>
+    <Category>Children</Category>
+    <Price>55.9</Price>
+    <InStock>231</InStock>
+    <path>/images/bookImages/CASPION.jpg</path>
+  </Product>
+  <Product>
+    <ID>100070</ID>
+    <Name>כה עשו חכמינו- הסט </Name>
+    <Category>Holy</Category>
+    <Price>500</Price>
+    <InStock>75</InStock>
+    <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
+  </Product>
+  <Product>
+    <ID>100097</ID>
+    <Name>נפילת ברלין</Name>
+    <Category>History</Category>
+    <Price>97</Price>
+    <InStock>46</InStock>
+    <path>/images/bookImages/negilatberlin.jpg</path>
+  </Product>
+  <Product>
+    <ID>100099</ID>
+    <Name>אורות</Name>
+    <Category>Holy</Category>
+    <Price>65</Price>
+    <InStock>10</InStock>
+    <path>/images/bookImages/orotHatchiya.jpg</path>
+  </Product>
+  <Product>
+    <ID>100094</ID>
+    <Name>לקוף יש בעיה</Name>
+    <Category>Children</Category>
+    <Price>55</Price>
+    <InStock>100</InStock>
+    <path>/images/bookImages/monkyHaveProblem.jpg</path>
+  </Product>
+  <Product>
+    <ID>100065</ID>
+    <Name>מבצע אנטבה</Name>
+    <Category>History</Category>
+    <Price>87.99</Price>
+    <InStock>24</InStock>
+    <path>/images/bookImages/ANTEBE.jpg</path>
+  </Product>
+  <Product>
+    <ID>100109</ID>
+    <Name>תנ"ך שלם</Name>
+    <Category>Holy</Category>
+    <Price>50</Price>
+    <InStock>100</InStock>
+    <path>/images/bookImages/tanachSimanim.jpg</path>
+  </Product>
+  <Product>
+    <ID>100102</ID>
+    <Name>אבא עשיר אבא עני</Name>
+    <Category>Theoretical</Category>
+    <Price>99.9</Price>
+    <InStock>34</InStock>
+    <path>/images/bookImages/PoorDad.jpg</path>
+  </Product>
+  <Product>
+    <ID>100064</ID>
+    <Name>אליפים</Name>
     <Category>Romans</Category>
     <Price>99</Price>
-    <InStock>3</InStock>
-    <path>/images/bookImages/shneyemMetim.jpg</path>
+    <InStock>63</InStock>
+    <path>/images/bookImages/alifhim.jpg</path>
+  </Product>
+  <Product>
+    <ID>100119</ID>
+    <Name>מי ישמור על העוגיות </Name>
+    <Category>Children</Category>
+    <Price>45</Price>
+    <InStock>2</InStock>
+    <path>/images/bookImages/Z4.jpg</path>
+  </Product>
+  <Product>
+    <ID>100095</ID>
+    <Name>השקעות לעצלנים</Name>
+    <Category>Theoretical</Category>
+    <Price>97</Price>
+    <InStock>31</InStock>
+    <path>/images/bookImages/MONY.jpg</path>
+  </Product>
+  <Product>
+    <ID>100090</ID>
+    <Name>מוח בריא</Name>
+    <Category>Theoretical</Category>
+    <Price>88</Price>
+    <InStock>55</InStock>
+    <path>/images/bookImages/MIND.jpg</path>
+  </Product>
+  <Product>
+    <ID>100117</ID>
+    <Name>האריה שבפנים</Name>
+    <Category>Children</Category>
+    <Price>55</Price>
+    <InStock>124</InStock>
+    <path>/images/bookImages/Z2.jpg</path>
+  </Product>
+  <Product>
+    <ID>100101</ID>
+    <Name>פרסי גקסון</Name>
+    <Category>Romans</Category>
+    <Price>79</Price>
+    <InStock>129</InStock>
+    <path>/images/bookImages/persiJecson.jpg</path>
+  </Product>
+  <Product>
+    <ID>100104</ID>
+    <Name>שמירת הלשון</Name>
+    <Category>Holy</Category>
+    <Price>39</Price>
+    <InStock>65</InStock>
+    <path>/images/bookImages/shmiratHalashon.jpg</path>
+  </Product>
+  <Product>
+    <ID>100123</ID>
+    <Name>חנן הגנן</Name>
+    <Category>Children</Category>
+    <Price>69</Price>
+    <InStock>24</InStock>
+    <path>/images/bookImages/HANANHAGANAN.jpg</path>
+  </Product>
+  <Product>
+    <ID>100103</ID>
+    <Name>דירה להשכיר</Name>
+    <Category>Children</Category>
+    <Price>60</Price>
+    <InStock>213</InStock>
+    <path>/images/bookImages/RENT.jpg</path>
   </Product>
 </ArrayOfProduct>

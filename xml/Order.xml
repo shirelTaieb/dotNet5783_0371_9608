@@ -59,13 +59,6 @@
     <OrderDate>2023-01-19T09:32:55.262088+02:00</OrderDate>
   </Order>
   <Order>
-    <ID>1014</ID>
-    <CustomerName>אליה</CustomerName>
-    <CustomerEmail>eli@</CustomerEmail>
-    <CustomerAddress>אילת</CustomerAddress>
-    <OrderDate>2023-01-19T09:35:30.4237142+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1015</ID>
     <CustomerName>אפרת</CustomerName>
     <CustomerEmail>efrat12@</CustomerEmail>
@@ -80,13 +73,6 @@
     <OrderDate>2023-01-19T09:46:23.1780345+02:00</OrderDate>
   </Order>
   <Order>
-    <ID>1017</ID>
-    <CustomerName>חני</CustomerName>
-    <CustomerEmail>hanna@</CustomerEmail>
-    <CustomerAddress>תל אביב</CustomerAddress>
-    <OrderDate>2023-01-19T09:52:18.5746843+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1018</ID>
     <CustomerName>דנה</CustomerName>
     <CustomerEmail>dannaa@</CustomerEmail>
@@ -99,20 +85,6 @@
     <CustomerEmail>rivkagla@</CustomerEmail>
     <CustomerAddress>בני ברק</CustomerAddress>
     <OrderDate>2023-01-19T10:23:20.1496794+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1020</ID>
-    <CustomerName>נורית</CustomerName>
-    <CustomerEmail>norit@</CustomerEmail>
-    <CustomerAddress>ירושלים</CustomerAddress>
-    <OrderDate>2023-01-19T10:36:43.9319137+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1021</ID>
-    <CustomerName>נורית</CustomerName>
-    <CustomerEmail>norit@</CustomerEmail>
-    <CustomerAddress>ירושלים</CustomerAddress>
-    <OrderDate>2023-01-19T10:36:46.9448213+02:00</OrderDate>
   </Order>
   <Order>
     <ID>1022</ID>
@@ -290,13 +262,6 @@
     <OrderDate>2023-01-19T11:54:01.6826695+02:00</OrderDate>
   </Order>
   <Order>
-    <ID>1048</ID>
-    <CustomerName>שיראל</CustomerName>
-    <CustomerEmail>shir@</CustomerEmail>
-    <CustomerAddress>רעננה</CustomerAddress>
-    <OrderDate>2023-01-19T16:33:52.0659859+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1049</ID>
     <CustomerName>גדעון</CustomerName>
     <CustomerEmail>gidi@</CustomerEmail>
@@ -311,11 +276,52 @@
     <OrderDate>2023-01-19T16:36:57.1713752+02:00</OrderDate>
   </Order>
   <Order>
+    <ID>1048</ID>
+    <CustomerName>שיראל</CustomerName>
+    <CustomerEmail>shir@</CustomerEmail>
+    <CustomerAddress>רעננה</CustomerAddress>
+    <OrderDate>2023-01-19T16:33:52.0659859+02:00</OrderDate>
+    <ShipDate>2023-01-22T01:57:51.9270043+02:00</ShipDate>
+  </Order>
+  <Order>
     <ID>1045</ID>
     <CustomerName>נדב לוי</CustomerName>
     <CustomerEmail>nadav@gmail.com</CustomerEmail>
     <CustomerAddress>טלמון</CustomerAddress>
     <OrderDate>2023-01-19T11:47:36.4588407+02:00</OrderDate>
     <ShipDate>2023-01-19T17:26:03.5413335+02:00</ShipDate>
+    <DeliveryDate>2023-01-22T01:57:58.0596315+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>1017</ID>
+    <CustomerName>חני</CustomerName>
+    <CustomerEmail>hanna@</CustomerEmail>
+    <CustomerAddress>תל אביב</CustomerAddress>
+    <OrderDate>2023-01-19T09:52:18.5746843+02:00</OrderDate>
+    <ShipDate>2023-01-22T01:58:02.320013+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1021</ID>
+    <CustomerName>נורית</CustomerName>
+    <CustomerEmail>norit@</CustomerEmail>
+    <CustomerAddress>ירושלים</CustomerAddress>
+    <OrderDate>2023-01-19T10:36:46.9448213+02:00</OrderDate>
+    <ShipDate>2023-01-22T01:58:05.2881124+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1014</ID>
+    <CustomerName>אליה</CustomerName>
+    <CustomerEmail>eli@</CustomerEmail>
+    <CustomerAddress>אילת</CustomerAddress>
+    <OrderDate>2023-01-19T09:35:30.4237142+02:00</OrderDate>
+    <ShipDate>2023-01-22T01:58:08.3829004+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1020</ID>
+    <CustomerName>נורית</CustomerName>
+    <CustomerEmail>norit@</CustomerEmail>
+    <CustomerAddress>ירושלים</CustomerAddress>
+    <OrderDate>2023-01-19T10:36:43.9319137+02:00</OrderDate>
+    <ShipDate>2023-01-22T01:58:11.4260604+02:00</ShipDate>
   </Order>
 </ArrayOfOrder>
