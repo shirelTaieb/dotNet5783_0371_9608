@@ -17,14 +17,6 @@
     <path>/images/bookImages/DEPRESION.jpg</path>
   </Product>
   <Product>
-    <ID>100065</ID>
-    <Name>מבצע אנטבה</Name>
-    <Category>History</Category>
-    <Price>87.99</Price>
-    <InStock>27</InStock>
-    <path>/images/bookImages/ANTEBE.jpg</path>
-  </Product>
-  <Product>
     <ID>100074</ID>
     <Name>ההעפלה</Name>
     <Category>History</Category>
@@ -297,22 +289,6 @@
     <path>/images/bookImages/misnayotBrachot.jpg</path>
   </Product>
   <Product>
-    <ID>100105</ID>
-    <Name>שניהם מתים בסוף</Name>
-    <Category>Romans</Category>
-    <Price>103.99</Price>
-    <InStock>56</InStock>
-    <path>/images/bookImages/shneyemMetim.jpg</path>
-  </Product>
-  <Product>
-    <ID>100105</ID>
-    <Name>שניהם מתים בסוף</Name>
-    <Category>Romans</Category>
-    <Price>103.99</Price>
-    <InStock>55</InStock>
-    <path>/images/bookImages/shneyemMetim.jpg</path>
-  </Product>
-  <Product>
     <ID>100070</ID>
     <Name>כה עשו חכמנו- הסט </Name>
     <Category>Holy</Category>
@@ -519,5 +495,13 @@
     <Price>60</Price>
     <InStock>82</InStock>
     <path>/images/bookImages/littelPrince.jpg</path>
+  </Product>
+  <Product>
+    <ID>100122</ID>
+    <Name>שניהם מתים בסוף</Name>
+    <Category>Romans</Category>
+    <Price>99</Price>
+    <InStock>3</InStock>
+    <path>/images/bookImages/shneyemMetim.jpg</path>
   </Product>
 </ArrayOfProduct>
