@@ -60,8 +60,9 @@ namespace PL.Simulator
                 {
                     if (Tali.WorkerReportsProgress == true)
                     {
-                        Tali.ReportProgress(5);
                         time = time.AddDays(3);
+                        Tali.ReportProgress(5);
+                        
                     }
                     Thread.Sleep(2000);
                 }
@@ -96,10 +97,9 @@ namespace PL.Simulator
                                  Status = (BO.HebOrderStatus?)or.Status,
                                  TotalPrice = or.TotalPrice
                              }).ToList(); //קישור הרשימה מחדש
-                orderSimulationList.DataContext =OrderList;
+                orderSimulationList.DataContext = OrderList;
                 Thread.Sleep(50);
             }
-
 
         }
         private void Tali_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
