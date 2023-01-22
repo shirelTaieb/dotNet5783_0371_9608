@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Diagnostics;
-using System.Threading;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading;
+using System.Windows;
 
 
 namespace PL.Simulator
@@ -24,9 +15,11 @@ namespace PL.Simulator
     //    /// </summary>
     public partial class SimulatorWindow : Window
     {
-       
+
         BackgroundWorker Tali;
         private BLApi.IBl? bl = BLApi.Factory.Get();
+        DateTime time = DateTime.Now;
+        List<PO.OrderForList> OrderList = new List<PO.OrderForList>();
         public SimulatorWindow()
         {
             InitializeComponent();
@@ -39,24 +32,24 @@ namespace PL.Simulator
             Tali.WorkerSupportsCancellation = true;
             //Random rand = new Random();
             //int argu = rand.Next(5, 10);
-            //Tali.RunWorkerAsync(argu);
-
-            orderSimulationList.DataContext =
-                from or in bl!.Order!.getOrderList()
-                select new PO.OrderForList()
-                {
-                    ID = or.ID,
-                    CustomerName = or.CustomerName,
-                    AmountOfItems = or.AmountOfItems,
-                    Status = (BO.HebOrderStatus?)or.Status,
-                    TotalPrice = or.TotalPrice
-                };
+            Tali.RunWorkerAsync();
+            OrderList =
+           (from or in bl!.Order!.getOrderList()
+            select new PO.OrderForList()
+            {
+                ID = or.ID,
+                CustomerName = or.CustomerName,
+                AmountOfItems = or.AmountOfItems,
+                Status = (BO.HebOrderStatus?)or.Status,
+                TotalPrice = or.TotalPrice
+            }).ToList();
+            orderSimulationList.DataContext = OrderList;
         }
         private void Tali_DoWork(object sender, DoWorkEventArgs e)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            while(true)
+            while (true)
             {
                 if (Tali.CancellationPending == true)
                 {
@@ -65,9 +58,12 @@ namespace PL.Simulator
                 }
                 else
                 {
-                    Thread.Sleep(2000);
                     if (Tali.WorkerReportsProgress == true)
-                        Tali.ReportProgress(3); //כמה זמן להוסיף
+                    {
+                        Tali.ReportProgress(5);
+                        time = time.AddDays(3);
+                    }
+                    Thread.Sleep(2000);
                 }
             }
 
@@ -76,7 +72,33 @@ namespace PL.Simulator
         }
         private void Tali_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-           // int progress = e.ProgressPercentage;
+            // int progress = e.ProgressPercentage;
+            for (int i = 0; i < OrderList.Count; i++)
+            {
+                if ((int)OrderList[i].Status! == 0)//הוזמן
+                {
+                    if (bl!.Order!.getOrderInfo(OrderList[i].ID)!.OrderDate?.AddDays(10) <= time) //צריך כבר לעדכן
+                        bl!.Order!.updateSentOrder(OrderList[i].ID);
+                }
+                else
+                {
+                    if ((int?)OrderList[i].Status == 1)//נשלח
+                        if (bl!.Order!.getOrderInfo(OrderList[i].ID)!.ShipDate?.AddDays(10) <= time) //צריך כבר לעדכן
+                            bl!.Order!.updateDeliveryOrder(OrderList[i].ID);
+                }
+
+                OrderList = (from or in bl!.Order!.getOrderList()
+                             select new PO.OrderForList()
+                             {
+                                 ID = or.ID,
+                                 CustomerName = or.CustomerName,
+                                 AmountOfItems = or.AmountOfItems,
+                                 Status = (BO.HebOrderStatus?)or.Status,
+                                 TotalPrice = or.TotalPrice
+                             }).ToList(); //קישור הרשימה מחדש
+                orderSimulationList.DataContext =OrderList;
+                Thread.Sleep(50);
+            }
 
 
         }
@@ -87,4 +109,4 @@ namespace PL.Simulator
 
 
     }
-    }
+}

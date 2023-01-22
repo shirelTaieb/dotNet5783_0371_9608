@@ -1,33 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Order>
-    <ID>1006</ID>
-    <CustomerName>תמר</CustomerName>
-    <CustomerEmail>tamar@gmail.com</CustomerEmail>
-    <CustomerAddress>jerusalem</CustomerAddress>
-    <OrderDate>2023-01-18T12:36:16.1057489+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1007</ID>
-    <CustomerName>samuel</CustomerName>
-    <CustomerEmail>samuel@gmail.com</CustomerEmail>
-    <CustomerAddress>Lod</CustomerAddress>
-    <OrderDate>2023-01-18T12:38:23.2605879+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1008</ID>
     <CustomerName>yofith</CustomerName>
     <CustomerEmail>yofithattal@hotmail.com</CustomerEmail>
     <CustomerAddress>73 hanassi vaisnan</CustomerAddress>
     <OrderDate>2023-01-18T12:54:31.0832438+02:00</OrderDate>
     <ShipDate>2023-01-18T12:55:12.8233028+02:00</ShipDate>
-  </Order>
-  <Order>
-    <ID>1009</ID>
-    <CustomerName>שירה</CustomerName>
-    <CustomerEmail>shira@</CustomerEmail>
-    <CustomerAddress>ירושלים</CustomerAddress>
-    <OrderDate>2023-01-18T16:56:37.6027074+02:00</OrderDate>
   </Order>
   <Order>
     <ID>1010</ID>
@@ -323,5 +302,29 @@
     <CustomerAddress>ירושלים</CustomerAddress>
     <OrderDate>2023-01-19T10:36:43.9319137+02:00</OrderDate>
     <ShipDate>2023-01-22T01:58:11.4260604+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1006</ID>
+    <CustomerName>תמר</CustomerName>
+    <CustomerEmail>tamar@gmail.com</CustomerEmail>
+    <CustomerAddress>jerusalem</CustomerAddress>
+    <OrderDate>2023-01-18T12:36:16.1057489+02:00</OrderDate>
+    <ShipDate>2023-01-22T18:07:26.0844851+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1007</ID>
+    <CustomerName>samuel</CustomerName>
+    <CustomerEmail>samuel@gmail.com</CustomerEmail>
+    <CustomerAddress>Lod</CustomerAddress>
+    <OrderDate>2023-01-18T12:38:23.2605879+02:00</OrderDate>
+    <ShipDate>2023-01-22T18:07:26.1029355+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1009</ID>
+    <CustomerName>שירה</CustomerName>
+    <CustomerEmail>shira@</CustomerEmail>
+    <CustomerAddress>ירושלים</CustomerAddress>
+    <OrderDate>2023-01-18T16:56:37.6027074+02:00</OrderDate>
+    <ShipDate>2023-01-22T18:07:26.1074173+02:00</ShipDate>
   </Order>
 </ArrayOfOrder>
