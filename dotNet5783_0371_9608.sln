@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PL", "PL\PL.csproj", "{2705
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalXml", "DalXml\DalXml.csproj", "{FF9BB67A-8DDB-45A7-803D-29141283E5BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tempo", "tempo\tempo.csproj", "{B16D21D1-6C11-4D89-941A-9F5B6CB1C3BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{FF9BB67A-8DDB-45A7-803D-29141283E5BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF9BB67A-8DDB-45A7-803D-29141283E5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF9BB67A-8DDB-45A7-803D-29141283E5BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B16D21D1-6C11-4D89-941A-9F5B6CB1C3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B16D21D1-6C11-4D89-941A-9F5B6CB1C3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B16D21D1-6C11-4D89-941A-9F5B6CB1C3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B16D21D1-6C11-4D89-941A-9F5B6CB1C3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

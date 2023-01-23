@@ -3,50 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL.Simulator"
+	    xmlns:local="clr-namespace:PL.Simulator"       
+        xmlns:PL.Convert="clr-namespace:PL.Convert"
         mc:Ignorable="d"
         Title="SimulatorWindow" Height="1000" Width="800">
+    <Window.Resources>
+        <PL.Convert:FalseToTrueConverter x:Key="falseToTrue"/>
+        <PL.Convert:statusToProgressConverter x:Key="statusToProgress"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="orderSimulationList" AutoGenerateColumns="False" IsReadOnly="True"  Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1"  AlternatingRowBackground="#B0C4B1" AlternationCount="2" >
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="#9CC5A1"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="BorderThickness" Value="0,2,2,2"/>
-                    <Setter Property="BorderBrush" Value="#1F2421"/>
-                    <Setter Property="HorizontalContentAlignment" Value="center" />
-                </Style>
-            </DataGrid.Resources>
+        <Grid x:Name="upGrid" Grid.Row="0">
+            <Button x:Name="startButton"  Content="ריצה" HorizontalAlignment="Left" BorderBrush="#1F2421" Margin="410,8,0,0" VerticalAlignment="Top" Click="start_Click" Width="80"/>
+            <Button Content="הפסקה" HorizontalAlignment="Left" BorderBrush="#1F2421" Margin="303,8,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=startButton, Path=IsEnabled, Converter={StaticResource falseToTrue}}" Click="stop_Click" Width="80"/>
+        </Grid>
+        <DataGrid x:Name="orderSimulationList" AutoGenerateColumns="False" IsReadOnly="True" Background="#DCE1DE" FlowDirection="RightToLeft" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}"  AlternatingRowBackground="#B0C4B1" AlternationCount="2" Margin="0,45,0,-105" Grid.RowSpan="2" >
             <DataGrid.Columns>
-                <DataGridTextColumn
-                    x:Name="AmountOfItemsColumn"
-                    Binding="{Binding AmountOfItems}"
-                    Header="מצב ההזמנה"
-                    Width="160"/>
-                <DataGridTextColumn
-                    x:Name="TotalPriceColumn"
-                    Binding="{Binding TotalPrice}"
-                    Header="סהכ לתשלום"
-                    Width="160"/>
-                <DataGridTextColumn
-                    x:Name="StatusColumn"
-                    Binding="{Binding Status}"
-                    Header="סטטוס ההזמנה"
-                    Width="160"/>
-                <DataGridTextColumn
-                    x:Name="idColumn"
-                    Binding="{Binding ID}"
-                    Header="מספר הזמנה" 
-                    Width="160"/>
-                <DataGridTextColumn 
-                    x:Name="nameColumn" 
-                    Binding="{Binding CustomerName}"
-                    Header="שם הלקוח"
-                    Width="160"/>
+                <DataGridTextColumn x:Name="customerNameColumn" Binding="{Binding CustomerName}" Header="שם לקוח" Width="100"/>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="מס' מזהה" Width="100"/>
+                <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="מצב הזמנה" Width="100"/>
+                <DataGridTextColumn x:Name="amountOfItemsColumn" Binding="{Binding AmountOfItems}" Header="כמות מוצרים" Width="120"/>
+                <DataGridTextColumn x:Name="totalPriceColumn" Binding="{Binding TotalPrice}" Header="סהכ לתשלום" Width="150"/>
+                <DataGridTemplateColumn x:Name="progressBar" Header="בתהליך" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ProgressBar 
+                             x:Name="progress"
+                            Value="{Binding Status, Converter={StaticResource statusToProgress}}"  Height="30" 
+                                Minimum="0" Maximum="100" Foreground="Gray">
+                            </ProgressBar>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
