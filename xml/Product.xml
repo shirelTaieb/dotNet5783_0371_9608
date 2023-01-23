@@ -361,27 +361,27 @@
     <path>/images/bookImages/tanachSimanim.jpg</path>
   </Product>
   <Product>
-    <ID>100101</ID>
-    <Name>פרסי גקסון</Name>
-    <Category>Romans</Category>
-    <Price>79</Price>
-    <InStock>128</InStock>
-    <path>/images/bookImages/persiJecson.jpg</path>
-  </Product>
-  <Product>
-    <ID>100107</ID>
-    <Name>להפסיק לעשן</Name>
-    <Category>Theoretical</Category>
-    <Price>87.9</Price>
-    <InStock>74</InStock>
-    <path>/images/bookImages/Somke.jpg</path>
-  </Product>
-  <Product>
     <ID>100063</ID>
     <Name>ירושלים מלחמה 67  </Name>
     <Category>History</Category>
     <Price>105.9</Price>
     <InStock>27</InStock>
     <path>/images/bookImages/67WORE.jpg</path>
+  </Product>
+  <Product>
+    <ID>100107</ID>
+    <Name>להפסיק לעשן</Name>
+    <Category>Theoretical</Category>
+    <Price>87.9</Price>
+    <InStock>73</InStock>
+    <path>/images/bookImages/Somke.jpg</path>
+  </Product>
+  <Product>
+    <ID>100101</ID>
+    <Name>פרסי גקסון</Name>
+    <Category>Romans</Category>
+    <Price>79</Price>
+    <InStock>127</InStock>
+    <path>/images/bookImages/persiJecson.jpg</path>
   </Product>
 </ArrayOfProduct>

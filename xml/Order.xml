@@ -31,13 +31,6 @@
     <OrderDate>2023-01-19T09:20:14.3312541+02:00</OrderDate>
   </Order>
   <Order>
-    <ID>1013</ID>
-    <CustomerName>דני</CustomerName>
-    <CustomerEmail>dan@gmail</CustomerEmail>
-    <CustomerAddress>פתח תקווה</CustomerAddress>
-    <OrderDate>2023-01-19T09:32:55.262088+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1015</ID>
     <CustomerName>אפרת</CustomerName>
     <CustomerEmail>efrat12@</CustomerEmail>
@@ -50,13 +43,6 @@
     <CustomerEmail>yass@gmail</CustomerEmail>
     <CustomerAddress>אשקלון</CustomerAddress>
     <OrderDate>2023-01-19T09:46:23.1780345+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1018</ID>
-    <CustomerName>דנה</CustomerName>
-    <CustomerEmail>dannaa@</CustomerEmail>
-    <CustomerAddress>עיר הקודש</CustomerAddress>
-    <OrderDate>2023-01-19T09:55:06.1430823+02:00</OrderDate>
   </Order>
   <Order>
     <ID>1019</ID>
@@ -146,22 +132,6 @@
     <DeliveryDate>2023-01-22T01:57:58.0596315+02:00</DeliveryDate>
   </Order>
   <Order>
-    <ID>1017</ID>
-    <CustomerName>חני</CustomerName>
-    <CustomerEmail>hanna@</CustomerEmail>
-    <CustomerAddress>תל אביב</CustomerAddress>
-    <OrderDate>2023-01-19T09:52:18.5746843+02:00</OrderDate>
-    <ShipDate>2023-01-22T01:58:02.320013+02:00</ShipDate>
-  </Order>
-  <Order>
-    <ID>1021</ID>
-    <CustomerName>נורית</CustomerName>
-    <CustomerEmail>norit@</CustomerEmail>
-    <CustomerAddress>ירושלים</CustomerAddress>
-    <OrderDate>2023-01-19T10:36:46.9448213+02:00</OrderDate>
-    <ShipDate>2023-01-22T01:58:05.2881124+02:00</ShipDate>
-  </Order>
-  <Order>
     <ID>1014</ID>
     <CustomerName>אליה</CustomerName>
     <CustomerEmail>eli@</CustomerEmail>
@@ -194,19 +164,61 @@
     <ShipDate>2023-01-22T18:07:26.0844851+02:00</ShipDate>
   </Order>
   <Order>
-    <ID>1007</ID>
-    <CustomerName>samuel</CustomerName>
-    <CustomerEmail>samuel@gmail.com</CustomerEmail>
-    <CustomerAddress>Lod</CustomerAddress>
-    <OrderDate>2023-01-18T12:38:23.2605879+02:00</OrderDate>
-    <ShipDate>2023-01-22T18:07:26.1029355+02:00</ShipDate>
-  </Order>
-  <Order>
     <ID>1009</ID>
     <CustomerName>שירה</CustomerName>
     <CustomerEmail>shira@</CustomerEmail>
     <CustomerAddress>ירושלים</CustomerAddress>
     <OrderDate>2023-01-18T16:56:37.6027074+02:00</OrderDate>
     <ShipDate>2023-01-22T18:07:26.1074173+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1053</ID>
+    <CustomerName>רחל</CustomerName>
+    <CustomerEmail>RACHEL@gmail.com</CustomerEmail>
+    <CustomerAddress>בצלאל</CustomerAddress>
+    <OrderDate>2023-01-23T11:12:37.2596061+02:00</OrderDate>
+  </Order>
+  <Order>
+    <ID>1017</ID>
+    <CustomerName>חני</CustomerName>
+    <CustomerEmail>hanna@</CustomerEmail>
+    <CustomerAddress>תל אביב</CustomerAddress>
+    <OrderDate>2023-01-19T09:52:18.5746843+02:00</OrderDate>
+    <ShipDate>2023-01-22T01:58:02.320013+02:00</ShipDate>
+    <DeliveryDate>2023-01-23T11:15:16.4969464+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>1007</ID>
+    <CustomerName>samuel</CustomerName>
+    <CustomerEmail>samuel@gmail.com</CustomerEmail>
+    <CustomerAddress>Lod</CustomerAddress>
+    <OrderDate>2023-01-18T12:38:23.2605879+02:00</OrderDate>
+    <ShipDate>2023-01-22T18:07:26.1029355+02:00</ShipDate>
+    <DeliveryDate>2023-01-23T11:15:20.7332365+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>1021</ID>
+    <CustomerName>נורית</CustomerName>
+    <CustomerEmail>norit@</CustomerEmail>
+    <CustomerAddress>ירושלים</CustomerAddress>
+    <OrderDate>2023-01-19T10:36:46.9448213+02:00</OrderDate>
+    <ShipDate>2023-01-22T01:58:05.2881124+02:00</ShipDate>
+    <DeliveryDate>2023-01-23T11:15:55.7989356+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>1013</ID>
+    <CustomerName>דני</CustomerName>
+    <CustomerEmail>dan@gmail</CustomerEmail>
+    <CustomerAddress>פתח תקווה</CustomerAddress>
+    <OrderDate>2023-01-19T09:32:55.262088+02:00</OrderDate>
+    <ShipDate>2023-01-23T11:16:03.0843479+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1018</ID>
+    <CustomerName>דנה</CustomerName>
+    <CustomerEmail>dannaa@</CustomerEmail>
+    <CustomerAddress>עיר הקודש</CustomerAddress>
+    <OrderDate>2023-01-19T09:55:06.1430823+02:00</OrderDate>
+    <ShipDate>2023-01-23T11:16:32.8402451+02:00</ShipDate>
   </Order>
 </ArrayOfOrder>

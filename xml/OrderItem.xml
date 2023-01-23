@@ -656,4 +656,20 @@
     <Price>105.9</Price>
     <Amount>4</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1084</ID>
+    <ProductID>100107</ProductID>
+    <ProductName>להפסיק לעשן</ProductName>
+    <OrderID>1053</OrderID>
+    <Price>87.9</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1085</ID>
+    <ProductID>100101</ProductID>
+    <ProductName>פרסי גקסון</ProductName>
+    <OrderID>1053</OrderID>
+    <Price>79</Price>
+    <Amount>1</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>
