@@ -24,13 +24,6 @@
     <OrderDate>2023-01-19T09:17:17.7956168+02:00</OrderDate>
   </Order>
   <Order>
-    <ID>1012</ID>
-    <CustomerName>תמר חייט</CustomerName>
-    <CustomerEmail>tamar@</CustomerEmail>
-    <CustomerAddress>ירושלים</CustomerAddress>
-    <OrderDate>2023-01-19T09:20:14.3312541+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1015</ID>
     <CustomerName>אפרת</CustomerName>
     <CustomerEmail>efrat12@</CustomerEmail>
@@ -45,39 +38,11 @@
     <OrderDate>2023-01-19T09:46:23.1780345+02:00</OrderDate>
   </Order>
   <Order>
-    <ID>1019</ID>
-    <CustomerName>רבקה גלסוק</CustomerName>
-    <CustomerEmail>rivkagla@</CustomerEmail>
-    <CustomerAddress>בני ברק</CustomerAddress>
-    <OrderDate>2023-01-19T10:23:20.1496794+02:00</OrderDate>
-  </Order>
-  <Order>
     <ID>1037</ID>
     <CustomerName>יפית</CustomerName>
     <CustomerEmail>yafit@</CustomerEmail>
     <CustomerAddress>בית אל</CustomerAddress>
     <OrderDate>2023-01-19T11:03:03.7958788+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1039</ID>
-    <CustomerName>רבקה</CustomerName>
-    <CustomerEmail>wdra@</CustomerEmail>
-    <CustomerAddress>קרית ארבע</CustomerAddress>
-    <OrderDate>2023-01-19T11:10:23.3463797+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1040</ID>
-    <CustomerName>תמר</CustomerName>
-    <CustomerEmail>tamii@</CustomerEmail>
-    <CustomerAddress>כפר עציון</CustomerAddress>
-    <OrderDate>2023-01-19T11:23:22.320525+02:00</OrderDate>
-  </Order>
-  <Order>
-    <ID>1041</ID>
-    <CustomerName>חנן ליפשיץ</CustomerName>
-    <CustomerEmail>hananHaganan@</CustomerEmail>
-    <CustomerAddress>גינת ירק</CustomerAddress>
-    <OrderDate>2023-01-19T11:36:05.6666868+02:00</OrderDate>
   </Order>
   <Order>
     <ID>1042</ID>
@@ -220,5 +185,53 @@
     <CustomerAddress>עיר הקודש</CustomerAddress>
     <OrderDate>2023-01-19T09:55:06.1430823+02:00</OrderDate>
     <ShipDate>2023-01-23T11:16:32.8402451+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1054</ID>
+    <CustomerName>שאנה טייב</CustomerName>
+    <CustomerEmail>shana@gmail.com</CustomerEmail>
+    <CustomerAddress>רננים</CustomerAddress>
+    <OrderDate>2023-01-23T11:37:08.264494+02:00</OrderDate>
+    <ShipDate>2023-01-23T11:37:37.424488+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1019</ID>
+    <CustomerName>רבקה גלסוק</CustomerName>
+    <CustomerEmail>rivkagla@</CustomerEmail>
+    <CustomerAddress>בני ברק</CustomerAddress>
+    <OrderDate>2023-01-19T10:23:20.1496794+02:00</OrderDate>
+    <ShipDate>2023-01-23T11:37:48.8080899+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1039</ID>
+    <CustomerName>רבקה</CustomerName>
+    <CustomerEmail>wdra@</CustomerEmail>
+    <CustomerAddress>קרית ארבע</CustomerAddress>
+    <OrderDate>2023-01-19T11:10:23.3463797+02:00</OrderDate>
+    <ShipDate>2023-01-23T11:37:52.5358062+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1040</ID>
+    <CustomerName>תמר</CustomerName>
+    <CustomerEmail>tamii@</CustomerEmail>
+    <CustomerAddress>כפר עציון</CustomerAddress>
+    <OrderDate>2023-01-19T11:23:22.320525+02:00</OrderDate>
+    <ShipDate>2023-01-23T11:38:05.6456839+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1012</ID>
+    <CustomerName>תמר חייט</CustomerName>
+    <CustomerEmail>tamar@</CustomerEmail>
+    <CustomerAddress>ירושלים</CustomerAddress>
+    <OrderDate>2023-01-19T09:20:14.3312541+02:00</OrderDate>
+    <ShipDate>2023-01-23T11:38:10.123609+02:00</ShipDate>
+  </Order>
+  <Order>
+    <ID>1041</ID>
+    <CustomerName>חנן ליפשיץ</CustomerName>
+    <CustomerEmail>hananHaganan@</CustomerEmail>
+    <CustomerAddress>גינת ירק</CustomerAddress>
+    <OrderDate>2023-01-19T11:36:05.6666868+02:00</OrderDate>
+    <ShipDate>2023-01-23T11:38:28.7679659+02:00</ShipDate>
   </Order>
 </ArrayOfOrder>

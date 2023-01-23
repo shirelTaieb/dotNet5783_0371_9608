@@ -105,14 +105,6 @@
     <path>/images/bookImages/hapanimShpartzuMeadaf.jpg</path>
   </Product>
   <Product>
-    <ID>100083</ID>
-    <Name>אינטלגנציה חברתית</Name>
-    <Category>Theoretical</Category>
-    <Price>89.9</Price>
-    <InStock>11</InStock>
-    <path>/images/bookImages/inteligent.jpg</path>
-  </Product>
-  <Product>
     <ID>100084</ID>
     <Name>מלחמת העצמאות</Name>
     <Category>History</Category>
@@ -209,14 +201,6 @@
     <path>/images/bookImages/HarryPotterAll.jpg</path>
   </Product>
   <Product>
-    <ID>100080</ID>
-    <Name>הרנסנס</Name>
-    <Category>History</Category>
-    <Price>79</Price>
-    <InStock>67</InStock>
-    <path>/images/bookImages/Harenesans.jpg</path>
-  </Product>
-  <Product>
     <ID>100087</ID>
     <Name>המדריך לחיים</Name>
     <Category>Theoretical</Category>
@@ -265,14 +249,6 @@
     <path>/images/bookImages/monkyHaveProblem.jpg</path>
   </Product>
   <Product>
-    <ID>100065</ID>
-    <Name>מבצע אנטבה</Name>
-    <Category>History</Category>
-    <Price>87.99</Price>
-    <InStock>24</InStock>
-    <path>/images/bookImages/ANTEBE.jpg</path>
-  </Product>
-  <Product>
     <ID>100102</ID>
     <Name>אבא עשיר אבא עני</Name>
     <Category>Theoretical</Category>
@@ -295,22 +271,6 @@
     <Price>45</Price>
     <InStock>2</InStock>
     <path>/images/bookImages/Z4.jpg</path>
-  </Product>
-  <Product>
-    <ID>100095</ID>
-    <Name>השקעות לעצלנים</Name>
-    <Category>Theoretical</Category>
-    <Price>97</Price>
-    <InStock>31</InStock>
-    <path>/images/bookImages/MONY.jpg</path>
-  </Product>
-  <Product>
-    <ID>100090</ID>
-    <Name>מוח בריא</Name>
-    <Category>Theoretical</Category>
-    <Price>88</Price>
-    <InStock>55</InStock>
-    <path>/images/bookImages/MIND.jpg</path>
   </Product>
   <Product>
     <ID>100117</ID>
@@ -383,5 +343,45 @@
     <Price>79</Price>
     <InStock>127</InStock>
     <path>/images/bookImages/persiJecson.jpg</path>
+  </Product>
+  <Product>
+    <ID>100083</ID>
+    <Name>אינטלגנציה חברתית</Name>
+    <Category>Theoretical</Category>
+    <Price>89.9</Price>
+    <InStock>9</InStock>
+    <path>/images/bookImages/inteligent.jpg</path>
+  </Product>
+  <Product>
+    <ID>100080</ID>
+    <Name>הרנסנס</Name>
+    <Category>History</Category>
+    <Price>79</Price>
+    <InStock>66</InStock>
+    <path>/images/bookImages/Harenesans.jpg</path>
+  </Product>
+  <Product>
+    <ID>100065</ID>
+    <Name>מבצע אנטבה</Name>
+    <Category>History</Category>
+    <Price>87.99</Price>
+    <InStock>22</InStock>
+    <path>/images/bookImages/ANTEBE.jpg</path>
+  </Product>
+  <Product>
+    <ID>100090</ID>
+    <Name>מוח בריא</Name>
+    <Category>Theoretical</Category>
+    <Price>88</Price>
+    <InStock>54</InStock>
+    <path>/images/bookImages/MIND.jpg</path>
+  </Product>
+  <Product>
+    <ID>100095</ID>
+    <Name>השקעות לעצלנים</Name>
+    <Category>Theoretical</Category>
+    <Price>97</Price>
+    <InStock>30</InStock>
+    <path>/images/bookImages/MONY.jpg</path>
   </Product>
 </ArrayOfProduct>
