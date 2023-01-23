@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800"  >
+        Title="tsBook - חנות ספרים דיגיטלית" Height="500" Width="800" Icon="/Seamless Bookshelf Pattern.jpeg"  >
     <Window.Resources>
         <PL.Convert:NullToVisibilityConverter x:Key="nullToVisi"/>
         <PL.Convert:NullToNotVisibilityConverter x:Key="nullToNotVisi"/>
@@ -161,7 +161,9 @@
                 </Button>
                 <TextBlock/>
             </StackPanel>
-            <TextBlock HorizontalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content, Converter={StaticResource nullToVisi}}" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="770" Height="38" TextAlignment="Center" FontSize="25" FontFamily="Candara Light" Foreground="#FF1F2421" FontWeight="Bold" FontStyle="Italic"><Run FlowDirection="RightToLeft" Language="he-il" Text=".. "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל" /></TextBlock>
+            <TextBlock x:Name="quote" HorizontalAlignment="Center" Visibility="{Binding ElementName=frame, Path=Content, Converter={StaticResource nullToVisi}}" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="770" Height="38" TextAlignment="Center" FontSize="25" FontFamily="Candara Light"
+                       Foreground="#FF1F2421" FontWeight="Bold" FontStyle="Italic"><Run FlowDirection="RightToLeft"
+                        Language="he-il" Text=".. "/><Run Text="המעיין היטב בספר, יוכל למצא בו אפילו מה שהמחבר לא כיוון כלל" /></TextBlock>
             <Button x:Name="question" Margin="749,384,2,8" Click="seeProblem_Click"
                     Visibility="Visible" Padding="2">
             <materialDesign:PackIcon Kind="QuestionMarkCircle" 
