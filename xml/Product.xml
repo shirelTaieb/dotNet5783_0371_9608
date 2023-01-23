@@ -33,14 +33,6 @@
     <path>/images/bookImages/WHEREPLOTO.jpg</path>
   </Product>
   <Product>
-    <ID>100063</ID>
-    <Name>ירושלים מלחמה 67  </Name>
-    <Category>History</Category>
-    <Price>105.9</Price>
-    <InStock>31</InStock>
-    <path>/images/bookImages/67WORE.jpg</path>
-  </Product>
-  <Product>
     <ID>100071</ID>
     <Name>ספר הכוזרי</Name>
     <Category>Holy</Category>
@@ -177,22 +169,6 @@
     <path>/images/bookImages/Z5.jpg</path>
   </Product>
   <Product>
-    <ID>100073</ID>
-    <Name>מעשה בחמישה בלונים</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>563</InStock>
-    <path>/images/bookImages/FIVEBALON.jpg</path>
-  </Product>
-  <Product>
-    <ID>100107</ID>
-    <Name>להפסיק לעשן</Name>
-    <Category>Theoretical</Category>
-    <Price>87.9</Price>
-    <InStock>76</InStock>
-    <path>/images/bookImages/Somke.jpg</path>
-  </Product>
-  <Product>
     <ID>100110</ID>
     <Name>ספר התניא</Name>
     <Category>Holy</Category>
@@ -297,14 +273,6 @@
     <path>/images/bookImages/ANTEBE.jpg</path>
   </Product>
   <Product>
-    <ID>100109</ID>
-    <Name>תנ"ך שלם</Name>
-    <Category>Holy</Category>
-    <Price>50</Price>
-    <InStock>100</InStock>
-    <path>/images/bookImages/tanachSimanim.jpg</path>
-  </Product>
-  <Product>
     <ID>100102</ID>
     <Name>אבא עשיר אבא עני</Name>
     <Category>Theoretical</Category>
@@ -353,14 +321,6 @@
     <path>/images/bookImages/Z2.jpg</path>
   </Product>
   <Product>
-    <ID>100101</ID>
-    <Name>פרסי גקסון</Name>
-    <Category>Romans</Category>
-    <Price>79</Price>
-    <InStock>129</InStock>
-    <path>/images/bookImages/persiJecson.jpg</path>
-  </Product>
-  <Product>
     <ID>100104</ID>
     <Name>שמירת הלשון</Name>
     <Category>Holy</Category>
@@ -383,5 +343,45 @@
     <Price>60</Price>
     <InStock>213</InStock>
     <path>/images/bookImages/RENT.jpg</path>
+  </Product>
+  <Product>
+    <ID>100073</ID>
+    <Name>מעשה בחמישה בלונים</Name>
+    <Category>Children</Category>
+    <Price>55.9</Price>
+    <InStock>562</InStock>
+    <path>/images/bookImages/FIVEBALON.jpg</path>
+  </Product>
+  <Product>
+    <ID>100109</ID>
+    <Name>תנ"ך שלם</Name>
+    <Category>Holy</Category>
+    <Price>50</Price>
+    <InStock>99</InStock>
+    <path>/images/bookImages/tanachSimanim.jpg</path>
+  </Product>
+  <Product>
+    <ID>100101</ID>
+    <Name>פרסי גקסון</Name>
+    <Category>Romans</Category>
+    <Price>79</Price>
+    <InStock>128</InStock>
+    <path>/images/bookImages/persiJecson.jpg</path>
+  </Product>
+  <Product>
+    <ID>100107</ID>
+    <Name>להפסיק לעשן</Name>
+    <Category>Theoretical</Category>
+    <Price>87.9</Price>
+    <InStock>74</InStock>
+    <path>/images/bookImages/Somke.jpg</path>
+  </Product>
+  <Product>
+    <ID>100063</ID>
+    <Name>ירושלים מלחמה 67  </Name>
+    <Category>History</Category>
+    <Price>105.9</Price>
+    <InStock>27</InStock>
+    <path>/images/bookImages/67WORE.jpg</path>
   </Product>
 </ArrayOfProduct>
