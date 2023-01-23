@@ -27,7 +27,7 @@
         <Grid Grid.Row="0">
             <Label Content=" :סנן לפי" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFF4EDE5" Foreground= "#FF1F2421" FontFamily="Lucida Sans Unicode" Width="779" Height="34" VerticalContentAlignment="Center" FontSize="20" HorizontalContentAlignment="Right"  FontWeight="Bold"/>
             <ComboBox x:Name="categorySelector" SelectedItem="{Binding HebCategory}"  BorderBrush="#4A5759" VerticalAlignment="Center" Height="34" SelectionChanged="categorySelector_SelectionChanged" Background="#FFF4EDE5" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="205" Margin="498,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button Grid.Row="0" Width="50" Height="50" Margin="21,-5,729,0" Padding="0" Click="shortToCart_Click" Background="{x:Null}">
+            <Button Grid.Row="0" BorderBrush="{x:Null}" Height="50" Margin="10,-5,719,-4" Padding="0" Click="shortToCart_Click" Background="{x:Null}">
                 <materialDesign:PackIcon Kind="CartOutline" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
         </Grid>
