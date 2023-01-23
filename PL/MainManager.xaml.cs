@@ -58,8 +58,11 @@ namespace PL
         }
         private void simulator_Click(object sender, RoutedEventArgs e)
         {
-            SimulatorWindow simuWindow = new SimulatorWindow();
-            simuWindow.Show();
+            if (MessageBox.Show("?האם אתה בטוח שברצונך להפעיל את הסימולטור", "", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                SimulatorWindow simuWindow = new SimulatorWindow();
+                simuWindow.Show();
+            }
         }
     }
 }

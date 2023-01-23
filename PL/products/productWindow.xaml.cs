@@ -35,7 +35,6 @@ namespace PL.products
                 Add.Visibility = Visibility.Hidden;
                 try
                 {
-
                     UpdateOrNewProduct = bl!.Product!.getProductInfoManager(updateProduct.ID)!;
                     pl = BoToPo(UpdateOrNewProduct);  //casting to po
                     productAddOrUpdate.DataContext = pl;//קישור חלון העדכון לפרודקט שקיבלנו מהרשימה

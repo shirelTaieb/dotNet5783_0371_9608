@@ -60,7 +60,7 @@
 
             <ComboBox  x:Name="categoryComboBox"  Text="{Binding Category}"  SelectedItem="{Binding Category}" Margin="0,20,0,0"  
                    materialDesign:HintAssist.Hint="קטגוריה " Width="190" FontFamily="Cascadia Mono" FontSize="14" 
-                   FontWeight="Bold" Foreground="black" BorderBrush="black" 
+                   FontWeight="Bold" Foreground="#FF465153" BorderBrush="#FF465153" 
                    SelectionChanged="categoryComboBox_SelectionChanged" Height="40"  HorizontalAlignment="Center" 
                    HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Visible" 
                    VerticalContentAlignment="Center" Style="{StaticResource MaterialDesignComboBox}" />
