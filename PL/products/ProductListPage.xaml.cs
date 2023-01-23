@@ -74,7 +74,6 @@ namespace PL.products
             seeDetails.Visibility = Visibility.Hidden;
             productWindow AddProduct = new productWindow(addProduct);
             AddProduct.id.Visibility = Visibility.Collapsed;
-            AddProduct.id_lable.Visibility = Visibility.Collapsed;
             AddProduct.ShowDialog();
             
         }

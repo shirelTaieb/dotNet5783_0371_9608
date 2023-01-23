@@ -7,6 +7,7 @@
         xmlns:PL.Convert="clr-namespace:PL.Convert"
         mc:Ignorable="d"
         Title="SimulatorWindow" Height="600" Width="800">
+ 
     <Window.Resources>
         <PL.Convert:FalseToTrueConverter x:Key="falseToTrue"/>
         <PL.Convert:statusToProgressConverter x:Key="statusToProgress"/>
@@ -17,6 +18,7 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid x:Name="Gridup" Grid.Row="0">
+
             <Button x:Name="startButton"  Content="ריצה" HorizontalAlignment="Left" BorderBrush="#1F2421" Margin="410,8,0,0" VerticalAlignment="Top" Click="start_Click" Width="80"/>
             <Button Content="הפסקה" HorizontalAlignment="Left" BorderBrush="#1F2421" Margin="303,8,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=startButton, Path=IsEnabled, Converter={StaticResource falseToTrue}}" Click="stop_Click" Width="80"/>
         </Grid>
@@ -33,7 +35,7 @@
                             <ProgressBar 
                              x:Name="progress"
                             Value="{Binding Status, Converter={StaticResource statusToProgress}}"  Height="15" 
-                                Minimum="0" Maximum="100" Foreground="Gray">
+                                Minimum="0" Maximum="100" Background="{x:Null}" Foreground="Gray">
                             </ProgressBar>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

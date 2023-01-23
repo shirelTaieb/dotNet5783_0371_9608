@@ -58,15 +58,15 @@ internal class Order : BLApi.IOrder
     {
         if (o == null)
             return null;
-        DO.Order order=(DO.Order)o; //cast to not be nullable
+        DO.Order order = (DO.Order)o; //cast to not be nullable
         BO.Order? temp = new BO.Order();
         temp.ID = order.ID;
-        temp.CustomerName =order.CustomerName??"";
-        temp.CustomerEmail = order.CustomerEmail??"";
-        temp.CustomerAddress = order.CustomerAddress??"";
-        temp.OrderDate = order.OrderDate??null;
-        temp.ShipDate = order.ShipDate??null;
-        temp.DeliveryDate = order.DeliveryDate??null;
+        temp.CustomerName = order.CustomerName ?? "";
+        temp.CustomerEmail = order.CustomerEmail ?? "";
+        temp.CustomerAddress = order.CustomerAddress ?? "";
+        temp.OrderDate = order.OrderDate ?? null;
+        temp.ShipDate = order.ShipDate ?? null;
+        temp.DeliveryDate = order.DeliveryDate ?? null;
         temp.Status = getStatus(order);
         List<DO.OrderItem?> dolst = Dal!.OrderItem.GetByOrderID(order.ID);
         // List<BO.OrderItem> bolst = new List<BO.OrderItem>();
@@ -76,26 +76,26 @@ internal class Order : BLApi.IOrder
             {
                 ID = (int)doItem?.ID!,
                 ProductID = (int)doItem?.ProductID!,
-                ProductName=(string?)doItem?.ProductName,
+                ProductName = (string?)doItem?.ProductName,
                 Price = doItem?.Price,
                 Amount = (int)doItem?.Amount!,
                 TotalPrice = doItem?.Price * doItem?.Amount
             };
-            temp.Items = result.ToList();
+        temp.Items = result.ToList();
         temp.TotalPrice =
                     temp.Items?.Sum(c => c?.Price * c?.Amount) ?? 0;
-        return temp;    
+        return temp;
     }
 
 
     public IEnumerable<BO.OrderForList?> getOrderList()
     {
-        IEnumerable<DO.Order?> temp =Dal!.Order.GetAll(); //take the data from the factory
-        //List<BO.OrderForList> orders = new List<BO.OrderForList>();
-       
-       List<BO.OrderForList> orders =
-           ( from ord in temp
-            select (BoOrderToOrderForList(DoOrderToBo(ord)!))).ToList();
+        IEnumerable<DO.Order?> temp = Dal!.Order.GetAll(); //take the data from the factory
+                                                           //List<BO.OrderForList> orders = new List<BO.OrderForList>();
+
+        List<BO.OrderForList> orders =
+            (from ord in temp
+             select (BoOrderToOrderForList(DoOrderToBo(ord)!))).ToList();
         return orders;
     }
     public BO.Order? getOrderInfo(int orderID)
@@ -116,18 +116,18 @@ internal class Order : BLApi.IOrder
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
         DO.Order temp;
-        try{ temp = Dal!.Order.GetById(orderID); }catch { throw new BO.doseNotExistException(); }
+        try { temp = Dal!.Order.GetById(orderID); } catch { throw new BO.doseNotExistException(); }
         if (temp.ShipDate != null)
             throw new BO.wrongDataException();
         if (time == null)
-            temp.ShipDate = DateTime.Now; 
+            temp.ShipDate = DateTime.Now;
         else
             temp.ShipDate = time;
         try
         {
             Dal!.Order.Update(temp);
         }
-        catch(NotExistException)
+        catch (NotExistException)
         {
             throw new BO.doseNotExistException();
         }
@@ -141,10 +141,10 @@ internal class Order : BLApi.IOrder
         if ((orderID <= 1000) || (orderID >= 9999))
             throw new BO.wrongDataException();
         DO.Order temp;
-        try {temp = Dal!.Order.GetById(orderID); } catch { throw new BO.doseNotExistException(); }
+        try { temp = Dal!.Order.GetById(orderID); } catch { throw new BO.doseNotExistException(); }
         if (temp.ShipDate == null)
-            throw new BO.doseNotSentYet(); 
-        if (temp.DeliveryDate!= null)
+            throw new BO.doseNotSentYet();
+        if (temp.DeliveryDate != null)
             throw new BO.wrongDataException();
         if (time == null)
             temp.DeliveryDate = DateTime.Now;
@@ -159,7 +159,7 @@ internal class Order : BLApi.IOrder
             throw new BO.doseNotExistException();
         }
         BO.Order? cast = new BO.Order();
-        cast=DoOrderToBo(temp);//cast from do to bo 
+        cast = DoOrderToBo(temp);//cast from do to bo 
         return cast!;
 
     }
@@ -172,16 +172,13 @@ internal class Order : BLApi.IOrder
         try { temp = Dal!.Order.GetById(orderID); } catch { throw new BO.doseNotExistException(); }//get the order from the data according to id
         BO.OrderTracking ot = new BO.OrderTracking();
         ot.ID = orderID;
-        ot.Status =getStatus(temp);
-        ot.Tracking = new List<Tuple<DateTime?, string>?>();//???????????????
-
+        ot.Status = getStatus(temp);
+        ot.Tracking = new List<Tuple<string, DateTime?>?>();
+        ot.Tracking.Add(new Tuple<string, DateTime?>("Order Date: ", temp.OrderDate));
+        if (temp.ShipDate != null)
+            ot.Tracking.Add(new Tuple<string, DateTime?>( "Ship Date: ", temp.ShipDate));
+        if (temp.DeliveryDate != null)
+            ot.Tracking.Add(new Tuple<string, DateTime?>("Delivery Date: ",temp.DeliveryDate));
         return ot;
     }
-    //בונוס.. צריך לעשות אם רוצים.
-    //public BO.OrderTracking updateAmountOrder(int orderID)
-    //{
-    //    //מזהה- שהוא מספר חיובי בן 6 ספרות
-    //    if ((orderID <= 100000) && (orderID >= 999999))
-    //        throw new wrongDataException();
-    //}
 }

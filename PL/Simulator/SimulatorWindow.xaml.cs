@@ -125,13 +125,15 @@ namespace PL.Simulator
         {
             if (Tali.WorkerSupportsCancellation == true)
             {
+                
                 startButton.IsEnabled = true;
                 Tali.CancelAsync();
             }
         }
         private void showOrderDetails_doubleClick(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show ((BO.OrderForList)orderSimulationList.SelectedItem, "");
+        { 
+            
+            MessageBox.Show ((bl!.Order!.orderTracking(((PO.OrderForList?)orderSimulationList!.SelectedItem!).ID)).ToString(), "");
         }
     }
 }

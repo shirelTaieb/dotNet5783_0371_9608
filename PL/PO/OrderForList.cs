@@ -74,6 +74,8 @@ namespace PL.PO
                 }
             }
         }
+        public override string ToString() => this.ToStringProperty();
+
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }
