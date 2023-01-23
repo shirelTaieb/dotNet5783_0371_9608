@@ -107,7 +107,7 @@ namespace PL.Simulator
                 {
                     if (bl!.Order!.getOrderInfo(order.ID)!.OrderDate?.AddDays(10) <= time) //צריך כבר לעדכן
                     {
-                        bl!.Order!.updateSentOrder(order.ID);
+                        bl!.Order!.updateSentOrder(order.ID,time);
                         order.Status = BO.HebOrderStatus.נשלח;
                     }
                 }
@@ -116,7 +116,7 @@ namespace PL.Simulator
                     if ((int?)order.Status == 1)//נשלח
                         if (bl!.Order!.getOrderInfo(order.ID)!.ShipDate?.AddDays(10) <= time) //צריך כבר לעדכן
                         {
-                            bl!.Order!.updateDeliveryOrder(order.ID);
+                            bl!.Order!.updateDeliveryOrder(order.ID,time);
                             order.Status = BO.HebOrderStatus.נמסר;
                         }
                 }

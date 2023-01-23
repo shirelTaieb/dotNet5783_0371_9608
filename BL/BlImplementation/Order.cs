@@ -110,7 +110,7 @@ internal class Order : BLApi.IOrder
         boorder = DoOrderToBo(temp);
         return boorder;
     }
-    public BO.Order updateSentOrder(int orderID)
+    public BO.Order updateSentOrder(int orderID, DateTime? time = null)
     {
         //מזהה- שהוא מספר חיובי בן 4 ספרות
         if ((orderID <= 1000) || (orderID >= 9999))
@@ -119,7 +119,10 @@ internal class Order : BLApi.IOrder
         try{ temp = Dal!.Order.GetById(orderID); }catch { throw new BO.doseNotExistException(); }
         if (temp.ShipDate != null)
             throw new BO.wrongDataException();
-        temp.ShipDate = DateTime.Now; 
+        if (time == null)
+            temp.ShipDate = DateTime.Now; 
+        else
+            temp.ShipDate = time;
         try
         {
             Dal!.Order.Update(temp);
@@ -132,7 +135,7 @@ internal class Order : BLApi.IOrder
         return cast!;
 
     }
-    public BO.Order updateDeliveryOrder(int orderID)
+    public BO.Order updateDeliveryOrder(int orderID, DateTime? time = null)
     {
         //מזהה- שהוא מספר חיובי בן 4 ספרות
         if ((orderID <= 1000) || (orderID >= 9999))
@@ -143,7 +146,10 @@ internal class Order : BLApi.IOrder
             throw new BO.doseNotSentYet(); 
         if (temp.DeliveryDate!= null)
             throw new BO.wrongDataException();
-        temp.DeliveryDate = DateTime.Now;
+        if (time == null)
+            temp.DeliveryDate = DateTime.Now;
+        else
+            temp.DeliveryDate = time;
         try
         {
             Dal!.Order.Update(temp);

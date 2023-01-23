@@ -20,6 +20,7 @@ namespace PL
 
         public void return_back(object o, RoutedEventArgs e)
         {
+            quote.Visibility = Visibility.Hidden;
             startManager.Visibility = Visibility.Visible;
             startCustomer.Visibility = Visibility.Visible;
             managerLogin.Visibility = Visibility.Collapsed;
@@ -40,8 +41,7 @@ namespace PL
 
         public void manager_Click(object o, RoutedEventArgs e)
         {
-
-
+            quote.Visibility=Visibility.Hidden;
             startManager.Visibility = Visibility.Hidden;
             startCustomer.Visibility = Visibility.Hidden;
             managerLogin.Visibility = Visibility.Visible;

@@ -27,13 +27,13 @@ namespace BLApi
         /// </summary>
         /// <returns></returns>
         /// 
-        public BO.Order updateSentOrder(int orderID);
+        public BO.Order updateSentOrder(int orderID, DateTime? time = null);
         /// <summary>
         /// לאפשר למנהל לעדכן שהזמנה התקבלה 
         /// </summary>
         /// <returns></returns>
         /// 
-        public BO.Order updateDeliveryOrder(int orderID);
+        public BO.Order updateDeliveryOrder(int orderID, DateTime? time = null);
         /// <summary>
         /// מסך ניהול הזמנה של מנהל
         /// </summary>
