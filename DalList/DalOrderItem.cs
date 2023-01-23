@@ -6,6 +6,7 @@ namespace Dal;
 internal class DalOrderItem : IOrderItem
 {
     DataSource? ds = DataSource.s_instance;
+    #region הפונקצייה מקבלת מוצר ומוסיפה אותו לרשימה של פרטי ההזמנה ומחזירה את המזהה שהעניקה לו
     public int Add(OrderItem item)
     {
         if (ds == null)
@@ -19,6 +20,9 @@ internal class DalOrderItem : IOrderItem
         ds?.lstOI.Add(item);
         return item.ID;
     }
+    #endregion
+
+    # region פונקצייה שמחקבל מספר מזהה של מוצר ומחזירה את המוצר עצמו
     public OrderItem GetById(int id)
     {
         if (ds == null)
@@ -29,6 +33,9 @@ internal class DalOrderItem : IOrderItem
         return (OrderItem)oi;
 
     }
+    #endregion
+
+    #region פונקציה מקבלת מוצר ומעדכנת את הפרטים שלו
     public void Update(OrderItem item)
     {
         if (ds == null)
@@ -40,6 +47,9 @@ internal class DalOrderItem : IOrderItem
             Add(item);
         }
     }
+    #endregion
+
+    #region פונקציה שמקבלת מספר מזהה ומוחקת את המוצר המתאים
     public void Delete(int id)
     {
         if (ds == null)
@@ -51,7 +61,9 @@ internal class DalOrderItem : IOrderItem
         catch  //if the orderitem is not exist
         { throw new NotExistException(); }
     }
+    #endregion
 
+    #region פונקצייה שמקבלת ביטוי למבדה ומחזירה אוסף של כל המוצרים שמתאים לו
     public IEnumerable<OrderItem?> GetAll(Func<OrderItem?, bool>? filter = null)
     {
         if (ds == null)
@@ -66,6 +78,9 @@ internal class DalOrderItem : IOrderItem
         }
         return ds.lstOI;
     }
+    #endregion
+
+    #region פונקציה מקבלת מספר מזהה ומחזירה את רשימת המוצרים בהזמנה
     public List<OrderItem?> GetByOrderID(int ID)
     {
         //List<OrderItem> tempList = new List<OrderItem>();
@@ -77,6 +92,9 @@ internal class DalOrderItem : IOrderItem
             select item).ToList();
         return tempList;
     }
+    #endregion
+
+    #region פונקציה מקבלת מספר מזהה של המזנ ומספר מזהה של מוצר ומחזירה את המוצר בהזמנה המתאים 
     public OrderItem GetByIDOrder_IDProduct(int IDOrder, int IDProduct)
     {
         if (ds == null)
@@ -84,4 +102,5 @@ internal class DalOrderItem : IOrderItem
         OrderItem? result = ds!.lstOI.FirstOrDefault(item => (item?.OrderID == IDOrder) && (item?.ProductID == IDProduct));
             return result ?? throw new NotExistException();    
     }
+    #endregion
 }

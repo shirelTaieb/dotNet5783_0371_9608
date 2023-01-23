@@ -12,6 +12,7 @@ namespace BL
 {
     public static class tools
     {
+        #region מתודה שהופכת ישות למחרוזת לצורך הצגת הפרטים
         public static string ToStringProperty<T>(this T t, string suffix = "")
         //מתודה להפיכת ישות למחרוזת לצורך הצגת הפרטים
         {
@@ -19,7 +20,7 @@ namespace BL
             foreach (PropertyInfo prop in t!.GetType().GetProperties())
             {
                 var value = prop.GetValue(t, null);
-                if (value != null) //if it is null we dont want that it will be not printed
+                if (value != null) //if it is null we dont want that it won't be printed
                 {
                     if (value is not string && value is IEnumerable)
                     {
@@ -35,6 +36,7 @@ namespace BL
             str += "\n";
             return str;
         }
+        #endregion
 
     }
 }

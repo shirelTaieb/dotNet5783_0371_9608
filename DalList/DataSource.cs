@@ -13,7 +13,9 @@ public class DataSource
     internal List<Product?> lstP= new List<Product?>();
     public List<Order?> lstO= new List<Order?>();
     internal List<OrderItem?> lstOI= new List<OrderItem?>();
-    private void createProduct()//creating 11 product
+
+    #region creating 11 product
+    private void createProduct()
     {
         Product p1 = new Product();
         p1.Category = DO.Category.Children;
@@ -113,8 +115,10 @@ public class DataSource
         p11.InStock = rand.Next(0, 300);
         p11.path = @"C:\Users\97258\source\repos\shirelTaieb\dotNet5783_0371_9608\PL\images\book.png";
         lstP.Add(p11);
-
     }
+    #endregion
+    
+    #region creating  Orders
     public void createOrder()//creating a new Order
     {
         string[] names= {"Shirel", "Tamar", "Shana","Samuel", "Shely", "David","Golda","Miryam","Maayan",
@@ -126,7 +130,7 @@ public class DataSource
                                    "Lisbon","Berlin","Metola","Eilat","Netivot","Ashdod","Ashkelon","Natanya","Tokyo",
                                    "Mexico City","Havanna","Lima","Beer Shaeva","Omer","Tzfat","Nazeret","Tiberiad","Raba",
                                    "Pretoria","Sidny","Givataim","Ariel","Ramat Gan","Ramat Hasharon","Petah Tikva","Yerocham"}; //data source of adress
-
+        #region randomly creaitng 20 orders
         for (int i = 0; i < 21; i++)
         {
             Order order = new Order();
@@ -146,13 +150,18 @@ public class DataSource
                 order.ShipDate = null;
             lstO.Add(order);
         }
+        #endregion
     }
+    #endregion
+
+    #region creating Order Items
     public void createOrderItem()
     {
-        for (int i = 0; i < 21; i++)
+        for (int i = 0; i < 21; i++)//randomly creating 20 order items
         {
             int order_id= ConfigOrderItem1.NextOrderNumber;
-            for (int j = 0; j < rand.Next(1,10); j++)
+            #region randomly creating a number of one items in order item
+            for (int j = 0; j < rand.Next(1,10); j++)//randomly chosing a number of items in order
             {
                 OrderItem orderItem = new OrderItem();
                 orderItem.ID = ConfigOrderItem2.NextOrderNumber;
@@ -164,17 +173,17 @@ public class DataSource
                 //    from temp in lstP
                 //    where temp?.ID == orderItem.ProductID
                 //    select (orderItem.Price = temp?.Price);
-
-
                 foreach (Product temp in lstP)
                 {
                     if (temp.ID == orderItem.ProductID)
                         orderItem.Price = temp.Price;
                 }
                 lstOI.Add(orderItem);
-            }    
+            }
+            #endregion
         }
     }
+    #endregion
 
     private void s_Initialize()
     {
@@ -182,29 +191,31 @@ public class DataSource
         createOrder();
         createOrderItem();
     }
-    internal static class ConfigOrder
+    #region יצירת מספרים רצים עבור כל אחד מהמספרים המזהים של הישויות
+    internal static class ConfigOrder // מספר רץ עבור מספר מזהה להזמנה
     {
         internal const int s_startOrderNumber = 1000;
         private static int s_nextOrderNumber=s_startOrderNumber;
         internal static int NextOrderNumber { get => ++s_nextOrderNumber; }
     }
-    internal static class ConfigProduct
+    internal static class ConfigProduct // מספר רץ עבור מספר מזהה למוצר
 
     {
         internal const int s_startProductNumber = 100000;
         private static int s_nextProductNumber = s_startProductNumber;
         internal static int NextProductNumber { get => ++s_nextProductNumber; }
     }
-    internal static class ConfigOrderItem1
+    internal static class ConfigOrderItem1 // מספר רץ עבור מספר מזהה למוצר בהזמנה
     {
         internal const int s_startOrderNumber = 1000;
         private static int s_nextOrderNumber = s_startOrderNumber;
         internal static int NextOrderNumber { get => ++s_nextOrderNumber; }
     }
-    internal static class ConfigOrderItem2
+    internal static class ConfigOrderItem2 // מספר רץ עבור מספר מזהה למוצר בהזמנה
     {
         internal const int s_startOrderNumber = 1000;
         private static int s_nextOrderNumber = s_startOrderNumber;
         internal static int NextOrderNumber { get => ++s_nextOrderNumber; }
     }
+    #endregion
 }

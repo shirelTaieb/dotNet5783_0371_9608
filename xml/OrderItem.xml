@@ -672,4 +672,44 @@
     <Price>79</Price>
     <Amount>1</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1086</ID>
+    <ProductID>100083</ProductID>
+    <ProductName>אינטלגנציה חברתית</ProductName>
+    <OrderID>1054</OrderID>
+    <Price>89.9</Price>
+    <Amount>2</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1087</ID>
+    <ProductID>100080</ProductID>
+    <ProductName>הרנסנס</ProductName>
+    <OrderID>1054</OrderID>
+    <Price>79</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1088</ID>
+    <ProductID>100065</ProductID>
+    <ProductName>מבצע אנטבה</ProductName>
+    <OrderID>1054</OrderID>
+    <Price>87.99</Price>
+    <Amount>2</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1089</ID>
+    <ProductID>100090</ProductID>
+    <ProductName>מוח בריא</ProductName>
+    <OrderID>1054</OrderID>
+    <Price>88</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1090</ID>
+    <ProductID>100095</ProductID>
+    <ProductName>השקעות לעצלנים</ProductName>
+    <OrderID>1054</OrderID>
+    <Price>97</Price>
+    <Amount>1</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>
