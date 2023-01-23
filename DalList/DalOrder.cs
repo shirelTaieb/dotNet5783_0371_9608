@@ -9,7 +9,7 @@ namespace Dal;
 public class DalOrder : IOrder //שיננו לפובליק
 {
     DataSource? ds = DataSource.s_instance;
-    
+    #region הפונקצייה מקבלת הזמנה ומוסיפה אותה לרשימה של ההזמנות ומחזירה את המזהה שהעניקה לו
     public int Add(Order order)
     {
         Order? temp = ds?.lstO.FirstOrDefault(ord => ord.GetValueOrDefault().ID == order.ID);
@@ -21,6 +21,9 @@ public class DalOrder : IOrder //שיננו לפובליק
         ds?.lstO.Add(order);
         return order.ID;
     }
+    #endregion
+
+    # region פונקצייה שמחקבל מספר מזהה של הזמנה ומחזירה את פרטי ההזמנה
     public Order GetById(int id)
     {
         if (ds== null)
@@ -30,6 +33,9 @@ public class DalOrder : IOrder //שיננו לפובליק
             throw new NotExistException(); //there in no order matched in the database
         return (Order)or;
     }
+    #endregion
+
+    #region פונקציה מקבלת הזמנה ומעדכנת את פרטי ההזמנה שלו
     public void Update(Order order)
     {
         if (ds == null)
@@ -41,14 +47,19 @@ public class DalOrder : IOrder //שיננו לפובליק
             Add(order);
         }
     }
-   public void Delete(int id)
+    #endregion
+
+    #region פונקציה שמקבלת מספר מזהה ומוחקת את ההזמנה המתאימה
+    public void Delete(int id)
    {
      if (ds == null)
          throw new NotExistException();
         try { ds.lstO.Remove(GetById(id)); }
         catch { throw new NotExistException(); }
-   }    
+   }
+    #endregion
 
+    #region פונקצייה שמקבלת ביטוי למבדה ומחזירה אוסף של כל ההזמנות שמתאימות לו
     public IEnumerable<Order?> GetAll(Func<Order?, bool>? filter = null)
     {
         if (ds == null)
@@ -63,4 +74,5 @@ public class DalOrder : IOrder //שיננו לפובליק
         }
         return ds.lstO;
     }
+    #endregion
 }

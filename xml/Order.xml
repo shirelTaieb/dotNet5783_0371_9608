@@ -234,4 +234,12 @@
     <OrderDate>2023-01-19T11:36:05.6666868+02:00</OrderDate>
     <ShipDate>2023-01-23T11:38:28.7679659+02:00</ShipDate>
   </Order>
+  <Order>
+    <ID>1055</ID>
+    <CustomerName>ליאת אשד</CustomerName>
+    <CustomerEmail>liat300990@gmail.com</CustomerEmail>
+    <CustomerAddress>לאה גולדברג 4</CustomerAddress>
+    <OrderDate>2023-01-23T20:10:45.4399644+02:00</OrderDate>
+    <ShipDate>2023-01-23T20:13:19.408394+02:00</ShipDate>
+  </Order>
 </ArrayOfOrder>

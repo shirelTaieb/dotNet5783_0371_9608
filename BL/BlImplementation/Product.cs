@@ -5,14 +5,9 @@ namespace BlImplementation;
 
 internal class Product : BLApi.IProduct
 {
-
-    /// <summary> 
-    /// פונקציה שממירה מ BO לDO
-    /// </summary>
-    /// <param name="prod"></param>
-    /// <returns></returns>
     private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();
 
+    #region פונקציה שממירה מBO לDO
     internal DO.Product BOproductToDO(BO.Product prod)
     {
         DO.Product temp = new DO.Product();
@@ -24,6 +19,8 @@ internal class Product : BLApi.IProduct
         temp.path = prod.path;
         return temp;
     }
+    #endregion
+
     public int addNewProduct(BO.Product? pr)
     {
         //בדיקת תקינות קלט

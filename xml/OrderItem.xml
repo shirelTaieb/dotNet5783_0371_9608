@@ -712,4 +712,28 @@
     <Price>97</Price>
     <Amount>1</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1091</ID>
+    <ProductID>100085</ProductID>
+    <ProductName>האריה שאהב תות</ProductName>
+    <OrderID>1055</OrderID>
+    <Price>53</Price>
+    <Amount>2</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1092</ID>
+    <ProductID>100069</ProductID>
+    <ProductName>כספיון</ProductName>
+    <OrderID>1055</OrderID>
+    <Price>55.9</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1093</ID>
+    <ProductID>100064</ProductID>
+    <ProductName>אליפים</ProductName>
+    <OrderID>1055</OrderID>
+    <Price>99</Price>
+    <Amount>1</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>
