@@ -35,7 +35,7 @@ namespace PL.cart
             BOcart = boCart;
             _mainWindow = mainWindow;
         }
-
+        #region אישור סופי של הסל, יצירת הזמנה
         private void finalConfirmOrder_Click(object sender, RoutedEventArgs e)
         {
 
@@ -69,5 +69,6 @@ namespace PL.cart
             _mainWindow.frame.Content = new MainCustomer(_mainWindow,ref BOcart);//חזרה לתפריט הראשי צריך למחוק את הכארט
 
         }
+        #endregion
     }
 }

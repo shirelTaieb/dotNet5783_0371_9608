@@ -38,6 +38,7 @@ namespace PL.customer
             mainWindow.returnCustomer.Visibility = Visibility.Visible;
             cart = my_cart;
             var list = bl!.Product!.getListOfProduct()!;
+            #region POהמרה של הרשימה ל 
             var poList =
             from pro in list
             select new PO.ProductItem
@@ -50,13 +51,13 @@ namespace PL.customer
                 InStock = bl.Product.getProductInfoCustomer(pro.ID, cart).InStock,
                 path = pro.path
             };
+            #endregion
             ListOfProducts.ItemsSource =tools.IEnumerableToObserval(poList);
-            //cart = my_cart;
             _mainWindow = mainWindow;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
 
         }
-  
+        #region אירועים
         private void categorySelector_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var item = categorySelector.SelectedItem;
@@ -109,10 +110,6 @@ namespace PL.customer
         {
             _mainWindow.frame.Content = new cartListPage(ref cart, _mainWindow);
         }
-
-        private void ListOfProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

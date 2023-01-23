@@ -26,6 +26,8 @@ namespace PL.cart
         MainWindow mainWindow;
         PO.Cart? POcart=new PO.Cart();
         BO.Cart? boCart=new BO.Cart();
+
+        #region בנאי העמוד, קישור לנתוני הסל
         public cartListPage(ref BO.Cart? my_cart,MainWindow _mainWindow)
         {
             InitializeComponent();
@@ -34,7 +36,8 @@ namespace PL.cart
             boCart = my_cart;
             if (my_cart!.Items != null)
             {
-                 POcart = new PO.Cart()
+                #region POהמרה של הרשימה ל
+                POcart = new PO.Cart()
                  {
                     CustomerName = my_cart.CustomerName,
                     CustomerEmail = my_cart.CustomerEmail,
@@ -52,6 +55,7 @@ namespace PL.cart
                                  path=bl!.Product!.getProductInfoManager(orItem.ProductID).path
                              }).ToList()
                 };
+                #endregion
                 cartListView.ItemsSource = POcart.Items;
                 cartTotalPrice.DataContext = my_cart.TotalPrice;
 
@@ -62,11 +66,18 @@ namespace PL.cart
                     nonDetail.Visibility = Visibility.Visible;
             }
         }
+        #endregion
+
+        #region אירועי כפתורים
+        private void PersonalData_Click(object sender, RoutedEventArgs e)
+        {
+            EnterDetailsWindow detailsWindow = new EnterDetailsWindow(ref POcart!); // מעבר חלונית פרטיים אישיים
+            detailsWindow.Show();
+        }
 
         private void moveToCatelog_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.frame.Content = new customerListPage(ref boCart!,mainWindow); // מעבר לקטלוג המוצרים
-
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -77,7 +88,6 @@ namespace PL.cart
             POcart!.Items!.RemoveAll(ca => ca!.ProductID == tempOrder.ProductID); //עדכון הסל במחיקת מוצר
             cartListView.ItemsSource = POcart.Items;
             cartTotalPrice.DataContext = boCart!.TotalPrice;
-
         }
 
         private void confirmOrder_Click(object sender, RoutedEventArgs e)
@@ -85,21 +95,16 @@ namespace PL.cart
             if (POcart!.CustomerName == null || POcart.CustomerEmail == null || POcart.CustomerAddress == null)
             {
                 MessageBox.Show(":)נשמח שתמלא פרטים אישיים לפני ביצוע ההזמנה שלך", "חסרים פרטים", MessageBoxButton.OK, MessageBoxImage.Information);
-                EnterDetailsWindow data = new EnterDetailsWindow(POcart);
+                EnterDetailsWindow data = new EnterDetailsWindow(ref POcart);
                 data.ShowDialog();
             }
             else
             {
-                mainWindow.frame.Content = new ConfirmDetailsPage(ref POcart!,ref boCart, mainWindow);
-                
+                mainWindow.frame.Content = new ConfirmDetailsPage(ref POcart!,ref boCart!, mainWindow);
             }
 
         }
-        private void Personal_Data(object sender, RoutedEventArgs e)
-        {
-            EnterDetailsWindow detailsWindow  = new EnterDetailsWindow(POcart!); // מעבר חלונית פרטיים אישיים
-            detailsWindow.Show();
-        }
+  
     }
-
+    #endregion
 }

@@ -21,20 +21,11 @@ namespace PL.cart
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
         PO.Cart cart=new PO.Cart();
-        public EnterDetailsWindow(PO.Cart finalCart)
+        public EnterDetailsWindow(ref PO.Cart finalCart)
         {
             InitializeComponent();
            Data.DataContext = finalCart;
-            //finalCart.CustomerName = Name.Text;
-            //finalCart.CustomerAddress = CustomerAddress.Text;
-            //finalCart.CustomerEmail = Email.Text;
-            cart = finalCart;
-
-                //tempCart.CustomerName = finalCart.CustomerName;
-                //tempCart.CustomerAddress = finalCart.CustomerAddress;
-                //tempCart.CustomerEmail= finalCart.CustomerEmail;
-
-
+           cart = finalCart;
 
         }
         private void Confirm_Data(object sender, RoutedEventArgs e)

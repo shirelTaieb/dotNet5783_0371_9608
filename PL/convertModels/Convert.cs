@@ -7,6 +7,7 @@ using System.Windows.Media;
 
 namespace PL.Convert
 {
+    #region visible ל falseהמרה מ
     public class FalseToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -24,6 +25,9 @@ namespace PL.Convert
             return true;
         }
     }
+    #endregion
+
+    #region visibleל nullהמרה מ
     public class NullToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -39,7 +43,9 @@ namespace PL.Convert
             throw new NotImplementedException();
         }
     }
+    #endregion
 
+    #region ללא נראה nullהמרה מ 
     public class NullToNotVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -58,7 +64,9 @@ namespace PL.Convert
         }
 
     }
+    #endregion
 
+    #region falseל nullהמרה מ 
 
     public class NullToFalseConverter : IValueConverter
     {
@@ -74,6 +82,10 @@ namespace PL.Convert
             throw new NotImplementedException();
         }
     }
+    #endregion
+
+    #region trueל falseהמרה מ 
+
     public class FalseToTrueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -88,7 +100,9 @@ namespace PL.Convert
             throw new NotImplementedException();
         }
     }
+    #endregion
 
+    #region המרה מנראה ללא נראה
     public class VisibleToHiddenConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -106,7 +120,9 @@ namespace PL.Convert
             throw new NotImplementedException();
         }
     }
-
+    #endregion
+   
+    #region progressBar המרה של סטטוס למצב ה 
     public class statusToProgressConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -124,4 +140,5 @@ namespace PL.Convert
             throw new NotImplementedException();
         }
     }
+    #endregion
 }

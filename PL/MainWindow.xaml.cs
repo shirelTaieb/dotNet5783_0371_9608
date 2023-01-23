@@ -56,7 +56,7 @@ namespace PL
         public void check_password(object o, RoutedEventArgs e)
         {
             worngPassword.Visibility = Visibility.Hidden;
-            if (password.Password == "1234")
+            if (password.Password == "0999"|| password.Password == "1108")
             {
                 managerLogin.Visibility = Visibility.Hidden;
                 frame.Content = new MainManager(this);
@@ -67,8 +67,6 @@ namespace PL
                 worngPassword.Visibility = Visibility.Visible;
                 password.Clear();
             }
-
-
         }
 
         public void returnToTheMainWindow_Click(object o, RoutedEventArgs e)
@@ -93,7 +91,6 @@ namespace PL
         private void returnToManagerPage_Click(object sender, RoutedEventArgs e)
         {
             frame.Content = new MainManager(this);
-
         }
         private void seeProblem_Click(object sender, RoutedEventArgs e)
         {

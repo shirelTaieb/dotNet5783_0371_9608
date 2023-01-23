@@ -26,6 +26,7 @@ namespace PL.cart
             cart = my_cart;
         }
 
+        #region אירועי כפתורים
         private void up_Click(object sender, RoutedEventArgs e)
         {
             NinCount.Visibility = Visibility.Hidden;
@@ -54,11 +55,13 @@ namespace PL.cart
             else
                 NinCount.Visibility=Visibility.Visible;
         }
-         private void addToCart_Click(object sender, RoutedEventArgs e)
+        private void addToCart_Click(object sender, RoutedEventArgs e)
         {
             bl!.Cart!.addProductToCart(cart, productitem.ID);
             bl!.Cart!.updatePoductAmount(cart, productitem.ID, counter);
             this.Close();
         }
+        #endregion
+
     }
 }
