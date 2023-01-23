@@ -20,7 +20,7 @@
             <Button x:Name="startButton"  Content="ריצה" HorizontalAlignment="Left" BorderBrush="#1F2421" Margin="410,8,0,0" VerticalAlignment="Top" Click="start_Click" Width="80"/>
             <Button Content="הפסקה" HorizontalAlignment="Left" BorderBrush="#1F2421" Margin="303,8,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=startButton, Path=IsEnabled, Converter={StaticResource falseToTrue}}" Click="stop_Click" Width="80"/>
         </Grid>
-        <DataGrid x:Name="orderSimulationList"  IsReadOnly="True" RowHeight="30" Background="#DCE1DE" FlowDirection="RightToLeft" AutoGenerateColumns="False" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}"  AlternatingRowBackground="#B0C4B1" AlternationCount="2" Margin="0,45,0,0" Grid.RowSpan="2" >
+        <DataGrid x:Name="orderSimulationList" MouseDoubleClick="showOrderDetails_doubleClick" IsReadOnly="True" RowHeight="30" Background="#DCE1DE" FlowDirection="RightToLeft" AutoGenerateColumns="False" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}"  AlternatingRowBackground="#B0C4B1" AlternationCount="2" Margin="0,45,0,0" Grid.RowSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="customerNameColumn" FontSize="11" Binding="{Binding CustomerName}" Header="שם לקוח"  Width="100"/>
                 <DataGridTextColumn x:Name="iDColumn" FontSize="11" Binding="{Binding ID}" Header="מס' מזהה" Width="100"/>

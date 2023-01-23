@@ -46,19 +46,6 @@ namespace PL.Simulator
             }).ToList();
             orderSimulationList.DataContext = tools.IEnumerableToObserval(OrderList);
         }
-        private void start_Click(object sender, RoutedEventArgs e)
-        {
-            startButton.IsEnabled = false;
-            Tali.RunWorkerAsync();
-        }
-        private void stop_Click(object sender, RoutedEventArgs e)
-        {
-            if (Tali.WorkerSupportsCancellation == true)
-            {
-                startButton.IsEnabled = true;
-                Tali.CancelAsync();
-            }
-        }
         private void Tali_DoWork(object sender, DoWorkEventArgs e)
         {
           
@@ -124,14 +111,27 @@ namespace PL.Simulator
                 //Thread.Sleep(50);
 
             }
-         
-
         }
         private void Tali_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
            // object result = e.Result;
         }
-
-
+        private void start_Click(object sender, RoutedEventArgs e)
+        {
+            startButton.IsEnabled = false;
+            Tali.RunWorkerAsync();
+        }
+        private void stop_Click(object sender, RoutedEventArgs e)
+        {
+            if (Tali.WorkerSupportsCancellation == true)
+            {
+                startButton.IsEnabled = true;
+                Tali.CancelAsync();
+            }
+        }
+        private void showOrderDetails_doubleClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show ((BO.OrderForList)orderSimulationList.SelectedItem, "");
+        }
     }
 }
