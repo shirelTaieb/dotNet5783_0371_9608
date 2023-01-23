@@ -33,8 +33,9 @@ namespace PL.Simulator
             Tali.WorkerSupportsCancellation = true;
             //Random rand = new Random();
             //int argu = rand.Next(5, 10);
+            var boList = bl!.Order!.getOrderList();
             OrderList =
-           (from or in bl!.Order!.getOrderList()
+           (from or in boList
             select new PO.OrderForList()
             {
                 ID = or.ID,
@@ -43,7 +44,7 @@ namespace PL.Simulator
                 Status = (BO.HebOrderStatus?)or.Status,
                 TotalPrice = or.TotalPrice
             }).ToList();
-            orderSimulationList.DataContext = OrderList;
+            orderSimulationList.DataContext = tools.IEnumerableToObserval(OrderList);
         }
         private void start_Click(object sender, RoutedEventArgs e)
         {
@@ -73,46 +74,57 @@ namespace PL.Simulator
                     if (Tali.WorkerReportsProgress == true)
                     {
                         time = time.AddDays(2);
+
                         Tali.ReportProgress(5);
                         
                     }
-                    Thread.Sleep(5000);
+                    Thread.Sleep(2000);
                 }
             }
+        
 
             //e.Result = "result"; //כשלחצו סטופ
 
         }
         private void Tali_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            OrderList.Clear();
+            var boList = bl!.Order!.getOrderList();
+            OrderList = (from or in boList
+                         select new PO.OrderForList()
+                         {
+                             ID = or.ID,
+                             CustomerName = or.CustomerName,
+                             AmountOfItems = or.AmountOfItems,
+                             Status = (BO.HebOrderStatus?)or.Status,
+                             TotalPrice = or.TotalPrice
+                         }).ToList(); //קישור הרשימה מחדש
+            orderSimulationList.DataContext = tools.IEnumerableToObserval(OrderList);
             // int progress = e.ProgressPercentage;
-            for (int i = 0; i < OrderList.Count; i++)
+            foreach (var order in OrderList)
             {
-                if ((int)OrderList[i].Status! == 0)//הוזמן
+                if ((int)order.Status! == 0)//הוזמן
                 {
-                    if (bl!.Order!.getOrderInfo(OrderList[i].ID)!.OrderDate?.AddDays(10) <= time) //צריך כבר לעדכן
-                        bl!.Order!.updateSentOrder(OrderList[i].ID);
+                    if (bl!.Order!.getOrderInfo(order.ID)!.OrderDate?.AddDays(10) <= time) //צריך כבר לעדכן
+                    {
+                        bl!.Order!.updateSentOrder(order.ID);
+                        order.Status = BO.HebOrderStatus.נשלח;
+                    }
                 }
                 else
                 {
-                    if ((int?)OrderList[i].Status == 1)//נשלח
-                        if (bl!.Order!.getOrderInfo(OrderList[i].ID)!.ShipDate?.AddDays(10) <= time) //צריך כבר לעדכן
-                            bl!.Order!.updateDeliveryOrder(OrderList[i].ID);
+                    if ((int?)order.Status == 1)//נשלח
+                        if (bl!.Order!.getOrderInfo(order.ID)!.ShipDate?.AddDays(10) <= time) //צריך כבר לעדכן
+                        {
+                            bl!.Order!.updateDeliveryOrder(order.ID);
+                            order.Status = BO.HebOrderStatus.נמסר;
+                        }
                 }
+        
+                //Thread.Sleep(50);
 
-                OrderList = (from or in bl!.Order!.getOrderList()
-                             select new PO.OrderForList()
-                             {
-                                 ID = or.ID,
-                                 CustomerName = or.CustomerName,
-                                 AmountOfItems = or.AmountOfItems,
-                                 Status = (BO.HebOrderStatus?)or.Status,
-                                 TotalPrice = or.TotalPrice
-                             }).ToList(); //קישור הרשימה מחדש
-                orderSimulationList.DataContext = OrderList;
-              
-                    Thread.Sleep(50);
             }
+         
 
         }
         private void Tali_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

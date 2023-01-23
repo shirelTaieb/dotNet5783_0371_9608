@@ -6,7 +6,7 @@
 	    xmlns:local="clr-namespace:PL.Simulator"       
         xmlns:PL.Convert="clr-namespace:PL.Convert"
         mc:Ignorable="d"
-        Title="SimulatorWindow" Height="1000" Width="800">
+        Title="SimulatorWindow" Height="600" Width="800">
     <Window.Resources>
         <PL.Convert:FalseToTrueConverter x:Key="falseToTrue"/>
         <PL.Convert:statusToProgressConverter x:Key="statusToProgress"/>
@@ -20,19 +20,19 @@
             <Button x:Name="startButton"  Content="ריצה" HorizontalAlignment="Left" BorderBrush="#1F2421" Margin="410,8,0,0" VerticalAlignment="Top" Click="start_Click" Width="80"/>
             <Button Content="הפסקה" HorizontalAlignment="Left" BorderBrush="#1F2421" Margin="303,8,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=startButton, Path=IsEnabled, Converter={StaticResource falseToTrue}}" Click="stop_Click" Width="80"/>
         </Grid>
-        <DataGrid x:Name="orderSimulationList" AutoGenerateColumns="False" IsReadOnly="True" Background="#DCE1DE" FlowDirection="RightToLeft" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}"  AlternatingRowBackground="#B0C4B1" AlternationCount="2" Margin="0,45,0,-105" Grid.RowSpan="2" >
+        <DataGrid x:Name="orderSimulationList"  IsReadOnly="True" RowHeight="30" Background="#DCE1DE" FlowDirection="RightToLeft" AutoGenerateColumns="False" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}"  AlternatingRowBackground="#B0C4B1" AlternationCount="2" Margin="0,45,0,0" Grid.RowSpan="2" >
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="customerNameColumn" Binding="{Binding CustomerName}" Header="שם לקוח" Width="100"/>
-                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="מס' מזהה" Width="100"/>
-                <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="מצב הזמנה" Width="100"/>
-                <DataGridTextColumn x:Name="amountOfItemsColumn" Binding="{Binding AmountOfItems}" Header="כמות מוצרים" Width="120"/>
-                <DataGridTextColumn x:Name="totalPriceColumn" Binding="{Binding TotalPrice}" Header="סהכ לתשלום" Width="150"/>
+                <DataGridTextColumn x:Name="customerNameColumn" FontSize="11" Binding="{Binding CustomerName}" Header="שם לקוח"  Width="100"/>
+                <DataGridTextColumn x:Name="iDColumn" FontSize="11" Binding="{Binding ID}" Header="מס' מזהה" Width="100"/>
+                <DataGridTextColumn x:Name="statusColumn"  FontSize="11" Binding="{Binding Status}" Header="מצב הזמנה" Width="100"/>
+                <DataGridTextColumn x:Name="amountOfItemsColumn"  FontSize="11" Binding="{Binding AmountOfItems}" Header="כמות מוצרים" Width="120"/>
+                <DataGridTextColumn x:Name="totalPriceColumn"  FontSize="11" Binding="{Binding TotalPrice}" Header="סהכ לתשלום" Width="150"/>
                 <DataGridTemplateColumn x:Name="progressBar" Header="בתהליך" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ProgressBar 
                              x:Name="progress"
-                            Value="{Binding Status, Converter={StaticResource statusToProgress}}"  Height="30" 
+                            Value="{Binding Status, Converter={StaticResource statusToProgress}}"  Height="15" 
                                 Minimum="0" Maximum="100" Foreground="Gray">
                             </ProgressBar>
                         </DataTemplate>
