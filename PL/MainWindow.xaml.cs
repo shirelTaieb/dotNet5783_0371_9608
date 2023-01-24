@@ -20,6 +20,7 @@ namespace PL
         #region אירועי כפתורים
         public void customer_Click(object o, RoutedEventArgs e)
         {
+            quote.Visibility = Visibility.Collapsed;
             startManager.Visibility = Visibility.Hidden;
             startCustomer.Visibility = Visibility.Hidden;
             managerLogin.Visibility = Visibility.Hidden;
