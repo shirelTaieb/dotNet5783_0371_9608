@@ -129,14 +129,6 @@
     <path>/images/bookImages/BORINGBOOK.jpg</path>
   </Product>
   <Product>
-    <ID>100124</ID>
-    <Name>נאן- לא תם המסע</Name>
-    <Category>Romans</Category>
-    <Price>89</Price>
-    <InStock>11</InStock>
-    <path>/images/bookImages/Z3.jpg</path>
-  </Product>
-  <Product>
     <ID>100126</ID>
     <Name>לרוץ מהלב</Name>
     <Category>Theoretical</Category>

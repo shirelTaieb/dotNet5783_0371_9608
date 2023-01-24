@@ -42,6 +42,8 @@ namespace Dal
                 };
         }
         #endregion
+
+        #region פונקציה מוסיפה פריט בהזמנה לאקסמל ומחזירה את המספר המזהה שהעניקה לו
         public int Add(DO.OrderItem oi)
         {
             XElement orderItemsRoot = XMLTools.LoadListFromXMLElement(s_orderItems);
@@ -56,6 +58,9 @@ namespace Dal
             XMLTools.SaveListToXMLElement(orderItemsRoot, s_orderItems); // return to the xml
             return oi.ID;
         }
+        #endregion
+
+        #region פונקציה מקבלת מספר מזהה של הזמנה במוצר ומחזירה את הפריט
         public DO.OrderItem GetById(int id)
         {
             XElement? orderItemElement = XMLTools.LoadListFromXMLElement(s_orderItems)?.Elements()
@@ -65,6 +70,9 @@ namespace Dal
             else
                 return (DO.OrderItem)getOrderItem(orderItemElement!)!; //return the orderItem
         }
+        #endregion
+
+        #region פונקציה מוחקת 
         public void Delete(int id)
         {
             XElement orderItemsRoot = XMLTools.LoadListFromXMLElement(s_orderItems);  //get the root element of the file
@@ -78,11 +86,17 @@ namespace Dal
             catch { throw new NotExistException(); }
             XMLTools.SaveListToXMLElement(orderItemsRoot, s_orderItems); //save the orderItems after the deleting
         }
+        #endregion
+
+        #region פונקציה מעדכנת
         public void Update(DO.OrderItem orit)
         {
             Delete(orit.ID);
             Add(orit);
         }
+        #endregion
+
+        #region מחזירה אוסף של פרטי ההזמנה
         public IEnumerable<DO.OrderItem?> GetAll(Func<DO.OrderItem?, bool>? filter = null)
         {
             if (filter == null)
@@ -90,6 +104,9 @@ namespace Dal
             else
                 return XMLTools.LoadListFromXMLElement(s_orderItems).Elements().Select(o => getOrderItem(o)).Where(filter);
         }
+        #endregion
+
+        #region פונקציה מקבלת מספר מזהה של הזמנה ומחזירה את אוסף האורדר אייטם המתאימים
         public List<DO.OrderItem?> GetByOrderID(int ID)
         {
             return XMLTools.LoadListFromXMLElement(s_orderItems).Elements()
@@ -97,6 +114,9 @@ namespace Dal
                 ?? throw new NotExistException(); 
 
         }
+        #endregion
+
+        #region מקבלת מספר מזהה של הזמנה ומספר מזהה של מוצר ומחיזר את פרטי האורד אייטם המתאים 
         public DO.OrderItem GetByIDOrder_IDProduct(int IDOrder, int IDProduct)
         {
             XElement? temp = XMLTools.LoadListFromXMLElement(s_orderItems)?.Elements()
@@ -106,5 +126,6 @@ namespace Dal
             else
                 return (DO.OrderItem)getOrderItem(temp)!;
         }
+        #endregion
     }
 }

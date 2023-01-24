@@ -41,6 +41,7 @@ namespace Dal
         }
         #endregion
 
+        #region פונקציה מוסיפה מוצר לאקסמל ומחזירה את המספר המזהה שהעניקה לו
         public int Add(DO.Product product)
         {
             XElement productsRoot = XMLTools.LoadListFromXMLElement(s_products);
@@ -54,6 +55,9 @@ namespace Dal
             XMLTools.SaveListToXMLElement(productsRoot, s_products); // return to the xml
             return product.ID;
         }
+        #endregion 
+
+        #region פונקציה מקבלת מספר מזהה של מוצר ומחזירה את המוצר
         public DO.Product GetById(int id)
         {
             XElement? productElement = XMLTools.LoadListFromXMLElement(s_products)?.Elements()
@@ -63,6 +67,9 @@ namespace Dal
             else
                 return (DO.Product)getProduct(productElement!)!; //return the product
         }
+        #endregion
+
+        #region פונקציה מוחקת 
         public void Delete(int id)
         {
             XElement productsRoot = XMLTools.LoadListFromXMLElement(s_products);  //get the root element of the file
@@ -79,19 +86,20 @@ namespace Dal
                     throw new NotExistException();
                 XMLTools.SaveListToXMLElement(productsRoot, s_products); //save the products after the deleting
 
-                //    (productsRoot.Elements()
-
-                //.FirstOrDefault(pro => (int?)pro.Element("ID") == id) ?? throw new NotExistException())
-                //.Remove();
-
             } //try to remove
             catch { throw new NotExistException(); }
         }
+        #endregion
+
+        #region פונקציה מעדכנת
         public void Update(DO.Product product)
         {
             Delete(product.ID);
             Add(product);
         }
+        #endregion
+
+        #region מחזירה את רשימת המוצרים
         public IEnumerable<DO.Product?> GetAll(Func<DO.Product?, bool>? filter = null)
         {
 
@@ -102,5 +110,6 @@ namespace Dal
             else
                 return XMLTools.LoadListFromXMLElement(s_products).Elements().Select(s => getProduct(s)).Where(filter);
         }
+        #endregion
     }
 }

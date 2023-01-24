@@ -6,7 +6,7 @@ namespace Dal
     internal class DalOrder : IOrder
     {
         const string s_orders = "Order"; //the name of the file
-        #region
+        #region  מקבל אורד וממיר לאלמנט
         static IEnumerable<XElement> createOrderElement(DO.Order order)
         {
             yield return new XElement("ID", order.ID);
@@ -24,7 +24,8 @@ namespace Dal
                 yield return new XElement("DeliveryDate", order.DeliveryDate);
         }
         #endregion
-        #region get order item מקבל אלמנט וממיר לאורדר אייטם
+
+        #region get order מקבל אלמנט וממיר לאורדר 
         static DO.Order? getOrder(XElement or)
         {
             if (or.ToIntNullable("ID") == null)
@@ -42,6 +43,8 @@ namespace Dal
                 };
         }
         #endregion
+
+        #region פונקציה מוסיפה הזמנה לאקסמל ומחזירה את המספר המזהה שהעניקה לו
         public int Add(DO.Order order)
         {
             XElement ordersRoot = XMLTools.LoadListFromXMLElement(s_orders);
@@ -56,6 +59,9 @@ namespace Dal
             XMLTools.SaveListToXMLElement(ordersRoot, s_orders); //to return to the xml
             return order.ID; 
         }
+        #endregion
+
+        #region פונקציה מקבלת מספר מזהה של הזמנה  ומחזירה את פרטי ההזמנה
         public DO.Order GetById(int id)
         {
             XElement? orderElement = XMLTools.LoadListFromXMLElement(s_orders)?.Elements()
@@ -65,14 +71,17 @@ namespace Dal
             else
                 return (DO.Order)getOrder(orderElement!)!;
         }
+        #endregion
 
-
+        #region פונקציה מעדכנת
         public void Update(DO.Order order)
         {
                 Delete(order.ID);
                 Add(order);
         }
+        #endregion
 
+        #region פונקציה מוחקת 
         public void Delete(int id)
         {
             XElement ordersRoot = XMLTools.LoadListFromXMLElement(s_orders);  //get the root element of the file
@@ -86,7 +95,9 @@ namespace Dal
             catch { throw new NotExistException(); }
             XMLTools.SaveListToXMLElement(ordersRoot, s_orders);
         }
+        #endregion
 
+        #region מחזירה את רשימת ההזמונות
         public IEnumerable<DO.Order?> GetAll(Func<DO.Order?, bool>? filter = null)
         {
             if (filter == null)
@@ -94,5 +105,6 @@ namespace Dal
             else
                 return XMLTools.LoadListFromXMLElement(s_orders).Elements().Select(o => getOrder(o)).Where(filter);
         }
+        #endregion
     }
 }
