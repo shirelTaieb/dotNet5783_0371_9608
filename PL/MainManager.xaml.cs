@@ -30,11 +30,11 @@ namespace PL
             mainWindow = Window;
             Window.returnManager.Visibility = Visibility.Collapsed;
         }
+        #region אירועי כפתורים
         public void products_Click(object o, RoutedEventArgs e)
         {
 
             mainWindow.frame.Content = new ProductListPage(mainWindow);
-
 
         }
         public void orders_Click(object o, RoutedEventArgs e)
@@ -52,9 +52,6 @@ namespace PL
         private void closeOptions_Click(object sender, RoutedEventArgs e) //אין לו עניין
         {
             mainWindow.frame.Content = null;
-            
-            //startManager.Visibility = Visibility.Visible;
-            //optionManager.Visibility = Visibility.Hidden;
         }
         private void simulator_Click(object sender, RoutedEventArgs e)
         {
@@ -64,5 +61,6 @@ namespace PL
                 simuWindow.Show();
             }
         }
+        #endregion
     }
 }

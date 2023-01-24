@@ -24,6 +24,8 @@ namespace PL.orders
         public orderListProductPage(BO.Order order)
         {
             InitializeComponent();
+
+            #region POהמרת רשימת המוצרים ל
             List<PO.OrderItem> POitems = new List<PO.OrderItem>();
             POitems =
                (from boItem in order.Items
@@ -36,6 +38,8 @@ namespace PL.orders
                     Amount = boItem.Amount,
                     TotalPrice = boItem.TotalPrice
                 }).ToList();
+            #endregion
+
             productListOfOrder.DataContext = tools.IEnumerableToObserval(POitems);
         }
 

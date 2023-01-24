@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace PL.PO
 {
+    
     public class Cart : INotifyPropertyChanged
     {
+        #region customer Name
         private string? _CustomerName;
         public string? CustomerName
         {
@@ -22,6 +24,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region total price
         private double? _TotalPrice;
         public double? TotalPrice
         {
@@ -35,6 +40,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region customer Email
         private string? _CustomerEmail;
         public string? CustomerEmail
         {
@@ -48,6 +56,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region customer Address
         private string? _CustomerAddress;
         public string? CustomerAddress
         {
@@ -61,7 +72,10 @@ namespace PL.PO
                 }
             }
         }
-        private  List<PO.OrderItem?>? _Items;
+        #endregion
+
+        #region Items
+        private List<PO.OrderItem?>? _Items;
         public  List<PO.OrderItem?>? Items
         {
             get { return _Items; }
@@ -74,7 +88,9 @@ namespace PL.PO
                 }
             }
         }
-        
+        #endregion
+
+
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

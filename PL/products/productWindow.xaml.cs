@@ -29,7 +29,7 @@ namespace PL.products
             InitializeComponent();
             categoryComboBox.ItemsSource = Enum.GetValues(typeof(HebCategory)); //קישור הקטגוריות לכומבו בוקס
             addAction = addToObservalCollection;
-           
+            #region פתיחת החלונות המתאימים
             if (updateProduct != null)  //כשרוצים לעדכן
             {
                 Add.Visibility = Visibility.Hidden;
@@ -50,7 +50,9 @@ namespace PL.products
                 productAddOrUpdate.DataContext = pl;  //קישור חלון ההוספה למוצר חדש שנוסיף לרשימה
 
             }
+            #endregion
         }
+        #region המרות
         public PO.Product BoToPo(BO.Product Bopro)
         {
             PO.Product p = new PO.Product();
@@ -74,8 +76,9 @@ namespace PL.products
             po.Price = popro.Price;
             return po;
         }
-     
+        #endregion
 
+        #region אירועי כפתורים 
         private void add_click(object sender, RoutedEventArgs e)
         {
             pl.path = path;
@@ -116,42 +119,30 @@ namespace PL.products
                 MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
         private void categoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             pl.Category = (BO.HebCategory)categoryComboBox.SelectedItem;
 
         }
-
-
         private void updateImage_Button(object sender, RoutedEventArgs e)// עדכון
         {
             Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
-          f.Filter = "Image Files(*.jpeg; *.jpg; *.png; *.gif; *.bmp)|*.jpeg; *.jpg; *.png; *.gif; *.bmp"; 
-           // f.Filter = "All Images Files (*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif)|*.png;*.jpeg;*.gif;*.jpg;*.bmp;*.tiff;*.tif" +
-           //"|PNG Portable Network Graphics (*.png)|*.png" +
-           //"|JPEG File Interchange Format (*.jpg *.jpeg *jfif)|*.jpg;*.jpeg;*.jfif" +
-           //"|BMP Windows Bitmap (*.bmp)|*.bmp" +
-           //"|TIF Tagged Imaged File Format (*.tif *.tiff)|*.tif;*.tiff" +
-           //"|GIF Graphics Interchange Format (*.gif)|*.gif";
+            f.Filter = "Image Files(*.jpeg; *.jpg; *.png; *.gif; *.bmp)|*.jpeg; *.jpg; *.png; *.gif; *.bmp"; 
             if (f.ShowDialog() == true)
             {
               
                 product_image.Source = new BitmapImage(new Uri(f.FileName));
-                //String[] spearator = { "PL" };
-                //Int32 count = 2;
-                // using the method
                 String[] strlist = product_image.Source.ToString().Split("PL", 2,
                        StringSplitOptions.RemoveEmptyEntries);
                 path = strlist[1];
             }
 
         }
-
+        #endregion
     }
- 
 
- 
+
+
 
 
 }

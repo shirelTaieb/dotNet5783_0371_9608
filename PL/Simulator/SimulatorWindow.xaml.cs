@@ -31,9 +31,8 @@ namespace PL.Simulator
             Tali.RunWorkerCompleted += Tali_RunWorkerCompleted!;
             Tali.WorkerReportsProgress = true;
             Tali.WorkerSupportsCancellation = true;
-            //Random rand = new Random();
-            //int argu = rand.Next(5, 10);
             var boList = bl!.Order!.getOrderList();
+            #region PO המרת הרשימה ל
             OrderList =
            (from or in boList
             select new PO.OrderForList()
@@ -44,16 +43,18 @@ namespace PL.Simulator
                 Status = (BO.HebOrderStatus?)or.Status,
                 TotalPrice = or.TotalPrice
             }).ToList();
+            #endregion
             orderSimulationList.DataContext = tools.IEnumerableToObserval(OrderList);
         }
+        #region Do Work
         private void Tali_DoWork(object sender, DoWorkEventArgs e)
         {
-          
+
             while (true)
             {
                 if (Tali.CancellationPending == true)
                 {
-                    e.Cancel = true;//?
+                    e.Cancel = true;
                     break;
                 }
                 else
@@ -61,20 +62,19 @@ namespace PL.Simulator
                     if (Tali.WorkerReportsProgress == true)
                     {
                         time = time.AddDays(2);
-
                         Tali.ReportProgress(5);
                         
                     }
                     Thread.Sleep(2000);
                 }
             }
-        
-
-            //e.Result = "result"; //כשלחצו סטופ
-
         }
+        #endregion
+
+        #region Progress Changed
         private void Tali_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            #region הבאה של הרשימה המעודכנת מהנתונים
             OrderList.Clear();
             var boList = bl!.Order!.getOrderList();
             OrderList = (from or in boList
@@ -87,9 +87,11 @@ namespace PL.Simulator
                              TotalPrice = or.TotalPrice
                          }).ToList(); //קישור הרשימה מחדש
             orderSimulationList.DataContext = tools.IEnumerableToObserval(OrderList);
-            // int progress = e.ProgressPercentage;
+            #endregion
+         
             foreach (var order in OrderList)
             {
+                #region עדכון סטטוס של כל הזמנה
                 if ((int)order.Status! == 0)//הוזמן
                 {
                     if (bl!.Order!.getOrderInfo(order.ID)!.OrderDate?.AddDays(10) <= time) //צריך כבר לעדכן
@@ -107,15 +109,20 @@ namespace PL.Simulator
                             order.Status = BO.HebOrderStatus.נמסר;
                         }
                 }
-        
-                //Thread.Sleep(50);
+                #endregion
 
             }
         }
+        #endregion
+
+        #region complaeted
         private void Tali_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-           // object result = e.Result;
+            MessageBox.Show("ריצת הסימולטור נעצרה בהצלחה", "");
         }
+        #endregion
+
+        #region אירועי כפתורים
         private void start_Click(object sender, RoutedEventArgs e)
         {
             startButton.IsEnabled = false;
@@ -135,5 +142,6 @@ namespace PL.Simulator
             
             MessageBox.Show ((bl!.Order!.orderTracking(((PO.OrderForList?)orderSimulationList!.SelectedItem!).ID)).ToString(), "");
         }
+        #endregion
     }
 }

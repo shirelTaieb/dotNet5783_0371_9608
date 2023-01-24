@@ -17,18 +17,7 @@ namespace PL
 
         }
 
-
-        public void return_back(object o, RoutedEventArgs e)
-        {
-            quote.Visibility = Visibility.Hidden;
-            startManager.Visibility = Visibility.Visible;
-            startCustomer.Visibility = Visibility.Visible;
-            managerLogin.Visibility = Visibility.Collapsed;
-            shortToCart.Visibility = Visibility.Collapsed;
-            returnCustomer.Visibility = Visibility.Collapsed;
-            returnManager.Visibility = Visibility.Collapsed;
-
-        }
+        #region אירועי כפתורים
         public void customer_Click(object o, RoutedEventArgs e)
         {
             startManager.Visibility = Visibility.Hidden;
@@ -38,7 +27,18 @@ namespace PL
 
         }
 
-
+        #region return back
+        public void return_back(object o, RoutedEventArgs e)
+        {
+            quote.Visibility = Visibility.Visible;
+            startManager.Visibility = Visibility.Visible;
+            startCustomer.Visibility = Visibility.Visible;
+            managerLogin.Visibility = Visibility.Collapsed;
+            shortToCart.Visibility = Visibility.Collapsed;
+            returnCustomer.Visibility = Visibility.Collapsed;
+            returnManager.Visibility = Visibility.Collapsed;
+        }
+        #endregion
         public void manager_Click(object o, RoutedEventArgs e)
         {
             quote.Visibility=Visibility.Hidden;
@@ -53,6 +53,7 @@ namespace PL
                 check_password(sender, e);
         }
 
+        #region בדיקת תקינות סיסמא
         public void check_password(object o, RoutedEventArgs e)
         {
             worngPassword.Visibility = Visibility.Hidden;
@@ -68,6 +69,7 @@ namespace PL
                 password.Clear();
             }
         }
+        #endregion
 
         public void returnToTheMainWindow_Click(object o, RoutedEventArgs e)
         {
@@ -108,7 +110,7 @@ namespace PL
         {
             MessageBox.Show("...אין לנו באמת איך לעזור לך, קצת אחריות", "שכחת סיסמא");
         }
-
+        #endregion
 
     }
 }

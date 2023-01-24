@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace PL.PO
 {
+    
     public class OrderForList : INotifyPropertyChanged
     {
+        #region ID 
         private int _ID;
         public int ID
         {
@@ -22,6 +24,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region customer name
         private string? _CustomerName;
         public string? CustomerName
         {
@@ -35,6 +40,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region status
         private BO.HebOrderStatus? _Status;
         public  BO.HebOrderStatus? Status
         {
@@ -48,6 +56,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region amount of items
         private int _AmountOfItems;
         public int AmountOfItems
         {
@@ -61,6 +72,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region total price
         private double? _TotalPrice;
         public double? TotalPrice
         {
@@ -74,7 +88,7 @@ namespace PL.PO
                 }
             }
         }
-        public override string ToString() => this.ToStringProperty();
+        #endregion
 
         public event PropertyChangedEventHandler? PropertyChanged;
     }
