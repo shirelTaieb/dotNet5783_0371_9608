@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfRunNumbers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ConfigProduct>100125</ConfigProduct>
-  <ConfigOrder>1055</ConfigOrder>
-  <ConfigOrderItem>1093</ConfigOrderItem>
+  <ConfigProduct>100128</ConfigProduct>
+  <ConfigOrder>1058</ConfigOrder>
+  <ConfigOrderItem>1097</ConfigOrderItem>
   <ConfigOrderItem>1000</ConfigOrderItem>
 </ArrayOfRunNumbers>
