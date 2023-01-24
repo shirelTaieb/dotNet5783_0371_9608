@@ -20,6 +20,7 @@ namespace PL.products
             InitializeComponent();
             mainWindow.returnManager.Visibility = Visibility.Visible;
             var list = bl!.Product!.getListOfProduct()!;
+            #region PO המרת הרשימה ל
             var poList =
                 from item in list
                 select new PO.ProductForList
@@ -30,11 +31,13 @@ namespace PL.products
                     Category = (BO.HebCategory?)item.Category,
                     path = item.path
                 };
+            #endregion
             productCollection = tools.IEnumerableToObserval(poList);
             productForListDataGrid.DataContext = productCollection;
             categorySelector.ItemsSource = Enum.GetValues(typeof(HebCategory));
         }
 
+        #region אירועים
         private void categorySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = categorySelector.SelectedItem;
@@ -73,11 +76,10 @@ namespace PL.products
         {
             seeDetails.Visibility = Visibility.Hidden;
             productWindow AddProduct = new productWindow(addProduct);
-            AddProduct.id.Visibility = Visibility.Collapsed;
+            AddProduct.id.Visibility = Visibility.Hidden;
             AddProduct.ShowDialog();
             
         }
-
 
         public void update_Click(object sender, RoutedEventArgs e)
         {
@@ -88,6 +90,7 @@ namespace PL.products
                 productWindow updateProduct = new productWindow(addProduct, poUpPro);
                 updateProduct.ShowDialog();
                 var boList = bl!.Product!.getListOfProduct()!;
+                #region PO המרת הרשימה ל
                 var poList =
                     from pro in boList
                     select new PO.ProductForList
@@ -98,18 +101,12 @@ namespace PL.products
                         Price = pro.Price,
                         path = pro.path
                     };
+                #endregion
                 productForListDataGrid.DataContext = tools.IEnumerableToObserval(poList); //קישור הרשימה מחדש
             }
 
         }
-
-        public void addProduct(PO.ProductForList productToAdd) =>
-            productCollection?.Add(productToAdd);
-        public void deleteProduct(PO.ProductForList productToRemove)
-        {
-            if(productCollection!.Contains(productToRemove))
-                productCollection?.Remove(productToRemove);
-        }
+      
         public void delete_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("?האם אתה בטוח שברצונך למחוק את המוצר", "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
@@ -118,6 +115,7 @@ namespace PL.products
                 PO.ProductForList proToDel = (PO.ProductForList)productForListDataGrid.SelectedItem;
                 bl!.Product!.deleteProduct(proToDel.ID); //מחיקת המוצר מהנתונים
                 var boList = bl!.Product!.getListOfProduct()!;
+                #region POהמרת הרשימה ל
                 var poList =
                     from pro in boList
                     select new PO.ProductForList
@@ -128,6 +126,7 @@ namespace PL.products
                         Price = pro.Price,
                         path = pro.path
                     };
+                #endregion
                 productForListDataGrid.DataContext = tools.IEnumerableToObserval(poList); //קישור הרשימה מחדש
             }
         }
@@ -151,6 +150,10 @@ namespace PL.products
         {
             seeDetails.Content = null;
         }
+        #endregion
+
+        public void addProduct(PO.ProductForList productToAdd) =>
+          productCollection?.Add(productToAdd);  //פונקצית הוספה לאובסרבל
     }
 }
 

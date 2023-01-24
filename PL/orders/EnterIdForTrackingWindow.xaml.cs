@@ -23,12 +23,15 @@ namespace PL.orders
             num = managerOrCustomer; //if it is a manger or customer
            
         }
-
+        #region בדיקת קלט- מספרי בלבד
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+        #endregion
+
+        #region אירועי כפתורים
         private void keyDown(object sender, KeyEventArgs e)
         {
             if(e.Key==Key.Enter)
@@ -68,7 +71,6 @@ namespace PL.orders
 
        
         }
-
-
+        #endregion
     }
 }

@@ -9,15 +9,8 @@ namespace PL.PO
 {
     public class ProductForList : INotifyPropertyChanged
     {
-
-        /// <summary>
-        /// the id of the station
-        /// </summary>
+        #region ID
         private int _ID;
-        /// <summary>
-        /// the id of the station
-        /// </summary>
-
         public int ID
         {
             get { return _ID; }
@@ -30,6 +23,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region name
         private string? _Name;
         public string? Name
         {
@@ -43,7 +39,9 @@ namespace PL.PO
                 }
             }
         }
-  
+        #endregion
+
+        #region category
         private BO.HebCategory? _Category;
         public BO.HebCategory? Category
         {
@@ -57,6 +55,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region price
         private double? _Price;
         public double? Price
         {
@@ -70,6 +71,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region path
         private string? _path;
         public string? path
         {
@@ -83,6 +87,8 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

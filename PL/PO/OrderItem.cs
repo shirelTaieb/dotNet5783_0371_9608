@@ -4,6 +4,7 @@ namespace PL.PO
 {
     public class OrderItem : INotifyPropertyChanged
     {
+        #region ID
         private int _ID;
         public int ID
         {
@@ -17,6 +18,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region product ID
         private int _ProductID;
         public int ProductID
         {
@@ -30,6 +34,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region product name
         private string? _ProductName;
         public string? ProductName
         {
@@ -43,6 +50,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region price
         private double? _Price;
         public double? Price
         {
@@ -56,8 +66,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
 
-
+        #region amount
         private int _Amount;
         public int Amount
         {
@@ -71,6 +82,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region Total price
         private double? _TotalPrice;
         public double? TotalPrice
         {
@@ -84,6 +98,9 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
+        #region path for image
         private string? _path;
         public string? path
         {
@@ -97,6 +114,8 @@ namespace PL.PO
                 }
             }
         }
+        #endregion
+
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

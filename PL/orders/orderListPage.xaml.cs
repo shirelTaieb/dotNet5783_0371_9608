@@ -22,13 +22,13 @@ namespace PL.orders
     public partial class orderListPage : Page
     {
         private BLApi.IBl? bl = BLApi.Factory.Get();
-        //ObservableCollection<PO.OrderForList>? orderCollection = new ObservableCollection<PO.OrderForList>();
         public orderListPage(MainWindow mainWindow)
         {
             InitializeComponent();
 
             mainWindow.returnManager.Visibility = Visibility.Visible;
             var list = bl!.Order!.getOrderList();
+            #region POהמרת הרשימה ל
             var poList =
                 from or in list
                 select new PO.OrderForList
@@ -40,11 +40,11 @@ namespace PL.orders
                     TotalPrice = or.TotalPrice
 
                 };
+            #endregion
             orderForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
-          // IEnumerable<IGrouping<BO.OrderStatus?, BO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
-            //groupings = groupings.OrderBy(p => p.Key);
         }
 
+        #region אירוע לחיצה כפולה
         private void orderUpdate_DoubleClick(object sender, RoutedEventArgs e)
         {
             PO.OrderForList ofl = (PO.OrderForList)orderForListDataGrid.SelectedItem;
@@ -57,6 +57,7 @@ namespace PL.orders
                 orderWindow data = new orderWindow(or);
                 data.ShowDialog();
                 var list = bl!.Order!.getOrderList();
+                #region POהמרת הרשימה ל
                 var poList =
                     from order in list
                     select new PO.OrderForList
@@ -67,6 +68,7 @@ namespace PL.orders
                         Status = (BO.HebOrderStatus?)order.Status,
                         TotalPrice = order.TotalPrice
                     };
+                #endregion
                 orderForListDataGrid.DataContext = tools.IEnumerableToObserval(poList);
                 
             }
@@ -75,9 +77,11 @@ namespace PL.orders
                 MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        #endregion
+
+        #region grouping
         private void groupStatus_Click(object sender, RoutedEventArgs e)
         {
-            //statusSelector.Items.Add("");
             IEnumerable<IGrouping<BO.HebOrderStatus?, PO.OrderForList>> groupings = GroupByStatus(bl!.Order!.getOrderList()!);
             groupings = groupings.OrderBy(p => p.Key);
             orderForListDataGrid.DataContext = (from gru in groupings from o in gru select o).ToList();
@@ -99,6 +103,6 @@ namespace PL.orders
              group order by order.Status into orderinfo
              select orderinfo).ToList();
         }
-
+        #endregion
     }
 }

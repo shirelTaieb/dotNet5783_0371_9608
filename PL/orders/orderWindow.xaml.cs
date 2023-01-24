@@ -25,23 +25,13 @@ namespace PL.orders
             if  ((int)order.Status == 1)
                 toDelivery.Visibility = Visibility.Visible;
         }
+
+        #region אירועי כפתורים
         private void toSent_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-               // BO.Order notUpdateOrder = bl!.Order!.getOrderInfo(or.ID)!; //קבלת הפרטים של ההזמנה לפני העדכון סטטוס
-              
-               /* BO.Order upOrder=*/bl!.Order!.updateSentOrder(or.ID);
-                //PO.OrderForList poUpOrder = new PO.OrderForList()
-                //{
-                //    ID = upOrder.ID,
-                //    TotalPrice = upOrder.TotalPrice,
-                //    Status = (HebOrderStatus?)upOrder.Status,
-                //    CustomerName = upOrder.CustomerName,
-                //    AmountOfItems = upOrder.Items!.Count
-                //};
-              
-                
+                bl!.Order!.updateSentOrder(or.ID);
                 MessageBox.Show("סטטוס עודכן לנשלח", "");
                 this.Close();
             }
@@ -74,5 +64,7 @@ namespace PL.orders
             orderFrame.Content = null;
             Return.Visibility = Visibility.Collapsed;
         }
+        #endregion
+
     }
 }

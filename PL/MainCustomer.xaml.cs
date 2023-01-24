@@ -33,19 +33,15 @@ namespace PL
             window.returnCustomer.Visibility = Visibility.Collapsed;
 
         }
+        #region אירועי כפתורים
         public void Katelog_Click(object o, RoutedEventArgs e)
         {
             mainWindow.frame.Content = new customerListPage(ref my_cart,mainWindow);
-           
-            //customer.Visibility = Visibility.Hidden;
-            //shortToCart.Visibility = Visibility.Visible;
         }
         public void cart_Click(object o, RoutedEventArgs e)
         {
 
             mainWindow.frame.Content  = new cartListPage(ref my_cart, mainWindow);
-            
-            //customer.Visibility = Visibility.Hidden;
 
         }
 
@@ -54,5 +50,6 @@ namespace PL
             EnterIdForTrackingWindow enterID = new EnterIdForTrackingWindow(1);
             enterID.ShowDialog();
         }
+        #endregion
     }
 }
