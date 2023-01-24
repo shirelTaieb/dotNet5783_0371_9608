@@ -9,22 +9,6 @@
     <path>/images/bookImages/MagicParent.jpg</path>
   </Product>
   <Product>
-    <ID>100114</ID>
-    <Name>עיצוב ממשק באינטרנט</Name>
-    <Category>Theoretical</Category>
-    <Price>87.9</Price>
-    <InStock>5</InStock>
-    <path>/images/bookImages/Web.jpg</path>
-  </Product>
-  <Product>
-    <ID>100112</ID>
-    <Name>טרופותי</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>87</InStock>
-    <path>/images/bookImages/trofoti.jpg</path>
-  </Product>
-  <Product>
     <ID>100115</ID>
     <Name>איה פלוטו</Name>
     <Category>Children</Category>
@@ -33,28 +17,12 @@
     <path>/images/bookImages/WHEREPLOTO.jpg</path>
   </Product>
   <Product>
-    <ID>100071</ID>
-    <Name>ספר הכוזרי</Name>
-    <Category>Holy</Category>
-    <Price>80</Price>
-    <InStock>6</InStock>
-    <path>/images/bookImages/cuzari.jpg</path>
-  </Product>
-  <Product>
     <ID>100096</ID>
     <Name>נרניה</Name>
     <Category>Romans</Category>
     <Price>102</Price>
     <InStock>59</InStock>
     <path>/images/bookImages/NARNIA.PNG</path>
-  </Product>
-  <Product>
-    <ID>100092</ID>
-    <Name>משנה תורה השלם</Name>
-    <Category>Holy</Category>
-    <Price>60</Price>
-    <InStock>84</InStock>
-    <path>/images/bookImages/mishneTora.jpg</path>
   </Product>
   <Product>
     <ID>100093</ID>
@@ -73,14 +41,6 @@
     <path>/images/bookImages/HarryPotter2.jpg</path>
   </Product>
   <Product>
-    <ID>100072</ID>
-    <Name>חרדה ודיכאון</Name>
-    <Category>Theoretical</Category>
-    <Price>99.9</Price>
-    <InStock>891</InStock>
-    <path>/images/bookImages/DEPRESION.jpg</path>
-  </Product>
-  <Product>
     <ID>100075</ID>
     <Name>חכמינו לימינו</Name>
     <Category>Holy</Category>
@@ -95,14 +55,6 @@
     <Price>79.9</Price>
     <InStock>68</InStock>
     <path>/images/bookImages/hapanimShpartzuMeadaf.jpg</path>
-  </Product>
-  <Product>
-    <ID>100084</ID>
-    <Name>מלחמת העצמאות</Name>
-    <Category>History</Category>
-    <Price>93</Price>
-    <InStock>65</InStock>
-    <path>/images/bookImages/ISRAEL.jpg</path>
   </Product>
   <Product>
     <ID>100088</ID>
@@ -167,14 +119,6 @@
     <Price>60</Price>
     <InStock>82</InStock>
     <path>/images/bookImages/littelPrince.jpg</path>
-  </Product>
-  <Product>
-    <ID>100127</ID>
-    <Name>הארי פוטר- הסט השלם</Name>
-    <Category>Romans</Category>
-    <Price>499</Price>
-    <InStock>80</InStock>
-    <path>/images/bookImages/HarryPotterAll.jpg</path>
   </Product>
   <Product>
     <ID>100087</ID>
@@ -353,14 +297,6 @@
     <path>/images/bookImages/LionStrobery.jpg</path>
   </Product>
   <Product>
-    <ID>100069</ID>
-    <Name>כספיון</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>230</InStock>
-    <path>/images/bookImages/CASPION.jpg</path>
-  </Product>
-  <Product>
     <ID>100064</ID>
     <Name>אליפים</Name>
     <Category>Romans</Category>
@@ -375,5 +311,69 @@
     <Price>103.99</Price>
     <InStock>53</InStock>
     <path>/images/bookImages/shneyemMetim.jpg</path>
+  </Product>
+  <Product>
+    <ID>100126</ID>
+    <Name>טרופותי</Name>
+    <Category>Children</Category>
+    <Price>45</Price>
+    <InStock>1</InStock>
+    <path>/images/bookImages/trofoti.jpg</path>
+  </Product>
+  <Product>
+    <ID>100071</ID>
+    <Name>ספר הכוזרי</Name>
+    <Category>Holy</Category>
+    <Price>80</Price>
+    <InStock>2</InStock>
+    <path>/images/bookImages/cuzari.jpg</path>
+  </Product>
+  <Product>
+    <ID>100084</ID>
+    <Name>מלחמת העצמאות</Name>
+    <Category>History</Category>
+    <Price>93</Price>
+    <InStock>64</InStock>
+    <path>/images/bookImages/ISRAEL.jpg</path>
+  </Product>
+  <Product>
+    <ID>100069</ID>
+    <Name>כספיון</Name>
+    <Category>Children</Category>
+    <Price>55.9</Price>
+    <InStock>0</InStock>
+    <path>/images/bookImages/CASPION.jpg</path>
+  </Product>
+  <Product>
+    <ID>100127</ID>
+    <Name>טור יורה דעה</Name>
+    <Category>Holy</Category>
+    <Price>199</Price>
+    <InStock>4</InStock>
+    <path>/images/bookImages/littelPrince.jpg</path>
+  </Product>
+  <Product>
+    <ID>100092</ID>
+    <Name>משנה תורה השלם</Name>
+    <Category>Holy</Category>
+    <Price>66</Price>
+    <InStock>55</InStock>
+    <path>/images/bookImages/mishneTora.jpg</path>
+  </Product>
+  <Product>
+    <ID>100114</ID>
+    <Name>עיצוב ממשק באינטרנט</Name>
+    <Category>Theoretical</Category>
+    <Price>87.9</Price>
+    <InStock>2</InStock>
+    <path>/images/bookImages/Web.jpg</path>
+  </Product>
+  <Product>
+    <ID>100072</ID>
+    <Name>חרדה ודיכאון</Name>
+    <Category>Theoretical</Category>
+    <Price>100</Price>
+    <InStock>891</InStock>
+    <path>/images/bookImages/DEPRESION.jpg</path>
   </Product>
 </ArrayOfProduct>

@@ -736,4 +736,36 @@
     <Price>99</Price>
     <Amount>1</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1094</ID>
+    <ProductID>100071</ProductID>
+    <ProductName>ספר הכוזרי</ProductName>
+    <OrderID>1056</OrderID>
+    <Price>80</Price>
+    <Amount>3</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1095</ID>
+    <ProductID>100071</ProductID>
+    <ProductName>ספר הכוזרי</ProductName>
+    <OrderID>1057</OrderID>
+    <Price>80</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1096</ID>
+    <ProductID>100084</ProductID>
+    <ProductName>מלחמת העצמאות</ProductName>
+    <OrderID>1057</OrderID>
+    <Price>93</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1097</ID>
+    <ProductID>100114</ProductID>
+    <ProductName>עיצוב ממשק באינטרנט</ProductName>
+    <OrderID>1058</OrderID>
+    <Price>87.9</Price>
+    <Amount>3</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>

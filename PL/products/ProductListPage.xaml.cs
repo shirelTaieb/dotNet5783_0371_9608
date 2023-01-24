@@ -74,16 +74,15 @@ namespace PL.products
         }
         public void Add_Click(object sender, RoutedEventArgs e)
         {
-            seeDetails.Visibility = Visibility.Hidden;
+            seeDetails.Content=null;
             productWindow AddProduct = new productWindow(addProduct);
             AddProduct.id.Visibility = Visibility.Hidden;
             AddProduct.ShowDialog();
-            
         }
 
         public void update_Click(object sender, RoutedEventArgs e)
         {
-            seeDetails.Visibility = Visibility.Hidden;
+            seeDetails.Content=null;
             PO.ProductForList? poUpPro = (PO.ProductForList)productForListDataGrid.SelectedItem;
             if (poUpPro != null)
             {
@@ -111,7 +110,7 @@ namespace PL.products
         {
             if (MessageBox.Show("?האם אתה בטוח שברצונך למחוק את המוצר", "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                seeDetails.Visibility = Visibility.Hidden;
+                seeDetails.Content=null;
                 PO.ProductForList proToDel = (PO.ProductForList)productForListDataGrid.SelectedItem;
                 bl!.Product!.deleteProduct(proToDel.ID); //מחיקת המוצר מהנתונים
                 var boList = bl!.Product!.getListOfProduct()!;
