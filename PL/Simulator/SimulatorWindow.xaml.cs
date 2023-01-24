@@ -61,7 +61,7 @@ namespace PL.Simulator
                 {
                     if (Tali.WorkerReportsProgress == true)
                     {
-                        time = time.AddDays(1);
+                        time = time.AddDays(2);
                         Tali.ReportProgress(5);
                         
                     }
