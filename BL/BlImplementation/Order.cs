@@ -13,14 +13,8 @@ namespace BlImplementation;
 
 internal class Order : BLApi.IOrder
 {
-    /// <summary>
-    /// get DO Order and according to his dates' this func return the wanted OrderStatus
-    /// </summary>
-    /// <param name="or"></param>
-    /// <returns></returns>
-
     private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();
-
+    #region הפונקציה מקבלת ישרות הזמנה וממירה אותה לישרות הזמנה לרשימה
     private BO.OrderForList BoOrderToOrderForList(BO.Order or)
     {
         BO.OrderForList ofl = new BO.OrderForList();
@@ -31,16 +25,14 @@ internal class Order : BLApi.IOrder
         ofl.TotalPrice = or.TotalPrice;
         return ofl;
     }
-    /// <summary>
-    /// פונקצייה שנותנת מידע על הסטטוס
-    /// </summary>
-    /// <param name="o"></param>
-    /// <returns></returns>
+    #endregion
+
+    #region  פונקצייה מקבלת ישות הזמנה שנותנת מידע על הסטטוס שלה
     internal BO.OrderStatus getStatus(DO.Order or)
     {
         BO.OrderStatus stat = new BO.OrderStatus();
-        if (or.ShipDate != null)//&&or.ShipDate!=DateTime.MinValue)
-            if (or.DeliveryDate != null)//&& or.DeliveryDate != DateTime.MinValue)
+        if (or.ShipDate != null)
+            if (or.DeliveryDate != null)
                 stat = BO.OrderStatus.deliveried;
             else
                 stat = BO.OrderStatus.sent;
@@ -48,12 +40,9 @@ internal class Order : BLApi.IOrder
             stat = BO.OrderStatus.confirm;
         return stat;
     }
+    #endregion
 
-    /// <summary>
-    /// פונקצייה שממירה מבו לדו
-    /// </summary>
-    /// <param name="o"></param>
-    /// <returns></returns>
+    #region פונקצייה שממירה מBO לDO
     internal BO.Order? DoOrderToBo(DO.Order? o)
     {
         if (o == null)
@@ -69,7 +58,6 @@ internal class Order : BLApi.IOrder
         temp.DeliveryDate = order.DeliveryDate ?? null;
         temp.Status = getStatus(order);
         List<DO.OrderItem?> dolst = Dal!.OrderItem.GetByOrderID(order.ID);
-        // List<BO.OrderItem> bolst = new List<BO.OrderItem>();
         var result =
             from doItem in dolst
             select new BO.OrderItem
@@ -86,8 +74,9 @@ internal class Order : BLApi.IOrder
                     temp.Items?.Sum(c => c?.Price * c?.Amount) ?? 0;
         return temp;
     }
+    #endregion
 
-
+    #region פונקציה מחזירה אוסף של הרשימה של ההזמנות
     public IEnumerable<BO.OrderForList?> getOrderList()
     {
         IEnumerable<DO.Order?> temp = Dal!.Order.GetAll(); //take the data from the factory
@@ -95,9 +84,13 @@ internal class Order : BLApi.IOrder
 
         List<BO.OrderForList> orders =
             (from ord in temp
-             select (BoOrderToOrderForList(DoOrderToBo(ord)!))).ToList();
+             let boorder= DoOrderToBo(ord)!
+             select (BoOrderToOrderForList(boorder))).ToList();
         return orders;
     }
+    #endregion
+
+    #region הפונקציה מקבלת מזפר מזהה של הזמנה ומחזירה ישות אורדר בהתאם (את פרטי ההזמנה)ג
     public BO.Order? getOrderInfo(int orderID)
     {
         //מזהה- שהוא מספר חיובי בן 4 ספרות
@@ -110,6 +103,9 @@ internal class Order : BLApi.IOrder
         boorder = DoOrderToBo(temp);
         return boorder;
     }
+    #endregion
+
+    #region פונקציה מעדכנת את הסטטוס לנשלח. זורקת חריגות בהתאם
     public BO.Order updateSentOrder(int orderID, DateTime? time = null)
     {
         //מזהה- שהוא מספר חיובי בן 4 ספרות
@@ -133,8 +129,10 @@ internal class Order : BLApi.IOrder
         }
         BO.Order? cast = DoOrderToBo(temp);//cast from do to bo
         return cast!;
-
     }
+    #endregion
+
+    #region פונקציה מעדכנת את הסטטוס לנשלח. זורקת חריגות בהתאם
     public BO.Order updateDeliveryOrder(int orderID, DateTime? time = null)
     {
         //מזהה- שהוא מספר חיובי בן 4 ספרות
@@ -161,8 +159,10 @@ internal class Order : BLApi.IOrder
         BO.Order? cast = new BO.Order();
         cast = DoOrderToBo(temp);//cast from do to bo 
         return cast!;
-
     }
+    #endregion
+
+    #region הפונקציה מקבלת מספר מזהה להזמנה ומחזירה מעקב על ההזמנה
     public BO.OrderTracking orderTracking(int orderID)
     {
         //מזהה- שהוא מספר חיובי בן 6 ספרות
@@ -181,4 +181,5 @@ internal class Order : BLApi.IOrder
             ot.Tracking.Add(new Tuple<string, DateTime?>("Delivery Date: ",temp.DeliveryDate));
         return ot;
     }
+    #endregion
 }

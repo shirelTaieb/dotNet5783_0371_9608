@@ -6,6 +6,8 @@ namespace BlImplementation
     internal class Cart : BLApi.ICart
     {
         private IDal? Dal = DalApi.Factory.Get() ?? throw new BO.wrongDataException();//עכשיו ניתן לצאת מנק הנחה שדאל שונה מנאל
+
+        #region מוסיף מוצר לסל קניות. זריקות בהתאם
         public BO.Cart addProductToCart(BO.Cart? cart, int prID)
         {
             //מזהה- שהוא מספר חיובי בן 6 ספרות
@@ -49,6 +51,9 @@ namespace BlImplementation
             }
             return cart;
         }
+        #endregion
+
+        #region פונקציה שמשנה את כמות הפרטים בסל קניות מסויים. זריקות בהתאם
         public BO.Cart updatePoductAmount(BO.Cart? cart, int IDpr, int newAmount)
         {
             //בודק שהתז נכון וקיים
@@ -71,9 +76,7 @@ namespace BlImplementation
                     cart.TotalPrice -= temp.Price * (temp.Amount - newAmount);
                     cart!.Items![ind]!.TotalPrice -= temp.Price * (temp.Amount - newAmount);
                     cart!.Items![ind]!.Amount = newAmount;
-                    
                 }
-
             }
             if (newAmount > temp.Amount)//אם הכמות גדלה - תפעל בדומה להוספת מוצר לסל קניות שכבר קיים בסל קניות כנ"ל
             {
@@ -97,6 +100,9 @@ namespace BlImplementation
 
             return cart!;
         }
+        #endregion
+
+        #region פונקציה מאשר סל קניות ויוצאת עבורו הזמנה. זריקות חגירה בהתאם
         public int confirmOrder(BO.Cart? cart)
         {
             if (cart == null)
@@ -130,17 +136,6 @@ namespace BlImplementation
                     Price = item.Price,
                     Amount = item.Amount,
                 };
-            //var adding =
-            //from item in castListToDo
-            //select Dal!.OrderItem.Add(item); //הוספה לרשימת פריטי ההזמנה
-
-            //var updateing =
-            //    from item in castListToDo
-            //    //let pr = Dal.Product.GetById(item.ProductID) ?? throw new BO.doseNotExistException()
-            //     //pr.InStock -= item.Amount
-            //    select Dal.Product.Update(new DO.Product() pr=Dal.Product.GetById(item.ProductID) ?? throw new BO.doseNotExistException())
-            //  );
-            //איך ממירים גם את זה ללינקקקק?
             foreach (var item in castListToDo)  
             {
                 Dal.OrderItem.Add(item); //הוספה לרשימת פריטי ההזמנה
@@ -151,7 +146,7 @@ namespace BlImplementation
                 Dal.Product.Update(pr); //עדכון המוצר בשכבת הנתונים
             }
             return order_id;
-
         }
+        #endregion
     }
 }
