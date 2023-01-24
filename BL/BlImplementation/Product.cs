@@ -21,6 +21,7 @@ internal class Product : BLApi.IProduct
     }
     #endregion
 
+    #region הפונקציה מוסיפה מוצר לרשימה. נזרקות חריגות בהתאם
     public int addNewProduct(BO.Product? pr)
     {
         //בדיקת תקינות קלט
@@ -51,10 +52,16 @@ internal class Product : BLApi.IProduct
             return Dal!.Product.Add(temp);
         }
     }
+    #endregion
+
+    #region פונקציה מוחקת מוצר
     public void deleteProduct(int IDpr)
     {
         Dal?.Product.Delete(IDpr);
     }
+    #endregion
+
+    #region הפונקציה מעדכנת מוצר. נזרקות חריגות בהתאם.
     public void updateProduct(BO.Product? pr)
     {
         //בדיקת תקינות קלט
@@ -78,6 +85,9 @@ internal class Product : BLApi.IProduct
         temp = BOproductToDO(pr);
         Dal?.Product.Update(temp);
     }
+    #endregion
+
+    #region הפוהקציה מחזירה אוסף של מוצרים שענו על ביטוי הלמדה המתאים
     public IEnumerable<BO.ProductForList?> getPartOfProduct(Func<BO.ProductForList?, bool>? filter)
     {
         if (filter == null)
@@ -87,7 +97,10 @@ internal class Product : BLApi.IProduct
                where filter!(item)
                select item; ;
     }
-    public IEnumerable<BO.ProductForList?> getListOfProduct()//נו זה גם לקוסטומר
+    #endregion
+
+    #region פונקצייה שמחזירה אוסף של כל המוצרים
+    public IEnumerable<BO.ProductForList?> getListOfProduct()
     {
         
         IEnumerable<DO.Product?> lstp = Dal!.Product.GetAll();
@@ -101,6 +114,9 @@ internal class Product : BLApi.IProduct
                     path= prop?.path
                 }).ToList();
     }
+    #endregion
+
+    #region  פונקצייה מחיזרה פרטים של מוצר(ישות מוצר) עבור המנהל. נזרקות חריגות בהתאם
     public BO.Product getProductInfoManager(int IDpr)
     {
         //מזהה- הוא מספר חיובי בן 6 ספרות
@@ -118,6 +134,9 @@ internal class Product : BLApi.IProduct
         pr.path = temp.path;
         return pr;
     }
+    #endregion
+
+    #region פונקצייה מחיזרה פרטים של מוצר(ישות מוצר) עבור לקוח. נזרקות חריגות בהתאם
     public BO.ProductItem getProductInfoCustomer(int IDpr, BO.Cart? cart)
     {
         //מזהה- הוא מספר חיובי בן 6 ספרות
@@ -150,5 +169,6 @@ internal class Product : BLApi.IProduct
         }
         return pr;
     }
+    #endregion
 
 }
