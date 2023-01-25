@@ -14,7 +14,7 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid x:Name="groupingOrder"  Grid.Row="0" Background="#DCE1DE">
-            <Button Content="מיין לפי מצב הזמנה" HorizontalAlignment="Left" Margin="24,0,0,0" Click="groupStatus_Click" VerticalAlignment="Center"/>
+            <Button Content="מיין לפי מצב הזמנה" HorizontalAlignment="Left" Margin="8,0,0,0" Click="groupStatus_Click" VerticalAlignment="Center"/>
         </Grid>
         <DataGrid x:Name="orderForListDataGrid" CanUserSortColumns="False" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="orderUpdate_DoubleClick" Background="#DCE1DE" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" Grid.Row="1" Grid.RowSpan="2"  AlternatingRowBackground="#B0C4B1" AlternationCount="2" FlowDirection="RightToLeft" >
             <DataGrid.Resources>
