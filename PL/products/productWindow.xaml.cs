@@ -85,9 +85,10 @@ namespace PL.products
             UpdateOrNewProduct = PoToBo(pl);
 
             //קריאה לפונקציה שבאמת תוסיף את הפרודקט
-            int id = bl!.Product!.addNewProduct(UpdateOrNewProduct);
+           
             try
             {
+                int id = bl!.Product!.addNewProduct(UpdateOrNewProduct);
                 addAction(new PO.ProductForList()
                 {
                     ID = id,
@@ -100,7 +101,7 @@ namespace PL.products
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("אחד מהנתונים שהזנת אינו תקין", "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void update_click(object sender, RoutedEventArgs e)
@@ -116,7 +117,7 @@ namespace PL.products
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("אחד מהנתונים שהזנת אינו תקין", "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void categoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

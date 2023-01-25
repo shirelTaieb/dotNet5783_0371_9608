@@ -266,4 +266,12 @@
     <OrderDate>2023-01-24T18:14:54.661421+02:00</OrderDate>
     <ShipDate>2023-01-24T18:21:04.4517311+02:00</ShipDate>
   </Order>
+  <Order>
+    <ID>1059</ID>
+    <CustomerName>אהובה ראשית</CustomerName>
+    <CustomerEmail>ahuvareshit@</CustomerEmail>
+    <CustomerAddress>הראל 11</CustomerAddress>
+    <OrderDate>2023-01-25T15:48:46.6111266+02:00</OrderDate>
+    <ShipDate>2023-01-25T15:52:59.0370033+02:00</ShipDate>
+  </Order>
 </ArrayOfOrder>

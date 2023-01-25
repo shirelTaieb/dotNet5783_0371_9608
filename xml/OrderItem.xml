@@ -768,4 +768,36 @@
     <Price>87.9</Price>
     <Amount>3</Amount>
   </OredrItem>
+  <OredrItem>
+    <ID>1098</ID>
+    <ProductID>100123</ProductID>
+    <ProductName>חנן הגנן</ProductName>
+    <OrderID>1059</OrderID>
+    <Price>69</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1099</ID>
+    <ProductID>100073</ProductID>
+    <ProductName>מעשה בחמישה בלונים</ProductName>
+    <OrderID>1059</OrderID>
+    <Price>55.9</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1100</ID>
+    <ProductID>100085</ProductID>
+    <ProductName>האריה שאהב תות</ProductName>
+    <OrderID>1059</OrderID>
+    <Price>53</Price>
+    <Amount>1</Amount>
+  </OredrItem>
+  <OredrItem>
+    <ID>1101</ID>
+    <ProductID>100079</ProductID>
+    <ProductName>הפנים שפרצו מהדף</ProductName>
+    <OrderID>1059</OrderID>
+    <Price>79.9</Price>
+    <Amount>1</Amount>
+  </OredrItem>
 </ArrayOfOrderItem>
