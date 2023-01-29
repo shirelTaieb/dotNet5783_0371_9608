@@ -1,28 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <ID>100115</ID>
-    <Name>איה פלוטו</Name>
-    <Category>Children</Category>
-    <Price>66</Price>
-    <InStock>74</InStock>
-    <path>/images/bookImages/WHEREPLOTO.jpg</path>
-  </Product>
-  <Product>
     <ID>100096</ID>
     <Name>נרניה</Name>
     <Category>Romans</Category>
     <Price>102</Price>
     <InStock>59</InStock>
     <path>/images/bookImages/NARNIA.PNG</path>
-  </Product>
-  <Product>
-    <ID>100093</ID>
-    <Name>משניות</Name>
-    <Category>Holy</Category>
-    <Price>90</Price>
-    <InStock>2</InStock>
-    <path>/images/bookImages/misnayotBrachot.jpg</path>
   </Product>
   <Product>
     <ID>100062</ID>
@@ -41,14 +25,6 @@
     <path>/images/bookImages/hachmenuLeyameno.jpg</path>
   </Product>
   <Product>
-    <ID>100079</ID>
-    <Name>הפנים שפרצו מהדף</Name>
-    <Category>Romans</Category>
-    <Price>79.9</Price>
-    <InStock>68</InStock>
-    <path>/images/bookImages/hapanimShpartzuMeadaf.jpg</path>
-  </Product>
-  <Product>
     <ID>100089</ID>
     <Name>פלוסים ומינוסים</Name>
     <Category>Theoretical</Category>
@@ -57,28 +33,12 @@
     <path>/images/bookImages/MATH.jpg</path>
   </Product>
   <Product>
-    <ID>100068</ID>
-    <Name>הספר הכי משעמם</Name>
-    <Category>Theoretical</Category>
-    <Price>75</Price>
-    <InStock>0</InStock>
-    <path>/images/bookImages/BORINGBOOK.jpg</path>
-  </Product>
-  <Product>
     <ID>100126</ID>
     <Name>לרוץ מהלב</Name>
     <Category>Theoretical</Category>
     <Price>67</Price>
     <InStock>90</InStock>
     <path>/images/bookImages/Z5.jpg</path>
-  </Product>
-  <Product>
-    <ID>100110</ID>
-    <Name>ספר התניא</Name>
-    <Category>Holy</Category>
-    <Price>25</Price>
-    <InStock>76</InStock>
-    <path>/images/bookImages/taniya.jpg</path>
   </Product>
   <Product>
     <ID>100106</ID>
@@ -169,12 +129,12 @@
     <path>/images/bookImages/shmiratHalashon.jpg</path>
   </Product>
   <Product>
-    <ID>100073</ID>
-    <Name>מעשה בחמישה בלונים</Name>
+    <ID>100103</ID>
+    <Name>דירה להשכיר</Name>
     <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>562</InStock>
-    <path>/images/bookImages/FIVEBALON.jpg</path>
+    <Price>60</Price>
+    <InStock>213</InStock>
+    <path>/images/bookImages/RENT.jpg</path>
   </Product>
   <Product>
     <ID>100109</ID>
@@ -241,14 +201,6 @@
     <path>/images/bookImages/MONY.jpg</path>
   </Product>
   <Product>
-    <ID>100085</ID>
-    <Name>האריה שאהב תות</Name>
-    <Category>Children</Category>
-    <Price>53</Price>
-    <InStock>58</InStock>
-    <path>/images/bookImages/LionStrobery.jpg</path>
-  </Product>
-  <Product>
     <ID>100064</ID>
     <Name>אליפים</Name>
     <Category>Romans</Category>
@@ -289,14 +241,6 @@
     <path>/images/bookImages/ISRAEL.jpg</path>
   </Product>
   <Product>
-    <ID>100069</ID>
-    <Name>כספיון</Name>
-    <Category>Children</Category>
-    <Price>55.9</Price>
-    <InStock>0</InStock>
-    <path>/images/bookImages/CASPION.jpg</path>
-  </Product>
-  <Product>
     <ID>100092</ID>
     <Name>משנה תורה השלם</Name>
     <Category>Holy</Category>
@@ -321,43 +265,83 @@
     <path>/images/bookImages/DEPRESION.jpg</path>
   </Product>
   <Product>
-    <ID>100088</ID>
-    <Name>קסם של הורות</Name>
-    <Category>Theoretical</Category>
-    <Price>102</Price>
-    <InStock>0</InStock>
-    <path>/images/bookImages/MagicParent.jpg</path>
-  </Product>
-  <Product>
-    <ID>100097</ID>
-    <Name>נפילת ברלין</Name>
-    <Category>History</Category>
-    <Price>97</Price>
-    <InStock>44</InStock>
-    <path>/images/bookImages/negilatberlin.jpg</path>
-  </Product>
-  <Product>
-    <ID>100080</ID>
-    <Name>הרנסנס</Name>
-    <Category>History</Category>
-    <Price>79</Price>
-    <InStock>63</InStock>
-    <path>/images/bookImages/Harenesans.jpg</path>
-  </Product>
-  <Product>
-    <ID>100103</ID>
-    <Name>דירה להשכיר</Name>
-    <Category>Children</Category>
-    <Price>60</Price>
-    <InStock>210</InStock>
-    <path>/images/bookImages/RENT.jpg</path>
-  </Product>
-  <Product>
     <ID>100123</ID>
     <Name>חנן הגנן</Name>
     <Category>Children</Category>
     <Price>69</Price>
-    <InStock>22</InStock>
+    <InStock>23</InStock>
     <path>/images/bookImages/HANANHAGANAN.jpg</path>
+  </Product>
+  <Product>
+    <ID>100073</ID>
+    <Name>מעשה בחמישה בלונים</Name>
+    <Category>Children</Category>
+    <Price>55.9</Price>
+    <InStock>561</InStock>
+    <path>/images/bookImages/FIVEBALON.jpg</path>
+  </Product>
+  <Product>
+    <ID>100079</ID>
+    <Name>הפנים שפרצו מהדף</Name>
+    <Category>Romans</Category>
+    <Price>79.9</Price>
+    <InStock>67</InStock>
+    <path>/images/bookImages/hapanimShpartzuMeadaf.jpg</path>
+  </Product>
+  <Product>
+    <ID>100085</ID>
+    <Name>האריה שאהב תות</Name>
+    <Category>Children</Category>
+    <Price>53</Price>
+    <InStock>57</InStock>
+    <path>/images/bookImages/LionStrobery.jpg</path>
+  </Product>
+  <Product>
+    <ID>100068</ID>
+    <Name>הספר הכי משעמם</Name>
+    <Category>Theoretical</Category>
+    <Price>75</Price>
+    <InStock>34</InStock>
+    <path>/images/bookImages/BORINGBOOK.jpg</path>
+  </Product>
+  <Product>
+    <ID>100088</ID>
+    <Name>קסם של הורות</Name>
+    <Category>Theoretical</Category>
+    <Price>102</Price>
+    <InStock>78</InStock>
+    <path>/images/bookImages/MagicParent.jpg</path>
+  </Product>
+  <Product>
+    <ID>100115</ID>
+    <Name>איה פלוטו</Name>
+    <Category>Children</Category>
+    <Price>66</Price>
+    <InStock>74</InStock>
+    <path>/images/bookImages/WHEREPLOTO.jpg</path>
+  </Product>
+  <Product>
+    <ID>100069</ID>
+    <Name>כספיון</Name>
+    <Category>Children</Category>
+    <Price>55.9</Price>
+    <InStock>67</InStock>
+    <path>/images/bookImages/CASPION.jpg</path>
+  </Product>
+  <Product>
+    <ID>100110</ID>
+    <Name>ספר התניא</Name>
+    <Category>Holy</Category>
+    <Price>25</Price>
+    <InStock>73</InStock>
+    <path>/images/bookImages/taniya.jpg</path>
+  </Product>
+  <Product>
+    <ID>100093</ID>
+    <Name>משניות</Name>
+    <Category>Holy</Category>
+    <Price>90</Price>
+    <InStock>10</InStock>
+    <path>/images/bookImages/misnayotBrachot.jpg</path>
   </Product>
 </ArrayOfProduct>

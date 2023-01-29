@@ -770,50 +770,50 @@
   </OredrItem>
   <OredrItem>
     <ID>1098</ID>
-    <ProductID>100088</ProductID>
-    <ProductName>קסם של הורות</ProductName>
+    <ProductID>100123</ProductID>
+    <ProductName>חנן הגנן</ProductName>
     <OrderID>1059</OrderID>
-    <Price>102</Price>
-    <Amount>3</Amount>
+    <Price>69</Price>
+    <Amount>1</Amount>
   </OredrItem>
   <OredrItem>
     <ID>1099</ID>
-    <ProductID>100088</ProductID>
-    <ProductName>קסם של הורות</ProductName>
-    <OrderID>1060</OrderID>
-    <Price>102</Price>
-    <Amount>3</Amount>
+    <ProductID>100073</ProductID>
+    <ProductName>מעשה בחמישה בלונים</ProductName>
+    <OrderID>1059</OrderID>
+    <Price>55.9</Price>
+    <Amount>1</Amount>
   </OredrItem>
   <OredrItem>
     <ID>1100</ID>
-    <ProductID>100097</ProductID>
-    <ProductName>נפילת ברלין</ProductName>
-    <OrderID>1060</OrderID>
-    <Price>97</Price>
-    <Amount>2</Amount>
+    <ProductID>100085</ProductID>
+    <ProductName>האריה שאהב תות</ProductName>
+    <OrderID>1059</OrderID>
+    <Price>53</Price>
+    <Amount>1</Amount>
   </OredrItem>
   <OredrItem>
     <ID>1101</ID>
-    <ProductID>100080</ProductID>
-    <ProductName>הרנסנס</ProductName>
-    <OrderID>1060</OrderID>
-    <Price>79</Price>
-    <Amount>3</Amount>
+    <ProductID>100079</ProductID>
+    <ProductName>הפנים שפרצו מהדף</ProductName>
+    <OrderID>1059</OrderID>
+    <Price>79.9</Price>
+    <Amount>1</Amount>
   </OredrItem>
   <OredrItem>
     <ID>1102</ID>
-    <ProductID>100103</ProductID>
-    <ProductName>דירה להשכיר</ProductName>
+    <ProductID>100110</ProductID>
+    <ProductName>ספר התניא</ProductName>
     <OrderID>1060</OrderID>
-    <Price>60</Price>
+    <Price>25</Price>
     <Amount>3</Amount>
   </OredrItem>
   <OredrItem>
     <ID>1103</ID>
-    <ProductID>100123</ProductID>
-    <ProductName>חנן הגנן</ProductName>
+    <ProductID>100093</ProductID>
+    <ProductName>משניות</ProductName>
     <OrderID>1060</OrderID>
-    <Price>69</Price>
+    <Price>90</Price>
     <Amount>2</Amount>
   </OredrItem>
 </ArrayOfOrderItem>
