@@ -35,7 +35,7 @@
             <materialDesign:Card.Background>
                 <SolidColorBrush Color="#dce1de" Opacity="0.8"/>
             </materialDesign:Card.Background>
-            <StackPanel>
+            <StackPanel Margin="-8,0,-9,0">
                 <TextBlock Text="אישור פרטי הזמנה" FontSize="30" Foreground="#FF2E4F2E" TextAlignment="Center" Height="50"/>
                 <TextBlock Text="וודא שפרטיך נכונים לפני אישור סופי של ההזמנה" Foreground="#FF2E4F2E" FontSize="12" TextAlignment="Center" Height="20"/>
                 <StackPanel Margin="-28,0,-20,0" Orientation="Horizontal" >
@@ -88,7 +88,7 @@
         </DataGrid>
         <materialDesign:Card
             materialDesign:ShadowAssist.ShadowDepth="Depth3"
-            Grid.Column="0" Height="35" Grid.Row="1" Margin="2,2,61,4">
+            Grid.Column="0" Height="35" Grid.Row="1" Margin="2,2,0,4">
             <materialDesign:Card.Background>
                 <SolidColorBrush Color="#dce1de" Opacity="0.6"/>
             </materialDesign:Card.Background>

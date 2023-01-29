@@ -14,19 +14,19 @@
 
         <StackPanel x:Name="Data" Width="160" Height="309" VerticalAlignment="Top" Margin="242,100,20,0">
             <TextBox x:Name="Name" Width="154" TextAlignment="Center" Height="30" HorizontalAlignment="Right"
-                       FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3" 
+                       FontSize="18" FontFamily="Narkisim" FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" Margin="3,3,3,3" 
                        Text="{Binding CustomerName}" />
             <TextBox x:Name="Email" Width="151" TextAlignment="Center" Height="30" HorizontalAlignment="Left"
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Background="White" Margin="3,3,3,3"
                        Text="{Binding CustomerEmail}" />
             <TextBox x:Name="CustomerAddress" Width="158" TextAlignment="Center" Height="30" HorizontalAlignment="Stretch"
-                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" TextDecorations="Underline" Background="White" Margin="3,3,3,3"
+                           FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153"  Background="White" Margin="3,3,3,3"
                        Text="{Binding CustomerAddress}"/>
             <TextBox x:Name="Number" Width="145" TextAlignment="Center" Height="30"  
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" HorizontalAlignment="Left" Margin="3,55,3,3" />
             <TextBox x:Name="Date" Width="145" TextAlignment="Center" Height="30"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" Margin="3,3,3,3" HorizontalAlignment="Left" />
-            <TextBox x:Name="Cvv" Width="145" TextAlignment="Left" Height="30"
+            <TextBox x:Name="Cvv" Width="145" TextAlignment="Center" Height="30"
                            FontSize="18" FontFamily="Narkisim"  FontWeight="Bold" FontStyle="Normal" Foreground="#FF465153" Background="White" Margin="3,3,3,3" HorizontalAlignment="Left" />
         </StackPanel>
             <StackPanel Height="300" VerticalAlignment="Bottom" Margin="0,0,101,114">

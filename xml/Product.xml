@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <ID>100088</ID>
-    <Name>קסם של הורות</Name>
-    <Category>Theoretical</Category>
-    <Price>102</Price>
-    <InStock>6</InStock>
-    <path>/images/bookImages/MagicParent.jpg</path>
-  </Product>
-  <Product>
     <ID>100115</ID>
     <Name>איה פלוטו</Name>
     <Category>Children</Category>
@@ -55,14 +47,6 @@
     <Price>79.9</Price>
     <InStock>68</InStock>
     <path>/images/bookImages/hapanimShpartzuMeadaf.jpg</path>
-  </Product>
-  <Product>
-    <ID>100088</ID>
-    <Name>קסם של הורות</Name>
-    <Category>Theoretical</Category>
-    <Price>102</Price>
-    <InStock>3</InStock>
-    <path>/images/bookImages/MagicParent.jpg</path>
   </Product>
   <Product>
     <ID>100089</ID>
@@ -137,14 +121,6 @@
     <path>/images/bookImages/CoAsuHachmeynu.jpg</path>
   </Product>
   <Product>
-    <ID>100097</ID>
-    <Name>נפילת ברלין</Name>
-    <Category>History</Category>
-    <Price>97</Price>
-    <InStock>46</InStock>
-    <path>/images/bookImages/negilatberlin.jpg</path>
-  </Product>
-  <Product>
     <ID>100099</ID>
     <Name>אורות</Name>
     <Category>Holy</Category>
@@ -193,22 +169,6 @@
     <path>/images/bookImages/shmiratHalashon.jpg</path>
   </Product>
   <Product>
-    <ID>100123</ID>
-    <Name>חנן הגנן</Name>
-    <Category>Children</Category>
-    <Price>69</Price>
-    <InStock>24</InStock>
-    <path>/images/bookImages/HANANHAGANAN.jpg</path>
-  </Product>
-  <Product>
-    <ID>100103</ID>
-    <Name>דירה להשכיר</Name>
-    <Category>Children</Category>
-    <Price>60</Price>
-    <InStock>213</InStock>
-    <path>/images/bookImages/RENT.jpg</path>
-  </Product>
-  <Product>
     <ID>100073</ID>
     <Name>מעשה בחמישה בלונים</Name>
     <Category>Children</Category>
@@ -255,14 +215,6 @@
     <Price>89.9</Price>
     <InStock>9</InStock>
     <path>/images/bookImages/inteligent.jpg</path>
-  </Product>
-  <Product>
-    <ID>100080</ID>
-    <Name>הרנסנס</Name>
-    <Category>History</Category>
-    <Price>79</Price>
-    <InStock>66</InStock>
-    <path>/images/bookImages/Harenesans.jpg</path>
   </Product>
   <Product>
     <ID>100065</ID>
@@ -345,14 +297,6 @@
     <path>/images/bookImages/CASPION.jpg</path>
   </Product>
   <Product>
-    <ID>100127</ID>
-    <Name>טור יורה דעה</Name>
-    <Category>Holy</Category>
-    <Price>199</Price>
-    <InStock>4</InStock>
-    <path>/images/bookImages/littelPrince.jpg</path>
-  </Product>
-  <Product>
     <ID>100092</ID>
     <Name>משנה תורה השלם</Name>
     <Category>Holy</Category>
@@ -375,5 +319,45 @@
     <Price>100</Price>
     <InStock>891</InStock>
     <path>/images/bookImages/DEPRESION.jpg</path>
+  </Product>
+  <Product>
+    <ID>100088</ID>
+    <Name>קסם של הורות</Name>
+    <Category>Theoretical</Category>
+    <Price>102</Price>
+    <InStock>0</InStock>
+    <path>/images/bookImages/MagicParent.jpg</path>
+  </Product>
+  <Product>
+    <ID>100097</ID>
+    <Name>נפילת ברלין</Name>
+    <Category>History</Category>
+    <Price>97</Price>
+    <InStock>44</InStock>
+    <path>/images/bookImages/negilatberlin.jpg</path>
+  </Product>
+  <Product>
+    <ID>100080</ID>
+    <Name>הרנסנס</Name>
+    <Category>History</Category>
+    <Price>79</Price>
+    <InStock>63</InStock>
+    <path>/images/bookImages/Harenesans.jpg</path>
+  </Product>
+  <Product>
+    <ID>100103</ID>
+    <Name>דירה להשכיר</Name>
+    <Category>Children</Category>
+    <Price>60</Price>
+    <InStock>210</InStock>
+    <path>/images/bookImages/RENT.jpg</path>
+  </Product>
+  <Product>
+    <ID>100123</ID>
+    <Name>חנן הגנן</Name>
+    <Category>Children</Category>
+    <Price>69</Price>
+    <InStock>22</InStock>
+    <path>/images/bookImages/HANANHAGANAN.jpg</path>
   </Product>
 </ArrayOfProduct>
