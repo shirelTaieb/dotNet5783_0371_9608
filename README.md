@@ -1,4 +1,3 @@
-# dotNet5783_0371_9608
 
 # Project Summary:
 This repository contains a store management system, a Microsoft Windows Presentation Foundation (WPF) application developed using .NET technologies. The application is intended for managing a bookstore, includes placing an order, viewing and tracking existing orders, creating a shopping basket, as well as viewing the existing catalog.
